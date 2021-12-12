@@ -13,7 +13,7 @@ def seed_userProfiles():
   needs = "good food",
   hobbies = "reading manga, coding",
   secrets = "wouldn't be a secret anymore if I said it",
-  dating = "it's great"
+  dating = "must have costco executive membership "
   user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1639292032/okSign/New_Coronavirus_Laws_Funny_vu9ais.mp3",
   gender_id = # fill this out
   number_likes = 10,
@@ -43,5 +43,5 @@ def seed_userProfiles():
   db.session.commit()
 
 def undo_userProfiles():
-    db.session.execute('TRUNCATE userProfiles RESTART IDENTITY CASCADE;') 
+    db.session.execute('TRUNCATE userProfiles RESTART IDENTITY CASCADE;')
     db.session.commit()
