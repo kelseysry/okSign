@@ -14,6 +14,7 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
 
     userProfile = db.relationship("User", back_populate="user")
+    questions = db.relationship("Question", back_populate="user")
 
 
     @property
