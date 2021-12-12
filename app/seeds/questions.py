@@ -3,30 +3,31 @@ from app.models import db, Question
 
 def seed_questions():
     query1 = Question(
-      query ="Which word describes you better?"
-    )
-    query2 = Question(
-      query="Doesn't have kids but wants them"
-    )
-    query3 = Question(
-      query="Doesn't have kids and doesn't want want them"
-    )
-    query4 = Question(
-      query="Has kid(s) and doesn't want more"
-    )
-    query5 = Question(
-      query="Has kid(s) and might want more"
-    )
-    query6 = Question(
-      query="Has kid(s) and want more"
+      question1 ='Carefree',
+      must_answer1='Carefree',
+      question2 = 'Kissing in Paris'
+      must_answer2 = 'Kissing in Paris'
+      question3 = 'Bad'
+      must_answer3 = 'Bad'
+      question4 = 'Yes'
+      must_answer4 = 'No'
+      question5 = 'Yes'
+      must_answer5 = 'Yes'
+      question6 = 'No'
+      must_answer6 = 'No'
+      question7 = 'Weird'
+      must_answer7 = 'Weird'
+      question8 = 'No'
+      must_answer8 = 'No'
+      question9 = 'No'
+      must_answer9 ='No'
+      question10 = 'Yes'
+      must_answer10 = 'Yes'
+      user_id=1
     )
 
-    db.session.add(query1)
-    db.session.add(query2)
-    db.session.add(query3)
-    db.session.add(query4)
-    db.session.add(query5)
-    db.session.add(query6)
+
+    db.session.add(question1)
 
     db.session.commit()
 

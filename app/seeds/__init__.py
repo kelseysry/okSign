@@ -8,6 +8,7 @@ from .horoscopes import seed_horoscopes, undo_horoscopes
 from .children import seed_children, undo_children
 from .pets import seed_pets, undo_pets
 from .politics import seed_politics, undo_politics
+from .conversations import seed_conversations, undo_conversations
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -26,12 +27,14 @@ def seed():
     seed_pets()
     seed_politics()
     seed_userProfiles()
+    seed_conversations()
     # Add other seed functions here
 
 
 # Creates the `flask seed undo` command
 @seed_commands.command('undo')
 def undo():
+    undo_conversations
     undo_userProfiles()
     undo_users()
     undo_genders()
@@ -40,5 +43,5 @@ def undo():
     undo_relationships()
     undo_children()
     undo_pets()
-    seed_politics()
+    undo_politics()
     # Add other undo functions here
