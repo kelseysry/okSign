@@ -2,6 +2,8 @@ from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .userProfiles import seed_userProfiles, undo_userProfiles
 from .genders import seed_genders, undo_genders
+from .relationships import seed_relationships, undo_relationships
+from .orientations import seed_orientations, undo_orientations
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -13,6 +15,8 @@ seed_commands = AppGroup('seed')
 def seed():
     seed_users()
     seed_genders()
+    seed_relationships()
+    seed_orientations()
     seed_userProfiles()
     # Add other seed functions here
 
@@ -23,4 +27,6 @@ def undo():
     undo_userProfiles()
     undo_users()
     undo_genders()
+    undo_orientations()
+    undo_relationships()
     # Add other undo functions here

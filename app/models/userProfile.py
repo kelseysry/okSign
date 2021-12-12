@@ -39,6 +39,7 @@ class UserProfile(db.Model):
     gender = db.relationship("Gender", back_populate="userProfile")
     user = db.relationship("User", back_populate="userProfile")
     relationship = db.relationship("Relationship", back_populate="userProfile")
+    orientation = db.relationship("Orientation", back_populate="userProfile")
 
     def to_dict(self):
         return {
