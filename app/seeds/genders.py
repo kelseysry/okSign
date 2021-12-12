@@ -4,8 +4,8 @@ from app.models import db, Gender
 # Adds a demo user, you can add other users here if you want
 def seed_genders():
     women = Gender(
-        type ="Women"
-       )
+      type ="Women"
+    )
     men = Gender(
       type="Men"
     )
@@ -18,5 +18,5 @@ def seed_genders():
 
 
 def undo_genders():
-    db.session.execute('TRUNCATE genders RESTART IDENTITY CASCADE;') 
+    db.session.execute('TRUNCATE genders RESTART IDENTITY CASCADE;')
     db.session.commit()
