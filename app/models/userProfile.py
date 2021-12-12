@@ -7,6 +7,7 @@ class UserProfile(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
     age = db.Column(db.Integer)
+    location = db.Column(db.String)
     lat = db.Column(db.Float)
     lng = db.Column(db.Float)
     about_me = db.Column(db.String(255))
@@ -17,7 +18,7 @@ class UserProfile(db.Model):
     hobbies = db.Column(db.String(255))
     moments = db.Column(db.String(255))
     secrets = db.Column(db.String(255))
-    dating = db.Column(db.String(255))
+    looking_for = db.Column(db.String(255))
     user_audio = db.Column(db.String(255))
     gender_id = db.Column(db.Integer, db.ForeignKey("genders.id"), nullable=True)
     number_likes = db.Column(db.Integer)
@@ -50,6 +51,7 @@ class UserProfile(db.Model):
             'id': self.id,
             'user_id': self.user_id,
             'age': self.age,
+            'location': self.location
             'lat': self.lat,
             'lng': self.lng,
             'about_me': self.about_me,
@@ -60,7 +62,7 @@ class UserProfile(db.Model):
             'hobbies': self.hobbies,
             'moments': self.moments,
             'secrets': self.secrets,
-            'dating': self.dating,
+            'looking_for': self.looking_for,
             'user_audio': self.user_audio,
             'gender_id': self.gender_id,
             'number_likes' = self.number_likes,

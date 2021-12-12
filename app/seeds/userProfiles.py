@@ -4,6 +4,7 @@ def seed_userProfiles():
   userProfile1 = UserProfile(
   user_id =1,
   age = 24,
+  location = 'Long Beach, California'
   lat = 33.85897723024835,
   lng = -118.08115190136616,
   about_me ="Costco, manga, tea/coffee addict",
@@ -13,7 +14,7 @@ def seed_userProfiles():
   needs = "good food",
   hobbies = "reading manga, coding",
   secrets = "wouldn't be a secret anymore if I said it",
-  dating = "must have costco executive membership "
+  looking_for = "must have costco executive membership "
   user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1639292032/okSign/New_Coronavirus_Laws_Funny_vu9ais.mp3",
   gender_id = # fill this out
   number_likes = 10,
