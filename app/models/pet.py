@@ -1,14 +1,13 @@
 from .db import db
 
 
-class Children(db.Model):
-    __tablename__ = 'children'
+class Pet(db.Model):
+    __tablename__ = 'pets'
 
     id = db.Column(db.Integer, primary_key=True)
     option = db.Column(db.String(255))
 
-
-    userProfile = db.relationship("UserProfile", back_populate="relationship")
+    userProfile = db.relationship("UserProfile", back_populate="pet")
 
 
     def to_dict(self):

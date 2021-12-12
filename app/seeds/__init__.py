@@ -6,6 +6,7 @@ from .relationships import seed_relationships, undo_relationships
 from .orientations import seed_orientations, undo_orientations
 from .horoscopes import seed_horoscopes, undo_horoscopes
 from .children import seed_children, undo_children
+from .pets import seed_pets, undo_pets
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -21,6 +22,7 @@ def seed():
     seed_orientations()
     seed_horoscopes()
     seed_children()
+    seed_pets()
     seed_userProfiles()
     # Add other seed functions here
 
@@ -35,4 +37,5 @@ def undo():
     undo_horoscopes()
     undo_relationships()
     undo_children()
+    undo_pets()
     # Add other undo functions here

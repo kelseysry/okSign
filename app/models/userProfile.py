@@ -42,6 +42,7 @@ class UserProfile(db.Model):
     orientation = db.relationship("Orientation", back_populate="userProfile")
     horoscope = db.relationship("Horoscope", back_populate="userProfile")
     children = db.relationship("Children", back_populate="userProfile")
+    pet = db.relationship("Pet", back_populate="userProfile")
 
     def to_dict(self):
         return {
