@@ -16,7 +16,16 @@ class Question(db.Model):
     must_answer4 = db.Column(db.String)
     question5 = db.Column(db.String)
     must_answer5 = db.Column(db.String)
-
+    question6 = db.Column(db.String)
+    must_answer6 = db.Column(db.String)
+    question7 = db.Column(db.String)
+    must_answer7 = db.Column(db.String)
+    question8 = db.Column(db.String)
+    must_answer8 = db.Column(db.String)
+    question9 = db.Column(db.String)
+    must_answer9 = db.Column(db.String)
+    question10 = db.Column(db.String)
+    must_answer10 = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
 
     user = db.relationship("User", back_populate="questions")
@@ -25,4 +34,24 @@ class Question(db.Model):
         return {
             'id': self.id,
             'question1': self.question1,
+            'must_answer1' :self.must_answer1,
+            'question2': self.question2,
+            'must_answer2' :self.must_answer2,
+            'question3': self.question3,
+            'must_answer3' :self.must_answer3,
+            'question4': self.question4,
+            'must_answer4' :self.must_answer4,
+            'question5': self.question5,
+            'must_answer5' :self.must_answer5,
+            'question6': self.question6,
+            'must_answer6' :self.must_answer6,
+            'question7': self.question7,
+            'must_answer7' :self.must_answer7,
+            'question8': self.question8,
+            'must_answer8' :self.must_answer8,
+            'question9': self.question9,
+            'must_answer9' :self.must_answer9,
+            'question10': self.question10,
+            'must_answer10' :self.must_answer10,
+            'user_id': self.user_id
         }
