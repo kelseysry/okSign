@@ -8,6 +8,7 @@ class Conversation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     from_user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
     to_user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
+    date = db.Column(db.Date)
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
 
@@ -18,12 +19,9 @@ class Conversation(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'question1': self.question1,
-            'must_answer1' :self.must_answer1,
-            'question2': self.question2,
-            'must_answer2' :self.must_answer2,
-            'question3': self.question3,
-            'must_answer3' :self.must_answer3,
-
-            'user_id': self.user_id
+            'from_user_id': self.from_user_id,
+            'to_user_id': self.to_user_id,
+            'date': self.date,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at
         }

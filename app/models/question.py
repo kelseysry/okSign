@@ -27,6 +27,9 @@ class Question(db.Model):
     question10 = db.Column(db.String)
     must_answer10 = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+    updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+
 
     user = db.relationship("User", back_populate="questions")
 
@@ -53,5 +56,7 @@ class Question(db.Model):
             'must_answer9' :self.must_answer9,
             'question10': self.question10,
             'must_answer10' :self.must_answer10,
-            'user_id': self.user_id
+            'user_id': self.user_id,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at
         }

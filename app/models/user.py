@@ -12,6 +12,9 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+    updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
+
 
     userProfile = db.relationship("User", back_populate="user")
     questions = db.relationship("Question", back_populate="user")
@@ -35,4 +38,6 @@ class User(db.Model, UserMixin):
             'last_name': self.last_name,
             'username': self.username,
             'email': self.email,
+            'created_at': self.created_at,
+            'updated_at': self.updated_at
         }

@@ -13,7 +13,7 @@ class QuestionForm(FlaskForm):
   must_answer3 = RadioField('Answer you\'ll accept?', choices=['Good', 'Bad'], validators=[DataRequired()])
   question4 = RadioField('Do you often find yourself worrying about things that you have no control over?', choices=['Yes', 'No'], validators=[DataRequired()])
   must_answer4 = RadioField('Answer you\'ll accept?', choices=['Yes', 'No'], validators=[DataRequired()])
-  question5 = RadioField('Is jealously healthi in a relationship?', choices=['Yes', 'No'], validators=[DataRequired()])
+  question5 = RadioField('Is jealously healthy in a relationship?', choices=['Yes', 'No'], validators=[DataRequired()])
   must_answer5 = RadioField('Answer you\'ll accept?', choices=['Yes', 'No'], validators=[DataRequired()])
   question6 = RadioField('Would you date someone that vaped/used e-cigs?', choices=['Yes', 'No'], validators=[DataRequired()])
   must_answer6 = RadioField('Answer you\'ll accept?', choices=['Yes', 'No'], validators=[DataRequired()])
