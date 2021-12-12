@@ -5,4 +5,5 @@ from .userProfile import UserProfile
 from .orientation import Orientation
 from .horoscope import Horoscope
 from .children import Children
-from .pet import Pet 
+from .pet import Pet
+from .politic import Politic

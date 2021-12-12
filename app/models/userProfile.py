@@ -43,6 +43,7 @@ class UserProfile(db.Model):
     horoscope = db.relationship("Horoscope", back_populate="userProfile")
     children = db.relationship("Children", back_populate="userProfile")
     pet = db.relationship("Pet", back_populate="userProfile")
+    politic = db.relationship("Politic", back_populate="userProfile")
 
     def to_dict(self):
         return {
