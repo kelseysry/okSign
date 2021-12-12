@@ -1,4 +1,4 @@
-from app.models import db, User
+from app.models import db, Gender
 
 
 # Adds a demo user, you can add other users here if you want
