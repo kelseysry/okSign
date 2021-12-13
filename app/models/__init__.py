@@ -8,5 +8,5 @@ from .children import Children
 from .pet import Pet
 from .politic import Politic
 from .question import Question
-from .Conversation import Conversation
-# from .answer import Answer
+from .conversation import Conversation
+from .message import Message

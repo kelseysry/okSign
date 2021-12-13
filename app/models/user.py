@@ -18,6 +18,8 @@ class User(db.Model, UserMixin):
 
     userProfile = db.relationship("User", back_populate="user")
     questions = db.relationship("Question", back_populate="user")
+    conversations = db.relationship("Conversation", back_populate="user")
+    messages = db.relationship("Messages", back_populate="user")
 
 
     @property
