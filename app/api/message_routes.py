@@ -1,29 +1,28 @@
 from flask import Blueprint, jsonify, redirect, url_for, session, request
-from app.models import Review, db, User
-from app.forms import ReviewForm
+from app.models import Message, db, User
+from app.forms import MessageForm
 from flask_login import login_required, current_user
 
+message_routes = Blueprint('message', __name__)
 
-# post a review
-@review_routes.route('/<int:product_id>/reviews', methods=['POST'])
-def create_review(product_id):
-  # print('backend', product_id)
-  form = ReviewForm()
+# post a message
+@message_routes.route('/<int:conservation_id>/messages', methods=['POST'])
+def create_message(conservation_id):
+  form = MessageForm()
   form['csrf_token'].data = request.cookies['csrf_token']
   if form.validate_on_submit():
-    review = Review()
-    form.populate_obj(review)
-    db.session.add(review)
+    message = Message()
+    form.populate_obj(message)
+    db.session.add(message)
     db.session.commit()
-    print("review dict-------------", review.to_dict())
-    return {"review":review.to_dict()}
+    print("message dict-------------", message.to_dict())
+    return {"message":message.to_dict()}
   else:
     return "bad data"
 
-# get all reviews for a product
-# @review_routes.route('/<int:id>', methods=['GET'])
-@review_routes.route('/<int:product_id>/reviews', methods=['GET'])
-def get_review(product_id):
-  reviews = Review.query.filter(Review.product_id == product_id).all()
-  # print("all reviews", reviews)
-  return {review.id: review.to_dict() for review in reviews}
+# get all messages for a conversation
+@message_routes.route('/<int:conservation_id>/reviews', methods=['GET'])
+def get_conversation(conservation_id):
+  messages = Message.query.filter(Message.conservation_id == conservation_id).all()
+  # print("all messages", messages)
+  return {message.id: message.to_dict() for message in messages}
