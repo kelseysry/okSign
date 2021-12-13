@@ -10,3 +10,4 @@ from .politic import Politic
 from .question import Question
 from .conversation import Conversation
 from .message import Message
+from .religion import Religion

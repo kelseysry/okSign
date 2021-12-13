@@ -34,8 +34,9 @@ class UserProfile(db.Model):
     smoking = db.Column(db.Boolean, default=False)
     drinking = db.Column(db.Boolean, default=False)
     children_id = db.Column(db.Integer, db.ForeignKey("children.id"), nullable=True)
-    pet_id = db.Column(db.Boolean, default=False)
-
+    pet_id = db.Column(db.Integer, db.ForeignKey("pets.id"), nullable=True)
+    politic_id = db.Column(db.Integer, db.ForeignKey("politics.id"), nullable=True)
+    religion_id = db.Column(db.Integer, db.ForeignKey("religions.id"), nullable=True)
 
     gender = db.relationship("Gender", back_populate="userProfile")
     user = db.relationship("User", back_populate="userProfile")
@@ -45,6 +46,7 @@ class UserProfile(db.Model):
     children = db.relationship("Children", back_populate="userProfile")
     pet = db.relationship("Pet", back_populate="userProfile")
     politic = db.relationship("Politic", back_populate="userProfile")
+    religion = db.relationship("Religion", back_populate="userProfile")
 
     def to_dict(self):
         return {
@@ -78,5 +80,7 @@ class UserProfile(db.Model):
             'smoking' = self.smoking,
             'drinking' = self.drinking,
             'children_id' = self.children_id,
-            'pet_id' = self.pet_id
+            'pet_id' = self.pet_id,
+            'politic_id' = self.politic_id,
+            'religion_id' = self.religion_id
         }
