@@ -6,7 +6,7 @@ from flask_login import login_required, current_user
 message_routes = Blueprint('message', __name__)
 
 # post a message
-@message_routes.route('/<int:conservation_id>/messages', methods=['POST'])
+@message_routes.route('/<int:conversation_id>/messages', methods=['POST'])
 def create_message(conservation_id):
   form = MessageForm()
   form['csrf_token'].data = request.cookies['csrf_token']
@@ -21,8 +21,8 @@ def create_message(conservation_id):
     return "bad data"
 
 # get all messages for a conversation
-@message_routes.route('/<int:conservation_id>/reviews', methods=['GET'])
-def get_conversation(conservation_id):
-  messages = Message.query.filter(Message.conservation_id == conservation_id).all()
+@message_routes.route('/<int:conversation_id>/messages', methods=['GET'])
+def get_conversation(conversation_id):
+  messages = Message.query.filter(Message.conversation_id == conversation_id).all()
   # print("all messages", messages)
   return {message.id: message.to_dict() for message in messages}
