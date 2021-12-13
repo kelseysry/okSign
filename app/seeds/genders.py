@@ -3,10 +3,10 @@ from app.models import db, Gender
 
 def seed_genders():
     women = Gender(
-      type ="Women"
+      preference ="Women"
     )
     men = Gender(
-      type="Men"
+      preference="Men"
     )
 
 

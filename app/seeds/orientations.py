@@ -4,22 +4,22 @@ from app.models import db, Orientation
 # Adds a demo user, you can add other users here if you want
 def seed_orientations():
     Straight = Orientation(
-      type ="Straight"
+      preference ="Straight"
     )
     Lesbian = Orientation(
-      type="Lesbian"
+      preference="Lesbian"
     )
     Gay = Orientation(
-      type="Gay"
+      preference="Gay"
     )
     Bisexual = Orientation(
-      type="Bisexual"
+      preference="Bisexual"
     )
     Queer = Orientation(
-      type="Queer"
+      preference="Queer"
     )
     Pansexual = Orientation(
-      type="Pansexual"
+      preference="Pansexual"
     )
 
 

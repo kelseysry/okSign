@@ -2,23 +2,23 @@ from app.models import db, Politic
 
 
 def seed_politics():
-    option1 = Politic(
-      option ="Politically liberal"
+    belief1 = Politic(
+      belief ="Politically liberal"
     )
-    option2 = Politic(
-      option="Politically moderate"
+    belief2 = Politic(
+      belief="Politically moderate"
     )
-    option3 = Politic(
-      option="Politically conservative"
+    belief3 = Politic(
+      belief="Politically conservative"
     )
-    option4 = Politic(
-      option="Other political beliefs"
+    belief4 = Politic(
+      belief="Other political beliefs"
     )
 
-    db.session.add(option1)
-    db.session.add(option2)
-    db.session.add(option3)
-    db.session.add(option4)
+    db.session.add(belief1)
+    db.session.add(belief2)
+    db.session.add(belief3)
+    db.session.add(belief4)
 
 
     db.session.commit()

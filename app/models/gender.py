@@ -6,7 +6,7 @@ class Gender(db.Model):
     __tablename__ = 'genders'
 
     id = db.Column(db.Integer, primary_key=True)
-    type = db.Column(db.String(255))
+    preference = db.Column(db.String(255))
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
 
@@ -17,7 +17,7 @@ class Gender(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'type': self.type,
+            'preference': self.preference,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }

@@ -8,7 +8,7 @@ class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     conversation_id = db.Column(db.Integer, db.ForeignKey("conversations.id"), nullable=True)
     content = db.Column(db.Text)
-    date = db.Column(db.Date)
+    date = db.Column(db.DateTime(timezone=False), server_default=func.now())
     from_user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())

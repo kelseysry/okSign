@@ -2,31 +2,31 @@ from app.models import db, Children
 
 
 def seed_children():
-    option1 = Children(
-      option ="Doesn't have kids but might want them"
+    preference1 = Children(
+      preference ="Doesn't have kids but might want them"
     )
-    option2 = Children(
-      option="Doesn't have kids but wants them"
+    preference2 = Children(
+      preference="Doesn't have kids but wants them"
     )
-    option3 = Children(
-      option="Doesn't have kids and doesn't want want them"
+    preference3 = Children(
+      preference="Doesn't have kids and doesn't want want them"
     )
-    option4 = Children(
-      option="Has kid(s) and doesn't want more"
+    preference4 = Children(
+      preference="Has kid(s) and doesn't want more"
     )
-    option5 = Children(
-      option="Has kid(s) and might want more"
+    preference5 = Children(
+      preference="Has kid(s) and might want more"
     )
-    option6 = Children(
-      option="Has kid(s) and want more"
+    preference6 = Children(
+      preference="Has kid(s) and want more"
     )
 
-    db.session.add(option1)
-    db.session.add(option2)
-    db.session.add(option3)
-    db.session.add(option4)
-    db.session.add(option5)
-    db.session.add(option6)
+    db.session.add(preference1)
+    db.session.add(preference2)
+    db.session.add(preference3)
+    db.session.add(preference4)
+    db.session.add(preference5)
+    db.session.add(preference6)
 
     db.session.commit()
 

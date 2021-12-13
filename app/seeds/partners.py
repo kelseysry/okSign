@@ -1,15 +1,15 @@
-from app.models import db, Relationship
+from app.models import db, Partner
 
 
 # Adds a demo user, you can add other users here if you want
-def seed_relationships():
-    Monogamous = Relationship(
+def seed_partners():
+    Monogamous = Partner(
       title ="Monogamous"
     )
-    NonMonogamous = Relationship(
+    NonMonogamous = Partner(
       title="Non-monogamous"
     )
-    Open = Relationship(
+    Open = Partner(
       title="Open to either"
     )
 
@@ -21,6 +21,6 @@ def seed_relationships():
     db.session.commit()
 
 
-def undo_relationships():
-    db.session.execute('TRUNCATE relationships RESTART IDENTITY CASCADE;')
+def undo_partners():
+    db.session.execute('TRUNCATE partners RESTART IDENTITY CASCADE;')
     db.session.commit()

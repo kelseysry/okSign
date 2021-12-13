@@ -23,14 +23,18 @@ class Profile(db.Model):
     user_audio = db.Column(db.String(255))
     gender_id = db.Column(db.Integer, db.ForeignKey("genders.id"), nullable=True)
     number_likes = db.Column(db.Integer)
-    image_url = db.Column(db.String)
+    image_url1 = db.Column(db.String)
+    image_url2 = db.Column(db.String)
+    image_url3 = db.Column(db.String)
+    image_url4 = db.Column(db.String)
+    image_url5 = db.Column(db.String)
+    image_url6 = db.Column(db.String)
     orientation_id = db.Column(db.Integer, db.ForeignKey("orientations.id"), nullable=True)
-    relationship_id = db.Column(db.Integer, db.ForeignKey("relationships.id"), nullable=True)
+    partner_id = db.Column(db.Integer, db.ForeignKey("partners.id"), nullable=True)
     pronouns = db.Column(db.String(255))
     height = db.Column(db.Integer)
     education = db.Column(db.String(255))
     occupation = db.Column(db.String(255))
-    religion = db.Column(db.String(255))
     horoscope_id = db.Column(db.Integer, db.ForeignKey("horoscopes.id"), nullable=True)
     smoking = db.Column(db.Boolean, default=False)
     drinking = db.Column(db.Boolean, default=False)
@@ -38,10 +42,9 @@ class Profile(db.Model):
     pet_id = db.Column(db.Integer, db.ForeignKey("pets.id"), nullable=True)
     politic_id = db.Column(db.Integer, db.ForeignKey("politics.id"), nullable=True)
     religion_id = db.Column(db.Integer, db.ForeignKey("religions.id"), nullable=True)
-
     gender = db.relationship("Gender", back_populates="profile")
     user = db.relationship("User", back_populates="profile")
-    relationship_status = db.relationship("Relationship", back_populates="profile")
+    partner = db.relationship("Partner", back_populates="profile")
     orientation = db.relationship("Orientation", back_populates="profile")
     horoscope = db.relationship("Horoscope", back_populates="profile")
     children = db.relationship("Children", back_populates="profile")
@@ -69,9 +72,14 @@ class Profile(db.Model):
             'user_audio': self.user_audio,
             'gender_id': self.gender_id,
             'number_likes': self.number_likes,
-            'image_url': self.image_url,
+            'image_url1': self.image_url1,
+            'image_url2': self.image_url2,
+            'image_url3': self.image_url3,
+            'image_url4': self.image_url4,
+            'image_url5': self.image_url5,
+            'image_url6': self.image_url6,
             'orientation_id': self.orientation_id,
-            'relationship_id': self.relationship_id,
+            'partner_id': self.partner_id,
             'pronouns': self.pronouns,
             'height': self.height,
             'education': self.education,

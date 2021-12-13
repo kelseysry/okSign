@@ -3,8 +3,8 @@ from app.models import db, Conversation
 
 def seed_conversations():
     conversation1 = Conversation(
-      user_id_one=2,
-      user_id_two=1,
+      user_id_one=1,
+      user_id_two=2,
     )
 
 

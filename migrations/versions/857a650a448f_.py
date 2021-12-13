@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 3d36ae4cf29d
-Revises: ffdc0a98111c
-Create Date: 2021-12-12 18:44:44.434816
+Revision ID: 857a650a448f
+Revises: 
+Create Date: 2021-12-12 20:58:22.719458
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '3d36ae4cf29d'
-down_revision = 'ffdc0a98111c'
+revision = '857a650a448f'
+down_revision = None
 branch_labels = None
 depends_on = None
 
@@ -48,6 +48,13 @@ def upgrade():
     sa.Column('updated_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
+    op.create_table('partners',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('title', sa.String(length=255), nullable=True),
+    sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
+    sa.Column('updated_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
+    sa.PrimaryKeyConstraint('id')
+    )
     op.create_table('pets',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('option', sa.String(length=255), nullable=True),
@@ -62,19 +69,25 @@ def upgrade():
     sa.Column('updated_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_table('relationships',
-    sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('type', sa.String(length=255), nullable=True),
-    sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
-    sa.Column('updated_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
-    sa.PrimaryKeyConstraint('id')
-    )
     op.create_table('religions',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('belief', sa.String(length=255), nullable=True),
     sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
     sa.Column('updated_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
     sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('users',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('first_name', sa.String(length=30), nullable=False),
+    sa.Column('last_name', sa.String(length=30), nullable=False),
+    sa.Column('username', sa.String(length=40), nullable=False),
+    sa.Column('email', sa.String(length=255), nullable=False),
+    sa.Column('hashed_password', sa.String(length=255), nullable=False),
+    sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
+    sa.Column('updated_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
+    sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('email'),
+    sa.UniqueConstraint('username')
     )
     op.create_table('conversations',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -87,35 +100,7 @@ def upgrade():
     sa.ForeignKeyConstraint(['user_id_two'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    op.create_table('questions',
-    sa.Column('id', sa.Integer(), nullable=False),
-    sa.Column('question1', sa.String(), nullable=True),
-    sa.Column('must_answer1', sa.String(), nullable=True),
-    sa.Column('question2', sa.String(), nullable=True),
-    sa.Column('must_answer2', sa.String(), nullable=True),
-    sa.Column('question3', sa.String(), nullable=True),
-    sa.Column('must_answer3', sa.String(), nullable=True),
-    sa.Column('question4', sa.String(), nullable=True),
-    sa.Column('must_answer4', sa.String(), nullable=True),
-    sa.Column('question5', sa.String(), nullable=True),
-    sa.Column('must_answer5', sa.String(), nullable=True),
-    sa.Column('question6', sa.String(), nullable=True),
-    sa.Column('must_answer6', sa.String(), nullable=True),
-    sa.Column('question7', sa.String(), nullable=True),
-    sa.Column('must_answer7', sa.String(), nullable=True),
-    sa.Column('question8', sa.String(), nullable=True),
-    sa.Column('must_answer8', sa.String(), nullable=True),
-    sa.Column('question9', sa.String(), nullable=True),
-    sa.Column('must_answer9', sa.String(), nullable=True),
-    sa.Column('question10', sa.String(), nullable=True),
-    sa.Column('must_answer10', sa.String(), nullable=True),
-    sa.Column('user_id', sa.Integer(), nullable=True),
-    sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
-    sa.Column('updated_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
-    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
-    sa.PrimaryKeyConstraint('id')
-    )
-    op.create_table('userProfiles',
+    op.create_table('profiles',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('age', sa.Integer(), nullable=True),
@@ -154,8 +139,36 @@ def upgrade():
     sa.ForeignKeyConstraint(['orientation_id'], ['orientations.id'], ),
     sa.ForeignKeyConstraint(['pet_id'], ['pets.id'], ),
     sa.ForeignKeyConstraint(['politic_id'], ['politics.id'], ),
-    sa.ForeignKeyConstraint(['relationship_id'], ['relationships.id'], ),
+    sa.ForeignKeyConstraint(['relationship_id'], ['partners.id'], ),
     sa.ForeignKeyConstraint(['religion_id'], ['religions.id'], ),
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
+    )
+    op.create_table('questions',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('question1', sa.String(), nullable=True),
+    sa.Column('must_answer1', sa.String(), nullable=True),
+    sa.Column('question2', sa.String(), nullable=True),
+    sa.Column('must_answer2', sa.String(), nullable=True),
+    sa.Column('question3', sa.String(), nullable=True),
+    sa.Column('must_answer3', sa.String(), nullable=True),
+    sa.Column('question4', sa.String(), nullable=True),
+    sa.Column('must_answer4', sa.String(), nullable=True),
+    sa.Column('question5', sa.String(), nullable=True),
+    sa.Column('must_answer5', sa.String(), nullable=True),
+    sa.Column('question6', sa.String(), nullable=True),
+    sa.Column('must_answer6', sa.String(), nullable=True),
+    sa.Column('question7', sa.String(), nullable=True),
+    sa.Column('must_answer7', sa.String(), nullable=True),
+    sa.Column('question8', sa.String(), nullable=True),
+    sa.Column('must_answer8', sa.String(), nullable=True),
+    sa.Column('question9', sa.String(), nullable=True),
+    sa.Column('must_answer9', sa.String(), nullable=True),
+    sa.Column('question10', sa.String(), nullable=True),
+    sa.Column('must_answer10', sa.String(), nullable=True),
+    sa.Column('user_id', sa.Integer(), nullable=True),
+    sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
+    sa.Column('updated_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
@@ -171,27 +184,20 @@ def upgrade():
     sa.ForeignKeyConstraint(['from_user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    op.add_column('users', sa.Column('first_name', sa.String(length=30), nullable=False))
-    op.add_column('users', sa.Column('last_name', sa.String(length=30), nullable=False))
-    op.add_column('users', sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True))
-    op.add_column('users', sa.Column('updated_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=True))
     # ### end Alembic commands ###
 
 
 def downgrade():
     # ### commands auto generated by Alembic - please adjust! ###
-    op.drop_column('users', 'updated_at')
-    op.drop_column('users', 'created_at')
-    op.drop_column('users', 'last_name')
-    op.drop_column('users', 'first_name')
     op.drop_table('messages')
-    op.drop_table('userProfiles')
     op.drop_table('questions')
+    op.drop_table('profiles')
     op.drop_table('conversations')
+    op.drop_table('users')
     op.drop_table('religions')
-    op.drop_table('relationships')
     op.drop_table('politics')
     op.drop_table('pets')
+    op.drop_table('partners')
     op.drop_table('orientations')
     op.drop_table('horoscopes')
     op.drop_table('genders')
