@@ -43,6 +43,12 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
         </ProtectedRoute>
+        <ProtectedRoute path='conversations' exact={true} >
+          {/* <User /> */}
+        </ProtectedRoute>
+        <ProtectedRoute path='conversations/:conversationId/messages' exact={true} >
+          {/* <User /> */}
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );
