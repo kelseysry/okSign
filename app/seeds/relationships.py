@@ -4,13 +4,13 @@ from app.models import db, Relationship
 # Adds a demo user, you can add other users here if you want
 def seed_relationships():
     Monogamous = Relationship(
-      type ="Monogamous"
+      title ="Monogamous"
     )
     NonMonogamous = Relationship(
-      type="Non-monogamous"
+      title="Non-monogamous"
     )
     Open = Relationship(
-      type="Open to either"
+      title="Open to either"
     )
 
 

@@ -1,4 +1,5 @@
 from .db import db
+from sqlalchemy.sql import func
 
 
 class Question(db.Model):
@@ -31,7 +32,7 @@ class Question(db.Model):
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
 
 
-    user = db.relationship("User", back_populate="questions")
+    user = db.relationship("User", back_populates="questions")
 
     def to_dict(self):
         return {

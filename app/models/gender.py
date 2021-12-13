@@ -1,4 +1,5 @@
 from .db import db
+from sqlalchemy.sql import func
 
 
 class Gender(db.Model):
@@ -10,7 +11,7 @@ class Gender(db.Model):
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
 
 
-    userProfile = db.relationship("UserProfile", back_populate="gender")
+    profile = db.relationship("Profile", back_populates="gender")
 
 
     def to_dict(self):

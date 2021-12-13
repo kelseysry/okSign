@@ -1,4 +1,5 @@
 from .db import db
+from sqlalchemy.sql import func
 
 
 class Horoscope(db.Model):
@@ -12,7 +13,7 @@ class Horoscope(db.Model):
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
 
 
-    userProfile = db.relationship("UserProfile", back_populate="horoscope")
+    profile = db.relationship("Profile", back_populates="horoscope")
 
 
     def to_dict(self):

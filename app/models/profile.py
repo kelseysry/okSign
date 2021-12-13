@@ -1,8 +1,9 @@
 from .db import db
+from sqlalchemy.sql import func
 
 
-class UserProfile(db.Model):
-    __tablename__ = 'userProfiles'
+class Profile(db.Model):
+    __tablename__ = 'profiles'
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
@@ -38,22 +39,22 @@ class UserProfile(db.Model):
     politic_id = db.Column(db.Integer, db.ForeignKey("politics.id"), nullable=True)
     religion_id = db.Column(db.Integer, db.ForeignKey("religions.id"), nullable=True)
 
-    gender = db.relationship("Gender", back_populate="userProfile")
-    user = db.relationship("User", back_populate="userProfile")
-    relationship = db.relationship("Relationship", back_populate="userProfile")
-    orientation = db.relationship("Orientation", back_populate="userProfile")
-    horoscope = db.relationship("Horoscope", back_populate="userProfile")
-    children = db.relationship("Children", back_populate="userProfile")
-    pet = db.relationship("Pet", back_populate="userProfile")
-    politic = db.relationship("Politic", back_populate="userProfile")
-    religion = db.relationship("Religion", back_populate="userProfile")
+    gender = db.relationship("Gender", back_populates="profile")
+    user = db.relationship("User", back_populates="profile")
+    relationship_status = db.relationship("Relationship", back_populates="profile")
+    orientation = db.relationship("Orientation", back_populates="profile")
+    horoscope = db.relationship("Horoscope", back_populates="profile")
+    children = db.relationship("Children", back_populates="profile")
+    pet = db.relationship("Pet", back_populates="profile")
+    politic = db.relationship("Politic", back_populates="profile")
+    religion = db.relationship("Religion", back_populates="profile")
 
     def to_dict(self):
         return {
             'id': self.id,
             'user_id': self.user_id,
             'age': self.age,
-            'location': self.location
+            'location': self.location,
             'lat': self.lat,
             'lng': self.lng,
             'about_me': self.about_me,
@@ -67,20 +68,20 @@ class UserProfile(db.Model):
             'looking_for': self.looking_for,
             'user_audio': self.user_audio,
             'gender_id': self.gender_id,
-            'number_likes' = self.number_likes,
-            'image_url' = self.image_url,
-            'orientation_id' = self.orientation_id,
-            'relationship_id' = self.relationship_id,
-            'pronouns' = self.pronouns,
-            'height' = self.height,
-            'education' = self.education,
-            'occupation' = self.occupation,
-            'religion' = self.religion,
-            'horoscope_id' = self.horoscope_id,
-            'smoking' = self.smoking,
-            'drinking' = self.drinking,
-            'children_id' = self.children_id,
-            'pet_id' = self.pet_id,
-            'politic_id' = self.politic_id,
-            'religion_id' = self.religion_id
+            'number_likes': self.number_likes,
+            'image_url': self.image_url,
+            'orientation_id': self.orientation_id,
+            'relationship_id': self.relationship_id,
+            'pronouns': self.pronouns,
+            'height': self.height,
+            'education': self.education,
+            'occupation': self.occupation,
+            'religion': self.religion,
+            'horoscope_id': self.horoscope_id,
+            'smoking': self.smoking,
+            'drinking': self.drinking,
+            'children_id': self.children_id,
+            'pet_id': self.pet_id,
+            'politic_id': self.politic_id,
+            'religion_id': self.religion_id
         }

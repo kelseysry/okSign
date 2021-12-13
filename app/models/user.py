@@ -1,7 +1,7 @@
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-
+from sqlalchemy.sql import func
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
@@ -16,11 +16,17 @@ class User(db.Model, UserMixin):
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
 
 
-    userProfile = db.relationship("User", back_populate="user")
-    questions = db.relationship("Question", back_populate="user")
-    conversations = db.relationship("Conversation", back_populate="user")
-    messages = db.relationship("Messages", back_populate="user")
+    profile = db.relationship("Profile", back_populates="user")
+    questions = db.relationship("Question", back_populates="user")
+    from_user_id = db.relationship("Message", back_populates="user")
 
+    # conversation1 = db.relationship("Conversation", back_populates="userOne")
+    # conversation2 = db.relationship("Conversation", back_populates="userTwo")
+
+
+
+
+    # conversations = db.relationship("Conversation", back_populates="users")
 
     @property
     def password(self):

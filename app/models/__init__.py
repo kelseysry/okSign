@@ -1,7 +1,7 @@
 from .db import db
 from .user import User
 from .gender import Gender
-from .userProfile import UserProfile
+from .profile import Profile
 from .orientation import Orientation
 from .horoscope import Horoscope
 from .children import Children
@@ -11,3 +11,4 @@ from .question import Question
 from .conversation import Conversation
 from .message import Message
 from .religion import Religion
+from .relationship import Relationship

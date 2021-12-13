@@ -6,7 +6,7 @@ def seed_politics():
       option ="Politically liberal"
     )
     option2 = Politic(
-      option="Politically moderate
+      option="Politically moderate"
     )
     option3 = Politic(
       option="Politically conservative"

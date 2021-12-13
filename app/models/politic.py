@@ -1,4 +1,5 @@
 from .db import db
+from sqlalchemy.sql import func
 
 
 class Politic(db.Model):
@@ -11,7 +12,7 @@ class Politic(db.Model):
 
 
 
-    userProfile = db.relationship("UserProfile", back_populate="politic")
+    profile = db.relationship("Profile", back_populates="politic")
 
 
     def to_dict(self):

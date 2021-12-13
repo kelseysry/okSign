@@ -1,4 +1,5 @@
 from .db import db
+from sqlalchemy.sql import func
 
 
 class Religion(db.Model):
@@ -11,7 +12,7 @@ class Religion(db.Model):
 
 
 
-    userProfile = db.relationship("UserProfile", back_populate="religion")
+    profile = db.relationship("Profile", back_populates="religion")
 
 
     def to_dict(self):

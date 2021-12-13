@@ -1,4 +1,5 @@
 from .db import db
+from sqlalchemy.sql import func
 
 
 class Orientation(db.Model):
@@ -11,7 +12,7 @@ class Orientation(db.Model):
 
 
 
-    userProfile = db.relationship("UserProfile", back_populate="orientation")
+    profile = db.relationship("Profile", back_populates="orientation")
 
 
     def to_dict(self):

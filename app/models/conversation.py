@@ -12,8 +12,11 @@ class Conversation(db.Model):
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
 
-    users = db.relationship("User", back_populate="conversations")
+    # users = db.relationship("User", back_populates="conversations")
+    userOne = db.relationship("User", foreign_keys="[Conversation.user_id_one]")
+    userTwo = db.relationship("User", foreign_keys="[Conversation.user_id_two]")
 
+    messages = db.relationship("Message", back_populates="conversation")
 
 
     def to_dict(self):
