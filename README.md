@@ -1,3 +1,11 @@
+# okSign 
+
+okSign is a dating app based off of okCupid. Users can answers a set of 10 personality questions and be matched with other users based on their answers. A user can also search for others users based on traits and location. 
+
+
+
+
+
 # Flask React Project
 
 This is the starter for the Flask React project.
