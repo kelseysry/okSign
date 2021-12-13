@@ -16,7 +16,7 @@ def seed_userProfiles():
   secrets = "wouldn't be a secret anymore if I said it",
   looking_for = "must have costco executive membership "
   user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1639292032/okSign/New_Coronavirus_Laws_Funny_vu9ais.mp3",
-  gender_id = # fill this out
+  gender_id =1,
   number_likes = 10,
   image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1639292458/okSign/kelsey1_yut7zy.png",
   image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1639294329/okSign/IMG_1193_amp2ic.jpg",
@@ -24,19 +24,19 @@ def seed_userProfiles():
   image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1639293141/okSign/Screen_Shot_2021-12-11_at_11.11.52_PM_kdphkm.png",
   image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1639294470/okSign/IMG_1192_dtdyvh.jpg",
   image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1639294665/okSign/Screen_Shot_2021-12-11_at_11.16.59_PM_mez2fg.png",
-  orientation_id = # fill this out
-  relationship_id = # fill this out
+  orientation_id =1,
+  relationship_id =1,
   pronouns = db.Column(db.String(255)),
   height = db.Column(db.Integer),
   education = db.Column(db.String(255)),
   occupation = db.Column(db.String(255)),
   religion = db.Column(db.String(255)),
-  horoscope_id = # fill this out
+  horoscope_id =11,
   smoking = False
   drinking = False,
-  children_id = # fill this out
-  pet_id = # fill this out
-  politics_id = # fill this out
+  children_id =3,
+  pet_id =1,
+  politics_id =2 
   )
 
   db.session.add(userProfile1)
