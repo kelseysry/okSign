@@ -11,7 +11,6 @@ class ProfileForm(FlaskForm):
     lat = FloatField('lat', validators=[DataRequired()])
     lng = FloatField('lng', validators=[DataRequired()])
     about_me = StringField('about_me',validators=[DataRequired()])
-
     goal = StringField('goal',validators=[DataRequired()])
     talent = StringField('talent',validators=[DataRequired()])
     my_traits = StringField('my_traits',validators=[DataRequired()])
@@ -39,6 +38,6 @@ class ProfileForm(FlaskForm):
     smoking = BooleanField('smoking')
     drinking = BooleanField('drinking')
     children_id = IntegerField('children_id', validators=[DataRequired()])
-    pet_id = = IntegerField('pet_id', validators=[DataRequired()])
+    pet_id = IntegerField('pet_id', validators=[DataRequired()])
     politic_id = IntegerField('politic_id', validators=[DataRequired()])
     religion_id = IntegerField('religion_id', validators=[DataRequired()])
