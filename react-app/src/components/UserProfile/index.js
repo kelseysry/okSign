@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { getProfile } from "../../store/profile";
+import './UserProfile.css'
 
 
 function UserProfile() {
@@ -36,6 +37,7 @@ function UserProfile() {
 
   return (
     <>
+    <img className= 'user_profile_image' src={profileObj.image_url1} alt="Photo"/>
     <div className="user_profile_container">
 
       <div>
@@ -101,8 +103,21 @@ function UserProfile() {
         <div>
           <i class="fas fa-cocktail"></i> {profileObj?.smoking? "Drinks" : "Doesn't drink"}
         </div>
-
-
+        <div>
+          children_id: {profileObj?.children_id}
+        </div>
+        <div>
+          pet_id: {profileObj?.pet_id}
+        </div>
+        <div>
+          politic_id: {profileObj?.politic_id}
+        </div>
+        <div>
+          religion_id: {profileObj?.religion_id}
+        </div>
+        <div>
+          partner_id: {profileObj?.partner_id}
+        </div>
       </section>
 
       {/* <ul>

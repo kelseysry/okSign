@@ -1,0 +1,6 @@
+.user_profile_image {
+  width: 100px !important;
+  height: 100px !important;
+  border-radius: 50% !important;
+  margin: 0 0 10px 0 !important;
+}
