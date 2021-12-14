@@ -42,6 +42,8 @@ class Profile(db.Model):
     pet_id = db.Column(db.Integer, db.ForeignKey("pets.id"), nullable=True)
     politic_id = db.Column(db.Integer, db.ForeignKey("politics.id"), nullable=True)
     religion_id = db.Column(db.Integer, db.ForeignKey("religions.id"), nullable=True)
+
+
     gender = db.relationship("Gender", back_populates="profile")
     user = db.relationship("User", back_populates="profile")
     partner = db.relationship("Partner", back_populates="profile")
@@ -84,7 +86,6 @@ class Profile(db.Model):
             'height': self.height,
             'education': self.education,
             'occupation': self.occupation,
-            'religion': self.religion,
             'horoscope_id': self.horoscope_id,
             'smoking': self.smoking,
             'drinking': self.drinking,
