@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 // import isURL from 'validator/es/lib/isURL';
 import { useDispatch, useSelector } from "react-redux";
 import { editProfile, getProfiles } from '../../store/profile'
+import isURL from 'validator/es/lib/isURL';
 
 const EditUserProfileForm = () => {
   const dispatch = useDispatch();
@@ -80,7 +81,11 @@ const EditUserProfileForm = () => {
     if(!user_audio) validationErrors.push("audio is required")
     if(!gender_id) validationErrors.push("gender is required")
     if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
-    if(!image_url1) validationErrors.push("you need 6 photos!")
+    if(!image_url1) {
+      validationErrors.push("you need 6 photos!")
+    } else if (!isURL(image_url1)) {
+      validationErrors.push("Please provide a valid link for the image")
+    }
     if(!image_url2) validationErrors.push("you need 6 photos!")
     if(!image_url3) validationErrors.push("you need 6 photos!")
     if(!image_url4) validationErrors.push("you need 6 photos!")
