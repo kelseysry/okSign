@@ -47,7 +47,7 @@ function UserProfile() {
         goal : {profileObj?.goal}
       </div>
       <div>
-        talent : {profileObj?.goal}
+        talent : {profileObj?.talent}
       </div>
       <div>
         my traits : {profileObj?.my_traits}
