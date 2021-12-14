@@ -61,6 +61,19 @@ const EditUserProfileForm = () => {
   const [religion_id, setReligion_id] = useState(currentProfile?.religion_id);
   const [errors, setErrors] = useState([]);
 
+  useEffect(() => {
+    const validationErrors = []
+    if(!age) validationErrors.push("age is required")
+    if(!location) validationErrors.push("location is required")
+    if(!lat) validationErrors.push("lat is required")
+    if(!lng) validationErrors.push("lng is required")
+    if(!about_me) validationErrors.push("about me is required")
+    if(about_me?.length < 3) validationErrors.push("about me must be longer than 3 characters!")
+    if(!goal) validationErrors.push("goal is required")
+    if(!talent) validationErrors.push("talent is required")
+
+  })
+
   return (
     <div> in the edit user profile component </div>
   )
