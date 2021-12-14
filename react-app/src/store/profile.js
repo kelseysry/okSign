@@ -29,7 +29,7 @@ export const getProfile = (profile_id) => async(dispatch) => {
 }
 
 //thunk for editing a profile
-export const editProfile= (editProfile,user_id) => async dispatch => {
+export const editProfile= (editProfile,profile_id) => async dispatch => {
   const response = await fetch(`/api/profiles/${profile_id}`, {
     method: 'PUT',
     headers: {
@@ -41,7 +41,7 @@ export const editProfile= (editProfile,user_id) => async dispatch => {
   // console.log('response in the thunk editProfile', response)
 
   const profile = await response.json();
-  dispatch(editProfile(profile, user_id))
+  dispatch(editProfile(profile, profile_id))
   return profile
 }
 

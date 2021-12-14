@@ -37,7 +37,7 @@ function UserProfile() {
 
   return (
     <>
-    <img className= 'user_profile_image' src={profileObj.image_url1} alt="Photo"/>
+    <img className= 'user_profile_image' src={profileObj?.image_url1} alt="Photo"/>
     <div className="user_profile_container">
 
       <div>
