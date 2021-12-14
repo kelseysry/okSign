@@ -36,21 +36,67 @@ function UserProfile() {
 
   return (
     <>
-    <div> in the userprofile component</div>
-    <div>
-      {profileObj?.goal}
+    <div className="user_profile_container">
+
+      <div>
+        about me : {profileObj?.about_me}
+      </div>
+      <div>
+        goal : {profileObj?.goal}
+      </div>
+      <div>
+        talent : {profileObj?.goal}
+      </div>
+      <div>
+        my traits : {profileObj?.my_traits}
+      </div>
+      <div>
+        needs : {profileObj?.needs}
+      </div>
+      <div>
+        hobbies : {profileObj?.hobbies}
+      </div>
+      <div>
+        moments !! need to seed this data : {profileObj?.moments}
+      </div>
+      <div>
+        secrets : {profileObj?.secrets}
+      </div>
+      <div>
+        looking for : {profileObj?.looking_for}
+      </div>
+      <div>
+        user audio : {profileObj?.user_audio}
+      </div>
+      <div>
+        gender : {profileObj?.gender_id}
+      </div>
+      <div>
+        number of likes: {profileObj?.number_likes}
+      </div>
+      <div>
+        orientation : {profileObj?.orientation_id}
+      </div>
+      <div>
+        pronouns: {profileObj?.number_likes}
+      </div>
+
+      {/* <ul>
+        <li>
+          <strong>User Id</strong> {userId}
+        </li>
+        <li>
+          <strong>Username</strong> {user.username}
+        </li>
+        <li>
+          <strong>Email</strong> {user.email}
+        </li>
+      </ul> */}
+
     </div>
-    <ul>
-      <li>
-        <strong>User Id</strong> {userId}
-      </li>
-      <li>
-        <strong>Username</strong> {user.username}
-      </li>
-      <li>
-        <strong>Email</strong> {user.email}
-      </li>
-    </ul>
+
+
+
     </>
   );
 }
