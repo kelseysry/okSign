@@ -68,18 +68,42 @@ function UserProfile() {
       <div>
         user audio : {profileObj?.user_audio}
       </div>
-      <div>
-        gender : {profileObj?.gender_id}
-      </div>
-      <div>
-        number of likes: {profileObj?.number_likes}
-      </div>
-      <div>
-        orientation : {profileObj?.orientation_id}
-      </div>
-      <div>
-        pronouns: {profileObj?.number_likes}
-      </div>
+
+      <section className="Details">
+        <h1> Details </h1>
+        <div>
+          gender : {profileObj?.gender_id}
+        </div>
+        <div>
+          number of likes: {profileObj?.number_likes}
+        </div>
+        <div>
+          orientation : {profileObj?.orientation_id}
+        </div>
+        <div>
+          pronouns: {profileObj?.pronouns}
+        </div>
+        <div>
+          education: {profileObj?.education}
+        </div>
+        <div>
+          education: {profileObj?.education}
+        </div>
+        <div>
+          occupation: {profileObj?.occupation}
+        </div>
+        <div>
+          horoscope_id: {profileObj?.horoscope_id}
+        </div>
+        <div>
+          smoking: {profileObj?.smoking? "Smokes" : "Doesn't smoke"}
+        </div>
+        <div>
+          <i class="fas fa-cocktail"></i> {profileObj?.smoking? "Drinks" : "Doesn't drink"}
+        </div>
+
+
+      </section>
 
       {/* <ul>
         <li>
