@@ -7,15 +7,17 @@ import './EditUserProfileForm.css'
 
 const EditUserProfileForm = () => {
   const dispatch = useDispatch();
-  const profilesObj = useSelector((state) => state.profile)
+  const [isLoaded, setIsLoaded] = useState(false);
+  const profilesObj = useSelector((state) => state?.profile)
   const profiles = Object.values(profilesObj)
-
   // grab all the profiles and filter out the one that has user_id matching with session user
   // have to do this b/c a user can delete their profile so then profile_id is no longer
   // directly correlated with the user.id
-  useEffect(() => {
-    dispatch(getProfiles());
-  },[dispatch])
+  useEffect(async () => {
+    await dispatch(getProfiles());
+    await getCurrentProfile(user_id,profiles)
+    if (!isLoaded) setIsLoaded(true);
+  },[dispatch, profiles.length])
 
   // grab the user from state so a user doesn't have the manually input their data into the form
   //  automatically know who's submitting the form
@@ -23,10 +25,20 @@ const EditUserProfileForm = () => {
   const user_id = sessionUser.id
 
   // console.log("profiles in editUser", profiles)
-  let currentProfile = profiles[0]?.filter((profile) => {return profile.user_id === user_id})
+  // let currentProfile = profiles[0]?.filter((profile) => {return profile.user_id === user_id})
   // console.log("currentProfile in edit", currentProfile)
+  // console.log("currentProfile in edit age--", currentProfile[0]?.age)
 
-  const [age, setAge] = useState(currentProfile?.age);
+  let currentProfile
+
+  const getCurrentProfile = (user_id,profiles) => {
+
+      return currentProfile =  profiles[0]?.filter((profile) => {return profile.user_id === user_id})
+  }
+
+
+
+  const [age, setAge] = useState(currentProfile[0]?.age ? currentProfile[0]?.age : "");
   const [location, setLocation] = useState(currentProfile?.location);
   const [lat, setLat] = useState(currentProfile?.lat);
   const [lng, setLng] = useState(currentProfile?.lng);
@@ -62,6 +74,7 @@ const EditUserProfileForm = () => {
   const [politic_id, setPolitic_id] = useState(currentProfile?.politic_id);
   const [religion_id, setReligion_id] = useState(currentProfile?.religion_id);
   const [errors, setErrors] = useState([]);
+
 
   useEffect(() => {
     const validationErrors = []
@@ -110,16 +123,17 @@ const EditUserProfileForm = () => {
 
   }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id])
 
+  // currentProfile ? currentProfile : null
+
   const handleSubmit = async(e) => {
     e.preventDefault();
 
 
   }
 
-
-
   return (
-    <section className="edit-profile-form-container">
+    <>
+    {isLoaded &&  (<section className="edit-profile-form-container">
       <form className="edit-profile-form" onSubmit={handleSubmit}>
         <label>
           Age
@@ -207,7 +221,7 @@ const EditUserProfileForm = () => {
             type="text"
             placeholder="needs"
             value={age}
-            onChange={(e) => setAge(e.target.value)}
+            onChange={(e) => setNeeds(e.target.value)}
             >
             </input>
         </label>
@@ -218,6 +232,16 @@ const EditUserProfileForm = () => {
             placeholder="hobbies"
             value={hobbies}
             onChange={(e) => setHobbies(e.target.value)}
+            >
+            </input>
+        </label>
+        <label>
+          Moments
+            <input
+            type="text"
+            placeholder="moments"
+            value={moments}
+            onChange={(e) => setMoments(e.target.value)}
             >
             </input>
         </label>
@@ -402,6 +426,16 @@ const EditUserProfileForm = () => {
             </input>
         </label>
         <label>
+          Drinking
+            <input
+            type="text"
+            placeholder="drinking"
+            value={drinking}
+            onChange={(e) => setDrinking(e.target.value)}
+            >
+            </input>
+        </label>
+        <label>
           Smoker
             <input
             type="text"
@@ -452,10 +486,21 @@ const EditUserProfileForm = () => {
             </input>
         </label>
 
+        <ul className="error">
+          {errors.map((error) => <li key={error}>{error}</li>)}
+        </ul>
+        <button
+          className="mobile-submit-create-business"
+          type="submit"
+          disabled={errors.length>0}
+        >
+          Submit
+        </button>
 
 
         </form>
-      </section>
+      </section>)}
+      </>
     )
 }
 
