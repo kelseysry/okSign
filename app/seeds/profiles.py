@@ -54,7 +54,7 @@ def seed_profiles():
   secrets = "I hate working from 9 to 5",
   looking_for = "a decent person",
   user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1639359984/okSign/nanami_audio_tq9fb3.mp3",
-  gender_id =1,
+  gender_id =2,
   number_likes = 2,
   image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1639360793/okSign/Screen_Shot_2021-12-12_at_5.59.47_PM_kdl0py.png",
   image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1639360649/okSign/Screen_Shot_2021-12-12_at_5.57.22_PM_klubft.png",
@@ -77,8 +77,86 @@ def seed_profiles():
   politic_id =4
   )
 
+  profile3 = Profile(
+  user_id =3,
+  age = 200,
+  location = 'Tokyo, Japan',
+  lat = 35.66386037006631,
+  lng = 139.71280545767016,
+  about_me ="ready to fight anybody",
+  goal = "to become king",
+  talent = "I can fly",
+  my_traits ="stronger than you",
+  needs = "to become king",
+  hobbies = "picking fights",
+  secrets = "...",
+  looking_for = "someone to fight",
+  user_audio = "",
+  gender_id =2,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1639454473/okSign/Screen_Shot_2021-12-13_at_8.01.05_PM_lmvdnf.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1639454473/okSign/Screen_Shot_2021-12-13_at_8.01.05_PM_lmvdnf.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1639454473/okSign/Screen_Shot_2021-12-13_at_8.01.05_PM_lmvdnf.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1639454473/okSign/Screen_Shot_2021-12-13_at_8.01.05_PM_lmvdnf.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1639454473/okSign/Screen_Shot_2021-12-13_at_8.01.05_PM_lmvdnf.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1639454473/okSign/Screen_Shot_2021-12-13_at_8.01.05_PM_lmvdnf.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='He/Him',
+  height = 185,
+  education = "n/a",
+  occupation ="Sexta Espada",
+  religion_id = 10,
+  horoscope_id =5,
+  smoking = True,
+  drinking = True,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
+  profile4 = Profile(
+  user_id =4,
+  age = 85,
+  location = 'Tokyo, Japan',
+  lat = 35.66386037006631,
+  lng = 139.71280545767016,
+  about_me ="",
+  goal = "to be a great vampire knight",
+  talent = "I can fight vampires",
+  my_traits ="composed, quiet, cold",
+  needs = "to become king",
+  hobbies = "protecting others",
+  secrets = "...",
+  looking_for = "someone to protect",
+  user_audio = "",
+  gender_id =2,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1639455401/okSign/Screen_Shot_2021-12-13_at_8.16.34_PM_ravnoc.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1639455401/okSign/Screen_Shot_2021-12-13_at_8.16.34_PM_ravnoc.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1639455401/okSign/Screen_Shot_2021-12-13_at_8.16.34_PM_ravnoc.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1639455401/okSign/Screen_Shot_2021-12-13_at_8.16.34_PM_ravnoc.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1639455401/okSign/Screen_Shot_2021-12-13_at_8.16.34_PM_ravnoc.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1639455401/okSign/Screen_Shot_2021-12-13_at_8.16.34_PM_ravnoc.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='He/Him',
+  height = 185,
+  education = "n/a",
+  occupation ="vampire knight",
+  religion_id = 10,
+  horoscope_id =8,
+  smoking = False,
+  drinking = False,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
   db.session.add(profile1)
   db.session.add(profile2)
+  db.session.add(profile3)
+  db.session.add(profile4)
 
   db.session.commit()
 
