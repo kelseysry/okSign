@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { editProfile } from '../../store/profile'
 
-const EditUserProfile = () => {
+const EditUserProfileForm = () => {
   const dispatch = useDispatch();
   const profile = useSelector((state) => state.profile)
 
@@ -24,4 +24,4 @@ const EditUserProfile = () => {
 }
 
 
-export default EditUserProfile
+export default EditUserProfileForm

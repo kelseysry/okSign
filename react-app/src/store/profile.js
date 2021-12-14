@@ -1,5 +1,6 @@
 const LOAD_PROFILE = "question/LOAD_PROFILE";
 const EDIT_ONE_PROFILE = "profile/EDIT_ONE_PROFILE"
+const LOAD_PROFILES = "question/LOAD_PROFILES";
 
 // action creator to load one profile
 const loadProfile = (profile) => ({
@@ -13,6 +14,12 @@ export const editOneProfile = (profile, user_id) => ({
   profile,
   user_id
 })
+
+// action creator to load all profiles
+const loadAllProfiles = (profiles) => ({
+  type: LOAD_PROFILES,
+  profiles,
+});
 
 
 
@@ -46,6 +53,17 @@ export const editProfile= (editProfile,profile_id) => async dispatch => {
 }
 
 
+// thunk for getting all profiles
+export const getProfiles = () => async(dispatch) => {
+
+    const res = await fetch(`/api/profiles`)
+    const profiles = await res.json();
+    // console.log("profiles res.json()", profiles)
+    dispatch(loadAllProfiles(profiles))
+}
+
+
+
 // reducer
 const initialState = {};
 const profileReducer = (state = initialState, action) => {
@@ -66,6 +84,14 @@ const profileReducer = (state = initialState, action) => {
         return newState
       }
       return state
+    }
+    case LOAD_PROFILES: {
+      const newState = {...state};
+      // console.log("reducer profiles", action.profiles)
+      for (const[key,value] of Object.entries(action.profiles)) {
+        newState[key] = value
+      }
+      return newState
     }
 
     default:
