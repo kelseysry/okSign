@@ -5,11 +5,11 @@ from flask_login import login_required, current_user
 
 profile_routes = Blueprint('profiles', __name__)
 
-
-# @profile_routes.route('/')
-# def profiles():
-#     profiles = Profile.query.all()
-#     return {'profiles': [profile.to_dict() for profile in profiles]}
+# get all profiles in db 
+@profile_routes.route('/')
+def profiles():
+    profiles = Profile.query.all()
+    return {'profiles': [profile.to_dict() for profile in profiles]}
 
 
 # get one profile
