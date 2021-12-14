@@ -38,11 +38,49 @@ const Discover = () => {
     // console.log("question.question1", question.question1)
     // console.log("currentUserQuestion.question1", currentUserQuestion[0].question1)
     if(!counter[question.user_id]) {
-      counter[question.user_id] = 0
+      counter[question.user_id] = 1
     }
-    if(question.question1 === currentUserQuestion[0].question1) {
+
+    if(question.question1 === currentUserQuestion[0].must_answer1) {
       counter[question.user_id] += 1
     }
+
+    if(question.question2 === currentUserQuestion[0].must_answer2) {
+      counter[question.user_id] += 1
+    }
+
+    if(question.question3 === currentUserQuestion[0].must_answer3) {
+      counter[question.user_id] += 1
+    }
+
+    if(question.question4 === currentUserQuestion[0].must_answer4) {
+      counter[question.user_id] += 1
+    }
+
+    if(question.question5 === currentUserQuestion[0].must_answer5) {
+      counter[question.user_id] += 1
+    }
+
+    if(question.question6 === currentUserQuestion[0].must_answer6) {
+      counter[question.user_id] += 1
+    }
+
+    if(question.question7 === currentUserQuestion[0].must_answer7) {
+      counter[question.user_id] += 1
+    }
+
+    if(question.question8 === currentUserQuestion[0].must_answer8) {
+      counter[question.user_id] += 1
+    }
+
+    if(question.question9 === currentUserQuestion[0].must_answer9) {
+      counter[question.user_id] += 1
+    }
+
+    if(question.question10 === currentUserQuestion[0].must_answer10) {
+      counter[question.user_id] += 1
+    }
+
 
   })
   console.log("count", counter)
