@@ -104,9 +104,31 @@ const EditUserProfileForm = () => {
 
   }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id])
 
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+
+  }
+
+
+
   return (
-    <div> in the edit user profile component </div>
-  )
+    <section className="edit-profile-form-container">
+      <form onSubmit={handleSubmit}>
+        <label>
+          Age
+            <input
+            type="text"
+            placeholder="age"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+            >
+            </input>
+        </label>
+
+        </form>
+      </section>
+    )
 }
 
 
