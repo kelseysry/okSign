@@ -9,6 +9,7 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import Discover from './components/Discover';
+import UserProfile from './components/UserProfile'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -45,7 +46,10 @@ function App() {
           <h1>My Home Page</h1>
         </ProtectedRoute>
         <ProtectedRoute path='/discover' exact={true} >
-          <Discover /> 
+          <Discover />
+        </ProtectedRoute>
+        <ProtectedRoute path='/profiles/:userId' exact={true} >
+          <UserProfile />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
