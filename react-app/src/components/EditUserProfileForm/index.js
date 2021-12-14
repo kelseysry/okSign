@@ -100,7 +100,9 @@ const EditUserProfileForm = () => {
     if(!politic_id) validationErrors.push("political belief is required")
     if(!religion_id) validationErrors.push("religion is required")
 
-  })
+    setErrors(validationErrors)
+
+  }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id])
 
   return (
     <div> in the edit user profile component </div>
