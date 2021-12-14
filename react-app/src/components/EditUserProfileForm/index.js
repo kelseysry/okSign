@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import isURL from 'validator/es/lib/isURL';
+// import isURL from 'validator/es/lib/isURL';
 import { useDispatch, useSelector } from "react-redux";
 import { editProfile } from '../../store/profile'
 
@@ -19,7 +19,7 @@ const EditUserProfile = () => {
   const user_id = sessionUser.id
 
   return (
-    null
+    <div> in the edit user profile component </div>
   )
 }
 
