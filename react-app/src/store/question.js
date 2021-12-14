@@ -1,19 +1,19 @@
-const LOAD_ANSWERS = "question/LOAD_ANSWERS";
+const LOAD_QUESTIONS = "question/LOAD_QUESTIONS";
 
-// action creator load all answers to questions
-const loadAllAnswers = (answers) => ({
-  type: LOAD_ANSWERS,
-  answers
+// action creator load all questions to questions
+const loadAllQuestions = (questions) => ({
+  type: LOAD_QUESTIONS,
+  questions
 });
 
 
-// thunk for getting all answers to questions
-export const getAnswers = () => async(dispatch) => {
+// thunk for getting all questions to questions
+export const getQuestions = () => async(dispatch) => {
 
     const res = await fetch(`/api/questions`)
-    const answers = await res.json();
-    // console.log("answers res.json()", answers)
-    dispatch(loadAllAnswers(answers))
+    const questions = await res.json();
+    // console.log("questions res.json()", questions)
+    dispatch(loadAllQuestions(questions))
 }
 
 
@@ -21,13 +21,13 @@ export const getAnswers = () => async(dispatch) => {
 const initialState = {};
 const questionReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOAD_ANSWERS: {
+    case LOAD_QUESTIONS: {
       const newState = {...state};
-      // console.log("reducer question", action.answers)
-      for (const[key,value] of Object.entries(action.answers)) {
+      // console.log("reducer question", action.questions)
+      for (const[key,value] of Object.entries(action.questions)) {
         newState[key] = value
       }
-      // console.log("newState LOAD_ANSWERS", newState)
+      // console.log("newState LOAD_QUESTIONS", newState)
       return newState
     }
     default:
