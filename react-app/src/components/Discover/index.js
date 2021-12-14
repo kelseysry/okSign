@@ -96,6 +96,8 @@ const Discover = () => {
 
   // profiles are being selected via id user_id directly correlates to profile.id
   let matchedProfileIds = Object.keys(counter)
+
+  
   console.log("matchedProfileIds", matchedProfileIds)
 
   return (
