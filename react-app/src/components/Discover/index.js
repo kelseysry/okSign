@@ -13,9 +13,7 @@ const Discover = () => {
   const questionObject = useSelector((state)=>state.question)
   // console.log("questionObj", questionObject)
   const questions = Object.values(questionObject)
-  console.log("questions", questions[0])
-
-
+  // console.log("questions", questions[0])
 
 
   useEffect(()=>{
@@ -24,17 +22,13 @@ const Discover = () => {
 
 // for each user's question object, we need to count how many answers
 // they have that are the same as the current user
-
- const pointSystem = (user_id)
-
-
  let currentUserQuestion = questions[0]?.filter((question) => {return question.user_id === user_id})
- console.log("currentUserQuestion", currentUserQuestion)
+//  console.log("currentUserQuestion", currentUserQuestion)
 
  let counter = {};
 
   questions[0]?.map((question, ele) => {
-    console.log(ele, question)
+    // console.log(ele, question)
     // console.log("question.question1", question.question1)
     // console.log("currentUserQuestion.question1", currentUserQuestion[0].question1)
     if(!counter[question.user_id]) {
@@ -84,18 +78,33 @@ const Discover = () => {
 
   })
   console.log("count", counter)
+  // counter = {1: 10, 2: 6, 3: 3, 4: 10}
 
+  // take out current user from potential match in counter
+  Object.keys(counter).forEach(key => {
+    if (+key === +user_id) delete counter[key];
+  });
+  // console.log("updated counter", counter)
+  // {2: 6, 3: 3, 4: 10}
 
+  // update counter to only include match if greater than 6/10
+  Object.keys(counter).forEach(key => {
+    if (counter[key] < 6) delete counter[key];
+  });
+  console.log("updated counter", counter)
+  // {2: 6, 4: 10}
 
-  // console.log("id----", questions[0])
-  // let userQuestion = questions[0]
+  // profiles are being selected via id user_id directly correlates to profile.id
+  let matchedProfileIds = Object.keys(counter)
 
+  
+  console.log("matchedProfileIds", matchedProfileIds)
 
   return (
     <>
     "in discover component"
 
-    <MatchProfile />
+    <MatchProfile matchedProfileIds={matchedProfileIds}/>
 
     </>
   )
