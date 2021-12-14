@@ -1,15 +1,29 @@
 
 import { useSelector, useDispatch } from "react-redux";
-import React, { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getProfile } from "../../store/profile";
 
 
-
-const MatchProfile = () => {
+const MatchProfile = ({profile_id}) => {
   const dispatch = useDispatch()
+  console.log("match profile id", +profile_id)
 
+  let profileObj = useSelector((state) => state?.profile[profile_id])
+  // let profile = Object.values(profileObj)
+
+
+  // get one profile
+  useEffect(() => {
+    dispatch(getProfile(profile_id));
+  }, [dispatch, profile_id]);
+
+  console.log("profileObj", profileObj)
+  console.log("about me---", profileObj.about_me)
 
   return (
-    null 
+    <div>
+      {profileObj.goal}
+    </div>
   )
 
 }

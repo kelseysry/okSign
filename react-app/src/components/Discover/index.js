@@ -97,14 +97,14 @@ const Discover = () => {
   // profiles are being selected via id user_id directly correlates to profile.id
   let matchedProfileIds = Object.keys(counter)
 
-  
+
   console.log("matchedProfileIds", matchedProfileIds)
 
   return (
     <>
     "in discover component"
 
-    <MatchProfile matchedProfileIds={matchedProfileIds}/>
+   { matchedProfileIds.map((profile_id) =>  <MatchProfile profile_id={profile_id}/>)}
 
     </>
   )
