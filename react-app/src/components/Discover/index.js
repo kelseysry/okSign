@@ -80,22 +80,29 @@ const Discover = () => {
   console.log("count", counter)
   // counter = {1: 10, 2: 6, 3: 3, 4: 10}
 
-  // take out current user from potential match in counter 
+  // take out current user from potential match in counter
   Object.keys(counter).forEach(key => {
     if (+key === +user_id) delete counter[key];
   });
+  // console.log("updated counter", counter)
+  // {2: 6, 3: 3, 4: 10}
 
+  // update counter to only include match if greater than 6/10
+  Object.keys(counter).forEach(key => {
+    if (counter[key] < 6) delete counter[key];
+  });
   console.log("updated counter", counter)
-
-
+  // {2: 6, 4: 10}
 
   // profiles are being selected via id user_id directly correlates to profile.id
+  let matchedProfileIds = Object.keys(counter)
+  console.log("matchedProfileIds", matchedProfileIds)
 
   return (
     <>
     "in discover component"
 
-    <MatchProfile />
+    <MatchProfile matchedProfileIds={matchedProfileIds}/>
 
     </>
   )
