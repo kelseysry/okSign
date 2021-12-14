@@ -18,11 +18,11 @@ const MatchProfile = ({profile_id}) => {
   }, [dispatch, profile_id]);
 
   console.log("profileObj", profileObj)
-  console.log("about me---", profileObj.about_me)
+  console.log("about me---", profileObj?.about_me)
 
   return (
     <div>
-      {profileObj.goal}
+      {profileObj?.goal}
     </div>
   )
 
