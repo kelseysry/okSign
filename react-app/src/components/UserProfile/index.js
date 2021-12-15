@@ -92,82 +92,82 @@ function UserProfile() {
     <div className="user_profile_container">
 
       <div>
-        about me : {profileObj?.about_me}
+        about me : {currentProfile[0]?.about_me}
       </div>
       <div>
-        goal : {profileObj?.goal}
+        goal : {currentProfile[0]?.goal}
       </div>
       <div>
-        talent : {profileObj?.talent}
+        talent : {currentProfile[0]?.talent}
       </div>
       <div>
-        my traits : {profileObj?.my_traits}
+        my traits : {currentProfile[0]?.my_traits}
       </div>
       <div>
-        needs : {profileObj?.needs}
+        needs : {currentProfile[0]?.needs}
       </div>
       <div>
-        hobbies : {profileObj?.hobbies}
+        hobbies : {currentProfile[0]?.hobbies}
       </div>
       <div>
-        moments : {profileObj?.moments}
+        moments : {currentProfile[0]?.moments}
       </div>
       <div>
-        secrets : {profileObj?.secrets}
+        secrets : {currentProfile[0]?.secrets}
       </div>
       <div>
-        looking for : {profileObj?.looking_for}
+        looking for : {currentProfile[0]?.looking_for}
       </div>
       <div>
-        user audio : {profileObj?.user_audio}
+        user audio : {currentProfile[0]?.user_audio}
       </div>
 
       <section className="Details">
         <h1> Details </h1>
         <div>
-          gender : {profileObj?.gender_id}
+          gender : {currentProfile[0]?.gender_id}
         </div>
         <div>
-          number of likes: {profileObj?.number_likes}
+          number of likes: {currentProfile[0]?.number_likes}
         </div>
         <div>
-          orientation : {profileObj?.orientation_id}
+          orientation : {currentProfile[0]?.orientation_id}
         </div>
         <div>
-          pronouns: {profileObj?.pronouns}
+          pronouns: {currentProfile[0]?.pronouns}
         </div>
         <div>
-          height: {profileObj?.height} cm
+          height: {currentProfile[0]?.height} cm
         </div>
         <div>
-          education: {profileObj?.education}
+          education: {currentProfile[0]?.education}
         </div>
         <div>
-          occupation: {profileObj?.occupation}
+          occupation: {currentProfile[0]?.occupation}
         </div>
         <div>
-          horoscope_id: {profileObj?.horoscope_id}
+          horoscope_id: {currentProfile[0]?.horoscope_id}
         </div>
         <div>
-          smoking: {profileObj?.smoking? "Smokes" : "Doesn't smoke"}
+          smoking: {currentProfile[0]?.smoking? "Smokes" : "Doesn't smoke"}
         </div>
         <div>
-          <i class="fas fa-cocktail"></i> {profileObj?.smoking? "Drinks" : "Doesn't drink"}
+          <i class="fas fa-cocktail"></i> {currentProfile[0]?.smoking? "Drinks" : "Doesn't drink"}
         </div>
         <div>
-          children_id: {profileObj?.children_id}
+          children_id: {currentProfile[0]?.children_id}
         </div>
         <div>
-          pet_id: {profileObj?.pet_id}
+          pet_id: {currentProfile[0]?.pet_id}
         </div>
         <div>
-          politic_id: {profileObj?.politic_id}
+          politic_id: {currentProfile[0]?.politic_id}
         </div>
         <div>
-          religion_id: {profileObj?.religion_id}
+          religion_id: {currentProfile[0]?.religion_id}
         </div>
         <div>
-          partner_id: {profileObj?.partner_id}
+          partner_id: {currentProfile[0]?.partner_id}
         </div>
       </section>
     </div>
