@@ -9,10 +9,10 @@ const loadProfile = (profile) => ({
 })
 
 // action creator to edit profile
-export const editOneProfile = (profile, user_id) => ({
+export const editOneProfile = (profile, id) => ({
   type: EDIT_ONE_PROFILE,
   profile,
-  user_id
+  id
 })
 
 // action creator to load all profiles
@@ -36,19 +36,20 @@ export const getProfile = (profile_id) => async(dispatch) => {
 }
 
 //thunk for editing a profile
-export const editProfile= (editProfile,profile_id) => async dispatch => {
-  const response = await fetch(`/api/profiles/${profile_id}`, {
+export const editProfile= (editProfile, id) => async dispatch => {
+  const response = await fetch(`/api/profiles/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type':'application/json'
   },
     body: JSON.stringify(editProfile)
   });
-  // console.log("editProfile", editProfile)
-  // console.log('response in the thunk editProfile', response)
+  console.log("editProfile", editProfile)
+  console.log('response in the thunk editProfile', response)
 
   const profile = await response.json();
-  dispatch(editProfile(profile, profile_id))
+  console.log("profile in thunk", profile)
+  dispatch(editOneProfile(profile, id))
   return profile
 }
 
@@ -75,11 +76,12 @@ const profileReducer = (state = initialState, action) => {
       return newState
     }
     case EDIT_ONE_PROFILE: {
+      console.log("action.profile", action.profile)
       if(!state[action.profile]) {
         const newState = {
           ...state, [action.profile.id]: action.profile
         };
-        // console.log("this is newState", newState)
+        console.log("this is newState", newState)
 
         return newState
       }

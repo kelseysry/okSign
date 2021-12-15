@@ -68,8 +68,8 @@ function UserProfile() {
 
 
 
-  console.log("currentProfile-----------", currentProfile)
-  console.log("user_id userProfile", user_id)
+  // console.log("currentProfile-----------", currentProfile)
+  // console.log("user_id userProfile", user_id)
   // console.log("profile.user_id", profile)
 
 
@@ -103,9 +103,9 @@ function UserProfile() {
       <div>
         hobbies : {profileObj?.hobbies}
       </div>
-      <div>
+      {/* <div>
         moments !! need to seed this data : {profileObj?.moments}
-      </div>
+      </div> */}
       <div>
         secrets : {profileObj?.secrets}
       </div>
