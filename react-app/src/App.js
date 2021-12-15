@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import Discover from './components/Discover';
 import UserProfile from './components/UserProfile'
 import EditUserProfileForm from './components/EditUserProfileForm';
+import ProfileForm from './components/ProfileForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -52,8 +53,11 @@ function App() {
         <ProtectedRoute path='/profiles/:userId' exact={true} >
           <UserProfile />
         </ProtectedRoute>
-        <ProtectedRoute path='/editProfile' exact={true} >
+        {/* <ProtectedRoute path='/editProfile' exact={true} >
           <EditUserProfileForm />
+        </ProtectedRoute> */}
+        <ProtectedRoute path='/createProfile' exact={true} >
+          <ProfileForm /> 
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

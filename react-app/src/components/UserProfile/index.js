@@ -5,6 +5,7 @@ import { getProfile } from "../../store/profile";
 import './UserProfile.css'
 import EditUserProfileForm from '../EditUserProfileForm';
 import { getProfiles } from '../../store/profile';
+import HideCreateProfileForm from '../HideCreateProfileForm';
 
 function UserProfile() {
   const [user, setUser] = useState({});
@@ -82,7 +83,8 @@ function UserProfile() {
   } else {
     content = (
       <>
-    <img className= 'user_profile_image' src={profileObj?.image_url1} alt="Photo"/>
+      <div> comment this whole green back in once figure out how to create profile</div>
+    {/* <img className= 'user_profile_image' src={profileObj?.image_url1} alt="Photo"/>
     <div className="user_profile_container">
 
       <div>
@@ -103,9 +105,9 @@ function UserProfile() {
       <div>
         hobbies : {profileObj?.hobbies}
       </div>
-      {/* <div>
-        moments !! need to seed this data : {profileObj?.moments}
-      </div> */}
+      <div>
+        moments : {profileObj?.moments}
+      </div>
       <div>
         secrets : {profileObj?.secrets}
       </div>
@@ -164,9 +166,7 @@ function UserProfile() {
           partner_id: {profileObj?.partner_id}
         </div>
       </section>
-
-
-    </div>
+    </div> */}
 
       </>
     )
@@ -175,6 +175,7 @@ function UserProfile() {
 
   return (
     <>
+    <HideCreateProfileForm />
     {content}
     <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile</button>
 
