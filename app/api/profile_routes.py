@@ -90,3 +90,16 @@ def create_profile():
     return {"profile":profile.to_dict()}
   else:
     return "bad data"
+
+# delete profile
+@profile_routes.route('/<int:id>', methods=['GET', 'DELETE'])
+def delete_profile(id):
+    profile = Profile.query.get(id)
+
+    if profile:
+      db.session.delete(profile)
+      db.session.commit()
+      return "deleted"
+    else:
+      print("not delted-------")
+      return "401"
