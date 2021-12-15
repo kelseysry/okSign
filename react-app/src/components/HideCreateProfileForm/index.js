@@ -10,7 +10,7 @@ import ProfileForm from '../ProfileForm';
 
 function HideCreateProfileForm() {
   const dispatch = useDispatch()
-
+  const [showChangeNow, setshowChangeNow] = useState(false)
   const [showCreateProfileForm, setShowCreateProfileForm] = useState(false)
   const [hideCreateProfileButton, setHideCreateProfileButton] = useState(false)
 
