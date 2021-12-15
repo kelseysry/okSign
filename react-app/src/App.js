@@ -61,6 +61,9 @@ function App() {
         <ProtectedRoute path='/createProfile' exact={true} >
           <ProfileForm />
         </ProtectedRoute>
+        <ProtectedRoute path='/conversations' exact={true} >
+          {/* <ProfileForm /> */}
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );
