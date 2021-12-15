@@ -15,6 +15,8 @@ import ProfileForm from './components/ProfileForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
+  const [count, setCount] = useState(0)
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -51,13 +53,13 @@ function App() {
           <Discover />
         </ProtectedRoute>
         <ProtectedRoute path='/profiles/:userId' exact={true} >
-          <UserProfile />
+          <UserProfile count={count} setCount ={setCount}  />
         </ProtectedRoute>
         {/* <ProtectedRoute path='/editProfile' exact={true} >
           <EditUserProfileForm />
         </ProtectedRoute> */}
         <ProtectedRoute path='/createProfile' exact={true} >
-          <ProfileForm /> 
+          <ProfileForm />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

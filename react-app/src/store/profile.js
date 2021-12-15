@@ -2,6 +2,7 @@ const LOAD_PROFILE = "profile/LOAD_PROFILE";
 const EDIT_ONE_PROFILE = "profile/EDIT_ONE_PROFILE"
 const LOAD_PROFILES = "profile/LOAD_PROFILES";
 const ADD_ONE = "profile/ADD_ONE"
+const CLEAR = 'profile/CLEAR'
 
 // action creator to load one profile
 const loadProfile = (profile) => ({
@@ -26,6 +27,10 @@ const loadAllProfiles = (profiles) => ({
 const addOneProfile = (newProfile) => ({
   type: ADD_ONE,
   newProfile
+})
+
+export const clearProfiles = () => ({
+  type: CLEAR
 })
 
 // thunk for getting one profile
@@ -111,7 +116,8 @@ const profileReducer = (state = initialState, action) => {
       console.log("action.profile", action.profile)
       if(!state[action.profile]) {
         const newState = {
-          ...state, [action.profile.id]: action.profile
+          ...state,
+          // [action.profile.id]: action.profile
         };
         console.log("this is newState", newState)
 
@@ -141,7 +147,9 @@ const profileReducer = (state = initialState, action) => {
       }
       // return state
     }
-
+    case CLEAR:{
+      return {}
+  }
     default:
       return state;
   }
