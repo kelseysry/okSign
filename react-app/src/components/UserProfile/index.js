@@ -189,14 +189,24 @@ function UserProfile({count, setCount}) {
     <div>hello</div>
   }
 
+  let content_edit_compiled;
+  content_edit_compiled = (
+    <>
+   {content}
+   <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
+
+
+    </>
+  )
+
 
   return (
     <>
-    {content}
-    <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
+    {/* {content} */}
+    {/* <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button> */}
 
 
-  { isLoaded && (currentProfile[0]?.id? null :
+  { isLoaded && (currentProfile[0]?.id? content_edit_compiled :
     ( <div>
         <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i class="fas fa-address-card"></i></NavLink>
       </div>))
