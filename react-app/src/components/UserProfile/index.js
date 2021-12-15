@@ -84,7 +84,7 @@ function UserProfile({count, setCount}) {
 
 
 
-  console.log("currentProfile-----------", currentProfile)
+  // console.log("currentProfile-----------", currentProfile)
   // console.log("user_id userProfile", user_id)
   // console.log("profile.user_id", profile)
 
