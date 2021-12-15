@@ -39,7 +39,7 @@ function UserProfile() {
 
   return (
     <>
-    <EditUserProfileForm />
+    {/* <EditUserProfileForm /> */}
     {/* <EditProfile /> */}
     <img className= 'user_profile_image' src={profileObj?.image_url1} alt="Photo"/>
     <div className="user_profile_container">

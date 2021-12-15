@@ -23,8 +23,17 @@ const EditUserProfileForm = () => {
     if(currentProfile) {
       // await currentProfile;
       await setAge(currentProfile[0]?.age)
+      await setLocation(currentProfile[0]?.location)
     }
   },[profilesObj])
+
+  //   useEffect(async () => {
+  //   // if(currentProfile) {
+  //     // await currentProfile;
+  //     await getCurrentProfile()
+  //     await setAge(currentProfile[0]?.age)
+  //   // }
+  // },[profilesObj])
 
   // grab the user from state so a user doesn't have the manually input their data into the form
   //  automatically know who's submitting the form
@@ -37,7 +46,6 @@ const EditUserProfileForm = () => {
   // console.log("currentProfile in edit age--", currentProfile[0]?.age)
 
   // let currentProfile
-
   // const getCurrentProfile = (user_id,profiles) => {
 
   //     return currentProfile =  profiles[0]?.filter((profile) => {return profile.user_id === user_id})
