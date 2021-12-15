@@ -5,27 +5,28 @@ import { editProfile, getProfiles } from '../../store/profile'
 import isURL from 'validator/es/lib/isURL';
 import './EditUserProfileForm.css'
 
-const EditUserProfileForm = () => {
+const EditUserProfileForm = ({currentProfile, hideForm}) => {
   const dispatch = useDispatch();
-  const [isLoaded, setIsLoaded] = useState(false);
-  const profilesObj = useSelector((state) => state?.profile)
-  const profiles = Object?.values(profilesObj)
+  // const [isLoaded, setIsLoaded] = useState(false);
+  // const profilesObj = useSelector((state) => state?.profile)
+  // const profiles = Object?.values(profilesObj)
+  // console.log("profiles edit?", profiles)
   // grab all the profiles and filter out the one that has user_id matching with session user
   // have to do this b/c a user can delete their profile so then profile_id is no longer
   // directly correlated with the user.id
-  useEffect(async () => {
-    await dispatch(getProfiles());
-    // await getCurrentProfile(user_id,profiles)
-    if (!isLoaded) setIsLoaded(true);
-  },[dispatch, profiles?.length])
+  // useEffect(async () => { // comment 16-20 back in
+  //   await dispatch(getProfiles());
+  //   // await getCurrentProfile(user_id,profiles)
+  //   if (!isLoaded) setIsLoaded(true);
+  // },[dispatch, profiles?.length])
 
-  useEffect(async () => {
-    if(currentProfile) {
-      // await currentProfile;
-      await setAge(currentProfile[0]?.age)
-      await setLocation(currentProfile[0]?.location)
-    }
-  },[profilesObj])
+  // useEffect(async () => {
+  //   if(currentProfile) {
+  //     // await currentProfile;
+  //     await setAge(currentProfile[0]?.age)
+  //     await setLocation(currentProfile[0]?.location)
+  //   }
+  // },[currentProfile])
 
   //   useEffect(async () => {
   //   // if(currentProfile) {
@@ -41,7 +42,10 @@ const EditUserProfileForm = () => {
   const user_id = sessionUser?.id
 
   // console.log("profiles in editUser", profiles)
-  let currentProfile = profiles[0]?.filter((profile) => {return profile.user_id === user_id})
+
+
+  // comment back in
+  // let currentProfile = profiles[0]?.filter((profile) => {return profile.user_id === user_id})
   // console.log("currentProfile in edit", currentProfile)
   // console.log("currentProfile in edit age--", currentProfile[0]?.age)
 
@@ -51,43 +55,43 @@ const EditUserProfileForm = () => {
   //     return currentProfile =  profiles[0]?.filter((profile) => {return profile.user_id === user_id})
   // }
 
+  // console.log('currentProfile in edit', currentProfile)
 
-
-  const [age, setAge] = useState("");
-  const [location, setLocation] = useState(currentProfile?.location);
-  const [lat, setLat] = useState(currentProfile?.lat);
-  const [lng, setLng] = useState(currentProfile?.lng);
-  const [about_me, setAbout_me] = useState(currentProfile?.about_me);
-  const [goal, setGoal] = useState(currentProfile?.goal);
-  const [talent, setTalent] = useState(currentProfile?.talent);
-  const [my_traits, setMy_traits] = useState(currentProfile?.my_traits);
-  const [needs, setNeeds] = useState(currentProfile?.needs);
-  const [hobbies, setHobbies] = useState(currentProfile?.hobbies);
-  const [moments, setMoments] = useState(currentProfile?.moments);
-  const [secrets, setSecrets] = useState(currentProfile?.secrets);
-  const [looking_for, setLooking_for] = useState(currentProfile?.looking_for);
-  const [user_audio, setUser_audio] = useState(currentProfile?.user_audio);
-  const [gender_id, setGender_id] = useState(currentProfile?.gender_id);
-  const [number_likes, setNumber_likes] = useState(currentProfile?.number_likes);
-  const [image_url1, setImage_url1] = useState(currentProfile?.image_url1);
-  const [image_url2, setImage_url2] = useState(currentProfile?.image_url2);
-  const [image_url3, setImage_url3] = useState(currentProfile?.image_url3);
-  const [image_url4, setImage_url4] = useState(currentProfile?.image_url4);
-  const [image_url5, setImage_url5] = useState(currentProfile?.image_url5);
-  const [image_url6, setImage_url6] = useState(currentProfile?.image_url6);
-  const [orientation_id, setOrientation_id] = useState(currentProfile?.orientation_id);
-  const [partner_id, setPartner_id] = useState(currentProfile?.partner_id);
-  const [pronouns, setPronouns] = useState(currentProfile?.pronouns);
-  const [height, setHeight] = useState(currentProfile?.height);
-  const [education, setEducation] = useState(currentProfile?.education);
-  const [occupation, setOccupation] = useState(currentProfile?.occupation);
-  const [horoscope_id, setHoroscope_id] = useState(currentProfile?.horoscope_id);
-  const [smoking, setSmoking] = useState(currentProfile?.smoking);
-  const [drinking, setDrinking] = useState(currentProfile?.drinking);
-  const [children_id, setChildren_id] = useState(currentProfile?.children_id);
-  const [pet_id, setPet_id] = useState(currentProfile?.pet_id);
-  const [politic_id, setPolitic_id] = useState(currentProfile?.politic_id);
-  const [religion_id, setReligion_id] = useState(currentProfile?.religion_id);
+  const [age, setAge] = useState(currentProfile[0]?.age);
+  const [location, setLocation] = useState(currentProfile[0]?.location);
+  const [lat, setLat] = useState(currentProfile[0]?.lat);
+  const [lng, setLng] = useState(currentProfile[0]?.lng);
+  const [about_me, setAbout_me] = useState(currentProfile[0]?.about_me);
+  const [goal, setGoal] = useState(currentProfile[0]?.goal);
+  const [talent, setTalent] = useState(currentProfile[0]?.talent);
+  const [my_traits, setMy_traits] = useState(currentProfile[0]?.my_traits);
+  const [needs, setNeeds] = useState(currentProfile[0]?.needs);
+  const [hobbies, setHobbies] = useState(currentProfile[0]?.hobbies);
+  const [moments, setMoments] = useState(currentProfile[0]?.moments);
+  const [secrets, setSecrets] = useState(currentProfile[0]?.secrets);
+  const [looking_for, setLooking_for] = useState(currentProfile[0]?.looking_for);
+  const [user_audio, setUser_audio] = useState(currentProfile[0]?.user_audio);
+  const [gender_id, setGender_id] = useState(currentProfile[0]?.gender_id);
+  const [number_likes, setNumber_likes] = useState(currentProfile[0]?.number_likes);
+  const [image_url1, setImage_url1] = useState(currentProfile[0]?.image_url1);
+  const [image_url2, setImage_url2] = useState(currentProfile[0]?.image_url2);
+  const [image_url3, setImage_url3] = useState(currentProfile[0]?.image_url3);
+  const [image_url4, setImage_url4] = useState(currentProfile[0]?.image_url4);
+  const [image_url5, setImage_url5] = useState(currentProfile[0]?.image_url5);
+  const [image_url6, setImage_url6] = useState(currentProfile[0]?.image_url6);
+  const [orientation_id, setOrientation_id] = useState(currentProfile[0]?.orientation_id);
+  const [partner_id, setPartner_id] = useState(currentProfile[0]?.partner_id);
+  const [pronouns, setPronouns] = useState(currentProfile[0]?.pronouns);
+  const [height, setHeight] = useState(currentProfile[0]?.height);
+  const [education, setEducation] = useState(currentProfile[0]?.education);
+  const [occupation, setOccupation] = useState(currentProfile[0]?.occupation);
+  const [horoscope_id, setHoroscope_id] = useState(currentProfile[0]?.horoscope_id);
+  // const [smoking, setSmoking] = useState(currentProfile[0]?.smoking);
+  // const [drinking, setDrinking] = useState(currentProfile[0]?.smoking);
+  const [children_id, setChildren_id] = useState(currentProfile[0]?.children_id);
+  const [pet_id, setPet_id] = useState(currentProfile[0]?.pet_id);
+  const [politic_id, setPolitic_id] = useState(currentProfile[0]?.politic_id);
+  const [religion_id, setReligion_id] = useState(currentProfile[0]?.religion_id);
   const [errors, setErrors] = useState([]);
 
 
@@ -127,8 +131,8 @@ const EditUserProfileForm = () => {
     if(!education) validationErrors.push("education is required")
     if(!occupation) validationErrors.push("occupation is required")
     if(!horoscope_id) validationErrors.push("horoscope is required")
-    if(!smoking) validationErrors.push("smoking status is required")
-    if(!drinking) validationErrors.push("drinking status is required")
+    // if(!smoking) validationErrors.push("smoking status is required")
+    // if(!drinking) validationErrors.push("drinking status is required")
     if(!children_id) validationErrors.push("children status is required")
     if(!pet_id) validationErrors.push("pet status is required")
     if(!politic_id) validationErrors.push("political belief is required")
@@ -136,19 +140,41 @@ const EditUserProfileForm = () => {
 
     setErrors(validationErrors)
 
-  }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id])
+  }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id])
 
-  // currentProfile ? currentProfile : null
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
+    const userInputUpdateProfile = {
+      age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id
+    }
+
+    console.log("userInputUpdateProfile", userInputUpdateProfile)
+    console.log("currentProfile[0]?.user_id ", currentProfile[0]?.id )
+    let profile_id = +currentProfile[0]?.id
+    console.log("profile_id profile_id", profile_id)
+
+      let updated = await dispatch(editProfile(userInputUpdateProfile, profile_id))
+
+      console.log(updated, updated)
+
+      if (updated) {
+        hideForm();
+      }
+
 
   }
 
+  const handleCancelFormEditClick = (e) => {
+    e.preventDefault();
+    hideForm();
+  };
+
+
   return (
     <>
-    {isLoaded &&  (<section className="edit-profile-form-container">
+<section className="edit-profile-form-container">
       <form className="edit-profile-form" onSubmit={handleSubmit}>
         <label>
           Age
@@ -440,17 +466,56 @@ const EditUserProfileForm = () => {
             >
             </input>
         </label>
-        <label>
+        {/* <label>
           Drinking
             <input
-            type="text"
+            type="boolean"
             placeholder="drinking"
             value={drinking}
             onChange={(e) => setDrinking(e.target.value)}
             >
             </input>
         </label>
-        <label>
+        <label> */}
+
+    {/* <label> Drinking
+    <div>
+      {[
+        { name: "true", value: true },
+        { name: "false", value: false }
+      ].map((option) => (
+        <label key={option.name}>
+          {option.name}:
+          <input
+            onChange={(e) => {
+              setDrinking(e.target.value);
+
+            }}
+            type="radio"
+            name="answer"
+            value={option.name}
+            checked={option.name === drinking}
+          />
+        </label>
+      ))}
+    </div>
+    </label> */}
+
+        {/* <input  type="radio" value="Instructor"
+                  name="staff" id='staff-instructor'
+                  checked={staff === "Instructor" ? "checked" : ""}
+                  onChange={(e) => setStaff(e.target.value)}
+          /> Instructor
+          <input  type="radio" value="Student"
+                  name="staff" id='staff-Student'
+                  checked={staff === "Student" ? "checked" : ""}
+                  onChange={(e) => setStaff(e.target.value)}
+          /> Student */}
+
+
+
+
+          {/* <label>
           Smoker
             <input
             type="text"
@@ -459,7 +524,37 @@ const EditUserProfileForm = () => {
             onChange={(e) => setSmoking(e.target.value)}
             >
             </input>
+        </label> */}
+
+{/* <label> Smoking
+    <div>
+      {[
+        { name: "yes", value: true},
+        { name: "no", value: false}
+      ].map((option) => (
+        <label key={option.name}>
+          {option.name}:
+          <input
+            onChange={(e) => {
+              setSmoking(e.target.value);
+
+            }}
+            type="radio"
+            name="smoker_answer"
+            value={smoking}
+            checked={option.name === smoking}
+          />
         </label>
+      ))}
+    </div>
+</label> */}
+
+{/* <div onChange={setSmoking.bind(this)}>
+        <input type="radio" value={smoking} name="gender"/> smoke
+        <input type="radio" value="false" name="gender"/> no smoke
+      </div> */}
+
+
         <label>
           Children
             <input
@@ -511,10 +606,9 @@ const EditUserProfileForm = () => {
         >
           Submit
         </button>
-
-
+        <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
         </form>
-      </section>)}
+      </section>
       </>
     )
 }

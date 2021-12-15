@@ -58,17 +58,17 @@ def edit_profile(id):
       profile.education = form.data['education']
       profile.occupation = form.data['occupation']
       profile.horoscope_id = form.data['horoscope_id']
-      profile.smoking = form.data['smoking']
-      profile.drinking = form.data['drinking']
+      # profile.smoking = form.data['smoking']
+      # profile.drinking = form.data['drinking']
       profile.children_id = form.data['children_id']
       profile.pet_id = form.data['pet_id']
       profile.politic_id = form.data['politic_id']
       profile.religion_id = form.data['religion_id']
 
       db.session.commit()
-      # print("profile api-!!!!!!!!!----------", profile.to_dict())
+      print("profile api-!!!!!!!!!----------", profile.to_dict())
       return profile.to_dict()
     else:
-      # print("request.json !!!!!!!!",request.json)
-      # print(form.errors)
+      print("request.json !!!!!!!!",request.json)
+      print(form.errors)
       return "bad data"
