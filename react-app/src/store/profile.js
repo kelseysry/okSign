@@ -138,7 +138,7 @@ const profileReducer = (state = initialState, action) => {
       if(!state[action.newProfile.id]) {
         const newState = {
           ...state,
-          [action.newProfile.profile.id]: action.newProfile.profile
+          // [action.newProfile.profile.id]: action.newProfile.profile
           // because youre sending a key value pair back from the backend, return {"profile":profile.to_dict()}  when you dispatch that action.newProfile is that key value pair.  needing to be dotted into one further
         }
         console.log("newState in profileReducer add_", newState)

@@ -71,16 +71,19 @@ const ProfileForm = ({hideForm}) => {
     if(!user_audio) validationErrors.push("audio is required")
     if(!gender_id) validationErrors.push("gender is required")
     if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
-    if(!image_url1) {
-      validationErrors.push("you need 6 photos!")
-    } else if (!isURL(image_url1)) {
-      validationErrors.push("Please provide a valid link for the image")
-    }
-    if(!image_url2) validationErrors.push("you need 6 photos!")
-    if(!image_url3) validationErrors.push("you need 6 photos!")
-    if(!image_url4) validationErrors.push("you need 6 photos!")
-    if(!image_url5) validationErrors.push("you need 6 photos!")
-    if(!image_url6) validationErrors.push("you need 6 photos!")
+    // if(!image_url1) {
+    //   validationErrors.push("you need 6 photos!")
+    // } else if (!isURL(image_url1)) {
+    //   validationErrors.push("Please provide a valid link for the image")
+    // }
+    if (!isURL(image_url1) || !image_url1 ) validationErrors.push("Please provide a valid link for the image")
+    // if(!image_url1) validationErrors.push("the less photos, the less matches!")
+
+    if(!image_url2) validationErrors.push("the less photos, the less matches!")
+    if(!image_url3) validationErrors.push("a picture is worth 1000 words!")
+    if(!image_url4) validationErrors.push("you have great competition!")
+    if(!image_url5) validationErrors.push("no great bio, make up for that with a pic!")
+    if(!image_url6) validationErrors.push("don't be camera shy!")
     if(!orientation_id) validationErrors.push("orientation is required")
     if(!partner_id) validationErrors.push("partner is required")
     if(!pronouns) validationErrors.push("pronouns are required")
@@ -112,6 +115,7 @@ const ProfileForm = ({hideForm}) => {
       let newUserProfile = await dispatch(createProfile(createNewProfileData))
 
       if (newUserProfile) {
+        history.push(`/profiles/${user_id}`)
         // hideForm();
       }
       console.log("newUserProfile", newUserProfile)
