@@ -69,10 +69,10 @@ function UserProfile({count, setCount}) {
 
   let user_id = userId
 
-  console.log("hello")
-  console.log("all profiles", profiles)
+  // console.log("hello")
+    console.log("all profiles", profiles)
 
-  console.log("profiles being filtered", profiles)
+  // console.log("profiles being filtered", profiles)
 
   let currentProfile = profiles?.filter((profile) => {
     // console.log("profile", profile)
@@ -196,10 +196,11 @@ function UserProfile({count, setCount}) {
     <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
 
 
-    <div>
-      <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i class="fas fa-address-card"></i></NavLink>
-    </div>
-
+  { isLoaded && (currentProfile[0]?.id? null :
+    ( <div>
+        <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i class="fas fa-address-card"></i></NavLink>
+      </div>))
+  }
 
 
     {/* <HideCreateProfileForm /> */}
