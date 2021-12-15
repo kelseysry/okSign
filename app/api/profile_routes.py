@@ -66,9 +66,9 @@ def edit_profile(id):
       profile.religion_id = form.data['religion_id']
 
       db.session.commit()
-      print("profile api-!!!!!!!!!----------", profile.to_dict())
+      # print("profile api-!!!!!!!!!----------", profile.to_dict())
       return profile.to_dict()
     else:
-      print("request.json !!!!!!!!",request.json)
-      print(form.errors)
+      # print("request.json !!!!!!!!",request.json)
+      # print(form.errors)
       return "bad data"

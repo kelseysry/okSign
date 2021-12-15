@@ -131,7 +131,7 @@ function UserProfile() {
           pronouns: {profileObj?.pronouns}
         </div>
         <div>
-          education: {profileObj?.education}
+          height: {profileObj?.height} cm
         </div>
         <div>
           education: {profileObj?.education}
