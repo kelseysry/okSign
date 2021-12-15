@@ -18,6 +18,8 @@ def profile(id):
     profile = Profile.query.get(id)
     return profile.to_dict()
 
+
+
 # edit one profile
 @profile_routes.route('/<int:id>', methods=['GET','PUT'])
 def edit_profile(id):
@@ -72,3 +74,19 @@ def edit_profile(id):
       # print("request.json !!!!!!!!",request.json)
       # print(form.errors)
       return "bad data"
+
+# create profile
+@profile_routes.route('/create', methods=['POST'])
+def create_profile():
+  form = ProfileForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+  if form.validate_on_submit():
+    profile = Profile()
+    form.populate_obj(profile)
+    db.session.add(profile)
+    db.session.commit()
+    print("profile dict-------------", profile.to_dict())
+    print(form.errors)
+    return {"profile":profile.to_dict()}
+  else:
+    return "bad data"

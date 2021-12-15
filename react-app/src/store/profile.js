@@ -1,6 +1,7 @@
-const LOAD_PROFILE = "question/LOAD_PROFILE";
+const LOAD_PROFILE = "profile/LOAD_PROFILE";
 const EDIT_ONE_PROFILE = "profile/EDIT_ONE_PROFILE"
-const LOAD_PROFILES = "question/LOAD_PROFILES";
+const LOAD_PROFILES = "profile/LOAD_PROFILES";
+const ADD_ONE = "profile/ADD_ONE"
 
 // action creator to load one profile
 const loadProfile = (profile) => ({
@@ -21,7 +22,11 @@ const loadAllProfiles = (profiles) => ({
   profiles,
 });
 
-
+// action creator to create one profile
+const addOneProfile = (newProfile) => ({
+  type: ADD_ONE,
+  newProfile
+})
 
 // thunk for getting one profile
 export const getProfile = (profile_id) => async(dispatch) => {
@@ -63,6 +68,33 @@ export const getProfiles = () => async(dispatch) => {
     dispatch(loadAllProfiles(profiles))
 }
 
+// thunk for creating a profile
+export const createProfile = (formData) => async (dispatch) => {
+
+  console.log("formdata in thunk",formData)
+
+  const response = await fetch(`/api/profiles/create`, {
+    method: 'POST',
+    headers : {
+      'Content-Type': 'application/json',
+     },
+     body: JSON.stringify(
+      formData
+    )
+  });
+  try {
+    console.log("response from thunk". response)
+    const newProfile = await response.json();
+    dispatch(addOneProfile(newProfile))
+    console.log("newProfile in thunk", newProfile)
+    return newProfile
+
+  } catch(error) {
+    console.log(error)
+  }
+
+}
+
 
 
 // reducer
@@ -94,6 +126,20 @@ const profileReducer = (state = initialState, action) => {
         newState[key] = value
       }
       return newState
+    }
+    case ADD_ONE : {
+      // console.log("add_one case", action.newProfile)
+      if(!state[action.newProfile.id]) {
+        const newState = {
+          ...state,
+          [action.newProfile.profile.id]: action.newProfile.profile
+          // because youre sending a key value pair back from the backend, return {"profile":profile.to_dict()}  when you dispatch that action.newProfile is that key value pair.  needing to be dotted into one further
+        }
+        console.log("newState in profileReducer add_", newState)
+        console.log("action.newProfile", action.newProfile)
+        return newState
+      }
+      // return state
     }
 
     default:
