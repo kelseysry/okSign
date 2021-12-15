@@ -26,6 +26,12 @@ function UserProfile({count, setCount}) {
   const profiles = Object?.values(profilesObj)[0]
   // const [count, setCount] = useState(0)
 
+  //   useEffect(() => {
+  //        dispatch(clearProfiles())
+  // },[dispatch])
+
+
+
 // attempt
   useEffect(async () => {
     // dispatch(clearProfiles())

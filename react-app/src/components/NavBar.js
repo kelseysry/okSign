@@ -3,12 +3,50 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useSelector, useDispatch } from "react-redux";
-
+import { clearProfiles } from '../store/profile';
+import { getProfiles } from '../store/profile';
+import { useHistory } from 'react-router';
 
 const NavBar = () => {
   const sessionUser = useSelector((state) => state?.session.user);
+  const dispatch = useDispatch()
+  const history = useHistory();
+
 
   let sessionLinks;
+
+
+  // const handleDecreaseQuantity = async(e) => {
+  //   e.preventDefault();
+
+  //   await setQuantity(() => {
+  //     return quantity -= 1
+  //   })
+
+  //    let editItem = {
+  //     id, user_id, product_id, quantity
+  //   }
+  //   console.log("handlesubmit", editItem, quantity)
+  //   dispatch(updateCartThunk(editItem, id, user_id))
+  // }
+
+  // const handleDeleteCartItem = async(e) => {
+  //   e.preventDefault();
+  //   dispatch(deleteCartItem(item.id, user_id));
+  //   setCount(count + 1)
+  //   // dispatch(clearCartItems())
+
+  // }
+
+  const handleClearProfile = async(e) => {
+    e.preventDefault();
+    dispatch(clearProfiles())
+    history.push(`/profiles/${sessionUser.id}`)
+    dispatch(getProfiles())
+  }
+
+
+
 
   if(sessionUser) {
     // const userId = sessionUser.id
@@ -42,11 +80,19 @@ const NavBar = () => {
             Users
           </NavLink>
         </li>
-        <li>
-          <NavLink to={`/profiles/${sessionUser.id}`} exact={true} activeClassName='active'>
+        {/* <li>
+          <NavLink to={`/profiles/${sessionUser.id}`} exact={true} onClick={handleClearProfile} activeClassName='active'>
             Profile
           </NavLink>
-        </li>
+        </li> */}
+          <button
+              className="cart-item-button"
+              onClick={handleClearProfile} 
+            >
+              Profile
+            </button>
+
+
         <li>
           <LogoutButton />
         </li>

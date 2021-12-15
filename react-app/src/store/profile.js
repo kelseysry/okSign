@@ -175,7 +175,8 @@ const profileReducer = (state = initialState, action) => {
       return newState
     };
     case CLEAR:{
-      return {}
+      state = {}
+      return state 
   }
     default:
       return state;
