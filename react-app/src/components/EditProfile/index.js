@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { editProfile, getProfiles } from '../../store/profile'
 import isURL from 'validator/es/lib/isURL';
-import './EditUserProfileForm.css'
+// import './EditUserProfileForm.css'
 
-const EditUserProfileForm = () => {
+const EditProfile = () => {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   const profilesObj = useSelector((state) => state?.profile)
@@ -14,16 +14,16 @@ const EditUserProfileForm = () => {
   // have to do this b/c a user can delete their profile so then profile_id is no longer
   // directly correlated with the user.id
   useEffect(async () => {
-    await dispatch(getProfiles());
+    // await dispatch(getProfiles());
     // await getCurrentProfile(user_id,profiles)
     if (!isLoaded) setIsLoaded(true);
-  },[dispatch, profiles.length])
+  },[dispatch])
 
   useEffect( () => {
-    if(profilesObj) {
-      setAge(currentProfile[0]?.age)
+    if(profiles) {
+      return profiles
     }
-  },[profilesObj])
+  },[profiles])
 
   // grab the user from state so a user doesn't have the manually input their data into the form
   //  automatically know who's submitting the form
@@ -31,16 +31,16 @@ const EditUserProfileForm = () => {
   const user_id = sessionUser.id
 
   // console.log("profiles in editUser", profiles)
-  let currentProfile = profiles[0]?.filter((profile) => {return profile.user_id === user_id})
+  // let currentProfile = profiles[0]?.filter((profile) => {return profile.user_id === user_id})
   // console.log("currentProfile in edit", currentProfile)
   // console.log("currentProfile in edit age--", currentProfile[0]?.age)
 
-  // let currentProfile
+  let currentProfile
 
-  // const getCurrentProfile = (user_id,profiles) => {
+  const getCurrentProfile = (user_id,profiles) => {
 
-  //     return currentProfile =  profiles[0]?.filter((profile) => {return profile.user_id === user_id})
-  // }
+      return currentProfile =  profiles[0]?.filter((profile) => {return profile.user_id === user_id})
+  }
 
 
 
@@ -226,7 +226,7 @@ const EditUserProfileForm = () => {
             <input
             type="text"
             placeholder="needs"
-            value={needs}
+            value={age}
             onChange={(e) => setNeeds(e.target.value)}
             >
             </input>
@@ -511,4 +511,4 @@ const EditUserProfileForm = () => {
 }
 
 
-export default EditUserProfileForm
+export default EditProfile

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getProfile } from "../../store/profile";
 import './UserProfile.css'
 import EditUserProfileForm from '../EditUserProfileForm';
+import EditProfile from '../EditProfile';
 
 
 function UserProfile() {
@@ -39,6 +40,7 @@ function UserProfile() {
   return (
     <>
     <EditUserProfileForm id={1} />
+    {/* <EditProfile /> */}
     <img className= 'user_profile_image' src={profileObj?.image_url1} alt="Photo"/>
     <div className="user_profile_container">
 
