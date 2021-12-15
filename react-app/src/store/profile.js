@@ -115,10 +115,10 @@ export const deleteProfile = (id) => async dispatch => {
   });
   // const res = await response.json()
   // console.log("delete profile thunk", res)
-  // console.log("delete profile thunk", response)
+  console.log("delete profile thunk", response)
   if(response.ok) {
     dispatch(removeOneProfile(id))
-    console.log(response)
+    console.log("remove responese after ok", response)
   }
 };
 

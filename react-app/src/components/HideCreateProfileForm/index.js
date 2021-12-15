@@ -3,8 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams} from 'react-router-dom';
 import ProfileForm from '../ProfileForm';
 
+// ********************************************************************
 // no longer using this component since can
-// hide create profile form if alrdy exist 
+// hide create profile form if alrdy exist
+// ********************************************************************
 
 function HideCreateProfileForm() {
   const dispatch = useDispatch()
