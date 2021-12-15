@@ -177,7 +177,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
       // dispatch(getProfiles());
 
       if (updated) {
-    setCount(count + 1)
+        setCount(count + 1)
 
         hideForm();
       }

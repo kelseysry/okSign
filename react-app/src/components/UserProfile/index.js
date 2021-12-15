@@ -8,11 +8,15 @@ import { getProfiles } from '../../store/profile';
 import HideCreateProfileForm from '../HideCreateProfileForm';
 import { clearProfiles } from '../../store/profile';
 import { NavLink } from "react-router-dom";
+import { deleteProfile } from '../../store/profile';
+import { useHistory } from 'react-router';
 
 function UserProfile({count, setCount}) {
   const [user, setUser] = useState({});
   const { userId }  = useParams();
   const dispatch = useDispatch()
+  const history = useHistory();
+
   const [isLoaded, setIsLoaded] = useState(false)
   let profileObj = useSelector((state) => state?.profile[userId])
 
@@ -189,12 +193,19 @@ function UserProfile({count, setCount}) {
     <div>hello</div>
   }
 
+  const handleDeleteProfile = (id) => {
+    dispatch(deleteProfile(id));
+    setCount(count + 1)
+   history.push(`/profiles/${userId}`)
+ }
+
   let content_edit_compiled;
   content_edit_compiled = (
     <>
    {content}
    <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
-
+   {/* <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Delete Profile <i className="fas fa-edit"></i></button> */}
+   <button className="" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i class="fas fa-trash"></i></button>
 
     </>
   )
@@ -212,20 +223,6 @@ function UserProfile({count, setCount}) {
       </div>))
   }
 
-
-    {/* <HideCreateProfileForm /> */}
-
-      {/* <ul>
-        <li>
-          <strong>User Id</strong> {userId}
-        </li>
-        <li>
-          <strong>Username</strong> {user.username}
-        </li>
-        <li>
-          <strong>Email</strong> {user.email}
-        </li>
-      </ul> */}
 
     </>
   );

@@ -2,6 +2,7 @@ const LOAD_PROFILE = "profile/LOAD_PROFILE";
 const EDIT_ONE_PROFILE = "profile/EDIT_ONE_PROFILE"
 const LOAD_PROFILES = "profile/LOAD_PROFILES";
 const ADD_ONE = "profile/ADD_ONE"
+const REMOVE_PROFILE = "profile/REMOVE_PROFILE"
 const CLEAR = 'profile/CLEAR'
 
 // action creator to load one profile
@@ -28,6 +29,13 @@ const addOneProfile = (newProfile) => ({
   type: ADD_ONE,
   newProfile
 })
+
+// action creator to delete one profile
+const removeOneProfile = (id) => ({
+  type: REMOVE_PROFILE,
+  id
+})
+
 
 export const clearProfiles = () => ({
   type: CLEAR
@@ -100,6 +108,20 @@ export const createProfile = (formData) => async (dispatch) => {
 
 }
 
+// thunk to delete a profile
+export const deleteProfile = (id) => async dispatch => {
+  const response = await fetch(`/api/profiles/${id}`, {
+    method: 'DELETE',
+  });
+  // const res = await response.json()
+  // console.log("delete profile thunk", res)
+  console.log("delete profile thunk", response)
+  if(response.ok) {
+    dispatch(removeOneProfile(id))
+    console.log("remove responese after ok", response)
+  }
+};
+
 
 
 // reducer
@@ -147,6 +169,11 @@ const profileReducer = (state = initialState, action) => {
       }
       // return state
     }
+    case REMOVE_PROFILE : {
+      const newState = {...state};
+      delete newState[action.id];
+      return newState
+    };
     case CLEAR:{
       return {}
   }
