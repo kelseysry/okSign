@@ -192,11 +192,11 @@ function UserProfile({count, setCount}) {
 
   return (
     <>
-    {content}
+    {/* {content} */}
     <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
 
 
-  { isLoaded && (currentProfile[0]?.id? null :
+  { isLoaded && (currentProfile[0]?.id? content :
     ( <div>
         <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i class="fas fa-address-card"></i></NavLink>
       </div>))
