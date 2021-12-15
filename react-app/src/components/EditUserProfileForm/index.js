@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { editProfile, getProfiles } from '../../store/profile'
 import isURL from 'validator/es/lib/isURL';
 import './EditUserProfileForm.css'
+import { clearProfiles } from '../../store/profile';
 
-const EditUserProfileForm = ({currentProfile, hideForm}) => {
+const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
   const dispatch = useDispatch();
   // const [isLoaded, setIsLoaded] = useState(false);
   // const profilesObj = useSelector((state) => state?.profile)
@@ -94,6 +95,7 @@ const EditUserProfileForm = ({currentProfile, hideForm}) => {
   const [religion_id, setReligion_id] = useState(currentProfile[0]?.religion_id);
   const [errors, setErrors] = useState([]);
 
+  // const [count, setCount] = useState(0)
 
   useEffect(() => {
     const validationErrors = []
@@ -143,8 +145,15 @@ const EditUserProfileForm = ({currentProfile, hideForm}) => {
   }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id])
 
 
+//   useEffect(async ()  => {
+//     await dispatch(getProfiles()).then(()=>dispatch(getProfiles()))
+// },[dispatch, count])
+
   const handleSubmit = async(e) => {
     e.preventDefault();
+
+    setCount(count + 1)
+    console.log("count", count)
 
     const userInputUpdateProfile = {
       age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id
@@ -155,11 +164,18 @@ const EditUserProfileForm = ({currentProfile, hideForm}) => {
     let profile_id = +currentProfile[0]?.id
     console.log("profile_id profile_id", profile_id)
 
-      let updated = await dispatch(editProfile(userInputUpdateProfile, profile_id))
+    let updated = await dispatch(editProfile(userInputUpdateProfile, profile_id))
 
       console.log(updated, updated)
+      // await setCount(count + 1)
+      console.log("count", count)
+
+      // dispatch(clearProfiles())
+      // dispatch(getProfiles());
 
       if (updated) {
+    setCount(count + 1)
+
         hideForm();
       }
 
@@ -168,6 +184,11 @@ const EditUserProfileForm = ({currentProfile, hideForm}) => {
 
   const handleCancelFormEditClick = (e) => {
     e.preventDefault();
+
+    setCount(count + 1)
+    console.log("count", count)
+    // dispatch(clearProfiles())
+    // dispatch(getProfiles());
     hideForm();
   };
 

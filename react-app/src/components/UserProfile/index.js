@@ -6,8 +6,9 @@ import './UserProfile.css'
 import EditUserProfileForm from '../EditUserProfileForm';
 import { getProfiles } from '../../store/profile';
 import HideCreateProfileForm from '../HideCreateProfileForm';
+import { clearProfiles } from '../../store/profile';
 
-function UserProfile() {
+function UserProfile({count, setCount}) {
   const [user, setUser] = useState({});
   const { userId }  = useParams();
   const dispatch = useDispatch()
@@ -18,13 +19,19 @@ function UserProfile() {
 
   const profilesObj = useSelector((state) => state?.profile)
   const profiles = Object?.values(profilesObj)[0]
+  // const [count, setCount] = useState(0)
 
 // attempt
   useEffect(async () => {
+    // dispatch(clearProfiles())
     await dispatch(getProfiles());
     // await getCurrentProfile(user_id,profiles)
     if (!isLoaded) setIsLoaded(true);
-  },[dispatch, profiles?.length])
+  },[dispatch, profiles?.length, userId, count])
+
+  // useEffect(() => {
+  //        dispatch(clearProfiles())
+  // },[dispatch, count])
 
 
 // show edit profile form
@@ -33,6 +40,9 @@ function UserProfile() {
   },[dispatch, userId])
 
 
+  useEffect(async ()  => {
+    await dispatch(getProfiles()).then(()=>dispatch(getProfiles()))
+},[dispatch, count])
 
 // get current user
   useEffect(() => {
@@ -61,7 +71,7 @@ function UserProfile() {
   console.log("hello")
   console.log("all profiles", profiles)
 
-  // console.log("all profiles", profiles[0])
+  console.log("profiles being filtered", profiles)
 
   let currentProfile = profiles?.filter((profile) => {
     // console.log("profile", profile)
@@ -82,7 +92,7 @@ function UserProfile() {
   if(showEditProfileForm && userId) {
     content = (
 
-      <EditUserProfileForm currentProfile={currentProfile} hideForm={() => setShowEditProfileForm(false)}/>
+      <EditUserProfileForm count={count} setCount={setCount} currentProfile={currentProfile} hideForm={() => setShowEditProfileForm(false)}/>
     )
   } else if (isLoaded){
     content = (
