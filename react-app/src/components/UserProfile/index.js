@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-import { getProfile } from "../../store/profile";
+// import { getProfile } from "../../store/profile";
 import './UserProfile.css'
 import EditUserProfileForm from '../EditUserProfileForm';
 import { getProfiles } from '../../store/profile';
@@ -17,7 +17,7 @@ function UserProfile() {
   const [showEditProfileForm, setShowEditProfileForm] = useState(false)
 
   const profilesObj = useSelector((state) => state?.profile)
-  const profiles = Object?.values(profilesObj)
+  const profiles = Object?.values(profilesObj)[0]
 
 // attempt
   useEffect(async () => {
@@ -46,10 +46,10 @@ function UserProfile() {
     })();
   }, [userId]);
 
-// get one profile
-  useEffect(() => {
-    dispatch(getProfile(userId));
-  }, [dispatch, userId]);
+// // get one profile
+//   useEffect(() => {
+//     dispatch(getProfile(userId));
+//   }, [dispatch, userId]);
 
 
   if (!user) {
@@ -63,7 +63,7 @@ function UserProfile() {
 
   // console.log("all profiles", profiles[0])
 
-  let currentProfile = profiles[1]?.filter((profile) => {
+  let currentProfile = profiles?.filter((profile) => {
     // console.log("profile", profile)
     // console.log("profile.user_id", profile.user_id)
     return profile?.user_id === +userId
