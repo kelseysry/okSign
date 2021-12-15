@@ -4,14 +4,32 @@ import { useSelector, useDispatch } from "react-redux";
 import { getProfile } from "../../store/profile";
 import './UserProfile.css'
 import EditUserProfileForm from '../EditUserProfileForm';
-import EditProfile from '../EditProfile';
-
+import { getProfiles } from '../../store/profile';
 
 function UserProfile() {
   const [user, setUser] = useState({});
   const { userId }  = useParams();
   const dispatch = useDispatch()
   let profileObj = useSelector((state) => state?.profile[userId])
+
+  const [showEditProfileForm, setShowEditProfileForm] = useState(false)
+
+  const profilesObj = useSelector((state) => state?.profile)
+  const profiles = Object?.values(profilesObj)
+
+// attempt
+  useEffect(async () => {
+    await dispatch(getProfiles());
+    // await getCurrentProfile(user_id,profiles)
+    // if (!isLoaded) setIsLoaded(true);
+  },[dispatch, profiles?.length])
+
+
+// show edit profile form
+  useEffect(() => {
+    setShowEditProfileForm(false)
+  },[dispatch, userId])
+
 
 
 // get current user
@@ -36,11 +54,34 @@ function UserProfile() {
     return null;
   }
 
+  let user_id = userId
 
-  return (
-    <>
-    {/* <EditUserProfileForm /> */}
-    {/* <EditProfile /> */}
+  console.log("all profiles", profiles[1])
+
+  let currentProfile = profiles[1]?.filter((profile) => {
+    // console.log("profile", profile)
+    // console.log("profile.user_id", profile.user_id)
+    return profile.user_id === +userId
+  })
+
+  // const res = Object.keys(foo).filter(i => foo[i] === 'Yes')
+
+
+
+  console.log("currentProfile-----------", currentProfile)
+  console.log("user_id userProfile", user_id)
+  // console.log("profile.user_id", profile)
+
+
+  let content = null;
+  if(showEditProfileForm && userId) {
+    content = (
+
+      <EditUserProfileForm currentProfile={currentProfile} hideForm={() => setShowEditProfileForm(false)}/>
+    )
+  } else {
+    content = (
+      <>
     <img className= 'user_profile_image' src={profileObj?.image_url1} alt="Photo"/>
     <div className="user_profile_container">
 
@@ -124,6 +165,19 @@ function UserProfile() {
         </div>
       </section>
 
+
+    </div>
+
+      </>
+    )
+  }
+
+
+  return (
+    <>
+    {content}
+    <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile</button>
+
       {/* <ul>
         <li>
           <strong>User Id</strong> {userId}
@@ -135,10 +189,6 @@ function UserProfile() {
           <strong>Email</strong> {user.email}
         </li>
       </ul> */}
-
-    </div>
-
-
 
     </>
   );

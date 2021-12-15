@@ -5,19 +5,20 @@ import { editProfile, getProfiles } from '../../store/profile'
 import isURL from 'validator/es/lib/isURL';
 import './EditUserProfileForm.css'
 
-const EditUserProfileForm = () => {
+const EditUserProfileForm = ({currentProfile, hideForm}) => {
   const dispatch = useDispatch();
-  const [isLoaded, setIsLoaded] = useState(false);
-  const profilesObj = useSelector((state) => state?.profile)
-  const profiles = Object?.values(profilesObj)
+  // const [isLoaded, setIsLoaded] = useState(false);
+  // const profilesObj = useSelector((state) => state?.profile)
+  // const profiles = Object?.values(profilesObj)
+  // console.log("profiles edit?", profiles)
   // grab all the profiles and filter out the one that has user_id matching with session user
   // have to do this b/c a user can delete their profile so then profile_id is no longer
   // directly correlated with the user.id
-  useEffect(async () => {
-    await dispatch(getProfiles());
-    // await getCurrentProfile(user_id,profiles)
-    if (!isLoaded) setIsLoaded(true);
-  },[dispatch, profiles?.length])
+  // useEffect(async () => { // comment 16-20 back in
+  //   await dispatch(getProfiles());
+  //   // await getCurrentProfile(user_id,profiles)
+  //   if (!isLoaded) setIsLoaded(true);
+  // },[dispatch, profiles?.length])
 
   useEffect(async () => {
     if(currentProfile) {
@@ -25,7 +26,7 @@ const EditUserProfileForm = () => {
       await setAge(currentProfile[0]?.age)
       await setLocation(currentProfile[0]?.location)
     }
-  },[profilesObj])
+  },[currentProfile])
 
   //   useEffect(async () => {
   //   // if(currentProfile) {
@@ -41,7 +42,10 @@ const EditUserProfileForm = () => {
   const user_id = sessionUser?.id
 
   // console.log("profiles in editUser", profiles)
-  let currentProfile = profiles[0]?.filter((profile) => {return profile.user_id === user_id})
+
+
+  // comment back in
+  // let currentProfile = profiles[0]?.filter((profile) => {return profile.user_id === user_id})
   // console.log("currentProfile in edit", currentProfile)
   // console.log("currentProfile in edit age--", currentProfile[0]?.age)
 
@@ -51,7 +55,7 @@ const EditUserProfileForm = () => {
   //     return currentProfile =  profiles[0]?.filter((profile) => {return profile.user_id === user_id})
   // }
 
-
+  console.log('currentProfile in edit', currentProfile)
 
   const [age, setAge] = useState("");
   const [location, setLocation] = useState(currentProfile?.location);
@@ -143,12 +147,28 @@ const EditUserProfileForm = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
+    const userInputUpdateProfile = {
+      age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id
+
+    }
+      let updated = await dispatch(editProfile(userInputUpdateProfile, currentProfile[0]?.user_id ))
+
+      if (updated) {
+        hideForm();
+      }
+
 
   }
 
+  const handleCancelFormEditClick = (e) => {
+    e.preventDefault();
+    hideForm();
+  };
+
+
   return (
     <>
-    {isLoaded &&  (<section className="edit-profile-form-container">
+<section className="edit-profile-form-container">
       <form className="edit-profile-form" onSubmit={handleSubmit}>
         <label>
           Age
@@ -511,10 +531,12 @@ const EditUserProfileForm = () => {
         >
           Submit
         </button>
+        <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
+
 
 
         </form>
-      </section>)}
+      </section>
       </>
     )
 }
