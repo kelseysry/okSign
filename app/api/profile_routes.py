@@ -76,7 +76,7 @@ def edit_profile(id):
       return "bad data"
 
 # create profile
-@profile_routes.route('/', methods=['POST'])
+@profile_routes.route('/create', methods=['POST'])
 def create_profile():
   form = ProfileForm()
   form['csrf_token'].data = request.cookies['csrf_token']
@@ -86,6 +86,7 @@ def create_profile():
     db.session.add(profile)
     db.session.commit()
     print("profile dict-------------", profile.to_dict())
+    print(form.errors)
     return {"profile":profile.to_dict()}
   else:
     return "bad data"

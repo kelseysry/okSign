@@ -94,23 +94,25 @@ const ProfileForm = ({hideForm}) => {
 
     setErrors(validationErrors)
 
-  }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id])
+  }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
     const createNewProfileData = {
-      age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id
+      user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id
     }
+    console.log("createNewProfileData", createNewProfileData)
 
 
 
       let newUserProfile = await dispatch(createProfile(createNewProfileData))
 
+      if (newUserProfile) {
+        hideForm();
+      }
+      console.log("newUserProfile", newUserProfile)
 
-      // if (newUserProfile) {
-      //   hideForm();
-      // }
 
 
   }

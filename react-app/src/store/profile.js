@@ -70,7 +70,10 @@ export const getProfiles = () => async(dispatch) => {
 
 // thunk for creating a profile
 export const createProfile = (formData) => async (dispatch) => {
-  const response = await fetch(`/api/profiles`, {
+
+  console.log("formdata in thunk",formData)
+
+  const response = await fetch(`/api/profiles/create`, {
     method: 'POST',
     headers : {
       'Content-Type': 'application/json',
@@ -80,8 +83,10 @@ export const createProfile = (formData) => async (dispatch) => {
     )
   });
   try {
+    console.log("response from thunk". response)
     const newProfile = await response.json();
     dispatch(addOneProfile(newProfile))
+    console.log("newProfile in thunk", newProfile)
     return newProfile
 
   } catch(error) {
