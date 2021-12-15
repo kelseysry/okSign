@@ -5,7 +5,7 @@ from flask_login import login_required, current_user
 
 profile_routes = Blueprint('profiles', __name__)
 
-# get all profiles in db 
+# get all profiles in db
 @profile_routes.route('/')
 def profiles():
     profiles = Profile.query.all()
@@ -25,8 +25,8 @@ def edit_profile(id):
 
     form = ProfileForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-    # print("review api-----------", form.data)
-    # print("review api-??????----------", review.to_dict())
+    # print("profile api-----------", form.data)
+    # print("profile api-??????----------", profiles.to_dict())
 
     if form.validate_on_submit():
       profile.user_id = form.data['user_id']
