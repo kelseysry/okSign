@@ -7,6 +7,7 @@ import EditUserProfileForm from '../EditUserProfileForm';
 import { getProfiles } from '../../store/profile';
 import HideCreateProfileForm from '../HideCreateProfileForm';
 import { clearProfiles } from '../../store/profile';
+import { NavLink } from "react-router-dom";
 
 function UserProfile({count, setCount}) {
   const [user, setUser] = useState({});
@@ -68,10 +69,10 @@ function UserProfile({count, setCount}) {
 
   let user_id = userId
 
-  console.log("hello")
-  console.log("all profiles", profiles)
+  // console.log("hello")
+    console.log("all profiles", profiles)
 
-  console.log("profiles being filtered", profiles)
+  // console.log("profiles being filtered", profiles)
 
   let currentProfile = profiles?.filter((profile) => {
     // console.log("profile", profile)
@@ -97,7 +98,7 @@ function UserProfile({count, setCount}) {
   } else if (isLoaded){
     content = (
       <>
-      <div> comment this whole green back in once figure out how to create profile</div>
+      {/* <div> comment this whole green back in once figure out how to create profile</div> */}
     <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="Photo"/>
     <div className="user_profile_container">
 
@@ -192,7 +193,16 @@ function UserProfile({count, setCount}) {
   return (
     <>
     {content}
-    <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile</button>
+    <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
+
+
+  { isLoaded && (currentProfile[0]?.id? null :
+    ( <div>
+        <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i class="fas fa-address-card"></i></NavLink>
+      </div>))
+  }
+
+
     {/* <HideCreateProfileForm /> */}
 
       {/* <ul>

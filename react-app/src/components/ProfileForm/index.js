@@ -5,9 +5,12 @@ import {useParams} from 'react-router-dom';
 import { createProfile } from "../../store/profile";
 import EditUserProfileForm from "../EditUserProfileForm";
 import isURL from 'validator/es/lib/isURL';
+import { useHistory } from 'react-router';
 
 const ProfileForm = ({hideForm}) => {
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
 
@@ -109,7 +112,7 @@ const ProfileForm = ({hideForm}) => {
       let newUserProfile = await dispatch(createProfile(createNewProfileData))
 
       if (newUserProfile) {
-        hideForm();
+        // hideForm();
       }
       console.log("newUserProfile", newUserProfile)
 
@@ -119,7 +122,8 @@ const ProfileForm = ({hideForm}) => {
 
   const handleCancelFormEditClick = (e) => {
     e.preventDefault();
-    hideForm();
+     history.push(`/profiles/${user_id}`)
+    // hideForm();
   };
 
 
