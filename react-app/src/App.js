@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import Discover from './components/Discover';
 import UserProfile from './components/UserProfile'
 import ProfileForm from './components/ProfileForm';
+import Conversations from './components/Conversations';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -61,7 +62,7 @@ function App() {
           <ProfileForm />
         </ProtectedRoute>
         <ProtectedRoute path='/conversations' exact={true} >
-          {/* <ProfileForm /> */}
+          <Conversations /> 
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
