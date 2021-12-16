@@ -11,3 +11,9 @@ conversation_routes = Blueprint('conversations', __name__)
 def conversations():
     conversations = Conversation.query.all()
     return {'conversations': [conversation.to_dict() for conversation in conversations]}
+
+# get one conversation
+@conversation_routes.route('/<int:id>')
+def conversation(id):
+    conversation = Conversation.query.get(id)
+    return conversation.to_dict()
