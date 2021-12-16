@@ -6,9 +6,14 @@ def seed_conversations():
       user_id_one=1,
       user_id_two=2,
     )
+    conversation2 = Conversation(
+      user_id_one=1,
+      user_id_two=4,
+    )
 
 
     db.session.add(conversation1)
+    db.session.add(conversation2)
     db.session.commit()
 
 def undo_conversations():
