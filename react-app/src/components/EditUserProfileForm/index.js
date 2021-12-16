@@ -88,8 +88,8 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
   const [education, setEducation] = useState(currentProfile[0]?.education);
   const [occupation, setOccupation] = useState(currentProfile[0]?.occupation);
   const [horoscope_id, setHoroscope_id] = useState(currentProfile[0]?.horoscope_id);
-  // const [smoking, setSmoking] = useState(currentProfile[0]?.smoking);
-  // const [drinking, setDrinking] = useState(currentProfile[0]?.smoking);
+  const [smoking, setSmoking] = useState(currentProfile[0]?.smoking);
+  const [drinking, setDrinking] = useState(currentProfile[0]?.smoking);
   const [children_id, setChildren_id] = useState(currentProfile[0]?.children_id);
   const [pet_id, setPet_id] = useState(currentProfile[0]?.pet_id);
   const [politic_id, setPolitic_id] = useState(currentProfile[0]?.politic_id);
@@ -115,8 +115,8 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     if(!secrets) validationErrors.push("secrets are required")
     if(!looking_for) validationErrors.push("looking for is required")
     if(!user_audio) validationErrors.push("audio is required")
-    if(!gender_id) validationErrors.push("gender is required")
-    if(!gender_preference_id) validationErrors.push("gender preference is required")
+    // if(!gender_id) validationErrors.push("gender is required")
+    // if(!gender_preference_id) validationErrors.push("gender preference is required")
     if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
     // if(!image_url1) {
     //   validationErrors.push("you need 6 photos!")
@@ -131,23 +131,23 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     if(!image_url4) validationErrors.push("you have great competition!")
     if(!image_url5) validationErrors.push("no great bio, make up for that with a pic!")
     if(!image_url6) validationErrors.push("don't be camera shy!")
-    if(!orientation_id) validationErrors.push("orientation is required")
-    if(!partner_id) validationErrors.push("partner is required")
+    // if(!orientation_id) validationErrors.push("orientation is required")
+    // if(!partner_id) validationErrors.push("partner is required")
     if(!pronouns) validationErrors.push("pronouns are required")
     if(!height) validationErrors.push("height is required")
     if(!education) validationErrors.push("education is required")
     if(!occupation) validationErrors.push("occupation is required")
-    if(!horoscope_id) validationErrors.push("horoscope is required")
+    // if(!horoscope_id) validationErrors.push("horoscope is required")
     // if(!smoking) validationErrors.push("smoking status is required")
     // if(!drinking) validationErrors.push("drinking status is required")
-    if(!children_id) validationErrors.push("children status is required")
-    if(!pet_id) validationErrors.push("pet status is required")
-    if(!politic_id) validationErrors.push("political belief is required")
-    if(!religion_id) validationErrors.push("religion is required")
+    // if(!children_id) validationErrors.push("children status is required")
+    // if(!pet_id) validationErrors.push("pet status is required")
+    // if(!politic_id) validationErrors.push("political belief is required")
+    // if(!religion_id) validationErrors.push("religion is required")
 
     setErrors(validationErrors)
 
-  }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id])
+  }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id, user_id])
 
 
 //   useEffect(async ()  => {
@@ -161,7 +161,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     console.log("count", count)
 
     const userInputUpdateProfile = {
-      age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id
+      age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id, user_id
     }
 
     console.log("userInputUpdateProfile", userInputUpdateProfile)
@@ -342,7 +342,9 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             >
             </input>
         </label>
-        <label>
+
+
+        {/* <label>
           Gender
             <input
             type="text"
@@ -351,16 +353,21 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             onChange={(e) => setGender_id(e.target.value)}
             >
             </input>
-        </label>
+        </label> */}
+
         <label>
           Gender
-            <input
-            type="text"
-            placeholder="gender id"
-            value={gender_preference_id}
-            onChange={(e) => setGender_preference_id(e.target.value)}
-            >
-            </input>
+          <select value={gender_id} onChange={(e) => setGender_id(+e.target.value)}>
+            <option value="1">Women</option>
+            <option value="2">Male</option>
+          </select>
+        </label>
+        <label>
+          Gender Preference
+          <select value={gender_preference_id} onChange={(e) => setGender_preference_id(+e.target.value)}>
+            <option value="1">Women</option>
+            <option value="2">Male</option>
+          </select>
         </label>
         <label>
           number of likes
@@ -432,7 +439,8 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             >
             </input>
         </label>
-        <label>
+
+        {/* <label>
           Orientation
             <input
             type="text"
@@ -441,8 +449,20 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             onChange={(e) => setOrientation_id(e.target.value)}
             >
             </input>
-        </label>
+        </label> */}
+
         <label>
+          Orientation
+          <select value={orientation_id} onChange={(e) => setOrientation_id(+e.target.value)}>
+            <option value="1">Straight</option>
+            <option value="2">Lesbian</option>
+            <option value="3">Gay</option>
+            <option value="4">Bisexual</option>
+            <option value="5">Queer</option>
+            <option value="6">Pansexual</option>
+          </select>
+        </label>
+        {/* <label>
           Partner
             <input
             type="text"
@@ -451,7 +471,17 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             onChange={(e) => setPartner_id(e.target.value)}
             >
             </input>
+        </label> */}
+
+        <label>
+          Partner
+          <select value={partner_id} onChange={(e) => setPartner_id(+e.target.value)}>
+            <option value="1">Monogamous</option>
+            <option value="2">Non-monogamous</option>
+            <option value="3">Open to either</option>
+          </select>
         </label>
+
         <label>
           Pronouns
             <input
@@ -492,9 +522,6 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             >
             </input>
         </label>
-
-
-
         {/* <label>
           Horoscope
             <input
@@ -505,7 +532,6 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             >
             </input>
         </label> */}
-
         <label>
           Horoscope
           <select value={horoscope_id} onChange={(e) => setHoroscope_id(+e.target.value)}>
@@ -521,6 +547,22 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             <option value="10">Capricorn</option>
             <option value="11">Aquarius</option>
             <option value="12">Pisces</option>
+          </select>
+        </label>
+
+        <label>
+          Smoking
+          <select value={smoking} onChange={(e) => setSmoking(+e.target.value)}>
+            <option value="true">yes</option>
+            <option value="false">no</option>
+          </select>
+        </label>
+
+        <label>
+          Drinking
+          <select value={drinking} onChange={(e) => setDrinking(+e.target.value)}>
+            <option value="true">yes</option>
+            <option value="false">no</option>
           </select>
         </label>
 
@@ -614,7 +656,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
       </div> */}
 
 
-        <label>
+        {/* <label>
           Children
             <input
             type="text"
@@ -623,7 +665,19 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             onChange={(e) => setChildren_id(e.target.value)}
             >
             </input>
+        </label> */}
+        <label>
+          Children
+          <select value={children_id} onChange={(e) => setChildren_id(+e.target.value)}>
+            <option value="1">Doesn't have kids but might want them</option>
+            <option value="2">Doesn't have kids but wants them</option>
+            <option value="3">Doesn't have kids and doesn't want want them</option>
+            <option value="4">Has kids and doesn't want more</option>
+            <option value="2">Has kids and might want more</option>
+            <option value="2">Has kids and want more"</option>
+          </select>
         </label>
+{/*
         <label>
           Pet
             <input
@@ -633,8 +687,44 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             onChange={(e) => setPet_id(e.target.value)}
             >
             </input>
+        </label> */}
+       <label>
+          Pets
+          <select value={pet_id} onChange={(e) => setPet_id(+e.target.value)}>
+            <option value="1">Doesn't have pets</option>
+            <option value="2">Cat</option>
+            <option value="3">Dog</option>
+            <option value="4">Has other pets</option>
+          </select>
         </label>
+
         <label>
+          Politic
+          <select value={politic_id} onChange={(e) => setPolitic_id(+e.target.value)}>
+            <option value="1">Politically liberal</option>
+            <option value="2">Politically moderate</option>
+            <option value="3">Politically conservative</option>
+            <option value="4">Other political beliefs</option>
+          </select>
+        </label>
+
+        <label>
+          Religion
+          <select value={religion_id} onChange={(e) => setReligion_id(+e.target.value)}>
+            <option value="1">Agnosticism</option>
+            <option value="2">Atheism</option>
+            <option value="3">Christianity</option>
+            <option value="4">Judaism</option>
+            <option value="5">Catholicism</option>
+            <option value="6">Islam</option>
+            <option value="7">Hinduism</option>
+            <option value="8">Buddhism</option>
+            <option value="9">Sikh</option>
+            <option value="9">Other religion</option>
+          </select>
+        </label>
+
+        {/* <label>
           Politic
             <input
             type="text"
@@ -643,8 +733,8 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             onChange={(e) => setPolitic_id(e.target.value)}
             >
             </input>
-        </label>
-        <label>
+        </label> */}
+        {/* <label>
           Religion
             <input
             type="text"
@@ -653,7 +743,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             onChange={(e) => setReligion_id(e.target.value)}
             >
             </input>
-        </label>
+        </label> */}
 
         <ul className="error">
           {errors.map((error) => <li key={error}>{error}</li>)}

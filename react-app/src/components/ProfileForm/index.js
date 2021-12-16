@@ -41,15 +41,14 @@ const ProfileForm = ({hideForm}) => {
   const [height, setHeight] = useState('');
   const [education, setEducation] = useState('');
   const [occupation, setOccupation] = useState('');
-  // const [horoscope_id, setHoroscope_id] = useState('');
-  // const [smoking, setSmoking] = useState(currentProfile[0]?.smoking);
-  // const [drinking, setDrinking] = useState(currentProfile[0]?.smoking);
+  const [horoscope_id, setHoroscope_id] = useState('');
+  const [smoking, setSmoking] = useState('');
+  const [drinking, setDrinking] = useState('');
   const [children_id, setChildren_id] = useState('');
   const [pet_id, setPet_id] = useState('');
   const [politic_id, setPolitic_id] = useState('');
   const [religion_id, setReligion_id] = useState('');
   const [errors, setErrors] = useState([]);
-  const [horoscope_id, setHoroscope_id] = useState('')
 
 
 
@@ -70,8 +69,8 @@ const ProfileForm = ({hideForm}) => {
     if(!secrets) validationErrors.push("secrets are required")
     if(!looking_for) validationErrors.push("looking for is required")
     if(!user_audio) validationErrors.push("audio is required")
-    if(!gender_id) validationErrors.push("gender is required")
-    if(!gender_preference_id) validationErrors.push("gender preference is required")
+    // if(!gender_id) validationErrors.push("gender is required")
+    // if(!gender_preference_id) validationErrors.push("gender preference is required")
     if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
     // if(!image_url1) {
     //   validationErrors.push("you need 6 photos!")
@@ -86,29 +85,29 @@ const ProfileForm = ({hideForm}) => {
     if(!image_url4) validationErrors.push("you have great competition!")
     if(!image_url5) validationErrors.push("no great bio, make up for that with a pic!")
     if(!image_url6) validationErrors.push("don't be camera shy!")
-    if(!orientation_id) validationErrors.push("orientation is required")
-    if(!partner_id) validationErrors.push("partner is required")
+    // if(!orientation_id) validationErrors.push("orientation is required")
+    // if(!partner_id) validationErrors.push("partner is required")
     if(!pronouns) validationErrors.push("pronouns are required")
     if(!height) validationErrors.push("height is required")
     if(!education) validationErrors.push("education is required")
     if(!occupation) validationErrors.push("occupation is required")
-    if(!horoscope_id) validationErrors.push("horoscope is required")
+    // if(!horoscope_id) validationErrors.push("horoscope is required")
     // if(!smoking) validationErrors.push("smoking status is required")
     // if(!drinking) validationErrors.push("drinking status is required")
-    if(!children_id) validationErrors.push("children status is required")
-    if(!pet_id) validationErrors.push("pet status is required")
-    if(!politic_id) validationErrors.push("political belief is required")
-    if(!religion_id) validationErrors.push("religion is required")
+    // if(!children_id) validationErrors.push("children status is required")
+    // if(!pet_id) validationErrors.push("pet status is required")
+    // if(!politic_id) validationErrors.push("political belief is required")
+    // if(!religion_id) validationErrors.push("religion is required")
 
     setErrors(validationErrors)
 
-  }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id])
+  }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
     const createNewProfileData = {
-      user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id
+      user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id
     }
     console.log("createNewProfileData", createNewProfileData)
 
@@ -495,8 +494,35 @@ const ProfileForm = ({hideForm}) => {
           </select>
         </label>
 
+        {/* <label>
+          Smoking
+          <select value={smoking} onChange={(e) => setSmoking(+e.target.value)}>
+            <option value="true">yes</option>
+            <option value="false">no</option>
+          </select>
+        </label> */}
 
+        {/* <label>
+          Drinking
+          <select value={drinking} onChange={(e) => setDrinking(+e.target.value)}>
+          <option value="true">yes</option>
+          <option value="false">no</option>
+          </select>
+        </label> */}
+{/*
+        <input  type="checkbox" value={true} id='smoking'
+                  onChange={({ target: { value, smoking }}) => {
+                                setSmoking((smoking ? value : true))}
+                  }
+                  smoking={smoking === '' ? '' : "smoking"}
+          /> smoking?
 
+        <input  type="checkbox" value={true} id='drinking'
+                  onChange={({ target: { value, drinking }}) => {
+                                setDrinking((drinking ? value : true))}
+                  }
+                  drinking={drinking === '' ? '' : "drinking"}
+          /> Drinking? */}
 
         {/* <label>
           Drinking

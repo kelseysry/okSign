@@ -37,8 +37,8 @@ class Profile(db.Model):
     education = db.Column(db.String(255))
     occupation = db.Column(db.String(255))
     horoscope_id = db.Column(db.Integer, db.ForeignKey("horoscopes.id"), nullable=True)
-    smoking = db.Column(db.Boolean, default=False)
-    drinking = db.Column(db.Boolean, default=False)
+    smoking_id = db.Column(db.Integer, db.ForeignKey("smokings.id"), nullable=True)
+    drinking_id = db.Column(db.Integer, db.ForeignKey("drinkings.id"), nullable=True)
     children_id = db.Column(db.Integer, db.ForeignKey("children.id"), nullable=True)
     pet_id = db.Column(db.Integer, db.ForeignKey("pets.id"), nullable=True)
     politic_id = db.Column(db.Integer, db.ForeignKey("politics.id"), nullable=True)
@@ -54,6 +54,9 @@ class Profile(db.Model):
     pet = db.relationship("Pet", back_populates="profile")
     politic = db.relationship("Politic", back_populates="profile")
     religion = db.relationship("Religion", back_populates="profile")
+
+    smoking = db.relationship("Smoking", back_populates="profile")
+    drinking = db.relationship("Drinking", back_populates="profile")
 
 
     genderId = db.relationship("Gender", foreign_keys="[Profile.gender_id]")

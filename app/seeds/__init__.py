@@ -12,6 +12,8 @@ from .conversations import seed_conversations, undo_conversations
 from .messages import seed_messages, undo_messages
 from .religions import seed_religions, undo_religions
 from .questions import seed_questions, undo_questions
+from .smokings import seed_smokings, undo_smokings
+from .drinkings import seed_drinkings, undo_drinkings
 
 # Creates a seed group to hold our commands
 # So we can type `flask seed --help`
@@ -28,6 +30,8 @@ def seed():
     seed_horoscopes()
     seed_children()
     seed_pets()
+    seed_smokings()
+    seed_drinkings()
     seed_politics()
     seed_religions()
     seed_profiles()
@@ -50,5 +54,7 @@ def undo():
     undo_partners()
     undo_children()
     undo_pets()
+    undo_drinkings()
+    undo_smokings()
     undo_politics()
     undo_religions()
