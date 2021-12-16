@@ -427,7 +427,6 @@ const ProfileForm = ({hideForm}) => {
           </select>
         </label>
 
-
         <label>
           Pronouns
             <input
@@ -588,7 +587,7 @@ const ProfileForm = ({hideForm}) => {
       </div> */}
 
 
-        <label>
+        {/* <label>
           Children
             <input
             type="text"
@@ -597,7 +596,19 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setChildren_id(e.target.value)}
             >
             </input>
+        </label> */}
+        <label>
+          Children
+          <select value={children_id} onChange={(e) => setChildren_id(+e.target.value)}>
+            <option value="1">Doesn't have kids but might want them</option>
+            <option value="2">Doesn't have kids but wants them</option>
+            <option value="3">Doesn't have kids and doesn't want want them</option>
+            <option value="4">Has kids and doesn't want more</option>
+            <option value="2">Has kids and might want more</option>
+            <option value="2">Has kids and want more"</option>
+          </select>
         </label>
+{/*
         <label>
           Pet
             <input
@@ -607,8 +618,44 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setPet_id(e.target.value)}
             >
             </input>
+        </label> */}
+       <label>
+          Pets
+          <select value={pet_id} onChange={(e) => setPet_id(+e.target.value)}>
+            <option value="1">Doesn't have pets</option>
+            <option value="2">Cat</option>
+            <option value="3">Dog</option>
+            <option value="4">Has other pets</option>
+          </select>
         </label>
+
         <label>
+          Politic
+          <select value={politic_id} onChange={(e) => setPolitic_id(+e.target.value)}>
+            <option value="1">Politically liberal</option>
+            <option value="2">Politically moderate</option>
+            <option value="3">Politically conservative</option>
+            <option value="4">Other political beliefs</option>
+          </select>
+        </label>
+
+        <label>
+          Religion
+          <select value={religion_id} onChange={(e) => setReligion_id(+e.target.value)}>
+            <option value="1">Agnosticism</option>
+            <option value="2">Atheism</option>
+            <option value="3">Christianity</option>
+            <option value="4">Judaism</option>
+            <option value="5">Catholicism</option>
+            <option value="6">Islam</option>
+            <option value="7">Hinduism</option>
+            <option value="8">Buddhism</option>
+            <option value="9">Sikh</option>
+            <option value="9">Other religion</option>
+          </select>
+        </label>
+
+        {/* <label>
           Politic
             <input
             type="text"
@@ -617,8 +664,8 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setPolitic_id(e.target.value)}
             >
             </input>
-        </label>
-        <label>
+        </label> */}
+        {/* <label>
           Religion
             <input
             type="text"
@@ -627,7 +674,7 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setReligion_id(e.target.value)}
             >
             </input>
-        </label>
+        </label> */}
 
         <ul className="error">
           {errors.map((error) => <li key={error}>{error}</li>)}
