@@ -116,6 +116,6 @@ export function MatchesProvider (props) {
   )
 }
 
-export function useMatches() {
+export function GetMatches() {
   return useContext(MatchesContext);
 }
