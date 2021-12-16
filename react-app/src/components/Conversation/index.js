@@ -23,7 +23,7 @@ const Conversation = () => {
 
   console.log("messages", messages)
 
-
+messages.map((message) => {console.log(message.content)})
 
 
 
@@ -31,7 +31,9 @@ const Conversation = () => {
   return (
 
     <>
-    <div>"in one conversation</div>
+
+
+    { messages?.map((message) =><div>{message?.content}</div>)}
 
 
 
