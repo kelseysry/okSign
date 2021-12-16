@@ -10,7 +10,7 @@ const loadAllQuestions = (questions) => ({
 // thunk for getting all questions to questions
 export const getQuestions = () => async(dispatch) => {
 
-    const res = await fetch(`/api/questions`)
+    const res = await fetch(`/api/questions/`)
     const questions = await res.json();
     // console.log("questions res.json()", questions)
     dispatch(loadAllQuestions(questions))

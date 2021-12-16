@@ -12,11 +12,15 @@ def profiles():
     return {'profiles': [profile.to_dict() for profile in profiles]}
 
 
+
+
 # get one profile
 @profile_routes.route('/<int:id>')
 def profile(id):
     profile = Profile.query.get(id)
     return profile.to_dict()
+
+
 
 
 
