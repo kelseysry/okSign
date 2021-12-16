@@ -24,7 +24,7 @@ def create_message(conservation_id):
 @message_routes.route('/<int:conversation_id>/messages', methods=['GET'])
 def get_conversation(conversation_id):
   messages = Message.query.filter(Message.conversation_id == conversation_id).all()
-  # print("all messages", messages)
+  # print("all messages---------------", messages)
   return {message.id: message.to_dict() for message in messages}
 
 

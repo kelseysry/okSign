@@ -2,26 +2,29 @@
 
 import { useSelector, useDispatch } from "react-redux";
 import { GetMatches } from "../../context/MatchesContext";
-import MatchConversationTile from "../MatchConversationTile";
-import { NavLink } from 'react-router-dom';
-import { getConversations } from "../../store/conversation";
 import React, { useEffect, useState } from 'react';
-
+import { getMessages } from "../../store/message";
+import { useParams } from 'react-router-dom';
 
 
 const Conversation = () => {
   const dispatch = useDispatch()
+  const { conversationId }  = useParams();
+  console.log("conversationId", conversationId)
+
+  const messagesObj = useSelector((state) => state.message)
+  const messages = Object.values(messagesObj)
+
+  let conversation_id = +conversationId
+
+  useEffect(() => {
+    dispatch(getMessages(conversation_id))
+  },[dispatch, messages.length])
+
+  console.log("messages", messages)
 
 
-  const conversationObj = useSelector((state) => state.conversation)
-  const conversations = Object.values(conversationObj)
 
-
-
-  const sessionUser = useSelector((state) => state?.session?.user)
-  const user_id = sessionUser?.id
-
-  // const [users, setUsers] = useState([]);
 
 
 
@@ -30,7 +33,7 @@ const Conversation = () => {
     <>
     <div>"in one conversation</div>
 
-    null
+
 
     </>
   )
