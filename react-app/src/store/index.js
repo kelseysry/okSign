@@ -3,11 +3,13 @@ import thunk from 'redux-thunk';
 import session from './session';
 import question from './question';
 import profile from './profile';
+import conversation from './conversation'
 
 const rootReducer = combineReducers({
   session,
   question,
-  profile
+  profile,
+  conversation
 });
 
 

@@ -16,8 +16,8 @@ const MatchConversationTile = ({profile_id}) => {
     dispatch(getProfile(profile_id));
   }, [dispatch, profile_id]);
 
-  console.log("profileObj", profileObj)
-  console.log("about me---", profileObj?.about_me)
+  // console.log("profileObj", profileObj)
+  // console.log("about me---", profileObj?.about_me)
 
   return (
     <>
