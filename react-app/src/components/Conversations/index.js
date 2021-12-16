@@ -48,12 +48,9 @@ const Conversations = () => {
     }
   }
 
-
   return (
 
     <>
-
-
       { conversationsArray[0]?.map((conversation) =>
     <div>
 
