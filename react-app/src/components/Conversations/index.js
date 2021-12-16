@@ -1,32 +1,35 @@
 
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { getProfile } from "../../store/profile";
+import { useMatches } from "../../context/MatchesContext";
 
-const Conversations = ({profile_id}) => {
+const Conversations = () => {
   const dispatch = useDispatch()
-  console.log("match profile id", +profile_id)
+  const {matchedProfileIds} = useMatches()
 
-  let profileObj = useSelector((state) => state?.profile[profile_id])
-  // let profile = Object.values(profileObj)
+  console.log("match profile id", matchedProfileIds)
+
+  // let profileObj = useSelector((state) => state?.profile[profile_id])
+  // // let profile = Object.values(profileObj)
 
 
-  // get one profile
-  useEffect(() => {
-    dispatch(getProfile(profile_id));
-  }, [dispatch, profile_id]);
+  // // get one profile
+  // useEffect(() => {
+  //   dispatch(getProfile(profile_id));
+  // }, [dispatch, profile_id]);
 
-  console.log("profileObj", profileObj)
-  console.log("about me---", profileObj?.about_me)
+  // console.log("profileObj", profileObj)
+  // console.log("about me---", profileObj?.about_me)
 
   return (
     <>
       <div>in conversations component</div>
 
-      <div>
+      {/* <div>
         <img className="match_profile_image" src={profileObj?.image_url1} alt="Photo"/>
         {profileObj?.goal}
-      </div>
+      </div> */}
 
     </>
   )
