@@ -45,7 +45,7 @@ export const clearProfiles = () => ({
 export const getProfile = (profile_id) => async(dispatch) => {
   if (profile_id) {
     // console.log("thunk profile id", profile_id)
-    const res = await fetch(`/api/profiles/${profile_id}`)
+    const res = await fetch(`/api/profiles/${profile_id}/`)
     const profile = await res.json();
     console.log("profile res.json()", profile)
     dispatch(loadProfile(profile))
