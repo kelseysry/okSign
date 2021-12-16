@@ -39,11 +39,6 @@ const Conversations = () => {
   // profile id we can get from either user_one or user_two
   // create an if conditional that matches the session user
   // if user_id_one == user_id then let profileId = user_id_two and vice versa
-
-  // then in the match conversation tile, you'll want to render the correct profile_id
-  // which you want pull from the context -- create another if conditional?
-  // let profile_id
-
   const getMatchProfileId = (conversationId1, conversationId2) => {
 
     if(user_id === conversationId1){
