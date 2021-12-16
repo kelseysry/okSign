@@ -2,23 +2,23 @@ from app.models import db, Smoking
 
 
 def seed_smokings():
-    option1 = Smoking(
-      option ="Smokes cigarettes regularly"
+    name1 = Smoking(
+      name ="Smokes cigarettes regularly"
     )
-    option2 = Smoking(
-      option="Smokes cigarettes sometimes"
+    name2 = Smoking(
+      name="Smokes cigarettes sometimes"
     )
-    option3 = Smoking(
-      option="Vapes"
+    name3 = Smoking(
+      name="Vapes"
     )
-    option4 = Smoking(
-      option="Doesn't smoke"
+    name4 = Smoking(
+      name="Doesn't smoke"
     )
 
-    db.session.add(option1)
-    db.session.add(option2)
-    db.session.add(option3)
-    db.session.add(option4)
+    db.session.add(name1)
+    db.session.add(name2)
+    db.session.add(name3)
+    db.session.add(name4)
 
 
     db.session.commit()

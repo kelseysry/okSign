@@ -2,19 +2,19 @@ from app.models import db, Drinking
 
 
 def seed_drinkings():
-    option1 = Drinking(
-      option ="Drinks often"
+    name1 = Drinking(
+      name ="Drinks often"
     )
-    option2 = Drinking(
-      option="Drinks sometimes"
+    name2 = Drinking(
+      name="Drinks sometimes"
     )
-    option3 = Drinking(
-      option="Doesn't drink"
+    name3 = Drinking(
+      name="Doesn't drink"
     )
 
-    db.session.add(option1)
-    db.session.add(option2)
-    db.session.add(option3)
+    db.session.add(name1)
+    db.session.add(name2)
+    db.session.add(name3)
 
 
     db.session.commit()

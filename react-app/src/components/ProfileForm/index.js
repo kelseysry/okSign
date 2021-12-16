@@ -42,8 +42,8 @@ const ProfileForm = ({hideForm}) => {
   const [education, setEducation] = useState('');
   const [occupation, setOccupation] = useState('');
   const [horoscope_id, setHoroscope_id] = useState('');
-  const [smoking, setSmoking] = useState('');
-  const [drinking, setDrinking] = useState('');
+  const [smoking_id, setSmoking] = useState('');
+  const [drinking_id, setDrinking] = useState('');
   const [children_id, setChildren_id] = useState('');
   const [pet_id, setPet_id] = useState('');
   const [politic_id, setPolitic_id] = useState('');
@@ -101,13 +101,13 @@ const ProfileForm = ({hideForm}) => {
 
     setErrors(validationErrors)
 
-  }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id])
+  }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
     const createNewProfileData = {
-      user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id
+      user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id
     }
     console.log("createNewProfileData", createNewProfileData)
 
