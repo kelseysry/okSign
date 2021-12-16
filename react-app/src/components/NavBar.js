@@ -16,27 +16,7 @@ const NavBar = () => {
   let sessionLinks;
 
 
-  // const handleDecreaseQuantity = async(e) => {
-  //   e.preventDefault();
 
-  //   await setQuantity(() => {
-  //     return quantity -= 1
-  //   })
-
-  //    let editItem = {
-  //     id, user_id, product_id, quantity
-  //   }
-  //   console.log("handlesubmit", editItem, quantity)
-  //   dispatch(updateCartThunk(editItem, id, user_id))
-  // }
-
-  // const handleDeleteCartItem = async(e) => {
-  //   e.preventDefault();
-  //   dispatch(deleteCartItem(item.id, user_id));
-  //   setCount(count + 1)
-  //   // dispatch(clearCartItems())
-
-  // }
 
   const handleClearProfile = async(e) => {
     e.preventDefault();
