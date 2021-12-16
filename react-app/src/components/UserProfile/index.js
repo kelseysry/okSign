@@ -42,12 +42,12 @@ function UserProfile({count, setCount}) {
   useEffect(() => {
     async function fetchData() {
 
-      const response = await dispatch(getProfiles());
+      await dispatch(getProfiles());
       if (!isLoaded) setIsLoaded(true);
 
     }
     fetchData();
-  }, [dispatch, profiles?.length, userId, count]);
+  }, [dispatch, profiles?.length, userId, count, isLoaded]);
 
 
 
