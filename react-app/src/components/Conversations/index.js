@@ -46,7 +46,6 @@ const Conversations = () => {
     } else {
       return conversationId1
     }
-
   }
 
 
@@ -57,7 +56,6 @@ const Conversations = () => {
 
       { conversationsArray[0]?.map((conversation) =>
     <div>
-      {conversation.id}
 
         <NavLink to={`/conversations/${conversation?.id}`}>
         <MatchConversationTile profile_id={getMatchProfileId(conversation.user_id_one, conversation.user_id_two)}/>
