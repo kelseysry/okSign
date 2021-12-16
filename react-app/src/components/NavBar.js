@@ -80,6 +80,11 @@ const NavBar = () => {
             Users
           </NavLink>
         </li>
+        <li>
+          <NavLink to='/conversations' exact={true} activeClassName='active'>
+            Conversations
+          </NavLink>
+        </li>
         {/* <li>
           <NavLink to={`/profiles/${sessionUser.id}`} exact={true} onClick={handleClearProfile} activeClassName='active'>
             Profile
@@ -87,7 +92,7 @@ const NavBar = () => {
         </li> */}
           <button
               className="cart-item-button"
-              onClick={handleClearProfile} 
+              onClick={handleClearProfile}
             >
               Profile
             </button>

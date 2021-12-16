@@ -2,7 +2,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from 'react';
 import { getProfile } from "../../store/profile";
-
+import './MatchProfile.css'
 
 const MatchProfile = ({profile_id}) => {
   const dispatch = useDispatch()
@@ -22,6 +22,7 @@ const MatchProfile = ({profile_id}) => {
 
   return (
     <div>
+      <img className="match_profile_image" src={profileObj?.image_url1} alt="Photo"/>
       {profileObj?.goal}
     </div>
   )
