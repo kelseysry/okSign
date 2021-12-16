@@ -27,6 +27,7 @@ const ProfileForm = ({hideForm}) => {
   const [looking_for, setLooking_for] = useState('');
   const [user_audio, setUser_audio] = useState('');
   const [gender_id, setGender_id] = useState('');
+  const [gender_preference_id, setGender_preference_id] = useState('');
   const [number_likes, setNumber_likes] = useState('');
   const [image_url1, setImage_url1] = useState('');
   const [image_url2, setImage_url2] = useState('');

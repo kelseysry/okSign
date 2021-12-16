@@ -73,6 +73,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
   const [looking_for, setLooking_for] = useState(currentProfile[0]?.looking_for);
   const [user_audio, setUser_audio] = useState(currentProfile[0]?.user_audio);
   const [gender_id, setGender_id] = useState(currentProfile[0]?.gender_id);
+  const [gender_preference_id, setGender_preference_id] = useState(currentProfile[0]?.gender_preference_id);
   const [number_likes, setNumber_likes] = useState(currentProfile[0]?.number_likes);
   const [image_url1, setImage_url1] = useState(currentProfile[0]?.image_url1);
   const [image_url2, setImage_url2] = useState(currentProfile[0]?.image_url2);
@@ -115,6 +116,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     if(!looking_for) validationErrors.push("looking for is required")
     if(!user_audio) validationErrors.push("audio is required")
     if(!gender_id) validationErrors.push("gender is required")
+    if(!gender_preference_id) validationErrors.push("gender preference is required")
     if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
     // if(!image_url1) {
     //   validationErrors.push("you need 6 photos!")
@@ -145,7 +147,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 
     setErrors(validationErrors)
 
-  }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id])
+  }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id])
 
 
 //   useEffect(async ()  => {
@@ -159,7 +161,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     console.log("count", count)
 
     const userInputUpdateProfile = {
-      age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id
+      age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id, user_id
     }
 
     console.log("userInputUpdateProfile", userInputUpdateProfile)
@@ -347,6 +349,16 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             placeholder="gender id"
             value={gender_id}
             onChange={(e) => setGender_id(e.target.value)}
+            >
+            </input>
+        </label>
+        <label>
+          Gender
+            <input
+            type="text"
+            placeholder="gender id"
+            value={gender_preference_id}
+            onChange={(e) => setGender_preference_id(e.target.value)}
             >
             </input>
         </label>

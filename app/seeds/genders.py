@@ -6,7 +6,7 @@ def seed_genders():
       name ="Women"
     )
     men = Gender(
-      name="Men"
+      name= "Men"
     )
 
 
