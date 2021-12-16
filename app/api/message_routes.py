@@ -26,3 +26,10 @@ def get_conversation(conversation_id):
   messages = Message.query.filter(Message.conversation_id == conversation_id).all()
   # print("all messages", messages)
   return {message.id: message.to_dict() for message in messages}
+
+
+# get one message from a conversation
+@message_routes.route('/<int:conversation_id>/messages/<int:id>')
+def get_message(conversation_id, id):
+    message = Message.query.get(id)
+    return message.to_dict()
