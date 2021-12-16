@@ -569,15 +569,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
           </select>
         </label>
 
-
-        {/* <label>
-          Drinking
-          <select value={drinking} onChange={(e) => setDrinking(+e.target.value)}>
-          <option value="true">yes</option>
-          <option value="false">no</option>
-          </select>
-        </label> */}
-
+   
         <label>
           Children
           <select value={children_id} onChange={(e) => setChildren_id(+e.target.value)}>
