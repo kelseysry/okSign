@@ -75,7 +75,7 @@ export const editProfile= (editProfile, id) => async dispatch => {
 // thunk for getting all profiles
 export const getProfiles = () => async(dispatch) => {
 
-    const res = await fetch(`/api/profiles`)
+    const res = await fetch(`/api/profiles/`)
     const profiles = await res.json();
     // console.log("profiles res.json()", profiles)
     dispatch(loadAllProfiles(profiles))
@@ -176,7 +176,7 @@ const profileReducer = (state = initialState, action) => {
     };
     case CLEAR:{
       state = {}
-      return state 
+      return state
   }
     default:
       return state;
