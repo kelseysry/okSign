@@ -71,6 +71,7 @@ const ProfileForm = ({hideForm}) => {
     if(!looking_for) validationErrors.push("looking for is required")
     if(!user_audio) validationErrors.push("audio is required")
     if(!gender_id) validationErrors.push("gender is required")
+    if(!gender_preference_id) validationErrors.push("gender preference is required")
     if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
     // if(!image_url1) {
     //   validationErrors.push("you need 6 photos!")
@@ -101,13 +102,13 @@ const ProfileForm = ({hideForm}) => {
 
     setErrors(validationErrors)
 
-  }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id])
+  }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
     const createNewProfileData = {
-      user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id
+      user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id
     }
     console.log("createNewProfileData", createNewProfileData)
 
@@ -306,8 +307,13 @@ const ProfileForm = ({hideForm}) => {
             <option value="2">Male</option>
           </select>
         </label>
-
-
+        <label>
+          Gender Preference
+          <select value={gender_preference_id} onChange={(e) => setGender_preference_id(+e.target.value)}>
+            <option value="1">Women</option>
+            <option value="2">Male</option>
+          </select>
+        </label>
         <label>
           number of likes
             <input
@@ -378,7 +384,8 @@ const ProfileForm = ({hideForm}) => {
             >
             </input>
         </label>
-        <label>
+
+        {/* <label>
           Orientation
             <input
             type="text"
@@ -387,8 +394,20 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setOrientation_id(e.target.value)}
             >
             </input>
-        </label>
+        </label> */}
+
         <label>
+          Orientation
+          <select value={orientation_id} onChange={(e) => setOrientation_id(+e.target.value)}>
+            <option value="1">Straight</option>
+            <option value="2">Lesbian</option>
+            <option value="3">Gay</option>
+            <option value="4">Bisexual</option>
+            <option value="5">Queer</option>
+            <option value="6">Pansexual</option>
+          </select>
+        </label>
+        {/* <label>
           Partner
             <input
             type="text"
@@ -397,7 +416,18 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setPartner_id(e.target.value)}
             >
             </input>
+        </label> */}
+
+        <label>
+          Partner
+          <select value={partner_id} onChange={(e) => setPartner_id(+e.target.value)}>
+            <option value="1">Monogamous</option>
+            <option value="2">Non-monogamous</option>
+            <option value="3">Open to either</option>
+          </select>
         </label>
+
+
         <label>
           Pronouns
             <input

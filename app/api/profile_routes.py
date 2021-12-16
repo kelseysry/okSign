@@ -52,6 +52,7 @@ def edit_profile(id):
       profile.looking_for = form.data['looking_for']
       profile.user_audio = form.data['user_audio']
       profile.gender_id = form.data['gender_id']
+      profile.gender_preference_id = form.data['gender_preference_id']
       profile.number_likes = form.data['number_likes']
       profile.image_url1 = form.data['image_url1']
       profile.image_url2 = form.data['image_url2']
