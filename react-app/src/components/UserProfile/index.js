@@ -31,23 +31,24 @@ function UserProfile({count, setCount}) {
 
 
 // original code -> rewritten below to prevent race conditions
-  // useEffect(async () => {
-  //   // dispatch(clearProfiles())
-  //   await dispatch(getProfiles());
-  //   // await getCurrentProfile(user_id,profiles)
-  //   if (!isLoaded) setIsLoaded(true);
-  // },[dispatch, profiles?.length, userId, count])
+  useEffect(async () => {
+    // dispatch(clearProfiles())
+    await dispatch(getProfiles());
+    // await getCurrentProfile(user_id,profiles)
+    if (!isLoaded) setIsLoaded(true);
+  },[dispatch, profiles?.length, userId, count, isLoaded])
 
   // prevent race conditions
-  useEffect(() => {
-    async function fetchData() {
 
-      await dispatch(getProfiles());
-      if (!isLoaded) setIsLoaded(true);
+  // useEffect(() => {
+  //   async function fetchData() {
 
-    }
-    fetchData();
-  }, [dispatch, profiles?.length, userId, count, isLoaded]);
+  //     await dispatch(getProfiles());
+  //     if (!isLoaded) setIsLoaded(true);
+
+  //   }
+  //   fetchData();
+  // }, [dispatch, profiles?.length, userId, count, isLoaded]);
 
 
 
@@ -83,7 +84,7 @@ function UserProfile({count, setCount}) {
     return null;
   }
 
-  let user_id = userId
+  // let user_id = userId
 
   // console.log("hello")
     // console.log("all profiles", profiles)
