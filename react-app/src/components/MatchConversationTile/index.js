@@ -50,8 +50,6 @@ const MatchConversationTile = ({profile_id}) => {
       return null
     }
   }
-  <Conversation profile_id={profile_id}/>
-
 
   return (
     <>
