@@ -40,7 +40,7 @@ const ProfileForm = ({hideForm}) => {
   const [height, setHeight] = useState('');
   const [education, setEducation] = useState('');
   const [occupation, setOccupation] = useState('');
-  const [horoscope_id, setHoroscope_id] = useState('');
+  // const [horoscope_id, setHoroscope_id] = useState('');
   // const [smoking, setSmoking] = useState(currentProfile[0]?.smoking);
   // const [drinking, setDrinking] = useState(currentProfile[0]?.smoking);
   const [children_id, setChildren_id] = useState('');
@@ -48,6 +48,8 @@ const ProfileForm = ({hideForm}) => {
   const [politic_id, setPolitic_id] = useState('');
   const [religion_id, setReligion_id] = useState('');
   const [errors, setErrors] = useState([]);
+  const [horoscope_id, setHoroscope_id] = useState('')
+
 
 
   useEffect(() => {
@@ -127,6 +129,16 @@ const ProfileForm = ({hideForm}) => {
      history.push(`/profiles/${user_id}`)
     // hideForm();
   };
+
+  let options = ["aquarius", "cancer", "leo"]
+
+  // const selectChange = (e) => {
+  //   // const value = event.target.value;
+  //   onChange=(e) => setSelectedOption(e.target.value)
+  // };
+
+
+
 
 
   return (
@@ -273,7 +285,9 @@ const ProfileForm = ({hideForm}) => {
             >
             </input>
         </label>
-        <label>
+
+
+        {/* <label>
           Gender
             <input
             type="text"
@@ -282,7 +296,17 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setGender_id(e.target.value)}
             >
             </input>
+        </label> */}
+
+        <label>
+          Gender
+          <select value={gender_id} onChange={(e) => setGender_id(+e.target.value)}>
+            <option value="1">Women</option>
+            <option value="2">Male</option>
+          </select>
         </label>
+
+
         <label>
           number of likes
             <input
@@ -413,7 +437,7 @@ const ProfileForm = ({hideForm}) => {
             >
             </input>
         </label>
-        <label>
+        {/* <label>
           Horoscope
             <input
             type="text"
@@ -422,7 +446,28 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setHoroscope_id(e.target.value)}
             >
             </input>
+        </label> */}
+        <label>
+          Horoscope
+          <select value={horoscope_id} onChange={(e) => setHoroscope_id(+e.target.value)}>
+            <option value="1">Aries</option>
+            <option value="2">Taurus</option>
+            <option value="3">Gemini</option>
+            <option value="4">Cancer</option>
+            <option value="5">Leo</option>
+            <option value="6">Virgo</option>
+            <option value="7">Libra</option>
+            <option value="8">Scorpio</option>
+            <option value="9">Sagittarius</option>
+            <option value="10">Capricorn</option>
+            <option value="11">Aquarius</option>
+            <option value="12">Pisces</option>
+          </select>
         </label>
+
+
+
+
         {/* <label>
           Drinking
             <input
