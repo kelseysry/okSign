@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch} from 'react-redux';
 import { useSelector } from "react-redux";
-import {useParams} from 'react-router-dom';
 import { createProfile } from "../../store/profile";
-import EditUserProfileForm from "../EditUserProfileForm";
 import isURL from 'validator/es/lib/isURL';
 import { useHistory } from 'react-router';
 

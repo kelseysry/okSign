@@ -102,11 +102,9 @@ export const createProfile = (formData) => async (dispatch) => {
     dispatch(addOneProfile(newProfile))
     console.log("newProfile in thunk", newProfile)
     return newProfile
-
   } catch(error) {
     console.log(error)
   }
-
 }
 
 // thunk to delete a profile

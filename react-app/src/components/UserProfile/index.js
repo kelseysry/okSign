@@ -5,8 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import './UserProfile.css'
 import EditUserProfileForm from '../EditUserProfileForm';
 import { getProfiles } from '../../store/profile';
-import HideCreateProfileForm from '../HideCreateProfileForm';
-import { clearProfiles } from '../../store/profile';
 import { NavLink } from "react-router-dom";
 import { deleteProfile } from '../../store/profile';
 import { useHistory } from 'react-router';
@@ -18,7 +16,7 @@ function UserProfile({count, setCount}) {
   const history = useHistory();
 
   const [isLoaded, setIsLoaded] = useState(false)
-  let profileObj = useSelector((state) => state?.profile[userId])
+  // let profileObj = useSelector((state) => state?.profile[userId])
 
   const [showEditProfileForm, setShowEditProfileForm] = useState(false)
 
@@ -32,17 +30,26 @@ function UserProfile({count, setCount}) {
 
 
 
-// attempt
+// original code -> rewritten below to prevent race conditions
   useEffect(async () => {
     // dispatch(clearProfiles())
     await dispatch(getProfiles());
     // await getCurrentProfile(user_id,profiles)
     if (!isLoaded) setIsLoaded(true);
-  },[dispatch, profiles?.length, userId, count])
+  },[dispatch, profiles?.length, userId, count, isLoaded])
+
+  // prevent race conditions
 
   // useEffect(() => {
-  //        dispatch(clearProfiles())
-  // },[dispatch, count])
+  //   async function fetchData() {
+
+  //     await dispatch(getProfiles());
+  //     if (!isLoaded) setIsLoaded(true);
+
+  //   }
+  //   fetchData();
+  // }, [dispatch, profiles?.length, userId, count, isLoaded]);
+
 
 
 // show edit profile form
@@ -77,12 +84,11 @@ function UserProfile({count, setCount}) {
     return null;
   }
 
-  let user_id = userId
+  // let user_id = userId
 
   // console.log("hello")
-    console.log("all profiles", profiles)
+    // console.log("all profiles", profiles)
 
-    console.log("TEST HEROKU-------------------")
 
   // console.log("profiles being filtered", profiles)
 
@@ -175,7 +181,7 @@ function UserProfile({count, setCount}) {
           smoking: {currentProfile[0]?.smoking? "Smokes" : "Doesn't smoke"}
         </div>
         <div>
-          <i class="fas fa-cocktail"></i> {currentProfile[0]?.smoking? "Drinks" : "Doesn't drink"}
+          <i className="fas fa-cocktail"></i> {currentProfile[0]?.smoking? "Drinks" : "Doesn't drink"}
         </div>
         <div>
           children_id: {currentProfile[0]?.children_id}
@@ -213,7 +219,7 @@ function UserProfile({count, setCount}) {
    {content}
    <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
    {/* <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Delete Profile <i className="fas fa-edit"></i></button> */}
-   <button className="" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i class="fas fa-trash"></i></button>
+   <button className="" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i className="fas fa-trash"></i></button>
 
     </>
   )
@@ -227,7 +233,7 @@ function UserProfile({count, setCount}) {
 
   { isLoaded && (currentProfile[0]?.id? content_edit_compiled :
     ( <div>
-        <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i class="fas fa-address-card"></i></NavLink>
+        <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
       </div>))
   }
 
