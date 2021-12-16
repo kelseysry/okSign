@@ -82,6 +82,8 @@ function UserProfile({count, setCount}) {
   // console.log("hello")
     console.log("all profiles", profiles)
 
+    console.log("TEST HEROKU-------------------")
+
   // console.log("profiles being filtered", profiles)
 
   let currentProfile = profiles?.filter((profile) => {
