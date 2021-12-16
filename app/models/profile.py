@@ -1,11 +1,5 @@
 from .db import db
 from sqlalchemy.sql import func
-# from .gender import Gender
-
-    # genders = db.Table('genders',
-    #     db.Column('gender_id', db.Integer, db.ForeignKey('genders.id'))
-    #     db.Column('gender_preference_id', db.Integer, db.ForeignKey('genders.id'))
-    # )
 
 
 class Profile(db.Model):
@@ -64,11 +58,6 @@ class Profile(db.Model):
 
     genderId = db.relationship("Gender", foreign_keys="[Profile.gender_id]")
     genderPreference = db.relationship("Gender", foreign_keys="[Profile.gender_preference_id]")
-
-    # genderPreference = db.relationship("Gender", foreign_keys=[gender_preference_id], back_populates="gender_preference")
-    # genderId = db.relationship("Gender", foreign_keys=[gender_id], back_populates="user_gender_id")
-
-
 
 
     def to_dict(self):
