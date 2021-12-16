@@ -12,3 +12,5 @@ from .conversation import Conversation
 from .message import Message
 from .religion import Religion
 from .partner import Partner
+from .smoking import Smoking
+from .drinking import Drinking

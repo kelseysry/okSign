@@ -26,8 +26,8 @@ const ProfileForm = ({hideForm}) => {
   const [secrets, setSecrets] = useState('');
   const [looking_for, setLooking_for] = useState('');
   const [user_audio, setUser_audio] = useState('');
-  const [gender_id, setGender_id] = useState('');
-  const [gender_preference_id, setGender_preference_id] = useState('');
+  const [gender_id, setGender_id] = useState('1');
+  const [gender_preference_id, setGender_preference_id] = useState('1');
   const [number_likes, setNumber_likes] = useState('');
   const [image_url1, setImage_url1] = useState('');
   const [image_url2, setImage_url2] = useState('');
@@ -35,21 +35,20 @@ const ProfileForm = ({hideForm}) => {
   const [image_url4, setImage_url4] = useState('');
   const [image_url5, setImage_url5] = useState('');
   const [image_url6, setImage_url6] = useState('');
-  const [orientation_id, setOrientation_id] = useState('');
-  const [partner_id, setPartner_id] = useState('');
+  const [orientation_id, setOrientation_id] = useState('1');
+  const [partner_id, setPartner_id] = useState('1');
   const [pronouns, setPronouns] = useState('');
   const [height, setHeight] = useState('');
   const [education, setEducation] = useState('');
   const [occupation, setOccupation] = useState('');
-  // const [horoscope_id, setHoroscope_id] = useState('');
-  // const [smoking, setSmoking] = useState(currentProfile[0]?.smoking);
-  // const [drinking, setDrinking] = useState(currentProfile[0]?.smoking);
-  const [children_id, setChildren_id] = useState('');
-  const [pet_id, setPet_id] = useState('');
-  const [politic_id, setPolitic_id] = useState('');
-  const [religion_id, setReligion_id] = useState('');
+  const [horoscope_id, setHoroscope_id] = useState('1');
+  const [smoking_id, setSmoking] = useState('1');
+  const [drinking_id, setDrinking] = useState('1');
+  const [children_id, setChildren_id] = useState('1');
+  const [pet_id, setPet_id] = useState('1');
+  const [politic_id, setPolitic_id] = useState('1');
+  const [religion_id, setReligion_id] = useState('1');
   const [errors, setErrors] = useState([]);
-  const [horoscope_id, setHoroscope_id] = useState('')
 
 
 
@@ -70,7 +69,8 @@ const ProfileForm = ({hideForm}) => {
     if(!secrets) validationErrors.push("secrets are required")
     if(!looking_for) validationErrors.push("looking for is required")
     if(!user_audio) validationErrors.push("audio is required")
-    if(!gender_id) validationErrors.push("gender is required")
+    // if(!gender_id) validationErrors.push("gender is required")
+    // if(!gender_preference_id) validationErrors.push("gender preference is required")
     if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
     // if(!image_url1) {
     //   validationErrors.push("you need 6 photos!")
@@ -85,29 +85,29 @@ const ProfileForm = ({hideForm}) => {
     if(!image_url4) validationErrors.push("you have great competition!")
     if(!image_url5) validationErrors.push("no great bio, make up for that with a pic!")
     if(!image_url6) validationErrors.push("don't be camera shy!")
-    if(!orientation_id) validationErrors.push("orientation is required")
-    if(!partner_id) validationErrors.push("partner is required")
+    // if(!orientation_id) validationErrors.push("orientation is required")
+    // if(!partner_id) validationErrors.push("partner is required")
     if(!pronouns) validationErrors.push("pronouns are required")
     if(!height) validationErrors.push("height is required")
     if(!education) validationErrors.push("education is required")
     if(!occupation) validationErrors.push("occupation is required")
-    if(!horoscope_id) validationErrors.push("horoscope is required")
+    // if(!horoscope_id) validationErrors.push("horoscope is required")
     // if(!smoking) validationErrors.push("smoking status is required")
     // if(!drinking) validationErrors.push("drinking status is required")
-    if(!children_id) validationErrors.push("children status is required")
-    if(!pet_id) validationErrors.push("pet status is required")
-    if(!politic_id) validationErrors.push("political belief is required")
-    if(!religion_id) validationErrors.push("religion is required")
+    // if(!children_id) validationErrors.push("children status is required")
+    // if(!pet_id) validationErrors.push("pet status is required")
+    // if(!politic_id) validationErrors.push("political belief is required")
+    // if(!religion_id) validationErrors.push("religion is required")
 
     setErrors(validationErrors)
 
-  }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id])
+  }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
     const createNewProfileData = {
-      user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, children_id, pet_id, politic_id, religion_id
+      user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id
     }
     console.log("createNewProfileData", createNewProfileData)
 
@@ -306,8 +306,13 @@ const ProfileForm = ({hideForm}) => {
             <option value="2">Male</option>
           </select>
         </label>
-
-
+        <label>
+          Gender Preference
+          <select value={gender_preference_id} onChange={(e) => setGender_preference_id(+e.target.value)}>
+            <option value="1">Women</option>
+            <option value="2">Male</option>
+          </select>
+        </label>
         <label>
           number of likes
             <input
@@ -378,7 +383,8 @@ const ProfileForm = ({hideForm}) => {
             >
             </input>
         </label>
-        <label>
+
+        {/* <label>
           Orientation
             <input
             type="text"
@@ -387,8 +393,20 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setOrientation_id(e.target.value)}
             >
             </input>
-        </label>
+        </label> */}
+
         <label>
+          Orientation
+          <select value={orientation_id} onChange={(e) => setOrientation_id(+e.target.value)}>
+            <option value="1">Straight</option>
+            <option value="2">Lesbian</option>
+            <option value="3">Gay</option>
+            <option value="4">Bisexual</option>
+            <option value="5">Queer</option>
+            <option value="6">Pansexual</option>
+          </select>
+        </label>
+        {/* <label>
           Partner
             <input
             type="text"
@@ -397,7 +415,17 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setPartner_id(e.target.value)}
             >
             </input>
+        </label> */}
+
+        <label>
+          Partner
+          <select value={partner_id} onChange={(e) => setPartner_id(+e.target.value)}>
+            <option value="1">Monogamous</option>
+            <option value="2">Non-monogamous</option>
+            <option value="3">Open to either</option>
+          </select>
         </label>
+
         <label>
           Pronouns
             <input
@@ -466,108 +494,46 @@ const ProfileForm = ({hideForm}) => {
           </select>
         </label>
 
+        <label>
+          Smoking
+          <select value={smoking_id} onChange={(e) => setSmoking(+e.target.value)}>
+            <option value="1">Smokes cigarettes regularly</option>
+            <option value="2">Smokes cigarettes sometimes</option>
+            <option value="3">Vapes</option>
+            <option value="4">Doesn't smoke</option>
+          </select>
+        </label>
 
+        <label>
+          Drinking
+          <select value={drinking_id} onChange={(e) => setDrinking(+e.target.value)}>
+            <option value="1">Drinks often</option>
+            <option value="2">Drinks sometimes</option>
+            <option value="3">Doesn't drink</option>
+          </select>
+        </label>
 
 
         {/* <label>
           Drinking
-            <input
-            type="boolean"
-            placeholder="drinking"
-            value={drinking}
-            onChange={(e) => setDrinking(e.target.value)}
-            >
-            </input>
-        </label>
-        <label> */}
-
-    {/* <label> Drinking
-    <div>
-      {[
-        { name: "true", value: true },
-        { name: "false", value: false }
-      ].map((option) => (
-        <label key={option.name}>
-          {option.name}:
-          <input
-            onChange={(e) => {
-              setDrinking(e.target.value);
-
-            }}
-            type="radio"
-            name="answer"
-            value={option.name}
-            checked={option.name === drinking}
-          />
-        </label>
-      ))}
-    </div>
-    </label> */}
-
-        {/* <input  type="radio" value="Instructor"
-                  name="staff" id='staff-instructor'
-                  checked={staff === "Instructor" ? "checked" : ""}
-                  onChange={(e) => setStaff(e.target.value)}
-          /> Instructor
-          <input  type="radio" value="Student"
-                  name="staff" id='staff-Student'
-                  checked={staff === "Student" ? "checked" : ""}
-                  onChange={(e) => setStaff(e.target.value)}
-          /> Student */}
-
-
-
-
-          {/* <label>
-          Smoker
-            <input
-            type="text"
-            placeholder="smoking"
-            value={smoking}
-            onChange={(e) => setSmoking(e.target.value)}
-            >
-            </input>
+          <select value={drinking} onChange={(e) => setDrinking(+e.target.value)}>
+          <option value="true">yes</option>
+          <option value="false">no</option>
+          </select>
         </label> */}
-
-{/* <label> Smoking
-    <div>
-      {[
-        { name: "yes", value: true},
-        { name: "no", value: false}
-      ].map((option) => (
-        <label key={option.name}>
-          {option.name}:
-          <input
-            onChange={(e) => {
-              setSmoking(e.target.value);
-
-            }}
-            type="radio"
-            name="smoker_answer"
-            value={smoking}
-            checked={option.name === smoking}
-          />
-        </label>
-      ))}
-    </div>
-</label> */}
-
-{/* <div onChange={setSmoking.bind(this)}>
-        <input type="radio" value={smoking} name="gender"/> smoke
-        <input type="radio" value="false" name="gender"/> no smoke
-      </div> */}
-
 
         <label>
           Children
-            <input
-            type="text"
-            placeholder="children_id"
-            value={children_id}
-            onChange={(e) => setChildren_id(e.target.value)}
-            >
-            </input>
+          <select value={children_id} onChange={(e) => setChildren_id(+e.target.value)}>
+            <option value="1">Doesn't have kids but might want them</option>
+            <option value="2">Doesn't have kids but wants them</option>
+            <option value="3">Doesn't have kids and doesn't want want them</option>
+            <option value="4">Has kids and doesn't want more</option>
+            <option value="5">Has kids and might want more</option>
+            <option value="6">Has kids and want more</option>
+          </select>
         </label>
+{/*
         <label>
           Pet
             <input
@@ -577,8 +543,44 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setPet_id(e.target.value)}
             >
             </input>
+        </label> */}
+       <label>
+          Pets
+          <select value={pet_id} onChange={(e) => setPet_id(+e.target.value)}>
+            <option value="1">Doesn't have pets</option>
+            <option value="2">Cat</option>
+            <option value="3">Dog</option>
+            <option value="4">Has other pets</option>
+          </select>
         </label>
+
         <label>
+          Politic
+          <select value={politic_id} onChange={(e) => setPolitic_id(+e.target.value)}>
+            <option value="1">Politically liberal</option>
+            <option value="2">Politically moderate</option>
+            <option value="3">Politically conservative</option>
+            <option value="4">Other political beliefs</option>
+          </select>
+        </label>
+
+        <label>
+          Religion
+          <select value={religion_id} onChange={(e) => setReligion_id(+e.target.value)}>
+            <option value="1">Agnosticism</option>
+            <option value="2">Atheism</option>
+            <option value="3">Christianity</option>
+            <option value="4">Judaism</option>
+            <option value="5">Catholicism</option>
+            <option value="6">Islam</option>
+            <option value="7">Hinduism</option>
+            <option value="8">Buddhism</option>
+            <option value="9">Sikh</option>
+            <option value="10">Other religion</option>
+          </select>
+        </label>
+
+        {/* <label>
           Politic
             <input
             type="text"
@@ -587,8 +589,8 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setPolitic_id(e.target.value)}
             >
             </input>
-        </label>
-        <label>
+        </label> */}
+        {/* <label>
           Religion
             <input
             type="text"
@@ -597,7 +599,7 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setReligion_id(e.target.value)}
             >
             </input>
-        </label>
+        </label> */}
 
         <ul className="error">
           {errors.map((error) => <li key={error}>{error}</li>)}

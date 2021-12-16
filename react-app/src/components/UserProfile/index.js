@@ -177,12 +177,12 @@ function UserProfile({count, setCount}) {
         <div>
           horoscope_id: {currentProfile[0]?.horoscope_id}
         </div>
-        <div>
+        {/* <div>
           smoking: {currentProfile[0]?.smoking? "Smokes" : "Doesn't smoke"}
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <i className="fas fa-cocktail"></i> {currentProfile[0]?.smoking? "Drinks" : "Doesn't drink"}
-        </div>
+        </div> */}
         <div>
           children_id: {currentProfile[0]?.children_id}
         </div>

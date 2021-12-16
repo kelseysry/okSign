@@ -30,8 +30,8 @@ def edit_profile(id):
     profile = Profile.query.get(id)
 
     form = ProfileForm()
-    horoscope_query = Horoscope.query.order_by(Horoscope.id)
-    form.horoscope_id.choices = [(horoscope.id, f"{horoscope.sign}") for horoscope in horoscope_query.all()]
+    # horoscope_query = Horoscope.query.order_by(Horoscope.id)
+    # form.horoscope_id.choices = [(horoscope.id, f"{horoscope.sign}") for horoscope in horoscope_query.all()]
     form['csrf_token'].data = request.cookies['csrf_token']
     # print("profile api-----------", form.data)
     # print("profile api-??????----------", profiles.to_dict())
@@ -52,6 +52,7 @@ def edit_profile(id):
       profile.looking_for = form.data['looking_for']
       profile.user_audio = form.data['user_audio']
       profile.gender_id = form.data['gender_id']
+      profile.gender_preference_id = form.data['gender_preference_id']
       profile.number_likes = form.data['number_likes']
       profile.image_url1 = form.data['image_url1']
       profile.image_url2 = form.data['image_url2']
@@ -65,9 +66,9 @@ def edit_profile(id):
       profile.height = form.data['height']
       profile.education = form.data['education']
       profile.occupation = form.data['occupation']
-      # profile.horoscope_id = form.data['horoscope_id']
-      # profile.smoking = form.data['smoking']
-      # profile.drinking = form.data['drinking']
+      profile.horoscope_id = form.data['horoscope_id']
+      profile.smoking_id = form.data['smoking_id']
+      profile.drinking_id = form.data['drinking_id']
       profile.children_id = form.data['children_id']
       profile.pet_id = form.data['pet_id']
       profile.politic_id = form.data['politic_id']
