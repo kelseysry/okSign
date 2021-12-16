@@ -26,8 +26,8 @@ const ProfileForm = ({hideForm}) => {
   const [secrets, setSecrets] = useState('');
   const [looking_for, setLooking_for] = useState('');
   const [user_audio, setUser_audio] = useState('');
-  const [gender_id, setGender_id] = useState('');
-  const [gender_preference_id, setGender_preference_id] = useState('');
+  const [gender_id, setGender_id] = useState('1');
+  const [gender_preference_id, setGender_preference_id] = useState('1');
   const [number_likes, setNumber_likes] = useState('');
   const [image_url1, setImage_url1] = useState('');
   const [image_url2, setImage_url2] = useState('');
@@ -35,19 +35,19 @@ const ProfileForm = ({hideForm}) => {
   const [image_url4, setImage_url4] = useState('');
   const [image_url5, setImage_url5] = useState('');
   const [image_url6, setImage_url6] = useState('');
-  const [orientation_id, setOrientation_id] = useState('');
-  const [partner_id, setPartner_id] = useState('');
+  const [orientation_id, setOrientation_id] = useState('1');
+  const [partner_id, setPartner_id] = useState('1');
   const [pronouns, setPronouns] = useState('');
   const [height, setHeight] = useState('');
   const [education, setEducation] = useState('');
   const [occupation, setOccupation] = useState('');
-  const [horoscope_id, setHoroscope_id] = useState('');
-  const [smoking_id, setSmoking] = useState('');
-  const [drinking_id, setDrinking] = useState('');
-  const [children_id, setChildren_id] = useState('');
-  const [pet_id, setPet_id] = useState('');
-  const [politic_id, setPolitic_id] = useState('');
-  const [religion_id, setReligion_id] = useState('');
+  const [horoscope_id, setHoroscope_id] = useState('1');
+  const [smoking_id, setSmoking] = useState('1');
+  const [drinking_id, setDrinking] = useState('1');
+  const [children_id, setChildren_id] = useState('1');
+  const [pet_id, setPet_id] = useState('1');
+  const [politic_id, setPolitic_id] = useState('1');
+  const [religion_id, setReligion_id] = useState('1');
   const [errors, setErrors] = useState([]);
 
 
@@ -494,13 +494,25 @@ const ProfileForm = ({hideForm}) => {
           </select>
         </label>
 
-        {/* <label>
+        <label>
           Smoking
-          <select value={smoking} onChange={(e) => setSmoking(+e.target.value)}>
-            <option value="true">yes</option>
-            <option value="false">no</option>
+          <select value={smoking_id} onChange={(e) => setSmoking(+e.target.value)}>
+            <option value="1">Smokes cigarettes regularly</option>
+            <option value="2">Smokes cigarettes sometimes</option>
+            <option value="3">Vapes</option>
+            <option value="4">Doesn't smoke</option>
           </select>
-        </label> */}
+        </label>
+
+        <label>
+          Drinking
+          <select value={drinking_id} onChange={(e) => setDrinking(+e.target.value)}>
+            <option value="1">Drinks often</option>
+            <option value="2">Drinks sometimes</option>
+            <option value="3">Doesn't drink</option>
+          </select>
+        </label>
+
 
         {/* <label>
           Drinking
@@ -509,120 +521,7 @@ const ProfileForm = ({hideForm}) => {
           <option value="false">no</option>
           </select>
         </label> */}
-{/*
-        <input  type="checkbox" value={true} id='smoking'
-                  onChange={({ target: { value, smoking }}) => {
-                                setSmoking((smoking ? value : true))}
-                  }
-                  smoking={smoking === '' ? '' : "smoking"}
-          /> smoking?
 
-        <input  type="checkbox" value={true} id='drinking'
-                  onChange={({ target: { value, drinking }}) => {
-                                setDrinking((drinking ? value : true))}
-                  }
-                  drinking={drinking === '' ? '' : "drinking"}
-          /> Drinking? */}
-
-        {/* <label>
-          Drinking
-            <input
-            type="boolean"
-            placeholder="drinking"
-            value={drinking}
-            onChange={(e) => setDrinking(e.target.value)}
-            >
-            </input>
-        </label>
-        <label> */}
-
-    {/* <label> Drinking
-    <div>
-      {[
-        { name: "true", value: true },
-        { name: "false", value: false }
-      ].map((option) => (
-        <label key={option.name}>
-          {option.name}:
-          <input
-            onChange={(e) => {
-              setDrinking(e.target.value);
-
-            }}
-            type="radio"
-            name="answer"
-            value={option.name}
-            checked={option.name === drinking}
-          />
-        </label>
-      ))}
-    </div>
-    </label> */}
-
-        {/* <input  type="radio" value="Instructor"
-                  name="staff" id='staff-instructor'
-                  checked={staff === "Instructor" ? "checked" : ""}
-                  onChange={(e) => setStaff(e.target.value)}
-          /> Instructor
-          <input  type="radio" value="Student"
-                  name="staff" id='staff-Student'
-                  checked={staff === "Student" ? "checked" : ""}
-                  onChange={(e) => setStaff(e.target.value)}
-          /> Student */}
-
-
-
-
-          {/* <label>
-          Smoker
-            <input
-            type="text"
-            placeholder="smoking"
-            value={smoking}
-            onChange={(e) => setSmoking(e.target.value)}
-            >
-            </input>
-        </label> */}
-
-{/* <label> Smoking
-    <div>
-      {[
-        { name: "yes", value: true},
-        { name: "no", value: false}
-      ].map((option) => (
-        <label key={option.name}>
-          {option.name}:
-          <input
-            onChange={(e) => {
-              setSmoking(e.target.value);
-
-            }}
-            type="radio"
-            name="smoker_answer"
-            value={smoking}
-            checked={option.name === smoking}
-          />
-        </label>
-      ))}
-    </div>
-</label> */}
-
-{/* <div onChange={setSmoking.bind(this)}>
-        <input type="radio" value={smoking} name="gender"/> smoke
-        <input type="radio" value="false" name="gender"/> no smoke
-      </div> */}
-
-
-        {/* <label>
-          Children
-            <input
-            type="text"
-            placeholder="children_id"
-            value={children_id}
-            onChange={(e) => setChildren_id(e.target.value)}
-            >
-            </input>
-        </label> */}
         <label>
           Children
           <select value={children_id} onChange={(e) => setChildren_id(+e.target.value)}>
