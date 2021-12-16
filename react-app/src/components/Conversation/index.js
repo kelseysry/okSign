@@ -5,6 +5,7 @@ import { GetMatches } from "../../context/MatchesContext";
 import React, { useEffect, useState } from 'react';
 import { getMessages } from "../../store/message";
 import { useParams } from 'react-router-dom';
+import { clearMessages } from "../../store/message";
 
 
 const Conversation = () => {
@@ -16,14 +17,19 @@ const Conversation = () => {
   const messages = Object.values(messagesObj)
 
   let conversation_id = +conversationId
+  
+  useEffect(() => {
+    dispatch(clearMessages())
+  },[dispatch, conversationId])
 
   useEffect(() => {
     dispatch(getMessages(conversation_id))
-  },[dispatch, messages.length])
+  },[dispatch, messages.length, conversationId, conversation_id])
+
 
   console.log("messages", messages)
 
-messages.map((message) => {console.log(message.content)})
+  messages.map((message) => {console.log(message.content)})
 
 
 

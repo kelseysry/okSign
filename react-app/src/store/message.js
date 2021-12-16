@@ -1,11 +1,18 @@
 const LOAD_MESSAGES = "message/LOAD_MESSAGES";
 
+const CLEAR = 'message/CLEAR'
+
+
 // action creator load all messages
 const loadAllMessages = (messages, conversation_id) => ({
   type: LOAD_MESSAGES,
   messages,
   conversation_id,
 });
+
+export const clearMessages = () => ({
+  type: CLEAR
+})
 
 
 // thunk for getting all messages in a conversation
@@ -31,7 +38,11 @@ const messageReducer = (state = initialState, action) => {
       }
       console.log("newState LOAD_MESSAGES", newState)
       return newState
-    }
+    };
+    case CLEAR:{
+      state = {}
+      return state
+  }
     default:
       return state;
   }
