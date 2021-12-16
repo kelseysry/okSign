@@ -5,8 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import './UserProfile.css'
 import EditUserProfileForm from '../EditUserProfileForm';
 import { getProfiles } from '../../store/profile';
-import HideCreateProfileForm from '../HideCreateProfileForm';
-import { clearProfiles } from '../../store/profile';
 import { NavLink } from "react-router-dom";
 import { deleteProfile } from '../../store/profile';
 import { useHistory } from 'react-router';
@@ -18,7 +16,7 @@ function UserProfile({count, setCount}) {
   const history = useHistory();
 
   const [isLoaded, setIsLoaded] = useState(false)
-  let profileObj = useSelector((state) => state?.profile[userId])
+  // let profileObj = useSelector((state) => state?.profile[userId])
 
   const [showEditProfileForm, setShowEditProfileForm] = useState(false)
 
@@ -32,17 +30,25 @@ function UserProfile({count, setCount}) {
 
 
 
-// attempt
-  useEffect(async () => {
-    // dispatch(clearProfiles())
-    await dispatch(getProfiles());
-    // await getCurrentProfile(user_id,profiles)
-    if (!isLoaded) setIsLoaded(true);
-  },[dispatch, profiles?.length, userId, count])
+// original code -> rewritten below to prevent race conditions
+  // useEffect(async () => {
+  //   // dispatch(clearProfiles())
+  //   await dispatch(getProfiles());
+  //   // await getCurrentProfile(user_id,profiles)
+  //   if (!isLoaded) setIsLoaded(true);
+  // },[dispatch, profiles?.length, userId, count])
 
-  // useEffect(() => {
-  //        dispatch(clearProfiles())
-  // },[dispatch, count])
+  // prevent race conditions
+  useEffect(() => {
+    async function fetchData() {
+
+      const response = await dispatch(getProfiles());
+      if (!isLoaded) setIsLoaded(true);
+
+    }
+    fetchData();
+  }, [dispatch, profiles?.length, userId, count]);
+
 
 
 // show edit profile form
@@ -80,9 +86,8 @@ function UserProfile({count, setCount}) {
   let user_id = userId
 
   // console.log("hello")
-    console.log("all profiles", profiles)
+    // console.log("all profiles", profiles)
 
-    console.log("TEST HEROKU-------------------")
 
   // console.log("profiles being filtered", profiles)
 
@@ -175,7 +180,7 @@ function UserProfile({count, setCount}) {
           smoking: {currentProfile[0]?.smoking? "Smokes" : "Doesn't smoke"}
         </div>
         <div>
-          <i class="fas fa-cocktail"></i> {currentProfile[0]?.smoking? "Drinks" : "Doesn't drink"}
+          <i className="fas fa-cocktail"></i> {currentProfile[0]?.smoking? "Drinks" : "Doesn't drink"}
         </div>
         <div>
           children_id: {currentProfile[0]?.children_id}

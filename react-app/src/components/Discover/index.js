@@ -1,6 +1,6 @@
 
 import { useSelector, useDispatch } from "react-redux";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import MatchProfile from "../MatchProfile";
 import { getQuestions } from "../../store/question";
 
@@ -75,7 +75,7 @@ const Discover = () => {
       counter[question.user_id] += 1
     }
 
-
+    return counter
   })
   console.log("count", counter)
   // counter = {1: 10, 2: 6, 3: 3, 4: 10}

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 // import isURL from 'validator/es/lib/isURL';
 import { useDispatch, useSelector } from "react-redux";
-import { editProfile, getProfiles } from '../../store/profile'
+import { editProfile } from '../../store/profile'
 import isURL from 'validator/es/lib/isURL';
 import './EditUserProfileForm.css'
-import { clearProfiles } from '../../store/profile';
+
 
 const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
   const dispatch = useDispatch();
