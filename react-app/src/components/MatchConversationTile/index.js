@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import { getProfile } from "../../store/profile";
 import './MatchConversationTile.css';
+import Conversation from "../Conversation";
+
+
 
 const MatchConversationTile = ({profile_id}) => {
   const dispatch = useDispatch()
@@ -48,15 +51,12 @@ const MatchConversationTile = ({profile_id}) => {
     }
   }
 
-
   return (
     <>
 
         <div className="each_match_profile_container">
-          <img className="match_profile_image" src={profileObj?.image_url1} alt="Photo"/>
           <div>{getUserName(profileObj?.user_id)}</div>
-
-
+          <img className="match_profile_image" src={profileObj?.image_url1} alt="Photo"/>
 
         </div>
 
