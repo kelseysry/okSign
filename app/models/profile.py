@@ -1,5 +1,11 @@
 from .db import db
 from sqlalchemy.sql import func
+# from .gender import Gender
+
+    # genders = db.Table('genders',
+    #     db.Column('gender_id', db.Integer, db.ForeignKey('genders.id'))
+    #     db.Column('gender_preference_id', db.Integer, db.ForeignKey('genders.id'))
+    # )
 
 
 class Profile(db.Model):
@@ -22,6 +28,7 @@ class Profile(db.Model):
     looking_for = db.Column(db.String(255))
     user_audio = db.Column(db.String(255))
     gender_id = db.Column(db.Integer, db.ForeignKey("genders.id"), nullable=True)
+    gender_preference_id = db.Column(db.Integer, db.ForeignKey("genders.id"), nullable=True)
     number_likes = db.Column(db.Integer)
     image_url1 = db.Column(db.String)
     image_url2 = db.Column(db.String)
@@ -44,7 +51,7 @@ class Profile(db.Model):
     religion_id = db.Column(db.Integer, db.ForeignKey("religions.id"), nullable=True)
 
 
-    gender = db.relationship("Gender", back_populates="profile")
+    # gender = db.relationship("Gender", back_populates="profile")
     user = db.relationship("User", back_populates="profile")
     partner = db.relationship("Partner", back_populates="profile")
     orientation = db.relationship("Orientation", back_populates="profile")
@@ -53,6 +60,16 @@ class Profile(db.Model):
     pet = db.relationship("Pet", back_populates="profile")
     politic = db.relationship("Politic", back_populates="profile")
     religion = db.relationship("Religion", back_populates="profile")
+
+
+    genderId = db.relationship("Gender", foreign_keys="[Profile.gender_id]")
+    genderPreference = db.relationship("Gender", foreign_keys="[Profile.gender_preference_id]")
+
+    # genderPreference = db.relationship("Gender", foreign_keys=[gender_preference_id], back_populates="gender_preference")
+    # genderId = db.relationship("Gender", foreign_keys=[gender_id], back_populates="user_gender_id")
+
+
+
 
     def to_dict(self):
         return {
@@ -73,6 +90,7 @@ class Profile(db.Model):
             'looking_for': self.looking_for,
             'user_audio': self.user_audio,
             'gender_id': self.gender_id,
+            'gender_preference_id': self.gender_preference_id,
             'number_likes': self.number_likes,
             'image_url1': self.image_url1,
             'image_url2': self.image_url2,
