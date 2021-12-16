@@ -480,7 +480,10 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             >
             </input>
         </label>
-        <label>
+
+
+
+        {/* <label>
           Horoscope
             <input
             type="text"
@@ -489,7 +492,27 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             onChange={(e) => setHoroscope_id(e.target.value)}
             >
             </input>
+        </label> */}
+
+        <label>
+          Horoscope
+          <select value={horoscope_id} onChange={(e) => setHoroscope_id(+e.target.value)}>
+            <option value="1">Aries</option>
+            <option value="2">Taurus</option>
+            <option value="3">Gemini</option>
+            <option value="4">Cancer</option>
+            <option value="5">Leo</option>
+            <option value="6">Virgo</option>
+            <option value="7">Libra</option>
+            <option value="8">Scorpio</option>
+            <option value="9">Sagittarius</option>
+            <option value="10">Capricorn</option>
+            <option value="11">Aquarius</option>
+            <option value="12">Pisces</option>
+          </select>
         </label>
+
+
         {/* <label>
           Drinking
             <input

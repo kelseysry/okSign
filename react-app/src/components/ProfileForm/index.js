@@ -285,7 +285,9 @@ const ProfileForm = ({hideForm}) => {
             >
             </input>
         </label>
-        <label>
+
+
+        {/* <label>
           Gender
             <input
             type="text"
@@ -294,7 +296,17 @@ const ProfileForm = ({hideForm}) => {
             onChange={(e) => setGender_id(e.target.value)}
             >
             </input>
+        </label> */}
+
+        <label>
+          Gender
+          <select value={gender_id} onChange={(e) => setGender_id(+e.target.value)}>
+            <option value="1">Women</option>
+            <option value="2">Male</option>
+          </select>
         </label>
+
+
         <label>
           number of likes
             <input
