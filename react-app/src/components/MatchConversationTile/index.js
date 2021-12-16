@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import { getProfile } from "../../store/profile";
 import './MatchConversationTile.css';
+import Conversation from "../Conversation";
+
+
 
 const MatchConversationTile = ({profile_id}) => {
   const dispatch = useDispatch()
@@ -47,6 +50,7 @@ const MatchConversationTile = ({profile_id}) => {
       return null
     }
   }
+  <Conversation profile_id={profile_id}/>
 
 
   return (

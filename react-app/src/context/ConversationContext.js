@@ -5,12 +5,14 @@ import MatchConversationTile from "../MatchConversationTile";
 import { NavLink } from 'react-router-dom';
 import { getConversations } from "../../store/conversation";
 import React, { useEffect, useState } from 'react';
+import { createContext, useContext } from "react";
 
 
+export const ConversationContext = createContext()
 
-const Conversations = () => {
+export function ConversationsProvider (props) {
   const dispatch = useDispatch()
-  const {matchedProfileIds} = GetMatches()
+  // const {matchedProfileIds} = GetMatches()
   // console.log("match profile ids from context", matchedProfileIds)
 
   const conversationObj = useSelector((state) => state.conversation)
@@ -49,8 +51,11 @@ const Conversations = () => {
   }
 
   return (
+      <>
+    <ConversationContext.Provider value={{}}>
+      {props.children}
 
-    <>
+    </ConversationContext.Provider>
       { conversationsArray[0]?.map((conversation) =>
     <div>
 
@@ -68,4 +73,7 @@ const Conversations = () => {
 }
 
 
-export default Conversations
+
+export function GetConversationProfileId() {
+  return useContext(ConversationContext);
+}
