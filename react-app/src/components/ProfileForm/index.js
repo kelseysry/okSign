@@ -529,8 +529,8 @@ const ProfileForm = ({hideForm}) => {
             <option value="2">Doesn't have kids but wants them</option>
             <option value="3">Doesn't have kids and doesn't want want them</option>
             <option value="4">Has kids and doesn't want more</option>
-            <option value="2">Has kids and might want more</option>
-            <option value="2">Has kids and want more"</option>
+            <option value="5">Has kids and might want more</option>
+            <option value="6">Has kids and want more</option>
           </select>
         </label>
 {/*
@@ -576,7 +576,7 @@ const ProfileForm = ({hideForm}) => {
             <option value="7">Hinduism</option>
             <option value="8">Buddhism</option>
             <option value="9">Sikh</option>
-            <option value="9">Other religion</option>
+            <option value="10">Other religion</option>
           </select>
         </label>
 

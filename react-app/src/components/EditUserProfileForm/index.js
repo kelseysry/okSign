@@ -88,8 +88,8 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
   const [education, setEducation] = useState(currentProfile[0]?.education);
   const [occupation, setOccupation] = useState(currentProfile[0]?.occupation);
   const [horoscope_id, setHoroscope_id] = useState(currentProfile[0]?.horoscope_id);
-  const [smoking, setSmoking] = useState(currentProfile[0]?.smoking);
-  const [drinking, setDrinking] = useState(currentProfile[0]?.smoking);
+  const [smoking_id, setSmoking] = useState(currentProfile[0]?.smoking_id);
+  const [drinking_id, setDrinking] = useState(currentProfile[0]?.drinking_id);
   const [children_id, setChildren_id] = useState(currentProfile[0]?.children_id);
   const [pet_id, setPet_id] = useState(currentProfile[0]?.pet_id);
   const [politic_id, setPolitic_id] = useState(currentProfile[0]?.politic_id);
@@ -147,7 +147,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 
     setErrors(validationErrors)
 
-  }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id, user_id])
+  }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id])
 
 
 //   useEffect(async ()  => {
@@ -161,7 +161,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     console.log("count", count)
 
     const userInputUpdateProfile = {
-      age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking, drinking, children_id, pet_id, politic_id, religion_id, user_id
+      age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
     }
 
     console.log("userInputUpdateProfile", userInputUpdateProfile)
@@ -552,120 +552,32 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 
         <label>
           Smoking
-          <select value={smoking} onChange={(e) => setSmoking(+e.target.value)}>
-            <option value="true">yes</option>
-            <option value="false">no</option>
+          <select value={smoking_id} onChange={(e) => setSmoking(+e.target.value)}>
+            <option value="1">Smokes cigarettes regularly</option>
+            <option value="2">Smokes cigarettes sometimes</option>
+            <option value="3">Vapes</option>
+            <option value="4">Doesn't smoke</option>
           </select>
         </label>
 
         <label>
           Drinking
-          <select value={drinking} onChange={(e) => setDrinking(+e.target.value)}>
-            <option value="true">yes</option>
-            <option value="false">no</option>
+          <select value={drinking_id} onChange={(e) => setDrinking(+e.target.value)}>
+            <option value="1">Drinks often</option>
+            <option value="2">Drinks sometimes</option>
+            <option value="3">Doesn't drink</option>
           </select>
         </label>
 
 
         {/* <label>
           Drinking
-            <input
-            type="boolean"
-            placeholder="drinking"
-            value={drinking}
-            onChange={(e) => setDrinking(e.target.value)}
-            >
-            </input>
-        </label>
-        <label> */}
-
-    {/* <label> Drinking
-    <div>
-      {[
-        { name: "true", value: true },
-        { name: "false", value: false }
-      ].map((option) => (
-        <label key={option.name}>
-          {option.name}:
-          <input
-            onChange={(e) => {
-              setDrinking(e.target.value);
-
-            }}
-            type="radio"
-            name="answer"
-            value={option.name}
-            checked={option.name === drinking}
-          />
-        </label>
-      ))}
-    </div>
-    </label> */}
-
-        {/* <input  type="radio" value="Instructor"
-                  name="staff" id='staff-instructor'
-                  checked={staff === "Instructor" ? "checked" : ""}
-                  onChange={(e) => setStaff(e.target.value)}
-          /> Instructor
-          <input  type="radio" value="Student"
-                  name="staff" id='staff-Student'
-                  checked={staff === "Student" ? "checked" : ""}
-                  onChange={(e) => setStaff(e.target.value)}
-          /> Student */}
-
-
-
-
-          {/* <label>
-          Smoker
-            <input
-            type="text"
-            placeholder="smoking"
-            value={smoking}
-            onChange={(e) => setSmoking(e.target.value)}
-            >
-            </input>
+          <select value={drinking} onChange={(e) => setDrinking(+e.target.value)}>
+          <option value="true">yes</option>
+          <option value="false">no</option>
+          </select>
         </label> */}
 
-{/* <label> Smoking
-    <div>
-      {[
-        { name: "yes", value: true},
-        { name: "no", value: false}
-      ].map((option) => (
-        <label key={option.name}>
-          {option.name}:
-          <input
-            onChange={(e) => {
-              setSmoking(e.target.value);
-
-            }}
-            type="radio"
-            name="smoker_answer"
-            value={smoking}
-            checked={option.name === smoking}
-          />
-        </label>
-      ))}
-    </div>
-</label> */}
-
-{/* <div onChange={setSmoking.bind(this)}>
-        <input type="radio" value={smoking} name="gender"/> smoke
-        <input type="radio" value="false" name="gender"/> no smoke
-      </div> */}
-
-
-        {/* <label>
-          Children
-            <input
-            type="text"
-            placeholder="children_id"
-            value={children_id}
-            onChange={(e) => setChildren_id(e.target.value)}
-            >
-            </input>
-        </label> */}
         <label>
           Children
           <select value={children_id} onChange={(e) => setChildren_id(+e.target.value)}>
@@ -673,8 +585,8 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             <option value="2">Doesn't have kids but wants them</option>
             <option value="3">Doesn't have kids and doesn't want want them</option>
             <option value="4">Has kids and doesn't want more</option>
-            <option value="2">Has kids and might want more</option>
-            <option value="2">Has kids and want more"</option>
+            <option value="5">Has kids and might want more</option>
+            <option value="6">Has kids and want more</option>
           </select>
         </label>
 {/*
@@ -720,7 +632,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
             <option value="7">Hinduism</option>
             <option value="8">Buddhism</option>
             <option value="9">Sikh</option>
-            <option value="9">Other religion</option>
+            <option value="10">Other religion</option>
           </select>
         </label>
 

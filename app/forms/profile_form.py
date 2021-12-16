@@ -21,6 +21,7 @@ class ProfileForm(FlaskForm):
     looking_for = StringField('looking_for',validators=[DataRequired()])
     user_audio = StringField('user_audio',validators=[DataRequired()])
     gender_id = IntegerField('gender_id', validators=[DataRequired()])
+    gender_preference_id = IntegerField('gender_preference_id', validators=[DataRequired()])
     number_likes = IntegerField('number_likes', validators=[DataRequired()])
     image_url1 = StringField('image_url1',validators=[DataRequired()])
     image_url2 = StringField('image_url2',validators=[DataRequired()])
