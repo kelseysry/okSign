@@ -8,6 +8,7 @@ import { getProfiles } from '../../store/profile';
 import { NavLink } from "react-router-dom";
 import { deleteProfile } from '../../store/profile';
 import { useHistory } from 'react-router';
+import { getHoroscopes } from '../../store/horoscope';
 
 function UserProfile({count, setCount}) {
   const [user, setUser] = useState({});
@@ -22,11 +23,11 @@ function UserProfile({count, setCount}) {
 
   const profilesObj = useSelector((state) => state?.profile)
   const profiles = Object?.values(profilesObj)[0]
-  // const [count, setCount] = useState(0)
 
-  //   useEffect(() => {
-  //        dispatch(clearProfiles())
-  // },[dispatch])
+  const horoscopesObj = useSelector((state) => state.horoscope)
+  const horoscopes = Object?.values(horoscopesObj)[0]
+  console.log("horoscopes", horoscopes)
+
 
 
 
@@ -51,6 +52,14 @@ function UserProfile({count, setCount}) {
   // }, [dispatch, profiles?.length, userId, count, isLoaded]);
 
 
+// useEffect(async() => {
+//   let userHoroscope = await dispatch(getHoroscope(currentProfile[0]?.horoscope_id))
+//   // console.log("userhoro", userHoroscope)
+// },[dispatch])
+
+useEffect(async () => {
+  await dispatch(getHoroscopes())
+}, [dispatch])
 
 // show edit profile form
   useEffect(() => {
@@ -98,13 +107,20 @@ function UserProfile({count, setCount}) {
     return profile?.user_id === +userId
   })
 
-  // const res = Object.keys(foo).filter(i => foo[i] === 'Yes')
-
-
-
-  // console.log("currentProfile-----------", currentProfile)
-  // console.log("user_id userProfile", user_id)
-  // console.log("profile.user_id", profile)
+  const getHoroscope = (horoscopeId) => {
+    const userHoroscope = horoscopes?.filter(function(horoscope){
+      console.log("horoscopeId in get", horoscopeId)
+      console.log("horoscope. id in get", horoscope?.sign)
+      return horoscope.id == +horoscopeId
+    });
+    if(userHoroscope) {
+      // console.log("userHoroscopee", userHoroscope)
+      return userHoroscope[0]?.sign
+    }
+    else {
+      return null
+    }
+  }
 
 
   let content = null;
@@ -175,7 +191,7 @@ function UserProfile({count, setCount}) {
           occupation: {currentProfile[0]?.occupation}
         </div>
         <div>
-          horoscope_id: {currentProfile[0]?.horoscope_id}
+          horoscope : {getHoroscope(currentProfile[0]?.horoscope_id)}
         </div>
         <div>
           smoking_id: {currentProfile[0]?.smoking_id}

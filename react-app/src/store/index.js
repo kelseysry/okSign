@@ -5,13 +5,15 @@ import question from './question';
 import profile from './profile';
 import conversation from './conversation'
 import message from './message'
+import horoscope from './horoscope'
 
 const rootReducer = combineReducers({
   session,
   question,
   profile,
   conversation,
-  message
+  message,
+  horoscope
 });
 
 
