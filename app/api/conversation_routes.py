@@ -17,3 +17,19 @@ def conversations():
 def conversation(id):
     conversation = Conversation.query.get(id)
     return conversation.to_dict()
+
+
+# post a conversation
+@conversation_routes.route('/', methods=['POST'])
+def create_conversation():
+  form = ConversationForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+  if form.validate_on_submit():
+    conversation = Conversation()
+    form.populate_obj(conversation)
+    db.session.add(conversation)
+    db.session.commit()
+    print("conversation dict-------------", conversation.to_dict())
+    return {"conversation":conversation.to_dict()}
+  else:
+    return "bad data"

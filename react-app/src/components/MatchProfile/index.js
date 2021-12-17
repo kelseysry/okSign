@@ -47,6 +47,8 @@ const MatchProfile = ({profile_id}) => {
 
   return (
     <div>
+      <button>Message  <i class="far fa-comment-dots"></i></button>
+      <button>Like  <i class="fas fa-heart"></i></button>
       <div>{getUserName(profileObj?.user_id)}</div>
       <img className="match_profile_image" src={profileObj?.image_url1} alt="Photo"/>
       {profileObj?.goal}
