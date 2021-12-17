@@ -71,7 +71,7 @@ const NavBar = () => {
           </NavLink>
         </li> */}
           <button
-              className="cart-item-button"
+              className=""
               onClick={handleClearProfile}
             >
               Profile

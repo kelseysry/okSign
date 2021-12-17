@@ -1,62 +1,77 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
+import { createConversation } from '../../store/conversation';
+import { useHistory } from 'react-router';
 
-
-function ConversationForm({}) {
+function ConversationForm({createConversationButton, user_id_two}) {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const sessionUser = useSelector((state) => state?.session?.user)
-  const from_user_id = sessionUser?.id // can only edit messages that YOU wrote (current user)
-
-  const [content, setContent] = useState('')
-  const [errors, setErrors] = useState([]);
-
-  let conversation_id = +conversationId
+  const user_id_one = sessionUser?.id
 
 
-  useEffect(() => {
-    const validationErrors = []
-    if(!content) validationErrors.push("do you want to get ghosted?🤨")
+  // const [errors, setErrors] = useState([]);
 
-    setErrors(validationErrors)
+  // useEffect(() => {
+  //   const validationErrors = []
+  //   if(!content) validationErrors.push("do you want to get ghosted?🤨")
 
-  }, [conversation_id, content, from_user_id])
+  //   setErrors(validationErrors)
+
+  // }, [conversation_id, content, from_user_id])
 
 
 
+  // console.log("createConversationButton in convo form", createConversationButton)
 
-  const handleSubmit = async(e) => {
-    e.preventDefault();
 
-    const newMessage = {
-      conversation_id, content, from_user_id
+  // const handleSubmit = async(e) => {
+  //   // e.preventDefault();
+
+  //   const newConversation = {
+  //     user_id_one, user_id_two
+  //   }
+
+  //   console.log("newConversation in ConversationForm", newConversation)
+
+  //   let createdConversation = await dispatch(createConversation(newConversation))
+
+  //   if(createdConversation) {
+  //     history.push(`/conversations`)
+  //   }
+
+  // }
+
+
+  // if(createConversationButton) {
+  //   handleSubmit()
+  // }
+
+
+    if(createConversationButton) {
+    const newConversation = {
+      user_id_one, user_id_two
     }
-
-    console.log("newMessage in ConversationForm", newMessage)
-
-
-    // need to grab message id by dispatch getmessage thunk so can pass in message.id in line 38
-
-    let updated = await dispatch(createMessage(newMessage, conversation_id))
-    if(updated) {
-      setContent('')
-    }
-
+    dispatch(createConversation(newConversation))
+    history.push(`/conversations`)
   }
 
-  const handleCancelConversationForm = (e) => {
-    e.preventDefault();
+
+  // const handleCancelConversationForm = (e) => {
+  //   e.preventDefault();
 
 
-  };
+  // };
 
 
   return (
     <>
-      <section className="edit-message-form-container">
-        <form className="edit-message-form" onSubmit={handleSubmit}>
-          <label>
+    null
+      {/* <section className="edit-message-form-container">
+        <form className="edit-message-form"> */}
+          {/* <label>
                 <input
                 type="text"
                 placeholder="content"
@@ -64,20 +79,20 @@ function ConversationForm({}) {
                 onChange={(e) => setContent(e.target.value)}
                 >
                 </input>
-            </label>
-            <ul className="error">
+            </label> */}
+            {/* <ul className="error">
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
         <button
           className="mobile-submit-create-business"
           type="submit"
           disabled={errors.length>0}
-        >
-          Submit
-        </button>
-            <button type="button" onClick={handleCancelConversationForm}>Cancel</button>
-        </form>
-      </section>
+        > */}
+          {/* Submit
+        </button> */}
+            {/* <button type="button" onClick={handleCancelConversationForm}>Cancel</button> */}
+        {/* </form>
+      </section> */}
 
     </>
   )
