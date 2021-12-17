@@ -32,7 +32,22 @@
   align-items: flex-end;
 } */
 
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+.dotdot {
+  background-color: transparent;
+}
+
+.dotdot:hover {
+  display: inline-block;
+}
+
+button {
+border: none;
+background-color: transparent;
+}
 
 
 .dotdot_dropdown {

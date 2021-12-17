@@ -9,11 +9,13 @@ import { getProfiles } from "../../store/profile";
 import GetProfilePic from "../GetProfilePic";
 import DotDotButton from "../DotDotButton";
 import './Conversation.css'
+import EditMessageForm from "../EditMessageForm";
 
 const Conversation = ({profile_id}) => {
   const dispatch = useDispatch()
   const { conversationId }  = useParams();
   const [users, setUsers] = useState([]);
+  const [showMenu, setShowMenu] = useState(false);
 
   const messagesObj = useSelector((state) => state.message)
   const messages = Object.values(messagesObj)
@@ -21,7 +23,9 @@ const Conversation = ({profile_id}) => {
   const profilesObj = useSelector((state) => state.profile)
   const profiles = Object.values(profilesObj)
   console.log("profilesObj in conversation",profilesObj)
-
+  const [showEditMessageForm, setShowEditMessageForm] = useState(false)
+  const sessionUser = useSelector((state) => state?.session?.user)
+  const user_id = sessionUser?.id
 
   let conversation_id = +conversationId
 
@@ -47,6 +51,12 @@ const Conversation = ({profile_id}) => {
   }, [dispatch]);
 
 
+  // show edit message form
+  useEffect(() => {
+    setShowEditMessageForm(false)
+  },[dispatch])
+
+
   const getUserName = (user_id) => {
     const usernameDisplay = users?.filter(function(el){
       return el.id === user_id
@@ -61,27 +71,81 @@ const Conversation = ({profile_id}) => {
     }
   }
 
+  let content = null;
+  if(showEditMessageForm && user_id) {
+    //  content = (<EditMessageForm />)
+
+    content = (
+
+      messages?.map((message) =><div>
+
+       {getUserName(message?.from_user_id)}
+       <div className="one-message-container">
+         <div className="content-dot-dot">
+           <div className="message-bubble">
+             {/* {message?.content} */}
+             <EditMessageForm message={message}/>
+           </div>
+           {/* <DotDotButton message={message} hideForm={() => setShowEditMessageForm(false)}/> */}
+         </div>
+       <GetProfilePic userId={message?.from_user_id}/>
+
+       </div>
+
+     </div>)
+ )
+
+
+  } else {
+
+// hideForm={() => setShowEditMessageForm(false)}
+
+      content = (
+
+         messages?.map((message) =><div>
+
+          {getUserName(message?.from_user_id)}
+          <div className="one-message-container">
+            <div className="content-dot-dot">
+              <div className="message-bubble">
+                {message?.content}
+              </div>
+              <DotDotButton message={message} setShowEditMessageForm={setShowEditMessageForm} showEditMessageForm={showEditMessageForm} />
+            </div>
+          <GetProfilePic userId={message?.from_user_id}/>
+
+          </div>
+
+        </div>)
+    )
+
+  }
+
 
 
   return (
 
     <>
+    <div>
+    {content}
 
-    { messages?.map((message) =><div>
+    </div>
 
-      {/* {getUserName(message?.from_user_id)} */}
+    {/* { messages?.map((message) =><div>
+
+      {getUserName(message?.from_user_id)}
       <div className="one-message-container">
         <div className="content-dot-dot">
           <div className="message-bubble">
             {message?.content}
           </div>
-          <DotDotButton />
+          <DotDotButton message={message} hideForm={() => setShowEditMessageForm(false)}/>
         </div>
       <GetProfilePic userId={message?.from_user_id}/>
 
       </div>
 
-    </div>)}
+    </div>)} */}
 
 
 

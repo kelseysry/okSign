@@ -44,8 +44,6 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
   const user_id = sessionUser?.id
 
   // console.log("profiles in editUser", profiles)
-
-
   // comment back in
   // let currentProfile = profiles[0]?.filter((profile) => {return profile.user_id === user_id})
   // console.log("currentProfile in edit", currentProfile)
@@ -59,7 +57,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 
   // console.log('currentProfile in edit', currentProfile)
 
-  
+
 
   const [age, setAge] = useState(currentProfile[0]?.age);
   const [location, setLocation] = useState(currentProfile[0]?.location);

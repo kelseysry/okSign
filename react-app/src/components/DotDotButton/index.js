@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from "react-router-dom";
+import { deleteProfile } from "../../store/profile";
 import './DotDotButton.css'
 
-function DotDotButton({product_id, id}) {
+function DotDotButton({showEditMessageForm, setShowEditMessageForm}) {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  let productId = product_id
 
   // false = menu is hidden
   const [showMenu, setShowMenu] = useState(false);
@@ -35,7 +35,7 @@ function DotDotButton({product_id, id}) {
   }, [showMenu]);
 
   //  const handleDeleteReview = (productId, id) => {
-  //    dispatch(deleteReview(productId, id));
+  //    dispatch(deleteProfile(productId, id));
   //   history.push(`/products/${productId}`)
   // }
 
@@ -44,20 +44,22 @@ function DotDotButton({product_id, id}) {
     <div className="dotdot_dropdown">
 
       <button className="" onClick={openMenu}>
-        <div className="">
-          <i className="fas fa-ellipsis-h "></i>
+        <div className="dotdot">
+          <i class="fas fa-ellipsis-v"></i>
         </div>
       </button>
 
 
       {showMenu && (
         <div className="edit-trash">
-          <div>
-            <NavLink to={`/products/${productId}/reviews/${id}`}><div className="dot-edit"></div><i className="fas fa-edit"></i></NavLink>
-          </div>
+          {/* <div>
+            <i className="fas fa-edit"></i>
+          </div> */}
           {/* <div>
             <button className="delete-review-button" onClick={() => {handleDeleteReview(productId, id)}}><i class="fas fa-trash"></i></button>
           </div> */}
+
+        <button className="edit-profile-button" onClick={() => setShowEditMessageForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
         </div>
       )}
 

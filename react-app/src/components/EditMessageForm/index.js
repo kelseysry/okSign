@@ -6,14 +6,17 @@ import { useParams } from 'react-router-dom';
 
 
 
-const EditMessageForm = () => {
+const EditMessageForm = ({message, hideForm}) => {
   const dispatch = useDispatch();
   const { conversationId }  = useParams();
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const from_user_id = sessionUser?.id // can only edit messages that YOU wrote (current user)
   const conversation_id = +conversationId
-  // const [age, setAge] = useState(currentProfile[0]?.age);
+
+  const [content, setContent] = useState(message.content)
+  const [errors, setErrors] = useState([]);
+
 
 
   useEffect(() => {
@@ -33,9 +36,9 @@ const EditMessageForm = () => {
     }
 
 
-    // need to grab message id by dispatch getmessage thunk so can pass in message.id in line 38 
+    // need to grab message id by dispatch getmessage thunk so can pass in message.id in line 38
 
-    let updated = await dispatch(EditMessage(userInputUpdateProfile, conversation_id, id))
+    let updated = await dispatch(EditMessage(userEditMessage, conversation_id, message.id))
       if (updated) {
         hideForm();
       }
