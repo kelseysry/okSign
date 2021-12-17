@@ -1,7 +1,6 @@
 // responsible for render one conversation
 
 import { useSelector, useDispatch } from "react-redux";
-import { GetMatches } from "../../context/MatchesContext";
 import React, { useEffect, useState } from 'react';
 import { getMessages } from "../../store/message";
 import { useParams } from 'react-router-dom';
@@ -61,49 +60,18 @@ const Conversation = ({profile_id}) => {
     }
   }
 
-  const getUser = (user_id) => {
-    const user = users?.filter(function(el){
-      return el.id === user_id
-     });
-    //  console.log("try", user_id)
-    if (user) {
-     return user
-    }
-    else {
-      return null
-    }
-  }
 
-
-  const getProfilePic = (user_id_from_getUser) => {
-    const profilePic = profiles?.filter(function(el, idx) {
-
-      // console.log("el.user_id", el[idx])
-      // console.log("user_id_from_getUser", user_id_from_getUser[0]?.id)
-      return el[idx].user_id === user_id_from_getUser[0]?.id
-    });
-    if (profilePic) {
-      console.log("profilePic", profilePic)
-      return profilePic
-     }
-     else {
-       return null
-     }
-  }
-
-  console.log("profile_id", profile_id)
 
   return (
 
     <>
 
-
     { messages?.map((message) =><div>
 
+      <GetProfilePic userId={message?.from_user_id}/>
+      {getUserName(message?.from_user_id)}
       {message?.content}
       {message?.from_user_id}
-      {getUserName(message?.from_user_id)}
-      <GetProfilePic userId={message?.from_user_id}/>
 
 
 
