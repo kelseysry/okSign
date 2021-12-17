@@ -101,7 +101,6 @@ const MatchProfile = ({profile_id}) => {
 
       // console.log("convo-----", convo[0].id)
 
-      // console.log("newConversation handle id", newConversation?.id)
 
       if(newConversation){
         history.push(`/conversations/${convo[0]?.id}`)
