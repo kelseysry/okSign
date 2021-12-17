@@ -1,15 +1,22 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from 'react-router-dom';
-import { createConversation } from '../../store/conversation';
-import { useHistory } from 'react-router';
 
-function ConversationForm({createConversationButton, user_id_two}) {
-  const dispatch = useDispatch();
-  const history = useHistory();
 
-  const sessionUser = useSelector((state) => state?.session?.user)
-  const user_id_one = sessionUser?.id
+
+// no longer using this. Creating conversations straight from dispatch createConversation 
+
+
+
+// import { useEffect, useState } from 'react';
+// import { useDispatch, useSelector } from "react-redux";
+// import { useParams } from 'react-router-dom';
+// import { createConversation } from '../../store/conversation';
+// import { useHistory } from 'react-router';
+
+// function ConversationForm({createConversationButton, user_id_two}) {
+//   const dispatch = useDispatch();
+//   const history = useHistory();
+
+//   const sessionUser = useSelector((state) => state?.session?.user)
+//   const user_id_one = sessionUser?.id
 
 
   // const [errors, setErrors] = useState([]);
@@ -50,13 +57,13 @@ function ConversationForm({createConversationButton, user_id_two}) {
   // }
 
 
-    if(createConversationButton) {
-    const newConversation = {
-      user_id_one, user_id_two
-    }
-    dispatch(createConversation(newConversation))
-    history.push(`/conversations`)
-  }
+  //   if(createConversationButton) {
+  //   const newConversation = {
+  //     user_id_one, user_id_two
+  //   }
+  //   dispatch(createConversation(newConversation))
+  //   history.push(`/conversations`)
+  // }
 
 
   // const handleCancelConversationForm = (e) => {
@@ -66,9 +73,9 @@ function ConversationForm({createConversationButton, user_id_two}) {
   // };
 
 
-  return (
-    <>
-    null
+  // return (
+  //   <>
+  //   null
       {/* <section className="edit-message-form-container">
         <form className="edit-message-form"> */}
           {/* <label>
@@ -94,8 +101,8 @@ function ConversationForm({createConversationButton, user_id_two}) {
         {/* </form>
       </section> */}
 
-    </>
+    {/* </>
   )
 }
 
-export default ConversationForm;
+export default ConversationForm; */}
