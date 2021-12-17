@@ -53,17 +53,17 @@ const NavBar = () => {
             Home
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to='/discover' exact={true} activeClassName='active'>
             Discover
           </NavLink>
-        </li>
-                {/* <button
+        </li> */}
+                <button
               className=""
               onClick={handleClearDiscoverProfiles}
             >
               Discover
-            </button> */}
+            </button>
 
         {/* <li>
           <NavLink to='/login' exact={true} activeClassName='active'>
