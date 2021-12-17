@@ -8,7 +8,7 @@ function MessageForm({conversationId}) {
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state?.session?.user)
-  const from_user_id = sessionUser?.id // can only edit messages that YOU wrote (current user)
+  const from_user_id = sessionUser?.id 
 
   const [content, setContent] = useState('')
   const [errors, setErrors] = useState([]);
@@ -24,7 +24,7 @@ function MessageForm({conversationId}) {
 
   }, [conversation_id, content, from_user_id])
 
-  
+
 
 
   const handleSubmit = async(e) => {
