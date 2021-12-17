@@ -1,6 +1,6 @@
 const LOAD_CONVERSATIONS = "conversation/LOAD_CONVERSATIONS";
 const ADD_ONE = "conversation/ADD_ONE"
-
+const CLEAR = 'conversation/CLEAR'
 
 
 // action creator to load all conversations
@@ -15,6 +15,9 @@ const addOneConversation = (newConversation) => ({
   newConversation
 })
 
+export const clearConversation = () => ({
+  type: CLEAR
+})
 
 
 // thunk for getting all conversations
@@ -77,9 +80,11 @@ const conversationReducer = (state = initialState, action) => {
         return newState
       }
       // return state
-    }
-
-
+    };
+    case CLEAR:{
+      state = {}
+      return state
+    };
     default:
       return state;
   }

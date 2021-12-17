@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { clearProfiles } from '../store/profile';
 import { getProfiles } from '../store/profile';
 import { useHistory } from 'react-router';
+import { clearConversation } from '../store/conversation';
 
 const NavBar = () => {
   const sessionUser = useSelector((state) => state?.session.user);
@@ -23,6 +24,12 @@ const NavBar = () => {
     dispatch(clearProfiles())
     history.push(`/profiles/${sessionUser.id}`)
     dispatch(getProfiles())
+  }
+
+  const handleClearConversations = async(e) => {
+    e.preventDefault()
+    dispatch(clearConversation())
+    history.push(`/conversations`)
   }
 
 
@@ -60,11 +67,20 @@ const NavBar = () => {
             Users
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to='/conversations' exact={true} activeClassName='active'>
             Conversations
           </NavLink>
-        </li>
+        </li> */}
+        <button
+              className=""
+              onClick={handleClearConversations}
+            >
+              Conversations
+            </button>
+
+
+
         {/* <li>
           <NavLink to={`/profiles/${sessionUser.id}`} exact={true} onClick={handleClearProfile} activeClassName='active'>
             Profile
