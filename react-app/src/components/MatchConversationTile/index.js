@@ -53,12 +53,13 @@ const MatchConversationTile = ({profile_id}) => {
 
   return (
     <>
-
+      {profileObj?.user_id ?
         <div className="each_match_profile_container">
           <div>{getUserName(profileObj?.user_id)}</div>
           <img className="match_profile_image" src={profileObj?.image_url1} alt="Photo"/>
-
         </div>
+        : null
+        }
 
     </>
   )

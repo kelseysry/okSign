@@ -43,8 +43,11 @@ const Conversations = () => {
 
     if(user_id === conversationId1){
       return conversationId2
-    } else {
+    } else if (user_id === conversationId2) {
       return conversationId1
+    }
+    else {
+      return null
     }
   }
 
