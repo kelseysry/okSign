@@ -34,7 +34,7 @@ function DotDotButton({showEditMessageForm, setShowEditMessageForm}) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
-  //  const handleDeleteReview = (productId, id) => {
+  //  const handleDeleteMessage = (productId, id) => {
   //    dispatch(deleteProfile(productId, id));
   //   history.push(`/products/${productId}`)
   // }
@@ -52,12 +52,10 @@ function DotDotButton({showEditMessageForm, setShowEditMessageForm}) {
 
       {showMenu && (
         <div className="edit-trash">
-          {/* <div>
-            <i className="fas fa-edit"></i>
-          </div> */}
-          {/* <div>
-            <button className="delete-review-button" onClick={() => {handleDeleteReview(productId, id)}}><i class="fas fa-trash"></i></button>
-          </div> */}
+
+          <div>
+            <button className="delete-review-button" onClick={() => {handleDeleteMessage(productId, id)}}><i class="fas fa-trash"></i></button>
+          </div>
 
         <button className="edit-profile-button" onClick={() => setShowEditMessageForm(true)}><i className="fas fa-edit"></i></button>
         </div>
