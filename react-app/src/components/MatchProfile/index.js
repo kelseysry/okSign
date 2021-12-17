@@ -60,7 +60,16 @@ const MatchProfile = ({profile_id}) => {
 
     let newConversation = await dispatch(createConversation(formData))
     console.log("newConversation handle", newConversation)
-    history.push(`/conversations/${newConversation.id}`)
+    console.log("newconvo array", Object.values(newConversation))
+    let convo = Object.values(newConversation)
+
+    console.log("convo-----", convo[0].id)
+
+    console.log("newConversation handle id", newConversation?.id)
+
+    if(newConversation){
+      history.push(`/conversations/${convo[0]?.id}`)
+    }
 
     // setCreateConversationButton(true);
   }
