@@ -84,25 +84,7 @@ const Conversation = ({profile_id}) => {
     <div>
 
       <Message message={message}/>
-{/*
-      {getUserName(message?.from_user_id)}
-      <div className="one-message-container">
-        <div className="content-dot-dot">
-          <div className="message-bubble">
-            {showEditMessageForm? <EditMessageForm message={message} hideForm={() => setShowEditMessageForm(false)}/> : message?.content}
-          </div>
-          {message.from_user_id === user_id?
-          <DotDotButton message={message}  showEditMessageForm={showEditMessageForm} setShowEditMessageForm={setShowEditMessageForm}/>
 
-
-          :
-            null
-            }
-
-        </div>
-      <GetProfilePic userId={message?.from_user_id}/>
-
-      </div> */}
 
     </div>)}
 

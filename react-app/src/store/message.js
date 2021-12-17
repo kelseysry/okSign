@@ -1,5 +1,6 @@
 const LOAD_MESSAGES = "message/LOAD_MESSAGES";
 const EDIT_MESSAGE= "message/EDIT_MESSAGE"
+const ADD_ONE = "message/ADD_ONE"
 const CLEAR = 'message/CLEAR'
 
 
@@ -16,6 +17,13 @@ export const editOneMessage = (message, messageId) => ({
   message,
   messageId
 })
+
+// action creator to create one message
+const addOneMessage = (newMessage) => ({
+  type: ADD_ONE,
+  newMessage
+})
+
 
 export const clearMessages = () => ({
   type: CLEAR
@@ -47,6 +55,31 @@ export const EditMessage = (editedMessage,conversation_id, id) => async dispatch
   return message
 }
 
+// thunk for creating a message
+export const createMessage = (formData, conversation_id) => async (dispatch) => {
+
+  console.log("formdata in thunk",formData)
+
+  const response = await fetch(`/api/conversations/${conversation_id}/messages`, {
+    method: 'POST',
+    headers : {
+      'Content-Type': 'application/json',
+     },
+     body: JSON.stringify(
+      formData
+    )
+  });
+  try {
+    // console.log("response from thunk". response)
+    const newMessage = await response.json();
+    dispatch(addOneMessage(newMessage))
+    // console.log("newMessage in thunk", newMessage)
+    return newMessage
+  } catch(error) {
+    // console.log(error)
+  }
+}
+
 
 
 // reducer
@@ -73,6 +106,18 @@ const messageReducer = (state = initialState, action) => {
       }
       return state
     };
+    case ADD_ONE : {
+      // console.log("add_one case", action.newMessage)
+      if(!state[action.newMessage.id]) {
+        const newState = {
+          ...state,
+        }
+        console.log("newState in messageReducer add_", newState)
+        console.log("action.newMessage", action.newMessage)
+        return newState
+      }
+      // return state
+    }
     case CLEAR:{
       state = {}
       return state
