@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { NavLink } from "react-router-dom";
-import { deleteProfile } from "../../store/profile";
+import { deleteMessage } from "../../store/message";
 import './DotDotButton.css'
 
-function DotDotButton({showEditMessageForm, setShowEditMessageForm}) {
+
+function DotDotButton({conversation_id, messageId, showEditMessageForm, setShowEditMessageForm}) {
   const dispatch = useDispatch();
   const history = useHistory();
+
+  // console.log("messageId", messageId)
+  let message_id = +messageId
 
 
   // false = menu is hidden
@@ -34,10 +38,12 @@ function DotDotButton({showEditMessageForm, setShowEditMessageForm}) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
-  //  const handleDeleteMessage = (productId, id) => {
-  //    dispatch(deleteProfile(productId, id));
-  //   history.push(`/products/${productId}`)
-  // }
+   const handleDeleteMessage = (conversation_id, message_id) => {
+     console.log("conversatiod_id in handle", conversation_id)
+     console.log("message_id in handle", message_id)
+
+     dispatch(deleteMessage(conversation_id, message_id));
+  }
 
   return (
     <>
@@ -53,11 +59,11 @@ function DotDotButton({showEditMessageForm, setShowEditMessageForm}) {
       {showMenu && (
         <div className="edit-trash">
 
-          {/* <div>
-            <button className="delete-review-button" onClick={() => {handleDeleteMessage(productId, id)}}><i class="fas fa-trash"></i></button>
-          </div> */}
+          <div>
+            <button className="delete-review-button" onClick={() => handleDeleteMessage(conversation_id, message_id)}><i class="fas fa-trash"></i></button>
+          </div>
 
-        <button className="edit-profile-button" onClick={() => setShowEditMessageForm(true)}><i className="fas fa-edit"></i></button>
+          <button className="edit-profile-button" onClick={() => setShowEditMessageForm(true)}><i className="fas fa-edit"></i></button>
         </div>
       )}
 
