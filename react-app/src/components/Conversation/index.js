@@ -11,6 +11,7 @@ import DotDotButton from "../DotDotButton";
 import './Conversation.css'
 import EditMessageForm from "../EditMessageForm";
 import Message from "../Message";
+import MessageForm from "../MessageForm";
 
 const Conversation = ({profile_id}) => {
   const dispatch = useDispatch()
@@ -78,17 +79,12 @@ const Conversation = ({profile_id}) => {
 
     <>
 
-
     { messages?.map((message) =>
-
     <div>
-
       <Message message={message}/>
-
-
     </div>)}
 
-
+      <MessageForm conversationId={conversationId} />
 
     </>
   )

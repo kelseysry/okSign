@@ -3,17 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { createMessage } from "../../store/message";
 
-function MessageForm() {
+function MessageForm({conversationId}) {
   const dispatch = useDispatch();
-  const { conversationId }  = useParams();
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const from_user_id = sessionUser?.id // can only edit messages that YOU wrote (current user)
-  const conversation_id = +conversationId
 
   const [content, setContent] = useState('')
   const [errors, setErrors] = useState([]);
 
+  let conversation_id = +conversationId
 
 
   useEffect(() => {
@@ -31,6 +30,8 @@ function MessageForm() {
     const newMessage = {
       conversation_id, content, from_user_id
     }
+
+    console.log("newMessage in messageform", newMessage)
 
 
     // need to grab message id by dispatch getmessage thunk so can pass in message.id in line 38

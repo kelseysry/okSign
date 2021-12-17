@@ -59,6 +59,8 @@ export const EditMessage = (editedMessage,conversation_id, id) => async dispatch
 export const createMessage = (formData, conversation_id) => async (dispatch) => {
 
   console.log("formdata in thunk",formData)
+  console.log("conversation_id in thunk",conversation_id)
+
 
   const response = await fetch(`/api/conversations/${conversation_id}/messages`, {
     method: 'POST',
@@ -73,7 +75,7 @@ export const createMessage = (formData, conversation_id) => async (dispatch) => 
     // console.log("response from thunk". response)
     const newMessage = await response.json();
     dispatch(addOneMessage(newMessage))
-    // console.log("newMessage in thunk", newMessage)
+    console.log("newMessage in thunk-------", newMessage)
     return newMessage
   } catch(error) {
     // console.log(error)
