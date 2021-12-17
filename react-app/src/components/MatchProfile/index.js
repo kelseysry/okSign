@@ -53,13 +53,14 @@ const MatchProfile = ({profile_id}) => {
     }
   }
 
-  const handleCreateConversation = (discoverProfileId) => {
+  const handleCreateConversation = async (discoverProfileId) => {
     console.log("discoverProfileId", discoverProfileId)
     let user_id_two = discoverProfileId
     let formData = {user_id_one , user_id_two}
 
-    dispatch(createConversation(formData))
-    history.push(`/conversations`)
+    let newConversation = await dispatch(createConversation(formData))
+    console.log("newConversation handle", newConversation)
+    history.push(`/conversations/${newConversation.id}`)
 
     // setCreateConversationButton(true);
   }
