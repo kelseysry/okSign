@@ -7,7 +7,7 @@ message_routes = Blueprint('message', __name__)
 
 # post a message
 @message_routes.route('/<int:conversation_id>/messages', methods=['POST'])
-def create_message(conservation_id):
+def create_message(conversation_id):
   form = MessageForm()
   form['csrf_token'].data = request.cookies['csrf_token']
   if form.validate_on_submit():

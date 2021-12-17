@@ -1,65 +1,87 @@
-import { useState } from "react";
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from 'react-router-dom';
+import { createMessage } from "../../store/message";
+import { getMessages } from '../../store/message';
+
+function MessageForm({conversationId}) {
+  const dispatch = useDispatch();
+
+  const sessionUser = useSelector((state) => state?.session?.user)
+  const from_user_id = sessionUser?.id // can only edit messages that YOU wrote (current user)
+
+  const [content, setContent] = useState('')
+  const [errors, setErrors] = useState([]);
+
+  let conversation_id = +conversationId
 
 
-function MessageForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [comments, setComments] = useState('');
-    const [phoneType, setPhoneType] = useState('');
+  useEffect(() => {
+    const validationErrors = []
+    if(!content) validationErrors.push("do you want to get ghosted?🤨")
+
+    setErrors(validationErrors)
+
+  }, [conversation_id, content, from_user_id])
+
+  
+
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    const newMessage = {
+      conversation_id, content, from_user_id
+    }
+
+    console.log("newMessage in messageform", newMessage)
+
+
+    // need to grab message id by dispatch getmessage thunk so can pass in message.id in line 38
+
+    let updated = await dispatch(createMessage(newMessage, conversation_id))
+    if(updated) {
+      setContent('')
+    }
+
+  }
+
+  const handleCancelMessageForm = (e) => {
+    e.preventDefault();
+
+
+  };
+
 
   return (
-    <div>
-      <h2>Contact Us</h2>
-      <form>
+    <>
+      <section className="edit-message-form-container">
+        <form className="edit-message-form" onSubmit={handleSubmit}>
+          <label>
+                <input
+                type="text"
+                placeholder="content"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                >
+                </input>
+            </label>
+            <ul className="error">
+          {errors.map((error) => <li key={error}>{error}</li>)}
+        </ul>
+        <button
+          className="mobile-submit-create-business"
+          type="submit"
+          disabled={errors.length>0}
+        >
+          Submit
+        </button>
+            <button type="button" onClick={handleCancelMessageForm}>Cancel</button>
+        </form>
+      </section>
 
-      <div>
-  <label htmlFor='phone'>Phone:</label>
-  <input
-    id='phone'
-    name='phone'
-    type='text'
-    onChange={e => setPhone(e.target.value)}
-    value={phone}
-  />
-  <select
-    name='phoneType'
-    onChange={e => setPhoneType(e.target.value)}
-    value={phoneType}
-  >
-    <option value='' disabled>Select a phone type...</option>
-    <option>Home</option>
-    <option>Work</option>
-    <option>Mobile</option>
-  </select>
-</div>
-
-
-        <div>
-          <label htmlFor='name'>Name:</label>
-          <input id='name' type='text' value={name} />
-        </div>
-        <div>
-          <label htmlFor='email'>Email:</label>
-          <input id='email' type='text' value={email} />
-        </div>
-        <div>
-          <label htmlFor='phone'>Phone:</label>
-          <input id='phone' type='text' value={phone} />
-        </div>
-        <div>
-        <label htmlFor='comments'>Comments:</label>
-        <textarea
-          id='comments'
-          name='comments'
-          onChange={(e) => setComments(e.target.value)}
-          value={comments}
-  />
-</div>
-        <button>Submit</button>
-      </form>
-    </div>
-  );
+    </>
+  )
 }
 
 export default MessageForm;

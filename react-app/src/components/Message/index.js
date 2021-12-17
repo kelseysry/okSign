@@ -10,6 +10,7 @@ import GetProfilePic from "../GetProfilePic";
 import DotDotButton from "../DotDotButton";
 import EditMessageForm from "../EditMessageForm";
 
+
 const Message = ({message}) => {
   const dispatch = useDispatch()
   const { conversationId }  = useParams();
@@ -19,12 +20,14 @@ const Message = ({message}) => {
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
+  let conversation_id = +conversationId
 
 
  // show edit message form
  useEffect(() => {
   setShowEditMessageForm(false)
 },[dispatch])
+
 
 
 
