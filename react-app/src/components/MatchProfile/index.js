@@ -59,13 +59,13 @@ const MatchProfile = ({profile_id}) => {
     let formData = {user_id_one , user_id_two}
 
     let newConversation = await dispatch(createConversation(formData))
-    console.log("newConversation handle", newConversation)
-    console.log("newconvo array", Object.values(newConversation))
+    // console.log("newConversation handle", newConversation)
+    // console.log("newconvo array", Object.values(newConversation))
     let convo = Object.values(newConversation)
 
-    console.log("convo-----", convo[0].id)
+    // console.log("convo-----", convo[0].id)
 
-    console.log("newConversation handle id", newConversation?.id)
+    // console.log("newConversation handle id", newConversation?.id)
 
     if(newConversation){
       history.push(`/conversations/${convo[0]?.id}`)
