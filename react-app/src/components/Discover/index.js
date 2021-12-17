@@ -98,9 +98,11 @@ const Discover = () => {
   let matchedProfileIds = Object.keys(counter)
 
 
-  // console.log("matchedProfileIds", matchedProfileIds)
+  console.log("matchedProfileIds", matchedProfileIds)
 
-
+  // right now matchProfileIds corresponds to the userId -> we need to grab the profile id
+  //  userId [1, 3, 4]
+  // if delete 1 and make another profile -> need to be [3,4,5]
 
 
 
