@@ -10,6 +10,7 @@ import GetProfilePic from "../GetProfilePic";
 import DotDotButton from "../DotDotButton";
 import './Conversation.css'
 import EditMessageForm from "../EditMessageForm";
+import Message from "../Message";
 
 const Conversation = ({profile_id}) => {
   const dispatch = useDispatch()
@@ -23,7 +24,7 @@ const Conversation = ({profile_id}) => {
   const profilesObj = useSelector((state) => state.profile)
   const profiles = Object.values(profilesObj)
   console.log("profilesObj in conversation",profilesObj)
-  const [showEditMessageForm, setShowEditMessageForm] = useState(false)
+  // const [showEditMessageForm, setShowEditMessageForm] = useState(false)
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
 
@@ -51,10 +52,10 @@ const Conversation = ({profile_id}) => {
   }, [dispatch]);
 
 
-  // show edit message form
-  useEffect(() => {
-    setShowEditMessageForm(false)
-  },[dispatch])
+  // // show edit message form
+  // useEffect(() => {
+  //   setShowEditMessageForm(false)
+  // },[dispatch])
 
 
   const getUserName = (user_id) => {
@@ -78,24 +79,30 @@ const Conversation = ({profile_id}) => {
     <>
 
 
-    { messages?.map((message) =><div>
+    { messages?.map((message) =>
 
+    <div>
+
+      <Message message={message}/>
+{/*
       {getUserName(message?.from_user_id)}
       <div className="one-message-container">
         <div className="content-dot-dot">
           <div className="message-bubble">
-            {/* {showEditMessageForm? message?.content : <EditMessageForm message={message}/> } */}
             {showEditMessageForm? <EditMessageForm message={message} hideForm={() => setShowEditMessageForm(false)}/> : message?.content}
-
-
-
           </div>
+          {message.from_user_id === user_id?
           <DotDotButton message={message}  showEditMessageForm={showEditMessageForm} setShowEditMessageForm={setShowEditMessageForm}/>
+
+
+          :
+            null
+            }
 
         </div>
       <GetProfilePic userId={message?.from_user_id}/>
 
-      </div>
+      </div> */}
 
     </div>)}
 
