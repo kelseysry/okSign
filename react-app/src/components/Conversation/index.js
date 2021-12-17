@@ -71,81 +71,33 @@ const Conversation = ({profile_id}) => {
     }
   }
 
-  let content = null;
-  if(showEditMessageForm && user_id) {
-    //  content = (<EditMessageForm />)
-
-    content = (
-
-      messages?.map((message) =><div>
-
-       {getUserName(message?.from_user_id)}
-       <div className="one-message-container">
-         <div className="content-dot-dot">
-           <div className="message-bubble">
-             {/* {message?.content} */}
-             <EditMessageForm message={message}/>
-           </div>
-           {/* <DotDotButton message={message} hideForm={() => setShowEditMessageForm(false)}/> */}
-         </div>
-       <GetProfilePic userId={message?.from_user_id}/>
-
-       </div>
-
-     </div>)
- )
-
-
-  } else {
-
-// hideForm={() => setShowEditMessageForm(false)}
-
-      content = (
-
-         messages?.map((message) =><div>
-
-          {getUserName(message?.from_user_id)}
-          <div className="one-message-container">
-            <div className="content-dot-dot">
-              <div className="message-bubble">
-                {message?.content}
-              </div>
-              <DotDotButton message={message} setShowEditMessageForm={setShowEditMessageForm} showEditMessageForm={showEditMessageForm} />
-            </div>
-          <GetProfilePic userId={message?.from_user_id}/>
-
-          </div>
-
-        </div>)
-    )
-
-  }
-
 
 
   return (
 
     <>
-    <div>
-    {content}
 
-    </div>
 
-    {/* { messages?.map((message) =><div>
+    { messages?.map((message) =><div>
 
       {getUserName(message?.from_user_id)}
       <div className="one-message-container">
         <div className="content-dot-dot">
           <div className="message-bubble">
-            {message?.content}
+            {/* {showEditMessageForm? message?.content : <EditMessageForm message={message}/> } */}
+            {showEditMessageForm? <EditMessageForm message={message} hideForm={() => setShowEditMessageForm(false)}/> : message?.content}
+
+
+
           </div>
-          <DotDotButton message={message} hideForm={() => setShowEditMessageForm(false)}/>
+          <DotDotButton message={message}  showEditMessageForm={showEditMessageForm} setShowEditMessageForm={setShowEditMessageForm}/>
+
         </div>
       <GetProfilePic userId={message?.from_user_id}/>
 
       </div>
 
-    </div>)} */}
+    </div>)}
 
 
 

@@ -44,6 +44,16 @@ const EditMessageForm = ({message, hideForm}) => {
       }
   }
 
+  const handleCancelFormEditClick = (e) => {
+    e.preventDefault();
+
+
+    // dispatch(clearProfiles())
+    // dispatch(getProfiles());
+    hideForm();
+  };
+
+
   return (
     <>
       <section className="edit-message-form-container">
@@ -57,6 +67,17 @@ const EditMessageForm = ({message, hideForm}) => {
                 >
                 </input>
             </label>
+            <ul className="error">
+          {errors.map((error) => <li key={error}>{error}</li>)}
+        </ul>
+        <button
+          className="mobile-submit-create-business"
+          type="submit"
+          disabled={errors.length>0}
+        >
+          Submit
+        </button>
+            <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
         </form>
       </section>
 
