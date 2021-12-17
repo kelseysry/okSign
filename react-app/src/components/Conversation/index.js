@@ -71,9 +71,6 @@ const Conversation = ({profile_id}) => {
       <GetProfilePic userId={message?.from_user_id}/>
       {getUserName(message?.from_user_id)}
       {message?.content}
-      {message?.from_user_id}
-
-
 
     </div>)}
 

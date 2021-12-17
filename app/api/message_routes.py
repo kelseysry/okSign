@@ -33,3 +33,26 @@ def get_conversation(conversation_id):
 def get_message(conversation_id, id):
     message = Message.query.get(id)
     return message.to_dict()
+
+
+# edit one message
+@message_routes.route('/<int:conversation_id>/messages/<int:id>', methods=['GET','PUT'])
+def message_detail(conversation_id, id):
+    message = Message.query.get(id)
+
+    form = MessageForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    # print("message api-----------", form.data)
+    # print("message api-??????----------", message.to_dict())
+
+    if form.validate_on_submit():
+      message.conversation_id = form.data['conversation_id']
+      message.content = form.data['content']
+      message.from_user_id = form.data['from_user_id']
+      db.session.commit()
+      # print("message api-!!!!!!!!!----------", message.to_dict())
+      return message.to_dict()
+    else:
+      # print("request.json !!!!!!!!",request.json)
+      # print(form.errors)
+      return "bad data"
