@@ -53,9 +53,9 @@ function DotDotButton({showEditMessageForm, setShowEditMessageForm}) {
       {showMenu && (
         <div className="edit-trash">
 
-          <div>
+          {/* <div>
             <button className="delete-review-button" onClick={() => {handleDeleteMessage(productId, id)}}><i class="fas fa-trash"></i></button>
-          </div>
+          </div> */}
 
         <button className="edit-profile-button" onClick={() => setShowEditMessageForm(true)}><i className="fas fa-edit"></i></button>
         </div>
