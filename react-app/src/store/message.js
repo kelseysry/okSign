@@ -1,6 +1,8 @@
 const LOAD_MESSAGES = "message/LOAD_MESSAGES";
 const EDIT_MESSAGE= "message/EDIT_MESSAGE"
 const ADD_ONE = "message/ADD_ONE"
+const REMOVE_MESSAGE = "message/REMOVE_MESSAGE"
+
 const CLEAR = 'message/CLEAR'
 
 
@@ -24,6 +26,11 @@ const addOneMessage = (newMessage) => ({
   newMessage
 })
 
+// action creator to delete one message
+const removeOneMessage = (id) => ({
+  type: REMOVE_MESSAGE,
+  id
+})
 
 export const clearMessages = () => ({
   type: CLEAR
@@ -82,6 +89,21 @@ export const createMessage = (formData, conversation_id) => async (dispatch) => 
   }
 }
 
+// thunk to delete a message
+export const deleteMessage = (conversation_id, id) => async dispatch => {
+  console.log("conversation_id thunk", conversation_id)
+  console.log("id thunk", id)
+  const response = await fetch(`/api/conversations/${conversation_id}/messages/${id}`, {
+    method: 'DELETE',
+  });
+  console.log("delete message thunk", response)
+  if(response.ok) {
+    dispatch(removeOneMessage(id))
+    console.log("remove responese after ok", response)
+  }
+};
+
+
 
 
 // reducer
@@ -120,6 +142,11 @@ const messageReducer = (state = initialState, action) => {
       }
       // return state
     }
+    case REMOVE_MESSAGE : {
+      const newState = {...state};
+      delete newState[action.id];
+      return newState
+    };
     case CLEAR:{
       state = {}
       return state

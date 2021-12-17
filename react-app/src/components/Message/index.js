@@ -41,7 +41,7 @@ const Message = ({message}) => {
             {showEditMessageForm? <EditMessageForm message={message} hideForm={() => setShowEditMessageForm(false)}/> : message?.content}
           </div>
           {message.from_user_id === user_id?
-          <DotDotButton message={message}  showEditMessageForm={showEditMessageForm} setShowEditMessageForm={setShowEditMessageForm}/>
+          <DotDotButton messageId={message.id} conversation_id={conversation_id} message={message}  showEditMessageForm={showEditMessageForm} setShowEditMessageForm={setShowEditMessageForm}/>
 
 
           :

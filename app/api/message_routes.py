@@ -56,3 +56,16 @@ def message_detail(conversation_id, id):
       # print("request.json !!!!!!!!",request.json)
       # print(form.errors)
       return "bad data"
+
+# delete message
+@message_routes.route('/<int:conversation_id>/messages/<int:id>', methods=['GET', 'DELETE'])
+def delete_message(conversation_id, id):
+    message = Message.query.get(id)
+
+    if message:
+      db.session.delete(message)
+      db.session.commit()
+      return "deleted"
+    else:
+      print("not deleted-------")
+      return "401"
