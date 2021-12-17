@@ -7,7 +7,8 @@ import { useParams } from 'react-router-dom';
 import { clearMessages } from "../../store/message";
 import { getProfiles } from "../../store/profile";
 import GetProfilePic from "../GetProfilePic";
-
+import DotDotButton from "../DotDotButton";
+import './Conversation.css'
 
 const Conversation = ({profile_id}) => {
   const dispatch = useDispatch()
@@ -68,9 +69,17 @@ const Conversation = ({profile_id}) => {
 
     { messages?.map((message) =><div>
 
+      {/* {getUserName(message?.from_user_id)} */}
+      <div className="one-message-container">
+        <div className="content-dot-dot">
+          <div className="message-bubble">
+            {message?.content}
+          </div>
+          <DotDotButton />
+        </div>
       <GetProfilePic userId={message?.from_user_id}/>
-      {getUserName(message?.from_user_id)}
-      {message?.content}
+
+      </div>
 
     </div>)}
 
