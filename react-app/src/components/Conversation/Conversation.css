@@ -1,0 +1,16 @@
+.one-message-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-dot-dot {
+  display: flex;
+}
+
+.message-bubble {
+  background-color: #cce1ff;
+  border-radius: 10px;
+  padding: 10px 10px;
+
+}
+

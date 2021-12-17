@@ -1,19 +1,22 @@
 // responsible for render one conversation
 
 import { useSelector, useDispatch } from "react-redux";
-import { GetMatches } from "../../context/MatchesContext";
 import React, { useEffect, useState } from 'react';
 import { getMessages } from "../../store/message";
 import { useParams } from 'react-router-dom';
 import { clearMessages } from "../../store/message";
 import { getProfiles } from "../../store/profile";
 import GetProfilePic from "../GetProfilePic";
-
+import DotDotButton from "../DotDotButton";
+import './Conversation.css'
+import EditMessageForm from "../EditMessageForm";
+import Message from "../Message";
 
 const Conversation = ({profile_id}) => {
   const dispatch = useDispatch()
   const { conversationId }  = useParams();
   const [users, setUsers] = useState([]);
+  const [showMenu, setShowMenu] = useState(false);
 
   const messagesObj = useSelector((state) => state.message)
   const messages = Object.values(messagesObj)
@@ -21,7 +24,9 @@ const Conversation = ({profile_id}) => {
   const profilesObj = useSelector((state) => state.profile)
   const profiles = Object.values(profilesObj)
   console.log("profilesObj in conversation",profilesObj)
-
+  // const [showEditMessageForm, setShowEditMessageForm] = useState(false)
+  const sessionUser = useSelector((state) => state?.session?.user)
+  const user_id = sessionUser?.id
 
   let conversation_id = +conversationId
 
@@ -47,6 +52,12 @@ const Conversation = ({profile_id}) => {
   }, [dispatch]);
 
 
+  // // show edit message form
+  // useEffect(() => {
+  //   setShowEditMessageForm(false)
+  // },[dispatch])
+
+
   const getUserName = (user_id) => {
     const usernameDisplay = users?.filter(function(el){
       return el.id === user_id
@@ -61,51 +72,37 @@ const Conversation = ({profile_id}) => {
     }
   }
 
-  const getUser = (user_id) => {
-    const user = users?.filter(function(el){
-      return el.id === user_id
-     });
-    //  console.log("try", user_id)
-    if (user) {
-     return user
-    }
-    else {
-      return null
-    }
-  }
 
-
-  const getProfilePic = (user_id_from_getUser) => {
-    const profilePic = profiles?.filter(function(el, idx) {
-
-      // console.log("el.user_id", el[idx])
-      // console.log("user_id_from_getUser", user_id_from_getUser[0]?.id)
-      return el[idx].user_id === user_id_from_getUser[0]?.id
-    });
-    if (profilePic) {
-      console.log("profilePic", profilePic)
-      return profilePic
-     }
-     else {
-       return null
-     }
-  }
-
-  console.log("profile_id", profile_id)
 
   return (
 
     <>
 
 
-    { messages?.map((message) =><div>
+    { messages?.map((message) =>
 
-      {message?.content}
-      {message?.from_user_id}
+    <div>
+
+      <Message message={message}/>
+{/*
       {getUserName(message?.from_user_id)}
+      <div className="one-message-container">
+        <div className="content-dot-dot">
+          <div className="message-bubble">
+            {showEditMessageForm? <EditMessageForm message={message} hideForm={() => setShowEditMessageForm(false)}/> : message?.content}
+          </div>
+          {message.from_user_id === user_id?
+          <DotDotButton message={message}  showEditMessageForm={showEditMessageForm} setShowEditMessageForm={setShowEditMessageForm}/>
+
+
+          :
+            null
+            }
+
+        </div>
       <GetProfilePic userId={message?.from_user_id}/>
 
-
+      </div> */}
 
     </div>)}
 

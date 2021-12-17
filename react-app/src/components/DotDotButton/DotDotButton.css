@@ -1,0 +1,65 @@
+/* .review-dot-dot {
+  background-color: transparent;
+  border: none;
+}
+
+.review-dropdown {
+  position: absolute;
+  flex-direction: column;
+}
+
+
+.fa-edit, .fa-trash {
+  color: white;
+}
+
+.fa-trash {
+  font-size: 18px;
+}
+
+
+.review-dropdown {
+  position: absolute;
+  background-color: rgb(226, 153, 26);
+  width: min-content;
+  overflow: auto;
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 20px !important;
+  display: flex;
+  align-items: flex-end;
+} */
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dotdot {
+  background-color: transparent;
+}
+
+.dotdot:hover {
+  display: inline-block;
+}
+
+button {
+border: none;
+background-color: transparent;
+}
+
+
+.dotdot_dropdown {
+  width: min-content;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.edit-trash {
+  position: absolute;
+  top: 20px;
+  overflow: auto;
+
+}

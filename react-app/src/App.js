@@ -14,6 +14,7 @@ import ProfileForm from './components/ProfileForm';
 import Conversations from './components/Conversations';
 import { MatchesProvider } from './context/MatchesContext';
 import Conversation from './components/Conversation';
+import MessageForm from './components/MessageForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -70,8 +71,11 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/conversations/:conversationId' exact={true} >
           <MatchesProvider>
-            <Conversation /> 
+            <Conversation />
           </MatchesProvider>
+        </ProtectedRoute>
+        <ProtectedRoute path='/test' exact={true} >
+          <MessageForm /> 
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
