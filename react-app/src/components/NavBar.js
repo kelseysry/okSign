@@ -17,7 +17,13 @@ const NavBar = () => {
   let sessionLinks;
 
 
+  const handleClearDiscoverProfiles = async(e) => {
+    e.preventDefault();
+    dispatch(clearProfiles())
+    dispatch(getProfiles())
+    history.push(`/discover`)
 
+}
 
   const handleClearProfile = async(e) => {
     e.preventDefault();
@@ -52,6 +58,13 @@ const NavBar = () => {
             Discover
           </NavLink>
         </li>
+                {/* <button
+              className=""
+              onClick={handleClearDiscoverProfiles}
+            >
+              Discover
+            </button> */}
+
         {/* <li>
           <NavLink to='/login' exact={true} activeClassName='active'>
             Login

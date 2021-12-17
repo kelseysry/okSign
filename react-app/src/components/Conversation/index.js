@@ -12,6 +12,7 @@ import './Conversation.css'
 import EditMessageForm from "../EditMessageForm";
 import Message from "../Message";
 import MessageForm from "../MessageForm";
+import { clearProfiles } from "../../store/profile";
 
 const Conversation = ({profile_id}) => {
   const dispatch = useDispatch()
@@ -33,6 +34,7 @@ const Conversation = ({profile_id}) => {
 
   useEffect(() => {
     dispatch(clearMessages())
+    dispatch(clearProfiles())
   },[dispatch, conversationId])
 
   useEffect(() => {
