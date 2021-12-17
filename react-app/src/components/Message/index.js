@@ -14,8 +14,7 @@ import EditMessageForm from "../EditMessageForm";
 const Message = ({message}) => {
   const dispatch = useDispatch()
   const { conversationId }  = useParams();
-  const messagesObj = useSelector((state) => state.message)
-  const messages = Object.values(messagesObj)
+
 
   const [showEditMessageForm, setShowEditMessageForm] = useState(false)
 
@@ -29,9 +28,7 @@ const Message = ({message}) => {
   setShowEditMessageForm(false)
 },[dispatch])
 
-useEffect(() => {
-  dispatch(getMessages(conversation_id))
-},[dispatch, messages.length])
+
 
 
   return (

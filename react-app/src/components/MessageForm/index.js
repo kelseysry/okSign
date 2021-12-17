@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import { createMessage } from "../../store/message";
+import { getMessages } from '../../store/message';
 
 function MessageForm({conversationId}) {
   const dispatch = useDispatch();
@@ -23,6 +24,8 @@ function MessageForm({conversationId}) {
 
   }, [conversation_id, content, from_user_id])
 
+  
+
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -37,6 +40,9 @@ function MessageForm({conversationId}) {
     // need to grab message id by dispatch getmessage thunk so can pass in message.id in line 38
 
     let updated = await dispatch(createMessage(newMessage, conversation_id))
+    if(updated) {
+      setContent('')
+    }
 
   }
 

@@ -112,7 +112,7 @@ const messageReducer = (state = initialState, action) => {
       // console.log("add_one case", action.newMessage)
       if(!state[action.newMessage.id]) {
         const newState = {
-          ...state,
+          ...state,  [action.newMessage.message.id]: action.newMessage.message
         }
         console.log("newState in messageReducer add_", newState)
         console.log("action.newMessage", action.newMessage)
