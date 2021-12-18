@@ -43,7 +43,12 @@ search_routes = Blueprint('search', __name__)
 def search_users(term):
   # this only gets horoscope table
   horoscope = Horoscope.query.filter(Horoscope.sign.ilike(f'%{term}%')).all()
-  print("search-----------------------------", horoscope)
+  horo = {h.id: h.to_dict() for h in horoscope}
+  # print("search-----------------------------", horo[11]['sign']) #aquarius
+  print("search-----------------------------", horo[11]['id'])
+
+  horoscope = Profile.query.filter(Profile.horoscope_id == horo[11]['id']).all()
+
   userResultsFromQuery = set(horoscope)
 
   # gets user via the location typed in --- from profile
@@ -52,7 +57,6 @@ def search_users(term):
     userResultsFromQuery.add(user)
 
   return userResultsFromQuery
-  # location = db.session.query(Profile).filter(Profile.location).all()
 
 
 
