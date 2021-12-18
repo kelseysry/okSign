@@ -26,7 +26,7 @@ function UserProfile({count, setCount}) {
 
   const horoscopesObj = useSelector((state) => state.horoscope)
   const horoscopes = Object?.values(horoscopesObj)[0]
-  console.log("horoscopes", horoscopes)
+  // console.log("horoscopes", horoscopes)
 
 
 
@@ -109,8 +109,8 @@ useEffect(async () => {
 
   const getHoroscope = (horoscopeId) => {
     const userHoroscope = horoscopes?.filter(function(horoscope){
-      console.log("horoscopeId in get", horoscopeId)
-      console.log("horoscope. id in get", horoscope?.sign)
+      // console.log("horoscopeId in get", horoscopeId)
+      // console.log("horoscope. id in get", horoscope?.sign)
       return horoscope.id == +horoscopeId
     });
     if(userHoroscope) {

@@ -38,7 +38,7 @@
 //       )
 //     } else {
 //       <div> hi</div>
-//       // return <AllReviews product={product}/>
+//
 //     }
 
 
@@ -62,7 +62,7 @@
 //           {profileFormRender}
 //           <div>
 //           {/* {reviewContent}
-//           <AllReviews product={product}/> */}
+//
 //           </div>
 //         </div>
 //         </>
