@@ -44,27 +44,41 @@ def search_users(term):
   userResultsFromQuery = set()
   # this gets locations
   locations = Profile.query.filter(Profile.location.ilike(f'%{term}%')).all()
-  print("locations--------", locations)
+  # print("locations--------", locations)
   for user in locations:
     userResultsFromQuery.add(user)
 
   horoscope = Horoscope.query.filter(Horoscope.sign.ilike(f'%{term}%')).all()
   if horoscope:
     horo = {h.id: h.to_dict() for h in horoscope}
-    # print("search-------------------", horoscope)
-    # print("search get horoscope name-----", horo[1]['sign']) #aquarius
+    print("search---------------🥳🥳🥳----", horoscope)
+    print("search get horoscope name--🥳---", horo[1]['sign'])
+    # aquarius
+    if term == horo[1]['sign']:
+      idx = 1
+      profilesMatchHoroscope1 = Profile.query.filter(Profile.horoscope_id == horo[idx]['id']).all()
+      if profilesMatchHoroscope1:
+        print("profile matching horoscope-----", profilesMatchHoroscope1)
+        for user in profilesMatchHoroscope1:
+          userResultsFromQuery.add(user)
+
+
     # print("search get horoscope id-----", horo[1]['id']) # 1
-
     # print("search-----------------------------", horo[1]['id'])
-    profilesMatchHoroscope = Profile.query.filter(Profile.horoscope_id == horo[1]['id']).all()
-    print("profile matching horoscope-----", profilesMatchHoroscope)
-    for user in profilesMatchHoroscope:
-      userResultsFromQuery.add(user)
 
-  # # gets user via the location typed in --- from profile
-  # location = Profile.query.filter(Profile.location.ilike(f'%{term}%')).all()
-  # for user in location:
-  #   userResultsFromQuery.add(user)
+
+
+
+
+
+
+    # profilesMatchHoroscope1 = Profile.query.filter(Profile.horoscope_id == horo[1]['id']).all()
+    # if profilesMatchHoroscope1:
+    #   print("profile matching horoscope-----", profilesMatchHoroscope1)
+    #   for user in profilesMatchHoroscope1:
+    #     userResultsFromQuery.add(user)
+
+
 
   return userResultsFromQuery
 
