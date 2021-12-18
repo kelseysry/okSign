@@ -131,7 +131,7 @@ const ProfileForm = ({hideForm}) => {
     // hideForm();
   };
 
-  let options = ["aquarius", "cancer", "leo"]
+  // let options = ["aquarius", "cancer", "leo"]
 
   // const selectChange = (e) => {
   //   // const value = event.target.value;

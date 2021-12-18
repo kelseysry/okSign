@@ -66,18 +66,6 @@ def search_users(term):
         return userResultsFromQuery
 
 
-    # for n in range(1,9):
-    #   if term == horo[n]['sign']:
-    #     idx = n
-    #     print("🥳😡😡😡😡😡😡🥳", idx)
-    #     profilesMatchHoroscope1 = Profile.query.filter(Profile.horoscope_id == horo[idx]['id']).all()
-    #     if profilesMatchHoroscope1:
-    #       print("profile matching horoscope---🍷🍷🍷🍷🍷-", profilesMatchHoroscope1)
-    #       for user in profilesMatchHoroscope1:
-    #         userResultsFromQuery.add(user)
-    #       print("userResultsFrom😡😡Query",userResultsFromQuery )
-    #   return userResultsFromQuery
-
 
   return userResultsFromQuery
 
