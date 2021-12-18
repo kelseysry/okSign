@@ -24,7 +24,7 @@ return (
     <form >
         <input className="searchForm"
             type="text"
-            placeholder="Search Products"
+            placeholder="Search Users"
             value={searchKeyWord}
             onChange={(e)=>setSearchKeyWord(e.target.value)}
             onKeyPress={(e)=> handleKeyPress(e)}/>

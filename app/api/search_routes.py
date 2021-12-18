@@ -41,27 +41,33 @@ search_routes = Blueprint('search', __name__)
 
 
 def search_users(term):
-  # this only gets horoscope table
-  horoscope = Horoscope.query.filter(Horoscope.sign.ilike(f'%{term}%')).all()
-  horo = {h.id: h.to_dict() for h in horoscope}
-  # print("search-----------------------------", horo[11]['sign']) #aquarius
-  print("search-----------------------------", horo[11]['id'])
-
-  horoscope = Profile.query.filter(Profile.horoscope_id == horo[11]['id']).all()
-
-  userResultsFromQuery = set(horoscope)
-
-  # gets user via the location typed in --- from profile
-  location = Profile.query.filter(Profile.location.ilike(f'%{term}%')).all()
-  for user in location:
+  userResultsFromQuery = set()
+  # this gets locations
+  locations = Profile.query.filter(Profile.location.ilike(f'%{term}%')).all()
+  # print("locations--------", locations)
+  for user in locations:
     userResultsFromQuery.add(user)
 
+  horoscope = Horoscope.query.filter(Horoscope.sign.ilike(f'%{term}%')).all()
+  if horoscope:
+    horo = {h.id: h.to_dict() for h in horoscope}
+    # print("hor🍷🍷🍷🍷🍷🍷", horo[1])
+    # print(("😫😫😫😫😫😫",list(horo.keys())))
+    horoscopeIdList= list(horo.keys())
+    horoscopeIdString = ''.join(str(e) for e in horoscopeIdList)
+    horoscopeIdNum = int(horoscopeIdString)
+    print("😫num😫",horoscopeIdNum)
+    if term == horo[horoscopeIdNum]['sign']:
+      profilesMatchHoroscope1 = Profile.query.filter(Profile.horoscope_id == horo[horoscopeIdNum]['id']).all()
+      print("🥳😡😡😡😡😡😡🥳", profilesMatchHoroscope1)
+      if profilesMatchHoroscope1:
+        for user in profilesMatchHoroscope1:
+          userResultsFromQuery.add(user)
+        return userResultsFromQuery
+
+
+
   return userResultsFromQuery
-
-
-
-
-# this works -> gets specific horoscope
 
 @search_routes.route('/<term>/', methods=['GET'])
 def search(term):
