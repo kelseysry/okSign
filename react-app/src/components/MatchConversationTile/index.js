@@ -1,18 +1,21 @@
 
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
-import { getProfile } from "../../store/profile";
 import './MatchConversationTile.css';
-import Conversation from "../Conversation";
+import { getProfiles } from "../../store/profile";
 
 
-
+// profile_id is actually the user.id, so need to grab all the profiles
+// and find the one that matches the user_id
 const MatchConversationTile = ({profile_id}) => {
   const dispatch = useDispatch()
 
-  let profileObj = useSelector((state) => state?.profile[profile_id])
+  const profilesObj = useSelector((state) => state.profile)
+  const profiles = Object.values(profilesObj)
 
   const [users, setUsers] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false)
+
 
   useEffect(() => {
     async function fetchData() {
@@ -23,19 +26,25 @@ const MatchConversationTile = ({profile_id}) => {
     fetchData();
   }, []);
 
+  useEffect(async () => {
+    await dispatch(getProfiles())
+    if (!isLoaded) setIsLoaded(true);
 
-  // let profile = Object.values(profileObj)
-
-
-  // get one profile
-  useEffect(() => {
-    dispatch(getProfile(profile_id));
-  }, [dispatch, profile_id]);
-
-  // console.log("profileObj", profileObj)
-  // console.log("about me---", profileObj?.about_me)
+  }, [dispatch, profiles.length, isLoaded])
 
 
+  const getMatchProfile = (profile_id) => {
+    const matchProfile = profiles[0]?.filter(function(profile){
+      return profile?.user_id == profile_id
+    })
+    if(matchProfile) {
+      // console.log("match match", matchProfile)
+      return matchProfile
+    }
+    else {
+      return null
+    }
+  }
 
   const getUserName = (user_id) => {
     const usernameDisplay = users?.filter(function(el){
@@ -51,15 +60,21 @@ const MatchConversationTile = ({profile_id}) => {
     }
   }
 
+  console.log("getmatchProfile", getMatchProfile(profile_id))
+  let matchProfileObj = (getMatchProfile(profile_id))
+
   return (
     <>
-      {profileObj?.user_id ?
+        { isLoaded && matchProfileObj[0]?.id && (
+
+
         <div className="each_match_profile_container">
-          <div>{getUserName(profileObj?.user_id)}</div>
-          <img className="match_profile_image" src={profileObj?.image_url1} alt="Photo"/>
+          <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
+          <img className="match_profile_image" src={matchProfileObj[0]?.image_url1} alt="match_picture"/>
         </div>
-        : null
-        }
+
+        )
+      }
 
     </>
   )
