@@ -71,7 +71,7 @@ def search_users(term):
 
   return userResultsFromQuery
 
-@search_routes.route('/<term>/', methods=['GET'])
+@search_routes.route('/<term>', methods=['GET'])
 def search(term):
   searchResult = search_users(term)
   if searchResult:
