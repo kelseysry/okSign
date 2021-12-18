@@ -10,8 +10,9 @@ import React, { useEffect, useState } from 'react';
 
 const Conversations = () => {
   const dispatch = useDispatch()
+  // matchProfilesIds is actually the user.id 
   const {matchedProfileIds} = GetMatches()
-  // console.log("match profile ids from context", matchedProfileIds)
+  console.log("match profile ids from context", matchedProfileIds)
 
   const conversationObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationObj)
