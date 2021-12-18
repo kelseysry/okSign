@@ -59,7 +59,7 @@ def search_users(term):
     horoscopeIdString = ''.join(str(e) for e in horoscopeIdList)
     horoscopeIdNum = int(horoscopeIdString)
     print("😫num😫",horoscopeIdNum)
-    if term == horo[horoscopeIdNum]['sign'].lower():
+    if term.lower() == horo[horoscopeIdNum]['sign'].lower():
       profilesMatchHoroscope1 = Profile.query.filter(Profile.horoscope_id == horo[horoscopeIdNum]['id']).all()
       print("🥳😡😡😡😡😡😡🥳", profilesMatchHoroscope1)
       if profilesMatchHoroscope1:
