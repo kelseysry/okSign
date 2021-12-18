@@ -1,7 +1,7 @@
 
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
-import { getProfile } from "../../store/profile";
+// import { getProfile } from "../../store/profile";
 import './MatchProfile.css'
 import { createConversation } from "../../store/conversation";
 import { useHistory } from 'react-router';

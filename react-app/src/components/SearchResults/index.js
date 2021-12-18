@@ -1,41 +1,67 @@
 import { useDispatch, useSelector } from "react-redux";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from 'react';
 import { search } from "../../store/search"
 import {useParams} from 'react-router-dom';
+import SearchMatchTile from "../SearchMatchTile";
 
 const SearchResults = () => {
    //searchResults will give the profile.id of the user
-    const searchResults = useSelector((state)=>state.search)
+    const searchResultsObj = useSelector((state)=>state.search)
     const dispatch = useDispatch();
-
     const {input} = useParams()
+    const [isLoaded, setIsLoaded] = useState(false)
 
-    useEffect(()=>{
-        dispatch(search(input))
-    },[dispatch,input])
+    console.log("searchUserResults---------", searchResultsObj.user)
 
-    console.log("searchResults", searchResults)
 
-    //on first load the state will be empty
-    if(!searchResults) {
-       return null
+
+    useEffect( ()=>{
+         dispatch(search(input))
+        if (!isLoaded) setIsLoaded(true);
+    },[dispatch,input, isLoaded])
+
+    let searchUserResultsObj;
+    let searchUserResults
+
+    if(searchResultsObj) {
+      searchUserResultsObj = searchResultsObj?.user
+    } else {
+      return null
     }
-    const usersSearch = Object.values(searchResults)
+
+    if(searchUserResultsObj) {
+      searchUserResults = Object.values(searchUserResultsObj)
+    } else {
+      return null 
+    }
+
+    console.log("searchUserresults array", searchUserResults)
 
 
-    if (!usersSearch.length){
+    if (!searchUserResults.length){
         return (
             <h2>No users found for "{input}"</h2>
         )
     }
     else {
         return (
-            <div>
+          <>
+
+    {  isLoaded && (
+      <div>
                 <div className="">
                     Search Results For "{input}"
                 </div>
 
-            </div>
+                  {
+                    searchUserResults?.map((matchProfileId) => <SearchMatchTile matchProfileId={matchProfileId}/>)
+                  }
+
+            </div>)
+
+            }
+
+          </>
         )
     }
 }
