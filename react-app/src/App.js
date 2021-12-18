@@ -15,6 +15,7 @@ import Conversations from './components/Conversations';
 import { MatchesProvider } from './context/MatchesContext';
 import Conversation from './components/Conversation';
 import MessageForm from './components/MessageForm';
+import SearchResults from './components/SearchResults';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -74,8 +75,8 @@ function App() {
             <Conversation />
           </MatchesProvider>
         </ProtectedRoute>
-        <ProtectedRoute path='/test' exact={true} >
-          <MessageForm /> 
+        <ProtectedRoute path='/search/:input' exact={true} >
+          <SearchResults /> 
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

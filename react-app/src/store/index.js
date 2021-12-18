@@ -6,6 +6,7 @@ import profile from './profile';
 import conversation from './conversation'
 import message from './message'
 import horoscope from './horoscope'
+import search from './search'
 
 const rootReducer = combineReducers({
   session,
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   profile,
   conversation,
   message,
-  horoscope
+  horoscope,
+  search
 });
 
 
