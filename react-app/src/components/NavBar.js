@@ -7,6 +7,7 @@ import { clearProfiles } from '../store/profile';
 import { getProfiles } from '../store/profile';
 import { useHistory } from 'react-router';
 import { clearConversation } from '../store/conversation';
+import SearchForm from './SearchForm';
 
 const NavBar = () => {
   const sessionUser = useSelector((state) => state?.session.user);
@@ -92,6 +93,9 @@ const NavBar = () => {
               Conversations
             </button>
 
+        <li>
+          <SearchForm /> 
+        </li>
 
 
         {/* <li>
