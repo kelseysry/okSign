@@ -16,6 +16,7 @@ const handleKeyPress = async (e) =>{
         let resultFromSearch = await dispatch(search(searchKeyWord));
         if (resultFromSearch) {
             history.push(`/search/${searchKeyWord}`)
+            setSearchKeyWord('')
         }
     }
 }
