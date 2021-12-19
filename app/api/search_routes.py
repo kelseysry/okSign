@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, redirect, url_for, session, request
-from app.models import Message, db, User, Horoscope, Profile
+from app.models import Message, db, User, Horoscope, Profile, Gender
 from flask_login import login_required, current_user
 
 search_routes = Blueprint('search', __name__)
@@ -64,6 +64,23 @@ def search_users(term):
       print("🥳😡😡😡😡😡😡🥳", profilesMatchHoroscope1)
       if profilesMatchHoroscope1:
         for user in profilesMatchHoroscope1:
+          userResultsFromQuery.add(user)
+        return userResultsFromQuery
+
+  gender = Gender.query.filter(Gender.name.ilike(f'{term}')).all()
+  if gender:
+    userGender = {g.id: g.to_dict() for g in gender}
+    userGenderIdList = list(userGender.keys())
+    # print("userGenderIdList🥳🥳🥳🥳🥳🥳", userGender)
+    userGenderIdString = ''.join(str(e) for e in userGenderIdList)
+    # print("userGenderIdString😡😡😡😡😡😡😡", userGenderIdString)
+    userGenderIdNum = int(userGenderIdString)
+    # print("userGenderIdNum😡😡😡😡😡😡😡", userGenderIdNum)
+    if term.lower() == userGender[userGenderIdNum]['name'].lower():
+      profileMatchGender = Profile.query.filter(Profile.gender_id == userGender[userGenderIdNum]['id']).all()
+      # print("🥳😡😡😡😡😡😡🥳", profileMatchGender)
+      if profileMatchGender:
+        for user in profileMatchGender:
           userResultsFromQuery.add(user)
         return userResultsFromQuery
 
