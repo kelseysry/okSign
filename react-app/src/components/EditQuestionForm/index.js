@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import RadioButton from '../RadioButton';
-
+import './EditQuestionForm.css'
 
 const EditQuestionForm = () => {
   const dispatch = useDispatch();
@@ -10,7 +10,7 @@ const EditQuestionForm = () => {
   const user_id = sessionUser?.id
 
   // const [question1, setQuestion1] = useState('');
-  const [must_answer1, setMust_answer1] = useState('');
+  // const [must_answer1, setMust_answer1] = useState('');
   const [question2, setQuestion2] = useState('');
   const [must_answer2, setMust_answer2] = useState('');
   const [question3, setQuestion3] = useState('');
@@ -38,6 +38,15 @@ const EditQuestionForm = () => {
   const handleQuestion1ChangeA2 = (e) => {
     setQuestion1("Intense");
   };
+
+  const [must_answer1, setMust_answer1] = useState('');
+  const handleQuestion1ChangeA1Must = (e) => {
+    setMust_answer1("Carefree");
+  };
+  const handleQuestion1ChangeA2Must = (e) => {
+    setMust_answer1("Intense");
+  };
+
 
 
   const [errors, setErrors] = useState([]);
@@ -85,11 +94,11 @@ const EditQuestionForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className="questionForm" onSubmit={handleSubmit}>
 
         <section className="question1Container">
-          <div className="question1text">Which word describes you better?</div>
-          <div className ="question1">
+          <div className="questionText">Which word describes you better?</div>
+          <div className ="question">
             <RadioButton
                 label="Carefree"
                 value={question1 === 'Carefree'}
@@ -101,9 +110,54 @@ const EditQuestionForm = () => {
               onChange={handleQuestion1ChangeA2}
             />
           </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Carefree"
+                value={must_answer1 === 'Carefree'}
+                onChange={handleQuestion1ChangeA1Must}
+              />
+            <RadioButton
+              label="Intense"
+              value={must_answer1 === 'Intense'}
+              onChange={handleQuestion1ChangeA2Must}
+            />
+          </div>
         </section>
 
-        
+        <section className="question1Container">
+          <div className="questionText">Choose the better romantic activity</div>
+          <div className ="question">
+            <RadioButton
+                label="Carefree"
+                value={question1 === 'Carefree'}
+                onChange={handleQuestion1ChangeA1}
+              />
+            <RadioButton
+              label="Intense"
+              value={question1 === 'Intense'}
+              onChange={handleQuestion1ChangeA2}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Carefree"
+                value={must_answer1 === 'Carefree'}
+                onChange={handleQuestion1ChangeA1Must}
+              />
+            <RadioButton
+              label="Intense"
+              value={must_answer1 === 'Intense'}
+              onChange={handleQuestion1ChangeA2Must}
+            />
+          </div>
+        </section>
+
+
+
 
 
         <ul className="error">
