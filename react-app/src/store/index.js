@@ -15,6 +15,7 @@ import pet from './pet'
 import politic from './politic'
 import religion from './religion'
 import partner from './partner'
+import orientation from './orientation'
 
 const rootReducer = combineReducers({
   session,
@@ -31,7 +32,8 @@ const rootReducer = combineReducers({
   pet,
   politic,
   religion,
-  partner
+  partner,
+  orientation
 });
 
 
