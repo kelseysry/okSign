@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from 'react';
 import MatchProfile from "../MatchProfile";
 import { getQuestions } from "../../store/question";
-import MatchProfilePercent from "../MatchProfilePercent";
 
 const Discover = () => {
   const dispatch = useDispatch()
@@ -92,39 +91,25 @@ const Discover = () => {
   Object.keys(counter).forEach(key => {
     if (counter[key] < 6) delete counter[key];
   });
-  console.log("updated counter", counter)
+  // console.log("updated counter", counter)
   // {2: 6, 4: 10}
 
     let userIdsPercentsObj = Object.keys(counter).map(function (key) {
         return [Number(key), counter[key]];
     });
 
-    console.log("userIdsPercentsObjuserIdsPercentsObj", userIdsPercentsObj)
-
-  // let userIdsPercentsObj = counter;
-
-  // profiles are being selected via id user_id directly correlates to profile.id
-  let matchedProfileIds = Object.keys(counter)
-
-
 
   // right now matchProfileIds corresponds to the userId -> we need to grab the profile id
   //  userId [1, 3, 4]
   // if delete 1 and make another profile -> need to be [3,4,5]
 
-
-
   // instead of passing just the keys, pass in each object, you'll have to
-  // grab the key instead for profile_id
+  // grab the key instead for profile_id so can get the user.id and match%
   return (
     <>
       <div>
-
-      {userIdsPercentsObj?.map((userIdPercentObj) => <MatchProfile userIdPercentObj={userIdPercentObj}/>)}
-
+        {userIdsPercentsObj?.map((userIdPercentObj) => <MatchProfile userIdPercentObj={userIdPercentObj}/>)}
       </div>
-    {/* { matchPercents.map((matchPercent) => <MatchProfilePercent matchPercent={matchPercent}/>)} */}
-   {/* { matchedProfileIds.map((profile_id) =>  <MatchProfile profile_id={profile_id}/>)} */}
     </>
   )
 
