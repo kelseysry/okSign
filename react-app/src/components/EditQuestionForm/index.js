@@ -11,8 +11,8 @@ const EditQuestionForm = () => {
 
   // const [question1, setQuestion1] = useState('');
   // const [must_answer1, setMust_answer1] = useState('');
-  const [question2, setQuestion2] = useState('');
-  const [must_answer2, setMust_answer2] = useState('');
+  // const [question2, setQuestion2] = useState('');
+  // const [must_answer2, setMust_answer2] = useState('');
   const [question3, setQuestion3] = useState('');
   const [must_answer3, setMust_answer3] = useState('');
   const [question4, setQuestion4] = useState('');
@@ -30,7 +30,7 @@ const EditQuestionForm = () => {
   const [question10, setQuestion10] = useState('');
   const [must_answer10, setMust_answer10] = useState('');
 
-
+// question 1
   const [question1, setQuestion1] = useState('');
   const handleQuestion1ChangeA1 = (e) => {
     setQuestion1("Carefree");
@@ -47,6 +47,22 @@ const EditQuestionForm = () => {
     setMust_answer1("Intense");
   };
 
+// question 2
+  const [question2, setQuestion2] = useState('');
+  const handleQuestion2ChangeA1 = (e) => {
+    setQuestion1("Kissing in Paris");
+  };
+  const handleQuestion2ChangeA2 = (e) => {
+    setQuestion1("Kissing in a tent, in the woods'");
+  };
+
+  const [must_answer2, setMust_answer2] = useState('');
+  const handleQuestion2ChangeA1Must = (e) => {
+    setMust_answer2("Carefree");
+  };
+  const handleQuestion2ChangeA2Must = (e) => {
+    setMust_answer2("Intense");
+  };
 
 
   const [errors, setErrors] = useState([]);
@@ -97,7 +113,7 @@ const EditQuestionForm = () => {
       <form className="questionForm" onSubmit={handleSubmit}>
 
         <section className="question1Container">
-          <div className="questionText">Which word describes you better?</div>
+          <div className="questionText">1. Which word describes you better?</div>
           <div className ="question">
             <RadioButton
                 label="Carefree"
@@ -126,32 +142,32 @@ const EditQuestionForm = () => {
           </div>
         </section>
 
-        <section className="question1Container">
-          <div className="questionText">Choose the better romantic activity</div>
+        <section className="question2Container">
+          <div className="questionText">2. Choose the better romantic activity</div>
           <div className ="question">
             <RadioButton
-                label="Carefree"
-                value={question1 === 'Carefree'}
-                onChange={handleQuestion1ChangeA1}
+                label="Kissing in Paris"
+                value={question2 === 'Kissing in Paris'}
+                onChange={handleQuestion2ChangeA1}
               />
             <RadioButton
-              label="Intense"
-              value={question1 === 'Intense'}
-              onChange={handleQuestion1ChangeA2}
+              label="Kissing in a tent, in the woods"
+              value={question2 === 'Kissing in a tent, in the woods'}
+              onChange={handleQuestion2ChangeA2}
             />
           </div>
 
           <div className="answer">Answer you'll accept?</div>
           <div className ="question">
             <RadioButton
-                label="Carefree"
-                value={must_answer1 === 'Carefree'}
-                onChange={handleQuestion1ChangeA1Must}
+                label="Kissing in Paris"
+                value={must_answer2 === 'Kissing in Paris'}
+                onChange={handleQuestion2ChangeA1Must}
               />
             <RadioButton
-              label="Intense"
-              value={must_answer1 === 'Intense'}
-              onChange={handleQuestion1ChangeA2Must}
+              label="Kissing in a tent, in the woods"
+              value={must_answer2 === 'Kissing in a tent, in the woods'}
+              onChange={handleQuestion2ChangeA2Must}
             />
           </div>
         </section>
