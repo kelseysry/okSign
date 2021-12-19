@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { getGenders } from '../../store/gender';
 import { getHoroscopes } from '../../store/horoscope';
+import { getSmokings } from '../../store/smoking';
 
 function UserProfileAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -16,11 +17,15 @@ function UserProfileAboutSection(currentUserProfile) {
   const gendersObj = useSelector((state) => state.gender)
   const genders = Object?.values(gendersObj)[0]
 
+  const smokingsObj = useSelector((state) => state.smoking)
+  const smokings = Object.values(smokingsObj)[0]
+
   console.log("genders", genders)
 
   useEffect(async () => {
     await dispatch(getHoroscopes())
     await dispatch(getGenders())
+    await dispatch(getSmokings())
   }, [dispatch])
 
   const getHoroscope = (horoscopeId) => {
@@ -50,6 +55,19 @@ function UserProfileAboutSection(currentUserProfile) {
       return null
     }
   }
+
+  const getSmoking = (smokingId) => {
+    const userSmoking = smokings?.filter(function(smoking){
+      return smoking.id == +smokingId
+    });
+    if(userSmoking) {
+      return userSmoking[0]?.name
+    }
+    else {
+      return null
+    }
+  }
+
 
   return (
     <>
@@ -111,18 +129,11 @@ function UserProfileAboutSection(currentUserProfile) {
             horoscope : {getHoroscope(currentProfile[0]?.horoscope_id)}
           </div>
           <div>
-            smoking_id: {currentProfile[0]?.smoking_id}
+            smoking status: {getSmoking(currentProfile[0]?.smoking_id)}
           </div>
           <div>
             drinking_id: {currentProfile[0]?.drinking_id}
           </div>
-
-          {/* <div>
-            smoking: {currentProfile[0]?.smoking? "Smokes" : "Doesn't smoke"}
-          </div> */}
-          {/* <div>
-            <i className="fas fa-cocktail"></i> {currentProfile[0]?.smoking? "Drinks" : "Doesn't drink"}
-          </div> */}
           <div>
             children_id: {currentProfile[0]?.children_id}
           </div>
