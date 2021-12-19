@@ -9,6 +9,7 @@ import { NavLink } from "react-router-dom";
 import { deleteProfile } from '../../store/profile';
 import { useHistory } from 'react-router';
 import { getHoroscopes } from '../../store/horoscope';
+import UserProfileAboutSection from '../UserProfileAboutSection';
 
 function UserProfile({count, setCount}) {
   const [user, setUser] = useState({});
@@ -17,21 +18,13 @@ function UserProfile({count, setCount}) {
   const history = useHistory();
 
   const [isLoaded, setIsLoaded] = useState(false)
-  // let profileObj = useSelector((state) => state?.profile[userId])
 
   const [showEditProfileForm, setShowEditProfileForm] = useState(false)
 
   const profilesObj = useSelector((state) => state?.profile)
   const profiles = Object?.values(profilesObj)[0]
 
-  const horoscopesObj = useSelector((state) => state.horoscope)
-  const horoscopes = Object?.values(horoscopesObj)[0]
-  // console.log("horoscopes", horoscopes)
 
-
-
-
-// original code -> rewritten below to prevent race conditions
   useEffect(async () => {
     // dispatch(clearProfiles())
     await dispatch(getProfiles());
@@ -39,29 +32,12 @@ function UserProfile({count, setCount}) {
     if (!isLoaded) setIsLoaded(true);
   },[dispatch, profiles?.length, userId, count, isLoaded])
 
-  // prevent race conditions
 
-  // useEffect(() => {
-  //   async function fetchData() {
+  useEffect(async () => {
+    await dispatch(getHoroscopes())
+  }, [dispatch])
 
-  //     await dispatch(getProfiles());
-  //     if (!isLoaded) setIsLoaded(true);
-
-  //   }
-  //   fetchData();
-  // }, [dispatch, profiles?.length, userId, count, isLoaded]);
-
-
-// useEffect(async() => {
-//   let userHoroscope = await dispatch(getHoroscope(currentProfile[0]?.horoscope_id))
-//   // console.log("userhoro", userHoroscope)
-// },[dispatch])
-
-useEffect(async () => {
-  await dispatch(getHoroscopes())
-}, [dispatch])
-
-// show edit profile form
+  // show edit profile form
   useEffect(() => {
     setShowEditProfileForm(false)
   },[dispatch, userId])
@@ -69,7 +45,7 @@ useEffect(async () => {
 
   useEffect(async ()  => {
     await dispatch(getProfiles()).then(()=>dispatch(getProfiles()))
-},[dispatch, count])
+  },[dispatch, count])
 
 // get current user
   useEffect(() => {
@@ -83,152 +59,34 @@ useEffect(async () => {
     })();
   }, [userId]);
 
-// // get one profile
-//   useEffect(() => {
-//     dispatch(getProfile(userId));
-//   }, [dispatch, userId]);
-
-
   if (!user) {
     return null;
   }
 
-  // let user_id = userId
-
-  // console.log("hello")
-    // console.log("all profiles", profiles)
-
-
-  // console.log("profiles being filtered", profiles)
 
   let currentProfile = profiles?.filter((profile) => {
-    // console.log("profile", profile)
-    // console.log("profile.user_id", profile.user_id)
     return profile?.user_id === +userId
   })
-
-  const getHoroscope = (horoscopeId) => {
-    const userHoroscope = horoscopes?.filter(function(horoscope){
-      // console.log("horoscopeId in get", horoscopeId)
-      // console.log("horoscope. id in get", horoscope?.sign)
-      return horoscope.id == +horoscopeId
-    });
-    if(userHoroscope) {
-      // console.log("userHoroscopee", userHoroscope)
-      return userHoroscope[0]?.sign
-    }
-    else {
-      return null
-    }
-  }
 
 
   let content = null;
   if(showEditProfileForm && userId) {
     content = (
-
       <EditUserProfileForm count={count} setCount={setCount} currentProfile={currentProfile} hideForm={() => setShowEditProfileForm(false)}/>
     )
   } else if (isLoaded){
     content = (
       <>
-      {/* <div> comment this whole green back in once figure out how to create profile</div> */}
-    <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="Photo"/>
-    <div className="user_profile_container">
-
-      <div>
-        about me : {currentProfile[0]?.about_me}
-      </div>
-      <div>
-        goal : {currentProfile[0]?.goal}
-      </div>
-      <div>
-        talent : {currentProfile[0]?.talent}
-      </div>
-      <div>
-        my traits : {currentProfile[0]?.my_traits}
-      </div>
-      <div>
-        needs : {currentProfile[0]?.needs}
-      </div>
-      <div>
-        hobbies : {currentProfile[0]?.hobbies}
-      </div>
-      <div>
-        moments : {currentProfile[0]?.moments}
-      </div>
-      <div>
-        secrets : {currentProfile[0]?.secrets}
-      </div>
-      <div>
-        looking for : {currentProfile[0]?.looking_for}
-      </div>
-      <div>
-        user audio : {currentProfile[0]?.user_audio}
-      </div>
-
-      <section className="Details">
-        <h1> Details </h1>
-        <div>
-          gender : {currentProfile[0]?.gender_id}
+        <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="Photo"/>
+        <div className="user_profile_container">
+          <UserProfileAboutSection currentUserProfile={currentProfile}/>
         </div>
-        <div>
-          number of likes: {currentProfile[0]?.number_likes}
-        </div>
-        <div>
-          orientation : {currentProfile[0]?.orientation_id}
-        </div>
-        <div>
-          pronouns: {currentProfile[0]?.pronouns}
-        </div>
-        <div>
-          height: {currentProfile[0]?.height} cm
-        </div>
-        <div>
-          education: {currentProfile[0]?.education}
-        </div>
-        <div>
-          occupation: {currentProfile[0]?.occupation}
-        </div>
-        <div>
-          horoscope : {getHoroscope(currentProfile[0]?.horoscope_id)}
-        </div>
-        <div>
-          smoking_id: {currentProfile[0]?.smoking_id}
-        </div>
-        <div>
-          drinking_id: {currentProfile[0]?.drinking_id}
-        </div>
-
-        {/* <div>
-          smoking: {currentProfile[0]?.smoking? "Smokes" : "Doesn't smoke"}
-        </div> */}
-        {/* <div>
-          <i className="fas fa-cocktail"></i> {currentProfile[0]?.smoking? "Drinks" : "Doesn't drink"}
-        </div> */}
-        <div>
-          children_id: {currentProfile[0]?.children_id}
-        </div>
-        <div>
-          pet_id: {currentProfile[0]?.pet_id}
-        </div>
-        <div>
-          politic_id: {currentProfile[0]?.politic_id}
-        </div>
-        <div>
-          religion_id: {currentProfile[0]?.religion_id}
-        </div>
-        <div>
-          partner_id: {currentProfile[0]?.partner_id}
-        </div>
-      </section>
-    </div>
-
       </>
     )
   } else {
-    <div>hello</div>
+    return null
   }
+
 
   const handleDeleteProfile = (id) => {
     dispatch(deleteProfile(id));
@@ -239,28 +97,19 @@ useEffect(async () => {
   let content_edit_compiled;
   content_edit_compiled = (
     <>
-   {content}
-   <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
-   {/* <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Delete Profile <i className="fas fa-edit"></i></button> */}
-   <button className="" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i className="fas fa-trash"></i></button>
-
+      {content}
+      <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
+      <button className="" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i className="fas fa-trash"></i></button>
     </>
   )
 
-
   return (
     <>
-    {/* {content} */}
-    {/* <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button> */}
-
-
-  { isLoaded && (currentProfile[0]?.id? content_edit_compiled :
-    ( <div>
-        <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
-      </div>))
-  }
-
-
+      { isLoaded && (currentProfile[0]?.id? content_edit_compiled :
+        ( <div>
+            <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
+          </div>))
+      }
     </>
   );
 }

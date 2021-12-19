@@ -14,6 +14,7 @@ from .api.question_routes import question_routes
 from .api.conversation_routes import conversation_routes
 from .api.horoscope_routes import horoscope_routes
 from .api.search_routes import search_routes
+from .api.gender_routes import gender_routes
 
 from .seeds import seed_commands
 
@@ -43,6 +44,7 @@ app.register_blueprint(question_routes, url_prefix='/api/questions')
 app.register_blueprint(conversation_routes, url_prefix='/api/conversations')
 app.register_blueprint(horoscope_routes, url_prefix='/api/horoscopes')
 app.register_blueprint(search_routes, url_prefix='/api/search')
+app.register_blueprint(gender_routes, url_prefix='/api/genders')
 
 db.init_app(app)
 Migrate(app, db)
