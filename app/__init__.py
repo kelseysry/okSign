@@ -22,6 +22,7 @@ from .api.pet_routes import pet_routes
 from .api.politic_routes import politic_routes
 from .api.religion_routes import religion_routes
 from .api.partner_routes import partner_routes
+from .api.orientation_routes import orientation_routes
 
 from .seeds import seed_commands
 
@@ -59,6 +60,7 @@ app.register_blueprint(pet_routes, url_prefix='/api/pets')
 app.register_blueprint(politic_routes, url_prefix='/api/politics')
 app.register_blueprint(religion_routes, url_prefix='/api/religions')
 app.register_blueprint(partner_routes, url_prefix='/api/partners')
+app.register_blueprint(orientation_routes, url_prefix='/api/orientations')
 
 db.init_app(app)
 Migrate(app, db)
