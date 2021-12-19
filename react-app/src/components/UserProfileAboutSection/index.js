@@ -7,6 +7,7 @@ import { getDrinkings } from '../../store/drinking';
 import { getChildren } from '../../store/children';
 import { getPets } from '../../store/pet';
 import { getPolitics } from '../../store/politic';
+import { getReligions } from '../../store/religion';
 
 function UserProfileAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -36,6 +37,9 @@ function UserProfileAboutSection(currentUserProfile) {
   const politicsObj = useSelector((state) => state.politic)
   const politics = Object.values(politicsObj)[0]
 
+  const religionObj = useSelector((state) => state.religion)
+  const religions = Object.values(religionObj)[0]
+
   useEffect(async () => {
     await dispatch(getHoroscopes())
     await dispatch(getGenders())
@@ -44,6 +48,7 @@ function UserProfileAboutSection(currentUserProfile) {
     await dispatch(getChildren())
     await dispatch(getPets())
     await dispatch(getPolitics())
+    await dispatch(getReligions())
 
   }, [dispatch])
 
@@ -140,6 +145,18 @@ function UserProfileAboutSection(currentUserProfile) {
     }
   }
 
+  const getReligion = (religionId) => {
+    const userReligion = religions?.filter(function(religion){
+      return religion.id == +religionId
+    });
+    if(userReligion) {
+      return userReligion[0]?.belief
+    }
+    else {
+      return null
+    }
+  }
+
 
   return (
     <>
@@ -216,7 +233,7 @@ function UserProfileAboutSection(currentUserProfile) {
             political status: {getPolitic(currentProfile[0]?.politic_id)}
           </div>
           <div>
-            religion_id: {currentProfile[0]?.religion_id}
+            religion status: {getReligion(currentProfile[0]?.religion_id)}
           </div>
           <div>
             partner_id: {currentProfile[0]?.partner_id}
