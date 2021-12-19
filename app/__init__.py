@@ -18,6 +18,7 @@ from .api.gender_routes import gender_routes
 from .api.smoking_routes import smoking_routes
 from .api.drinking_routes import drinking_routes
 from .api.children_routes import children_routes
+from .api.pet_routes import pet_routes
 
 from .seeds import seed_commands
 
@@ -51,6 +52,7 @@ app.register_blueprint(gender_routes, url_prefix='/api/genders')
 app.register_blueprint(smoking_routes, url_prefix='/api/smokings')
 app.register_blueprint(drinking_routes, url_prefix='/api/drinkings')
 app.register_blueprint(children_routes, url_prefix='/api/children')
+app.register_blueprint(pet_routes, url_prefix='/api/pets')
 
 db.init_app(app)
 Migrate(app, db)

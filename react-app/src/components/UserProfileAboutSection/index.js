@@ -5,6 +5,7 @@ import { getHoroscopes } from '../../store/horoscope';
 import { getSmokings } from '../../store/smoking';
 import { getDrinkings } from '../../store/drinking';
 import { getChildren } from '../../store/children';
+import { getPets } from '../../store/pet';
 
 function UserProfileAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -28,7 +29,9 @@ function UserProfileAboutSection(currentUserProfile) {
   const childrenObj = useSelector((state) => state.children)
   const children = Object.values(childrenObj)[0]
 
-  console.log("children", childrenObj)
+  const petsObj = useSelector((state) => state.pet)
+  const pets = Object.values(petsObj)[0]
+
 
 
   useEffect(async () => {
@@ -37,6 +40,7 @@ function UserProfileAboutSection(currentUserProfile) {
     await dispatch(getSmokings())
     await dispatch(getDrinkings())
     await dispatch(getChildren())
+    await dispatch(getPets())
 
   }, [dispatch])
 
@@ -101,6 +105,19 @@ function UserProfileAboutSection(currentUserProfile) {
     if(userChildren) {
       console.log("userChildren", userChildren)
       return userChildren[0]?.preference
+    }
+    else {
+      return null
+    }
+  }
+
+  const getPet = (petId) => {
+    const userPet = pets?.filter(function(pet){
+      return pet.id == +petId
+    });
+    if(userPet) {
+      console.log("userPet", userPet)
+      return userPet[0]?.preference
     }
     else {
       return null
@@ -177,7 +194,7 @@ function UserProfileAboutSection(currentUserProfile) {
             children status: {getChildrenText(currentProfile[0]?.children_id)}
           </div>
           <div>
-            pet_id: {currentProfile[0]?.pet_id}
+            pet status: {getPet(currentProfile[0]?.pet_id)}
           </div>
           <div>
             politic_id: {currentProfile[0]?.politic_id}
