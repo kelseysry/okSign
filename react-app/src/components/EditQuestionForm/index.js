@@ -259,12 +259,192 @@ const EditQuestionForm = () => {
             <RadioButton
               label="No"
               value={must_answer4 === 'No'}
-              onChange={handleQuestion4ChangeA2Must}
+              // onChange={handleQuestion4ChangeA2Must}
+              onChange={(e) => setMust_answer4("No")}
             />
           </div>
         </section>
 
+        <section className="question5Container">
+          <div className="questionText">5. Is jealously healthy in a relationship</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={question5 === 'Yes'}
+                onChange={(e) => setQuestion5("Yes")}
+              />
+            <RadioButton
+              label="No"
+              value={question5 === 'No'}
+              onChange={(e) => setQuestion5("No")}
+            />
+          </div>
 
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={must_answer5 === 'Yes'}
+                onChange={(e) => setMust_answer5("No")}
+              />
+            <RadioButton
+              label="No"
+              value={must_answer5 === 'No'}
+              // onChange={handleQuestion4ChangeA2Must}
+              onChange={(e) => setMust_answer5("No")}
+            />
+          </div>
+        </section>
+
+        <section className="question6Container">
+          <div className="questionText">6. Would you date someone that vaped/used e-cigs?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={question6 === 'Yes'}
+                onChange={(e) => setQuestion6("Yes")}
+              />
+            <RadioButton
+              label="No"
+              value={question6 === 'No'}
+              onChange={(e) => setQuestion6("No")}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={must_answer6 === 'Yes'}
+                onChange={(e) => setMust_answer6("No")}
+              />
+            <RadioButton
+              label="No"
+              value={must_answer6 === 'No'}
+              onChange={(e) => setMust_answer6("No")}
+            />
+          </div>
+        </section>
+
+        <section className="question7Container">
+          <div className="questionText">7. Which would you rather be?</div>
+          <div className ="question">
+            <RadioButton
+                label="Weird"
+                value={question7 === 'Weird'}
+                onChange={(e) => setQuestion7("Weird")}
+              />
+            <RadioButton
+              label="Normal"
+              value={question7 === 'Normal'}
+              onChange={(e) => setQuestion7("Normal")}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Weird"
+                value={must_answer7 === 'Weird'}
+                onChange={(e) => setMust_answer7("Normal")}
+              />
+            <RadioButton
+              label="Normal"
+              value={must_answer7 === 'Normal'}
+              onChange={(e) => setMust_answer7("Normal")}
+            />
+          </div>
+        </section>
+
+        <section className="question8Container">
+          <div className="questionText">8. Is astrological sign at all important in a match?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={question8 === 'Yes'}
+                onChange={(e) => setQuestion8("Yes")}
+              />
+            <RadioButton
+              label="No"
+              value={question8 === 'No'}
+              onChange={(e) => setQuestion8("No")}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={must_answer8 === 'Yes'}
+                onChange={(e) => setMust_answer8("No")}
+              />
+            <RadioButton
+              label="No"
+              value={must_answer8 === 'No'}
+              onChange={(e) => setMust_answer8("No")}
+            />
+          </div>
+        </section>
+
+        <section className="question9Container">
+          <div className="questionText">9. Do you enjoy discussing politics?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={question9 === 'Yes'}
+                onChange={(e) => setQuestion9("Yes")}
+              />
+            <RadioButton
+              label="No"
+              value={question9 === 'No'}
+              onChange={(e) => setQuestion9("No")}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={must_answer9 === 'Yes'}
+                onChange={(e) => setMust_answer9("No")}
+              />
+            <RadioButton
+              label="No"
+              value={must_answer9 === 'No'}
+              onChange={(e) => setMust_answer9("No")}
+            />
+          </div>
+        </section>
+
+        <section className="question10Container">
+          <div className="questionText">10. Do you think it’s important to have an emotional connection before a physical one?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={question10 === 'Yes'}
+                onChange={(e) => setQuestion10("Yes")}
+              />
+            <RadioButton
+              label="No"
+              value={question10 === 'No'}
+              onChange={(e) => setQuestion10("No")}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={must_answer10 === 'Yes'}
+                onChange={(e) => setMust_answer10("No")}
+              />
+            <RadioButton
+              label="No"
+              value={must_answer10 === 'No'}
+              onChange={(e) => setMust_answer10("No")}
+            />
+          </div>
+        </section>
 
         <ul className="error">
           {errors.map((error) => <li key={error}>{error}</li>)}
