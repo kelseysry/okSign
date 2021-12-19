@@ -46,7 +46,6 @@ const NavBar = () => {
     // const userId = sessionUser.id
     sessionLinks = (
     <>
-    <div>"hello</div>
     <nav>
       <ul>
         <li>
@@ -94,7 +93,7 @@ const NavBar = () => {
             </button>
 
         <li>
-          <SearchForm /> 
+          <SearchForm />
         </li>
 
 
