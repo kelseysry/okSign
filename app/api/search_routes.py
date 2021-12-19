@@ -1,43 +1,8 @@
 from flask import Blueprint, jsonify, redirect, url_for, session, request
-from app.models import Message, db, User, Horoscope, Profile, Gender
+from app.models import Message, db, User, Horoscope, Profile, Gender, Smoking
 from flask_login import login_required, current_user
 
 search_routes = Blueprint('search', __name__)
-
-
-# this works -> gets specific horoscope
-
-# @search_routes.route('/<term>/', methods=['GET'])
-# def search(term):
-#   searchResult = Horoscope.query.filter(Horoscope.sign.ilike(f'%{term}%')).all()
-#   if searchResult:
-#     result = {p.id : p.to_dict() for p in searchResult}
-#     return {
-#               "sign" : result,
-
-#           }
-#   else:
-#     return { "sign" : {},
-#             }
-
-
-
-# this works -> gets users based off of location
-
-# @search_routes.route('/<term>/', methods=['GET'])
-# def search(term):
-#   searchResult = Profile.query.filter(Profile.location.ilike(f'%{term}%')).all()
-#   if searchResult:
-#     result = {p.id : p.to_dict() for p in searchResult}
-#     return {
-#               "profile" : result,
-
-#           }
-#   else:
-#     return { "profile" : {},
-#             }
-
-
 
 
 def search_users(term):
@@ -84,6 +49,21 @@ def search_users(term):
           userResultsFromQuery.add(user)
         return userResultsFromQuery
 
+  # smoking = Smoking.query.filter(Smoking.name.ilike(f'{term}')).all()
+  # if smoking:
+  #   print("😡😡term", term)
+  #   userSmoking = {g.id: g.to_dict() for g in smoking}
+  #   userSmokingIdList = list(userSmoking.keys())
+  #   userSmokingString = ''.join(str(e) for e in userSmokingIdList)
+  #   userSmokingIdNum = int(userSmokingString)
+  #   # print("userSmokingNum😡😡😡😡😡😡😡", userSmokingIdNum)
+  #   if term.lower() == userGender[userSmokingIdNum]['name'].lower():
+  #     profileMatchSmoking = Profile.query.filter(Profile.smoking_id == userSmoking[userSmokingIdNum]['id']).all()
+  #     # print("🥳😡😡😡😡😡😡🥳", profileMatchSmoking)
+  #     if profileMatchSmoking:
+  #       for user in profileMatchSmoking:
+  #         userResultsFromQuery.add(user)
+  #       return userResultsFromQuery
 
 
   return userResultsFromQuery
