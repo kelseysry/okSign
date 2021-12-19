@@ -5,7 +5,6 @@ import { editProfile } from '../../store/profile'
 import isURL from 'validator/es/lib/isURL';
 import './EditUserProfileForm.css'
 
-
 const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
   const dispatch = useDispatch();
 
@@ -13,7 +12,6 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
   //  automatically know who's submitting the form
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
-
 
   const [age, setAge] = useState(currentProfile[0]?.age);
   const [location, setLocation] = useState(currentProfile[0]?.location);
