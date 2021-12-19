@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 
 
-const EditQUestionForm = () => {
+const EditQuestionForm = () => {
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state?.session?.user)
@@ -48,5 +48,22 @@ const EditQUestionForm = () => {
 
   }, [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, user_id])
 
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+
+
+    const userInputUpdateQUestions = {
+      question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, user_id
+    }
+
+    let updated = await dispatch(editProfile(userInputUpdateQUestions, user_id))
+
+      if (updated) {
+        hideForm();
+      }
+  }
 
 }
+
+export default EditQuestionForm
