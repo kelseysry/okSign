@@ -40,6 +40,11 @@ const NavBar = () => {
     history.push(`/conversations`)
   }
 
+  const handleQuestions = async(e) => {
+    e.preventDefault()
+    history.push('/questions')
+  }
+
 
 
 
@@ -54,39 +59,29 @@ const NavBar = () => {
             Home
           </NavLink>
         </li> */}
-        {/* <li>
-          <NavLink to='/discover' exact={true} activeClassName='active'>
-            Discover
-          </NavLink>
-        </li> */}
-                <button
+
+            <button
               className="nav_bar_button"
               onClick={handleClearDiscoverProfiles}
             >
               Discover
             </button>
 
-        {/* <li>
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
-          </NavLink>
-        </li> */}
-        {/* <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
-          </NavLink>
-        </li> */}
+
+            <button
+              className="nav_bar_button"
+              onClick={handleQuestions}
+            >
+              Questions
+            </button>
+
         {/* <li className="nav_bar_li">
           <NavLink to='/users' exact={true} activeClassName='active'>
             Users
           </NavLink>
         </li> */}
-        {/* <li>
-          <NavLink to='/conversations' exact={true} activeClassName='active'>
-            Conversations
-          </NavLink>
-        </li> */}
-        <button
+
+           <button
               className="nav_bar_button"
               onClick={handleClearConversations}
             >
@@ -97,12 +92,6 @@ const NavBar = () => {
           <SearchForm />
         </li>
 
-
-        {/* <li>
-          <NavLink to={`/profiles/${sessionUser.id}`} exact={true} onClick={handleClearProfile} activeClassName='active'>
-            Profile
-          </NavLink>
-        </li> */}
           <button
               className="nav_bar_button"
               onClick={handleClearProfile}

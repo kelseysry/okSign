@@ -78,6 +78,9 @@ function App() {
         <ProtectedRoute path='/search/:input' exact={true} >
           <SearchResults />
         </ProtectedRoute>
+        <ProtectedRoute path='/questions' exact={true} >
+          Questions
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );
