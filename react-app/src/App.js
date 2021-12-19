@@ -16,6 +16,8 @@ import { MatchesProvider } from './context/MatchesContext';
 import Conversation from './components/Conversation';
 import SearchResults from './components/SearchResults';
 import NavBar from './components/Navigation/NavBar';
+import EditQuestionForm from './components/EditQuestionForm';
+import QuestionForm from './components/QuestionForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -47,12 +49,12 @@ function App() {
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
+        {/* <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
-        </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
+        </ProtectedRoute> */}
+        {/* <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         <ProtectedRoute path='/discover' exact={true} >
           <Discover />
         </ProtectedRoute>
@@ -77,6 +79,10 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/search/:input' exact={true} >
           <SearchResults />
+        </ProtectedRoute>
+        <ProtectedRoute path='/questions' exact={true} >
+          {/* <EditQuestionForm /> */}
+          <QuestionForm /> 
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

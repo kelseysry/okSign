@@ -5,59 +5,13 @@ import { editProfile } from '../../store/profile'
 import isURL from 'validator/es/lib/isURL';
 import './EditUserProfileForm.css'
 
-
 const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
   const dispatch = useDispatch();
-
-  // const [isLoaded, setIsLoaded] = useState(false);
-  // const profilesObj = useSelector((state) => state?.profile)
-  // const profiles = Object?.values(profilesObj)
-  // console.log("profiles edit?", profiles)
-  // grab all the profiles and filter out the one that has user_id matching with session user
-  // have to do this b/c a user can delete their profile so then profile_id is no longer
-  // directly correlated with the user.id
-  // useEffect(async () => { // comment 16-20 back in
-  //   await dispatch(getProfiles());
-  //   // await getCurrentProfile(user_id,profiles)
-  //   if (!isLoaded) setIsLoaded(true);
-  // },[dispatch, profiles?.length])
-
-  // useEffect(async () => {
-  //   if(currentProfile) {
-  //     // await currentProfile;
-  //     await setAge(currentProfile[0]?.age)
-  //     await setLocation(currentProfile[0]?.location)
-  //   }
-  // },[currentProfile])
-
-  //   useEffect(async () => {
-  //   // if(currentProfile) {
-  //     // await currentProfile;
-  //     await getCurrentProfile()
-  //     await setAge(currentProfile[0]?.age)
-  //   // }
-  // },[profilesObj])
 
   // grab the user from state so a user doesn't have the manually input their data into the form
   //  automatically know who's submitting the form
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
-
-  // console.log("profiles in editUser", profiles)
-  // comment back in
-  // let currentProfile = profiles[0]?.filter((profile) => {return profile.user_id === user_id})
-  // console.log("currentProfile in edit", currentProfile)
-  // console.log("currentProfile in edit age--", currentProfile[0]?.age)
-
-  // let currentProfile
-  // const getCurrentProfile = (user_id,profiles) => {
-
-  //     return currentProfile =  profiles[0]?.filter((profile) => {return profile.user_id === user_id})
-  // }
-
-  // console.log('currentProfile in edit', currentProfile)
-
-
 
   const [age, setAge] = useState(currentProfile[0]?.age);
   const [location, setLocation] = useState(currentProfile[0]?.location);
@@ -181,11 +135,8 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 
       if (updated) {
         setCount(count + 1)
-
         hideForm();
       }
-
-
   }
 
   const handleCancelFormEditClick = (e) => {
@@ -197,7 +148,6 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     // dispatch(getProfiles());
     hideForm();
   };
-
 
   return (
     <>
@@ -654,7 +604,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
         <button
-          className="mobile-submit-create-business"
+          className=""
           type="submit"
           disabled={errors.length>0}
         >

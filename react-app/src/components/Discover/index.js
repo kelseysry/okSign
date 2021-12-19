@@ -16,8 +16,8 @@ const Discover = () => {
   // console.log("questions", questions[0])
 
 
-  useEffect(()=>{
-    dispatch(getQuestions())
+  useEffect(async ()=>{
+    await dispatch(getQuestions())
 }, [dispatch, questions.length])
 
 // for each user's question object, we need to count how many answers

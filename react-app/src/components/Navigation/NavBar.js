@@ -9,6 +9,7 @@ import { useHistory } from 'react-router';
 import { clearConversation } from '../../store/conversation';
 import SearchForm from '../SearchForm';
 import './NavBar.css'
+import { clearQuestions, getQuestions } from '../../store/question';
 
 const NavBar = () => {
   const sessionUser = useSelector((state) => state?.session.user);
@@ -21,8 +22,10 @@ const NavBar = () => {
 
   const handleClearDiscoverProfiles = async(e) => {
     e.preventDefault();
-    dispatch(clearProfiles())
-    dispatch(getProfiles())
+    await dispatch(clearProfiles())
+    await dispatch(getProfiles())
+    await dispatch(clearQuestions())
+    await dispatch(getQuestions())
     history.push(`/discover`)
 
 }
@@ -36,8 +39,16 @@ const NavBar = () => {
 
   const handleClearConversations = async(e) => {
     e.preventDefault()
-    dispatch(clearConversation())
+    await dispatch(clearConversation())
+    // await dispatch(clearProfiles())
+    // await dispatch(getProfiles())
+
     history.push(`/conversations`)
+  }
+
+  const handleQuestions = async(e) => {
+    e.preventDefault()
+    history.push('/questions')
   }
 
 
@@ -49,44 +60,34 @@ const NavBar = () => {
     <>
     <nav className="nav_container">
       <ul className="nav_container_list">
-        <li className="nav_bar_li">
+        {/* <li className="nav_bar_li">
           <NavLink to='/' exact={true} activeClassName='active'>
             Home
           </NavLink>
-        </li>
-        {/* <li>
-          <NavLink to='/discover' exact={true} activeClassName='active'>
-            Discover
-          </NavLink>
         </li> */}
-                <button
+
+            <button
               className="nav_bar_button"
               onClick={handleClearDiscoverProfiles}
             >
               Discover
             </button>
 
-        {/* <li>
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
-          </NavLink>
-        </li> */}
-        {/* <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
-          </NavLink>
-        </li> */}
-        <li className="nav_bar_li">
+
+            <button
+              className="nav_bar_button"
+              onClick={handleQuestions}
+            >
+              Questions
+            </button>
+
+        {/* <li className="nav_bar_li">
           <NavLink to='/users' exact={true} activeClassName='active'>
             Users
           </NavLink>
-        </li>
-        {/* <li>
-          <NavLink to='/conversations' exact={true} activeClassName='active'>
-            Conversations
-          </NavLink>
         </li> */}
-        <button
+
+           <button
               className="nav_bar_button"
               onClick={handleClearConversations}
             >
@@ -97,12 +98,6 @@ const NavBar = () => {
           <SearchForm />
         </li>
 
-
-        {/* <li>
-          <NavLink to={`/profiles/${sessionUser.id}`} exact={true} onClick={handleClearProfile} activeClassName='active'>
-            Profile
-          </NavLink>
-        </li> */}
           <button
               className="nav_bar_button"
               onClick={handleClearProfile}
