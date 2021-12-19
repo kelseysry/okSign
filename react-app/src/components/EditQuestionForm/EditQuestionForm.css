@@ -3,7 +3,7 @@ body {
 
 }
 
-.question1Container, .question2Container {
+.question1Container, .question2Container, .question3Container {
   background-color: #fff !important;
   box-shadow: 0 1px 4px rgb(42 47 53 / 10%);
   margin-bottom: 20px;

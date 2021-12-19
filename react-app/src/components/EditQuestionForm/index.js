@@ -13,8 +13,8 @@ const EditQuestionForm = () => {
   // const [must_answer1, setMust_answer1] = useState('');
   // const [question2, setQuestion2] = useState('');
   // const [must_answer2, setMust_answer2] = useState('');
-  const [question3, setQuestion3] = useState('');
-  const [must_answer3, setMust_answer3] = useState('');
+  // const [question3, setQuestion3] = useState('');
+  // const [must_answer3, setMust_answer3] = useState('');
   const [question4, setQuestion4] = useState('');
   const [must_answer4, setMust_answer4] = useState('');
   const [question5, setQuestion5] = useState('');
@@ -50,10 +50,10 @@ const EditQuestionForm = () => {
 // question 2
   const [question2, setQuestion2] = useState('');
   const handleQuestion2ChangeA1 = (e) => {
-    setQuestion1("Kissing in Paris");
+    setQuestion2("Kissing in Paris");
   };
   const handleQuestion2ChangeA2 = (e) => {
-    setQuestion1("Kissing in a tent, in the woods'");
+    setQuestion2("Kissing in a tent, in the woods");
   };
 
   const [must_answer2, setMust_answer2] = useState('');
@@ -62,6 +62,22 @@ const EditQuestionForm = () => {
   };
   const handleQuestion2ChangeA2Must = (e) => {
     setMust_answer2("Intense");
+  };
+
+  // question 3
+  const [question3, setQuestion3] = useState('');
+  const handleQuestion3ChangeA1 = (e) => {
+    setQuestion2("Good");
+  };
+  const handleQuestion3ChangeA2 = (e) => {
+    setQuestion2("Bad");
+  };
+  const [must_answer3, setMust_answer3] = useState('');
+  const handleQuestion3ChangeA1Must = (e) => {
+    setMust_answer3("Carefree");
+  };
+  const handleQuestion3ChangeA2Must = (e) => {
+    setMust_answer3("Intense");
   };
 
 
@@ -168,6 +184,36 @@ const EditQuestionForm = () => {
               label="Kissing in a tent, in the woods"
               value={must_answer2 === 'Kissing in a tent, in the woods'}
               onChange={handleQuestion2ChangeA2Must}
+            />
+          </div>
+        </section>
+
+        <section className="question3Container">
+          <div className="questionText">3. If you don't do anything at all for an entire day, how does that make you feel?</div>
+          <div className ="question">
+            <RadioButton
+                label="Good"
+                value={question3 === 'Good'}
+                onChange={handleQuestion3ChangeA1}
+              />
+            <RadioButton
+              label="Bad"
+              value={question3 === 'Bad'}
+              onChange={handleQuestion3ChangeA2}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Good"
+                value={must_answer3 === 'Good'}
+                onChange={handleQuestion3ChangeA1Must}
+              />
+            <RadioButton
+              label="Bad"
+              value={must_answer3 === 'Bad'}
+              onChange={handleQuestion3ChangeA2Must}
             />
           </div>
         </section>
