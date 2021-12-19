@@ -49,11 +49,11 @@ const NavBar = () => {
     <>
     <nav className="nav_container">
       <ul className="nav_container_list">
-        <li className="nav_bar_li">
+        {/* <li className="nav_bar_li">
           <NavLink to='/' exact={true} activeClassName='active'>
             Home
           </NavLink>
-        </li>
+        </li> */}
         {/* <li>
           <NavLink to='/discover' exact={true} activeClassName='active'>
             Discover
@@ -76,11 +76,11 @@ const NavBar = () => {
             Sign Up
           </NavLink>
         </li> */}
-        <li className="nav_bar_li">
+        {/* <li className="nav_bar_li">
           <NavLink to='/users' exact={true} activeClassName='active'>
             Users
           </NavLink>
-        </li>
+        </li> */}
         {/* <li>
           <NavLink to='/conversations' exact={true} activeClassName='active'>
             Conversations
