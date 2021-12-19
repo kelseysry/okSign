@@ -91,7 +91,7 @@ const Discover = () => {
   Object.keys(counter).forEach(key => {
     if (counter[key] < 6) delete counter[key];
   });
-  // console.log("updated counter", counter)
+  console.log("updated counter", counter)
   // {2: 6, 4: 10}
 
   // profiles are being selected via id user_id directly correlates to profile.id
