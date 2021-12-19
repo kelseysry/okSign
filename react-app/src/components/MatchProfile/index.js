@@ -6,7 +6,7 @@ import './MatchProfile.css'
 import { createConversation } from "../../store/conversation";
 import { useHistory } from 'react-router';
 import { getConversations } from "../../store/conversation";
-import { getProfiles } from "../../store/profile";
+import { clearProfiles, getProfiles } from "../../store/profile";
 const MatchProfile = ({userIdPercentObj}) => {
   const dispatch = useDispatch()
   const history = useHistory();
@@ -31,6 +31,8 @@ const MatchProfile = ({userIdPercentObj}) => {
 
   useEffect(async () => {
     await dispatch(getProfiles())
+    await dispatch(getConversations())
+
     if (!isLoaded) setIsLoaded(true);
 
   }, [dispatch, profiles.length, isLoaded])
@@ -45,9 +47,9 @@ const MatchProfile = ({userIdPercentObj}) => {
   }, []);
 
 
-  useEffect(() => {
-    dispatch(getConversations())
-  },[dispatch])
+  // useEffect(() => {
+  //   dispatch(getConversations())
+  // },[dispatch])
 
   // console.log("profileObj", profileObj)
   // console.log("about me---", profileObj?.about_me)

@@ -9,6 +9,7 @@ import { useHistory } from 'react-router';
 import { clearConversation } from '../../store/conversation';
 import SearchForm from '../SearchForm';
 import './NavBar.css'
+import { clearQuestions, getQuestions } from '../../store/question';
 
 const NavBar = () => {
   const sessionUser = useSelector((state) => state?.session.user);
@@ -21,8 +22,10 @@ const NavBar = () => {
 
   const handleClearDiscoverProfiles = async(e) => {
     e.preventDefault();
-    dispatch(clearProfiles())
-    dispatch(getProfiles())
+    await dispatch(clearProfiles())
+    await dispatch(getProfiles())
+    await dispatch(clearQuestions())
+    await dispatch(getQuestions())
     history.push(`/discover`)
 
 }
@@ -36,7 +39,10 @@ const NavBar = () => {
 
   const handleClearConversations = async(e) => {
     e.preventDefault()
-    dispatch(clearConversation())
+    await dispatch(clearConversation())
+    // await dispatch(clearProfiles())
+    // await dispatch(getProfiles())
+
     history.push(`/conversations`)
   }
 

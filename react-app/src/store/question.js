@@ -1,5 +1,7 @@
 const LOAD_QUESTIONS = "question/LOAD_QUESTIONS";
 const ADD_ONE = "question/ADD_ONE"
+const CLEAR = 'question/CLEAR'
+
 
 // action creator load all questions to questions
 const loadAllQuestions = (questions) => ({
@@ -11,6 +13,10 @@ const loadAllQuestions = (questions) => ({
 const addOneQuestion = (newQuestion) => ({
   type: ADD_ONE,
   newQuestion
+})
+
+export const clearQuestions = () => ({
+  type: CLEAR
 })
 
 
@@ -74,7 +80,11 @@ const questionReducer = (state = initialState, action) => {
         return newState
       }
       // return state
-    }
+    };
+    case CLEAR:{
+      state = {}
+      return state
+  }
     default:
       return state;
   }

@@ -77,7 +77,7 @@ function UserProfile({count, setCount}) {
   } else if (isLoaded){
     content = (
       <>
-        <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="user_image"/>
+        {currentProfile ? <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="user_image"/> : null }
         <div className="user_profile_container">
           <UserProfileAboutSection currentUserProfile={currentProfile}/>
         </div>
@@ -105,11 +105,16 @@ function UserProfile({count, setCount}) {
 
   return (
     <>
-      { isLoaded && (currentProfile[0]?.id? content_edit_compiled :
+      {/* { isLoaded && (currentProfile[0]?.id? content_edit_compiled :
         ( <div>
             <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
           </div>))
-      }
+      } */}
+       {   currentProfile? content_edit_compiled :
+         <div>
+            <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
+          </div>}
+
     </>
   );
 }
