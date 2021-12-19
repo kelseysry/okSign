@@ -7,13 +7,16 @@ import { createConversation } from "../../store/conversation";
 import { useHistory } from 'react-router';
 import { getConversations } from "../../store/conversation";
 import { getProfiles } from "../../store/profile";
-// this profile_id value is actually the user.id, bad naming on my part haha
-const MatchProfile = ({profile_id}) => {
+const MatchProfile = ({userIdPercentObj}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
+
+  // this profile_id value is actually the user.id, bad naming on my part haha
+  let profile_id = userIdPercentObj[0]
+  let matchPercent = ((Number(userIdPercentObj[1])/10)*100)
 
   // console.log("match profile id", +profile_id)
 
@@ -163,6 +166,7 @@ const MatchProfile = ({profile_id}) => {
       <button>Like  <i class="fas fa-heart"></i></button>
       <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
       <img className="match_profile_image" src={matchProfileObj[0]?.image_url1} alt="Photo"/>
+      <div>Match Percent {matchPercent}%</div>
       {matchProfileObj[0]?.goal}
     </div> )
 
