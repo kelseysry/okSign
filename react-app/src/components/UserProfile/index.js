@@ -39,23 +39,6 @@ function UserProfile({count, setCount}) {
     if (!isLoaded) setIsLoaded(true);
   },[dispatch, profiles?.length, userId, count, isLoaded])
 
-  // prevent race conditions
-
-  // useEffect(() => {
-  //   async function fetchData() {
-
-  //     await dispatch(getProfiles());
-  //     if (!isLoaded) setIsLoaded(true);
-
-  //   }
-  //   fetchData();
-  // }, [dispatch, profiles?.length, userId, count, isLoaded]);
-
-
-// useEffect(async() => {
-//   let userHoroscope = await dispatch(getHoroscope(currentProfile[0]?.horoscope_id))
-//   // console.log("userhoro", userHoroscope)
-// },[dispatch])
 
 useEffect(async () => {
   await dispatch(getHoroscopes())
@@ -83,38 +66,21 @@ useEffect(async () => {
     })();
   }, [userId]);
 
-// // get one profile
-//   useEffect(() => {
-//     dispatch(getProfile(userId));
-//   }, [dispatch, userId]);
-
 
   if (!user) {
     return null;
   }
 
-  // let user_id = userId
-
-  // console.log("hello")
-    // console.log("all profiles", profiles)
-
-
-  // console.log("profiles being filtered", profiles)
 
   let currentProfile = profiles?.filter((profile) => {
-    // console.log("profile", profile)
-    // console.log("profile.user_id", profile.user_id)
     return profile?.user_id === +userId
   })
 
   const getHoroscope = (horoscopeId) => {
     const userHoroscope = horoscopes?.filter(function(horoscope){
-      // console.log("horoscopeId in get", horoscopeId)
-      // console.log("horoscope. id in get", horoscope?.sign)
       return horoscope.id == +horoscopeId
     });
     if(userHoroscope) {
-      // console.log("userHoroscopee", userHoroscope)
       return userHoroscope[0]?.sign
     }
     else {
@@ -132,7 +98,6 @@ useEffect(async () => {
   } else if (isLoaded){
     content = (
       <>
-      {/* <div> comment this whole green back in once figure out how to create profile</div> */}
     <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="Photo"/>
     <div className="user_profile_container">
 
@@ -230,6 +195,7 @@ useEffect(async () => {
     <div>hello</div>
   }
 
+
   const handleDeleteProfile = (id) => {
     dispatch(deleteProfile(id));
     setCount(count + 1)
@@ -239,28 +205,19 @@ useEffect(async () => {
   let content_edit_compiled;
   content_edit_compiled = (
     <>
-   {content}
-   <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
-   {/* <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Delete Profile <i className="fas fa-edit"></i></button> */}
-   <button className="" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i className="fas fa-trash"></i></button>
-
+      {content}
+      <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
+      <button className="" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i className="fas fa-trash"></i></button>
     </>
   )
 
-
   return (
     <>
-    {/* {content} */}
-    {/* <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button> */}
-
-
-  { isLoaded && (currentProfile[0]?.id? content_edit_compiled :
-    ( <div>
-        <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
-      </div>))
-  }
-
-
+      { isLoaded && (currentProfile[0]?.id? content_edit_compiled :
+        ( <div>
+            <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
+          </div>))
+      }
     </>
   );
 }
