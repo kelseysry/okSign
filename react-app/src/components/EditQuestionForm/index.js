@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import RadioButton from '../RadioButton';
 
 
 const EditQuestionForm = () => {
@@ -8,7 +9,7 @@ const EditQuestionForm = () => {
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
 
-  const [question1, setQuestion1] = useState('');
+  // const [question1, setQuestion1] = useState('');
   const [must_answer1, setMust_answer1] = useState('');
   const [question2, setQuestion2] = useState('');
   const [must_answer2, setMust_answer2] = useState('');
@@ -28,6 +29,16 @@ const EditQuestionForm = () => {
   const [must_answer9, setMust_answer9] = useState('');
   const [question10, setQuestion10] = useState('');
   const [must_answer10, setMust_answer10] = useState('');
+
+
+  const [question1, setQuestion1] = useState('');
+  const handleQuestion1ChangeA1 = (e) => {
+    setQuestion1("Carefree");
+  };
+  const handleQuestion1ChangeA2 = (e) => {
+    setQuestion1("Intense");
+  };
+
 
   const [errors, setErrors] = useState([]);
 
@@ -57,12 +68,62 @@ const EditQuestionForm = () => {
       question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, user_id
     }
 
-    let updated = await dispatch(editProfile(userInputUpdateQUestions, user_id))
+    // let updated = await dispatch(editProfile(userInputUpdateQUestions, user_id))
 
-      if (updated) {
-        hideForm();
-      }
+      // if (updated) {
+      //   // hideForm();
+      // }
   }
+
+
+  const handelCancelEditQuestionForm = (e) => {
+    e.preventDefault();
+
+
+    // hideForm();
+  };
+
+  return (
+    <>
+      <form onSubmit={handleSubmit}>
+
+        <section className="question1Container">
+          <div className="question1text">Which word describes you better?</div>
+          <div className ="question1">
+            <RadioButton
+                label="Carefree"
+                value={question1 === 'Carefree'}
+                onChange={handleQuestion1ChangeA1}
+              />
+            <RadioButton
+              label="Intense"
+              value={question1 === 'Intense'}
+              onChange={handleQuestion1ChangeA2}
+            />
+          </div>
+        </section>
+
+        
+
+
+        <ul className="error">
+          {errors.map((error) => <li key={error}>{error}</li>)}
+        </ul>
+        <button
+          className=""
+          type="submit"
+          disabled={errors.length>0}
+        >
+          Submit
+        </button>
+        <button type="button" onClick={handelCancelEditQuestionForm}>Cancel</button>
+      </form>
+
+
+
+    </>
+
+  )
 
 }
 
