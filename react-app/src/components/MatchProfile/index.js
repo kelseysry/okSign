@@ -72,7 +72,7 @@ const MatchProfile = ({userIdPercentObj}) => {
       // console.log("convo two", convo?.user_id_two)
       // console.log("discoverUserId", discoverUserId)
       if(((convo?.user_id_one === discoverUserId) && (convo?.user_id_two === user_id_one)) || ((convo?.user_id_two === discoverUserId) && (convo?.user_id_one === user_id_one))) {
-        console.log("convo in if", convo)
+        // console.log("convo in if", convo)
         return convo
       } else {
         return null
