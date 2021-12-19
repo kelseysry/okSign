@@ -4,6 +4,7 @@ import { getGenders } from '../../store/gender';
 import { getHoroscopes } from '../../store/horoscope';
 import { getSmokings } from '../../store/smoking';
 import { getDrinkings } from '../../store/drinking';
+import { getChildren } from '../../store/children';
 
 function UserProfileAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -24,14 +25,22 @@ function UserProfileAboutSection(currentUserProfile) {
   const drinkingsObj = useSelector((state) => state.drinking)
   const drinkings = Object.values(drinkingsObj)[0]
 
-  console.log("genders", genders)
+  const childrenObj = useSelector((state) => state.children)
+  const children = Object.values(childrenObj)[0]
+
+  console.log("children", childrenObj)
+
 
   useEffect(async () => {
     await dispatch(getHoroscopes())
     await dispatch(getGenders())
     await dispatch(getSmokings())
     await dispatch(getDrinkings())
+    await dispatch(getChildren())
+
   }, [dispatch])
+
+
 
   const getHoroscope = (horoscopeId) => {
     const userHoroscope = horoscopes?.filter(function(horoscope){
@@ -85,6 +94,18 @@ function UserProfileAboutSection(currentUserProfile) {
     }
   }
 
+  const getChildrenText = (childrenId) => {
+    const userChildren = children?.filter(function(child){
+      return child.id == +childrenId
+    });
+    if(userChildren) {
+      console.log("userChildren", userChildren)
+      return userChildren[0]?.preference
+    }
+    else {
+      return null
+    }
+  }
 
 
   return (
@@ -153,7 +174,7 @@ function UserProfileAboutSection(currentUserProfile) {
             drinking status: {getDrinking(currentProfile[0]?.drinking_id)}
           </div>
           <div>
-            children_id: {currentProfile[0]?.children_id}
+            children status: {getChildrenText(currentProfile[0]?.children_id)}
           </div>
           <div>
             pet_id: {currentProfile[0]?.pet_id}

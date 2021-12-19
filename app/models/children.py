@@ -18,7 +18,6 @@ class Children(db.Model):
         return {
             'id': self.id,
             'preference': self.preference,
-            'date': self.date,
             'created_at': self.created_at,
             'updated_at': self.updated_at
         }
