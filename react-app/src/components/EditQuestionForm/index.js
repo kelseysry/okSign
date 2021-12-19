@@ -15,8 +15,8 @@ const EditQuestionForm = () => {
   // const [must_answer2, setMust_answer2] = useState('');
   // const [question3, setQuestion3] = useState('');
   // const [must_answer3, setMust_answer3] = useState('');
-  const [question4, setQuestion4] = useState('');
-  const [must_answer4, setMust_answer4] = useState('');
+  // const [question4, setQuestion4] = useState('');
+  // const [must_answer4, setMust_answer4] = useState('');
   const [question5, setQuestion5] = useState('');
   const [must_answer5, setMust_answer5] = useState('');
   const [question6, setQuestion6] = useState('');
@@ -67,19 +67,35 @@ const EditQuestionForm = () => {
   // question 3
   const [question3, setQuestion3] = useState('');
   const handleQuestion3ChangeA1 = (e) => {
-    setQuestion2("Good");
+    setQuestion3("Good");
   };
   const handleQuestion3ChangeA2 = (e) => {
-    setQuestion2("Bad");
+    setQuestion3("Bad");
   };
   const [must_answer3, setMust_answer3] = useState('');
   const handleQuestion3ChangeA1Must = (e) => {
-    setMust_answer3("Carefree");
+    setMust_answer3("Good");
   };
   const handleQuestion3ChangeA2Must = (e) => {
-    setMust_answer3("Intense");
+    setMust_answer3("Bad");
   };
 
+  // question 4
+  const [question4, setQuestion4] = useState('');
+  const handleQuestion4ChangeA1 = (e) => {
+    setQuestion4("Yes");
+  };
+  const handleQuestion4ChangeA2 = (e) => {
+    setQuestion4("No");
+  };
+
+  const [must_answer4, setMust_answer4] = useState('');
+  const handleQuestion4ChangeA1Must = (e) => {
+    setMust_answer4("Yes");
+  };
+  const handleQuestion4ChangeA2Must = (e) => {
+    setMust_answer4("No");
+  };
 
   const [errors, setErrors] = useState([]);
 
@@ -218,7 +234,35 @@ const EditQuestionForm = () => {
           </div>
         </section>
 
+        <section className="question4Container">
+          <div className="questionText">4. Do you often find yourself worrying about things that you have no control over?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={question4 === 'Yes'}
+                onChange={handleQuestion4ChangeA1}
+              />
+            <RadioButton
+              label="No"
+              value={question4 === 'No'}
+              onChange={handleQuestion4ChangeA2}
+            />
+          </div>
 
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={must_answer4 === 'Yes'}
+                onChange={handleQuestion4ChangeA1Must}
+              />
+            <RadioButton
+              label="No"
+              value={must_answer4 === 'No'}
+              onChange={handleQuestion4ChangeA2Must}
+            />
+          </div>
+        </section>
 
 
 
