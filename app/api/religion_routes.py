@@ -1,11 +1,11 @@
 from flask import Blueprint, jsonify, redirect, url_for, session, request
-from app.models import db, User, Drinking
+from app.models import db, User, Religion
 
 
-drinking_routes = Blueprint('drinkings', __name__)
+religion_routes = Blueprint('religions', __name__)
 
-# get all Drinking in db
-@drinking_routes.route('/')
-def drinkings():
-    drinkings = Drinking.query.all()
-    return {'drinkings': [drinking.to_dict() for drinking in drinkings]}
+# get all religion in db
+@religion_routes.route('/')
+def religions():
+    religions = Religion.query.all()
+    return {'religions': [religion.to_dict() for religion in religions]}
