@@ -133,11 +133,11 @@ const MatchProfile = ({userIdPercentObj}) => {
       <div>
           <button
             onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
-          >Message  <i class="far fa-comment-dots"></i></button>
+          >Message  <i className="far fa-comment-dots"></i></button>
 
-          <button>Like  <i class="fas fa-heart"></i></button>
+          <button>Like  <i className="fas fa-heart"></i></button>
           <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
-          <img className="match_profile_image" src={matchProfileObj[0]?.image_url1} alt="Photo"/>
+          <img className="match_profile_image" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
           <div>Match Percent {matchPercent}%</div>
           {matchProfileObj[0]?.goal}
       </div> )

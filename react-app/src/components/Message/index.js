@@ -2,10 +2,7 @@
 
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
-import { getMessages } from "../../store/message";
 import { useParams } from 'react-router-dom';
-import { clearMessages } from "../../store/message";
-import { getProfiles } from "../../store/profile";
 import GetProfilePic from "../GetProfilePic";
 import DotDotButton from "../DotDotButton";
 import EditMessageForm from "../EditMessageForm";

@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from 'react-router-dom';
 import { createMessage } from "../../store/message";
-import { getMessages } from '../../store/message';
 
 function MessageForm({conversationId}) {
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state?.session?.user)
-  const from_user_id = sessionUser?.id 
+  const from_user_id = sessionUser?.id
 
   const [content, setContent] = useState('')
   const [errors, setErrors] = useState([]);

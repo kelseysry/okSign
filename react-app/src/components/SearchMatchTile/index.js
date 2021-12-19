@@ -1,6 +1,6 @@
 
 import { useSelector, useDispatch } from "react-redux";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { getProfile } from "../../store/profile";
 
 // have access to the profile.id
@@ -17,12 +17,12 @@ const SearchMatchTile = ({matchProfileId}) => {
 
   useEffect(() => {
     dispatch(getProfile(matchProfileId))
-  },[dispatch])
+  },[dispatch, matchProfileId])
 
 
   return (
     <>
-    <img className="match_profile_image" src={matchProfileId?.image_url1} alt="Photo"/>
+    <img className="match_profile_image" src={matchProfileId?.image_url1} alt="match_image"/>
 
     </>
   )

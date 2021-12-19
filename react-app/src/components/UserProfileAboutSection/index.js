@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { getGenders } from '../../store/gender';
 import { getHoroscopes } from '../../store/horoscope';
@@ -67,7 +67,7 @@ function UserProfileAboutSection(currentUserProfile) {
 
   const getHoroscope = (horoscopeId) => {
     const userHoroscope = horoscopes?.filter(function(horoscope){
-      return horoscope.id == +horoscopeId
+      return horoscope.id === +horoscopeId
     });
     if(userHoroscope) {
       return userHoroscope[0]?.sign
@@ -79,10 +79,10 @@ function UserProfileAboutSection(currentUserProfile) {
 
   const getGender = (genderId) => {
     const userGender = genders?.filter(function(gender){
-      return gender.id == +genderId
+      return gender.id === +genderId
     });
     if(userGender) {
-       if (userGender[0]?.id == 2) {
+       if (+userGender[0]?.id === 2) {
          return "Man"
        } else {
          return "Woman"
@@ -95,7 +95,7 @@ function UserProfileAboutSection(currentUserProfile) {
 
   const getSmoking = (smokingId) => {
     const userSmoking = smokings?.filter(function(smoking){
-      return smoking.id == +smokingId
+      return smoking.id === +smokingId
     });
     if(userSmoking) {
       return userSmoking[0]?.name
@@ -107,7 +107,7 @@ function UserProfileAboutSection(currentUserProfile) {
 
     const getDrinking = (drinkingId) => {
     const userDrinking = drinkings?.filter(function(drinking){
-      return drinking.id == +drinkingId
+      return drinking.id === +drinkingId
     });
     if(userDrinking) {
       return userDrinking[0]?.name
@@ -119,7 +119,7 @@ function UserProfileAboutSection(currentUserProfile) {
 
   const getChildrenText = (childrenId) => {
     const userChildren = children?.filter(function(child){
-      return child.id == +childrenId
+      return child.id === +childrenId
     });
     if(userChildren) {
       // console.log("userChildren", userChildren)
@@ -132,7 +132,7 @@ function UserProfileAboutSection(currentUserProfile) {
 
   const getPet = (petId) => {
     const userPet = pets?.filter(function(pet){
-      return pet.id == +petId
+      return pet.id === +petId
     });
     if(userPet) {
       // console.log("userPet", userPet)
@@ -145,7 +145,7 @@ function UserProfileAboutSection(currentUserProfile) {
 
     const getPolitic = (politicId) => {
     const userPolitic = politics?.filter(function(politic){
-      return politic.id == +politicId
+      return politic.id === +politicId
     });
     if(userPolitic) {
       // console.log("userPolitic", userPolitic)
@@ -158,7 +158,7 @@ function UserProfileAboutSection(currentUserProfile) {
 
   const getReligion = (religionId) => {
     const userReligion = religions?.filter(function(religion){
-      return religion.id == +religionId
+      return religion.id === +religionId
     });
     if(userReligion) {
       return userReligion[0]?.belief
@@ -170,7 +170,7 @@ function UserProfileAboutSection(currentUserProfile) {
 
     const getPartner = (partnerId) => {
     const userPartner = partners?.filter(function(partner){
-      return partner.id == +partnerId
+      return partner.id === +partnerId
     });
     if(userPartner) {
       return userPartner[0]?.title
@@ -182,7 +182,7 @@ function UserProfileAboutSection(currentUserProfile) {
 
   const getOrientation = (orientationId) => {
     const userOrientation = orientations?.filter(function(orientation){
-      return orientation.id == +orientationId
+      return orientation.id === +orientationId
     });
     if(userOrientation) {
       return userOrientation[0]?.preference
