@@ -17,6 +17,7 @@ import Conversation from './components/Conversation';
 import SearchResults from './components/SearchResults';
 import NavBar from './components/Navigation/NavBar';
 import EditQuestionForm from './components/EditQuestionForm';
+import QuestionForm from './components/QuestionForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -80,7 +81,8 @@ function App() {
           <SearchResults />
         </ProtectedRoute>
         <ProtectedRoute path='/questions' exact={true} >
-          <EditQuestionForm />
+          {/* <EditQuestionForm /> */}
+          <QuestionForm /> 
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

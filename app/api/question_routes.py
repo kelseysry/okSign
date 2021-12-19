@@ -15,3 +15,19 @@ def questions():
 def question(id):
     question = Question.query.get(id)
     return question.to_dict()
+
+# post a question form
+@question_routes.route('/create', methods=['POST'])
+def create_question():
+  form = QuestionForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+  if form.validate_on_submit():
+    question = Question()
+    form.populate_obj(question)
+    db.session.add(question)
+    db.session.commit()
+    print("question dict-------------", question.to_dict())
+    return {"question":question.to_dict()}
+  else:
+    print(form.errors)
+    return "bad data"
