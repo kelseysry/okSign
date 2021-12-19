@@ -11,6 +11,7 @@ import gender from './gender'
 import smoking from './smoking'
 import drinking from './drinking'
 import children from './children'
+import pet from './pet'
 
 const rootReducer = combineReducers({
   session,
@@ -23,7 +24,8 @@ const rootReducer = combineReducers({
   gender,
   smoking,
   drinking,
-  children
+  children,
+  pet
 });
 
 
