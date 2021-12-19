@@ -6,10 +6,10 @@ import { getMessages } from "../../store/message";
 import { useParams } from 'react-router-dom';
 import { clearMessages } from "../../store/message";
 import { getProfiles } from "../../store/profile";
-import GetProfilePic from "../GetProfilePic";
-import DotDotButton from "../DotDotButton";
+// import GetProfilePic from "../GetProfilePic";
+// import DotDotButton from "../DotDotButton";
 import './Conversation.css'
-import EditMessageForm from "../EditMessageForm";
+// import EditMessageForm from "../EditMessageForm";
 import Message from "../Message";
 import MessageForm from "../MessageForm";
 import { clearProfiles } from "../../store/profile";
@@ -18,14 +18,13 @@ const Conversation = ({profile_id}) => {
   const dispatch = useDispatch()
   const { conversationId }  = useParams();
   const [users, setUsers] = useState([]);
-  const [showMenu, setShowMenu] = useState(false);
 
   const messagesObj = useSelector((state) => state.message)
   const messages = Object.values(messagesObj)
 
-  const profilesObj = useSelector((state) => state.profile)
-  const profiles = Object.values(profilesObj)
-  console.log("profilesObj in conversation",profilesObj)
+  // const profilesObj = useSelector((state) => state.profile)
+  // const profiles = Object.values(profilesObj)
+  // console.log("profilesObj in conversation",profilesObj)
   // const [showEditMessageForm, setShowEditMessageForm] = useState(false)
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
@@ -81,8 +80,8 @@ const Conversation = ({profile_id}) => {
 
     <>
 
-    { messages?.map((message) =>
-    <div>
+    { messages?.map((message, idx) =>
+    <div key={idx}>
       <Message message={message}/>
     </div>)}
 
