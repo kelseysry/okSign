@@ -3,20 +3,21 @@ import { useDispatch, useSelector } from "react-redux";
 import RadioButton from '../RadioButton';
 import './EditQuestionForm.css'
 
+
 const EditQuestionForm = () => {
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
 
-  // const [question1, setQuestion1] = useState('');
-  // const [must_answer1, setMust_answer1] = useState('');
-  // const [question2, setQuestion2] = useState('');
-  // const [must_answer2, setMust_answer2] = useState('');
-  // const [question3, setQuestion3] = useState('');
-  // const [must_answer3, setMust_answer3] = useState('');
-  // const [question4, setQuestion4] = useState('');
-  // const [must_answer4, setMust_answer4] = useState('');
+  const [question1, setQuestion1] = useState('');
+  const [must_answer1, setMust_answer1] = useState('');
+  const [question2, setQuestion2] = useState('');
+  const [must_answer2, setMust_answer2] = useState('');
+  const [question3, setQuestion3] = useState('');
+  const [must_answer3, setMust_answer3] = useState('');
+  const [question4, setQuestion4] = useState('');
+  const [must_answer4, setMust_answer4] = useState('');
   const [question5, setQuestion5] = useState('');
   const [must_answer5, setMust_answer5] = useState('');
   const [question6, setQuestion6] = useState('');
@@ -30,72 +31,6 @@ const EditQuestionForm = () => {
   const [question10, setQuestion10] = useState('');
   const [must_answer10, setMust_answer10] = useState('');
 
-// question 1
-  const [question1, setQuestion1] = useState('');
-  const handleQuestion1ChangeA1 = (e) => {
-    setQuestion1("Carefree");
-  };
-  const handleQuestion1ChangeA2 = (e) => {
-    setQuestion1("Intense");
-  };
-
-  const [must_answer1, setMust_answer1] = useState('');
-  const handleQuestion1ChangeA1Must = (e) => {
-    setMust_answer1("Carefree");
-  };
-  const handleQuestion1ChangeA2Must = (e) => {
-    setMust_answer1("Intense");
-  };
-
-// question 2
-  const [question2, setQuestion2] = useState('');
-  const handleQuestion2ChangeA1 = (e) => {
-    setQuestion2("Kissing in Paris");
-  };
-  const handleQuestion2ChangeA2 = (e) => {
-    setQuestion2("Kissing in a tent, in the woods");
-  };
-
-  const [must_answer2, setMust_answer2] = useState('');
-  const handleQuestion2ChangeA1Must = (e) => {
-    setMust_answer2("Carefree");
-  };
-  const handleQuestion2ChangeA2Must = (e) => {
-    setMust_answer2("Intense");
-  };
-
-  // question 3
-  const [question3, setQuestion3] = useState('');
-  const handleQuestion3ChangeA1 = (e) => {
-    setQuestion3("Good");
-  };
-  const handleQuestion3ChangeA2 = (e) => {
-    setQuestion3("Bad");
-  };
-  const [must_answer3, setMust_answer3] = useState('');
-  const handleQuestion3ChangeA1Must = (e) => {
-    setMust_answer3("Good");
-  };
-  const handleQuestion3ChangeA2Must = (e) => {
-    setMust_answer3("Bad");
-  };
-
-  // question 4
-  const [question4, setQuestion4] = useState('');
-  const handleQuestion4ChangeA1 = (e) => {
-    setQuestion4("Yes");
-  };
-  const handleQuestion4ChangeA2 = (e) => {
-    setQuestion4("No");
-  };
-
-  const [must_answer4, setMust_answer4] = useState('');
-  const handleQuestion4ChangeA1Must = (e) => {
-    setMust_answer4("Yes");
-  };
-  const handleQuestion4ChangeA2Must = (e) => {
-    setMust_answer4("No");
-  };
 
   const [errors, setErrors] = useState([]);
 
@@ -114,23 +49,26 @@ const EditQuestionForm = () => {
 
     setErrors(validationErrors)
 
-  }, [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, user_id])
+  }, [question1, must_answer1, question2, must_answer2, question3, must_answer3, question4, must_answer4, question5, must_answer5,question6, must_answer6, question7, must_answer7,question8, must_answer8, question9, must_answer9, question10,must_answer10, user_id])
 
   const handleSubmit = async(e) => {
     e.preventDefault();
 
 
 
-    const userInputUpdateQUestions = {
-      question1, question2, question3, question4, question5, question6, question7, question8, question9, question10, user_id
+    const userInputQuestions = {
+      question1, must_answer1, question2, must_answer2, question3, must_answer3, question4, must_answer4, question5, must_answer5,question6, must_answer6, question7, must_answer7,question8, must_answer8, question9, must_answer9, question10,must_answer10, user_id
     }
+    console.log("userInputQUestion in QUestionFOrm", userInputQuestions)
 
-    // let updated = await dispatch(editProfile(userInputUpdateQUestions, user_id))
+    // let newUserQuestions = await dispatch(createQuestion(userInputQuestions))
 
-      // if (updated) {
-      //   // hideForm();
-      // }
-  }
+  //   console.log("newUserQuestions", newUserQuestions)
+
+  //     if (newUserQuestions) {
+  //       // hideForm();
+  //     }
+  // }
 
 
   const handelCancelEditQuestionForm = (e) => {
@@ -150,12 +88,12 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Carefree"
                 value={question1 === 'Carefree'}
-                onChange={handleQuestion1ChangeA1}
+                onChange={(e) => setQuestion1("Carefree")}
               />
             <RadioButton
               label="Intense"
               value={question1 === 'Intense'}
-              onChange={handleQuestion1ChangeA2}
+              onChange={(e) => setQuestion1("Intense")}
             />
           </div>
 
@@ -164,12 +102,12 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Carefree"
                 value={must_answer1 === 'Carefree'}
-                onChange={handleQuestion1ChangeA1Must}
+                onChange={(e) => setMust_answer1("Carefree")}
               />
             <RadioButton
               label="Intense"
               value={must_answer1 === 'Intense'}
-              onChange={handleQuestion1ChangeA2Must}
+              onChange={(e) => setMust_answer1("Intense")}
             />
           </div>
         </section>
@@ -180,12 +118,12 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Kissing in Paris"
                 value={question2 === 'Kissing in Paris'}
-                onChange={handleQuestion2ChangeA1}
+                onChange={(e) => setQuestion2("Kissing in Paris")}
               />
             <RadioButton
               label="Kissing in a tent, in the woods"
               value={question2 === 'Kissing in a tent, in the woods'}
-              onChange={handleQuestion2ChangeA2}
+              onChange={(e) => setQuestion2("Kissing in a tent, in the woods")}
             />
           </div>
 
@@ -193,13 +131,13 @@ const EditQuestionForm = () => {
           <div className ="question">
             <RadioButton
                 label="Kissing in Paris"
-                value={must_answer2 === 'Kissing in Paris'}
-                onChange={handleQuestion2ChangeA1Must}
+                value={must_answer2 === "Kissing in Paris"}
+                onChange={(e) => setMust_answer2("Kissing in Paris")}
               />
             <RadioButton
               label="Kissing in a tent, in the woods"
-              value={must_answer2 === 'Kissing in a tent, in the woods'}
-              onChange={handleQuestion2ChangeA2Must}
+              value={must_answer2 === "Kissing in a tent, in the woods"}
+              onChange={(e) => setMust_answer2("Kissing in a tent, in the woods")}
             />
           </div>
         </section>
@@ -210,12 +148,12 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Good"
                 value={question3 === 'Good'}
-                onChange={handleQuestion3ChangeA1}
+                onChange={(e) => setQuestion3("Good")}
               />
             <RadioButton
               label="Bad"
               value={question3 === 'Bad'}
-              onChange={handleQuestion3ChangeA2}
+              onChange={(e) => setQuestion3("Bad")}
             />
           </div>
 
@@ -224,12 +162,12 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Good"
                 value={must_answer3 === 'Good'}
-                onChange={handleQuestion3ChangeA1Must}
+                onChange={(e) => setMust_answer3("Good")}
               />
             <RadioButton
               label="Bad"
               value={must_answer3 === 'Bad'}
-              onChange={handleQuestion3ChangeA2Must}
+              onChange={(e) => setMust_answer3("Bad")}
             />
           </div>
         </section>
@@ -240,12 +178,12 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Yes"
                 value={question4 === 'Yes'}
-                onChange={handleQuestion4ChangeA1}
+                onChange={(e) => setQuestion4("Yes")}
               />
             <RadioButton
               label="No"
               value={question4 === 'No'}
-              onChange={handleQuestion4ChangeA2}
+              onChange={(e) => setQuestion4("No")}
             />
           </div>
 
@@ -254,12 +192,11 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Yes"
                 value={must_answer4 === 'Yes'}
-                onChange={handleQuestion4ChangeA1Must}
+                onChange={(e) => setMust_answer4("Yes")}
               />
             <RadioButton
               label="No"
               value={must_answer4 === 'No'}
-              // onChange={handleQuestion4ChangeA2Must}
               onChange={(e) => setMust_answer4("No")}
             />
           </div>
@@ -285,12 +222,11 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Yes"
                 value={must_answer5 === 'Yes'}
-                onChange={(e) => setMust_answer5("No")}
+                onChange={(e) => setMust_answer5("Yes")}
               />
             <RadioButton
               label="No"
               value={must_answer5 === 'No'}
-              // onChange={handleQuestion4ChangeA2Must}
               onChange={(e) => setMust_answer5("No")}
             />
           </div>
@@ -316,7 +252,7 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Yes"
                 value={must_answer6 === 'Yes'}
-                onChange={(e) => setMust_answer6("No")}
+                onChange={(e) => setMust_answer6("Yes")}
               />
             <RadioButton
               label="No"
@@ -346,7 +282,7 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Weird"
                 value={must_answer7 === 'Weird'}
-                onChange={(e) => setMust_answer7("Normal")}
+                onChange={(e) => setMust_answer7("Weird")}
               />
             <RadioButton
               label="Normal"
@@ -376,7 +312,7 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Yes"
                 value={must_answer8 === 'Yes'}
-                onChange={(e) => setMust_answer8("No")}
+                onChange={(e) => setMust_answer8("Yes")}
               />
             <RadioButton
               label="No"
@@ -406,7 +342,7 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Yes"
                 value={must_answer9 === 'Yes'}
-                onChange={(e) => setMust_answer9("No")}
+                onChange={(e) => setMust_answer9("Yes")}
               />
             <RadioButton
               label="No"
@@ -436,7 +372,7 @@ const EditQuestionForm = () => {
             <RadioButton
                 label="Yes"
                 value={must_answer10 === 'Yes'}
-                onChange={(e) => setMust_answer10("No")}
+                onChange={(e) => setMust_answer10("Yes")}
               />
             <RadioButton
               label="No"
@@ -461,10 +397,11 @@ const EditQuestionForm = () => {
 
 
 
-    </>
+      </>
 
   )
 
+  }
 }
 
 export default EditQuestionForm
