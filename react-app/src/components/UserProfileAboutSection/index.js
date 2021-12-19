@@ -9,6 +9,8 @@ import { getPets } from '../../store/pet';
 import { getPolitics } from '../../store/politic';
 import { getReligions } from '../../store/religion';
 import { getPartners } from '../../store/partner';
+import { getOrientations } from '../../store/orientation';
+
 
 function UserProfileAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -44,6 +46,9 @@ function UserProfileAboutSection(currentUserProfile) {
   const partnersObj = useSelector((state) => state.partner)
   const partners = Object.values(partnersObj)[0]
 
+  const orientationsObj = useSelector((state) => state.orientation)
+  const orientations = Object.values(orientationsObj)[0]
+
   useEffect(async () => {
     await dispatch(getHoroscopes())
     await dispatch(getGenders())
@@ -54,6 +59,7 @@ function UserProfileAboutSection(currentUserProfile) {
     await dispatch(getPolitics())
     await dispatch(getReligions())
     await dispatch(getPartners())
+    await dispatch(getOrientations())
 
   }, [dispatch])
 
@@ -174,6 +180,18 @@ function UserProfileAboutSection(currentUserProfile) {
     }
   }
 
+  const getOrientation = (orientationId) => {
+    const userOrientation = orientations?.filter(function(orientation){
+      return orientation.id == +orientationId
+    });
+    if(userOrientation) {
+      return userOrientation[0]?.preference
+    }
+    else {
+      return null
+    }
+  }
+
 
   return (
     <>
@@ -217,7 +235,7 @@ function UserProfileAboutSection(currentUserProfile) {
             number of likes: {currentProfile[0]?.number_likes}
           </div>
           <div>
-            orientation : {currentProfile[0]?.orientation_id}
+            orientation : {getOrientation(currentProfile[0]?.orientation_id)}
           </div>
           <div>
             partner status: {getPartner(currentProfile[0]?.partner_id)}
