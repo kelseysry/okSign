@@ -35,7 +35,7 @@ const GetProfilePic = ({userId}) => {
       // console.log("profile?.user_id in get match", profile?.user_id)
       // console.log("profile?.user_id in get match", profile)
       // console.log(profile?.user_id == profile_id)
-      return profile?.user_id == profile_id
+      return profile?.user_id === +profile_id
     })
     if(matchProfile) {
       // console.log("match match", matchProfile)
@@ -54,7 +54,7 @@ const GetProfilePic = ({userId}) => {
     <>
     { isLoaded && (
 
-     <img className="match_profile_image" src={getMatchProfile(profile_id)[0]?.image_url2} alt="Photo"/>
+     <img className="match_profile_image" src={getMatchProfile(profile_id)[0]?.image_url2} alt="match_image"/>
 
     )}
     </>

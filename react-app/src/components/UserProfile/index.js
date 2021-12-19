@@ -77,7 +77,7 @@ function UserProfile({count, setCount}) {
   } else if (isLoaded){
     content = (
       <>
-        <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="Photo"/>
+        <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="user_image"/>
         <div className="user_profile_container">
           <UserProfileAboutSection currentUserProfile={currentProfile}/>
         </div>

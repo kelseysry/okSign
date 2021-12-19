@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router';
-import { NavLink } from "react-router-dom";
 import { deleteMessage } from "../../store/message";
 import './DotDotButton.css'
 
 
 function DotDotButton({conversation_id, messageId, showEditMessageForm, setShowEditMessageForm}) {
   const dispatch = useDispatch();
-  const history = useHistory();
 
   // console.log("messageId", messageId)
   let message_id = +messageId
@@ -39,8 +36,8 @@ function DotDotButton({conversation_id, messageId, showEditMessageForm, setShowE
   }, [showMenu]);
 
    const handleDeleteMessage = (conversation_id, message_id) => {
-     console.log("conversatiod_id in handle", conversation_id)
-     console.log("message_id in handle", message_id)
+    //  console.log("conversatiod_id in handle", conversation_id)
+    //  console.log("message_id in handle", message_id)
 
      dispatch(deleteMessage(conversation_id, message_id));
   }
@@ -51,7 +48,7 @@ function DotDotButton({conversation_id, messageId, showEditMessageForm, setShowE
 
       <button className="" onClick={openMenu}>
         <div className="dotdot">
-          <i class="fas fa-ellipsis-v"></i>
+          <i className="fas fa-ellipsis-v"></i>
         </div>
       </button>
 
@@ -60,7 +57,7 @@ function DotDotButton({conversation_id, messageId, showEditMessageForm, setShowE
         <div className="edit-trash">
 
           <div>
-            <button className="delete-review-button" onClick={() => handleDeleteMessage(conversation_id, message_id)}><i class="fas fa-trash"></i></button>
+            <button className="delete-review-button" onClick={() => handleDeleteMessage(conversation_id, message_id)}><i className="fas fa-trash"></i></button>
           </div>
 
           <button className="edit-profile-button" onClick={() => setShowEditMessageForm(true)}><i className="fas fa-edit"></i></button>

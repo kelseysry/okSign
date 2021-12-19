@@ -5,7 +5,7 @@ import React, { useEffect } from 'react';
 
 // import { getQuestions } from "../../store/question";
 import { getQuestions } from "../store/question";
-import { createContext, useState, useContext } from "react";
+import { createContext, useContext } from "react";
 
 export const MatchesContext = createContext();
 
@@ -103,11 +103,6 @@ export function MatchesProvider (props) {
   let matchedProfileIds = Object.keys(counter)
 
 
-  // console.log("matchedProfileIds", matchedProfileIds)
-
-  let hello = 5
-
-   /* { matchedProfileIds.map((profile_id) =>  <MatchProfile profile_id={profile_id}/>)} */
 
   return (
     <MatchesContext.Provider value={{matchedProfileIds}}>

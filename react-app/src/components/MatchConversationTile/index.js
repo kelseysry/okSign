@@ -35,7 +35,7 @@ const MatchConversationTile = ({profile_id}) => {
 
   const getMatchProfile = (profile_id) => {
     const matchProfile = profiles[0]?.filter(function(profile){
-      return profile?.user_id == profile_id
+      return profile?.user_id === +profile_id
     })
     if(matchProfile) {
       // console.log("match match", matchProfile)
@@ -48,7 +48,7 @@ const MatchConversationTile = ({profile_id}) => {
 
   const getUserName = (user_id) => {
     const usernameDisplay = users?.filter(function(el){
-      return el.id === user_id
+      return el.id === +user_id
      });
     //  console.log("try", user_id)
     //  console.log("tryThis", usernameDisplay[0].username)
@@ -60,7 +60,7 @@ const MatchConversationTile = ({profile_id}) => {
     }
   }
 
-  console.log("getmatchProfile", getMatchProfile(profile_id))
+  // console.log("getmatchProfile", getMatchProfile(profile_id))
   let matchProfileObj = (getMatchProfile(profile_id))
 
   return (
