@@ -6,6 +6,7 @@ import { getSmokings } from '../../store/smoking';
 import { getDrinkings } from '../../store/drinking';
 import { getChildren } from '../../store/children';
 import { getPets } from '../../store/pet';
+import { getPolitics } from '../../store/politic';
 
 function UserProfileAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -41,6 +42,7 @@ function UserProfileAboutSection(currentUserProfile) {
     await dispatch(getDrinkings())
     await dispatch(getChildren())
     await dispatch(getPets())
+    await dispatch(getPolitics())
 
   }, [dispatch])
 
