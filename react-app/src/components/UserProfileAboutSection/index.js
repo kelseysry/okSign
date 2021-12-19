@@ -39,6 +39,7 @@ function UserProfileAboutSection(currentUserProfile) {
 
   const religionObj = useSelector((state) => state.religion)
   const religions = Object.values(religionObj)[0]
+  console.log("religions", religions)
 
   useEffect(async () => {
     await dispatch(getHoroscopes())

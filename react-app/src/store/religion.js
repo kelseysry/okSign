@@ -14,7 +14,7 @@ export const getReligions = () => async(dispatch) => {
 
   const res = await fetch(`/api/religions/`)
   const religions = await res.json();
-  // console.log("religions res.json()", religions)
+  console.log("religions res.json()", religions)
   dispatch(loadReligions(religions))
 }
 
