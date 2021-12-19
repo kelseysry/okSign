@@ -13,6 +13,7 @@ import drinking from './drinking'
 import children from './children'
 import pet from './pet'
 import politic from './politic'
+import religion from './religion'
 
 const rootReducer = combineReducers({
   session,
@@ -27,7 +28,8 @@ const rootReducer = combineReducers({
   drinking,
   children,
   pet,
-  politic
+  politic,
+  religion
 });
 
 
