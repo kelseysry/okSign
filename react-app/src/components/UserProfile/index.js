@@ -72,20 +72,19 @@ function UserProfile({count, setCount}) {
   let content = null;
   if(showEditProfileForm && userId) {
     content = (
-
       <EditUserProfileForm count={count} setCount={setCount} currentProfile={currentProfile} hideForm={() => setShowEditProfileForm(false)}/>
     )
   } else if (isLoaded){
     content = (
       <>
-      <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="Photo"/>
-      <div className="user_profile_container">
-        <UserProfileAboutSection currentUserProfile={currentProfile}/>
-      </div>
+        <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="Photo"/>
+        <div className="user_profile_container">
+          <UserProfileAboutSection currentUserProfile={currentProfile}/>
+        </div>
       </>
     )
   } else {
-    return null 
+    return null
   }
 
 

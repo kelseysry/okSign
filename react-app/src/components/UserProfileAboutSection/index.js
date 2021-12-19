@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
+import { getGenders } from '../../store/gender';
 import { getHoroscopes } from '../../store/horoscope';
 
 function UserProfileAboutSection(currentUserProfile) {
@@ -12,8 +13,14 @@ function UserProfileAboutSection(currentUserProfile) {
   const horoscopesObj = useSelector((state) => state.horoscope)
   const horoscopes = Object?.values(horoscopesObj)[0]
 
+  const gendersObj = useSelector((state) => state.gender)
+  const genders = Object?.values(gendersObj)[0]
+
+  console.log("genders", genders)
+
   useEffect(async () => {
     await dispatch(getHoroscopes())
+    await dispatch(getGenders())
   }, [dispatch])
 
   const getHoroscope = (horoscopeId) => {
@@ -22,6 +29,18 @@ function UserProfileAboutSection(currentUserProfile) {
     });
     if(userHoroscope) {
       return userHoroscope[0]?.sign
+    }
+    else {
+      return null
+    }
+  }
+
+  const getGender = (genderId) => {
+    const userGender = genders?.filter(function(gender){
+      return gender.id == +genderId
+    });
+    if(userGender) {
+      return userGender[0]?.name
     }
     else {
       return null
@@ -64,7 +83,7 @@ function UserProfileAboutSection(currentUserProfile) {
         <section className="Details">
           <h1> Details </h1>
           <div>
-            gender : {currentProfile[0]?.gender_id}
+            gender : {getGender(currentProfile[0]?.gender_id)}
           </div>
           <div>
             number of likes: {currentProfile[0]?.number_likes}
