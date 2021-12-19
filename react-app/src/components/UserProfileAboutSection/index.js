@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getGenders } from '../../store/gender';
 import { getHoroscopes } from '../../store/horoscope';
 import { getSmokings } from '../../store/smoking';
+import { getDrinkings } from '../../store/drinking';
 
 function UserProfileAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -20,12 +21,16 @@ function UserProfileAboutSection(currentUserProfile) {
   const smokingsObj = useSelector((state) => state.smoking)
   const smokings = Object.values(smokingsObj)[0]
 
+  const drinkingsObj = useSelector((state) => state.drinking)
+  const drinkings = Object.values(drinkingsObj)[0]
+
   console.log("genders", genders)
 
   useEffect(async () => {
     await dispatch(getHoroscopes())
     await dispatch(getGenders())
     await dispatch(getSmokings())
+    await dispatch(getDrinkings())
   }, [dispatch])
 
   const getHoroscope = (horoscopeId) => {
@@ -67,6 +72,19 @@ function UserProfileAboutSection(currentUserProfile) {
       return null
     }
   }
+
+    const getDrinking = (drinkingId) => {
+    const userDrinking = drinkings?.filter(function(drinking){
+      return drinking.id == +drinkingId
+    });
+    if(userDrinking) {
+      return userDrinking[0]?.name
+    }
+    else {
+      return null
+    }
+  }
+
 
 
   return (
@@ -132,7 +150,7 @@ function UserProfileAboutSection(currentUserProfile) {
             smoking status: {getSmoking(currentProfile[0]?.smoking_id)}
           </div>
           <div>
-            drinking_id: {currentProfile[0]?.drinking_id}
+            drinking status: {getDrinking(currentProfile[0]?.drinking_id)}
           </div>
           <div>
             children_id: {currentProfile[0]?.children_id}
