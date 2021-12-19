@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
-import NavBar from './components/NavBar';
+// import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
@@ -15,6 +15,7 @@ import Conversations from './components/Conversations';
 import { MatchesProvider } from './context/MatchesContext';
 import Conversation from './components/Conversation';
 import SearchResults from './components/SearchResults';
+import NavBar from './components/Navigation/NavBar';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
