@@ -4,13 +4,13 @@ import { GetMatches } from "../../context/MatchesContext";
 import MatchConversationTile from "../MatchConversationTile";
 import { NavLink } from 'react-router-dom';
 import { getConversations } from "../../store/conversation";
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 
 
 const Conversations = () => {
   const dispatch = useDispatch()
-  // matchProfilesIds is actually the user.id 
+  // matchProfilesIds is actually the user.id
   const {matchedProfileIds} = GetMatches()
   console.log("match profile ids from context", matchedProfileIds)
 

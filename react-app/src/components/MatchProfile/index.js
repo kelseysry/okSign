@@ -85,7 +85,7 @@ const MatchProfile = ({userIdPercentObj}) => {
   const getMatchProfile = (profile_id) => {
     const matchProfile = profiles[0]?.filter(function(profile){
 
-      return profile?.user_id == profile_id
+      return profile?.user_id === +profile_id
     })
     if(matchProfile) {
       // console.log("match match", matchProfile)

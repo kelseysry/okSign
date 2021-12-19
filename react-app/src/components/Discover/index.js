@@ -108,7 +108,11 @@ const Discover = () => {
   return (
     <>
       <div>
-        {userIdsPercentsObj?.map((userIdPercentObj) => <MatchProfile userIdPercentObj={userIdPercentObj}/>)}
+        {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
+          <div key={idx}>
+            <MatchProfile userIdPercentObj={userIdPercentObj}/>
+          </div>
+        )}
       </div>
     </>
   )
