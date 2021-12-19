@@ -1,0 +1,33 @@
+*{
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.nav_container {
+  background-color: grey;
+  color: #f1f1f1
+
+}
+
+.nav_container_list {
+  background-color:#1a1a1a;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 30px;
+  justify-content: center;
+  padding: 20px 20px;
+
+}
+
+.nav_bar_button {
+  color: #f1f1f1
+}
+
+.nav_bar_li a {
+  color: #f1f1f1;
+  text-decoration: none;
+
+}

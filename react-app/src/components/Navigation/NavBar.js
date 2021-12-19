@@ -1,13 +1,14 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoutButton from './auth/LogoutButton';
+import LogoutButton from '../auth/LogoutButton';
 import { useSelector, useDispatch } from "react-redux";
-import { clearProfiles } from '../store/profile';
-import { getProfiles } from '../store/profile';
+import { clearProfiles } from '../../store/profile';
+import { getProfiles } from '../../store/profile';
 import { useHistory } from 'react-router';
-import { clearConversation } from '../store/conversation';
-import SearchForm from './SearchForm';
+import { clearConversation } from '../../store/conversation';
+import SearchForm from '../SearchForm';
+import './NavBar.css'
 
 const NavBar = () => {
   const sessionUser = useSelector((state) => state?.session.user);
@@ -46,9 +47,9 @@ const NavBar = () => {
     // const userId = sessionUser.id
     sessionLinks = (
     <>
-    <nav>
-      <ul>
-        <li>
+    <nav className="nav_container">
+      <ul className="nav_container_list">
+        <li className="nav_bar_li">
           <NavLink to='/' exact={true} activeClassName='active'>
             Home
           </NavLink>
@@ -59,7 +60,7 @@ const NavBar = () => {
           </NavLink>
         </li> */}
                 <button
-              className=""
+              className="nav_bar_button"
               onClick={handleClearDiscoverProfiles}
             >
               Discover
@@ -75,7 +76,7 @@ const NavBar = () => {
             Sign Up
           </NavLink>
         </li> */}
-        <li>
+        <li className="nav_bar_li">
           <NavLink to='/users' exact={true} activeClassName='active'>
             Users
           </NavLink>
@@ -86,7 +87,7 @@ const NavBar = () => {
           </NavLink>
         </li> */}
         <button
-              className=""
+              className="nav_bar_button"
               onClick={handleClearConversations}
             >
               Conversations
@@ -103,16 +104,14 @@ const NavBar = () => {
           </NavLink>
         </li> */}
           <button
-              className=""
+              className="nav_bar_button"
               onClick={handleClearProfile}
             >
               Profile
             </button>
-
-
-        <li>
-          <LogoutButton />
-        </li>
+          <li>
+            <LogoutButton />
+          </li>
       </ul>
     </nav>
     </>
