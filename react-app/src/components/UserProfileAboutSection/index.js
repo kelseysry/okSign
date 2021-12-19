@@ -8,6 +8,7 @@ import { getChildren } from '../../store/children';
 import { getPets } from '../../store/pet';
 import { getPolitics } from '../../store/politic';
 import { getReligions } from '../../store/religion';
+import { getPartners } from '../../store/partner';
 
 function UserProfileAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -39,7 +40,9 @@ function UserProfileAboutSection(currentUserProfile) {
 
   const religionObj = useSelector((state) => state.religion)
   const religions = Object.values(religionObj)[0]
-  console.log("religions", religions)
+
+  const partnersObj = useSelector((state) => state.partner)
+  const partners = Object.values(partnersObj)[0]
 
   useEffect(async () => {
     await dispatch(getHoroscopes())
@@ -50,6 +53,7 @@ function UserProfileAboutSection(currentUserProfile) {
     await dispatch(getPets())
     await dispatch(getPolitics())
     await dispatch(getReligions())
+    await dispatch(getPartners())
 
   }, [dispatch])
 
@@ -158,6 +162,18 @@ function UserProfileAboutSection(currentUserProfile) {
     }
   }
 
+    const getPartner = (partnerId) => {
+    const userPartner = partners?.filter(function(partner){
+      return partner.id == +partnerId
+    });
+    if(userPartner) {
+      return userPartner[0]?.title
+    }
+    else {
+      return null
+    }
+  }
+
 
   return (
     <>
@@ -204,6 +220,9 @@ function UserProfileAboutSection(currentUserProfile) {
             orientation : {currentProfile[0]?.orientation_id}
           </div>
           <div>
+            partner status: {getPartner(currentProfile[0]?.partner_id)}
+          </div>
+          <div>
             pronouns: {currentProfile[0]?.pronouns}
           </div>
           <div>
@@ -235,9 +254,6 @@ function UserProfileAboutSection(currentUserProfile) {
           </div>
           <div>
             religion status: {getReligion(currentProfile[0]?.religion_id)}
-          </div>
-          <div>
-            partner_id: {currentProfile[0]?.partner_id}
           </div>
         </section>
       </>
