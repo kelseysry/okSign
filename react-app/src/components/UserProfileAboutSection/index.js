@@ -40,7 +40,11 @@ function UserProfileAboutSection(currentUserProfile) {
       return gender.id == +genderId
     });
     if(userGender) {
-      return userGender[0]?.name
+       if (userGender[0]?.id == 2) {
+         return "Man"
+       } else {
+         return "Woman"
+       }
     }
     else {
       return null
@@ -83,7 +87,7 @@ function UserProfileAboutSection(currentUserProfile) {
         <section className="Details">
           <h1> Details </h1>
           <div>
-            gender : {getGender(currentProfile[0]?.gender_id)}
+            gender :  {getGender(currentProfile[0]?.gender_id)}
           </div>
           <div>
             number of likes: {currentProfile[0]?.number_likes}
