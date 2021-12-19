@@ -6,6 +6,7 @@ import { getSmokings } from '../../store/smoking';
 import { getDrinkings } from '../../store/drinking';
 import { getChildren } from '../../store/children';
 import { getPets } from '../../store/pet';
+import { getPolitics } from '../../store/politic';
 
 function UserProfileAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -32,7 +33,8 @@ function UserProfileAboutSection(currentUserProfile) {
   const petsObj = useSelector((state) => state.pet)
   const pets = Object.values(petsObj)[0]
 
-
+  const politicsObj = useSelector((state) => state.politic)
+  const politics = Object.values(politicsObj)[0]
 
   useEffect(async () => {
     await dispatch(getHoroscopes())
@@ -41,6 +43,7 @@ function UserProfileAboutSection(currentUserProfile) {
     await dispatch(getDrinkings())
     await dispatch(getChildren())
     await dispatch(getPets())
+    await dispatch(getPolitics())
 
   }, [dispatch])
 
@@ -103,7 +106,7 @@ function UserProfileAboutSection(currentUserProfile) {
       return child.id == +childrenId
     });
     if(userChildren) {
-      console.log("userChildren", userChildren)
+      // console.log("userChildren", userChildren)
       return userChildren[0]?.preference
     }
     else {
@@ -116,8 +119,21 @@ function UserProfileAboutSection(currentUserProfile) {
       return pet.id == +petId
     });
     if(userPet) {
-      console.log("userPet", userPet)
+      // console.log("userPet", userPet)
       return userPet[0]?.preference
+    }
+    else {
+      return null
+    }
+  }
+
+    const getPolitic = (politicId) => {
+    const userPolitic = politics?.filter(function(politic){
+      return politic.id == +politicId
+    });
+    if(userPolitic) {
+      // console.log("userPolitic", userPolitic)
+      return userPolitic[0]?.belief
     }
     else {
       return null
@@ -197,7 +213,7 @@ function UserProfileAboutSection(currentUserProfile) {
             pet status: {getPet(currentProfile[0]?.pet_id)}
           </div>
           <div>
-            politic_id: {currentProfile[0]?.politic_id}
+            political status: {getPolitic(currentProfile[0]?.politic_id)}
           </div>
           <div>
             religion_id: {currentProfile[0]?.religion_id}
