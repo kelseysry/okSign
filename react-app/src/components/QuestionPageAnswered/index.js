@@ -25,36 +25,69 @@ function QuestionPageAnswered() {
   return (
 
    <>
-
-    <section className="question1Container">
-    <div className="questionText">1. Which word describes you better?</div>
-    <div className ="question">
-      <RadioButton
-          label="Carefree"
-          value={"Carefree" === questions[0]?.question1}
+    <div className="questionForm">
+      <section className="question1Container">
+      <div className="questionText">1. Which word describes you better?</div>
+      <div className ="question">
+        <RadioButton
+            label="Carefree"
+            value={"Carefree" === questions[0]?.question1}
+            onClick={false}
+          />
+        <RadioButton
+          label="Intense"
+          value={"Intense" === questions[0]?.question1}
           onClick={false}
         />
-      <RadioButton
-        label="Intense"
-        value={"Intense" === questions[0]?.question1}
-        onClick={false}
-      />
-    </div>
+      </div>
 
-    <div className="answer">Answer you'll accept?</div>
-    <div className ="question">
-      <RadioButton
-          label="Carefree"
-          value={"Carefree" === questions[0]?.must_answer1}
+      <div className="answer">Answer you'll accept?</div>
+      <div className ="question">
+        <RadioButton
+            label="Carefree"
+            value={"Carefree" === questions[0]?.must_answer1}
+            onClick={false}
+          />
+        <RadioButton
+          label="Intense"
+          value={"Intense" === questions[0]?.question1}
           onClick={false}
         />
-      <RadioButton
-        label="Intense"
-        value={"Intense" === questions[0]?.question1}
-        onClick={false}
-      />
+      </div>
+    </section>
+
+    <section className="question2Container">
+          <div className="questionText">2. Choose the better romantic activity</div>
+          <div className ="question">
+            <RadioButton
+                label="Kissing in Paris"
+                value={'Kissing in Paris' === questions[0]?.question2}
+                onClick={false}
+              />
+            <RadioButton
+              label="Kissing in a tent, in the woods"
+              value={'Kissing in a tent, in the woods' === questions[0]?.question2}
+              onClick={false}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Kissing in Paris"
+                value={"Kissing in Paris" === questions[0]?.must_answer2}
+                onClick={false}
+              />
+            <RadioButton
+              label="Kissing in a tent, in the woods"
+              value={"Kissing in a tent, in the woods" === questions[0]?.must_answer2}
+              onClick={false}
+            />
+          </div>
+        </section>
+
+
     </div>
-  </section>
 
 
 
