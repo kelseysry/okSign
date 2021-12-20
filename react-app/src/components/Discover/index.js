@@ -2,7 +2,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from 'react';
 import MatchProfile from "../MatchProfile";
-import { clearQuestions, getQuestions } from "../../store/question";
+import { getQuestions } from "../../store/question";
 
 const Discover = () => {
   const dispatch = useDispatch()
@@ -15,12 +15,9 @@ const Discover = () => {
   const questions = Object.values(questionObject)
   console.log("questions🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", questions)
 
-  useEffect(() => {
-    // dispatch(clearQuestions())
-  },[dispatch, questions.length])
+
 
   useEffect(async ()=>{
-    // await dispatch(clearQuestions())
     await dispatch(getQuestions())
 }, [dispatch, questions.length])
 
@@ -38,11 +35,11 @@ console.log("questionsRender😯😯😯", questionsRender)
 // for each user's question object, we need to count how many answers
 // they have that are the same as the current user
  let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
-//  console.log("currentUserQuestion", currentUserQuestion)
+ console.log("currentUserQuestion🎃🎃🎃", currentUserQuestion)
 
  let counter = {};
 
-
+if(currentUserQuestion) {
 
  questionsRender?.map((question, ele) => {
     // console.log(ele, question)
@@ -52,49 +49,51 @@ console.log("questionsRender😯😯😯", questionsRender)
       counter[question.user_id] = 1
     }
 
-    if(question.question1 === currentUserQuestion[0].must_answer1) {
+    if(question?.question1 === currentUserQuestion[0]?.must_answer1) {
       counter[question.user_id] += 1
     }
 
-    if(question.question2 === currentUserQuestion[0].must_answer2) {
+    if(question.question2 === currentUserQuestion[0]?.must_answer2) {
       counter[question.user_id] += 1
     }
 
-    if(question.question3 === currentUserQuestion[0].must_answer3) {
+    if(question.question3 === currentUserQuestion[0]?.must_answer3) {
       counter[question.user_id] += 1
     }
 
-    if(question.question4 === currentUserQuestion[0].must_answer4) {
+    if(question.question4 === currentUserQuestion[0]?.must_answer4) {
       counter[question.user_id] += 1
     }
 
-    if(question.question5 === currentUserQuestion[0].must_answer5) {
+    if(question.question5 === currentUserQuestion[0]?.must_answer5) {
       counter[question.user_id] += 1
     }
 
-    if(question.question6 === currentUserQuestion[0].must_answer6) {
+    if(question.question6 === currentUserQuestion[0]?.must_answer6) {
       counter[question.user_id] += 1
     }
 
-    if(question.question7 === currentUserQuestion[0].must_answer7) {
+    if(question.question7 === currentUserQuestion[0]?.must_answer7) {
       counter[question.user_id] += 1
     }
 
-    if(question.question8 === currentUserQuestion[0].must_answer8) {
+    if(question.question8 === currentUserQuestion[0]?.must_answer8) {
       counter[question.user_id] += 1
     }
 
-    if(question.question9 === currentUserQuestion[0].must_answer9) {
+    if(question.question9 === currentUserQuestion[0]?.must_answer9) {
       counter[question.user_id] += 1
     }
 
-    if(question.question10 === currentUserQuestion[0].must_answer10) {
+    if(question.question10 === currentUserQuestion[0]?.must_answer10) {
       counter[question.user_id] += 1
     }
 
     return counter
   })
-  console.log("count", counter)
+
+}
+  // console.log("count", counter)
   // counter = {1: 10, 2: 6, 3: 3, 4: 10}
 
   // take out current user from potential match in counter
@@ -116,14 +115,18 @@ console.log("questionsRender😯😯😯", questionsRender)
     });
 
 
+
   // right now matchProfileIds corresponds to the userId -> we need to grab the profile id
   //  userId [1, 3, 4]
   // if delete 1 and make another profile -> need to be [3,4,5]
 
   // instead of passing just the keys, pass in each object, you'll have to
   // grab the key instead for profile_id so can get the user.id and match%
-  return (
-    <>
+
+  let content;
+
+  if (currentUserQuestion?.length) {
+    content = (
       <div>
         {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
           <div key={idx}>
@@ -131,6 +134,26 @@ console.log("questionsRender😯😯😯", questionsRender)
           </div>
         )}
       </div>
+    )
+  }     else {
+    content = (
+      <div>
+        Need to create a profile
+      </div>
+    )
+  }
+
+
+  return (
+    <>
+    <div>{content}</div>
+      {/* <div>
+        {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
+          <div key={idx}>
+            <MatchProfile userIdPercentObj={userIdPercentObj}/>
+          </div>
+        )}
+      </div> */}
     </>
   )
 

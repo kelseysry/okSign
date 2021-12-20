@@ -30,7 +30,7 @@ export function MatchesProvider (props) {
 let questionTry = questions
 
 // had to add questionRender variable b/c when added the Questions component -> that essentially changed
-// the number of things in the state to 2. So it messed up the indexing. 
+// the number of things in the state to 2. So it messed up the indexing.
 let questionsRender;
 
 if(questions.length === 2) {
@@ -38,8 +38,8 @@ if(questions.length === 2) {
 } else {
     questionsRender = questions[0]
 }
-console.log("questionsRender😯😯😯🤡🤡🤡", questionsRender)
-console.log("questionTry😯😯😯😯😯", questionTry[1])
+// console.log("questionsRender😯😯😯🤡🤡🤡", questionsRender)
+// console.log("questionTry😯😯😯😯😯", questionTry[1])
 
 
 let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
@@ -53,48 +53,48 @@ let currentUserQuestion = questionsRender?.filter((question) => {return question
  questionsRender?.map((question, ele) => {
     // console.log(ele, question)
     // console.log("question.question1", question.question1)
-    // console.log("currentUserQuestion.question1", currentUserQuestion[0].question1)
+    // console.log("currentUserQuestion.question1", currentUserQuestion[0]?.question1)
     if(!counter[question.user_id]) {
       counter[question.user_id] = 1
     }
 
-    if(question.question1 === currentUserQuestion[0].must_answer1) {
+    if(question.question1 === currentUserQuestion[0]?.must_answer1) {
       counter[question.user_id] += 1
     }
 
-    if(question.question2 === currentUserQuestion[0].must_answer2) {
+    if(question.question2 === currentUserQuestion[0]?.must_answer2) {
       counter[question.user_id] += 1
     }
 
-    if(question.question3 === currentUserQuestion[0].must_answer3) {
+    if(question.question3 === currentUserQuestion[0]?.must_answer3) {
       counter[question.user_id] += 1
     }
 
-    if(question.question4 === currentUserQuestion[0].must_answer4) {
+    if(question.question4 === currentUserQuestion[0]?.must_answer4) {
       counter[question.user_id] += 1
     }
 
-    if(question.question5 === currentUserQuestion[0].must_answer5) {
+    if(question.question5 === currentUserQuestion[0]?.must_answer5) {
       counter[question.user_id] += 1
     }
 
-    if(question.question6 === currentUserQuestion[0].must_answer6) {
+    if(question.question6 === currentUserQuestion[0]?.must_answer6) {
       counter[question.user_id] += 1
     }
 
-    if(question.question7 === currentUserQuestion[0].must_answer7) {
+    if(question.question7 === currentUserQuestion[0]?.must_answer7) {
       counter[question.user_id] += 1
     }
 
-    if(question.question8 === currentUserQuestion[0].must_answer8) {
+    if(question.question8 === currentUserQuestion[0]?.must_answer8) {
       counter[question.user_id] += 1
     }
 
-    if(question.question9 === currentUserQuestion[0].must_answer9) {
+    if(question.question9 === currentUserQuestion[0]?.must_answer9) {
       counter[question.user_id] += 1
     }
 
-    if(question.question10 === currentUserQuestion[0].must_answer10) {
+    if(question.question10 === currentUserQuestion[0]?.must_answer10) {
       counter[question.user_id] += 1
     }
 
