@@ -61,13 +61,8 @@ const NavBar = () => {
     // const userId = sessionUser.id
     sessionLinks = (
     <>
-    <nav className="nav_container">
+    <nav className="nav_container_desktop">
       <ul className="nav_container_list">
-        {/* <li className="nav_bar_li">
-          <NavLink to='/' exact={true} activeClassName='active'>
-            Home
-          </NavLink>
-        </li> */}
 
             <button
               className="nav_bar_button"
@@ -83,12 +78,6 @@ const NavBar = () => {
             >
               Questions
             </button>
-
-        {/* <li className="nav_bar_li">
-          <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink>
-        </li> */}
 
            <button
               className="nav_bar_button"
@@ -106,6 +95,47 @@ const NavBar = () => {
               onClick={handleClearProfile}
             >
               Profile
+            </button>
+          <li>
+            <LogoutButton />
+          </li>
+      </ul>
+    </nav>
+
+    <nav className="nav_container_mobile">
+      <ul className="nav_container_list">
+
+            <button
+              className="nav_bar_button"
+              onClick={handleClearDiscoverProfiles}
+            >
+              <i className="fas fa-hand-holding-heart"></i>
+            </button>
+
+
+            <button
+              className="nav_bar_button"
+              onClick={handleQuestions}
+            >
+              <i className="fas fa-question-circle"></i>
+            </button>
+
+           <button
+              className="nav_bar_button"
+              onClick={handleClearConversations}
+            >
+              <i className="fas fa-comments"></i>
+            </button>
+
+        <li>
+          <SearchForm />
+        </li>
+
+          <button
+              className="nav_bar_button"
+              onClick={handleClearProfile}
+            >
+              <i className="fas fa-user-circle"></i>
             </button>
           <li>
             <LogoutButton />
@@ -137,43 +167,6 @@ const NavBar = () => {
     <div>
       {sessionLinks}
     </div>
-    // <nav>
-    //   <ul>
-    //     <li>
-    //       <NavLink to='/' exact={true} activeClassName='active'>
-    //         Home
-    //       </NavLink>
-    //     </li>
-    //     <li>
-    //       <NavLink to='/discover' exact={true} activeClassName='active'>
-    //         Discover
-    //       </NavLink>
-    //     </li>
-    //     <li>
-    //       <NavLink to='/login' exact={true} activeClassName='active'>
-    //         Login
-    //       </NavLink>
-    //     </li>
-    //     <li>
-    //       <NavLink to='/sign-up' exact={true} activeClassName='active'>
-    //         Sign Up
-    //       </NavLink>
-    //     </li>
-    //     {/* <li>
-    //       <NavLink to='/users' exact={true} activeClassName='active'>
-    //         Users
-    //       </NavLink>
-    //     </li> */}
-    //     <li>
-    //       <NavLink to={`/profiles/${userId}`} exact={true} activeClassName='active'>
-    //         Profile
-    //       </NavLink>
-    //     </li>
-    //     <li>
-    //       <LogoutButton />
-    //     </li>
-    //   </ul>
-    // </nav>
   );
 }
 

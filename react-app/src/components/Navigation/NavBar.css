@@ -5,12 +5,17 @@
 }
 
 
-.nav_container {
+.nav_container_desktop {
   background-color:#f3f5f9;
   color: #f1f1f1;
   padding-bottom: 30px;
+}
 
-
+.nav_container_mobile {
+  background-color:#f3f5f9;
+  color: #f1f1f1;
+  padding-bottom: 30px;
+  display: none;
 }
 
 .nav_container_list {
@@ -31,5 +36,33 @@
 .nav_bar_li a {
   color: #f1f1f1;
   text-decoration: none;
+
+}
+
+.logOutDesktop{
+  display: block;
+}
+
+.logOutMobile {
+  display: none;
+}
+
+
+@media only screen and (max-width:768px) {
+  .nav_container_desktop {
+    display: none;
+  }
+
+  .nav_container_mobile {
+    display: block;
+  }
+
+  .logOutDesktop {
+    display: none;
+  }
+
+  .logOutMobile {
+    display: block;
+  }
 
 }

@@ -103,6 +103,9 @@ function UserProfile({count, setCount}) {
     </>
   )
 
+  // console.log("currentProfile 🤠😯 🤠😯 🤠😯 ", currentProfile)
+  // console.log("currentProfile[0] 🤠😯 🤠😯 🤠😯 ", currentProfile[0])
+
   return (
     <>
       {/* { isLoaded && (currentProfile[0]?.id? content_edit_compiled :
@@ -110,10 +113,10 @@ function UserProfile({count, setCount}) {
             <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
           </div>))
       } */}
-       {   currentProfile? content_edit_compiled :
+       {   currentProfile?.length? content_edit_compiled :
          <div>
             <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
-          </div>}
+        </div>}
 
     </>
   );
