@@ -9,6 +9,8 @@
   background-color: #fff !important;
   width: 70%;
   padding-top: 30px;
+  display: flex;
+  justify-content: space-around;
 
 }
 
@@ -61,4 +63,21 @@
   margin-left: 50px;
   font-size: 50px;
   color: white;
+}
+
+.NoMatchesButtonsInner {
+  padding-top: 30px;
+}
+
+.newUserButtons{
+  display: flex;
+  flex-direction: column;
+}
+
+.newUserButton {
+  background: #1a1a1a;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 10px 10px;
+  margin-bottom: 10px;
 }

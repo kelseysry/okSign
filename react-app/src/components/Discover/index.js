@@ -31,13 +31,13 @@ if(questions[0]) {
 } else {
     questionsRender = questions[1]
 }
-console.log("questionsRender😯😯😯", questionsRender)
+// console.log("questionsRender😯😯😯", questionsRender)
 
 
 // for each user's question object, we need to count how many answers
 // they have that are the same as the current user
  let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
- console.log("currentUserQuestion🎃🎃🎃", currentUserQuestion)
+//  console.log("currentUserQuestion🎃🎃🎃", currentUserQuestion)
 
  let counter = {};
 
