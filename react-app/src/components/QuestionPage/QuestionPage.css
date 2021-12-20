@@ -1,12 +1,20 @@
 .questionAnswered {
   background-color:#1a1a1a;
   color: white;
-  font-size: 50px;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   padding-bottom: 20px;
   margin-bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
 }
 
 .edit-question-form {
   color: white;
 }
+
+.questionsHeader {
+  font-size: 50px;
+}
+
+

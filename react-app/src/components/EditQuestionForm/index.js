@@ -78,6 +78,10 @@ const handleCancelFormEditClick = (e) => {
 
   return (
     <>
+      <div className="questionAnswered">
+        <div className="questionsHeader">Edit Answers</div>
+        <button type="button" className="EditQuestionCancel" onClick={handleCancelFormEditClick}>Cancel</button>
+      </div>
       <form className="questionForm" onSubmit={handleSubmit}>
 
         <section className="question1Container">
@@ -384,13 +388,12 @@ const handleCancelFormEditClick = (e) => {
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
         <button
-          className=""
+          className="EditQuestionFormSubmitButton"
           type="submit"
           disabled={errors.length>0}
         >
           Submit
         </button>
-        <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
       </form>
 
     </>

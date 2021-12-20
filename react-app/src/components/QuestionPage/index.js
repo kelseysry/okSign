@@ -40,7 +40,7 @@ if(showEditQuestion) {
   content = (
     <>
       <div className="questionAnswered">
-        Your Answers
+        <div className="questionsHeader">Your Answers</div>
         <button className="edit-question-form" onClick={() => setShowEditQuestionForm(true)}>Edit Answers <i className="fas fa-edit"></i></button>
 
       </div>
