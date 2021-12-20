@@ -10,6 +10,7 @@ import { deleteProfile } from '../../store/profile';
 import { useHistory } from 'react-router';
 import { getHoroscopes } from '../../store/horoscope';
 import UserProfileAboutSection from '../UserProfileAboutSection';
+import ProfileForm from '../ProfileForm';
 
 function UserProfile({count, setCount}) {
   const [user, setUser] = useState({});
@@ -114,9 +115,17 @@ function UserProfile({count, setCount}) {
           </div>))
       } */}
        {   currentProfile?.length? content_edit_compiled :
-         <div>
-            <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
-        </div>}
+
+        <div>
+          <div className="answerQuestionContainer">
+          <div className="FillOutProfileHeader">Fill Out Your Profile to Increase Matches!</div>
+          </div>
+              <ProfileForm />
+        </div>
+        //  <div>
+        //     <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
+        // </div>
+       }
 
     </>
   );
