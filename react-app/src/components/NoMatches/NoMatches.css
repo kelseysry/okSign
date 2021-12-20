@@ -70,7 +70,14 @@
 }
 
 .newUserButtons{
-  background: coral;
   display: flex;
   flex-direction: column;
+}
+
+.newUserButton {
+  background: #1a1a1a;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 10px 10px;
+  margin-bottom: 10px;
 }

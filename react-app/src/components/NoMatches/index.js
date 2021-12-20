@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from 'react';
 import { getProfiles } from '../../store/profile';
+import { useHistory } from 'react-router';
 
 import './NoMatches.css'
 
@@ -9,6 +10,8 @@ const NoMatches = ({user_id}) => {
 
   const profilesObj = useSelector((state) => state?.profile)
   const profiles = Object?.values(profilesObj)[0]
+  const history = useHistory();
+
 
   useEffect(() => {
      dispatch(getProfiles());
@@ -21,6 +24,13 @@ const NoMatches = ({user_id}) => {
 
   // console.log("currentProfile in nomatches", currentProfile)
 
+  const handleQuestionRedirect = () => {
+    history.push('/questions')
+  }
+
+  const handleCreateProfileRedirect = () => {
+    history.push(`/profiles/${user_id}`)
+  }
 
   return (
     <>
@@ -45,8 +55,13 @@ const NoMatches = ({user_id}) => {
           Answer questions and fill out your profile to get matches!
         </div>
         <div className="newUserButtons">
-          <button>Fill Out Questions</button>
-          <button>Create Profile</button>
+          <button className="newUserButton"
+          onClick={() => {handleQuestionRedirect()}}
+          >Fill Out Questions <i class="fas fa-newspaper"></i>
+          </button>
+          <button className="newUserButton"
+          onClick={() => {handleCreateProfileRedirect()}}
+          >Create Profile <i class="fas fa-address-card"></i></button>
         </div>
       </section>
     </>
