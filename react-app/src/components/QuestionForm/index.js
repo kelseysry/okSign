@@ -385,7 +385,7 @@ const QuestionForm = () => {
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
         <button
-          className=""
+          className="EditQuestionFormSubmitButton"
           type="submit"
           disabled={errors.length>0}
         >

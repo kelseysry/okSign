@@ -60,3 +60,14 @@ body {
 .questionForm {
   padding-bottom: 30px;
 }
+
+.error {
+  padding-bottom: 15px;
+}
+
+.error li{
+padding: 10px 10px;
+font-size: small;
+color:crimson
+
+}
