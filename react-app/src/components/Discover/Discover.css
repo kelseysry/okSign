@@ -1,0 +1,10 @@
+body {
+  background-color:#f3f5f9;
+}
+
+.center-no-matches-component {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}

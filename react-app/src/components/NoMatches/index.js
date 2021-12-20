@@ -23,23 +23,27 @@ const NoMatches = ({user_id}) => {
 
 
   return (
-    <section className="NoMatchesContainer">
-      <div className="profile-userInfo">
-        <div className="profile-userInfo-inner">
-          <div className="profile-userInfo-inner-content">
-            <div className="profile-userInfo-thumb">
-              <div className="profile-thumb">
-                {currentProfile ? <img src={currentProfile[0]?.image_url1} alt="user_image"/> : null }
+    <>
+      <section className="NoMatchesContainer">
+        <div className="profile-userInfo">
+          <div className="profile-userInfo-inner">
+            <div className="profile-userInfo-inner-content">
+              <div className="profile-userInfo-thumb">
+                <div className="profile-thumb">
+                  {currentProfile ? <img src={currentProfile[0]?.image_url1} alt="user_image"/> : null }
+                </div>
               </div>
-            </div>
-            <div className="no-matches-header">
-                No Matches Yet!
+              <div className="no-matches-header">
+                  No Matches Yet!
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-    </section>
+      </section>
+      <section className="NoMatchesButtonsContainer">
+        Hi 
+      </section>
+    </>
   )
 }
 

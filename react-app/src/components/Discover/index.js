@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import MatchProfile from "../MatchProfile";
 import { getQuestions } from "../../store/question";
 import NoMatches from "../NoMatches";
+import './Discover.css'
 
 const Discover = () => {
   const dispatch = useDispatch()
@@ -138,14 +139,16 @@ if(currentUserQuestion) {
     )
   }     else {
     content = (
-      <NoMatches user_id={user_id} />
+      <div className="center-no-matches-component">
+        <NoMatches user_id={user_id} />
+      </div>
     )
   }
 
 
   return (
     <>
-    <div>{content}</div>
+    {content}
       {/* <div>
         {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
           <div key={idx}>
