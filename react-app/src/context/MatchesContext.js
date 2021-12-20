@@ -20,6 +20,7 @@ export function MatchesProvider (props) {
   const questions = Object.values(questionObject)
   // console.log("questions", questions[0])
 
+  console.log("match context questions🤡🤡🤡", questions)
 
   useEffect(async ()=>{
     // await dispatch(clearQuestions())

@@ -68,6 +68,8 @@ const MatchProfile = ({userIdPercentObj}) => {
     }
   }
 
+  console.log("conversation in match 🤠😯", conversations)
+
   const checkConversationExists = (user_id_one, discoverUserId) => {
     const existingConvo = conversations?.filter(function(convo){
       // console.log("convo one", convo?.user_id_one)
@@ -130,7 +132,7 @@ const MatchProfile = ({userIdPercentObj}) => {
   return (
     <>
 
-    { isLoaded && (
+    { isLoaded && matchProfileObj[0]?.user_id && (
 
       <div>
           <button
@@ -138,7 +140,7 @@ const MatchProfile = ({userIdPercentObj}) => {
           >Message  <i className="far fa-comment-dots"></i></button>
 
           <button>Like  <i className="fas fa-heart"></i></button>
-          {/* <div>{getUserName(matchProfileObj[0]?.user_id)}</div> */}
+          <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
           <img className="match_profile_image" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
           <div>Match Percent {matchPercent}%</div>
           {matchProfileObj[0]?.goal}
