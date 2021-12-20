@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import EditQuestionForm from '../EditQuestionForm';
 import QuestionPageAnswered from '../QuestionPageAnswered';
-import { getQuestion } from '../../store/question';
+import { clearQuestions, getQuestion } from '../../store/question';
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 
@@ -25,6 +25,7 @@ function QuestionPage() {
   },[dispatch])
 
   useEffect(() => {
+    dispatch(clearQuestions())
     dispatch(getQuestion(user_id))
 
    },[dispatch, user_id])
@@ -35,11 +36,10 @@ if(showEditQuestion) {
   content = (
     <EditQuestionForm questions={questions} hideForm={() => setShowEditQuestionForm(false)}/>
   )
-} else if (questions.length){
+} else if (questions){
   content = (
     <>
       <div className="">
-        {/* <UserProfileAboutSection currentUserProfile={currentProfile}/> */}
         <QuestionPageAnswered />
       </div>
     </>
@@ -47,7 +47,6 @@ if(showEditQuestion) {
 } else {
   return null
 }
-
 
 
 let content_edit_compiled;
@@ -58,6 +57,8 @@ content_edit_compiled = (
   </>
 )
 
+console.log("questions🤠😯🤠😯🤠😯", questions)
+
 return (
   <>
 
@@ -66,7 +67,7 @@ return (
           <NavLink to={`/answerQuestions`}><div className=""></div>Answer Questions <i className="fas fa-address-card"></i></NavLink>
       </div>
 
-    }
+     }
 
   </>
 );

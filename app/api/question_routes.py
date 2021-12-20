@@ -15,8 +15,11 @@ def questions():
 def question(user_id):
     # question = Question.query.get(id)
     question = Question.query.filter(Question.user_id == user_id).first()
-    print("question in back", question)
-    return question.to_dict()
+    print("question in back🤠😯🤠😯🤠😯🤠😯🤠😯🤠😯", question)
+    if question:
+      return question.to_dict()
+    else:
+      return "no user"
 
 # post a question form
 @question_routes.route('/create', methods=['POST'])
