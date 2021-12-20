@@ -138,7 +138,7 @@ if(currentUserQuestion) {
     )
   }     else {
     content = (
-      <NoMatches /> 
+      <NoMatches user_id={user_id} />
     )
   }
 
