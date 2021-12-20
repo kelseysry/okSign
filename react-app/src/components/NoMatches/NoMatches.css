@@ -2,17 +2,21 @@
   width: 70%;
   margin: 0px 0px;
   background: pink;
+  padding-bottom: 0px;
 
 }
 
 .NoMatchesButtonsContainer {
-  background: coral;
+  background-color: #fff !important;
+  width: 70%;
+  padding-top: 30px;
+ 
 }
 
 .profile-userInfo {
   margin-top: 100px;
   padding-top: 50px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   background: #1a1a1a;
 }
 

@@ -41,7 +41,9 @@ const NoMatches = ({user_id}) => {
         </div>
       </section>
       <section className="NoMatchesButtonsContainer">
-        Hi 
+        <div>
+          Answer questions! 
+        </div>
       </section>
     </>
   )
