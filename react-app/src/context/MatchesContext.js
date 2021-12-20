@@ -27,14 +27,30 @@ export function MatchesProvider (props) {
     await dispatch(getQuestions())
 }, [dispatch, questions.length])
 
+let questionTry = questions
+
+// had to add questionRender variable b/c when added the Questions component -> that essentially changed
+// the number of things in the state to 2. So it messed up the indexing. 
+let questionsRender;
+
+if(questions.length === 2) {
+   questionsRender = questions[1]
+} else {
+    questionsRender = questions[0]
+}
+console.log("questionsRender😯😯😯🤡🤡🤡", questionsRender)
+console.log("questionTry😯😯😯😯😯", questionTry[1])
+
+
+let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
+
 // for each user's question object, we need to count how many answers
 // they have that are the same as the current user
- let currentUserQuestion = questions[0]?.filter((question) => {return question.user_id === user_id})
 //  console.log("currentUserQuestion", currentUserQuestion)
 
  let counter = {};
 
-  questions[0]?.map((question, ele) => {
+ questionsRender?.map((question, ele) => {
     // console.log(ele, question)
     // console.log("question.question1", question.question1)
     // console.log("currentUserQuestion.question1", currentUserQuestion[0].question1)
