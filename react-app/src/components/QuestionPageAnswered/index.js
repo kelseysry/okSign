@@ -148,6 +148,36 @@ function QuestionPageAnswered() {
         </section>
 
 
+        <section className="question5Container">
+          <div className="questionText">5. Is jealously healthy in a relationship</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={'Yes' === questions[0]?.question5}
+                onClick={false}
+              />
+            <RadioButton
+              label="No"
+              value={'No' === questions[0]?.question5}
+              onClick={false}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={'Yes' === questions[0]?.must_answer5}
+                onClick={false}
+              />
+            <RadioButton
+                label="No"
+                value={'No' === questions[0]?.must_answer5}
+                onClick={false}
+            />
+          </div>
+        </section>
+
     </div>
 
 
