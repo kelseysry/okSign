@@ -391,7 +391,7 @@ const QuestionForm = () => {
         >
           Submit
         </button>
-        <button type="button" onClick={handelCancelEditQuestionForm}>Cancel</button>
+        {/* <button type="button" onClick={handelCancelEditQuestionForm}>Cancel</button> */}
       </form>
 
 

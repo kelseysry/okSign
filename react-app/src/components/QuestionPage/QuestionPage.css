@@ -1,7 +1,6 @@
 .questionAnswered {
   background-color:#1a1a1a;
   color: white;
-  /* padding-left: 20px; */
   padding-bottom: 20px;
   margin-bottom: 30px;
   display: flex;
@@ -17,4 +16,14 @@
   font-size: 50px;
 }
 
+.answerQuestionHeader {
+  font-size: 50px;
+}
 
+.answerQuestionContainer {
+  background-color:#1a1a1a;
+  color: white;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  padding-left: 70px;
+}

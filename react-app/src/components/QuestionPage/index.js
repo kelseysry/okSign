@@ -5,6 +5,7 @@ import { clearQuestions, getQuestion } from '../../store/question';
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import './QuestionPage.css'
+import QuestionForm from '../QuestionForm';
 
 function QuestionPage() {
   const dispatch = useDispatch()
@@ -68,9 +69,16 @@ return (
   <>
 
      {   questions.length? content_edit_compiled :
-       <div>
-          <NavLink to={`/answerQuestions`}><div className=""></div>Answer Questions <i className="fas fa-address-card"></i></NavLink>
-      </div>
+
+<div>
+<div className="answerQuestionContainer">
+<div className="answerQuestionHeader">Answer Questions</div>
+</div>
+     <QuestionForm />
+</div>
+      //  <div>
+      //     <NavLink to={`/answerQuestions`}><div className=""></div>Answer Questions <i className="fas fa-address-card"></i></NavLink>
+      // </div>
 
      }
 
