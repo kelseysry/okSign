@@ -1,35 +1,36 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { EditQuestion } from '../../store/question';
 import RadioButton from '../RadioButton';
 import './EditQuestionForm.css'
 
 
-const EditQuestionForm = () => {
+const EditQuestionForm = ({questions, hideForm}) => {
   const dispatch = useDispatch();
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
 
-  const [question1, setQuestion1] = useState('');
-  const [must_answer1, setMust_answer1] = useState('');
-  const [question2, setQuestion2] = useState('');
-  const [must_answer2, setMust_answer2] = useState('');
-  const [question3, setQuestion3] = useState('');
-  const [must_answer3, setMust_answer3] = useState('');
-  const [question4, setQuestion4] = useState('');
-  const [must_answer4, setMust_answer4] = useState('');
-  const [question5, setQuestion5] = useState('');
-  const [must_answer5, setMust_answer5] = useState('');
-  const [question6, setQuestion6] = useState('');
-  const [must_answer6, setMust_answer6] = useState('');
-  const [question7, setQuestion7] = useState('');
-  const [must_answer7, setMust_answer7] = useState('');
-  const [question8, setQuestion8] = useState('');
-  const [must_answer8, setMust_answer8] = useState('');
-  const [question9, setQuestion9] = useState('');
-  const [must_answer9, setMust_answer9] = useState('');
-  const [question10, setQuestion10] = useState('');
-  const [must_answer10, setMust_answer10] = useState('');
+  const [question1, setQuestion1] = useState(questions[0]?.question1);
+  const [must_answer1, setMust_answer1] = useState(questions[0]?.must_answer1);
+  const [question2, setQuestion2] = useState(questions[0]?.question2);
+  const [must_answer2, setMust_answer2] = useState(questions[0]?.must_answer2);
+  const [question3, setQuestion3] = useState(questions[0]?.question3);
+  const [must_answer3, setMust_answer3] = useState(questions[0]?.must_answer3);
+  const [question4, setQuestion4] = useState(questions[0]?.question4);
+  const [must_answer4, setMust_answer4] = useState(questions[0]?.must_answer4);
+  const [question5, setQuestion5] = useState(questions[0]?.question5);
+  const [must_answer5, setMust_answer5] = useState(questions[0]?.must_answer5);
+  const [question6, setQuestion6] = useState(questions[0]?.question6);
+  const [must_answer6, setMust_answer6] = useState(questions[0]?.must_answer6);
+  const [question7, setQuestion7] = useState(questions[0]?.question7);
+  const [must_answer7, setMust_answer7] = useState(questions[0]?.must_answer7);
+  const [question8, setQuestion8] = useState(questions[0]?.question8);
+  const [must_answer8, setMust_answer8] = useState(questions[0]?.must_answer8);
+  const [question9, setQuestion9] = useState(questions[0]?.question9);
+  const [must_answer9, setMust_answer9] = useState(questions[0]?.must_answer9);
+  const [question10, setQuestion10] = useState(questions[0]?.question10);
+  const [must_answer10, setMust_answer10] = useState(questions[0]?.must_answer10);
 
 
   const [errors, setErrors] = useState([]);
@@ -54,29 +55,26 @@ const EditQuestionForm = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
-
-
-    const userInputQuestions = {
+    const userEditInputQuestions = {
       question1, must_answer1, question2, must_answer2, question3, must_answer3, question4, must_answer4, question5, must_answer5,question6, must_answer6, question7, must_answer7,question8, must_answer8, question9, must_answer9, question10,must_answer10, user_id
     }
-    console.log("userInputQUestion in QUestionFOrm", userInputQuestions)
+    console.log("userEditInputQuestions in QUestionFOrm", userEditInputQuestions)
 
-    // let newUserQuestions = await dispatch(createQuestion(userInputQuestions))
+    let updatedUserAnswers = await dispatch(EditQuestion(userEditInputQuestions, user_id))
 
-  //   console.log("newUserQuestions", newUserQuestions)
+    console.log("updatedUserAnswers", updatedUserAnswers)
 
-  //     if (newUserQuestions) {
-  //       // hideForm();
-  //     }
-  // }
-
-
-  const handelCancelEditQuestionForm = (e) => {
-    e.preventDefault();
+      if (updatedUserAnswers) {
+        hideForm();
+      }
+  }
 
 
-    // hideForm();
-  };
+const handleCancelFormEditClick = (e) => {
+  e.preventDefault();
+
+  hideForm();
+};
 
   return (
     <>
@@ -392,16 +390,16 @@ const EditQuestionForm = () => {
         >
           Submit
         </button>
-        <button type="button" onClick={handelCancelEditQuestionForm}>Cancel</button>
+        <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
       </form>
 
-
-
-      </>
+    </>
 
   )
 
-  }
+
 }
+
+
 
 export default EditQuestionForm

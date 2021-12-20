@@ -68,6 +68,8 @@ const MatchProfile = ({userIdPercentObj}) => {
     }
   }
 
+  console.log("conversation in match 🤠😯", conversations)
+
   const checkConversationExists = (user_id_one, discoverUserId) => {
     const existingConvo = conversations?.filter(function(convo){
       // console.log("convo one", convo?.user_id_one)
@@ -130,7 +132,7 @@ const MatchProfile = ({userIdPercentObj}) => {
   return (
     <>
 
-    { isLoaded && (
+    { isLoaded && matchProfileObj[0]?.user_id && (
 
       <div>
           <button
