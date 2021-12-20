@@ -15,9 +15,9 @@
 
 .profile-userInfo-inner-content{
   display: flex;
-  align-items: flex-end;
   margin-left: -30px;
   padding-bottom: 24px;
+  align-items: center;
 }
 
 .profile-userInfo-thumb {
@@ -40,4 +40,14 @@
   background: none;
   opacity: 1;
   border-radius: 100%;
+}
+
+.no-matches-header {
+  position: relative;
+  margin-left: 50px;
+  font-size: 50px;
+  /* flex: 1; */
+  /* min-width: 0; */
+  color: white;
+  /* background: pink; */
 }

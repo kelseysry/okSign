@@ -19,7 +19,7 @@ const NoMatches = ({user_id}) => {
     return profile?.user_id === +user_id
   })
 
-  console.log("currentProfile in nomatches", currentProfile)
+  // console.log("currentProfile in nomatches", currentProfile)
 
 
   return (
@@ -30,17 +30,13 @@ const NoMatches = ({user_id}) => {
             <div className="profile-userInfo-thumb">
               <div className="profile-thumb">
                 {currentProfile ? <img src={currentProfile[0]?.image_url1} alt="user_image"/> : null }
-
               </div>
-
             </div>
-
+            <div className="no-matches-header">
+                No Matches Yet!
+            </div>
           </div>
-
         </div>
-
-
-
       </div>
 
     </section>
