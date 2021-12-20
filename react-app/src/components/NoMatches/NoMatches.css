@@ -1,7 +1,6 @@
 .NoMatchesContainer {
   width: 70%;
   margin: 0px 0px;
-  background: pink;
   padding-bottom: 0px;
 
 }
@@ -10,7 +9,7 @@
   background-color: #fff !important;
   width: 70%;
   padding-top: 30px;
- 
+
 }
 
 .profile-userInfo {
