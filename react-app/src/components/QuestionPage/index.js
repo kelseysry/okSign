@@ -4,7 +4,7 @@ import QuestionPageAnswered from '../QuestionPageAnswered';
 import { clearQuestions, getQuestion } from '../../store/question';
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-
+import './QuestionPage.css'
 
 function QuestionPage() {
   const dispatch = useDispatch()
@@ -39,6 +39,11 @@ if(showEditQuestion) {
 } else if (questions){
   content = (
     <>
+      <div className="questionAnswered">
+        Your Answers
+        <button className="edit-question-form" onClick={() => setShowEditQuestionForm(true)}>Edit Answers <i className="fas fa-edit"></i></button>
+
+      </div>
       <div className="">
         <QuestionPageAnswered />
       </div>
@@ -52,12 +57,12 @@ if(showEditQuestion) {
 let content_edit_compiled;
 content_edit_compiled = (
   <>
-    <button className="edit-profile-button" onClick={() => setShowEditQuestionForm(true)}>Edit Answers <i className="fas fa-edit"></i></button>
+    {/* <button className="edit-profile-button" onClick={() => setShowEditQuestionForm(true)}>Edit Answers <i className="fas fa-edit"></i></button> */}
     {content}
   </>
 )
 
-console.log("questions🤠😯🤠😯🤠😯", questions)
+// console.log("questions🤠😯🤠😯🤠😯", questions)
 
 return (
   <>

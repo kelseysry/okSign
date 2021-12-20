@@ -8,13 +8,13 @@
 .nav_container_desktop {
   background-color:#f3f5f9;
   color: #f1f1f1;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
 }
 
 .nav_container_mobile {
   background-color:#f3f5f9;
   color: #f1f1f1;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   display: none;
 }
 
