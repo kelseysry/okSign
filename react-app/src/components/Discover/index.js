@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from 'react';
 import MatchProfile from "../MatchProfile";
 import { getQuestions } from "../../store/question";
+import NoMatches from "../NoMatches";
 
 const Discover = () => {
   const dispatch = useDispatch()
@@ -137,9 +138,7 @@ if(currentUserQuestion) {
     )
   }     else {
     content = (
-      <div>
-        Need to create a profile
-      </div>
+      <NoMatches /> 
     )
   }
 

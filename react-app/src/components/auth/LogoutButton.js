@@ -15,7 +15,7 @@ const LogoutButton = () => {
     <div className="logOutMobile"><i className="fas fa-sign-out-alt"></i></div>
     <div className="logOutDesktop">Log out</div>
 
-    </button>;
+    </button>
 };
 
 export default LogoutButton;
