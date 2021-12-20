@@ -10,7 +10,12 @@ const LogoutButton = () => {
     await dispatch(clearQuestions())
   };
 
-  return <button className="nav_bar_button" onClick={onLogout}>Logout</button>;
+  return <button className="nav_bar_button" onClick={onLogout}>
+
+    <div className="logOutMobile"><i className="fas fa-sign-out-alt"></i></div>
+    <div className="logOutDesktop">Log out</div>
+
+    </button>;
 };
 
 export default LogoutButton;
