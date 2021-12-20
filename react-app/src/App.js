@@ -85,12 +85,6 @@ function App() {
         <ProtectedRoute path='/questions' exact={true} >
           <QuestionPage />
         </ProtectedRoute>
-        <ProtectedRoute path='/answerQuestions' exact={true} >
-          <QuestionForm />
-        </ProtectedRoute>
-        {/* <ProtectedRoute path='/test' exact={true} >
-          <QuestionPageAnswered />
-        </ProtectedRoute> */}
       </Switch>
     </BrowserRouter>
   );

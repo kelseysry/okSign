@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {search} from '../../store/search';
 import {useHistory} from "react-router";
+import './SearchForm.css'
 
 const SearchForm = () => {
 
