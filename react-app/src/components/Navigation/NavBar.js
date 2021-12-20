@@ -26,7 +26,7 @@ const NavBar = () => {
     await dispatch(clearQuestions())
     await dispatch(getProfiles())
     // await dispatch(getQuestions())
-    history.push(`/discover`)
+    history.push(`/`)
 
 }
 
