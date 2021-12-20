@@ -178,6 +178,126 @@ function QuestionPageAnswered() {
           </div>
         </section>
 
+        <section className="question6Container">
+          <div className="questionText">6. Would you date someone that vaped/used e-cigs?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={'Yes' === questions[0]?.question6}
+                onClick={false}
+              />
+            <RadioButton
+              label="No"
+              value={'No' === questions[0]?.question6}
+              onClick={false}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={'Yes' === questions[0]?.must_answer6}
+                onClick={false}
+              />
+            <RadioButton
+              label="No"
+              value={'No' === questions[0]?.must_answer6}
+              onClick={false}
+            />
+          </div>
+        </section>
+
+        <section className="question7Container">
+          <div className="questionText">7. Which would you rather be?</div>
+          <div className ="question">
+            <RadioButton
+                label="Weird"
+                value={'Weird' === questions[0]?.question7}
+                onClick={false}
+              />
+            <RadioButton
+              label="Normal"
+              value={'Normal' === questions[0]?.question7}
+              onClick={false}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Weird"
+                value={'Weird' === questions[0]?.must_answer7}
+                onClick={false}
+              />
+            <RadioButton
+              label="Normal"
+              value={'Normal' === questions[0]?.must_answer7}
+              onClick={false}
+            />
+          </div>
+        </section>
+
+        <section className="question8Container">
+          <div className="questionText">8. Is astrological sign at all important in a match?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={'Yes' === questions[0]?.question8}
+                onClick={false}
+              />
+            <RadioButton
+              label="No"
+              value={'No' === questions[0]?.question8}
+              onClick={false}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={'Yes' === questions[0]?.must_answer8}
+                onClick={false}
+              />
+            <RadioButton
+              label="No"
+              value={'No' === questions[0]?.must_answer8}
+              onClick={false}
+            />
+          </div>
+        </section>
+
+        <section className="question9Container">
+          <div className="questionText">9. Do you enjoy discussing politics?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={'Yes' === questions[0]?.question9}
+                onClick={false}
+              />
+            <RadioButton
+              label="No"
+              value={'No' === questions[0]?.must_answer9}
+              onClick={false}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={'Yes' === questions[0]?.question10}
+                onClick={false}
+              />
+            <RadioButton
+              label="No"
+              value={'No' === questions[0]?.must_answer10}
+              onClick={false}
+            />
+          </div>
+        </section>
+
     </div>
 
 
