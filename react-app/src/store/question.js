@@ -1,4 +1,5 @@
 const LOAD_QUESTIONS = "question/LOAD_QUESTIONS";
+const LOAD_QUESTION = "question/LOAD_QUESTION";
 const ADD_ONE = "question/ADD_ONE"
 const CLEAR = 'question/CLEAR'
 
@@ -13,6 +14,12 @@ const loadAllQuestions = (questions) => ({
 const addOneQuestion = (newQuestion) => ({
   type: ADD_ONE,
   newQuestion
+})
+
+// action creator to load one question
+const loadQuestion = (question) => ({
+  type: LOAD_QUESTION,
+  question
 })
 
 export const clearQuestions = () => ({
@@ -57,6 +64,17 @@ export const createQuestion = (formData) => async (dispatch) => {
   }
 }
 
+// thunk for getting one question
+export const getQuestion= (user_id) => async(dispatch) => {
+  if (user_id) {
+    const res = await fetch(`/api/questions/${user_id}`)
+    const question = await res.json();
+    console.log("question res.json()", question)
+    dispatch(loadQuestion(question))
+
+  }
+}
+
 // reducer
 const initialState = {};
 const questionReducer = (state = initialState, action) => {
@@ -80,6 +98,12 @@ const questionReducer = (state = initialState, action) => {
         return newState
       }
       // return state
+    };
+    case LOAD_QUESTION: {
+      const newState = {...state};
+      newState[action.question?.id] = action.question
+      // console.log("this is newState in Load", newState)
+      return newState
     };
     case CLEAR:{
       state = {}
