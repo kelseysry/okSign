@@ -1,28 +1,46 @@
 import React, { useState, useEffect } from 'react';
+import EditQuestionForm from '../EditQuestionForm';
+import QuestionPageAnswered from '../QuestionPageAnswered';
+import { getQuestion } from '../../store/question';
+import { useSelector, useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 
 function QuestionPage() {
+  const dispatch = useDispatch()
 
   const [showEditQuestion, setShowEditQuestionForm] = useState(false)
+
+  const sessionUser = useSelector((state) => state?.session);
+  const user_id = sessionUser?.user.id
+
+  const questionObject = useSelector((state)=>state.question)
+  const questions = Object.values(questionObject)
+
+  console.log("question edited again", questions)
+
 
   useEffect(() => {
     setShowEditQuestionForm(false)
   },[dispatch])
 
+  useEffect(() => {
+    dispatch(getQuestion(user_id))
 
+   },[dispatch, user_id])
 
 
 let content = null;
-if(showEditProfileForm) {
+if(showEditQuestion) {
   content = (
-    <EditUserProfileForm count={count} setCount={setCount} currentProfile={currentProfile} hideForm={() => setShowEditProfileForm(false)}/>
+    <EditQuestionForm questions={questions} hideForm={() => setShowEditQuestionForm(false)}/>
   )
-} else if (isLoaded){
+} else if (questions.length){
   content = (
     <>
-      {currentProfile ? <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="user_image"/> : null }
-      <div className="user_profile_container">
-        <UserProfileAboutSection currentUserProfile={currentProfile}/>
+      <div className="">
+        {/* <UserProfileAboutSection currentUserProfile={currentProfile}/> */}
+        <QuestionPageAnswered />
       </div>
     </>
   )
@@ -30,28 +48,25 @@ if(showEditProfileForm) {
   return null
 }
 
-const handleDeleteProfile = (id) => {
-  dispatch(deleteProfile(id));
-  setCount(count + 1)
- history.push(`/profiles/${userId}`)
-}
+
 
 let content_edit_compiled;
 content_edit_compiled = (
   <>
+    <button className="edit-profile-button" onClick={() => setShowEditQuestionForm(true)}>Edit Answers <i className="fas fa-edit"></i></button>
     {content}
-    <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
-    <button className="" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i className="fas fa-trash"></i></button>
   </>
 )
 
 return (
   <>
 
-     {   currentProfile? content_edit_compiled :
+     {   questions.length? content_edit_compiled :
        <div>
-          <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
-        </div>}
+          <NavLink to={`/answerQuestions`}><div className=""></div>Answer Questions <i className="fas fa-address-card"></i></NavLink>
+      </div>
+
+    }
 
   </>
 );

@@ -2,7 +2,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from 'react';
 import MatchProfile from "../MatchProfile";
-import { getQuestions } from "../../store/question";
+import { clearQuestions, getQuestions } from "../../store/question";
 
 const Discover = () => {
   const dispatch = useDispatch()
@@ -13,10 +13,14 @@ const Discover = () => {
   const questionObject = useSelector((state)=>state.question)
   // console.log("questionObj", questionObject)
   const questions = Object.values(questionObject)
-  // console.log("questions", questions[0])
+  console.log("questions🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", questions)
 
+  useEffect(() => {
+    // dispatch(clearQuestions())
+  },[dispatch, questions.length])
 
   useEffect(async ()=>{
+    // await dispatch(clearQuestions())
     await dispatch(getQuestions())
 }, [dispatch, questions.length])
 

@@ -19,6 +19,7 @@ import NavBar from './components/Navigation/NavBar';
 import EditQuestionForm from './components/EditQuestionForm';
 import QuestionForm from './components/QuestionForm';
 import QuestionPageAnswered from './components/QuestionPageAnswered';
+import QuestionPage from './components/QuestionPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -82,12 +83,14 @@ function App() {
           <SearchResults />
         </ProtectedRoute>
         <ProtectedRoute path='/questions' exact={true} >
-          {/* <EditQuestionForm /> */}
-          <QuestionForm />
+          <QuestionPage />
         </ProtectedRoute>
-        <ProtectedRoute path='/test' exact={true} >
-          <QuestionPageAnswered /> 
+        <ProtectedRoute path='/answerQuestions' exact={true} >
+          <QuestionForm /> 
         </ProtectedRoute>
+        {/* <ProtectedRoute path='/test' exact={true} >
+          <QuestionPageAnswered />
+        </ProtectedRoute> */}
       </Switch>
     </BrowserRouter>
   );

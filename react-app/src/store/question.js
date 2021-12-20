@@ -1,6 +1,7 @@
 const LOAD_QUESTIONS = "question/LOAD_QUESTIONS";
 const LOAD_QUESTION = "question/LOAD_QUESTION";
 const ADD_ONE = "question/ADD_ONE"
+const EDIT_QUESTION = "question/EDIT_QUESTION"
 const CLEAR = 'question/CLEAR'
 
 
@@ -20,6 +21,13 @@ const addOneQuestion = (newQuestion) => ({
 const loadQuestion = (question) => ({
   type: LOAD_QUESTION,
   question
+})
+
+// action creator to edit one question
+export const editOneQuestion = (question, user_id) => ({
+  type: EDIT_QUESTION,
+  question,
+  user_id
 })
 
 export const clearQuestions = () => ({
@@ -75,6 +83,23 @@ export const getQuestion= (user_id) => async(dispatch) => {
   }
 }
 
+//thunk for editing a question
+export const EditQuestion = (editedQuestion, user_id) => async dispatch => {
+  const response = await fetch(`/api/questions/${user_id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type':'application/json'
+  },
+    body: JSON.stringify(editedQuestion)
+  });
+  console.log("editedQuestion", editedQuestion)
+
+  const question = await response.json();
+  dispatch(editOneQuestion(question, user_id))
+  return question
+}
+
+
 // reducer
 const initialState = {};
 const questionReducer = (state = initialState, action) => {
@@ -105,10 +130,21 @@ const questionReducer = (state = initialState, action) => {
       // console.log("this is newState in Load", newState)
       return newState
     };
+    case EDIT_QUESTION: {
+      if(!state[action.question]) {
+        const newState = {
+          ...state, [action.question.id]: action.question
+        };
+        // console.log("this is newState", newState)
+
+        return newState
+      }
+      return state
+    };
     case CLEAR:{
       state = {}
       return state
-  }
+  };
     default:
       return state;
   }

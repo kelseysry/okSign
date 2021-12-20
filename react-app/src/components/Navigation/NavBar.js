@@ -22,9 +22,9 @@ const NavBar = () => {
 
   const handleClearDiscoverProfiles = async(e) => {
     e.preventDefault();
-    await dispatch(clearProfiles())
+    // await dispatch(clearProfiles())
+    // await dispatch(clearQuestions())
     await dispatch(getProfiles())
-    await dispatch(clearQuestions())
     await dispatch(getQuestions())
     history.push(`/discover`)
 
@@ -41,13 +41,16 @@ const NavBar = () => {
     e.preventDefault()
     await dispatch(clearConversation())
     // await dispatch(clearProfiles())
-    // await dispatch(getProfiles())
+    await dispatch(clearQuestions())
+    await dispatch(getProfiles())
+    await dispatch(getQuestions())
 
     history.push(`/conversations`)
   }
 
   const handleQuestions = async(e) => {
     e.preventDefault()
+
     history.push('/questions')
   }
 

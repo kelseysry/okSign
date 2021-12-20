@@ -2,7 +2,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import './MatchConversationTile.css';
-import { clearProfiles, getProfiles } from "../../store/profile";
+import { getProfiles } from "../../store/profile";
 
 
 // profile_id is actually the user.id, so need to grab all the profiles
@@ -13,10 +13,10 @@ const MatchConversationTile = ({profile_id}) => {
   const profilesObj = useSelector((state) => state.profile)
   const profiles = Object.values(profilesObj)
 
+  console.log("profiles in match tile ", profiles)
+
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
-
-
 
 
   useEffect(() => {
@@ -67,7 +67,7 @@ const MatchConversationTile = ({profile_id}) => {
 
   return (
     <>
-        {/* { isLoaded && matchProfileObj[0]?.id && (
+        { isLoaded && matchProfileObj[0]?.id && (
 
 
         <div className="each_match_profile_container">
@@ -76,16 +76,7 @@ const MatchConversationTile = ({profile_id}) => {
         </div>
 
         )
-      } */}
-{matchProfileObj[0]?.id?
-
-
-<div className="each_match_profile_container">
-  <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
-  <img className="match_profile_image" src={matchProfileObj[0]?.image_url1} alt="match_picture"/>
-</div> : null
-}
-
+      }
 
     </>
   )

@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 // import MatchProfile from "../MatchProfile";
 
 // import { getQuestions } from "../../store/question";
-import { getQuestions } from "../store/question";
+import { clearQuestions, getQuestions } from "../store/question";
 import { createContext, useContext } from "react";
 
 export const MatchesContext = createContext();
@@ -21,8 +21,9 @@ export function MatchesProvider (props) {
   // console.log("questions", questions[0])
 
 
-  useEffect(()=>{
-    dispatch(getQuestions())
+  useEffect(async ()=>{
+    // await dispatch(clearQuestions())
+    await dispatch(getQuestions())
 }, [dispatch, questions.length])
 
 // for each user's question object, we need to count how many answers
