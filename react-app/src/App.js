@@ -57,7 +57,7 @@ function App() {
         {/* <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
         </ProtectedRoute> */}
-        <ProtectedRoute path='/discover' exact={true} >
+        <ProtectedRoute path='/' exact={true} >
           <Discover />
         </ProtectedRoute>
         <ProtectedRoute path='/profiles/:userId' exact={true} >
@@ -86,7 +86,7 @@ function App() {
           <QuestionPage />
         </ProtectedRoute>
         <ProtectedRoute path='/answerQuestions' exact={true} >
-          <QuestionForm /> 
+          <QuestionForm />
         </ProtectedRoute>
         {/* <ProtectedRoute path='/test' exact={true} >
           <QuestionPageAnswered />

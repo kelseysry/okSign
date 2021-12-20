@@ -27,7 +27,7 @@ const LoginForm = () => {
   };
 
   if (user) {
-    return <Redirect to='/discover' />;
+    return <Redirect to='/' />;
   }
 
   return (
