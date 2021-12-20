@@ -23,9 +23,9 @@ const NavBar = () => {
   const handleClearDiscoverProfiles = async(e) => {
     e.preventDefault();
     // await dispatch(clearProfiles())
-    // await dispatch(clearQuestions())
+    await dispatch(clearQuestions())
     await dispatch(getProfiles())
-    await dispatch(getQuestions())
+    // await dispatch(getQuestions())
     history.push(`/discover`)
 
 }
