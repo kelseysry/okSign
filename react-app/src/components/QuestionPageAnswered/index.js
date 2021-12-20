@@ -50,7 +50,7 @@ function QuestionPageAnswered() {
           />
         <RadioButton
           label="Intense"
-          value={"Intense" === questions[0]?.question1}
+          value={"Intense" === questions[0]?.must_answer1}
           onClick={false}
         />
       </div>
@@ -278,7 +278,7 @@ function QuestionPageAnswered() {
               />
             <RadioButton
               label="No"
-              value={'No' === questions[0]?.must_answer9}
+              value={'No' === questions[0]?.question9}
               onClick={false}
             />
           </div>
@@ -287,7 +287,37 @@ function QuestionPageAnswered() {
           <div className ="question">
             <RadioButton
                 label="Yes"
+                value={'Yes' === questions[0]?.must_answer9}
+                onClick={false}
+              />
+            <RadioButton
+              label="No"
+              value={'No' === questions[0]?.must_answer9}
+              onClick={false}
+            />
+          </div>
+        </section>
+
+        <section className="question10Container">
+          <div className="questionText">10. Do you think it’s important to have an emotional connection before a physical one?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
                 value={'Yes' === questions[0]?.question10}
+                onClick={false}
+              />
+            <RadioButton
+              label="No"
+              value={'No' === questions[0]?.question10}
+              onClick={false}
+            />
+          </div>
+
+          <div className="answer">Answer you'll accept?</div>
+          <div className ="question">
+            <RadioButton
+                label="Yes"
+                value={'Yes' === questions[0]?.must_answer10}
                 onClick={false}
               />
             <RadioButton
