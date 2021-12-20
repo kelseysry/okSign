@@ -6,24 +6,10 @@ function QuestionPage() {
   const [showEditQuestion, setShowEditQuestionForm] = useState(false)
 
   useEffect(() => {
-    setShowEditQuestionForm(fakse)
+    setShowEditQuestionForm(false)
   },[dispatch])
 
-// get current user
-useEffect(() => {
-  if (!userId) {
-    return;
-  }
-  (async () => {
-    const response = await fetch(`/api/users/${userId}`);
-    const user = await response.json();
-    setUser(user);
-  })();
-}, [userId]);
 
-if (!user) {
-  return null;
-}
 
 
 let content = null;
