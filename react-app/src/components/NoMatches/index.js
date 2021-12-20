@@ -41,8 +41,12 @@ const NoMatches = ({user_id}) => {
         </div>
       </section>
       <section className="NoMatchesButtonsContainer">
-        <div>
-          Answer questions! 
+        <div className="NoMatchesButtonsInner">
+          Answer questions and fill out your profile to get matches!
+        </div>
+        <div className="newUserButtons">
+          <button>Fill Out Questions</button>
+          <button>Create Profile</button>
         </div>
       </section>
     </>
