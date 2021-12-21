@@ -1,3 +1,162 @@
-.match_profile_image {
+/* .match_profile_image {
   width: 100px;
+} */
+
+.oneMatchProfileContainerHeader {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: #1a1a1a;
+  padding: 20px 20px;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 20px;
+
+}
+
+.oneMatchProfileContainer {
+  display: flex;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 0px !important;
+  background: #fff;
+  /* background: coral; */
+  width: 100%;
+}
+
+.match_profile_image_discover {
+  width: 200px;
+  margin-right: 8px;
+
+}
+
+.match_profile_images_container {
+  display: flex;
+  padding: 0px 20px;
+  padding-bottom: 20px;
+}
+
+hr {
+  border: none;
+  border-top:1px solid #ccd0d9;;
+  color: #e6e6e6;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+  padding: 0px 0px !important;
+  margin: 60px 0px;
+
+}
+
+
+
+.matchContainerHeader {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 10px 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+
+
+.userPhotoMatch-first {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 98px;
+  height: 98px;
+  background: #ebedf2;
+  border-radius: 50%;
+  background-size: contain;
+  border: 1px solid #fff;
+  transform: translateX(-94px);
+}
+
+.userPhotoMatch-last {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 98px;
+  height: 98px;
+  background: #ebedf2;
+  border-radius: 50%;
+  background-size: contain;
+  border: 1px solid #fff;
+  transform: translateX(-4px);
+}
+
+.matchPercentCircle {
+  /* display: block; */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 45px);
+  width: 77px;
+  height: 77px;
+  margin-bottom: -27px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.35rem;
+  line-height: 20px;
+  font-weight: bold;
+
+  background: #1a1a1a;
+  /* background: #fff; */
+  /* border-color: #0000bf; */
+  /* color: #0000bf; */
+  color: #fff;
+  box-shadow: 0 0 0 3px #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.MatchProfileInnerContainer {
+  position: relative;
+  padding: 20px 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.circlesContainer {
+position: relative;
+background: cornflowerblue;
+}
+
+.agree, .disagree {
+  width: calc(100% - 48px);
+  height: 55px;
+  padding: 0;
+  margin: 0 24px;
+  line-height: 55px;
+}
+
+.disagree {
+  border-top: 1px solid #ccd0d9;
+}
+
+.agree, .disagree {
+  display: flex;
+  justify-content: space-between;
+}
+
+.agreeTable {
+  width: 200px;
+}
+
+.fa-heart {
+  font-size: 15px;
+}
+
+
+
+.spacer-match {
+  background: #f3f5f9;
+  height: 30px;
 }

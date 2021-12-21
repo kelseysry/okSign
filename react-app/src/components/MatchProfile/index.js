@@ -18,6 +18,7 @@ const MatchProfile = ({userIdPercentObj}) => {
   let profile_id = userIdPercentObj[0]
   let matchPercent = ((Number(userIdPercentObj[1])/10)*100)
 
+  let disagree = 10 - (Number(userIdPercentObj[1]))
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id_one = sessionUser?.id
@@ -35,7 +36,7 @@ const MatchProfile = ({userIdPercentObj}) => {
 
     if (!isLoaded) setIsLoaded(true);
 
-  }, [dispatch, profiles.length, isLoaded])
+  }, [dispatch, profiles.length, isLoaded, conversations?.length])
 
   useEffect(() => {
     async function fetchData() {
@@ -68,9 +69,10 @@ const MatchProfile = ({userIdPercentObj}) => {
     }
   }
 
-  console.log("conversation in match 🤠😯", conversations)
 
   const checkConversationExists = (user_id_one, discoverUserId) => {
+
+
     const existingConvo = conversations?.filter(function(convo){
       // console.log("convo one", convo?.user_id_one)
       // console.log("convo two", convo?.user_id_two)
@@ -84,6 +86,7 @@ const MatchProfile = ({userIdPercentObj}) => {
     })
     // console.log("existingconvo", existingConvo)
     return existingConvo
+
   }
 
   const getMatchProfile = (profile_id) => {
@@ -100,8 +103,28 @@ const MatchProfile = ({userIdPercentObj}) => {
     }
   }
 
+
+  const getUserProfile = (user_id_one) => {
+    const userProfile = profiles[0]?.filter(function(profile){
+
+      return profile?.user_id === +user_id_one
+    })
+    if(userProfile) {
+      // console.log("match match", userProfile)
+      return userProfile
+    }
+    else {
+      return null
+    }
+  }
+
+
   // console.log("getmatchProfile", getMatchProfile(profile_id))
   let matchProfileObj = (getMatchProfile(profile_id))
+
+  let userProfileObj = (getUserProfile(user_id_one))
+
+  console.log("userProfileObh", userProfileObj)
 
 
   const handleCreateConversation = async (discoverProfileId) => {
@@ -133,18 +156,53 @@ const MatchProfile = ({userIdPercentObj}) => {
     <>
 
     { isLoaded && matchProfileObj[0]?.user_id && (
-
-      <div>
-          <button
+      <>
+      <div className="oneMatchProfileContainer">
+          <div className="oneMatchProfileContainerHeader">
+            {getUserName(matchProfileObj[0]?.user_id)}
+          </div>
+          {/* <button
             onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
           >Message  <i className="far fa-comment-dots"></i></button>
 
-          <button>Like  <i className="fas fa-heart"></i></button>
-          <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
-          <img className="match_profile_image" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
-          <div>Match Percent {matchPercent}%</div>
-          {matchProfileObj[0]?.goal}
-      </div> )
+          <button>Like  <i className="fas fa-heart"></i></button> */}
+          <div className="match_profile_images_container">
+            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
+            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
+            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
+          </div>
+
+          <div className="spacer-match">&nbsp;&nbsp;</div>
+
+          <div className="matchPercentContainer">
+            <div className="matchContainerHeader">
+              You and {getUserName(matchProfileObj[0]?.user_id)}
+            </div>
+            <div className="MatchProfileInnerContainer">
+              <div className="circlesContainer">
+                <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
+                <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
+                <div className="matchPercentCircle">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
+              </div>
+              <div className="agreeTable">
+                <div className="agree">
+                  <div>Agree</div>
+                  <div>🥰 {userIdPercentObj[1]}</div>
+                </div>
+                <div className="disagree">
+                  <div>Disagree</div>
+                  <div>🙃 {disagree}</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+      </div>
+      <hr></hr>
+      </>
+
+      )
     }
 
     </>
