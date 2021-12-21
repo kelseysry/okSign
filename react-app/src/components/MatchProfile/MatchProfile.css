@@ -104,8 +104,7 @@ hr {
 .MatchProfileInnerContainer {
   position: relative;
   padding: 20px 20px;
-  /* background: coral; */
-  padding-bottom: 100px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: space-around;
 }
@@ -113,4 +112,17 @@ hr {
 .circlesContainer {
 position: relative;
 background: cornflowerblue;
+}
+
+.agree, .disagree {
+  width: calc(100% - 48px);
+  height: 55px;
+  padding: 0;
+  margin: 0 24px;
+  line-height: 55px;
+}
+
+.disagree {
+  border-top: 1px solid #ccd0d9;
+
 }

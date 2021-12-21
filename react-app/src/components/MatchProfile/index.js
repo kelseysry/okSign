@@ -181,12 +181,12 @@ const MatchProfile = ({userIdPercentObj}) => {
                 <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
                 <div className="matchPercentCircle">{matchPercent}%</div>
               </div>
-              <div>
-                <div>
-                  Agree
+              <div className="agreeTable">
+                <div className="agree">
+                  Agree 🥰
                 </div>
-                <div>
-                  Disagree
+                <div className="disagree">
+                  Disagree 🙃
                 </div>
               </div>
             </div>
