@@ -135,7 +135,7 @@ const MatchProfile = ({userIdPercentObj}) => {
     <>
 
     { isLoaded && matchProfileObj[0]?.user_id && (
-
+      <>
       <div className="oneMatchProfileContainer">
           <div className="oneMatchProfileContainerHeader">
             {getUserName(matchProfileObj[0]?.user_id)}
@@ -145,11 +145,18 @@ const MatchProfile = ({userIdPercentObj}) => {
           >Message  <i className="far fa-comment-dots"></i></button>
 
           <button>Like  <i className="fas fa-heart"></i></button>
-          <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
-          <img className="match_profile_image" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
+          <div className="match_profile_images_container">
+            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
+            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
+            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
+          </div>
           <div>Match Percent {matchPercent}%</div>
           {matchProfileObj[0]?.goal}
-      </div> )
+      </div>
+      <hr></hr>
+      </>
+
+      )
     }
 
     </>

@@ -1,9 +1,10 @@
-.match_profile_image {
+/* .match_profile_image {
   width: 100px;
-}
+} */
 
 .oneMatchProfileContainerHeader {
   background: #1a1a1a;
+  padding: 20px 20px;
   color: white;
 }
 
@@ -13,5 +14,30 @@
   justify-content: center;
   margin: 0px 0px !important;
   background: #fff;
-  width: 300px;
+  /* background: coral; */
+  width: 100%;
+}
+
+.match_profile_image_discover {
+  width: 200px;
+  margin-right: 8px;
+
+}
+
+.match_profile_images_container {
+  display: flex;
+  padding: 0px 20px;
+  padding-bottom: 20px;
+}
+
+hr {
+  border: none;
+  border-top: 3px solid #b8aeae;
+  color: #e6e6e6;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+  padding: 0px 0px !important;
+  margin: 20px 0px;
+
 }
