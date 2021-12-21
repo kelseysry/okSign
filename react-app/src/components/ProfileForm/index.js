@@ -5,11 +5,13 @@ import { createProfile } from "../../store/profile";
 import isURL from 'validator/es/lib/isURL';
 import { useHistory } from 'react-router';
 import './ProfileForm.css'
+import { getProfiles } from '../../store/profile';
+import { useParams } from 'react-router-dom';
+
 
 const ProfileForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
 
@@ -51,6 +53,22 @@ const ProfileForm = () => {
   const [religion_id, setReligion_id] = useState('1');
   const [errors, setErrors] = useState([]);
 
+  const profilesObj = useSelector((state) => state?.profile)
+  const profiles = Object?.values(profilesObj)[0]
+
+
+
+  const { userId }  = useParams();
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [showCreateProfileForm, setShowCreateProfileForm] = useState(false)
+  const [count, setCount] = useState('')
+
+  useEffect(async () => {
+    // dispatch(clearProfiles())
+    await dispatch(getProfiles());
+    // await getCurrentProfile(user_id,profiles)
+    if (!isLoaded) setIsLoaded(true);
+  },[dispatch, profiles?.length, user_id, isLoaded, count])
 
 
   useEffect(() => {
@@ -104,6 +122,14 @@ const ProfileForm = () => {
 
   }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id])
 
+
+  let currentProfile = profiles?.filter((profile) => {
+    return profile?.user_id === +userId
+  })
+
+  console.log("currentProfile🍵🍵🍵🍵🍵🍵🍵", currentProfile)
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -113,21 +139,24 @@ const ProfileForm = () => {
     // console.log("createNewProfileData", createNewProfileData)
 
 
-    let newUserProfile = await dispatch(createProfile(createNewProfileData))
+     let newUserProfile = await dispatch(createProfile(createNewProfileData));
 
       if (newUserProfile) {
+        setCount(count + 1)
+        console.log("count--------", count)
         history.push(`/profiles/${user_id}`)
       }
-      // console.log("newUserProfile", newUserProfile)
+      // console.log("newUserProfile🍵🍵", newUserProfile)
 
   }
-
 
   // const handleCancelFormEditClick = (e) => {
   //   e.preventDefault();
   //    history.push(`/profiles/${user_id}`)
   //   // hideForm();
   // };
+
+  console.log("profiles🍵🍵🍵🍵🍵🍵🍵", profiles)
 
 
   return (
