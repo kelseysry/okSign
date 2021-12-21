@@ -164,9 +164,15 @@ function UserProfile({count, setCount}) {
     <>
 
        {   currentProfile?.length ? content_edit_compiled :
-         <div>
-           <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
-        </div>
+          <>
+            <div className="questionAnswered">
+              <div className="questionsHeader">Create Your Profile!</div>
+            </div>
+            
+            <div>
+              <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
+            </div>
+          </>
        }
 
     </>

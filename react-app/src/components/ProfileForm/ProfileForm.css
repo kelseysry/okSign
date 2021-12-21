@@ -6,20 +6,9 @@
 .profile-form {
   display: flex;
   flex-direction: column;
-
+  padding-bottom: 30px;
 }
-/*
-input {
-  border: 0;
-  border-bottom: 2px solid #ccc;
-  box-sizing: border-box;
-  display: block;
-  margin-bottom: 2em;
-  outline: 0;
-  padding: 0.25em 0.5em;
-  width: 500px;
-  background: transparent;
-} */
+
 
 .profile-input {
   border: 0;
@@ -55,4 +44,17 @@ select {
   width: min-content;
   display: flex;
   justify-content: center;
+}
+
+.profileFormHeader {
+  font-size: 50px;
+}
+
+.ProfileNavExtension {
+  background-color:#1a1a1a;
+  color: white;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  padding-left: 50px;
+
 }
