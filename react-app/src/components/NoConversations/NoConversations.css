@@ -14,3 +14,71 @@
   flex: 1;
   padding-right: 30px;
 }
+
+.matchPercentContainer {
+  position: relative;
+  padding-bottom: 30px;
+
+}
+
+.matchContainerHeader {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 10px 15px;
+
+}
+
+
+
+.userPhotoMatch-first {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 98px;
+  height: 98px;
+  background: #ebedf2;
+  border-radius: 50%;
+  background-size: contain;
+  border: 1px solid #fff;
+  transform: translateX(-94px);
+}
+
+.userPhotoMatch-last {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 98px;
+  height: 98px;
+  background: #ebedf2;
+  border-radius: 50%;
+  background-size: contain;
+  border: 1px solid #fff;
+  transform: translateX(-4px);
+}
+
+.matchPercentCircle {
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 25px);
+  width: 77px;
+  height: 77px;
+  margin-bottom: -27px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 67px;
+  font-weight: bold;
+
+  background: #fff;
+  border-color: #0000bf;
+  color: #0000bf;
+  box-shadow: 0 0 0 3px #fff;
+}
+
+.CirclesContainer {
+  position: relative;
+  padding: 20px 20px;
+}

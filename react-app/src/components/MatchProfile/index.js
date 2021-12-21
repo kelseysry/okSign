@@ -150,8 +150,19 @@ const MatchProfile = ({userIdPercentObj}) => {
             <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
             <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
           </div>
-          <div>Match Percent {matchPercent}%</div>
-          {matchProfileObj[0]?.goal}
+
+          <div className="matchPercentContainer">
+            <div className="matchContainerHeader">
+              You and {getUserName(matchProfileObj[0]?.user_id)}
+            </div>
+            <div className="CirclesContainer">
+              <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url2}')` }}></div>
+              <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url2}')` }}></div>
+              <div className="matchPercentCircle">{matchPercent}%</div>
+            </div>
+
+          </div>
+
       </div>
       <hr></hr>
       </>
