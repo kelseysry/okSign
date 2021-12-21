@@ -26,8 +26,8 @@ const Conversations = () => {
 
   // const [users, setUsers] = useState([]);
 
-  useEffect(()=>{
-    dispatch(getConversations())
+  useEffect(async ()=>{
+    await dispatch(getConversations())
 }, [dispatch, conversations.length])
 
 
