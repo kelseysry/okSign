@@ -137,6 +137,7 @@ const ProfileForm = () => {
         <label>
           Age
             <input
+            className="profile-input"
             type="text"
             placeholder=""
             value={age}
@@ -147,6 +148,7 @@ const ProfileForm = () => {
         <label>
           location
             <input
+            className="profile-input"
             type="text"
             placeholder="don't worry, you can still see matches from abroad"
             value={location}
@@ -157,6 +159,7 @@ const ProfileForm = () => {
         <label>
           lat
             <input
+            className="profile-input"
             type="text"
             placeholder="use lat from google maps"
             value={lat}
@@ -167,6 +170,7 @@ const ProfileForm = () => {
         <label>
           lng
             <input
+            className="profile-input"
             type="text"
             placeholder="use lat from google maps"
             value={lng}
@@ -177,6 +181,7 @@ const ProfileForm = () => {
         <label>
           About Me
             <input
+            className="profile-input"
             type="text"
             placeholder="if you can't write a good description, just UrbanDictionary your name"
             value={about_me}
@@ -187,6 +192,7 @@ const ProfileForm = () => {
         <label>
           Goal
             <input
+            className="profile-input"
             type="text"
             placeholder="don't write to find love 🤨"
             value={goal}
@@ -197,6 +203,7 @@ const ProfileForm = () => {
         <label>
           Talent
             <input
+            className="profile-input"
             type="text"
             placeholder="not getting ghosted... maybe?"
             value={talent}
@@ -207,6 +214,7 @@ const ProfileForm = () => {
         <label>
           Traits
             <input
+            className="profile-input"
             type="text"
             placeholder="height, gym, hustle, good vibes are not descriptive traits 🚩 "
             value={my_traits}
@@ -217,6 +225,7 @@ const ProfileForm = () => {
                 <label>
           Needs
             <input
+            className="profile-input"
             type="text"
             placeholder="what do you value the most?"
             value={needs}
@@ -227,6 +236,7 @@ const ProfileForm = () => {
         <label>
           Hobbies
             <input
+            className="profile-input"
             type="text"
             placeholder="just be honest if you're the type to watch TV for 8+ hrs"
             value={hobbies}
@@ -237,6 +247,7 @@ const ProfileForm = () => {
         <label>
           Moments
             <input
+            className="profile-input"
             type="text"
             placeholder="what does a perfect day look like to you?"
             value={moments}
@@ -247,6 +258,7 @@ const ProfileForm = () => {
         <label>
           Secrets
             <input
+            className="profile-input"
             type="text"
             placeholder="we're looking for scorching hot tea 🍵"
             value={secrets}
@@ -257,6 +269,7 @@ const ProfileForm = () => {
         <label>
           Looking for
             <input
+            className="profile-input"
             type="text"
             placeholder="no judgement: what do you want from this whole dating app thing?"
             value={looking_for}
@@ -267,6 +280,7 @@ const ProfileForm = () => {
         <label>
           A Shower thought you recently had
             <input
+            className="profile-input"
             type="text"
             placeholder="record yourself or any audio that represents you!"
             value={user_audio}
@@ -293,6 +307,7 @@ const ProfileForm = () => {
         <label>
           number of likes
             <input
+            className="profile-input"
             type="text"
             placeholder="number likes"
             value={number_likes}
@@ -303,6 +318,7 @@ const ProfileForm = () => {
         <label>
           Image Url 1
             <input
+            className="profile-input"
             type="text"
             placeholder="don't use a photo that clearly has another person cropped out"
             value={image_url1}
@@ -313,6 +329,7 @@ const ProfileForm = () => {
         <label>
           Image Url 2
             <input
+            className="profile-input"
             type="text"
             placeholder="a picture is worth a 1000 words"
             value={image_url2}
@@ -323,6 +340,7 @@ const ProfileForm = () => {
         <label>
           Image Url 3
             <input
+            className="profile-input"
             type="text"
             placeholder="a picture can make up for a bad bio"
             value={image_url3}
@@ -333,6 +351,7 @@ const ProfileForm = () => {
         <label>
           Image Url 4
             <input
+            className="profile-input"
             type="text"
             placeholder="don't use mirror selfies"
             value={image_url4}
@@ -343,6 +362,7 @@ const ProfileForm = () => {
         <label>
           Image Url 5
             <input
+            className="profile-input"
             type="text"
             placeholder="have your friends pick out your best photos"
             value={image_url5}
@@ -353,6 +373,7 @@ const ProfileForm = () => {
         <label>
           Image Url 6
             <input
+            className="profile-input"
             type="text"
             placeholder="try not to use group pictures..., we're not playing find waldo"
             value={image_url6}
@@ -385,6 +406,7 @@ const ProfileForm = () => {
         <label>
           Pronouns
             <input
+            className="profile-input"
             type="text"
             placeholder="pronouns"
             value={pronouns}
@@ -395,6 +417,7 @@ const ProfileForm = () => {
         <label>
           height
             <input
+            className="profile-input"
             type="text"
             placeholder="use cm please for our international users"
             value={height}
@@ -405,6 +428,7 @@ const ProfileForm = () => {
                 <label>
           Education
             <input
+            className="profile-input"
             type="text"
             placeholder="what is your latest degree from?"
             value={education}
@@ -415,6 +439,7 @@ const ProfileForm = () => {
         <label>
           Occupation
             <input
+            className="profile-input"
             type="text"
             placeholder="where do you work?"
             value={occupation}

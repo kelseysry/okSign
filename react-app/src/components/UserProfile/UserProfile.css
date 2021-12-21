@@ -5,30 +5,11 @@
   margin: 0 0 10px 0 !important;
 }
 
-.FillOutProfileHeader {
-  font-size: 30px;
-}
-
-.NoMatchesContainer {
-  width: 70%;
-  margin: 0px 0px;
-  padding-bottom: 0px;
-
-}
-
-.NoMatchesButtonsContainer {
-  background-color: #fff !important;
-  width: 70%;
-  padding-top: 30px;
-  display: flex;
-  justify-content: space-around;
-
-}
 
 .profile-user-info {
   /* margin-top: 100px; */
   padding-top: 50px;
-  /* margin-bottom: 30px; */
+  margin-bottom: 50px;
   background: #1a1a1a;
 }
 
@@ -72,6 +53,7 @@
 
 .delete-profile-button, .edit-profile-button {
   color: white;
+  padding-left: 20px;
 }
 
 

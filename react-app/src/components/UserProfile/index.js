@@ -102,10 +102,6 @@ function UserProfile({count, setCount}) {
                 <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
                 <button className="delete-profile-button" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i className="fas fa-trash"></i></button>
                 </div>
-
-
-
-
             </div>
           </div>
         </div>
@@ -130,13 +126,9 @@ function UserProfile({count, setCount}) {
   content_edit_compiled = (
     <>
       {content}
-      <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
-      <button className="" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i className="fas fa-trash"></i></button>
     </>
   )
 
-  // console.log("currentProfile 🤠😯 🤠😯 🤠😯 ", currentProfile)
-  // console.log("currentProfile[0] 🤠😯 🤠😯 🤠😯 ", currentProfile[0])
 
   if(showEditProfileForm && userId) {
     content = (
@@ -145,10 +137,6 @@ function UserProfile({count, setCount}) {
   } else if (isLoaded){
     content = (
       <>
-        {/* {currentProfile ?
-
-        <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="user_image"/>   : null } */}
-
 
         <div className="profile-user-info">
           <div className="profile-userInfo-inner">
@@ -161,10 +149,6 @@ function UserProfile({count, setCount}) {
             </div>
           </div>
         </div>
-
-
-
-
 
 
         <div className="user_profile_container">
