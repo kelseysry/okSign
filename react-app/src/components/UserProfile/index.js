@@ -21,6 +21,8 @@ function UserProfile({count, setCount}) {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const [showEditProfileForm, setShowEditProfileForm] = useState(false)
+  const [showCreateProfileForm, setShowCreateProfileForm] = useState(false)
+
 
   const profilesObj = useSelector((state) => state?.profile)
   const profiles = Object?.values(profilesObj)[0]
@@ -42,6 +44,11 @@ function UserProfile({count, setCount}) {
   useEffect(() => {
     setShowEditProfileForm(false)
   },[dispatch, userId])
+
+   // show create profile form
+   useEffect(() => {
+    setShowCreateProfileForm(false)
+  },[dispatch, userId,])
 
 
   useEffect(async ()  => {
@@ -107,24 +114,30 @@ function UserProfile({count, setCount}) {
   // console.log("currentProfile 🤠😯 🤠😯 🤠😯 ", currentProfile)
   // console.log("currentProfile[0] 🤠😯 🤠😯 🤠😯 ", currentProfile[0])
 
+  if(showEditProfileForm && userId) {
+    content = (
+      <EditUserProfileForm count={count} setCount={setCount} currentProfile={currentProfile} hideForm={() => setShowEditProfileForm(false)}/>
+    )
+  } else if (isLoaded){
+    content = (
+      <>
+        {currentProfile ? <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="user_image"/> : null }
+        <div className="user_profile_container">
+          <UserProfileAboutSection currentUserProfile={currentProfile}/>
+        </div>
+      </>
+    )
+  } else {
+    return null
+  }
+
   return (
     <>
-      {/* { isLoaded && (currentProfile[0]?.id? content_edit_compiled :
-        ( <div>
-            <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
-          </div>))
-      } */}
-       {   currentProfile?.length? content_edit_compiled :
 
-        <div>
-          <div className="answerQuestionContainer">
-          <div className="FillOutProfileHeader">Fill Out Your Profile to Increase Matches!</div>
-          </div>
-              <ProfileForm />
+       {   currentProfile?.length ? content_edit_compiled :
+         <div>
+           <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
         </div>
-        //  <div>
-        //     <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
-        // </div>
        }
 
     </>

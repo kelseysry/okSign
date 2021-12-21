@@ -6,7 +6,7 @@ import isURL from 'validator/es/lib/isURL';
 import { useHistory } from 'react-router';
 import './ProfileForm.css'
 
-const ProfileForm = ({hideForm}) => {
+const ProfileForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -104,33 +104,30 @@ const ProfileForm = ({hideForm}) => {
 
   }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id])
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const createNewProfileData = {
       user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id
     }
-    console.log("createNewProfileData", createNewProfileData)
+    // console.log("createNewProfileData", createNewProfileData)
 
 
-
-      let newUserProfile = await dispatch(createProfile(createNewProfileData))
+    let newUserProfile = await dispatch(createProfile(createNewProfileData))
 
       if (newUserProfile) {
         history.push(`/profiles/${user_id}`)
-        // hideForm();
       }
-      console.log("newUserProfile", newUserProfile)
-
-
+      // console.log("newUserProfile", newUserProfile)
 
   }
 
-  const handleCancelFormEditClick = (e) => {
-    e.preventDefault();
-     history.push(`/profiles/${user_id}`)
-    // hideForm();
-  };
+
+  // const handleCancelFormEditClick = (e) => {
+  //   e.preventDefault();
+  //    history.push(`/profiles/${user_id}`)
+  //   // hideForm();
+  // };
 
 
   return (
@@ -517,6 +514,7 @@ const ProfileForm = ({hideForm}) => {
           className="ProfileFormSubmitButton"
           type="submit"
           disabled={errors.length>0}
+
         >
           Submit
         </button>
