@@ -151,8 +151,10 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 
   return (
     <>
-        <div className="ProfileNavExtension">
-          <div className="profileFormHeader">Edit Profile</div>
+        <div className="questionAnswered">
+          <div className="questionsHeader">Edit Profile</div>
+          <button type="button" className="EditQuestionCancel" onClick={handleCancelFormEditClick}>Cancel</button>
+
         </div>
         <section className="edit-profile-form-container">
               <form className="profile-form" onSubmit={handleSubmit}>
@@ -559,13 +561,12 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
         <button
-          className=""
+          className="ProfileFormSubmitButton"
           type="submit"
           disabled={errors.length>0}
         >
           Submit
         </button>
-        <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
         </form>
       </section>
       </>

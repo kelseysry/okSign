@@ -42,8 +42,6 @@ select {
   border-radius: 10px 10px;
   color: white;
   width: min-content;
-  display: flex;
-  justify-content: center;
 }
 
 .profileFormHeader {
