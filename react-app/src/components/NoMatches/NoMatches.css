@@ -6,11 +6,14 @@
 }
 
 .NoMatchesButtonsContainer {
+  box-sizing: border-box;
   background-color: #fff !important;
   width: 70%;
-  padding-top: 30px;
+  /* padding-top: 30px; */
   display: flex;
   justify-content: space-around;
+  padding: 30px 30px;
+  align-items: center;
 
 }
 
@@ -27,6 +30,7 @@
   padding-right: 60px;
   margin-left: auto;
   margin-right: auto;
+
 }
 
 .profile-userInfo-inner-content{
@@ -66,7 +70,10 @@
 }
 
 .NoMatchesButtonsInner {
-  padding-top: 30px;
+  font-size: 20px;
+  flex: 1;
+  /* padding-top: 30px; */
+  /* padding: 30px 30px; */
 }
 
 .newUserButtons{
