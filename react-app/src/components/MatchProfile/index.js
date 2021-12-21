@@ -102,8 +102,28 @@ const MatchProfile = ({userIdPercentObj}) => {
     }
   }
 
+
+  const getUserProfile = (user_id_one) => {
+    const userProfile = profiles[0]?.filter(function(profile){
+
+      return profile?.user_id === +user_id_one
+    })
+    if(userProfile) {
+      // console.log("match match", userProfile)
+      return userProfile
+    }
+    else {
+      return null
+    }
+  }
+
+
   // console.log("getmatchProfile", getMatchProfile(profile_id))
   let matchProfileObj = (getMatchProfile(profile_id))
+
+  let userProfileObj = (getUserProfile(user_id_one))
+
+  console.log("userProfileObh", userProfileObj)
 
 
   const handleCreateConversation = async (discoverProfileId) => {
@@ -156,7 +176,7 @@ const MatchProfile = ({userIdPercentObj}) => {
               You and {getUserName(matchProfileObj[0]?.user_id)}
             </div>
             <div className="CirclesContainer">
-              <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url2}')` }}></div>
+              <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url2}')` }}></div>
               <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url2}')` }}></div>
               <div className="matchPercentCircle">{matchPercent}%</div>
             </div>
