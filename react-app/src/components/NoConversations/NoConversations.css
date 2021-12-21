@@ -1,0 +1,16 @@
+.no-conversations-header-container {
+  box-sizing: border-box;
+  margin-top: 100px;
+  background: #1a1a1a;
+  padding: 50px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.NoMatchesButtonsInnerText {
+  font-size: 20px;
+  flex: 1;
+  padding-right: 30px;
+}

@@ -10,6 +10,7 @@ import { deleteProfile } from '../../store/profile';
 import { useHistory } from 'react-router';
 import { getHoroscopes } from '../../store/horoscope';
 import UserProfileAboutSection from '../UserProfileAboutSection';
+import ProfileForm from '../ProfileForm';
 
 function UserProfile({count, setCount}) {
   const [user, setUser] = useState({});
@@ -65,6 +66,7 @@ function UserProfile({count, setCount}) {
   }
 
   console.log("user from api", user.first_name)
+  console.log("profile☕️s------------ ", profiles)
 
 
   let currentProfile = profiles?.filter((profile) => {
@@ -165,19 +167,11 @@ function UserProfile({count, setCount}) {
 
   return (
     <>
-
        {   currentProfile?.length ? content_edit_compiled :
           <>
-            <div className="questionAnswered">
-              <div className="questionsHeader">Create Your Profile!</div>
-            </div>
-
-            <div>
-              <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
-            </div>
+            <ProfileForm />
           </>
        }
-
     </>
   );
 }
