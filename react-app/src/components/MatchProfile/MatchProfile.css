@@ -41,3 +41,76 @@ hr {
   margin: 20px 0px;
 
 }
+
+
+
+.matchContainerHeader {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 10px 15px;
+
+}
+
+
+
+.userPhotoMatch-first {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 98px;
+  height: 98px;
+  background: #ebedf2;
+  border-radius: 50%;
+  background-size: contain;
+  border: 1px solid #fff;
+  transform: translateX(-94px);
+}
+
+.userPhotoMatch-last {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 98px;
+  height: 98px;
+  background: #ebedf2;
+  border-radius: 50%;
+  background-size: contain;
+  border: 1px solid #fff;
+  transform: translateX(-4px);
+}
+
+.matchPercentCircle {
+  /* display: block; */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 45px);
+  width: 77px;
+  height: 77px;
+  margin-bottom: -27px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 67px;
+  font-weight: bold;
+
+  background: #fff;
+  border-color: #0000bf;
+  color: #0000bf;
+  box-shadow: 0 0 0 3px #fff;
+}
+
+.MatchProfileInnerContainer {
+  position: relative;
+  padding: 20px 20px;
+  /* background: coral; */
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.circlesContainer {
+position: relative;
+background: cornflowerblue;
+}

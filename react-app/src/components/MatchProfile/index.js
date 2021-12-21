@@ -160,11 +160,11 @@ const MatchProfile = ({userIdPercentObj}) => {
           <div className="oneMatchProfileContainerHeader">
             {getUserName(matchProfileObj[0]?.user_id)}
           </div>
-          <button
+          {/* <button
             onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
           >Message  <i className="far fa-comment-dots"></i></button>
 
-          <button>Like  <i className="fas fa-heart"></i></button>
+          <button>Like  <i className="fas fa-heart"></i></button> */}
           <div className="match_profile_images_container">
             <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
             <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
@@ -175,10 +175,20 @@ const MatchProfile = ({userIdPercentObj}) => {
             <div className="matchContainerHeader">
               You and {getUserName(matchProfileObj[0]?.user_id)}
             </div>
-            <div className="CirclesContainer">
-              <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
-              <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
-              <div className="matchPercentCircle">{matchPercent}%</div>
+            <div className="MatchProfileInnerContainer">
+              <div className="circlesContainer">
+                <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
+                <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
+                <div className="matchPercentCircle">{matchPercent}%</div>
+              </div>
+              <div>
+                <div>
+                  Agree
+                </div>
+                <div>
+                  Disagree
+                </div>
+              </div>
             </div>
 
           </div>
