@@ -63,8 +63,9 @@ const Conversations = () => {
         </NavLink>
 
     </div>
+      )
 
-      )}
+      }
 
     </>
   )
