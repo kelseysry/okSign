@@ -2,9 +2,11 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import RadioButton from '../RadioButton';
 import { createQuestion } from "../../store/question"
+import { useHistory } from 'react-router';
 
 const QuestionForm = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
@@ -66,6 +68,8 @@ const QuestionForm = () => {
 
       if (newUserQuestions) {
         // hideForm();
+         history.push(`/profiles/${user_id}`)
+
       }
   }
 
@@ -385,13 +389,13 @@ const QuestionForm = () => {
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
         <button
-          className=""
+          className="EditQuestionFormSubmitButton"
           type="submit"
           disabled={errors.length>0}
         >
           Submit
         </button>
-        <button type="button" onClick={handelCancelEditQuestionForm}>Cancel</button>
+        {/* <button type="button" onClick={handelCancelEditQuestionForm}>Cancel</button> */}
       </form>
 
 

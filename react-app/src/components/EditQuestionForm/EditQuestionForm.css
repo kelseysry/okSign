@@ -45,3 +45,29 @@ body {
   padding-left: 20px;
   font-weight: 900;
 }
+
+.EditQuestionCancel {
+  color: white;
+}
+
+.EditQuestionFormSubmitButton {
+  background-color:#1a1a1a;
+  padding: 10px 20px;
+  border-radius: 10px 10px;
+  color: white;
+}
+
+.questionForm {
+  padding-bottom: 30px;
+}
+
+.error {
+  padding-bottom: 15px;
+}
+
+.error li{
+padding: 10px 10px;
+font-size: small;
+color:crimson
+
+}

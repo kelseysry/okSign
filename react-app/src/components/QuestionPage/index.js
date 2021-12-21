@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import EditQuestionForm from '../EditQuestionForm';
 import QuestionPageAnswered from '../QuestionPageAnswered';
-import { getQuestion } from '../../store/question';
+import { clearQuestions, getQuestion } from '../../store/question';
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-
+import './QuestionPage.css'
+import QuestionForm from '../QuestionForm';
 
 function QuestionPage() {
   const dispatch = useDispatch()
@@ -25,6 +26,7 @@ function QuestionPage() {
   },[dispatch])
 
   useEffect(() => {
+    dispatch(clearQuestions())
     dispatch(getQuestion(user_id))
 
    },[dispatch, user_id])
@@ -35,11 +37,15 @@ if(showEditQuestion) {
   content = (
     <EditQuestionForm questions={questions} hideForm={() => setShowEditQuestionForm(false)}/>
   )
-} else if (questions.length){
+} else if (questions){
   content = (
     <>
+      <div className="questionAnswered">
+        <div className="questionsHeader">Your Answers</div>
+        <button className="edit-question-form" onClick={() => setShowEditQuestionForm(true)}>Edit Answers <i className="fas fa-edit"></i></button>
+
+      </div>
       <div className="">
-        {/* <UserProfileAboutSection currentUserProfile={currentProfile}/> */}
         <QuestionPageAnswered />
       </div>
     </>
@@ -49,24 +55,32 @@ if(showEditQuestion) {
 }
 
 
-
 let content_edit_compiled;
 content_edit_compiled = (
   <>
-    <button className="edit-profile-button" onClick={() => setShowEditQuestionForm(true)}>Edit Answers <i className="fas fa-edit"></i></button>
+    {/* <button className="edit-profile-button" onClick={() => setShowEditQuestionForm(true)}>Edit Answers <i className="fas fa-edit"></i></button> */}
     {content}
   </>
 )
+
+// console.log("questions🤠😯🤠😯🤠😯", questions)
 
 return (
   <>
 
      {   questions.length? content_edit_compiled :
-       <div>
-          <NavLink to={`/answerQuestions`}><div className=""></div>Answer Questions <i className="fas fa-address-card"></i></NavLink>
-      </div>
 
-    }
+<div>
+<div className="answerQuestionContainer">
+<div className="answerQuestionHeader">Answer Questions</div>
+</div>
+     <QuestionForm />
+</div>
+      //  <div>
+      //     <NavLink to={`/answerQuestions`}><div className=""></div>Answer Questions <i className="fas fa-address-card"></i></NavLink>
+      // </div>
+
+     }
 
   </>
 );
