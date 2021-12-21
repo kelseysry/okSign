@@ -151,454 +151,409 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 
   return (
     <>
-<section className="edit-profile-form-container">
-      <form className="edit-profile-form" onSubmit={handleSubmit}>
-        <label>
-          Age
-            <input
-            type="text"
-            placeholder="age"
-            value={age}
-            onChange={(e) => setAge(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          location
-            <input
-            type="text"
-            placeholder="location"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          lat
-            <input
-            type="text"
-            placeholder="lat"
-            value={lat}
-            onChange={(e) => setLat(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          lng
-            <input
-            type="text"
-            placeholder="lng"
-            value={lng}
-            onChange={(e) => setLng(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          About Me
-            <input
-            type="text"
-            placeholder="about me"
-            value={about_me}
-            onChange={(e) => setAbout_me(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Goal
-            <input
-            type="text"
-            placeholder="goal"
-            value={goal}
-            onChange={(e) => setGoal(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Talent
-            <input
-            type="text"
-            placeholder="talent"
-            value={talent}
-            onChange={(e) => setTalent(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Traits
-            <input
-            type="text"
-            placeholder="traits"
-            value={my_traits}
-            onChange={(e) => setMy_traits(e.target.value)}
-            >
-            </input>
-        </label>
+        <div className="ProfileNavExtension">
+          <div className="profileFormHeader">Edit Profile</div>
+        </div>
+        <section className="edit-profile-form-container">
+              <form className="profile-form" onSubmit={handleSubmit}>
                 <label>
-          Needs
-            <input
-            type="text"
-            placeholder="needs"
-            value={needs}
-            onChange={(e) => setNeeds(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Hobbies
-            <input
-            type="text"
-            placeholder="hobbies"
-            value={hobbies}
-            onChange={(e) => setHobbies(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Moments
-            <input
-            type="text"
-            placeholder="moments"
-            value={moments}
-            onChange={(e) => setMoments(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Secrets
-            <input
-            type="text"
-            placeholder="secrets"
-            value={secrets}
-            onChange={(e) => setSecrets(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Looking for
-            <input
-            type="text"
-            placeholder="looking for"
-            value={looking_for}
-            onChange={(e) => setLooking_for(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          User Audio
-            <input
-            type="text"
-            placeholder="user audio"
-            value={user_audio}
-            onChange={(e) => setUser_audio(e.target.value)}
-            >
-            </input>
-        </label>
-
-
-        {/* <label>
-          Gender
-            <input
-            type="text"
-            placeholder="gender id"
-            value={gender_id}
-            onChange={(e) => setGender_id(e.target.value)}
-            >
-            </input>
-        </label> */}
-
-        <label>
-          Gender
-          <select value={gender_id} onChange={(e) => setGender_id(+e.target.value)}>
-            <option value="1">Women</option>
-            <option value="2">Male</option>
-          </select>
-        </label>
-        <label>
-          Gender Preference
-          <select value={gender_preference_id} onChange={(e) => setGender_preference_id(+e.target.value)}>
-            <option value="1">Women</option>
-            <option value="2">Male</option>
-          </select>
-        </label>
-        <label>
-          number of likes
-            <input
-            type="text"
-            placeholder="number likes"
-            value={number_likes}
-            onChange={(e) => setNumber_likes(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Image Url 1
-            <input
-            type="text"
-            placeholder="image url 1"
-            value={image_url1}
-            onChange={(e) => setImage_url1(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Image Url 2
-            <input
-            type="text"
-            placeholder="image url 2"
-            value={image_url2}
-            onChange={(e) => setImage_url2(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Image Url 3
-            <input
-            type="text"
-            placeholder="image url 3"
-            value={image_url3}
-            onChange={(e) => setImage_url3(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Image Url 4
-            <input
-            type="text"
-            placeholder="image url 4"
-            value={image_url4}
-            onChange={(e) => setImage_url4(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Image Url 5
-            <input
-            type="text"
-            placeholder="image url 5"
-            value={image_url5}
-            onChange={(e) => setImage_url5(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Image Url 6
-            <input
-            type="text"
-            placeholder="image url 6"
-            value={image_url6}
-            onChange={(e) => setImage_url6(e.target.value)}
-            >
-            </input>
-        </label>
-
-        {/* <label>
-          Orientation
-            <input
-            type="text"
-            placeholder="orientation id"
-            value={orientation_id}
-            onChange={(e) => setOrientation_id(e.target.value)}
-            >
-            </input>
-        </label> */}
-
-        <label>
-          Orientation
-          <select value={orientation_id} onChange={(e) => setOrientation_id(+e.target.value)}>
-            <option value="1">Straight</option>
-            <option value="2">Lesbian</option>
-            <option value="3">Gay</option>
-            <option value="4">Bisexual</option>
-            <option value="5">Queer</option>
-            <option value="6">Pansexual</option>
-          </select>
-        </label>
-        {/* <label>
-          Partner
-            <input
-            type="text"
-            placeholder="partner id"
-            value={partner_id}
-            onChange={(e) => setPartner_id(e.target.value)}
-            >
-            </input>
-        </label> */}
-
-        <label>
-          Partner
-          <select value={partner_id} onChange={(e) => setPartner_id(+e.target.value)}>
-            <option value="1">Monogamous</option>
-            <option value="2">Non-monogamous</option>
-            <option value="3">Open to either</option>
-          </select>
-        </label>
-
-        <label>
-          Pronouns
-            <input
-            type="text"
-            placeholder="pronouns"
-            value={pronouns}
-            onChange={(e) => setPronouns(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          height
-            <input
-            type="text"
-            placeholder="height"
-            value={height}
-            onChange={(e) => setHeight(e.target.value)}
-            >
-            </input>
-        </label>
+                  Age
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder=""
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                    >
+                    </input>
+                </label>
                 <label>
-          Education
-            <input
-            type="text"
-            placeholder="education"
-            value={education}
-            onChange={(e) => setEducation(e.target.value)}
-            >
-            </input>
-        </label>
-        <label>
-          Occupation
-            <input
-            type="text"
-            placeholder="occupation"
-            value={occupation}
-            onChange={(e) => setOccupation(e.target.value)}
-            >
-            </input>
-        </label>
-        {/* <label>
-          Horoscope
-            <input
-            type="text"
-            placeholder="horoscope"
-            value={horoscope_id}
-            onChange={(e) => setHoroscope_id(e.target.value)}
-            >
-            </input>
-        </label> */}
-        <label>
-          Horoscope
-          <select value={horoscope_id} onChange={(e) => setHoroscope_id(+e.target.value)}>
-            <option value="1">Aries</option>
-            <option value="2">Taurus</option>
-            <option value="3">Gemini</option>
-            <option value="4">Cancer</option>
-            <option value="5">Leo</option>
-            <option value="6">Virgo</option>
-            <option value="7">Libra</option>
-            <option value="8">Scorpio</option>
-            <option value="9">Sagittarius</option>
-            <option value="10">Capricorn</option>
-            <option value="11">Aquarius</option>
-            <option value="12">Pisces</option>
-          </select>
-        </label>
+                  location
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="don't worry, you can still see matches from abroad"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  lat
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="use lat from google maps"
+                    value={lat}
+                    onChange={(e) => setLat(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  lng
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="use lat from google maps"
+                    value={lng}
+                    onChange={(e) => setLng(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  About Me
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="if you can't write a good description, just UrbanDictionary your name"
+                    value={about_me}
+                    onChange={(e) => setAbout_me(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Goal
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="don't write to find love 🤨"
+                    value={goal}
+                    onChange={(e) => setGoal(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Talent
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="not getting ghosted... maybe?"
+                    value={talent}
+                    onChange={(e) => setTalent(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Traits
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="height, gym, hustle, good vibes are not descriptive traits 🚩 "
+                    value={my_traits}
+                    onChange={(e) => setMy_traits(e.target.value)}
+                    >
+                    </input>
+                </label>
+                        <label>
+                  Needs
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="what do you value the most?"
+                    value={needs}
+                    onChange={(e) => setNeeds(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Hobbies
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="just be honest if you're the type to watch TV for 8+ hrs"
+                    value={hobbies}
+                    onChange={(e) => setHobbies(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Moments
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="what does a perfect day look like to you?"
+                    value={moments}
+                    onChange={(e) => setMoments(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Secrets
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="we're looking for scorching hot tea 🍵"
+                    value={secrets}
+                    onChange={(e) => setSecrets(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Looking for
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="no judgement: what do you want from this whole dating app thing?"
+                    value={looking_for}
+                    onChange={(e) => setLooking_for(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  A Shower thought you recently had
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="record yourself or any audio that represents you!"
+                    value={user_audio}
+                    onChange={(e) => setUser_audio(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label className="selectField">
+                  <span className="labelName">Gender</span>
+                  <select value={gender_id} onChange={(e) => setGender_id(+e.target.value)}>
+                    {/* <option value='1' disabled>Select a gender</option> */}
+                    <option value="1">Women</option>
+                    <option value="2">Male</option>
+                  </select>
+                </label>
+                <label className="selectField">
+                  <span className="labelName">Gender Preference</span>
+                  <select value={gender_preference_id} onChange={(e) => setGender_preference_id(+e.target.value)}>
+                    {/* <option value='1' disabled>Select a gender preference </option> */}
+                    <option value="1">Women</option>
+                    <option value="2">Male</option>
+                  </select>
+                </label>
+                <label>
+                  number of likes
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="number likes"
+                    value={number_likes}
+                    onChange={(e) => setNumber_likes(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Image Url 1
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="don't use a photo that clearly has another person cropped out"
+                    value={image_url1}
+                    onChange={(e) => setImage_url1(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Image Url 2
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="a picture is worth a 1000 words"
+                    value={image_url2}
+                    onChange={(e) => setImage_url2(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Image Url 3
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="a picture can make up for a bad bio"
+                    value={image_url3}
+                    onChange={(e) => setImage_url3(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Image Url 4
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="don't use mirror selfies"
+                    value={image_url4}
+                    onChange={(e) => setImage_url4(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Image Url 5
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="have your friends pick out your best photos"
+                    value={image_url5}
+                    onChange={(e) => setImage_url5(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Image Url 6
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="try not to use group pictures..., we're not playing find waldo"
+                    value={image_url6}
+                    onChange={(e) => setImage_url6(e.target.value)}
+                    >
+                    </input>
+                </label>
 
-        <label>
-          Smoking
-          <select value={smoking_id} onChange={(e) => setSmoking(+e.target.value)}>
-            <option value="1">Smokes cigarettes regularly</option>
-            <option value="2">Smokes cigarettes sometimes</option>
-            <option value="3">Vapes</option>
-            <option value="4">Doesn't smoke</option>
-          </select>
-        </label>
+                <label className="selectField">
+                  <span className="labelName">Orientation</span>
+                  <select value={orientation_id} onChange={(e) => setOrientation_id(+e.target.value)}>
+                    <option value="1">Straight</option>
+                    <option value="2">Lesbian</option>
+                    <option value="3">Gay</option>
+                    <option value="4">Bisexual</option>
+                    <option value="5">Queer</option>
+                    <option value="6">Pansexual</option>
+                  </select>
+                </label>
 
-        <label>
-          Drinking
-          <select value={drinking_id} onChange={(e) => setDrinking(+e.target.value)}>
-            <option value="1">Drinks often</option>
-            <option value="2">Drinks sometimes</option>
-            <option value="3">Doesn't drink</option>
-          </select>
-        </label>
+                <label className="selectField">
+                <span className="labelName">What is your relationship status?</span>
+                  <select value={partner_id} onChange={(e) => setPartner_id(+e.target.value)}>
+                    <option value="1">Monogamous</option>
+                    <option value="2">Non-monogamous</option>
+                    <option value="3">Open to either</option>
+                  </select>
+                </label>
 
+                <label>
+                  Pronouns
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="pronouns"
+                    value={pronouns}
+                    onChange={(e) => setPronouns(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  height
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="use cm please for our international users"
+                    value={height}
+                    onChange={(e) => setHeight(e.target.value)}
+                    >
+                    </input>
+                </label>
+                        <label>
+                  Education
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="what is your latest degree from?"
+                    value={education}
+                    onChange={(e) => setEducation(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label>
+                  Occupation
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="where do you work?"
+                    value={occupation}
+                    onChange={(e) => setOccupation(e.target.value)}
+                    >
+                    </input>
+                </label>
 
-        <label>
-          Children
-          <select value={children_id} onChange={(e) => setChildren_id(+e.target.value)}>
-            <option value="1">Doesn't have kids but might want them</option>
-            <option value="2">Doesn't have kids but wants them</option>
-            <option value="3">Doesn't have kids and doesn't want want them</option>
-            <option value="4">Has kids and doesn't want more</option>
-            <option value="5">Has kids and might want more</option>
-            <option value="6">Has kids and want more</option>
-          </select>
-        </label>
-{/*
-        <label>
-          Pet
-            <input
-            type="text"
-            placeholder="pet_id"
-            value={pet_id}
-            onChange={(e) => setPet_id(e.target.value)}
-            >
-            </input>
-        </label> */}
-       <label>
-          Pets
-          <select value={pet_id} onChange={(e) => setPet_id(+e.target.value)}>
-            <option value="1">Doesn't have pets</option>
-            <option value="2">Cat</option>
-            <option value="3">Dog</option>
-            <option value="4">Has other pets</option>
-          </select>
-        </label>
+                <label className="selectField">
+                  <span className="labelName">Horoscope</span>
+                  <select value={horoscope_id} onChange={(e) => setHoroscope_id(+e.target.value)}>
+                    <option value="1">Aries</option>
+                    <option value="2">Taurus</option>
+                    <option value="3">Gemini</option>
+                    <option value="4">Cancer</option>
+                    <option value="5">Leo</option>
+                    <option value="6">Virgo</option>
+                    <option value="7">Libra</option>
+                    <option value="8">Scorpio</option>
+                    <option value="9">Sagittarius</option>
+                    <option value="10">Capricorn</option>
+                    <option value="11">Aquarius</option>
+                    <option value="12">Pisces</option>
+                  </select>
+                </label>
 
-        <label>
-          Politic
-          <select value={politic_id} onChange={(e) => setPolitic_id(+e.target.value)}>
-            <option value="1">Politically liberal</option>
-            <option value="2">Politically moderate</option>
-            <option value="3">Politically conservative</option>
-            <option value="4">Other political beliefs</option>
-          </select>
-        </label>
+                <label className="selectField">
+                  <span className="labelName">Smoking</span>
+                  <select value={smoking_id} onChange={(e) => setSmoking(+e.target.value)}>
+                    <option value="1">Smokes cigarettes regularly</option>
+                    <option value="2">Smokes cigarettes sometimes</option>
+                    <option value="3">Vapes</option>
+                    <option value="4">Doesn't smoke</option>
+                  </select>
+                </label>
 
-        <label>
-          Religion
-          <select value={religion_id} onChange={(e) => setReligion_id(+e.target.value)}>
-            <option value="1">Agnosticism</option>
-            <option value="2">Atheism</option>
-            <option value="3">Christianity</option>
-            <option value="4">Judaism</option>
-            <option value="5">Catholicism</option>
-            <option value="6">Islam</option>
-            <option value="7">Hinduism</option>
-            <option value="8">Buddhism</option>
-            <option value="9">Sikh</option>
-            <option value="10">Other religion</option>
-          </select>
-        </label>
+                <label className="selectField">
+                  <span className="labelName">Drinking</span>
+                  <select value={drinking_id} onChange={(e) => setDrinking(+e.target.value)}>
+                    <option value="1">Drinks often</option>
+                    <option value="2">Drinks sometimes</option>
+                    <option value="3">Doesn't drink</option>
+                  </select>
+                </label>
 
-        {/* <label>
-          Politic
-            <input
-            type="text"
-            placeholder="politic"
-            value={politic_id}
-            onChange={(e) => setPolitic_id(e.target.value)}
-            >
-            </input>
-        </label> */}
-        {/* <label>
-          Religion
-            <input
-            type="text"
-            placeholder="religion"
-            value={religion_id}
-            onChange={(e) => setReligion_id(e.target.value)}
-            >
-            </input>
-        </label> */}
+                <label className="selectField">
+                  <span className="labelName">Children</span>
+                  <select value={children_id} onChange={(e) => setChildren_id(+e.target.value)}>
+                    <option value="1">Doesn't have kids but might want them</option>
+                    <option value="2">Doesn't have kids but wants them</option>
+                    <option value="3">Doesn't have kids and doesn't want want them</option>
+                    <option value="4">Has kids and doesn't want more</option>
+                    <option value="5">Has kids and might want more</option>
+                    <option value="6">Has kids and want more</option>
+                  </select>
+                </label>
+
+              <label className="selectField">
+                  <span className="labelName">Pets</span>
+                  <select value={pet_id} onChange={(e) => setPet_id(+e.target.value)}>
+                    <option value="1">Doesn't have pets</option>
+                    <option value="2">Cat</option>
+                    <option value="3">Dog</option>
+                    <option value="4">Has other pets</option>
+                  </select>
+                </label>
+
+                <label className="selectField">
+                  <span className="labelName">Politics</span>
+                  <select value={politic_id} onChange={(e) => setPolitic_id(+e.target.value)}>
+                    <option value="1">Politically liberal</option>
+                    <option value="2">Politically moderate</option>
+                    <option value="3">Politically conservative</option>
+                    <option value="4">Other political beliefs</option>
+                  </select>
+                </label>
+
+                <label className="selectField">
+                  <span className="labelName">Religion</span>
+                  <select value={religion_id} onChange={(e) => setReligion_id(+e.target.value)}>
+                    <option value="1">Agnosticism</option>
+                    <option value="2">Atheism</option>
+                    <option value="3">Christianity</option>
+                    <option value="4">Judaism</option>
+                    <option value="5">Catholicism</option>
+                    <option value="6">Islam</option>
+                    <option value="7">Hinduism</option>
+                    <option value="8">Buddhism</option>
+                    <option value="9">Sikh</option>
+                    <option value="10">Other religion</option>
+                  </select>
+                </label>
 
         <ul className="error">
           {errors.map((error) => <li key={error}>{error}</li>)}
