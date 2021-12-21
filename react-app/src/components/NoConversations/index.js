@@ -28,7 +28,7 @@ const NoConversations = ({}) => {
         </div>
       </section>
       <section className="NoMatchesButtonsContainer">
-        <div className="NoMatchesButtonsInner">
+        <div className="NoMatchesButtonsInnerText">
           Make sure that the answer to each question represents how you think! Don't also forget to add as much info as possible for your profile to get matches!
         </div>
         <div className="newUserButtons">

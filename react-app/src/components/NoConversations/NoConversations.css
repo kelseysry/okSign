@@ -7,3 +7,10 @@
   justify-content: center;
   align-items: center;
 }
+
+
+.NoMatchesButtonsInnerText {
+  font-size: 20px;
+  flex: 1;
+  padding-right: 30px;
+}
