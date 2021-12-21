@@ -124,5 +124,13 @@ background: cornflowerblue;
 
 .disagree {
   border-top: 1px solid #ccd0d9;
+}
 
+.agree, .disagree {
+  display: flex;
+  justify-content: space-between;
+}
+
+.agreeTable {
+  width: 200px;
 }

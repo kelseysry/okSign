@@ -18,6 +18,7 @@ const MatchProfile = ({userIdPercentObj}) => {
   let profile_id = userIdPercentObj[0]
   let matchPercent = ((Number(userIdPercentObj[1])/10)*100)
 
+  let disagree = 10 - (Number(userIdPercentObj[1]))
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id_one = sessionUser?.id
@@ -183,10 +184,12 @@ const MatchProfile = ({userIdPercentObj}) => {
               </div>
               <div className="agreeTable">
                 <div className="agree">
-                  Agree 🥰
+                  <div>Agree</div>
+                  <div>🥰 {userIdPercentObj[1]}</div>
                 </div>
                 <div className="disagree">
-                  Disagree 🙃
+                  <div>Disagree</div>
+                  <div>🙃 {disagree}</div>
                 </div>
               </div>
             </div>
