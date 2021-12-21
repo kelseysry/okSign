@@ -64,11 +64,14 @@ function UserProfile({count, setCount}) {
     return null;
   }
 
+  console.log("user from api", user.first_name)
+
 
   let currentProfile = profiles?.filter((profile) => {
     return profile?.user_id === +userId
   })
 
+  console.log("urrentProfile[0]?.age", currentProfile)
 
   let content = null;
   if(showEditProfileForm && userId) {
@@ -88,13 +91,13 @@ function UserProfile({count, setCount}) {
               </div>
                 <div className="profile-basics">
                   <div className="profile-basics-username">
-                    <span className="username-text">Nanami</span>
+                    <span className="username-text">{user?.first_name}</span>
                   </div>
                 <div className="profile-asl">
                   <div className="profile-asl-row">
-                    <span className="profile-asl-age">24</span>
+                    {currentProfile? <span className="profile-asl-age">{currentProfile[0]?.age}</span> : null}
                     <span className="profile-asl-spacer"></span>
-                    <span className="profile-asl-location">Tokyo,Japan</span>
+                    {currentProfile? <span className="profile-asl-location">{currentProfile[0]?.location}</span> : null}
                   </div>
                 </div>
                 </div>
@@ -164,9 +167,15 @@ function UserProfile({count, setCount}) {
     <>
 
        {   currentProfile?.length ? content_edit_compiled :
-         <div>
-           <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
-        </div>
+          <>
+            <div className="questionAnswered">
+              <div className="questionsHeader">Create Your Profile!</div>
+            </div>
+
+            <div>
+              <NavLink to={`/createProfile`}><div className=""></div>Create Profile <i className="fas fa-address-card"></i></NavLink>
+            </div>
+          </>
        }
 
     </>

@@ -149,13 +149,6 @@ if(currentUserQuestion) {
   return (
     <>
     {content}
-      {/* <div>
-        {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
-          <div key={idx}>
-            <MatchProfile userIdPercentObj={userIdPercentObj}/>
-          </div>
-        )}
-      </div> */}
     </>
   )
 
