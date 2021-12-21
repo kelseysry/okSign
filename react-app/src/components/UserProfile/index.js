@@ -71,6 +71,7 @@ function UserProfile({count, setCount}) {
     return profile?.user_id === +userId
   })
 
+  console.log("urrentProfile[0]?.age", currentProfile)
 
   let content = null;
   if(showEditProfileForm && userId) {
@@ -94,9 +95,9 @@ function UserProfile({count, setCount}) {
                   </div>
                 <div className="profile-asl">
                   <div className="profile-asl-row">
-                    <span className="profile-asl-age">{currentProfile[0]?.age}</span>
+                    {currentProfile? <span className="profile-asl-age">{currentProfile[0]?.age}</span> : null}
                     <span className="profile-asl-spacer"></span>
-                    <span className="profile-asl-location">{currentProfile[0]?.location}</span>
+                    {currentProfile? <span className="profile-asl-location">{currentProfile[0]?.location}</span> : null}
                   </div>
                 </div>
                 </div>

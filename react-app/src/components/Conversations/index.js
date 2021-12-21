@@ -5,6 +5,8 @@ import MatchConversationTile from "../MatchConversationTile";
 import { NavLink } from 'react-router-dom';
 import { getConversations } from "../../store/conversation";
 import React, { useEffect } from 'react';
+import NoMatches from "../NoMatches";
+import NoConversations from "../NoConversations";
 
 
 
@@ -52,10 +54,18 @@ const Conversations = () => {
     }
   }
 
-  return (
+  console.log("conversationArray convo", conversationsArray)
 
-    <>
-      { conversationsArray[0]?.map((conversation) =>
+  let previousCurrentUserConversations =  conversationsArray[0]?.filter(function(el) {
+    return el.id === +user_id
+  })
+
+  console.log("previousCurrentUserConversations", previousCurrentUserConversations)
+
+  let content;
+  if(previousCurrentUserConversations?.length) {
+    content = (
+      conversationsArray[0]?.map((conversation) =>
     <div>
 
         <NavLink to={`/conversations/${conversation?.id}`}>
@@ -64,9 +74,21 @@ const Conversations = () => {
 
     </div>
       )
+    )
+  }  else {
+    content = (
+      <div className="center-no-matches-component">
+        {/* <NoMatches /> */}
+        <NoConversations />
+      </div>
+    )
+  }
 
-      }
 
+  return (
+
+    <>
+      {content}
     </>
   )
 
