@@ -35,7 +35,7 @@ const MatchProfile = ({userIdPercentObj}) => {
 
     if (!isLoaded) setIsLoaded(true);
 
-  }, [dispatch, profiles.length, isLoaded])
+  }, [dispatch, profiles.length, isLoaded, conversations?.length])
 
   useEffect(() => {
     async function fetchData() {
@@ -68,9 +68,10 @@ const MatchProfile = ({userIdPercentObj}) => {
     }
   }
 
-  console.log("conversation in match 🤠😯", conversations)
 
   const checkConversationExists = (user_id_one, discoverUserId) => {
+
+
     const existingConvo = conversations?.filter(function(convo){
       // console.log("convo one", convo?.user_id_one)
       // console.log("convo two", convo?.user_id_two)
@@ -84,6 +85,7 @@ const MatchProfile = ({userIdPercentObj}) => {
     })
     // console.log("existingconvo", existingConvo)
     return existingConvo
+
   }
 
   const getMatchProfile = (profile_id) => {
@@ -134,7 +136,10 @@ const MatchProfile = ({userIdPercentObj}) => {
 
     { isLoaded && matchProfileObj[0]?.user_id && (
 
-      <div>
+      <div className="oneMatchProfileContainer">
+          <div className="oneMatchProfileContainerHeader">
+            {getUserName(matchProfileObj[0]?.user_id)}
+          </div>
           <button
             onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
           >Message  <i className="far fa-comment-dots"></i></button>

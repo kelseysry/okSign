@@ -129,7 +129,7 @@ if(currentUserQuestion) {
 
   if (currentUserQuestion?.length) {
     content = (
-      <div>
+      <div className="">
         {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
           <div key={idx}>
             <MatchProfile userIdPercentObj={userIdPercentObj}/>
@@ -148,7 +148,9 @@ if(currentUserQuestion) {
 
   return (
     <>
-    {content}
+    <div className="DiscoverContent">
+      {content}
+    </div>
     </>
   )
 

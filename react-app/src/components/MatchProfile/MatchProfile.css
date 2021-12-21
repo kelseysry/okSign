@@ -1,3 +1,17 @@
 .match_profile_image {
   width: 100px;
 }
+
+.oneMatchProfileContainerHeader {
+  background: #1a1a1a;
+  color: white;
+}
+
+.oneMatchProfileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 0px !important;
+  background: brown;
+  width: 300px;
+}

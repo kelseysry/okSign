@@ -8,3 +8,12 @@ body {
   flex-direction: column;
 
 }
+
+.DiscoverContent {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 0px !important;
+  align-items: center;
+}
