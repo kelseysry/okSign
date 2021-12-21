@@ -10,7 +10,6 @@ import { deleteProfile } from '../../store/profile';
 import { useHistory } from 'react-router';
 import { getHoroscopes } from '../../store/horoscope';
 import UserProfileAboutSection from '../UserProfileAboutSection';
-import ProfileForm from '../ProfileForm';
 
 function UserProfile({count, setCount}) {
   const [user, setUser] = useState({});
@@ -21,7 +20,6 @@ function UserProfile({count, setCount}) {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const [showEditProfileForm, setShowEditProfileForm] = useState(false)
-  const [showCreateProfileForm, setShowCreateProfileForm] = useState(false)
 
 
   const profilesObj = useSelector((state) => state?.profile)
@@ -44,11 +42,6 @@ function UserProfile({count, setCount}) {
   useEffect(() => {
     setShowEditProfileForm(false)
   },[dispatch, userId])
-
-   // show create profile form
-   useEffect(() => {
-    setShowCreateProfileForm(false)
-  },[dispatch, userId,])
 
 
   useEffect(async ()  => {
@@ -85,7 +78,38 @@ function UserProfile({count, setCount}) {
   } else if (isLoaded){
     content = (
       <>
-        {currentProfile ? <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="user_image"/> : null }
+        <div className="profile-user-info">
+          <div className="profile-userInfo-inner">
+            <div className="profile-userInfo-inner-content">
+              <div className="profile-userInfo-thumb">
+                <div className="profile-thumb">
+                  {currentProfile ? <img src={currentProfile[0]?.image_url1} alt="user_image"/> : null }
+                </div>
+              </div>
+                <div className="profile-basics">
+                  <div className="profile-basics-username">
+                    <span className="username-text">Nanami</span>
+                  </div>
+                <div className="profile-asl">
+                  <div className="profile-asl-row">
+                    <span className="profile-asl-age">24</span>
+                    <span className="profile-asl-spacer"></span>
+                    <span className="profile-asl-location">Tokyo,Japan</span>
+                  </div>
+                </div>
+                </div>
+                <div className="profile-buttons">
+                <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
+                <button className="delete-profile-button" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i className="fas fa-trash"></i></button>
+                </div>
+
+
+
+
+            </div>
+          </div>
+        </div>
+
         <div className="user_profile_container">
           <UserProfileAboutSection currentUserProfile={currentProfile}/>
         </div>
@@ -121,7 +145,28 @@ function UserProfile({count, setCount}) {
   } else if (isLoaded){
     content = (
       <>
-        {currentProfile ? <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="user_image"/> : null }
+        {/* {currentProfile ?
+
+        <img className= 'user_profile_image' src={currentProfile[0]?.image_url1} alt="user_image"/>   : null } */}
+
+
+        <div className="profile-user-info">
+          <div className="profile-userInfo-inner">
+            <div className="profile-userInfo-inner-content">
+              <div className="profile-userInfo-thumb">
+                <div className="profile-thumb">
+                  {currentProfile ? <img src={currentProfile[0]?.image_url1} alt="user_image"/> : null }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
         <div className="user_profile_container">
           <UserProfileAboutSection currentUserProfile={currentProfile}/>
         </div>
