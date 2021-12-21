@@ -35,7 +35,7 @@ const NoMatches = ({user_id}) => {
   return (
     <>
       <section className="NoMatchesContainer">
-        <div className="profile-userInfo">
+        <div className="no-matches-header-container">
              <div className="no-matches-header">
                   No Matches Yet!
               </div>
@@ -48,8 +48,7 @@ const NoMatches = ({user_id}) => {
         <div className="newUserButtons">
           <button className="newUserButton"
           onClick={() => {handleQuestionRedirect()}}
-          >Fill Out Questions <i class="fas fa-newspaper"></i>
-          </button>
+          >Fill Out Questions <i class="fas fa-newspaper"></i></button>
           <button className="newUserButton"
           onClick={() => {handleCreateProfileRedirect()}}
           >Create Profile <i class="fas fa-address-card"></i></button>

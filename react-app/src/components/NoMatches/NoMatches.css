@@ -17,30 +17,32 @@
 
 }
 
-.profile-userInfo {
+.no-matches-header-container {
   margin-top: 100px;
-  padding-top: 50px;
-  /* margin-bottom: 30px; */
   background: #1a1a1a;
+  padding: 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.profile-userInfo-inner{
+/* .profile-userInfo-inner{
   width: 1000px;
   padding-left: 60px;
   padding-right: 60px;
   margin-left: auto;
   margin-right: auto;
 
-}
-
+} */
+/*
 .profile-userInfo-inner-content{
   display: flex;
   margin-left: -30px;
   padding-bottom: 24px;
   align-items: center;
-}
+} */
 
-.profile-userInfo-thumb {
+/* .profile-userInfo-thumb {
   margin-bottom: -56px;
 }
 
@@ -60,13 +62,15 @@
   background: none;
   opacity: 1;
   border-radius: 100%;
-}
+} */
 
 .no-matches-header {
   position: relative;
-  margin-left: 50px;
   font-size: 50px;
   color: white;
+  /* display: flex; */
+  /* margin-left: 50px;
+  padding-bottom: 20px; */
 }
 
 .NoMatchesButtonsInner {
@@ -84,7 +88,7 @@
 .newUserButton {
   background: #1a1a1a;
   color: white;
-  padding: 10px 10px;
+  padding: 15px 15px;
   border-radius: 10px 10px;
   margin-bottom: 10px;
 }
