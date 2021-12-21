@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { createProfile } from "../../store/profile";
 import isURL from 'validator/es/lib/isURL';
 import { useHistory } from 'react-router';
+import './ProfileForm.css'
 
 const ProfileForm = ({hideForm}) => {
   const dispatch = useDispatch();
@@ -131,26 +132,16 @@ const ProfileForm = ({hideForm}) => {
     // hideForm();
   };
 
-  // let options = ["aquarius", "cancer", "leo"]
-
-  // const selectChange = (e) => {
-  //   // const value = event.target.value;
-  //   onChange=(e) => setSelectedOption(e.target.value)
-  // };
-
-
-
-
 
   return (
     <>
 <section className="edit-profile-form-container">
-      <form className="edit-profile-form" onSubmit={handleSubmit}>
+      <form className="profile-form" onSubmit={handleSubmit}>
         <label>
           Age
             <input
             type="text"
-            placeholder="age"
+            placeholder=""
             value={age}
             onChange={(e) => setAge(e.target.value)}
             >
@@ -160,7 +151,7 @@ const ProfileForm = ({hideForm}) => {
           location
             <input
             type="text"
-            placeholder="location"
+            placeholder="don't worry, you can still see matches from abroad"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             >
@@ -170,7 +161,7 @@ const ProfileForm = ({hideForm}) => {
           lat
             <input
             type="text"
-            placeholder="lat"
+            placeholder="use lat from google maps"
             value={lat}
             onChange={(e) => setLat(e.target.value)}
             >
@@ -180,7 +171,7 @@ const ProfileForm = ({hideForm}) => {
           lng
             <input
             type="text"
-            placeholder="lng"
+            placeholder="use lat from google maps"
             value={lng}
             onChange={(e) => setLng(e.target.value)}
             >
@@ -190,7 +181,7 @@ const ProfileForm = ({hideForm}) => {
           About Me
             <input
             type="text"
-            placeholder="about me"
+            placeholder="if you can't write a good description, just UrbanDictionary your name"
             value={about_me}
             onChange={(e) => setAbout_me(e.target.value)}
             >
@@ -200,7 +191,7 @@ const ProfileForm = ({hideForm}) => {
           Goal
             <input
             type="text"
-            placeholder="goal"
+            placeholder="don't write to find love 🤨"
             value={goal}
             onChange={(e) => setGoal(e.target.value)}
             >
@@ -210,7 +201,7 @@ const ProfileForm = ({hideForm}) => {
           Talent
             <input
             type="text"
-            placeholder="talent"
+            placeholder="not getting ghosted... maybe?"
             value={talent}
             onChange={(e) => setTalent(e.target.value)}
             >
@@ -220,7 +211,7 @@ const ProfileForm = ({hideForm}) => {
           Traits
             <input
             type="text"
-            placeholder="traits"
+            placeholder="height, gym, hustle, good vibes are not descriptive traits 🚩 "
             value={my_traits}
             onChange={(e) => setMy_traits(e.target.value)}
             >
@@ -230,7 +221,7 @@ const ProfileForm = ({hideForm}) => {
           Needs
             <input
             type="text"
-            placeholder="needs"
+            placeholder="what do you value the most?"
             value={needs}
             onChange={(e) => setNeeds(e.target.value)}
             >
@@ -240,7 +231,7 @@ const ProfileForm = ({hideForm}) => {
           Hobbies
             <input
             type="text"
-            placeholder="hobbies"
+            placeholder="just be honest if you're the type to watch TV for 8+ hrs"
             value={hobbies}
             onChange={(e) => setHobbies(e.target.value)}
             >
@@ -250,7 +241,7 @@ const ProfileForm = ({hideForm}) => {
           Moments
             <input
             type="text"
-            placeholder="moments"
+            placeholder="what does a perfect day look like to you?"
             value={moments}
             onChange={(e) => setMoments(e.target.value)}
             >
@@ -260,7 +251,7 @@ const ProfileForm = ({hideForm}) => {
           Secrets
             <input
             type="text"
-            placeholder="secrets"
+            placeholder="we're looking for scorching hot tea 🍵"
             value={secrets}
             onChange={(e) => setSecrets(e.target.value)}
             >
@@ -270,45 +261,34 @@ const ProfileForm = ({hideForm}) => {
           Looking for
             <input
             type="text"
-            placeholder="looking for"
+            placeholder="no judgement: what do you want from this whole dating app thing?"
             value={looking_for}
             onChange={(e) => setLooking_for(e.target.value)}
             >
             </input>
         </label>
         <label>
-          User Audio
+          A Shower thought you recently had
             <input
             type="text"
-            placeholder="user audio"
+            placeholder="record yourself or any audio that represents you!"
             value={user_audio}
             onChange={(e) => setUser_audio(e.target.value)}
             >
             </input>
         </label>
-
-
-        {/* <label>
-          Gender
-            <input
-            type="text"
-            placeholder="gender id"
-            value={gender_id}
-            onChange={(e) => setGender_id(e.target.value)}
-            >
-            </input>
-        </label> */}
-
-        <label>
-          Gender
+        <label className="selectField">
+          <span className="labelName">Gender</span>
           <select value={gender_id} onChange={(e) => setGender_id(+e.target.value)}>
+            {/* <option value='1' disabled>Select a gender</option> */}
             <option value="1">Women</option>
             <option value="2">Male</option>
           </select>
         </label>
-        <label>
-          Gender Preference
+        <label className="selectField">
+          <span className="labelName">Gender Preference</span>
           <select value={gender_preference_id} onChange={(e) => setGender_preference_id(+e.target.value)}>
+            {/* <option value='1' disabled>Select a gender preference </option> */}
             <option value="1">Women</option>
             <option value="2">Male</option>
           </select>
@@ -440,7 +420,7 @@ const ProfileForm = ({hideForm}) => {
           height
             <input
             type="text"
-            placeholder="height"
+            placeholder="use cm please"
             value={height}
             onChange={(e) => setHeight(e.target.value)}
             >
@@ -466,16 +446,7 @@ const ProfileForm = ({hideForm}) => {
             >
             </input>
         </label>
-        {/* <label>
-          Horoscope
-            <input
-            type="text"
-            placeholder="horoscope"
-            value={horoscope_id}
-            onChange={(e) => setHoroscope_id(e.target.value)}
-            >
-            </input>
-        </label> */}
+
         <label>
           Horoscope
           <select value={horoscope_id} onChange={(e) => setHoroscope_id(+e.target.value)}>
