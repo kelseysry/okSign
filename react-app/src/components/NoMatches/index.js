@@ -48,10 +48,10 @@ const NoMatches = ({user_id}) => {
         <div className="newUserButtons">
           <button className="newUserButton"
           onClick={() => {handleQuestionRedirect()}}
-          >Fill Out Questions <i class="fas fa-newspaper"></i></button>
+          >Fill Out Questions &nbsp; <i class="fas fa-newspaper"></i></button>
           <button className="newUserButton"
           onClick={() => {handleCreateProfileRedirect()}}
-          >Create Profile <i class="fas fa-address-card"></i></button>
+          >Create Profile &nbsp; <i class="fas fa-address-card"></i></button>
         </div>
       </section>
     </>
