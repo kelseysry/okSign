@@ -307,7 +307,7 @@ const ProfileForm = ({hideForm}) => {
           Image Url 1
             <input
             type="text"
-            placeholder="image url 1"
+            placeholder="don't use a photo that clearly has another person cropped out"
             value={image_url1}
             onChange={(e) => setImage_url1(e.target.value)}
             >
@@ -317,7 +317,7 @@ const ProfileForm = ({hideForm}) => {
           Image Url 2
             <input
             type="text"
-            placeholder="image url 2"
+            placeholder="a picture is worth a 1000 words"
             value={image_url2}
             onChange={(e) => setImage_url2(e.target.value)}
             >
@@ -327,7 +327,7 @@ const ProfileForm = ({hideForm}) => {
           Image Url 3
             <input
             type="text"
-            placeholder="image url 3"
+            placeholder="a picture can make up for a bad bio"
             value={image_url3}
             onChange={(e) => setImage_url3(e.target.value)}
             >
@@ -337,7 +337,7 @@ const ProfileForm = ({hideForm}) => {
           Image Url 4
             <input
             type="text"
-            placeholder="image url 4"
+            placeholder="don't use mirror selfies"
             value={image_url4}
             onChange={(e) => setImage_url4(e.target.value)}
             >
@@ -347,7 +347,7 @@ const ProfileForm = ({hideForm}) => {
           Image Url 5
             <input
             type="text"
-            placeholder="image url 5"
+            placeholder="have your friends pick out your best photos"
             value={image_url5}
             onChange={(e) => setImage_url5(e.target.value)}
             >
@@ -357,26 +357,15 @@ const ProfileForm = ({hideForm}) => {
           Image Url 6
             <input
             type="text"
-            placeholder="image url 6"
+            placeholder="try not to use group pictures..., we're not playing find waldo"
             value={image_url6}
             onChange={(e) => setImage_url6(e.target.value)}
             >
             </input>
         </label>
 
-        {/* <label>
-          Orientation
-            <input
-            type="text"
-            placeholder="orientation id"
-            value={orientation_id}
-            onChange={(e) => setOrientation_id(e.target.value)}
-            >
-            </input>
-        </label> */}
-
-        <label>
-          Orientation
+        <label className="selectField">
+          <span className="labelName">Orientation</span>
           <select value={orientation_id} onChange={(e) => setOrientation_id(+e.target.value)}>
             <option value="1">Straight</option>
             <option value="2">Lesbian</option>
@@ -386,19 +375,9 @@ const ProfileForm = ({hideForm}) => {
             <option value="6">Pansexual</option>
           </select>
         </label>
-        {/* <label>
-          Partner
-            <input
-            type="text"
-            placeholder="partner id"
-            value={partner_id}
-            onChange={(e) => setPartner_id(e.target.value)}
-            >
-            </input>
-        </label> */}
 
-        <label>
-          Partner
+        <label className="selectField">
+        <span className="labelName">What is your relationship status?</span>
           <select value={partner_id} onChange={(e) => setPartner_id(+e.target.value)}>
             <option value="1">Monogamous</option>
             <option value="2">Non-monogamous</option>
@@ -420,7 +399,7 @@ const ProfileForm = ({hideForm}) => {
           height
             <input
             type="text"
-            placeholder="use cm please"
+            placeholder="use cm please for our international users"
             value={height}
             onChange={(e) => setHeight(e.target.value)}
             >
@@ -430,7 +409,7 @@ const ProfileForm = ({hideForm}) => {
           Education
             <input
             type="text"
-            placeholder="education"
+            placeholder="what is your latest degree from?"
             value={education}
             onChange={(e) => setEducation(e.target.value)}
             >
@@ -440,15 +419,15 @@ const ProfileForm = ({hideForm}) => {
           Occupation
             <input
             type="text"
-            placeholder="occupation"
+            placeholder="where do you work?"
             value={occupation}
             onChange={(e) => setOccupation(e.target.value)}
             >
             </input>
         </label>
 
-        <label>
-          Horoscope
+        <label className="selectField">
+          <span className="labelName">Horoscope</span>
           <select value={horoscope_id} onChange={(e) => setHoroscope_id(+e.target.value)}>
             <option value="1">Aries</option>
             <option value="2">Taurus</option>
@@ -465,8 +444,8 @@ const ProfileForm = ({hideForm}) => {
           </select>
         </label>
 
-        <label>
-          Smoking
+        <label className="selectField">
+          <span className="labelName">Smoking</span>
           <select value={smoking_id} onChange={(e) => setSmoking(+e.target.value)}>
             <option value="1">Smokes cigarettes regularly</option>
             <option value="2">Smokes cigarettes sometimes</option>
@@ -475,8 +454,8 @@ const ProfileForm = ({hideForm}) => {
           </select>
         </label>
 
-        <label>
-          Drinking
+        <label className="selectField">
+          <span className="labelName">Drinking</span>
           <select value={drinking_id} onChange={(e) => setDrinking(+e.target.value)}>
             <option value="1">Drinks often</option>
             <option value="2">Drinks sometimes</option>
@@ -484,17 +463,8 @@ const ProfileForm = ({hideForm}) => {
           </select>
         </label>
 
-
-        {/* <label>
-          Drinking
-          <select value={drinking} onChange={(e) => setDrinking(+e.target.value)}>
-          <option value="true">yes</option>
-          <option value="false">no</option>
-          </select>
-        </label> */}
-
-        <label>
-          Children
+        <label className="selectField">
+          <span className="labelName">Children</span>
           <select value={children_id} onChange={(e) => setChildren_id(+e.target.value)}>
             <option value="1">Doesn't have kids but might want them</option>
             <option value="2">Doesn't have kids but wants them</option>
@@ -504,19 +474,9 @@ const ProfileForm = ({hideForm}) => {
             <option value="6">Has kids and want more</option>
           </select>
         </label>
-{/*
-        <label>
-          Pet
-            <input
-            type="text"
-            placeholder="pet_id"
-            value={pet_id}
-            onChange={(e) => setPet_id(e.target.value)}
-            >
-            </input>
-        </label> */}
-       <label>
-          Pets
+
+       <label className="selectField">
+          <span className="labelName">Pets</span>
           <select value={pet_id} onChange={(e) => setPet_id(+e.target.value)}>
             <option value="1">Doesn't have pets</option>
             <option value="2">Cat</option>
@@ -525,8 +485,8 @@ const ProfileForm = ({hideForm}) => {
           </select>
         </label>
 
-        <label>
-          Politic
+        <label className="selectField">
+          <span className="labelName">Politics</span>
           <select value={politic_id} onChange={(e) => setPolitic_id(+e.target.value)}>
             <option value="1">Politically liberal</option>
             <option value="2">Politically moderate</option>
@@ -535,8 +495,8 @@ const ProfileForm = ({hideForm}) => {
           </select>
         </label>
 
-        <label>
-          Religion
+        <label className="selectField">
+          <span className="labelName">Religion</span>
           <select value={religion_id} onChange={(e) => setReligion_id(+e.target.value)}>
             <option value="1">Agnosticism</option>
             <option value="2">Atheism</option>
@@ -550,39 +510,19 @@ const ProfileForm = ({hideForm}) => {
             <option value="10">Other religion</option>
           </select>
         </label>
-
-        {/* <label>
-          Politic
-            <input
-            type="text"
-            placeholder="politic"
-            value={politic_id}
-            onChange={(e) => setPolitic_id(e.target.value)}
-            >
-            </input>
-        </label> */}
-        {/* <label>
-          Religion
-            <input
-            type="text"
-            placeholder="religion"
-            value={religion_id}
-            onChange={(e) => setReligion_id(e.target.value)}
-            >
-            </input>
-        </label> */}
-
         <ul className="error">
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
         <button
-          className="mobile-submit-create-business"
+          className="ProfileFormSubmitButton"
           type="submit"
           disabled={errors.length>0}
         >
           Submit
         </button>
-        <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
+        {/* <button type="button"
+        className="ProfileFormSubmitButton"
+        onClick={handleCancelFormEditClick}>Cancel</button> */}
         </form>
       </section>
       </>
