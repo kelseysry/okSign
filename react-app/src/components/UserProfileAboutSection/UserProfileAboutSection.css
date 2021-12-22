@@ -42,3 +42,12 @@ body {
   padding-top: 2px;
   padding: 10px;
 }
+
+.match-profile-all-content {
+  display: flex;
+  justify-content: center;
+}
+
+.about-section {
+  margin-right: 20px;
+}
