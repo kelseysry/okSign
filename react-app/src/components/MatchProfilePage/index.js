@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from 'react';
 import { getProfiles } from '../../store/profile';
 import MatchProfile from '../MatchProfile';
+import MatchProfilePicsPercent from '../MatchProfilePicsPercent';
 
 
 const MatchProfilePage = () => {
@@ -39,8 +40,7 @@ const MatchProfilePage = () => {
     {
       isLoaded && matchProfileObj[0]?.user_id && (
         <>
-        <div>in match profile page {matchProfileObj[0]?.age}</div>
-        <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
+          <MatchProfilePicsPercent matchProfileObj={matchProfileObj}/>
         </>
       )
     }
