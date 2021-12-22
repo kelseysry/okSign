@@ -20,7 +20,7 @@ const Discover = () => {
 
 
   useEffect(async ()=>{
-    await dispatch(getQuestions())
+    await dispatch(getQuestions())  
 }, [dispatch, questions.length])
 
 
