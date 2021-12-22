@@ -187,3 +187,19 @@ a {
   padding-bottom: 20px;
   justify-content: center;
 }
+
+
+.match-user-about-container {
+  margin-top: 20px;
+  align-items: center;
+}
+
+.match-percent-container {
+  width: 542px;
+  align-self: center;
+}
+
+.about-detail-container {
+  display: flex;
+  justify-content: center;
+}

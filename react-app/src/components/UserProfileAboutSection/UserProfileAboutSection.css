@@ -16,12 +16,7 @@ body {
   border-top-right-radius: 5px;
 }
 
-.match-profile-all-content {
-  width: 940px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+
 
 .about-section {
   width: 542px;
@@ -47,4 +42,3 @@ body {
   padding-top: 2px;
   padding: 10px;
 }
-

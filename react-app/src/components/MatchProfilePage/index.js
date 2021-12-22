@@ -7,6 +7,8 @@ import MatchProfile from '../MatchProfile';
 import MatchProfilePercent from '../MatchProfilePercent';
 import MatchProfilePics from '../MatchProfilePics';
 import UserProfileAboutSection from '../UserProfileAboutSection';
+import MatchAboutSection from '../MatchAboutSection';
+import MatchDetailSection from '../MatchDetailSection';
 
 
 const MatchProfilePage = () => {
@@ -42,9 +44,25 @@ const MatchProfilePage = () => {
     {
       isLoaded && matchProfileObj[0]?.user_id && (
         <>
-          <MatchProfilePics matchProfileObj={matchProfileObj}/>
-          <UserProfileAboutSection currentUserProfile={matchProfileObj}/>
-          <MatchProfilePercent matchProfileObj={matchProfileObj}/>
+          <div className="Entire-Match-Profile-Container">
+            <div className="match-profile-pics-container">
+              <MatchProfilePics matchProfileObj={matchProfileObj}/>
+            </div>
+
+            <div className="about-detail-container">
+              <div className="match-user-about-container">
+                <MatchAboutSection currentUserProfile={matchProfileObj}/>
+                <MatchProfilePercent matchProfileObj={matchProfileObj}/>
+              </div>
+              <div className="match-user-detail-container">
+                <MatchDetailSection currentUserProfile={matchProfileObj}/>
+              </div>
+            </div>
+
+
+
+
+          </div>
         </>
       )
     }

@@ -10,9 +10,8 @@ import { getPolitics } from '../../store/politic';
 import { getReligions } from '../../store/religion';
 import { getPartners } from '../../store/partner';
 import { getOrientations } from '../../store/orientation';
-import './UserProfileAboutSection.css'
 
-function UserProfileAboutSection(currentUserProfile) {
+function MatchDetailSection(currentUserProfile) {
   const dispatch = useDispatch()
 
   // console.log("currentProfile", currentUserProfile)
@@ -198,81 +197,7 @@ function UserProfileAboutSection(currentUserProfile) {
 
     <div className="match-profile-all-content">
 
-      <section className="about-section">
-
-        <div  className="one-detail-container">
-          <div className="about-div-header">About me</div>
-          <div className="one-detail-content">
-            {currentProfile[0]?.about_me}
-          </div>
-        </div>
-
-        <div  className="one-detail-container">
-          <div className="about-div-header">Goal</div>
-          <div className="one-detail-content">
-          {currentProfile[0]?.goal}
-          </div>
-        </div>
-
-        <div  className="one-detail-container">
-          <div className="about-div-header">Talent</div>
-          <div className="one-detail-content">
-          {currentProfile[0]?.talent}
-          </div>
-        </div>
-
-        <div  className="one-detail-container">
-          <div className="about-div-header">My Traits</div>
-          <div className="one-detail-content">
-          {currentProfile[0]?.my_traits}
-          </div>
-        </div>
-
-        <div  className="one-detail-container">
-          <div className="about-div-header">Needs</div>
-          <div className="one-detail-content">
-          {currentProfile[0]?.needs}
-          </div>
-        </div>
-
-        <div  className="one-detail-container">
-          <div className="about-div-header">Hobbies</div>
-          <div className="one-detail-content">
-          {currentProfile[0]?.hobbies}
-          </div>
-        </div>
-
-        <div  className="one-detail-container">
-          <div className="about-div-header">Moments</div>
-          <div className="one-detail-content">
-          {currentProfile[0]?.moments}
-          </div>
-        </div>
-
-        <div  className="one-detail-container">
-          <div className="about-div-header">Secrets</div>
-          <div className="one-detail-content">
-          {currentProfile[0]?.secrets}
-          </div>
-        </div>
-
-        <div  className="one-detail-container">
-          <div className="about-div-header">Looking for</div>
-          <div className="one-detail-content">
-          {currentProfile[0]?.looking_for}
-          </div>
-        </div>
-
-        <div  className="one-detail-container">
-          <div className="about-div-header">Audio</div>
-          <div className="one-detail-content">
-          {currentProfile[0]?.user_audio}
-          </div>
-        </div>
-
-      </section>
-
-        <section className="Details">
+        <section className="">
             <div className="about-div-header">Details</div>
               <div className="details-container">
               <div className="one-detail">
@@ -321,4 +246,4 @@ function UserProfileAboutSection(currentUserProfile) {
   )
 }
 
-export default UserProfileAboutSection
+export default MatchDetailSection
