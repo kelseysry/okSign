@@ -178,11 +178,12 @@ const MatchProfilePicsPercent = ({matchProfileObj}) => {
               <div className="agreeTable">
                 <div className="agree">
                   <div>Agree</div>
-                  {/* <div>🥰 {userIdPercentObj[1]}</div> */}
+                  {matchPercentIndexed? <div>🥰 {Number(matchPercentIndexed[1])}</div> :null}
                 </div>
                 <div className="disagree">
                   <div>Disagree</div>
                   {/* <div>🙃 {disagree}</div> */}
+                  {matchPercentIndexed? <div>🥰 {10 - Number(matchPercentIndexed[1])}</div> :null}
                 </div>
               </div>
             </div>
