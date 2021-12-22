@@ -134,7 +134,7 @@ if(currentUserQuestion) {
         {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
           <div key={idx}>
             <NavLink
-              to={`/matchProfile/${userIdPercentObj[0]}`}
+              to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id 
               >
               <MatchProfile userIdPercentObj={userIdPercentObj}/>
             </NavLink>

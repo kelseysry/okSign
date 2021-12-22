@@ -1,6 +1,6 @@
 
 import { useSelector, useDispatch } from "react-redux";
-import { GetMatches } from "../../context/MatchesContext";
+// import { GetMatches } from "../../context/MatchesContext";
 import MatchConversationTile from "../MatchConversationTile";
 import { NavLink } from 'react-router-dom';
 import { getConversations } from "../../store/conversation";
@@ -13,8 +13,8 @@ import NoConversations from "../NoConversations";
 const Conversations = () => {
   const dispatch = useDispatch()
   // matchProfilesIds is actually the user.id
-  const {matchedProfileIds} = GetMatches()
-  console.log("match profile ids from context", matchedProfileIds)
+  // const {matchedProfileIds} = GetMatches()
+  // console.log("match profile ids from context", matchedProfileIds)
 
   const conversationObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationObj)

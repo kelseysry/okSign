@@ -13,7 +13,7 @@ const MatchConversationTile = ({profile_id}) => {
   const profilesObj = useSelector((state) => state.profile)
   const profiles = Object.values(profilesObj)
 
-  console.log("profiles in match tile ", profiles)
+  // console.log("profiles in match tile ", profiles)
 
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
