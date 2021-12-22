@@ -197,7 +197,7 @@ function MatchDetailSection(currentUserProfile) {
 
     <div className="match-profile-all-content">
 
-        <section className="">
+        <section className="detail-container">
             <div className="about-div-header">Details</div>
               <div className="details-container">
               <div className="one-detail">
