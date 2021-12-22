@@ -127,7 +127,6 @@ hr {
 
 .circlesContainer {
 position: relative;
-background: cornflowerblue;
 }
 
 .agree, .disagree {
@@ -145,6 +144,8 @@ background: cornflowerblue;
 .agree, .disagree {
   display: flex;
   justify-content: space-between;
+  color: black;
+
 }
 
 .agreeTable {
@@ -168,4 +169,45 @@ background: cornflowerblue;
 
 .matchButtonMessage {
   padding-right: 30px;
+}
+
+.navLinkRemove {
+  text-decoration: none;
+  color: black;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+.match_profile_images_container_user {
+  display: flex;
+  padding: 0px 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+}
+
+
+.match-user-about-container {
+  margin-top: 20px;
+  align-items: center;
+}
+
+.match-percent-container {
+  width: 542px;
+  align-self: center;
+}
+
+.about-detail-container {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-container {
+  margin-top: 20px;
+}
+
+.match-user-about-container {
+  margin-right: 20px;
 }

@@ -1,0 +1,44 @@
+body {
+  background-color:#f3f5f9;
+}
+
+.one-detail-container {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+.about-div-header {
+  background: #1a1a1a;
+  padding: 10px 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+
+
+.about-section {
+  width: 542px;
+}
+
+.Details {
+  width: 380px;
+}
+
+.one-detail-content {
+  padding: 15px;
+}
+
+.details-container {
+  padding: 15px;
+  background: #fff;
+}
+
+.one-detail {
+  font-size: 1.0625rem;
+  line-height: 25px;
+  color: #2a2f35;
+  padding-top: 2px;
+  padding: 10px;
+}

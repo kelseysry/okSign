@@ -1,6 +1,7 @@
 
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from 'react';
+import { NavLink } from "react-router-dom";
 import MatchProfile from "../MatchProfile";
 import { getQuestions } from "../../store/question";
 import NoMatches from "../NoMatches";
@@ -20,7 +21,7 @@ const Discover = () => {
 
 
   useEffect(async ()=>{
-    await dispatch(getQuestions())  
+    await dispatch(getQuestions())
 }, [dispatch, questions.length])
 
 
@@ -132,7 +133,11 @@ if(currentUserQuestion) {
       <div className="">
         {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
           <div key={idx}>
-            <MatchProfile userIdPercentObj={userIdPercentObj}/>
+            <NavLink
+              to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id 
+              >
+              <MatchProfile userIdPercentObj={userIdPercentObj}/>
+            </NavLink>
           </div>
         )}
       </div>

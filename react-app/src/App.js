@@ -20,6 +20,7 @@ import EditQuestionForm from './components/EditQuestionForm';
 import QuestionForm from './components/QuestionForm';
 import QuestionPageAnswered from './components/QuestionPageAnswered';
 import QuestionPage from './components/QuestionPage';
+import MatchProfilePage from './components/MatchProfilePage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -84,6 +85,12 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/questions' exact={true} >
           <QuestionPage />
+        </ProtectedRoute>
+        
+        <ProtectedRoute path='/matchProfile/:profileId' exact={true} >
+          <MatchesProvider>
+            <MatchProfilePage />
+          </MatchesProvider>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

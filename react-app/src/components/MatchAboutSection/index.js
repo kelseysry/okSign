@@ -10,9 +10,8 @@ import { getPolitics } from '../../store/politic';
 import { getReligions } from '../../store/religion';
 import { getPartners } from '../../store/partner';
 import { getOrientations } from '../../store/orientation';
-import './UserProfileAboutSection.css'
 
-function UserProfileAboutSection(currentUserProfile) {
+function MatchAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
 
   // console.log("currentProfile", currentUserProfile)
@@ -196,9 +195,9 @@ function UserProfileAboutSection(currentUserProfile) {
   return (
     <>
 
-    <div className="match-profile-all-content">
+    <div className="">
 
-      <section className="about-section">
+      <section className="">
 
         <div  className="one-detail-container">
           <div className="about-div-header">About me</div>
@@ -272,53 +271,9 @@ function UserProfileAboutSection(currentUserProfile) {
 
       </section>
 
-        <section className="Details">
-            <div className="about-div-header">Details</div>
-              <div className="details-container">
-              <div className="one-detail">
-                {getGender(currentProfile[0]?.gender_id)} | {getOrientation(currentProfile[0]?.orientation_id)} | {getPartner(currentProfile[0]?.partner_id)} | {currentProfile[0]?.pronouns}
-              </div>
-
-              <div className="one-detail">
-              <i class="fas fa-male"></i> {currentProfile[0]?.height} cm
-              </div>
-
-              <div className="one-detail">
-              <i class="fas fa-graduation-cap"></i> {currentProfile[0]?.education}
-              </div>
-
-              <div className="one-detail">
-              <i class="fas fa-briefcase"></i> {currentProfile[0]?.occupation}
-              </div>
-
-              <div className="one-detail">
-              <i class="fas fa-bolt"></i> {getHoroscope(currentProfile[0]?.horoscope_id)}
-              </div>
-
-              <div className="one-detail">
-              <i class="fas fa-cocktail"></i> {getSmoking(currentProfile[0]?.smoking_id)} | {getDrinking(currentProfile[0]?.drinking_id)}
-              </div>
-
-              <div className="one-detail">
-                <i class="fas fa-baby"></i> {getChildrenText(currentProfile[0]?.children_id)}
-              </div>
-
-              <div className="one-detail">
-              <i class="fas fa-paw"></i> {getPet(currentProfile[0]?.pet_id)}
-              </div>
-
-              <div className="one-detail">
-              <i class="fas fa-landmark"></i> {getPolitic(currentProfile[0]?.politic_id)}
-              </div>
-
-              <div className="one-detail">
-                <i class="fas fa-pray"></i> {getReligion(currentProfile[0]?.religion_id)}
-              </div>
-          </div>
-        </section>
         </div>
       </>
   )
 }
 
-export default UserProfileAboutSection
+export default MatchAboutSection
