@@ -10,7 +10,8 @@
   color: white;
   font-size: 30px;
   margin-bottom: 20px;
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .oneMatchProfileContainer {
@@ -150,7 +151,7 @@ background: cornflowerblue;
   width: 200px;
 }
 
-.fa-heart {
+.fa-heart, .fa-comment-dots {
   font-size: 15px;
 }
 
@@ -159,4 +160,12 @@ background: cornflowerblue;
 .spacer-match {
   background: #f3f5f9;
   height: 30px;
+}
+
+.matchButton, .matchButtonMessage {
+  color: #fff;
+}
+
+.matchButtonMessage {
+  padding-right: 30px;
 }

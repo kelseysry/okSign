@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import './MatchProfile.css'
 import { createConversation } from "../../store/conversation";
 import { useHistory } from 'react-router';
-import { getConversations } from "../../store/conversation";
+import { getConversations, clearConversation } from "../../store/conversation";
 import { clearProfiles, getProfiles } from "../../store/profile";
 const MatchProfile = ({userIdPercentObj}) => {
   const dispatch = useDispatch()
@@ -29,14 +29,25 @@ const MatchProfile = ({userIdPercentObj}) => {
   const conversationsObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationsObj)[0]
 
+  console.log("conversations-------", conversations)
 
   useEffect(async () => {
+
     await dispatch(getProfiles())
-    await dispatch(getConversations())
+    // await dispatch(getConversations())
 
     if (!isLoaded) setIsLoaded(true);
 
   }, [dispatch, profiles.length, isLoaded, conversations?.length])
+
+  useEffect(async () => {
+    await dispatch(clearConversation())
+    await dispatch(getConversations())
+
+    if (!isLoaded) setIsLoaded(true);
+
+  }, [dispatch, profiles.length])
+
 
   useEffect(() => {
     async function fetchData() {
@@ -124,7 +135,7 @@ const MatchProfile = ({userIdPercentObj}) => {
 
   let userProfileObj = (getUserProfile(user_id_one))
 
-  console.log("userProfileObh", userProfileObj)
+  // console.log("userProfileObh", userProfileObj)
 
 
   const handleCreateConversation = async (discoverProfileId) => {
@@ -160,12 +171,19 @@ const MatchProfile = ({userIdPercentObj}) => {
       <div className="oneMatchProfileContainer">
           <div className="oneMatchProfileContainerHeader">
             {getUserName(matchProfileObj[0]?.user_id)}
-          </div>
-          {/* <button
-            onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
-          >Message  <i className="far fa-comment-dots"></i></button>
+            <div className="matchButtonsContainer">
+              <button
+              className="matchButton"
+              onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
+              >Message  <i className="far fa-comment-dots"></i></button>
 
-          <button>Like  <i className="fas fa-heart"></i></button> */}
+              <button
+              className="matchButton"
+              >Like  <i className="fas fa-heart"></i></button>
+            </div>
+
+          </div>
+
           <div className="match_profile_images_container">
             <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
             <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
