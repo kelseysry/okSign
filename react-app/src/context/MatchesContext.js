@@ -120,14 +120,14 @@ let currentUserQuestion = questionsRender?.filter((question) => {return question
   // profiles are being selected via id user_id directly correlates to profile.id
   let matchedProfileIds = Object.keys(counter)
 
-  let userIdsPercentsObj = Object.keys(counter).map(function (key) {
+  let userIdsPercentsArr = Object.keys(counter).map(function (key) {
     return [Number(key), counter[key]];
 });
 
 // console.log("matchprofileid in match🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃", matchedProfileIds)
 
   return (
-    <MatchesContext.Provider value={{userIdsPercentsObj}}>
+    <MatchesContext.Provider value={{userIdsPercentsArr}}>
       {props.children}
     </MatchesContext.Provider>
   )

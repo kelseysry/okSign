@@ -86,6 +86,7 @@ function App() {
         <ProtectedRoute path='/questions' exact={true} >
           <QuestionPage />
         </ProtectedRoute>
+        
         <ProtectedRoute path='/matchProfile/:profileId' exact={true} >
           <MatchesProvider>
             <MatchProfilePage />
