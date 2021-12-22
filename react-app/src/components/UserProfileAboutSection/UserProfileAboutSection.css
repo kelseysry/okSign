@@ -37,6 +37,7 @@ body {
 
 .details-container {
   padding: 15px;
+  background: #fff;
 }
 
 .one-detail {
@@ -46,3 +47,4 @@ body {
   padding-top: 2px;
   padding: 10px;
 }
+

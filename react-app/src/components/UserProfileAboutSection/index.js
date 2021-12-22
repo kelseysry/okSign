@@ -207,36 +207,65 @@ function UserProfileAboutSection(currentUserProfile) {
 
         <div  className="one-detail-container">
           <div className="about-div-header">Goal</div>
+          <div className="one-detail-content">
           {currentProfile[0]?.goal}
+          </div>
         </div>
 
+        <div  className="one-detail-container">
+          <div className="about-div-header">Talent</div>
+          <div className="one-detail-content">
+          {currentProfile[0]?.talent}
+          </div>
+        </div>
 
-        <div>
-          goal : {currentProfile[0]?.goal}
+        <div  className="one-detail-container">
+          <div className="about-div-header">My Traits</div>
+          <div className="one-detail-content">
+          {currentProfile[0]?.my_traits}
+          </div>
         </div>
-        <div>
-          talent : {currentProfile[0]?.talent}
+
+        <div  className="one-detail-container">
+          <div className="about-div-header">Needs</div>
+          <div className="one-detail-content">
+          {currentProfile[0]?.needs}
+          </div>
         </div>
-        <div>
-          my traits : {currentProfile[0]?.my_traits}
+
+        <div  className="one-detail-container">
+          <div className="about-div-header">Hobbies</div>
+          <div className="one-detail-content">
+          {currentProfile[0]?.hobbies}
+          </div>
         </div>
-        <div>
-          needs : {currentProfile[0]?.needs}
+
+        <div  className="one-detail-container">
+          <div className="about-div-header">Moments</div>
+          <div className="one-detail-content">
+          {currentProfile[0]?.moments}
+          </div>
         </div>
-        <div>
-          hobbies : {currentProfile[0]?.hobbies}
+
+        <div  className="one-detail-container">
+          <div className="about-div-header">Secrets</div>
+          <div className="one-detail-content">
+          {currentProfile[0]?.secrets}
+          </div>
         </div>
-        <div>
-          moments : {currentProfile[0]?.moments}
+
+        <div  className="one-detail-container">
+          <div className="about-div-header">Looking for</div>
+          <div className="one-detail-content">
+          {currentProfile[0]?.looking_for}
+          </div>
         </div>
-        <div>
-          secrets : {currentProfile[0]?.secrets}
-        </div>
-        <div>
-          looking for : {currentProfile[0]?.looking_for}
-        </div>
-        <div>
-          user audio : {currentProfile[0]?.user_audio}
+
+        <div  className="one-detail-container">
+          <div className="about-div-header">Audio</div>
+          <div className="one-detail-content">
+          {currentProfile[0]?.user_audio}
+          </div>
         </div>
       </section>
 
