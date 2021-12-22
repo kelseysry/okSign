@@ -145,6 +145,8 @@ background: cornflowerblue;
 .agree, .disagree {
   display: flex;
   justify-content: space-between;
+  color: black;
+
 }
 
 .agreeTable {
@@ -168,4 +170,15 @@ background: cornflowerblue;
 
 .matchButtonMessage {
   padding-right: 30px;
+}
+
+.navLinkRemove {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+a {
+  text-decoration: none;
 }
