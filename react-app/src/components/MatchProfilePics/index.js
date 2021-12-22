@@ -147,10 +147,13 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
           </div>
 
-          <div className="match_profile_images_container">
+          <div className="match_profile_images_container_user">
             <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
             <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
             <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
+            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url4} alt="match_image"/>
+            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url5} alt="match_image"/>
+            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url6} alt="match_image"/>
           </div>
       </div>
       </>

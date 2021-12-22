@@ -197,9 +197,12 @@ function UserProfileAboutSection(currentUserProfile) {
     <div className="match-profile-all-content">
 
       <section className="about-section">
+
         <div  className="one-detail-container">
           <div className="about-div-header">About me</div>
-          {currentProfile[0]?.about_me}
+          <div className="one-detail-content">
+            {currentProfile[0]?.about_me}
+          </div>
         </div>
 
         <div  className="one-detail-container">
@@ -238,51 +241,47 @@ function UserProfileAboutSection(currentUserProfile) {
       </section>
 
         <section className="Details">
-          <h1> Details </h1>
-          <div>
-            gender :  {getGender(currentProfile[0]?.gender_id)}
-          </div>
-          <div>
-            number of likes: {currentProfile[0]?.number_likes}
-          </div>
-          <div>
-            orientation : {getOrientation(currentProfile[0]?.orientation_id)}
-          </div>
-          <div>
-            partner status: {getPartner(currentProfile[0]?.partner_id)}
-          </div>
-          <div>
-            pronouns: {currentProfile[0]?.pronouns}
-          </div>
-          <div>
-            height: {currentProfile[0]?.height} cm
-          </div>
-          <div>
-            education: {currentProfile[0]?.education}
-          </div>
-          <div>
-            occupation: {currentProfile[0]?.occupation}
-          </div>
-          <div>
-            horoscope : {getHoroscope(currentProfile[0]?.horoscope_id)}
-          </div>
-          <div>
-            smoking status: {getSmoking(currentProfile[0]?.smoking_id)}
-          </div>
-          <div>
-            drinking status: {getDrinking(currentProfile[0]?.drinking_id)}
-          </div>
-          <div>
-            children status: {getChildrenText(currentProfile[0]?.children_id)}
-          </div>
-          <div>
-            pet status: {getPet(currentProfile[0]?.pet_id)}
-          </div>
-          <div>
-            political status: {getPolitic(currentProfile[0]?.politic_id)}
-          </div>
-          <div>
-            religion status: {getReligion(currentProfile[0]?.religion_id)}
+            <div className="about-div-header">Details</div>
+              <div  className="details-container">
+              <div>
+                {getGender(currentProfile[0]?.gender_id)} | {getOrientation(currentProfile[0]?.orientation_id)} | {getPartner(currentProfile[0]?.partner_id)} | {currentProfile[0]?.pronouns}
+              </div>
+
+              <div>
+              <i class="fas fa-male"></i> {currentProfile[0]?.height} cm
+              </div>
+
+              <div>
+              <i class="fas fa-graduation-cap"></i> {currentProfile[0]?.education}
+              </div>
+
+              <div>
+              <i class="fas fa-briefcase"></i> {currentProfile[0]?.occupation}
+              </div>
+
+              <div>
+              <i class="fas fa-bolt"></i> {getHoroscope(currentProfile[0]?.horoscope_id)}
+              </div>
+
+              <div>
+              <i class="fas fa-cocktail"></i> {getSmoking(currentProfile[0]?.smoking_id)} | {getDrinking(currentProfile[0]?.drinking_id)}
+              </div>
+
+              <div>
+                <i class="fas fa-baby"></i> {getChildrenText(currentProfile[0]?.children_id)}
+              </div>
+
+              <div>
+              <i class="fas fa-paw"></i> {getPet(currentProfile[0]?.pet_id)}
+              </div>
+
+              <div>
+              <i class="fas fa-landmark"></i> {getPolitic(currentProfile[0]?.politic_id)}
+              </div>
+
+              <div>
+                <i class="fas fa-pray"></i> {getReligion(currentProfile[0]?.religion_id)}
+              </div>
           </div>
         </section>
         </div>

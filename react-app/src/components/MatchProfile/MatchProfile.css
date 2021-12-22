@@ -180,3 +180,10 @@ position: relative;
 a {
   text-decoration: none;
 }
+
+.match_profile_images_container_user {
+  display: flex;
+  padding: 0px 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+}

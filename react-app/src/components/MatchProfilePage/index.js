@@ -43,8 +43,8 @@ const MatchProfilePage = () => {
       isLoaded && matchProfileObj[0]?.user_id && (
         <>
           <MatchProfilePics matchProfileObj={matchProfileObj}/>
-          <MatchProfilePercent matchProfileObj={matchProfileObj}/>
           <UserProfileAboutSection currentUserProfile={matchProfileObj}/>
+          <MatchProfilePercent matchProfileObj={matchProfileObj}/>
         </>
       )
     }
