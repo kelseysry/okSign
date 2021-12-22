@@ -1,0 +1,26 @@
+.one-detail-container {
+  margin-bottom: 20px;
+}
+
+.about-div-header {
+  background: #1a1a1a;
+  padding: 10px 15px;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.match-profile-all-content {
+  width: 940px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.about-section {
+  width: 542px;
+}
+
+.Details {
+  width: 380px;
+}

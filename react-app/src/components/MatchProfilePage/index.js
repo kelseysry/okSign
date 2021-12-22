@@ -6,6 +6,7 @@ import { getProfiles } from '../../store/profile';
 import MatchProfile from '../MatchProfile';
 import MatchProfilePercent from '../MatchProfilePercent';
 import MatchProfilePics from '../MatchProfilePics';
+import UserProfileAboutSection from '../UserProfileAboutSection';
 
 
 const MatchProfilePage = () => {
@@ -43,6 +44,7 @@ const MatchProfilePage = () => {
         <>
           <MatchProfilePics matchProfileObj={matchProfileObj}/>
           <MatchProfilePercent matchProfileObj={matchProfileObj}/>
+          <UserProfileAboutSection currentUserProfile={matchProfileObj}/>
         </>
       )
     }

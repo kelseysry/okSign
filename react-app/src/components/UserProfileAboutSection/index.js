@@ -10,7 +10,7 @@ import { getPolitics } from '../../store/politic';
 import { getReligions } from '../../store/religion';
 import { getPartners } from '../../store/partner';
 import { getOrientations } from '../../store/orientation';
-
+import './UserProfileAboutSection.css'
 
 function UserProfileAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -62,7 +62,6 @@ function UserProfileAboutSection(currentUserProfile) {
     await dispatch(getOrientations())
 
   }, [dispatch])
-
 
 
   const getHoroscope = (horoscopeId) => {
@@ -195,9 +194,20 @@ function UserProfileAboutSection(currentUserProfile) {
 
   return (
     <>
-        <div>
-          about me : {currentProfile[0]?.about_me}
+    <div className="match-profile-all-content">
+
+      <section className="about-section">
+        <div  className="one-detail-container">
+          <div className="about-div-header">About me</div>
+          {currentProfile[0]?.about_me}
         </div>
+
+        <div  className="one-detail-container">
+          <div className="about-div-header">Goal</div>
+          {currentProfile[0]?.goal}
+        </div>
+
+
         <div>
           goal : {currentProfile[0]?.goal}
         </div>
@@ -225,6 +235,7 @@ function UserProfileAboutSection(currentUserProfile) {
         <div>
           user audio : {currentProfile[0]?.user_audio}
         </div>
+      </section>
 
         <section className="Details">
           <h1> Details </h1>
@@ -274,6 +285,7 @@ function UserProfileAboutSection(currentUserProfile) {
             religion status: {getReligion(currentProfile[0]?.religion_id)}
           </div>
         </section>
+        </div>
       </>
   )
 }
