@@ -7,7 +7,7 @@ import { getConversations } from "../../store/conversation";
 import React, { useEffect } from 'react';
 import NoMatches from "../NoMatches";
 import NoConversations from "../NoConversations";
-
+import './Conversations.css'
 
 
 const Conversations = () => {
@@ -65,15 +65,21 @@ const Conversations = () => {
   let content;
   if(previousCurrentUserConversations?.length) {
     content = (
-      conversationsArray[0]?.map((conversation) =>
-    <div>
+      <>
+        <div className="ConversationHeaderContainer">
+          <div className="ConversationHeader">Your Conversations</div>
+        </div>
 
-        <NavLink to={`/conversations/${conversation?.id}`}>
-          <MatchConversationTile profile_id={getMatchProfileId(conversation.user_id_one, conversation.user_id_two)}/>
-        </NavLink>
+          {conversationsArray[0]?.map((conversation) =>
+            <div>
+                <NavLink to={`/conversations/${conversation?.id}`}>
+                  <MatchConversationTile profile_id={getMatchProfileId(conversation.user_id_one, conversation.user_id_two)}/>
+                </NavLink>
+            </div>
+          )}
+      </>
 
-    </div>
-      )
+
     )
   }  else {
     content = (
