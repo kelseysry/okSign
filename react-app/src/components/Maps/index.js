@@ -16,7 +16,7 @@ const center = {
 
 const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.REACT_APP_MAPS_KEY
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API
   })
 
   const containerStyle = {
@@ -61,9 +61,7 @@ const { isLoaded } = useJsApiLoader({
     return (
       // Important! Always set the container height explicitly
 <>
-    <script async
-      src={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAPS_KEY}&callback=initMap`}>
-    </script>
+
 
       <div className="map_page__container">
 
