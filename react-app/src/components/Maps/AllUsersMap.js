@@ -4,7 +4,7 @@ import { GoogleMap, useJsApiLoader, Marker, InfoWindow, DirectionsService, Direc
 import { Polyline } from '@react-google-maps/api';
 import './Maps.css'
 
-const MapTwoUsers= ({user, match}) => {
+const AllUsersMap= ({user, match}) => {
 
   // console.log("match in page", match)
   // console.log("user in page", user)
@@ -139,4 +139,4 @@ const { isLoaded } = useJsApiLoader({
 
 }
 
-export default MapTwoUsers
+export default AllUsersMap

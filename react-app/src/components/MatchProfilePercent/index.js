@@ -5,6 +5,7 @@ import { getProfiles } from "../../store/profile";
 import { GetMatches } from "../../context/MatchesContext";
 
 import { useHistory } from 'react-router';
+import MapTwoUsers from "../Maps";
 
 const MatchProfilePercent = ({matchProfileObj}) => {
   const dispatch = useDispatch()
@@ -120,6 +121,8 @@ const MatchProfilePercent = ({matchProfileObj}) => {
             </div>
 
           </div>
+
+          <MapTwoUsers user={userProfileObj} match={matchProfileObj}/>
 
       </>
 
