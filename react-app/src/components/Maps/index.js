@@ -60,7 +60,14 @@ const { isLoaded } = useJsApiLoader({
 
     return (
       // Important! Always set the container height explicitly
+<>
+    <script async
+      src={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAPS_KEY}&callback=initMap`}>
+    </script>
+
       <div className="map_page__container">
+
+
 
         <div style={{ height: '900px', width: '900px' }}>
         {isLoaded ?<GoogleMap
@@ -108,6 +115,7 @@ const { isLoaded } = useJsApiLoader({
         <div id='panel'>
         </div>
       </div>
+  </>
     );
 
 }
