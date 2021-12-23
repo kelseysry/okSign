@@ -9,11 +9,11 @@ const MapPageE= (image) => {
   console.log("image in map", image.image[0].image_url1)
 
 const center = {
-  lat: 0,
+  lat: 35,
   lng: -180
 };
 
-const markers = [{id:2, lat: 33.85897723024835, lng: -118.08115190136616, name:"randoWhy", color:"red"}, {id:1, lat: 35.66386037006631	, lng: 139.71280545767016, name:"kels", color:"blue"}]
+const markers = [{id:2, lat: 33.85897723024835, lng: -118.08115190136616}, {id:1, lat: 35.66386037006631	, lng: 139.71280545767016}]
 
 const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -21,8 +21,8 @@ const { isLoaded } = useJsApiLoader({
   })
 
   const containerStyle = {
-    width: '800px',
-    height: '800px'
+    width: '700px',
+    height: '500px'
   };
 
 
@@ -78,7 +78,7 @@ const { isLoaded } = useJsApiLoader({
               key={marker.id}
               position={{lat:marker.lat, lng:marker.lng}}
               // icon={image.image[0].image_url1}
-              title={marker.name}
+              // title={marker.name}
               streetView={false}
               >
                  <InfoWindow
