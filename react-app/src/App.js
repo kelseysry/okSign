@@ -21,7 +21,6 @@ import QuestionForm from './components/QuestionForm';
 import QuestionPageAnswered from './components/QuestionPageAnswered';
 import QuestionPage from './components/QuestionPage';
 import MatchProfilePage from './components/MatchProfilePage';
-import MyComponent from './components/Maps/test';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -95,7 +94,6 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path='/test' exact={true} >
-          <MyComponent />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
