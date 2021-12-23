@@ -9,8 +9,8 @@ import NoMatches from "../NoMatches";
 import NoConversations from "../NoConversations";
 import './Conversations.css'
 import AllUsersMap from "../Maps/AllUsersMap";
-import { clearProfiles, getMatchProfile } from "../../store/profile";
-
+import { clearProfiles } from "../../store/profile";
+import { getMatchProfiles } from "../../store/match";
 
 const Conversations = () => {
   const dispatch = useDispatch()
@@ -21,7 +21,10 @@ const Conversations = () => {
   const conversationObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationObj)
 
+  const matchUserIdsObj = useSelector((state) => state.match)
+  const matchUserIdsArr = Object.values(matchUserIdsObj)
 
+  console.log("matchUserIdsArr", matchUserIdsArr)
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
@@ -29,8 +32,9 @@ const Conversations = () => {
   // const [users, setUsers] = useState([]);
 
   useEffect(async ()=>{
-    await dispatch(clearProfiles)
+    // await dispatch(clearProfiles)
     await dispatch(getConversations())
+    await dispatch(getMatchProfiles(matchUserIds))
 }, [dispatch, conversations.length])
 
 
@@ -71,6 +75,7 @@ const Conversations = () => {
 
     // dispatch(getMatchProfile(matchUserIds))
 
+    // let matchProfiles;
 
   const getMatchUserIds = async() => {
 
@@ -81,14 +86,14 @@ const Conversations = () => {
     }
   })
 
-      // let matchProfiles = await dispatch(getMatchProfile(matchUserIds))
+      // let matchProfiles = await dispatch(getMatchProfiles(matchUserIds))
+      // console.log("matchProfiles", matchProfiles)
   }
 
   getMatchUserIds()
 
 
 
-  console.log("matchUserIds", matchUserIds)
 
   let previousCurrentUserConversations =  conversationsArray[0]?.filter(function(el) {
     return el.id === +user_id
