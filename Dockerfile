@@ -1,3 +1,4 @@
+ARG REACT_APP_MAPS_KEY=default
 FROM node:12 AS build-stage
 
 WORKDIR /react-app
@@ -5,6 +6,7 @@ COPY react-app/. .
 
 # You have to set this because it should be set during build time.
 ENV REACT_APP_BASE_URL=https://oksign-kelseysry.herokuapp.com
+ENV REACT_APP_MAPS_KEY=$REACT_APP_MAPS_KEY
 
 # Build our React App
 RUN npm install
@@ -16,7 +18,6 @@ FROM python:3.9
 ENV FLASK_APP=app
 ENV FLASK_ENV=production
 ENV SQLALCHEMY_ECHO=True
-ENV REACT_APP_MAPS_KEY=REACT_APP_MAPS_KEY
 
 EXPOSE 8000
 
