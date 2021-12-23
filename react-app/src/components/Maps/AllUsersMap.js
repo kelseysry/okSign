@@ -3,8 +3,10 @@ import { useSelector } from "react-redux";
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow} from '@react-google-maps/api';
 import './Maps.css'
 
-const AllUsersMap= ({}) => {
+const AllUsersMap= ({matchUsersProfileArr}) => {
 
+  const matchUsersProfileArray = Object.values(matchUsersProfileArr[0])
+console.log("matchUsersProfileArr in all maps------", matchUsersProfileArray)
 
 
 const center = {
@@ -74,11 +76,11 @@ const { isLoaded } = useJsApiLoader({
           >
 
 
-               {markers?.map((marker) => (
+               {matchUsersProfileArray?.map((matchUserProfileArr) => (
 
               <Marker
-              key={marker.id}
-              position={{lat:marker.lat, lng:marker.lng}}
+              key={matchUserProfileArr?.id}
+              position={{lat:matchUserProfileArr?.lat, lng:matchUserProfileArr?.lng}}
               // icon={image.image[0].image_url1}
               // title={marker.name}
               streetView={false}
