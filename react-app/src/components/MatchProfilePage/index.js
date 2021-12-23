@@ -9,6 +9,7 @@ import MatchProfilePics from '../MatchProfilePics';
 import UserProfileAboutSection from '../UserProfileAboutSection';
 import MatchAboutSection from '../MatchAboutSection';
 import MatchDetailSection from '../MatchDetailSection';
+import MapPageE from '../Maps';
 
 
 const MatchProfilePage = () => {
@@ -53,6 +54,7 @@ const MatchProfilePage = () => {
               <div className="match-user-about-container">
                 <MatchAboutSection currentUserProfile={matchProfileObj}/>
                 <MatchProfilePercent matchProfileObj={matchProfileObj}/>
+                <MapPageE image={matchProfileObj[0]?.image_ur1}/>
               </div>
               <div className="match-user-detail-container">
                 <MatchDetailSection currentUserProfile={matchProfileObj}/>
