@@ -16,7 +16,7 @@ const Discover = () => {
   const questionObject = useSelector((state)=>state.question)
   // console.log("questionObj", questionObject)
   const questions = Object.values(questionObject)
-  console.log("questions🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", questions)
+  // console.log("questions🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", questions)
 
 
 
@@ -134,7 +134,7 @@ if(currentUserQuestion) {
         {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
           <div key={idx}>
             <NavLink
-              to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id 
+              to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
               >
               <MatchProfile userIdPercentObj={userIdPercentObj}/>
             </NavLink>

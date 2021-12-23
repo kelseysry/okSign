@@ -54,13 +54,13 @@ const Conversations = () => {
     }
   }
 
-  console.log("conversationArray convo", conversationsArray)
+  // console.log("conversationArray convo", conversationsArray)
 
   let previousCurrentUserConversations =  conversationsArray[0]?.filter(function(el) {
     return el.id === +user_id
   })
 
-  console.log("previousCurrentUserConversations", previousCurrentUserConversations)
+  // console.log("previousCurrentUserConversations", previousCurrentUserConversations)
 
   let content;
   if(previousCurrentUserConversations?.length) {

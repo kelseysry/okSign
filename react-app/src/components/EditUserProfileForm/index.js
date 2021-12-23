@@ -113,16 +113,16 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     e.preventDefault();
 
     setCount(count + 1)
-    console.log("count", count)
+    // console.log("count", count)
 
     const userInputUpdateProfile = {
       age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
     }
 
-    console.log("userInputUpdateProfile", userInputUpdateProfile)
-    console.log("currentProfile[0]?.user_id ", currentProfile[0]?.id )
+    // console.log("userInputUpdateProfile", userInputUpdateProfile)
+    // console.log("currentProfile[0]?.user_id ", currentProfile[0]?.id )
     let profile_id = +currentProfile[0]?.id
-    console.log("profile_id profile_id", profile_id)
+    // console.log("profile_id profile_id", profile_id)
 
     let updated = await dispatch(editProfile(userInputUpdateProfile, profile_id))
 
