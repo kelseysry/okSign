@@ -49,7 +49,7 @@ const AllUsersMap= ({matchUsersProfileArr}) => {
 
     return (
       <>
-      <script src={`//maps.googleapis.com/maps/api/js?${process.env.REACT_APP_MAPS_KEY}`}></script>
+      <script src={`//maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_MAPS_KEY}`}></script>
       <div className="big-screen-home">
         {isLoaded && (
         <GoogleMap
