@@ -2,8 +2,11 @@ import React, { useState, useCallback } from 'react';
 import { useSelector } from "react-redux";
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow, DirectionsService, DirectionsRenderer } from '@react-google-maps/api';
 import { Polyline } from '@react-google-maps/api';
+import './Maps.css'
 
 const MapPageE= (image) => {
+
+  console.log("image in map", image.image[0].image_url1)
 
 const center = {
   lat: 0,
@@ -74,9 +77,18 @@ const { isLoaded } = useJsApiLoader({
               <Marker
               key={marker.id}
               position={{lat:marker.lat, lng:marker.lng}}
-              icon={image}
+              // icon={image.image[0].image_url1}
               title={marker.name}
-              streetView={false} >
+              streetView={false}
+              >
+                 <InfoWindow
+              position={{lat:marker.lat, lng:marker.lng}}
+              >
+                <div className="image-map-container" style={{ backgroundImage: `url('${image.image[0].image_url1}')`}}>
+                  <span style={{color: `${marker.color}`}}>{marker.name}</span>
+                </div>
+              </InfoWindow>
+
              </Marker>
            ))}
 
