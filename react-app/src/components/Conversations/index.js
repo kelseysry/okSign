@@ -117,7 +117,7 @@ const Conversations = () => {
             </div>
           )}
 
-          {/* <AllUsersMap matchUsersProfileArr={matchUserIdsArr}/> */}
+          <AllUsersMap matchUsersProfileArr={matchUserIdsArr}/>
       </>
 
 

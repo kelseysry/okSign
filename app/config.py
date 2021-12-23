@@ -11,4 +11,3 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get(
         'DATABASE_URL').replace('postgres://', 'postgresql://')
     SQLALCHEMY_ECHO = True
-    REACT_APP_GOOGLE_MAPS_API=os.environ.get("REACT_APP_GOOGLE_MAPS_API")
