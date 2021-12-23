@@ -97,28 +97,6 @@ const { isLoaded } = useJsApiLoader({
                 </InfoWindow>
              </Marker>
 
-
-{/*
-               {markers?.map((marker) => (
-
-              <Marker
-              key={marker.id}
-              position={{lat:marker.lat, lng:marker.lng}}
-              // icon={image.image[0].image_url1}
-              // title={marker.name}
-              streetView={false}
-              >
-                 <InfoWindow
-              position={{lat:marker.lat, lng:marker.lng}}
-              >
-                <div className="image-map-container" style={{ backgroundImage: `url('${image.image[0].image_url1}')`}}>
-                  <span style={{color: `${marker.color}`}}>{marker.name}</span>
-                </div>
-              </InfoWindow>
-
-             </Marker>
-           ))} */}
-
         <Polyline
               onLoad={onLoad}
               path={path}
