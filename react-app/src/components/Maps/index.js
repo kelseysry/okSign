@@ -16,7 +16,7 @@ const center = {
 
 const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.REACT_APP_MAPS_KEY
+    // googleMapsApiKey: process.env.REACT_APP_MAPS_KEY
   })
 
   const containerStyle = {
