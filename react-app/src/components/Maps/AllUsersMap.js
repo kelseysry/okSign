@@ -1,101 +1,95 @@
-import React, { useState, useCallback } from 'react';
-import { useSelector } from "react-redux";
+import React, { useState } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow} from '@react-google-maps/api';
 import './Maps.css'
 
+import { useEffect } from 'react';
+
 const AllUsersMap= ({matchUsersProfileArr}) => {
 
-  const matchUsersProfileArray = Object.values(matchUsersProfileArr[0])
-console.log("matchUsersProfileArr in all maps------", matchUsersProfileArray)
+  const [selectedCenter, setSelectedCenter] = useState(null);
+
+  let matchUsersProfileArray;
+  if(matchUsersProfileArr[0]) {
+     matchUsersProfileArray = Object.values(matchUsersProfileArr[0])
+  }
+
+  let allMarkers;
+  allMarkers = matchUsersProfileArray
+
+  const { isLoaded } = useJsApiLoader({
+      id: 'google-map-script',
+      googleMapsApiKey: process.env.REACT_APP_MAPS_KEY
+    })
+
+    useEffect(() => {
+      const listener = e => {
+        if (e.key === "Escape") {
+          setSelectedCenter(null);
+        }
+      };
+      window.addEventListener("keydown", listener);
+
+      return () => {
+        window.removeEventListener("keydown", listener);
+      };
+    }, []);
 
 
-const center = {
-  lat: 35,
-  lng: -180
-};
+    const center = {
+      lat: 35,
+      lng: -180
+    };
 
-const markers = [{id:2, lat: 33.85897723024835, lng: -118.08115190136616}, {id:1, lat: 35.66386037006631	, lng: 139.71280545767016}]
+    const options = { closeBoxURL: '', enableEventPropagation: true };
 
-const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: process.env.REACT_APP_MAPS_KEY
-  })
-
-  const containerStyle = {
-    width: '700px',
-    height: '500px'
-  };
-
-
-  const onLoad = polyline => {
-    console.log('polyline: ', polyline)
-  };
-
-  const path = [
-    {lat: 33.85897723024835, lng: -118.08115190136616},
-    {lat: 35.66386037006631	, lng: 139.71280545767016},
-  ];
-
-  // const path = [
-  //   {lat: user[0]?.lat, lng: user[0]?.lng},
-  //   {lat: match[0]?.lat,lng: match[0]?.lng},
-  // ];
-
-  const [map, setMap] = useState(null)
-
-  const onUnmount = useCallback(function callback(map) {
-    setMap(null)
-  }, [])
-
-
-  const options = {
-    strokeColor: '#FF0000',
-    strokeOpacity: 0.8,
-    strokeWeight: 2,
-    fillColor: '#FF0000',
-    fillOpacity: 1,
-    clickable: false,
-    draggable: false,
-    editable: false,
-    visible: true,
-    radius: 30000,
-    zIndex: 1
-  };
-
+    const containerStyle = {
+      width: '900px',
+      height: '600px',
+    };
 
     return (
-      // Important! Always set the container height explicitly
-      <div className="map_page__container">
+      <>
+      <div className="big-screen-home">
+        {isLoaded && (
+        <GoogleMap
+        mapContainerStyle={containerStyle}
+        zoom={3}
+        center={center}
+        >
 
-        <div style={{ height: '900px', width: '900px' }}>
-        {isLoaded ?<GoogleMap
-          mapContainerStyle={containerStyle}
-          zoom={2}
-          center={center}
-          onUnmount={onUnmount}
-          >
-
-
-               {matchUsersProfileArray?.map((matchUserProfileArr) => (
-
+        {allMarkers?.map((center, idx) => (
               <Marker
-              key={matchUserProfileArr?.id}
-              position={{lat:matchUserProfileArr?.lat, lng:matchUserProfileArr?.lng}}
-              // icon={image.image[0].image_url1}
-              // title={marker.name}
-              streetView={false}
-              >
+                key={idx}
 
-             </Marker>
-           ))}
+                position={{
+                  lat: parseFloat(center.lat),
+                  lng: parseFloat(center.lng)
+                }}
 
+                // causes pop up
+                onClick={() => {
+                  setSelectedCenter(center);
+              }}
+              />
+            ))}
 
-
-        </GoogleMap>:null}
-        </div>
-        <div id='panel'>
-        </div>
+          {selectedCenter && (
+                <InfoWindow
+                  onCloseClick={() => {
+                    setSelectedCenter(null);
+                  }}
+                  position={{
+                    lat: parseFloat(selectedCenter.lat),
+                    lng: parseFloat(selectedCenter.lng)
+                  }}
+                >
+                  <div className="image-map-container" style={{ backgroundImage: `url('${selectedCenter.image_url1}')`}}></div>
+                </InfoWindow>
+          )}
+        </GoogleMap>
+        )}
       </div>
+      </>
     );
 
 }
