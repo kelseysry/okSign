@@ -11,15 +11,37 @@ def profiles():
     profiles = Profile.query.all()
     return {'profiles': [profile.to_dict() for profile in profiles]}
 
-
-
-
 # get one profile
 @profile_routes.route('/<int:id>')
 def profile(id):
     profile = Profile.query.get(id)
     return profile.to_dict()
 
+
+def search_users(matchUserIds):
+  all_Match_Users = set()
+  userIdList = matchUserIds.split(",")
+  # print("matchUserIds🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎", userIdList)
+  for userId in userIdList:
+    userProfileObj = Profile.query.filter(Profile.user_id == userId).first()
+    all_Match_Users.add(userProfileObj)
+  return all_Match_Users
+
+
+# get profiles that match with current user for the conversations map
+@profile_routes.route('/<matchUserIds>')
+def get_matchProfile(matchUserIds):
+  searchResult = search_users(matchUserIds)
+  # print("searchResult🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎", searchResult)
+  if searchResult:
+    result = {p.id : p.to_dict() for p in searchResult}
+    return {
+              "user" : result,
+
+          }
+  else:
+    return { "user" : {},
+            }
 
 
 
