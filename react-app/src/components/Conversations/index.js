@@ -8,6 +8,8 @@ import React, { useEffect } from 'react';
 import NoMatches from "../NoMatches";
 import NoConversations from "../NoConversations";
 import './Conversations.css'
+import AllUsersMap from "../Maps/AllUsersMap";
+import { clearProfiles, getMatchProfile } from "../../store/profile";
 
 
 const Conversations = () => {
@@ -27,6 +29,7 @@ const Conversations = () => {
   // const [users, setUsers] = useState([]);
 
   useEffect(async ()=>{
+    await dispatch(clearProfiles)
     await dispatch(getConversations())
 }, [dispatch, conversations.length])
 
@@ -54,7 +57,38 @@ const Conversations = () => {
     }
   }
 
-  // console.log("conversationArray convo", conversationsArray)
+  // gets the user Ids that are matched
+  let matchUserIds = [];
+  let matchProfileObj = [];
+
+  // conversationsArray[0]?.map((conversation) => {
+  //   if(getMatchProfileId(conversation.user_id_one, conversation.user_id_two)) {
+  //     let matchProfileUserId = getMatchProfileId(conversation.user_id_one, conversation.user_id_two)
+  //   // let matchProfile = dispatch(getMatchProfile(getMatchProfileId(conversation.user_id_one, conversation.user_id_two)))
+  //   matchUserIds.push(matchProfileUserId)
+  //   }
+  // })
+
+    // dispatch(getMatchProfile(matchUserIds))
+
+
+  const getMatchUserIds = async() => {
+
+  conversationsArray[0]?.map((conversation) => {
+    if(getMatchProfileId(conversation.user_id_one, conversation.user_id_two)) {
+      let matchProfileUserId = getMatchProfileId(conversation.user_id_one, conversation.user_id_two)
+    matchUserIds.push(matchProfileUserId)
+    }
+  })
+
+      // let updated = await dispatch(getMatchProfile(matchUserIds))
+  }
+
+  getMatchUserIds()
+
+
+
+  console.log("matchUserIds", matchUserIds)
 
   let previousCurrentUserConversations =  conversationsArray[0]?.filter(function(el) {
     return el.id === +user_id
@@ -77,6 +111,8 @@ const Conversations = () => {
                 </NavLink>
             </div>
           )}
+
+          <AllUsersMap />
       </>
 
 
@@ -84,7 +120,6 @@ const Conversations = () => {
   }  else {
     content = (
       <div className="center-no-matches-component">
-        {/* <NoMatches /> */}
         <NoConversations />
       </div>
     )
