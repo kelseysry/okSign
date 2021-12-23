@@ -13,7 +13,6 @@ const center = {
   lng: -180
 };
 
-// const markers = [{id:2, lat: 33.85897723024835, lng: -118.08115190136616}, {id:1, lat: 35.66386037006631	, lng: 139.71280545767016}]
 
 const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
@@ -30,10 +29,7 @@ const { isLoaded } = useJsApiLoader({
     console.log('polyline: ', polyline)
   };
 
-  // const path = [
-  //   {lat: 33.85897723024835, lng: -118.08115190136616},
-  //   {lat: 35.66386037006631	, lng: 139.71280545767016},
-  // ];
+
 
   const path = [
     {lat: user[0]?.lat, lng: user[0]?.lng},
