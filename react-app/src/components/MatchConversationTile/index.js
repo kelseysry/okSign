@@ -53,8 +53,7 @@ const MatchConversationTile = ({profile_id}) => {
     const usernameDisplay = users?.filter(function(el){
       return el.id === +user_id
      });
-    //  console.log("try", user_id)
-    //  console.log("tryThis", usernameDisplay[0].username)
+
     if (usernameDisplay) {
      return usernameDisplay[0]?.username
     }
@@ -63,7 +62,6 @@ const MatchConversationTile = ({profile_id}) => {
     }
   }
 
-  // console.log("getmatchProfile", getMatchProfile(profile_id))
   let matchProfileObj = (getMatchProfile(profile_id))
 
   return (
@@ -71,8 +69,8 @@ const MatchConversationTile = ({profile_id}) => {
         { isLoaded && matchProfileObj[0]?.id && (
 
 
-        <div className="each_match_profile_container">
-          <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
+        <div className="one-conversation-container">
+          <div className="one-conversation-header-name">{getUserName(matchProfileObj[0]?.user_id)}</div>
           <img className="match_profile_image" src={matchProfileObj[0]?.image_url1} alt="match_picture"/>
         </div>
 

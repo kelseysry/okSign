@@ -92,16 +92,18 @@ const Conversations = () => {
         <div className="ConversationHeaderContainer">
           <div className="ConversationHeader">Your Conversations</div>
         </div>
+        <section className="ConversationsBody">
 
-          {conversationsArray[0]?.map((conversation) =>
-            <div>
-                <NavLink to={`/conversations/${conversation?.id}`}>
-                  <MatchConversationTile profile_id={getMatchProfileId(conversation.user_id_one, conversation.user_id_two)}/>
-                </NavLink>
-            </div>
-          )}
+          <section className="conversations-container">
+            {conversationsArray[0]?.map((conversation) =>
+                  <NavLink to={`/conversations/${conversation?.id}`}>
+                    <MatchConversationTile profile_id={getMatchProfileId(conversation.user_id_one, conversation.user_id_two)}/>
+                  </NavLink>
+            )}
+          </section>
 
           <AllUsersMap matchUsersProfileArr={matchUserIdsArr}/>
+          </section>
       </>
 
 
