@@ -10,6 +10,7 @@ import { getPolitics } from '../../store/politic';
 import { getReligions } from '../../store/religion';
 import { getPartners } from '../../store/partner';
 import { getOrientations } from '../../store/orientation';
+import Player from '../Player';
 
 function MatchAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -93,7 +94,7 @@ function MatchAboutSection(currentUserProfile) {
         <div  className="one-detail-container">
           <div className="about-div-header">Audio</div>
           <div className="one-detail-content">
-          {currentProfile[0]?.user_audio}
+          <Player sound={currentProfile[0]?.user_audio}/>
           </div>
         </div>
 
