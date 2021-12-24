@@ -131,6 +131,7 @@ if(currentUserQuestion) {
   if (currentUserQuestion?.length) {
     content = (
       <div className="">
+
         {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
           <div key={idx}>
             <NavLink
@@ -153,7 +154,12 @@ if(currentUserQuestion) {
 
   return (
     <>
+    <div className="ConversationHeaderContainer">
+      <div className="ConversationHeader">Discover</div>
+    </div>
+
     <div className="DiscoverContent">
+
       {content}
     </div>
     </>
