@@ -25,32 +25,35 @@ const Message = ({message}) => {
   setShowEditMessageForm(false)
 },[dispatch])
 
+  let messageBubbleColor;
+  messageBubbleColor = (
+    <>
+    {
+    message.from_user_id === user_id?
+    <section className="grey-container">
+      <div className="grey">
+        {message?.content}
+      </div>
+        <GetProfilePic userId={message?.from_user_id}/>
+        <DotDotButton messageId={message.id} conversation_id={conversation_id} message={message}  showEditMessageForm={showEditMessageForm} setShowEditMessageForm={setShowEditMessageForm}/>
+    </section>
+      :
+      <section className="blue-container">
+        <GetProfilePic userId={message?.from_user_id}/>
+        <div className="blue">
+          {message?.content}
+        </div>
+      </section>
 
+    }
+    </>
+  )
 
 
   return (
 
     <>
-
-      <div className="one-message-container">
-        <div className="content-dot-dot">
-          <div className="message-bubble">
-            {showEditMessageForm? <EditMessageForm message={message} hideForm={() => setShowEditMessageForm(false)}/> : message?.content}
-          </div>
-          {message.from_user_id === user_id?
-          <DotDotButton messageId={message.id} conversation_id={conversation_id} message={message}  showEditMessageForm={showEditMessageForm} setShowEditMessageForm={setShowEditMessageForm}/>
-
-
-          :
-            null
-            }
-
-        </div>
-      <GetProfilePic userId={message?.from_user_id}/>
-
-      </div>
-
-
+          {showEditMessageForm? <EditMessageForm message={message} hideForm={() => setShowEditMessageForm(false)}/> : messageBubbleColor }
     </>
   )
 

@@ -1,5 +1,50 @@
+.one-message-container {
+  /* display: flex;
+  flex-direction: column;
+  box-sizing: border-box; */
+  padding: 20px 20px;
+}
+
+.content-dot-dot {
+  display: flex;
+}
+
+
 textarea {
   border: none;
   resize: none;
   background: transparent;
+}
+
+.message-bubble {
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.messages-container {
+  box-sizing: border-box;
+  width: 70%;
+  background: #fff;
+  margin-bottom: 80px;
+}
+
+.blue {
+  background-color: #cce1ff;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.grey {
+  border-radius: 10px;
+  padding: 10px 10px;
+  background-color: #e8e8e8;
+}
+
+.grey-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.blue-container {
+  display: flex;
 }
