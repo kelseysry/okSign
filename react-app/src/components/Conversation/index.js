@@ -1,15 +1,11 @@
 // responsible for render one conversation
-
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import { getMessages } from "../../store/message";
 import { useParams } from 'react-router-dom';
 import { clearMessages } from "../../store/message";
 import { getProfiles } from "../../store/profile";
-// import GetProfilePic from "../GetProfilePic";
-// import DotDotButton from "../DotDotButton";
 import './Conversation.css'
-// import EditMessageForm from "../EditMessageForm";
 import Message from "../Message";
 import MessageForm from "../MessageForm";
 import { clearProfiles } from "../../store/profile";
@@ -96,7 +92,6 @@ const Conversation = () => {
 
   let getMatchImage = getMatchUserProfile(currentConversation)
 
-
   const getUserName = (currentConversation) => {
     const usernameDisplay = users?.filter(function(el){
       return el.id === getMatchProfileId(currentConversation)
@@ -111,12 +106,10 @@ const Conversation = () => {
   }
 
 
-
   return (
 
     <>
-
-<div className="profile-user-info">
+        <section className="profile-user-info">
           <div className="profile-userInfo-inner">
             <div className="profile-userInfo-inner-content">
               <div className="profile-userInfo-thumb">
@@ -138,16 +131,15 @@ const Conversation = () => {
                 </div>
             </div>
           </div>
+        </section>
+
+        { messages?.map((message, idx) =>
+        <div key={idx}>
+          <Message message={message}/>
         </div>
+        )}
 
-
-
-    { messages?.map((message, idx) =>
-    <div key={idx}>
-      <Message message={message}/>
-    </div>)}
-
-      <MessageForm conversationId={conversationId} />
+        <MessageForm conversationId={conversationId} />
 
     </>
   )
