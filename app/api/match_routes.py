@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, redirect, url_for, session, request
-from app.models import Profile, db, User
+from app.models import Profile, db, User, Message
 from app.forms import ProfileForm
 from flask_login import login_required, current_user
 
@@ -31,3 +31,11 @@ def get_matchProfile(matchUserIds):
   else:
     return { "user" : {},
             }
+
+# get latest message in a conversation with match
+@match_routes.route('/<int:conversation_id>/messages', methods=['GET'])
+def get_conversation(conversation_id):
+  messages = Message.query.filter(Message.conversation_id == conversation_id).all()
+  lastMessage = messages
+  print("last message 🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎---------------", lastMessage[-1])
+  return {message.id: message.to_dict() for message in messages}

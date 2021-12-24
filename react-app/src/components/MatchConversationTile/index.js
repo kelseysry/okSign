@@ -13,7 +13,8 @@ const MatchConversationTile = ({profile_id, conversation_id}) => {
   const profilesObj = useSelector((state) => state.profile)
   const profiles = Object.values(profilesObj)
 
-  // console.log("profiles in match tile ", profiles)
+
+
 
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
@@ -30,10 +31,11 @@ const MatchConversationTile = ({profile_id, conversation_id}) => {
   useEffect(async () => {
     await dispatch(getProfiles())
     if (!isLoaded) setIsLoaded(true);
-
   }, [dispatch, profiles.length, isLoaded])
 
-  // console.log("profiles----------", profiles)
+
+
+
 
   const getMatchProfile = (profile_id) => {
     const matchProfile = profiles[0]?.filter(function(profile){
@@ -71,6 +73,7 @@ const MatchConversationTile = ({profile_id, conversation_id}) => {
         <div className="one-conversation-container">
           <div className="one-conversation-header-name">{getUserName(matchProfileObj[0]?.user_id)}</div>
           <img className="match_profile_image_convo" src={matchProfileObj[0]?.image_url1} alt="match_picture"/>
+          {/* <div>{messages[messages.length-1].content}</div> */}
         </div>
 
         )
