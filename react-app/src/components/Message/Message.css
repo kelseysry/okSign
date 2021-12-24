@@ -67,13 +67,18 @@ textarea {
 
 .edit-one-message-form-container {
   border-radius: 10px;
-  padding: 5px 15px;
+  padding: 20px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .message-textarea {
-  width: 300px;
+  width: 250px;
+  font-size: 15px;
 
+}
+
+.edit-message-button-send{
+padding-right: 20px;
 }

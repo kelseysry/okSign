@@ -65,13 +65,17 @@ const EditMessageForm = ({message, hideForm}) => {
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
         <button
-          className="mobile-submit-create-business"
+          className="edit-message-button-send"
           type="submit"
           disabled={errors.length>0}
         >
-          Submit
+          <i class="fas fa-paper-plane"></i> Send
         </button>
-            <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
+        <button type="button" onClick={handleCancelFormEditClick}
+        className="edit-message-button"
+        >
+          <i class="fas fa-times-circle"></i> Cancel
+        </button>
         </form>
       </section>
 
