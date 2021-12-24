@@ -36,6 +36,6 @@ def get_matchProfile(matchUserIds):
 @match_routes.route('/<int:conversation_id>/messages', methods=['GET'])
 def get_conversation(conversation_id):
   messages = Message.query.filter(Message.conversation_id == conversation_id).all()
-  lastMessage = messages
-  print("last message 🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎---------------", lastMessage[-1])
-  return {message.id: message.to_dict() for message in messages}
+  lastMessage = messages[-1]
+  print("last message 🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎---------------", lastMessage)
+  return lastMessage.to_dict()
