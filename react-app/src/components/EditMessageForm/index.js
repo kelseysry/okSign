@@ -59,13 +59,13 @@ const EditMessageForm = ({message, hideForm}) => {
       <section className="edit-message-form-container">
         <form className="edit-message-form" onSubmit={handleSubmit}>
           <label>
-                <input
+                <textarea
                 type="text"
                 placeholder="content"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 >
-                </input>
+                </textarea>
             </label>
             <ul className="error">
           {errors.map((error) => <li key={error}>{error}</li>)}

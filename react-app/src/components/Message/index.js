@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import GetProfilePic from "../GetProfilePic";
 import DotDotButton from "../DotDotButton";
 import EditMessageForm from "../EditMessageForm";
-
+import './Message.css'
 
 const Message = ({message}) => {
   const dispatch = useDispatch()
