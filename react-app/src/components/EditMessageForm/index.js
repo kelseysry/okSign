@@ -3,9 +3,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 
-
-
-
 const EditMessageForm = ({message, hideForm}) => {
   const dispatch = useDispatch();
   const { conversationId }  = useParams();
@@ -16,7 +13,6 @@ const EditMessageForm = ({message, hideForm}) => {
 
   const [content, setContent] = useState(message.content)
   const [errors, setErrors] = useState([]);
-
 
 
   useEffect(() => {
@@ -47,37 +43,39 @@ const EditMessageForm = ({message, hideForm}) => {
   const handleCancelFormEditClick = (e) => {
     e.preventDefault();
 
-
-    // dispatch(clearProfiles())
-    // dispatch(getProfiles());
     hideForm();
   };
 
 
   return (
     <>
-      <section className="edit-message-form-container">
-        <form className="edit-message-form" onSubmit={handleSubmit}>
+      <section className="edit-one-message-form-container">
+        <form className="edit-one-message-form" onSubmit={handleSubmit}>
           <label>
-                <input
+                <textarea
+                className="message-textarea"
                 type="text"
                 placeholder="content"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 >
-                </input>
+                </textarea>
             </label>
             <ul className="error">
           {errors.map((error) => <li key={error}>{error}</li>)}
         </ul>
         <button
-          className="mobile-submit-create-business"
+          className="edit-message-button-send"
           type="submit"
           disabled={errors.length>0}
         >
-          Submit
+          <i class="fas fa-paper-plane"></i> Send
         </button>
-            <button type="button" onClick={handleCancelFormEditClick}>Cancel</button>
+        <button type="button" onClick={handleCancelFormEditClick}
+        className="edit-message-button"
+        >
+          <i class="fas fa-times-circle"></i> Cancel
+        </button>
         </form>
       </section>
 

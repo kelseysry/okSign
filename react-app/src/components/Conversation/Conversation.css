@@ -1,26 +1,3 @@
-.one-message-container {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  padding: 20px 20px;
-}
-
-.content-dot-dot {
-  display: flex;
-}
-
-.message-bubble {
-  background-color: #cce1ff;
-  border-radius: 10px;
-  padding: 10px 10px;
-}
-
-.messages-container {
-  box-sizing: border-box;
-  width: 70%;
-  background: #fff;
-  margin-bottom: 80px;
-}
 
 .message-header {
   border-top-left-radius: 5px;
@@ -29,10 +6,11 @@
   padding: 20px 20px;
   color: white;
   font-size: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 
 .messages-outer-container {

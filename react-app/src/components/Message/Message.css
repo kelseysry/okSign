@@ -1,0 +1,98 @@
+*:focus {
+  outline: none;
+}
+
+.one-message-container {
+  /* display: flex;
+  flex-direction: column;
+  box-sizing: border-box; */
+  padding: 20px 50px;
+  box-sizing: border-box;
+}
+
+.content-dot-dot {
+  display: flex;
+}
+
+
+textarea {
+  border: none;
+  resize: none;
+  background: transparent;
+}
+
+.message-bubble {
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.messages-container {
+  box-sizing: border-box;
+  width: 60%;
+  background: #fff;
+  margin-bottom: 80px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+
+}
+
+.blue {
+  background-color: #cce1ff;
+  border-radius: 10px;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.grey {
+  border-radius: 10px;
+  padding: 5px 15px;
+  background-color: #e8e8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.grey-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.blue-container {
+  display: flex;
+}
+
+.edit-one-message-form-container {
+  border-radius: 10px;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-textarea {
+  width: 250px;
+  font-size: 15px;
+
+}
+
+.edit-message-button-send{
+padding-right: 20px;
+}
+
+.message-form-container {
+  background: #fff;
+}
+
+.type-message-box {
+  width: 100%;
+}
+
+.type-message-box-container {
+  box-sizing: border-box;
+  padding: 20px 50px;
+  border-top: 1px solid #ccd0d9;
+}

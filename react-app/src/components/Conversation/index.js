@@ -143,10 +143,12 @@ const Conversation = () => {
               <Message message={message}/>
             </div>
             )}
-
+            <MessageForm conversationId={conversationId} />
           </section>
-
-        <MessageForm conversationId={conversationId} />
+          
+          {/* <section className="type-message-box">
+            <MessageForm conversationId={conversationId} />
+          </section> */}
         </section>
 
 
