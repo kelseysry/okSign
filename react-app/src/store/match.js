@@ -38,10 +38,12 @@ const initialState = {};
 const matchReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_MATCH_PROFILES:{
-      const newState = action.matchProfiles
-      console.log("newState in load", newState)
+      const newState = {...state};
+      for (const[key,value] of Object.entries(action.matchProfiles)) {
+        newState[key] = value
+      }
       return newState
-  };
+    }
   case LOAD_MATCH_LAST_MESSAGE: {
     const newState = {...state};
     newState[action.message?.id] = action.message

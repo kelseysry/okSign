@@ -28,7 +28,9 @@ body {
   color: white;
   font-size: 30px;
   margin-bottom: 20px;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .ConversationsBody {
@@ -40,7 +42,7 @@ body {
 
 .one-conversation-container{
   background: #fff;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 }
 
 .match_profile_image_convo {
@@ -53,9 +55,19 @@ body {
 .one-conversation-inner-container {
   display:flex;
   align-items: center;
+  padding-bottom: 30px;
+  padding-top: 10px;
 }
 
 .last-message {
   font-size: 30px;
   margin-left: 50px;
+}
+
+ a {
+  color: black;
+}
+
+.message-date {
+  font-size: 18px;
 }

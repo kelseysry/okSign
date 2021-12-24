@@ -9,7 +9,6 @@ import NoMatches from "../NoMatches";
 import NoConversations from "../NoConversations";
 import './Conversations.css'
 import AllUsersMap from "../Maps/AllUsersMap";
-import { clearProfiles } from "../../store/profile";
 import { getMatchProfiles } from "../../store/match";
 
 const Conversations = () => {
@@ -21,21 +20,30 @@ const Conversations = () => {
   const conversationObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationObj)
 
-  const matchUserIdsObj = useSelector((state) => state.match)
-  const matchUserIdsArr = Object.values(matchUserIdsObj)
+  const matchUserIdsObj = useSelector((state) => state.match.user)
+  let matchUserIdsArr;
+  if(matchUserIdsObj) {
+    matchUserIdsArr = Object.values(matchUserIdsObj)
+  }
 
-  console.log("matchUserIdsArr", matchUserIdsArr)
+  console.log("matchUserIdsObj--------------", matchUserIdsObj)
+  console.log("matchUserIdsArr--------------", matchUserIdsArr)
+
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
+
 
   // const [users, setUsers] = useState([]);
 
   useEffect(async ()=>{
     // await dispatch(clearProfiles)
     await dispatch(getConversations())
+
     await dispatch(getMatchProfiles(matchUserIds))
+
 }, [dispatch, conversations.length])
+
 
 
   let conversationsArray = conversations
@@ -61,12 +69,11 @@ const Conversations = () => {
 
   // gets the user Ids that are matched
   let matchUserIds = [];
-  console.log("conversationsArray", conversationsArray[0])
+  // console.log("conversationsArray", conversationsArray[0])
 
   const getMatchUserIds = async() => {
   conversationsArray[0]?.map((conversation) => {
     if(getMatchProfileId(conversation.user_id_one, conversation.user_id_two)) {
-      console.log("conversation in get", conversation)
       let matchProfileUserId = getMatchProfileId(conversation.user_id_one, conversation.user_id_two)
     matchUserIds.push(matchProfileUserId)
     }
@@ -79,6 +86,7 @@ const Conversations = () => {
     return el.id === +user_id
   })
 
+  // console.log("matchUserIdsArr matchUserIdsArr", matchUserIdsArr)
 
   let content;
   if(previousCurrentUserConversations?.length) {
@@ -96,7 +104,7 @@ const Conversations = () => {
             )}
           </section>
 
-          <AllUsersMap matchUsersProfileArr={matchUserIdsArr}/>
+          {matchUserIdsArr?  <AllUsersMap matchUsersProfileArr={matchUserIdsArr}/> : null }
           </section>
       </>
 

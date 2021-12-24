@@ -20,7 +20,7 @@ def search_users(matchUserIds):
 # get profiles that match with current user for the conversations map
 @match_routes.route('/<matchUserIds>')
 def get_matchProfile(matchUserIds):
-  searchResult = se/arch_users(matchUserIds)
+  searchResult = search_users(matchUserIds)
   # print("searchResult🍎🍎🍎🍎🍎🍎🍎🍎🍎🍎", searchResult)
   if searchResult:
     result = {p.id : p.to_dict() for p in searchResult}
