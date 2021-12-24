@@ -49,21 +49,6 @@ def search_users(term):
           userResultsFromQuery.add(user)
         return userResultsFromQuery
 
-  # smoking = Smoking.query.filter(Smoking.name.ilike(f'{term}')).all()
-  # if smoking:
-  #   print("😡😡term", term)
-  #   userSmoking = {g.id: g.to_dict() for g in smoking}
-  #   userSmokingIdList = list(userSmoking.keys())
-  #   userSmokingString = ''.join(str(e) for e in userSmokingIdList)
-  #   userSmokingIdNum = int(userSmokingString)
-  #   # print("userSmokingNum😡😡😡😡😡😡😡", userSmokingIdNum)
-  #   if term.lower() == userGender[userSmokingIdNum]['name'].lower():
-  #     profileMatchSmoking = Profile.query.filter(Profile.smoking_id == userSmoking[userSmokingIdNum]['id']).all()
-  #     # print("🥳😡😡😡😡😡😡🥳", profileMatchSmoking)
-  #     if profileMatchSmoking:
-  #       for user in profileMatchSmoking:
-  #         userResultsFromQuery.add(user)
-  #       return userResultsFromQuery
 
 
   return userResultsFromQuery

@@ -32,7 +32,7 @@ const SearchResults = () => {
     if(searchUserResultsObj) {
       searchUserResults = Object.values(searchUserResultsObj)
     } else {
-      return null 
+      return null
     }
 
     console.log("searchUserresults array", searchUserResults)
@@ -49,12 +49,12 @@ const SearchResults = () => {
 
     {  isLoaded && (
       <div>
-                <div className="">
-                    Search Results For "{input}"
-                </div>
+        <div className="ConversationHeaderContainer">
+          <div className="ConversationHeader">Search Results For "{input}"</div>
+        </div>
 
                   {
-                    searchUserResults?.map((matchProfileId) => <SearchMatchTile matchProfileId={matchProfileId}/>)
+                    searchUserResults?.map((matchProfile) => <SearchMatchTile matchProfile={matchProfile}/>)
                   }
 
             </div>)
