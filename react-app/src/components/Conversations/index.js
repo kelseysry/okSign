@@ -38,8 +38,6 @@ const Conversations = () => {
 }, [dispatch, conversations.length])
 
 
-
-
   let conversationsArray = conversations
   // console.log("conversationsArray", conversationsArray[0])
 
@@ -65,17 +63,6 @@ const Conversations = () => {
   let matchUserIds = [];
   let matchProfileObj = [];
 
-  // conversationsArray[0]?.map((conversation) => {
-  //   if(getMatchProfileId(conversation.user_id_one, conversation.user_id_two)) {
-  //     let matchProfileUserId = getMatchProfileId(conversation.user_id_one, conversation.user_id_two)
-  //   // let matchProfile = dispatch(getMatchProfile(getMatchProfileId(conversation.user_id_one, conversation.user_id_two)))
-  //   matchUserIds.push(matchProfileUserId)
-  //   }
-  // })
-
-    // dispatch(getMatchProfile(matchUserIds))
-
-    // let matchProfiles;
 
   const getMatchUserIds = async() => {
 
@@ -86,8 +73,6 @@ const Conversations = () => {
     }
   })
 
-      // let matchProfiles = await dispatch(getMatchProfiles(matchUserIds))
-      // console.log("matchProfiles", matchProfiles)
   }
 
   getMatchUserIds()
@@ -99,7 +84,6 @@ const Conversations = () => {
     return el.id === +user_id
   })
 
-  // console.log("previousCurrentUserConversations", previousCurrentUserConversations)
 
   let content;
   if(previousCurrentUserConversations?.length) {
