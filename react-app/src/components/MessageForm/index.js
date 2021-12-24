@@ -24,7 +24,6 @@ function MessageForm({conversationId}) {
 
 
 
-
   const handleSubmit = async(e) => {
     e.preventDefault();
 
