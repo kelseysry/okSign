@@ -40,35 +40,11 @@ const Conversation = ({profile_id}) => {
     dispatch(getMessages(conversation_id))
   },[dispatch, messages.length, conversationId, conversation_id])
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const response = await fetch('/api/users/');
-  //     const responseData = await response.json();
-  //     setUsers(responseData.users);
-  //   }
-  //   fetchData();
-  // }, []);
+
 
   useEffect(() => {
     dispatch(getProfiles());
   }, [dispatch]);
-
-
-
-
-  // const getUserName = (user_id) => {
-  //   const usernameDisplay = users?.filter(function(el){
-  //     return el.id === user_id
-  //    });
-  //   //  console.log("try", user_id)
-  //   //  console.log("tryThis", usernameDisplay[0].username)
-  //   if (usernameDisplay) {
-  //    return usernameDisplay[0]?.username
-  //   }
-  //   else {
-  //     return null
-  //   }
-  // }
 
 
 

@@ -1,14 +1,73 @@
+body {
+  background-color:#f3f5f9;
+}
+
 .ConversationHeaderContainer {
   background-color:#1a1a1a;
   color: white;
   padding-bottom: 20px;
   margin-bottom: 30px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
+  padding-left: 50px;
 }
 
+.conversations-container {
+  box-sizing: border-box;
+  width: 70%;
+
+}
 
 .ConversationHeader {
   font-size: 50px;
+}
+
+.one-conversation-header-name {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: #1a1a1a;
+  padding: 20px 20px;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ConversationsBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.one-conversation-container{
+  background: #fff;
+  margin-bottom: 80px;
+}
+
+.match_profile_image_convo {
+  border-radius:50%;
+  width:200px;
+  height:200px;
+  margin-left: 30px;
+}
+
+.one-conversation-inner-container {
+  display:flex;
+  align-items: center;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.last-message {
+  font-size: 30px;
+  margin-left: 50px;
+}
+
+ a {
+  color: black;
+}
+
+.message-date {
+  font-size: 18px;
 }

@@ -9,7 +9,6 @@ import NoMatches from "../NoMatches";
 import NoConversations from "../NoConversations";
 import './Conversations.css'
 import AllUsersMap from "../Maps/AllUsersMap";
-import { clearProfiles } from "../../store/profile";
 import { getMatchProfiles } from "../../store/match";
 
 const Conversations = () => {
@@ -21,22 +20,29 @@ const Conversations = () => {
   const conversationObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationObj)
 
-  const matchUserIdsObj = useSelector((state) => state.match)
-  const matchUserIdsArr = Object.values(matchUserIdsObj)
+  const matchUserIdsObj = useSelector((state) => state.match.user)
+  let matchUserIdsArr;
+  if(matchUserIdsObj) {
+    matchUserIdsArr = Object.values(matchUserIdsObj)
+  }
 
-  console.log("matchUserIdsArr", matchUserIdsArr)
+  console.log("matchUserIdsObj--------------", matchUserIdsObj)
+  console.log("matchUserIdsArr--------------", matchUserIdsArr)
+
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
+
 
   // const [users, setUsers] = useState([]);
 
   useEffect(async ()=>{
     // await dispatch(clearProfiles)
     await dispatch(getConversations())
-    await dispatch(getMatchProfiles(matchUserIds))
-}, [dispatch, conversations.length])
 
+    await dispatch(getMatchProfiles(matchUserIds))
+
+}, [dispatch, conversations.length])
 
 
 
@@ -63,43 +69,24 @@ const Conversations = () => {
 
   // gets the user Ids that are matched
   let matchUserIds = [];
-  let matchProfileObj = [];
-
-  // conversationsArray[0]?.map((conversation) => {
-  //   if(getMatchProfileId(conversation.user_id_one, conversation.user_id_two)) {
-  //     let matchProfileUserId = getMatchProfileId(conversation.user_id_one, conversation.user_id_two)
-  //   // let matchProfile = dispatch(getMatchProfile(getMatchProfileId(conversation.user_id_one, conversation.user_id_two)))
-  //   matchUserIds.push(matchProfileUserId)
-  //   }
-  // })
-
-    // dispatch(getMatchProfile(matchUserIds))
-
-    // let matchProfiles;
+  // console.log("conversationsArray", conversationsArray[0])
 
   const getMatchUserIds = async() => {
-
   conversationsArray[0]?.map((conversation) => {
     if(getMatchProfileId(conversation.user_id_one, conversation.user_id_two)) {
       let matchProfileUserId = getMatchProfileId(conversation.user_id_one, conversation.user_id_two)
     matchUserIds.push(matchProfileUserId)
     }
   })
-
-      // let matchProfiles = await dispatch(getMatchProfiles(matchUserIds))
-      // console.log("matchProfiles", matchProfiles)
   }
 
   getMatchUserIds()
-
-
-
 
   let previousCurrentUserConversations =  conversationsArray[0]?.filter(function(el) {
     return el.id === +user_id
   })
 
-  // console.log("previousCurrentUserConversations", previousCurrentUserConversations)
+  // console.log("matchUserIdsArr matchUserIdsArr", matchUserIdsArr)
 
   let content;
   if(previousCurrentUserConversations?.length) {
@@ -108,16 +95,17 @@ const Conversations = () => {
         <div className="ConversationHeaderContainer">
           <div className="ConversationHeader">Your Conversations</div>
         </div>
+        <section className="ConversationsBody">
+          <section className="conversations-container">
+            {conversationsArray[0]?.map((conversation) =>
+                  <NavLink to={`/conversations/${conversation?.id}`}>
+                    <MatchConversationTile conversation_id={conversation?.id} profile_id={getMatchProfileId(conversation.user_id_one, conversation.user_id_two)}/>
+                  </NavLink>
+            )}
+          </section>
 
-          {conversationsArray[0]?.map((conversation) =>
-            <div>
-                <NavLink to={`/conversations/${conversation?.id}`}>
-                  <MatchConversationTile profile_id={getMatchProfileId(conversation.user_id_one, conversation.user_id_two)}/>
-                </NavLink>
-            </div>
-          )}
-
-          <AllUsersMap matchUsersProfileArr={matchUserIdsArr}/>
+          {matchUserIdsArr?  <AllUsersMap matchUsersProfileArr={matchUserIdsArr}/> : null }
+          </section>
       </>
 
 

@@ -6,11 +6,14 @@ import { useEffect } from 'react';
 
 const AllUsersMap= ({matchUsersProfileArr}) => {
 
+
+
+
   const [selectedCenter, setSelectedCenter] = useState(null);
 
   let matchUsersProfileArray;
-  if(matchUsersProfileArr[0]) {
-     matchUsersProfileArray = Object.values(matchUsersProfileArr[0])
+  if(matchUsersProfileArr.length) {
+     matchUsersProfileArray = Object.values(matchUsersProfileArr)
   }
 
   let allMarkers;
