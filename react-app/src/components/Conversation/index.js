@@ -146,10 +146,10 @@ const Conversation = () => {
 
           </section>
 
+        <MessageForm conversationId={conversationId} />
         </section>
 
 
-        <MessageForm conversationId={conversationId} />
 
     </>
   )
