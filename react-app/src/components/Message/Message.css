@@ -82,3 +82,17 @@ textarea {
 .edit-message-button-send{
 padding-right: 20px;
 }
+
+.message-form-container {
+  background: #fff;
+}
+
+.type-message-box {
+  width: 100%;
+}
+
+.type-message-box-container {
+  box-sizing: border-box;
+  padding: 20px 50px;
+  border-top: 1px solid #ccd0d9;
+}

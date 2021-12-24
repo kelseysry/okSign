@@ -14,13 +14,13 @@ function MessageForm({conversationId}) {
   let conversation_id = +conversationId
 
 
-  useEffect(() => {
-    const validationErrors = []
-    if(!content) validationErrors.push("do you want to get ghosted?🤨")
+  // useEffect(() => {
+  //   const validationErrors = []
+  //   if(!content) validationErrors.push("do you want to get ghosted?🤨")
 
-    setErrors(validationErrors)
+  //   setErrors(validationErrors)
 
-  }, [conversation_id, content, from_user_id])
+  // }, [conversation_id, content, from_user_id])
 
 
 
@@ -43,21 +43,20 @@ function MessageForm({conversationId}) {
 
   }
 
-  const handleCancelMessageForm = (e) => {
-    e.preventDefault();
-
-
-  };
+  // const handleCancelMessageForm = (e) => {
+  //   e.preventDefault();
+  // };
 
 
   return (
     <>
-      <section className="edit-message-form-container">
-        <form className="edit-message-form" onSubmit={handleSubmit}>
+      <section className="type-message-box-container">
+        <form className="" onSubmit={handleSubmit}>
           <label>
                 <textarea
+                className="type-message-box"
                 type="text"
-                placeholder="content"
+                placeholder="do you want to get ghosted?🤨"
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
                 >
@@ -73,7 +72,7 @@ function MessageForm({conversationId}) {
         >
           Submit
         </button>
-            <button type="button" onClick={handleCancelMessageForm}>Cancel</button>
+            {/* <button type="button" onClick={handleCancelMessageForm}>Cancel</button> */}
         </form>
       </section>
 
