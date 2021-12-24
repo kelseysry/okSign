@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import './MatchConversationTile.css';
 import { getProfiles } from "../../store/profile";
+import { getLastMessage } from "../../store/match";
 
 
 // profile_id is actually the user.id, so need to grab all the profiles
@@ -13,11 +14,18 @@ const MatchConversationTile = ({profile_id, conversation_id}) => {
   const profilesObj = useSelector((state) => state.profile)
   const profiles = Object.values(profilesObj)
 
+  const lastMessageObj = useSelector((state) => state.match)
+  const lastMessage = Object.values(lastMessageObj) // lastMessage is returning all the last messages in a convo 
 
+  console.log("lastMessage", lastMessage)
 
 
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+     dispatch(getLastMessage(conversation_id))
+  },[dispatch])
 
   useEffect(() => {
     async function fetchData() {
@@ -65,6 +73,14 @@ const MatchConversationTile = ({profile_id, conversation_id}) => {
 
   let matchProfileObj = (getMatchProfile(profile_id))
 
+  // get message corresponding to the correct conversation_id
+    let lastMessageInConvo =  lastMessage?.filter(function(message) {
+      return message.conversation_id === +conversation_id
+    })
+
+    // console.log("lastMessageInConvo", lastMessageInConvo)
+
+
   return (
     <>
         { isLoaded && matchProfileObj[0]?.id && (
@@ -73,7 +89,7 @@ const MatchConversationTile = ({profile_id, conversation_id}) => {
         <div className="one-conversation-container">
           <div className="one-conversation-header-name">{getUserName(matchProfileObj[0]?.user_id)}</div>
           <img className="match_profile_image_convo" src={matchProfileObj[0]?.image_url1} alt="match_picture"/>
-          {/* <div>{messages[messages.length-1].content}</div> */}
+          <div>{lastMessageInConvo[0]?.content}{conversation_id}</div>
         </div>
 
         )
