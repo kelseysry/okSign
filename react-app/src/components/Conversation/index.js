@@ -22,12 +22,6 @@ const Conversation = ({profile_id}) => {
   const messagesObj = useSelector((state) => state.message)
   const messages = Object.values(messagesObj)
 
-  // const profilesObj = useSelector((state) => state.profile)
-  // const profiles = Object.values(profilesObj)
-  // console.log("profilesObj in conversation",profilesObj)
-  // const [showEditMessageForm, setShowEditMessageForm] = useState(false)
-  // const sessionUser = useSelector((state) => state?.session?.user)
-  // const user_id = sessionUser?.id
 
   let conversation_id = +conversationId
 
