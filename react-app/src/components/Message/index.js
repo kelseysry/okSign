@@ -58,6 +58,7 @@ const Message = ({message}) => {
         <div className="grey">
           <EditMessageForm message={message} hideForm={() => setShowEditMessageForm(false)}/>
         </div>
+          <GetProfilePic userId={message?.from_user_id}/>
 
       </section>
         :
