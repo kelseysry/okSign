@@ -1,15 +1,6 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from "react-redux";
-import { getGenders } from '../../store/gender';
-import { getHoroscopes } from '../../store/horoscope';
-import { getSmokings } from '../../store/smoking';
-import { getDrinkings } from '../../store/drinking';
-import { getChildren } from '../../store/children';
-import { getPets } from '../../store/pet';
-import { getPolitics } from '../../store/politic';
-import { getReligions } from '../../store/religion';
-import { getPartners } from '../../store/partner';
-import { getOrientations } from '../../store/orientation';
+import { useDispatch } from "react-redux";
+
 import Player from '../Player';
 
 function MatchAboutSection(currentUserProfile) {

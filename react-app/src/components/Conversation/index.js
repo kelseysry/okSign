@@ -1,7 +1,7 @@
 // responsible for render one conversation
 
 import { useSelector, useDispatch } from "react-redux";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getMessages } from "../../store/message";
 import { useParams } from 'react-router-dom';
 import { clearMessages } from "../../store/message";
@@ -18,6 +18,8 @@ import { getConversations } from "../../store/conversation";
 const Conversation = () => {
   const dispatch = useDispatch()
   const { conversationId }  = useParams();
+
+  const [users, setUsers] = useState([]);
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
@@ -48,6 +50,15 @@ const Conversation = () => {
   useEffect(() => {
     dispatch(getProfiles());
   }, [dispatch]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('/api/users/');
+      const responseData = await response.json();
+      setUsers(responseData.users);
+    }
+    fetchData();
+  }, []);
 
 
   let currentConversation =  conversations[0]?.filter(function(conversation) {
@@ -86,7 +97,20 @@ const Conversation = () => {
   let getMatchImage = getMatchUserProfile(currentConversation)
 
 
-  console.log("getMatchUserProfilegetMatchUserProfile", getMatchUserProfile(currentConversation))
+  const getUserName = (currentConversation) => {
+    const usernameDisplay = users?.filter(function(el){
+      return el.id === getMatchProfileId(currentConversation)
+     });
+    //  console.log("tryThis", usernameDisplay[0].username)
+    if (usernameDisplay) {
+     return usernameDisplay[0]?.username
+    }
+    else {
+      return null
+    }
+  }
+
+
 
   return (
 
@@ -102,7 +126,7 @@ const Conversation = () => {
               </div>
                 <div className="profile-basics">
                   <div className="profile-basics-username">
-                    {/* <span className="username-text">{user?.first_name}</span> */}
+                   {currentConversation? <span className="username-text">{getUserName(currentConversation)}</span> : null}
                   </div>
                 <div className="profile-asl">
                   <div className="profile-asl-row">
