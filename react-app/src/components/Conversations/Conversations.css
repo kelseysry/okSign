@@ -44,9 +44,18 @@ body {
 }
 
 .match_profile_image_convo {
-  width: 150px !important;
-  height: 150px !important;
-  border-radius: 50% !important;
-  margin: 0 0 10px 0 !important;
-  padding-left: 30px;
+  border-radius:50%;
+  width:200px;
+  height:200px;
+  margin-left: 30px;
+}
+
+.one-conversation-inner-container {
+  display:flex;
+  align-items: center;
+}
+
+.last-message {
+  font-size: 30px;
+  margin-left: 50px;
 }
