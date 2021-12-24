@@ -3,9 +3,6 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 
-
-
-
 const EditMessageForm = ({message, hideForm}) => {
   const dispatch = useDispatch();
   const { conversationId }  = useParams();
@@ -16,7 +13,6 @@ const EditMessageForm = ({message, hideForm}) => {
 
   const [content, setContent] = useState(message.content)
   const [errors, setErrors] = useState([]);
-
 
 
   useEffect(() => {
@@ -47,19 +43,17 @@ const EditMessageForm = ({message, hideForm}) => {
   const handleCancelFormEditClick = (e) => {
     e.preventDefault();
 
-
-    // dispatch(clearProfiles())
-    // dispatch(getProfiles());
     hideForm();
   };
 
 
   return (
     <>
-      <section className="edit-message-form-container">
-        <form className="edit-message-form" onSubmit={handleSubmit}>
+      <section className="edit-one-message-form-container">
+        <form className="edit-one-message-form" onSubmit={handleSubmit}>
           <label>
                 <textarea
+                className="message-textarea"
                 type="text"
                 placeholder="content"
                 value={content}
