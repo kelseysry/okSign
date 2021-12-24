@@ -2,7 +2,8 @@
   /* display: flex;
   flex-direction: column;
   box-sizing: border-box; */
-  padding: 20px 20px;
+  padding: 20px 50px;
+  box-sizing: border-box;
 }
 
 .content-dot-dot {
@@ -23,21 +24,32 @@ textarea {
 
 .messages-container {
   box-sizing: border-box;
-  width: 70%;
+  width: 60%;
   background: #fff;
   margin-bottom: 80px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+
 }
 
 .blue {
   background-color: #cce1ff;
   border-radius: 10px;
-  padding: 10px 10px;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
 }
 
 .grey {
   border-radius: 10px;
-  padding: 10px 10px;
+  padding: 5px 15px;
   background-color: #e8e8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
 }
 
 .grey-container {

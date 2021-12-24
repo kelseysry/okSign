@@ -6,10 +6,11 @@
   padding: 20px 20px;
   color: white;
   font-size: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 
 .messages-outer-container {

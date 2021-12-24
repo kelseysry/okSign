@@ -53,7 +53,26 @@ const Message = ({message}) => {
   return (
 
     <>
-          {showEditMessageForm? <EditMessageForm message={message} hideForm={() => setShowEditMessageForm(false)}/> : messageBubbleColor }
+
+      <div className="one-message-container">
+        {/* <div className="content-dot-dot"> */}
+          {/* <div className="message-bubble"> */}
+            {showEditMessageForm? <EditMessageForm message={message} hideForm={() => setShowEditMessageForm(false)}/> : messageBubbleColor }
+          {/* </div> */}
+
+
+          {/* {message.from_user_id === user_id?
+          <DotDotButton messageId={message.id} conversation_id={conversation_id} message={message}  showEditMessageForm={showEditMessageForm} setShowEditMessageForm={setShowEditMessageForm}/>
+          :
+            null
+            } */}
+
+        {/* </div> */}
+
+
+      </div>
+
+
     </>
   )
 
