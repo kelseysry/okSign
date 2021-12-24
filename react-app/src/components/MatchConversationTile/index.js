@@ -71,7 +71,7 @@ const MatchConversationTile = ({profile_id}) => {
 
         <div className="one-conversation-container">
           <div className="one-conversation-header-name">{getUserName(matchProfileObj[0]?.user_id)}</div>
-          <img className="match_profile_image" src={matchProfileObj[0]?.image_url1} alt="match_picture"/>
+          <img className="match_profile_image_convo" src={matchProfileObj[0]?.image_url1} alt="match_picture"/>
         </div>
 
         )

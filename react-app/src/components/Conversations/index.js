@@ -93,7 +93,6 @@ const Conversations = () => {
           <div className="ConversationHeader">Your Conversations</div>
         </div>
         <section className="ConversationsBody">
-
           <section className="conversations-container">
             {conversationsArray[0]?.map((conversation) =>
                   <NavLink to={`/conversations/${conversation?.id}`}>
