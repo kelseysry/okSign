@@ -89,8 +89,8 @@ const MatchConversationTile = ({profile_id, conversation_id}) => {
             <div className="message-date">
               {lastMessageInConvo[0]?.date}
             </div>
-
           </div>
+          
           <div className="one-conversation-inner-container">
             <img className="match_profile_image_convo" src={matchProfileObj[0]?.image_url1} alt="match_picture"/>
             <div className="last-message">{lastMessageInConvo[0]?.content}</div>

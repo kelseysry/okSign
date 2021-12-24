@@ -59,13 +59,6 @@ const MatchProfile = ({userIdPercentObj}) => {
   }, []);
 
 
-  // useEffect(() => {
-  //   dispatch(getConversations())
-  // },[dispatch])
-
-  // console.log("profileObj", profileObj)
-  // console.log("about me---", profileObj?.about_me)
-
   const getUserName = (user_id) => {
     const usernameDisplay = users?.filter(function(el){
       return el.id === user_id
@@ -85,9 +78,7 @@ const MatchProfile = ({userIdPercentObj}) => {
 
 
     const existingConvo = conversations?.filter(function(convo){
-      // console.log("convo one", convo?.user_id_one)
-      // console.log("convo two", convo?.user_id_two)
-      // console.log("discoverUserId", discoverUserId)
+
       if(((convo?.user_id_one === discoverUserId) && (convo?.user_id_two === user_id_one)) || ((convo?.user_id_two === discoverUserId) && (convo?.user_id_one === user_id_one))) {
         // console.log("convo in if", convo)
         return convo

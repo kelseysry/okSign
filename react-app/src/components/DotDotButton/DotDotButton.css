@@ -61,5 +61,8 @@ background-color: transparent;
   position: absolute;
   top: 20px;
   overflow: auto;
+}
 
+.fa-pen {
+  color: black;
 }
