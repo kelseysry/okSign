@@ -60,7 +60,7 @@ function DotDotButton({conversation_id, messageId, showEditMessageForm, setShowE
             <button className="delete-review-button" onClick={() => handleDeleteMessage(conversation_id, message_id)}><i className="fas fa-trash"></i></button>
           </div>
 
-          <button className="edit-profile-button" onClick={() => setShowEditMessageForm(true)}><i className="fas fa-edit"></i></button>
+          <button className="" onClick={() => setShowEditMessageForm(true)}><i className="fas fa-pen"></i></button>
         </div>
       )}
 

@@ -133,11 +133,21 @@ const Conversation = () => {
           </div>
         </section>
 
-        { messages?.map((message, idx) =>
-        <div key={idx}>
-          <Message message={message}/>
-        </div>
-        )}
+        <section className="messages-outer-container">
+
+          <section className="messages-container">
+            <div className="message-header">{getUserName(currentConversation)}</div>
+
+            { messages?.map((message, idx) =>
+            <div key={idx}>
+              <Message message={message}/>
+            </div>
+            )}
+
+          </section>
+
+        </section>
+
 
         <MessageForm conversationId={conversationId} />
 
