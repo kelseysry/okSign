@@ -21,6 +21,7 @@ import QuestionForm from './components/QuestionForm';
 import QuestionPageAnswered from './components/QuestionPageAnswered';
 import QuestionPage from './components/QuestionPage';
 import MatchProfilePage from './components/MatchProfilePage';
+import Player from './components/Player';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -92,7 +93,7 @@ function App() {
             <MatchProfilePage />
           </MatchesProvider>
         </ProtectedRoute>
-
+          <Player /> 
         <ProtectedRoute path='/test' exact={true} >
         </ProtectedRoute>
       </Switch>
