@@ -2,12 +2,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import './MatchConversationTile.css';
-import { clearProfiles, getProfiles } from "../../store/profile";
+import { getProfiles } from "../../store/profile";
 
 
 // profile_id is actually the user.id, so need to grab all the profiles
 // and find the one that matches the user_id
-const MatchConversationTile = ({profile_id}) => {
+const MatchConversationTile = ({profile_id, conversation_id}) => {
   const dispatch = useDispatch()
 
   const profilesObj = useSelector((state) => state.profile)
@@ -17,7 +17,6 @@ const MatchConversationTile = ({profile_id}) => {
 
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
-
 
   useEffect(() => {
     async function fetchData() {

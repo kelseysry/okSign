@@ -61,24 +61,19 @@ const Conversations = () => {
 
   // gets the user Ids that are matched
   let matchUserIds = [];
-  let matchProfileObj = [];
-
+  console.log("conversationsArray", conversationsArray[0])
 
   const getMatchUserIds = async() => {
-
   conversationsArray[0]?.map((conversation) => {
     if(getMatchProfileId(conversation.user_id_one, conversation.user_id_two)) {
+      console.log("conversation in get", conversation)
       let matchProfileUserId = getMatchProfileId(conversation.user_id_one, conversation.user_id_two)
     matchUserIds.push(matchProfileUserId)
     }
   })
-
   }
 
   getMatchUserIds()
-
-
-
 
   let previousCurrentUserConversations =  conversationsArray[0]?.filter(function(el) {
     return el.id === +user_id
@@ -96,7 +91,7 @@ const Conversations = () => {
           <section className="conversations-container">
             {conversationsArray[0]?.map((conversation) =>
                   <NavLink to={`/conversations/${conversation?.id}`}>
-                    <MatchConversationTile profile_id={getMatchProfileId(conversation.user_id_one, conversation.user_id_two)}/>
+                    <MatchConversationTile conversation_id={conversation?.id} profile_id={getMatchProfileId(conversation.user_id_one, conversation.user_id_two)}/>
                   </NavLink>
             )}
           </section>
