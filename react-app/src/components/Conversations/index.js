@@ -104,7 +104,15 @@ const Conversations = () => {
             )}
           </section>
 
-          {matchUserIdsArr?  <AllUsersMap matchUsersProfileArr={matchUserIdsArr}/> : null }
+          {matchUserIdsArr?
+
+
+        <div className="one-conversation-container">
+          <div className="one-map-header-name">Click On a Marker To See Where Your Matches Are! &nbsp; <i class="fas fa-map-marker-alt"></i></div>
+             <AllUsersMap matchUsersProfileArr={matchUserIdsArr}/>
+          </div>
+
+          : null }
           </section>
       </>
 

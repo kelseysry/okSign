@@ -65,9 +65,6 @@ const { isLoaded } = useJsApiLoader({
 
       <div className="map_page__container">
 
-
-
-        <div style={{ height: '900px', width: '900px' }}>
         {isLoaded ?<GoogleMap
           mapContainerStyle={containerStyle}
           zoom={2}
@@ -112,7 +109,6 @@ const { isLoaded } = useJsApiLoader({
         </div>
         <div id='panel'>
         </div>
-      </div>
   </>
     );
 
