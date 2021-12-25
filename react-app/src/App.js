@@ -16,12 +16,9 @@ import { MatchesProvider } from './context/MatchesContext';
 import Conversation from './components/Conversation';
 import SearchResults from './components/SearchResults';
 import NavBar from './components/Navigation/NavBar';
-import EditQuestionForm from './components/EditQuestionForm';
-import QuestionForm from './components/QuestionForm';
-import QuestionPageAnswered from './components/QuestionPageAnswered';
 import QuestionPage from './components/QuestionPage';
 import MatchProfilePage from './components/MatchProfilePage';
-import Player from './components/Player';
+import { CalculatePercentProvider } from './context/CalculatePercent';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -82,7 +79,9 @@ function App() {
           </MatchesProvider>
         </ProtectedRoute>
         <ProtectedRoute path='/search/:input' exact={true} >
-          <SearchResults />
+          <CalculatePercentProvider>
+            <SearchResults />
+          </CalculatePercentProvider>
         </ProtectedRoute>
         <ProtectedRoute path='/questions' exact={true} >
           <QuestionPage />
@@ -93,7 +92,7 @@ function App() {
             <MatchProfilePage />
           </MatchesProvider>
         </ProtectedRoute>
-          <Player /> 
+
         <ProtectedRoute path='/test' exact={true} >
         </ProtectedRoute>
       </Switch>

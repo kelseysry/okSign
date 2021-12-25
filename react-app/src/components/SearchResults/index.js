@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { search } from "../../store/search"
 import {useParams} from 'react-router-dom';
 import SearchMatchTile from "../SearchMatchTile";
+import { NavLink } from "react-router-dom";
 
 const SearchResults = () => {
    //searchResults will give the profile.id of the user
@@ -11,9 +12,7 @@ const SearchResults = () => {
     const {input} = useParams()
     const [isLoaded, setIsLoaded] = useState(false)
 
-    console.log("searchUserResults---------", searchResultsObj.user)
-
-
+    // console.log("searchUserResults---------", searchResultsObj.user)
 
     useEffect( ()=>{
          dispatch(search(input))
@@ -32,7 +31,7 @@ const SearchResults = () => {
     if(searchUserResultsObj) {
       searchUserResults = Object.values(searchUserResultsObj)
     } else {
-      return null 
+      return null
     }
 
     console.log("searchUserresults array", searchUserResults)
@@ -40,27 +39,37 @@ const SearchResults = () => {
 
     if (!searchUserResults.length){
         return (
-            <h2>No users found for "{input}"</h2>
+
+          <div className="ConversationHeaderContainer">
+            <div className="ConversationHeader">No users found for "{input}"</div>
+          </div>
         )
     }
     else {
         return (
           <>
-
-    {  isLoaded && (
-      <div>
-                <div className="">
-                    Search Results For "{input}"
+            { isLoaded && (
+              <div>
+                <div className="ConversationHeaderContainer">
+                  <div className="ConversationHeader">Search Results For "{input}"</div>
                 </div>
 
-                  {
-                    searchUserResults?.map((matchProfileId) => <SearchMatchTile matchProfileId={matchProfileId}/>)
+              <section className="DiscoverContent">
+                {
+                  searchUserResults?.map((matchProfile,idx) =>
+                  <div key={idx}>
+                    <NavLink
+                      to={`/matchProfile/${matchProfile.user_id}`}
+                      >
+                      <SearchMatchTile matchProfile={matchProfile}/>
+                    </NavLink>
+                  </div>
+                  )
                   }
-
-            </div>)
-
+               </section>
+              </div>
+             )
             }
-
           </>
         )
     }
