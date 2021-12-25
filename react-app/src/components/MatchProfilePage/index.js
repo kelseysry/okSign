@@ -32,8 +32,6 @@ const MatchProfilePage = () => {
     return profile?.user_id === +profileId
   })
 
-  // console.log("matchProfile", matchProfileObj[0]?.age)
-
 
   return (
 

@@ -131,7 +131,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
     { isLoaded && matchProfileObj[0]?.user_id && (
       <>
-      <div className="oneMatchProfileContainer">
           <div className="oneMatchProfileContainerHeader">
             {getUserName(matchProfileObj[0]?.user_id)}
             <div className="matchButtonsContainer">
@@ -146,6 +145,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
             </div>
 
           </div>
+      <div className="oneMatchProfileContainerPage">
 
           <div className="match_profile_images_container_user">
             <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
