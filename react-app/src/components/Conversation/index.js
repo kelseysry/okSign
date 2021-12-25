@@ -20,8 +20,10 @@ const Conversation = () => {
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
 
-  const conversationObj = useSelector((state) => state.conversation)
-  const conversations = Object.values(conversationObj)
+  // const conversationObj = useSelector((state) => state.conversation)
+  // const conversations = Object.values(conversationObj)
+  const [conversations, setConversations] = useState([]);
+
 
   const messagesObj = useSelector((state) => state.message)
   const messages = Object.values(messagesObj)
@@ -49,6 +51,17 @@ const Conversation = () => {
 
   useEffect(() => {
     async function fetchData() {
+      const response = await fetch('/api/conversations/');
+      const responseData = await response.json();
+      setConversations(responseData.conversations);
+    }
+    fetchData();
+  }, []);
+
+
+
+  useEffect(() => {
+    async function fetchData() {
       const response = await fetch('/api/users/');
       const responseData = await response.json();
       setUsers(responseData.users);
@@ -56,8 +69,9 @@ const Conversation = () => {
     fetchData();
   }, []);
 
+  console.log("conversations-------------------", conversations)
 
-  let currentConversation =  conversations[0]?.filter(function(conversation) {
+  let currentConversation =  conversations?.filter(function(conversation) {
     return conversation.id === +conversationId
   })
 
@@ -145,7 +159,7 @@ const Conversation = () => {
             )}
             <MessageForm conversationId={conversationId} />
           </section>
-          
+
           {/* <section className="type-message-box">
             <MessageForm conversationId={conversationId} />
           </section> */}
