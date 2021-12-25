@@ -12,9 +12,7 @@ const SearchResults = () => {
     const {input} = useParams()
     const [isLoaded, setIsLoaded] = useState(false)
 
-    console.log("searchUserResults---------", searchResultsObj.user)
-
-
+    // console.log("searchUserResults---------", searchResultsObj.user)
 
     useEffect( ()=>{
          dispatch(search(input))
@@ -47,37 +45,27 @@ const SearchResults = () => {
     else {
         return (
           <>
+            {  isLoaded && (
+              <div>
+                <div className="ConversationHeaderContainer">
+                  <div className="ConversationHeader">Search Results For "{input}"</div>
+                </div>
 
-    {  isLoaded && (
-      <div>
-        <div className="ConversationHeaderContainer">
-          <div className="ConversationHeader">Search Results For "{input}"</div>
-        </div>
+                {
+                  searchUserResults?.map((matchProfile,idx) =>
+                  <div key={idx}>
+                    <NavLink
+                      to={`/matchProfile/${matchProfile.user_id}`} // userIdPercentObj[0] is the user.id
+                      >
+                      <SearchMatchTile matchProfile={matchProfile}/>
+                    </NavLink>
+                  </div>
+                  )
+                }
 
-                  {
-                    searchUserResults?.map((matchProfile,idx) =>
-
-
-
-          <div key={idx}>
-            <NavLink
-              to={`/matchProfile/${matchProfile.user_id}`} // userIdPercentObj[0] is the user.id
-              >
-              <SearchMatchTile matchProfile={matchProfile}/>
-            </NavLink>
-          </div>
-
-                    )
-                  }
-
-
-
-
-        </div>
-        )
-
-    }
-
+            </div>
+             )
+            }
           </>
         )
     }
