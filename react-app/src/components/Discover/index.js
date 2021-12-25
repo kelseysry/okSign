@@ -125,7 +125,6 @@ if(currentUserQuestion) {
   // instead of passing just the keys, pass in each object, you'll have to
   // grab the key instead for profile_id so can get the user.id and match%
 
-console.log("userIdPercentObj in discover", userIdsPercentsObj)
 
   let content;
 

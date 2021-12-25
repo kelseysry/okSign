@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { search } from "../../store/search"
 import {useParams} from 'react-router-dom';
 import SearchMatchTile from "../SearchMatchTile";
+import { NavLink } from "react-router-dom";
 
 const SearchResults = () => {
    //searchResults will give the profile.id of the user
@@ -54,12 +55,28 @@ const SearchResults = () => {
         </div>
 
                   {
-                    searchUserResults?.map((matchProfile) => <SearchMatchTile matchProfile={matchProfile}/>)
+                    searchUserResults?.map((matchProfile,idx) =>
+
+
+
+          <div key={idx}>
+            <NavLink
+              to={`/matchProfile/${matchProfile.user_id}`} // userIdPercentObj[0] is the user.id
+              >
+              <SearchMatchTile matchProfile={matchProfile}/>
+            </NavLink>
+          </div>
+
+                    )
                   }
 
-            </div>)
 
-            }
+
+
+        </div>
+        )
+
+    }
 
           </>
         )
