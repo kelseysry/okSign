@@ -65,8 +65,11 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     else if (!checkIfNumeric(parseInt(lat))) {
       validationErrors.push("must be a valid lat")
     }
-
-    if(!lng) validationErrors.push("lng is required")
+    if(!(lng)) {
+      validationErrors.push("lng is required")}
+    else if (!checkIfNumeric(parseInt(lng))) {
+      validationErrors.push("must be a valid lng")
+    }
     if(!about_me) validationErrors.push("about me is required")
     if(about_me?.length < 3) validationErrors.push("about me must be longer than 3 characters!")
     if(!goal) validationErrors.push("goal is required")
