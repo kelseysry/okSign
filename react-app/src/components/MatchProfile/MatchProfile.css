@@ -29,7 +29,10 @@
 .match_profile_image_discover {
   width: 200px;
   margin-right: 8px;
+}
 
+.match_profile_image_discover_noP {
+  width: 200px;
 }
 
 .match_profile_images_container {
