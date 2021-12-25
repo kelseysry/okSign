@@ -88,15 +88,42 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     if(!user_audio) validationErrors.push("audio is required")
 
     if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
-    if (!isURL(image_url1)) validationErrors.push("Please provide a valid link for the image")
 
-    if(!image_url2) validationErrors.push("the less photos, the less matches!")
-    if(!image_url3) validationErrors.push("a picture is worth 1000 words!")
-    if(!image_url4) validationErrors.push("you have great competition!")
-    if(!image_url5) validationErrors.push("no great bio, make up for that with a pic!")
-    if(!image_url6) validationErrors.push("don't be camera shy!")
+    if(!image_url1) {validationErrors.push("you have 3 seconds to impress with this photo")}
+    else if (!isURL(image_url1)) {
+      validationErrors.push("Please provide a valid link for the image 1")
+    }
+    if(!image_url2) {validationErrors.push("the less photos, the less matches!")}
+    else if (!isURL(image_url2)) {
+      validationErrors.push("Please provide a valid link for the image 2")
+    }
+
+    if(!image_url3) {validationErrors.push("a picture is worth 1000 words!")}
+    else if (!isURL(image_url3)) {
+      validationErrors.push("Please provide a valid link for the image 3")
+    }
+
+    if(!image_url4) {validationErrors.push("if you must, use a cropped pic!")}
+    else if (!isURL(image_url4)) {
+      validationErrors.push("Please provide a valid link for the image 4")
+    }
+
+    if(!image_url5) {validationErrors.push("you have great competition!")}
+    else if (!isURL(image_url5)) {
+      validationErrors.push("Please provide a valid link for the image 5")
+    }
+
+    if(!image_url6) {validationErrors.push("don't be camera shy!")
+  }    else if (!isURL(image_url6)) {
+    validationErrors.push("Please provide a valid link for the image 6")
+  }
+
     if(!pronouns) validationErrors.push("pronouns are required")
-    if(!height) validationErrors.push("height is required")
+    if(!height) {validationErrors.push("height is required")}
+    else if (!checkIfNumeric(parseInt(height))) {
+      validationErrors.push("please use integers for your height")
+    }
+
     if(!education) validationErrors.push("education is required")
     if(!occupation) validationErrors.push("occupation is required")
 
