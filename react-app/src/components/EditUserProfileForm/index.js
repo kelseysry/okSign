@@ -58,7 +58,12 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 
   useEffect(() => {
     const validationErrors = []
-    if(!age) validationErrors.push("age is required")
+    if(!(age)) {
+      validationErrors.push("age is required")}
+    else if (!checkIfNumeric(parseInt(age))) {
+      validationErrors.push("please use integers for your age")
+    }
+
     if(!location) validationErrors.push("location is required")
     if(!(lat)) {
       validationErrors.push("lat is required")}
