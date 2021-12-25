@@ -1,16 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-// import { GetMatches } from "../../context/MatchesContext";
 import React, { useState, useEffect } from 'react';
 import { getProfiles } from '../../store/profile';
-import MatchProfile from '../MatchProfile';
 import MatchProfilePercent from '../MatchProfilePercent';
 import MatchProfilePics from '../MatchProfilePics';
-import UserProfileAboutSection from '../UserProfileAboutSection';
 import MatchAboutSection from '../MatchAboutSection';
 import MatchDetailSection from '../MatchDetailSection';
-import MapPageE from '../Maps';
-
+import './MatchProfilePage.css'
 
 const MatchProfilePage = () => {
   const dispatch = useDispatch()
@@ -35,8 +31,6 @@ const MatchProfilePage = () => {
   let matchProfileObj = profiles?.filter((profile) => {
     return profile?.user_id === +profileId
   })
-
-  // console.log("matchProfile", matchProfileObj[0]?.age)
 
 
   return (

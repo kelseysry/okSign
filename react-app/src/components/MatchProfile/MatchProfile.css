@@ -29,7 +29,10 @@
 .match_profile_image_discover {
   width: 200px;
   margin-right: 8px;
+}
 
+.match_profile_image_discover_noP {
+  width: 200px;
 }
 
 .match_profile_images_container {
@@ -120,9 +123,10 @@ hr {
 .MatchProfileInnerContainer {
   position: relative;
   padding: 20px 20px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   display: flex;
   justify-content: space-around;
+  background: #fff;
 }
 
 .circlesContainer {
@@ -212,4 +216,12 @@ a {
 
 .match-user-about-container {
   margin-right: 20px;
+}
+
+.match-user-detail-container {
+  position: sticky;
+  top: 0px;
+  right:0;
+  margin-bottom: auto;
+  padding-bottom: 50px;
 }

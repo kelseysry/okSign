@@ -1,0 +1,28 @@
+.oneMatchProfileContainerPage {
+  box-sizing: border-box;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 0px 0px !important;
+  display: flex;
+  justify-content: center;
+}
+
+.pic-container-scroll {
+  width: 70%;
+}
+
+.match_profile_images_container_user {
+  overflow-x: scroll;
+  white-space: nowrap;
+  justify-content: start;
+}
+
+
+.match_profile_image_discover_page {
+  display: inline-block;
+  width: 300px;
+}
+
+.match_profile_image_discover_page {
+  padding-right: 10px;
+}
