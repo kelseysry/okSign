@@ -28,11 +28,15 @@
 
 .match_profile_image_discover {
   width: 200px;
+  height: 200px;
+  object-fit: cover;
   margin-right: 8px;
 }
 
 .match_profile_image_discover_noP {
   width: 200px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .match_profile_images_container {

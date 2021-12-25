@@ -20,7 +20,10 @@
 
 .match_profile_image_discover_page {
   display: inline-block;
-  width: 300px;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  /* object-fit:scale-down; */
 }
 
 .match_profile_image_discover_page {
