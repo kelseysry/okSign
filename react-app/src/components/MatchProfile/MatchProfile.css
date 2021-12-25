@@ -213,3 +213,11 @@ a {
 .match-user-about-container {
   margin-right: 20px;
 }
+
+.match-user-detail-container {
+  position: sticky;
+  top: 0px;
+  right:0;
+  margin-bottom: auto;
+  padding-bottom: 50px;
+}
