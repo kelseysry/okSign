@@ -12,7 +12,21 @@
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  /* padding-left: 50px; */
 }
+
+
+.oneMatchProfileContainerHeaderPage {
+
+  background: #1a1a1a;
+  padding: 20px 130px;
+  color: white;
+  font-size: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
 
 .oneMatchProfileContainer {
   display: flex;
