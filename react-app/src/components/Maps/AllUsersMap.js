@@ -46,7 +46,7 @@ const AllUsersMap= ({matchUsersProfileArr}) => {
     const options = { closeBoxURL: '', enableEventPropagation: true };
 
     const containerStyle = {
-      width: '900px',
+      width: '1150px',
       height: '600px',
     };
 
