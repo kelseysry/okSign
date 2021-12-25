@@ -1,65 +1,54 @@
-// get match percent for users >60% match in questions 
+// get match percent for ALL users in the db
 
-import { useSelector, useDispatch } from "react-redux";
+import { getQuestions } from '../store/question';
 import React, { useEffect } from 'react';
-// import MatchProfile from "../MatchProfile";
+import { useSelector, useDispatch } from "react-redux";
 
-// import { getQuestions } from "../../store/question";
-import { clearQuestions, getQuestions } from "../store/question";
+
 import { createContext, useContext } from "react";
 
-export const MatchesContext = createContext();
+export const PercentContext = createContext();
 
-export function MatchesProvider (props) {
+export function CalculatePercentProvider (props) {
   const dispatch = useDispatch()
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
-  // console.log("user_id", user_id)
-
   const questionObject = useSelector((state)=>state.question)
   // console.log("questionObj", questionObject)
   const questions = Object.values(questionObject)
-  // console.log("questions", questions[0])
-
-  console.log("match context questions🤡🤡🤡", questions)
 
   useEffect(async ()=>{
-    // await dispatch(clearQuestions())
     await dispatch(getQuestions())
 }, [dispatch, questions.length])
 
-let questionTry = questions
-
-// had to add questionRender variable b/c when added the Questions component -> that essentially changed
-// the number of things in the state to 2. So it messed up the indexing.
 let questionsRender;
 
-if(questions.length === 2) {
-   questionsRender = questions[1]
+if(questions[0]) {
+   questionsRender = questions[0]
 } else {
-    questionsRender = questions[0]
+    questionsRender = questions[1]
 }
-// console.log("questionsRender😯😯😯🤡🤡🤡", questionsRender)
-// console.log("questionTry😯😯😯😯😯", questionTry[1])
+// console.log("questionsRender😯😯😯", questionsRender)
 
-
-let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
 
 // for each user's question object, we need to count how many answers
 // they have that are the same as the current user
-//  console.log("currentUserQuestion", currentUserQuestion)
+ let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
+//  console.log("currentUserQuestion🎃🎃🎃", currentUserQuestion)
 
  let counter = {};
+
+if(currentUserQuestion) {
 
  questionsRender?.map((question, ele) => {
     // console.log(ele, question)
     // console.log("question.question1", question.question1)
-    // console.log("currentUserQuestion.question1", currentUserQuestion[0]?.question1)
+    // console.log("currentUserQuestion.question1", currentUserQuestion[0].question1)
     if(!counter[question.user_id]) {
       counter[question.user_id] = 1
     }
 
-    if(question.question1 === currentUserQuestion[0]?.must_answer1) {
+    if(question?.question1 === currentUserQuestion[0]?.must_answer1) {
       counter[question.user_id] += 1
     }
 
@@ -101,7 +90,11 @@ let currentUserQuestion = questionsRender?.filter((question) => {return question
 
     return counter
   })
-  // console.log("count", counter)
+
+}
+
+
+ // console.log("count", counter)
   // counter = {1: 10, 2: 6, 3: 3, 4: 10}
 
   // take out current user from potential match in counter
@@ -111,29 +104,21 @@ let currentUserQuestion = questionsRender?.filter((question) => {return question
   // console.log("updated counter", counter)
   // {2: 6, 3: 3, 4: 10}
 
-  // update counter to only include match if greater than 6/10
-  Object.keys(counter).forEach(key => {
-    if (counter[key] < 6) delete counter[key];
+  // all the [user.id, matchScore]
+  let userIdsPercentsObj = Object.keys(counter).map(function (key) {
+      return [Number(key), counter[key]];
   });
-  // console.log("updated counter", counter)
-  // {2: 6, 4: 10}
 
-  // profiles are being selected via id user_id directly correlates to profile.id
-  let matchedProfileIds = Object.keys(counter)
 
-  let userIdsPercentsArr = Object.keys(counter).map(function (key) {
-    return [Number(key), counter[key]];
-});
-
-// console.log("matchprofileid in match🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃", matchedProfileIds)
+  console.log("userIdsPercentsObj", userIdsPercentsObj)
 
   return (
-    <MatchesContext.Provider value={{userIdsPercentsArr}}>
+    <PercentContext.Provider value={{userIdsPercentsObj}}>
       {props.children}
-    </MatchesContext.Provider>
+    </PercentContext.Provider>
   )
 }
 
-export function GetMatches() {
-  return useContext(MatchesContext);
+export function GetMatchPercent() {
+  return useContext(PercentContext);
 }
