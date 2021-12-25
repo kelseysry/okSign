@@ -118,13 +118,14 @@ if(currentUserQuestion) {
     });
 
 
-
   // right now matchProfileIds corresponds to the userId -> we need to grab the profile id
   //  userId [1, 3, 4]
   // if delete 1 and make another profile -> need to be [3,4,5]
 
   // instead of passing just the keys, pass in each object, you'll have to
   // grab the key instead for profile_id so can get the user.id and match%
+
+console.log("userIdPercentObj in discover", userIdsPercentsObj)
 
   let content;
 
