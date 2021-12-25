@@ -48,6 +48,18 @@ const QuestionForm = () => {
     if(!question9) validationErrors.push("please answer question 9")
     if(!question10) validationErrors.push("please answer question 10")
 
+    if(!must_answer1) validationErrors.push("please mark what answer you'll accept for question 1")
+    if(!must_answer2) validationErrors.push("please mark what answer you'll accept for question 2")
+    if(!must_answer3) validationErrors.push("please mark what answer you'll accept for question 3")
+    if(!must_answer4) validationErrors.push("please mark what answer you'll accept for question 4")
+    if(!must_answer5) validationErrors.push("please mark what answer you'll accept for question 5")
+    if(!must_answer6) validationErrors.push("please mark what answer you'll accept for question 6")
+    if(!must_answer7) validationErrors.push("please mark what answer you'll accept for question 7")
+    if(!must_answer8) validationErrors.push("please mark what answer you'll accept for question 8")
+    if(!must_answer9) validationErrors.push("please mark what answer you'll accept for question 9")
+    if(!must_answer10) validationErrors.push("please mark what answer you'll accept for question 10")
+
+
     setErrors(validationErrors)
 
   }, [question1, must_answer1, question2, must_answer2, question3, must_answer3, question4, must_answer4, question5, must_answer5,question6, must_answer6, question7, must_answer7,question8, must_answer8, question9, must_answer9, question10,must_answer10, user_id])

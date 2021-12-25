@@ -51,14 +51,30 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
   const [religion_id, setReligion_id] = useState(currentProfile[0]?.religion_id);
   const [errors, setErrors] = useState([]);
 
-  // const [count, setCount] = useState(0)
+
+  function checkIfNumeric(number) {
+    return number === +number && number === (number|0);
+  }
 
   useEffect(() => {
     const validationErrors = []
-    if(!age) validationErrors.push("age is required")
+    if(!(age)) {
+      validationErrors.push("age is required")}
+    else if (!checkIfNumeric(parseInt(age))) {
+      validationErrors.push("please use integers for your age")
+    }
+
     if(!location) validationErrors.push("location is required")
-    if(!lat) validationErrors.push("lat is required")
-    if(!lng) validationErrors.push("lng is required")
+    if(!(lat)) {
+      validationErrors.push("lat is required")}
+    else if (!checkIfNumeric(parseInt(lat))) {
+      validationErrors.push("must be a valid lat")
+    }
+    if(!(lng)) {
+      validationErrors.push("lng is required")}
+    else if (!checkIfNumeric(parseInt(lng))) {
+      validationErrors.push("must be a valid lng")
+    }
     if(!about_me) validationErrors.push("about me is required")
     if(about_me?.length < 3) validationErrors.push("about me must be longer than 3 characters!")
     if(!goal) validationErrors.push("goal is required")
@@ -70,68 +86,64 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     if(!secrets) validationErrors.push("secrets are required")
     if(!looking_for) validationErrors.push("looking for is required")
     if(!user_audio) validationErrors.push("audio is required")
-    // if(!gender_id) validationErrors.push("gender is required")
-    // if(!gender_preference_id) validationErrors.push("gender preference is required")
-    if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
-    // if(!image_url1) {
-    //   validationErrors.push("you need 6 photos!")
-    // } else if (!isURL(image_url1)) {
-    //   validationErrors.push("Please provide a valid link for the image")
-    // }
-    // if(!image_url1) validationErrors.push("you need 6 photos!")
-    if (!isURL(image_url1)) validationErrors.push("Please provide a valid link for the image")
 
-    if(!image_url2) validationErrors.push("the less photos, the less matches!")
-    if(!image_url3) validationErrors.push("a picture is worth 1000 words!")
-    if(!image_url4) validationErrors.push("you have great competition!")
-    if(!image_url5) validationErrors.push("no great bio, make up for that with a pic!")
-    if(!image_url6) validationErrors.push("don't be camera shy!")
-    // if(!orientation_id) validationErrors.push("orientation is required")
-    // if(!partner_id) validationErrors.push("partner is required")
+    if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
+
+    if(!image_url1) {validationErrors.push("you have 3 seconds to impress with this photo")}
+    else if (!isURL(image_url1)) {
+      validationErrors.push("Please provide a valid link for the image 1")
+    }
+    if(!image_url2) {validationErrors.push("the less photos, the less matches!")}
+    else if (!isURL(image_url2)) {
+      validationErrors.push("Please provide a valid link for the image 2")
+    }
+
+    if(!image_url3) {validationErrors.push("a picture is worth 1000 words!")}
+    else if (!isURL(image_url3)) {
+      validationErrors.push("Please provide a valid link for the image 3")
+    }
+
+    if(!image_url4) {validationErrors.push("if you must, use a cropped pic!")}
+    else if (!isURL(image_url4)) {
+      validationErrors.push("Please provide a valid link for the image 4")
+    }
+
+    if(!image_url5) {validationErrors.push("you have great competition!")}
+    else if (!isURL(image_url5)) {
+      validationErrors.push("Please provide a valid link for the image 5")
+    }
+
+    if(!image_url6) {validationErrors.push("don't be camera shy!")
+  }    else if (!isURL(image_url6)) {
+    validationErrors.push("Please provide a valid link for the image 6")
+  }
+
     if(!pronouns) validationErrors.push("pronouns are required")
-    if(!height) validationErrors.push("height is required")
+    if(!height) {validationErrors.push("height is required")}
+    else if (!checkIfNumeric(parseInt(height))) {
+      validationErrors.push("please use integers for your height")
+    }
+
     if(!education) validationErrors.push("education is required")
     if(!occupation) validationErrors.push("occupation is required")
-    // if(!horoscope_id) validationErrors.push("horoscope is required")
-    // if(!smoking) validationErrors.push("smoking status is required")
-    // if(!drinking) validationErrors.push("drinking status is required")
-    // if(!children_id) validationErrors.push("children status is required")
-    // if(!pet_id) validationErrors.push("pet status is required")
-    // if(!politic_id) validationErrors.push("political belief is required")
-    // if(!religion_id) validationErrors.push("religion is required")
 
     setErrors(validationErrors)
 
   }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id])
 
 
-//   useEffect(async ()  => {
-//     await dispatch(getProfiles()).then(()=>dispatch(getProfiles()))
-// },[dispatch, count])
-
   const handleSubmit = async(e) => {
     e.preventDefault();
 
     setCount(count + 1)
-    // console.log("count", count)
 
     const userInputUpdateProfile = {
       age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
     }
 
-    // console.log("userInputUpdateProfile", userInputUpdateProfile)
-    // console.log("currentProfile[0]?.user_id ", currentProfile[0]?.id )
     let profile_id = +currentProfile[0]?.id
-    // console.log("profile_id profile_id", profile_id)
 
     let updated = await dispatch(editProfile(userInputUpdateProfile, profile_id))
-
-      console.log(updated, updated)
-      // await setCount(count + 1)
-      console.log("count", count)
-
-      // dispatch(clearProfiles())
-      // dispatch(getProfiles());
 
       if (updated) {
         setCount(count + 1)
@@ -144,8 +156,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 
     setCount(count + 1)
     console.log("count", count)
-    // dispatch(clearProfiles())
-    // dispatch(getProfiles());
+
     hideForm();
   };
 
@@ -323,7 +334,6 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
                 <label className="selectField">
                   <span className="labelName">Gender Preference</span>
                   <select value={gender_preference_id} onChange={(e) => setGender_preference_id(+e.target.value)}>
-                    {/* <option value='1' disabled>Select a gender preference </option> */}
                     <option value="1">Women</option>
                     <option value="2">Male</option>
                   </select>
