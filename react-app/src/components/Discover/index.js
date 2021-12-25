@@ -27,12 +27,14 @@ const Discover = () => {
 
 let questionsRender;
 
-if(questions[0]) {
+console.log("questions--------", questions)
+
+if(questions.length) {
    questionsRender = questions[0]
 } else {
-    questionsRender = questions[1]
+    questionsRender = null;
 }
-// console.log("questionsRender😯😯😯", questionsRender)
+console.log("questionsRender😯😯😯", questionsRender)
 
 
 // for each user's question object, we need to count how many answers

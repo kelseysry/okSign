@@ -10,13 +10,14 @@ const SearchMatchTile = ({matchProfile}) => {
   // const [isLoaded, setIsLoaded] = useState(false)
   const [users, setUsers] = useState([]);
   const [currentUserProfile, setCurrentUserProfile] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
 
   const {userIdsPercentsObj} = GetMatchPercent()
 
-  console.log("userIdsPercentsObj", userIdsPercentsObj)
+  console.log("userIdsPercentsObj-----------", userIdsPercentsObj)
 
 
   useEffect(() => {
@@ -54,16 +55,20 @@ const SearchMatchTile = ({matchProfile}) => {
 
   const getPercent = (matchProfileUserId) => {
     const percentMatch = userIdsPercentsObj?.filter(function(percent){
+
       return percent[0] === matchProfileUserId
      });
     if (percentMatch[0]) {
+      console.log("percentMatch[0]", percentMatch[0][1])
 
-     return percentMatch[0][1]
+     return percentMatch[0]
     }
     else {
       return null
     }
   }
+  let percent = getPercent(matchProfile?.user_id)
+  console.log("percent--------------", percent)
 
 
   return (
@@ -102,16 +107,20 @@ const SearchMatchTile = ({matchProfile}) => {
               <div className="circlesContainer">
                 <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${currentUserProfile?.image_url1}')` }}></div>
                 <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfile?.image_url1}')` }}></div>
-                 <div className="matchPercentCircle">{getPercent(matchProfile?.user_id)}0%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
+                 <div className="matchPercentCircle">
+
+                   {percent? percent[1] : null}0%<div><i className="fas fa-heart"></i>&nbsp;</div>
+
+                  </div>
               </div>
               <div className="agreeTable">
                 <div className="agree">
                   <div>Agree</div>
-                 <div>🥰 {getPercent(matchProfile?.user_id)}</div>
+                 <div>🥰 {percent? percent[1] : null}</div>
                 </div>
                 <div className="disagree">
                   <div>Disagree</div>
-                  <div>🙃 {10-getPercent(matchProfile?.user_id)}</div>
+                  <div>🙃 {percent? 10 - percent[1] : null}</div>
                 </div>
               </div>
             </div>

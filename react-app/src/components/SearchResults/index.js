@@ -39,31 +39,35 @@ const SearchResults = () => {
 
     if (!searchUserResults.length){
         return (
-            <h2>No users found for "{input}"</h2>
+
+          <div className="ConversationHeaderContainer">
+            <div className="ConversationHeader">No users found for "{input}"</div>
+          </div>
         )
     }
     else {
         return (
           <>
-            {  isLoaded && (
+            { isLoaded && (
               <div>
                 <div className="ConversationHeaderContainer">
                   <div className="ConversationHeader">Search Results For "{input}"</div>
                 </div>
 
+              <section className="DiscoverContent">
                 {
                   searchUserResults?.map((matchProfile,idx) =>
                   <div key={idx}>
                     <NavLink
-                      to={`/matchProfile/${matchProfile.user_id}`} // userIdPercentObj[0] is the user.id
+                      to={`/matchProfile/${matchProfile.user_id}`}
                       >
                       <SearchMatchTile matchProfile={matchProfile}/>
                     </NavLink>
                   </div>
                   )
-                }
-
-            </div>
+                  }
+               </section>
+              </div>
              )
             }
           </>
