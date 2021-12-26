@@ -182,6 +182,11 @@ const DiscoverHoroscopeProfile = ({profile}) => {
       return 70
     }
 
+    // aries and aries match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 1 )|| (+userHoroscopeId === 1 && +matchHoroscopeId === 1 )) {
+      return 60
+    }
+
     // aries and taurus match
     if((+userHoroscopeId === 1 && +matchHoroscopeId === 2 )|| (+userHoroscopeId === 2 && +matchHoroscopeId === 1 )) {
       return 60
@@ -237,29 +242,63 @@ const DiscoverHoroscopeProfile = ({profile}) => {
       return 65
     }
 
-    // aries and virgo match
-    if((+userHoroscopeId === 1 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 1 )) {
-      return 45
+
+
+
+    // Taurus and Taurus match
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 2 )|| (+userHoroscopeId === 2 && +matchHoroscopeId === 2 )) {
+      return 70
     }
-    // aries and virgo match
-    if((+userHoroscopeId === 1 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 1 )) {
-      return 45
+    // Taurus and gemini match
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 3 )|| (+userHoroscopeId === 3 && +matchHoroscopeId === 2 )) {
+      return 70
     }
 
-    // aries and virgo match
-    if((+userHoroscopeId === 1 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 1 )) {
-      return 45
+    // Taurus and cancer match
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 4 )|| (+userHoroscopeId === 4 && +matchHoroscopeId === 2 )) {
+      return 80
     }
 
-    // aries and virgo match
-    if((+userHoroscopeId === 1 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 1 )) {
-      return 45
+    // Taurus and leo match
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 5 )|| (+userHoroscopeId === 5 && +matchHoroscopeId === 2 )) {
+      return 70
     }
 
-    // aries and virgo match
-    if((+userHoroscopeId === 1 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 1 )) {
-      return 45
+    // Taurus and virgo match
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 2 )) {
+      return 90
     }
+
+    // taurus and libra match
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 2 )) {
+      return 75
+    }
+
+    // taurus and scorpio match
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 2 )) {
+      return 85
+    }
+
+    // taurus and sagitarrius match
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 2 )) {
+      return 50
+    }
+
+    // taurus and capricorn match
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 20 )|| (+userHoroscopeId === 20 && +matchHoroscopeId === 2 )) {
+      return 95
+    }
+
+    // taurus and aquarius match
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 2 )) {
+      return 80
+    }
+
+    // taurus and pisces match
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 2 )) {
+      return 85
+    }
+
 
 
   }
