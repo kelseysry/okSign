@@ -196,12 +196,14 @@ const DiscoverHoroscopeProfile = ({profile}) => {
             </div>
             <div className="MatchProfileInnerContainer_Horoscope">
               <div className="circlesContainer_H">
-                <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
-                <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${profile?.image_url1}')` }}></div>
-                <div className="matchPercentCircle">{getHoroscopeMatchPercent(profile.horoscope_id,userProfileObj[0]?.horoscope_id)}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
+                <div className="userPhotoMatch-first_H" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
+                <div className="userPhotoMatch-last_H" style={{ backgroundImage: `url('${profile?.image_url1}')` }}></div>
+                <div className="matchPercentCircle_H">{getHoroscopeMatchPercent(profile.horoscope_id,userProfileObj[0]?.horoscope_id)}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
               </div>
               <div className="horoscopeContent">
                   {horoscopeContent}
+
+                  <hr className="fancy"></hr>
               </div>
             </div>
 

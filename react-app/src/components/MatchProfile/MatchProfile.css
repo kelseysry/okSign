@@ -113,7 +113,6 @@ hr {
 
 
 .matchPercentCircle {
-  /* display: block; */
   position: absolute;
   left: 50%;
   transform: translate(-50%, 45px);
@@ -129,9 +128,6 @@ hr {
   font-weight: bold;
 
   background: #1a1a1a;
-  /* background: #fff; */
-  /* border-color: #0000bf; */
-  /* color: #0000bf; */
   color: #fff;
   box-shadow: 0 0 0 3px #fff;
 
