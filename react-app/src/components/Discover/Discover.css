@@ -41,9 +41,14 @@ body {
   display: flex;
 }
 
-.option1 {
+.option {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+}
+
+.heart-choice {
+  padding-bottom: 3px;
+
 }
