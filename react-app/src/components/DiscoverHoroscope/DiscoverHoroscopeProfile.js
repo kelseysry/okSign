@@ -400,6 +400,46 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
 
 
+    // leo and leo match
+    if((+userHoroscopeId === 5 && +matchHoroscopeId === 5 )|| (+userHoroscopeId === 5 && +matchHoroscopeId === 5 )) {
+      return 85
+    }
+
+    // leo and virgo match
+    if((+userHoroscopeId === 5 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 5 )) {
+      return 75
+    }
+
+    // leo and libra match
+    if((+userHoroscopeId === 5 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 5 )) {
+      return 65
+    }
+
+    // leo and scorpio match
+    if((+userHoroscopeId === 5 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 5 )) {
+      return 75
+    }
+
+    // leo and sagitarrius match
+    if((+userHoroscopeId === 5 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 5 )) {
+      return 95
+    }
+
+    // leo and capricorn match
+    if((+userHoroscopeId === 5 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 5 )) {
+      return 45
+    }
+
+    // leo and aquarius match
+    if((+userHoroscopeId === 5 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 5 )) {
+      return 70
+    }
+
+    // leo and pisces match
+    if((+userHoroscopeId === 5 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 5 )) {
+      return 75
+    }
+
 
   }
 
