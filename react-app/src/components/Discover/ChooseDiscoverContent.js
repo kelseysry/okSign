@@ -6,8 +6,8 @@ function ChooseDiscoverContent() {
 
   return (
     <div className=''>
-      <button className="question" onClick={() => setDiscoverContent('QuestionMatch')}>Question Match</button>
-      <button className="horoscope" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope Match</button>
+      <button className="QM" onClick={() => setDiscoverContent('QuestionMatch')}>Question Match</button>
+      <button className="HM" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope Match</button>
     </div>
   );
 }

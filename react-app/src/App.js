@@ -20,7 +20,6 @@ import QuestionPage from './components/QuestionPage';
 import MatchProfilePage from './components/MatchProfilePage';
 import { CalculatePercentProvider } from './context/CalculatePercent';
 import DiscoverHoroscope from './components/DiscoverHoroscope/DiscoverHoroscopePage';
-import DiscoverContentProvider from './context/DiscoverContentContext';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -58,11 +57,9 @@ function App() {
         {/* <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
         </ProtectedRoute> */}
-        <DiscoverContentProvider>
           <ProtectedRoute path='/' exact={true} >
             <Discover />
           </ProtectedRoute>
-        </DiscoverContentProvider>
         <ProtectedRoute path='/profiles/:userId' exact={true} >
           <UserProfile count={count} setCount ={setCount}  />
         </ProtectedRoute>

@@ -22,7 +22,7 @@ const Discover = () => {
   const questionObject = useSelector((state)=>state.question)
   // console.log("questionObj", questionObject)
   const questions = Object.values(questionObject)
-  // console.log("questions🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", questions)
+  console.log("questions🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", questions)
 
 
 
