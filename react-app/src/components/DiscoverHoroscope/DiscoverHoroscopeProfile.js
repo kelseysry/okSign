@@ -265,66 +265,66 @@ const DiscoverHoroscopeProfile = ({profile}) => {
     // Taurus and Taurus match
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 2 )|| (+userHoroscopeId === 2 && +matchHoroscopeId === 2 )) {
       horoscopeContent="The relationship between two Taurus representatives is something to cherish and hold on to, only if they are not both too stubborn in their intent to wait for the other person to make the first move. Because of their emotional and sensual nature, they can be very attentive to each other’s needs and take care of one another when necessary. Their problem usually shows only through the double set of horns, making them sink too deep into their differences with no apparent reason. If they could open up to each other, and to their mutual need for change, this is a relationship both of them would find extraordinary."
-      return 70
+      return 86
     }
     // Taurus and gemini match
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 3 )|| (+userHoroscopeId === 3 && +matchHoroscopeId === 2 )) {
       horoscopeContent="The relationship between Taurus and Gemini doesn’t give much promise to begin with. Still, the fixed quality of the sign of Taurus can give them enough endurance and persistence to last in their intent to be with a Gemini, long enough for them to really get to know each other well. Although their chances to reconcile their differences are slim, if Taurus partner puts their whole heart into it, they might manage to become the most relevant part of their Gemini’s life as their base and their reliability in everything they do. In case they accept each other completely, Taurus will give Gemini their connection to planet Earth, to their body and their daily routine, giving them the base for health and normal functioning. In return, Gemini will give their Taurus wings and, better yet, teach them how to fly."
-      return 70
+      return 23
     }
 
     // Taurus and cancer match
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 4 )|| (+userHoroscopeId === 4 && +matchHoroscopeId === 2 )) {
       horoscopeContent="Taurus and Cancer present the gentlest couple of the zodiac. When they fall in love, they will rarely find the reason to separate, because of their shared emotional goals for love, understanding, family and the feeling of home. This is the relationship that seems like a perpetuum mobile of love, in case both partners don’t already have too much emotional baggage that makes them unable to give and receive this depth of emotion. Even if they do, with no obstacles on the way, they will likely learn to forgive and forget as the flow of their relationship takes them to what they always desired."
-      return 80
+      return 91
     }
 
     // Taurus and leo match
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 5 )|| (+userHoroscopeId === 5 && +matchHoroscopeId === 2 )) {
       horoscopeContent="The relationship of Taurus and Leo could be aggressively challenging if not for their warm natures ruled by Venus and the Sun. Although they are both signs of fixed quality with entirely different natures, if they gather enough patience before they enter their relationship, they have a chance to become your archetypal couple of a girl and a boy. When their masculine and feminine principles are in balance, they can use them to mend their sexual, intellectual and financial circumstances and really enjoy each other."
-      return 70
+      return 29
     }
 
     // Taurus and virgo match
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 2 )) {
       horoscopeContent="In general, Taurus is there to teach Virgo about love, tenderness and sexuality. Virgo needs to be flexible enough to value their Taurus and give them the intellectual view on things they might idealize. Their relationship could be a match made in heaven, only if they are not too scared of being hurt and too distrustful. If they do give in to each other and fall madly in love, they could be the combination of a clear heart, represented by Taurus, and a clear mind, represented by Virgo. What more would they need than each other?"
-      return 90
+      return 73
     }
 
     // taurus and libra match
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 2 )) {
       horoscopeContent="Look out Libras, for Taurus is here to wake your inner fears and bring them all to surface! Taurus should be careful, too, for their need to feel guilt could blossom with a Libra. This relationship is a lesson both of them will never forget, especially if they manage to build enough understanding and tenderness between them. The only way they could ever be happy would be to embrace what they don’t want to deal with in their own inner worlds. If they do this, well you can imagine what a Venus complete would be like."
-      return 75
+      return 33
     }
 
     // taurus and scorpio match
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 2 )) {
       horoscopeContent="Taurus and Scorpio are both signs of deepest physical pleasure, each in their own way. This has to be the focus of their relationship, for they can’t seem to understand platonic and imaginative relationships when they get together. There is no such thing as a platonic experience of romance, when the whole point of romance is to get physical. It is very possible that they will build their sexual life to the point where no other partner could ever satisfy their needs.This could lead to a possessive relationship with no way out, although they probably wouldn’t want to get out even if they could. The entire experience can be too dark for the Taurus partner, especially if their practical sense is challenged by Scorpio’s character. In case they are both independent and ready to blend with someone else, they could be the perfect connection between sexual and emotional, the one that we all wish for."
-      return 85
+      return 89
     }
 
     // taurus and sagitarrius match
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 2 )) {
       horoscopeContent="With their inner beauty and the understanding they share in search of the truth to life, these two might seem as a perfect couple. However, every positive needs a negative to complete it, and when we really observe, we can notice that often a Taurus and a Sagittarius don’t even get attracted to each other. Taurus needs earthly pleasures in their relationships and as a fixed, Earth sign it is the slowest of all signs. This is not exactly someone who can easily understand the fast, changeable and fiery Sagittarius.The best possible scenario for their relationship would be for them to get to know each other very well and build a friendship without expectations, for years. In the end, this could result in deep understanding that would provide them both with enough patience to actually start a relationship that has a future. If not, they can always hold on to beauty in the world. Imagine how wonderful their world of creation could be if they joined their forces of good."
-      return 50
+      return 31
     }
 
     // taurus and capricorn match
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 2 )) {
       horoscopeContent="Taurus and Capricorn can form a relationship so deep that their creative power in the material realm could seem unreachable for other signs of the zodiac. With the ability to complement each other in a gentle, slow way, they are the most boring couple on the outside, with most exciting inner activity that stays hidden from the rest of the world. If Taurus motivates their Capricorn partner, and Capricorn shows the way of accomplishment to their Taurus partner, they could work together, raise children and share a life with more fun than they are both used to, or simply form an unbreakable bond. When their deep emotions intertwine, they are bound to each other for eternity."
-      return 95
+      return 89
     }
 
     // taurus and aquarius match
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 2 )) {
       horoscopeContent="Taurus and Aquarius are people from two different worlds. Still, there is a strange similarity and connection between their rulers and although very challenging, this is a relationship where both partners could fall in love with each other, over and over again, every single day. They are ruled by Venus and Uranus, both planets rotating in a direction opposite to the direction of other planets. They are two outcasts, different and standing out together, they understand that East can be where West is, and vice versa. They understand diversity, change of direction and the excitement of love. However, they will rarely get to the point to understand each other because of their excessive need for peace (Taurus) and excitement (Aquarius). What a strange pair these signs are. With such an obvious opportunity for electric love, they go around it and search for something else."
-      return 80
+      return 11
     }
 
     // taurus and pisces match
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 2 )) {
       horoscopeContent="This is a relationship based on love and full of it while it lasts. They both crave romance and beauty in their lives, and will do anything that is needed to keep the beauty going between them. Taurus will give their Pisces partner a chance to connect to the real world, showing them how to ground their creativity, while Pisces will lift up Taurus and make them a bit softer and more flexible. They seem to be on a mission of convincing them that true love exists. When their relationship is over, they will both know it instantly and very often a conversation about a breakup would be redundant. If they savor their trust and nurture the beauty of love they share, their relationship can last and be as inspiring as a dream coming true."
-      return 85
+      return 88
     }
 
 
