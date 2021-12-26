@@ -285,7 +285,7 @@ const DiscoverHoroscopeProfile = ({profile}) => {
     }
 
     // taurus and capricorn match
-    if((+userHoroscopeId === 2 && +matchHoroscopeId === 20 )|| (+userHoroscopeId === 20 && +matchHoroscopeId === 2 )) {
+    if((+userHoroscopeId === 2 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 2 )) {
       return 95
     }
 
@@ -298,6 +298,60 @@ const DiscoverHoroscopeProfile = ({profile}) => {
     if((+userHoroscopeId === 2 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 2 )) {
       return 85
     }
+
+
+
+    // gemini and gemini match
+    if((+userHoroscopeId === 3 && +matchHoroscopeId === 3 )|| (+userHoroscopeId === 3 && +matchHoroscopeId === 3 )) {
+      return 75
+    }
+
+    // gemini and cancer match
+    if((+userHoroscopeId === 3 && +matchHoroscopeId === 4 )|| (+userHoroscopeId === 4 && +matchHoroscopeId === 3 )) {
+      return 60
+    }
+
+    // gemini and leo match
+    if((+userHoroscopeId === 3 && +matchHoroscopeId === 5 )|| (+userHoroscopeId === 5 && +matchHoroscopeId === 3 )) {
+      return 80
+    }
+
+    // gemini and virgo match
+    if((+userHoroscopeId === 3 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 3 )) {
+      return 75
+    }
+
+    // gemini and libra match
+    if((+userHoroscopeId === 3 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 3 )) {
+      return 90
+    }
+
+    // gemini and scorpio match
+    if((+userHoroscopeId === 3 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 3 )) {
+      return 60
+    }
+
+    // gemini and sagitarrius match
+    if((+userHoroscopeId === 3 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 3 )) {
+      return 76
+    }
+
+    // gemini and capricorn match
+    if((+userHoroscopeId === 3 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 3 )) {
+      return 50
+    }
+
+    // gemini and aquarius match
+    if((+userHoroscopeId === 3 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 3 )) {
+      return 90
+    }
+
+    // gemini and pisces match
+    if((+userHoroscopeId === 3 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 3 )) {
+      return 50
+    }
+
+
 
 
 
