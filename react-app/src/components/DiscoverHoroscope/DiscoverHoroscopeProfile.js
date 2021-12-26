@@ -559,6 +559,21 @@ const DiscoverHoroscopeProfile = ({profile}) => {
     }
 
 
+    // capricorn and capricorn match
+    if((+userHoroscopeId === 10 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 10 )) {
+      return 85
+    }
+
+    // capricorn and aquarius match
+    if((+userHoroscopeId === 10 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 10 )) {
+      return 70
+    }
+
+    // capricorn and pisces match
+    if((+userHoroscopeId === 10 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 10 )) {
+      return 85
+    }
+
 
 
   }
