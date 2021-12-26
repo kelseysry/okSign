@@ -1,0 +1,92 @@
+.MatchProfileInnerContainer_Horoscope {
+  position: relative;
+  padding: 50px 20px;
+  padding-bottom: 205px;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+}
+
+.horoscopeContent {
+  box-sizing: border-box;
+  width: 550px;
+  height: min-content;
+  /* height: 220px; */
+  position: relative;
+  /* background: pink; */
+}
+
+
+.circlesContainer_H {
+  position: absolute;
+  align-self: flex-end;
+  }
+
+
+  .userPhotoMatch-first_H {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 130px;
+    height: 130px;
+    background: #ebedf2;
+    border-radius: 50%;
+    background-size: contain;
+    border: 1px solid #fff;
+    transform: translateX(-125px);
+  }
+
+  .userPhotoMatch-last_H {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 130px;
+    height: 130px;
+    background: #ebedf2;
+    border-radius: 50%;
+    background-size: contain;
+    border: 1px solid #fff;
+    transform: translateX(-10px);
+    overflow: hidden;
+
+  }
+
+
+  .matchPercentCircle_H {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 90px);
+    width: 77px;
+    height: 77px;
+    margin-bottom: -27px;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.35rem;
+    line-height: 20px;
+    font-weight: bold;
+    background: #1a1a1a;
+    color: #fff;
+    box-shadow: 0 0 0 3px #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fancy {
+    border: none;
+    border-top: 3px double #333;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+  }
+
+  .fancy:after {
+    background: #fff;
+    content: '💖';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
