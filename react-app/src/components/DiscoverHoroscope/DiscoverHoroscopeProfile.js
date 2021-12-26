@@ -52,7 +52,6 @@ const DiscoverHoroscopeProfile = ({profile}) => {
   }, [dispatch, profiles.length])
 
 
-
   useEffect(() => {
     async function fetchData() {
       const response = await fetch('/api/horoscopes/');
@@ -105,21 +104,6 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
   }
 
-  const getMatchProfile = (profile_id) => {
-    const matchProfile = profiles[0]?.filter(function(profile){
-
-      return profile?.user_id === +profile_id
-    })
-    if(matchProfile) {
-      // console.log("match match", matchProfile)
-      return matchProfile
-    }
-    else {
-      return null
-    }
-  }
-
-
   const getUserProfile = (user_id_one) => {
     const userProfile = profiles[0]?.filter(function(profile){
 
@@ -134,7 +118,6 @@ const DiscoverHoroscopeProfile = ({profile}) => {
     }
   }
 
-  // console.log("horoscopes", horoscopes)
   const getHoroscope = (horoscopeId) => {
     const userHoroscope = horoscopes?.filter(function(horoscope){
       return horoscope.id === +horoscopeId
@@ -147,14 +130,7 @@ const DiscoverHoroscopeProfile = ({profile}) => {
     }
   }
 
-
-
-  // console.log("getmatchProfile", getMatchProfile(profile_id))
-  let matchProfileObj = (getMatchProfile(profile_id))
-
   let userProfileObj = (getUserProfile(user_id_one))
-
-  // console.log("userProfileObh", userProfileObj)
 
 
   const handleCreateConversation = async (discoverProfileId) => {
@@ -201,10 +177,13 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
   // console.log("userProfileObj[0].horoscope", userProfileObj[0].horoscope_id)
 
+  let horoscopeContent;
+
   const getHoroscopeMatchPercent = (matchHoroscopeId, userHoroscopeId) => {
 
     // aquarius and cancer match
     if((+userHoroscopeId === 11 && +matchHoroscopeId === 4 )|| (+userHoroscopeId === 4 && +matchHoroscopeId === 11 )) {
+      horoscopeContent = " Cancer and Aquarius are not your usual happy couple in most cases. Their relationship can be too stressful for Cancer partner and the lack of intimacy will most probably tear them apart. However, the link between them can actually be wonderful when found, and they could open up such interesting new perspectives for one another if this happens. They both want to learn new things and could travel far if a strong base is made at home, so Cancer can remain peaceful."
       return 70
     }
 
@@ -656,14 +635,7 @@ const DiscoverHoroscopeProfile = ({profile}) => {
                 <div className="matchPercentCircle">{getHoroscopeMatchPercent(profile.horoscope_id,userProfileObj[0]?.horoscope_id)}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
               </div>
               <div className="agreeTable">
-                <div className="agree">
-                  <div>Agree</div>
-                  {/* <div>🥰 {profile[1]}</div> */}
-                </div>
-                <div className="disagree">
-                  <div>Disagree</div>
-                  {/* <div>🙃 {disagree}</div> */}
-                </div>
+                  {horoscopeContent}
               </div>
             </div>
 
