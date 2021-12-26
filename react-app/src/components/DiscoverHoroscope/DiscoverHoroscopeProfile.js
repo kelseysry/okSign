@@ -392,27 +392,32 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
     // cancer and cancer match
     if((+userHoroscopeId === 4 && +matchHoroscopeId === 4 )|| (+userHoroscopeId === 4 && +matchHoroscopeId === 4 )) {
-      return 75
+      horoscopeContent="Cancer is a sign of genetic inheritance and it is sometimes difficult to reconcile the genetic predispositions of two Cancer partners. However, their mellow nature, ability to feel and have enough compassion for each other, makes them great candidates for marriage, children and the whole picket fence scenario. Their sex life and their shared activities could suffer a general lack of initiative, energy and movement. Because of this, they should both try not to end up in a boring everyday routine in which they only eat and sit in front of a TV as soon as they come home from work. It is important for them to have enough tender surprises and activities that build their physical relationship, or they might end up unsatisfied and not really understanding why. If they are troubled by this possible shortcoming of their relationship, as two tender individuals, they will manage to make each other feel wonderful, even if that means breaking up."
+      return 85
     }
 
     // cancer and leo match
     if((+userHoroscopeId === 4 && +matchHoroscopeId === 5 )|| (+userHoroscopeId === 5 && +matchHoroscopeId === 4 )) {
-      return 70
+      horoscopeContent ="Although the Moon reflects the light from the Sun, the sign of Cancer doesn’t really see Leo as the source of all their joy. Leo is a sign that should spread joy and love with an active approach to each one of their relationships. How is it possible that Cancer is immune? Well probably because the Moon circles around the Earth, not the Sun. They are special, that’s for sure. Both of them are strong individuals, each on their own plane. Their lack of understanding and emotional touch can be explained through the fact that both of them have a mission to spread love to the less fortunate signs of the zodiac. Not everyone is born with an emotional flow like Cancer and a huge, warm heart like Leo. If they kept all this love to themselves, some unfortunate souls would probably search for them aimlessly, and the world would be a much sadder place."
+      return 29
     }
 
     // cancer and virgo match
     if((+userHoroscopeId === 4 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 4 )) {
-      return 75
+      horoscopeContent="Cancer and Virgo can have a wonderful connection and are usually brought together by sexual understanding. The main problem of their relationship is in the possible conflict between emotional Cancer and reasonable Virgo. If they manage to overcome this, accepting each other’s shortcomings and learning to incorporate some rationality or some emotion into their lives, they could end up in an inspiring relationship that will last for a very long time. In a way, they complement each other as much as the heart complements the mind. If they share a spark of love, it would be a shame to miss the opportunity for happiness just because of someone’s irrational expectations or someone’s closed heart."
+      return 77
     }
 
     // cancer and libra match
     if((+userHoroscopeId === 4 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 4 )) {
-      return 60
+      horoscopeContent="Probably the biggest restriction in the relationship between Cancer and Libra is in things they want from their partner. Cancer wants someone responsible, to take them by the hand if needed and complement their emotional nature with practicality. Libra wants someone who is full of life, energized, strong and full of initiative to follow their ideas. They can really disappoint each other if any expectations are set wrongly at the beginning of their relationship. The best way for them to build a love that is to last, is for both partners to hold on to their independence whatever happens. If they focus on love and worry about earthly things each on their own, Cancer could “compromise” on heavenly love, as much as Libra would like to have a family."
+      return 28
     }
 
     // cancer and scorpio match
     if((+userHoroscopeId === 4 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 4 )) {
-      return 95
+      horoscopeContent="The sign of Scorpio is associated with death and all kinds of bad things, but all of their maliciousness comes from their emotional and sexual repression. Cancer can usually understand the need of their Scorpio partner to express their deepest, darkest emotions in their sex life. If Cancer partner doesn’t get scared or too forced to do something they are not ready for, a sexual relationship between Cancer and Scorpio can be deeply satisfying for both partners.This is a relationship of two Water signs and because of this their sex life needs to reflect all of their emotional connection or a lack of it if there is any. When they fall in love, they will both need to express their feelings and the intimacy they might share is incredible."
+      return 90
     }
 
     // cancer and sagitarrius match
