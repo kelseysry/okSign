@@ -107,7 +107,10 @@ hr {
   background-size: contain;
   border: 1px solid #fff;
   transform: translateX(-4px);
+  overflow: hidden;
+
 }
+
 
 .matchPercentCircle {
   /* display: block; */
