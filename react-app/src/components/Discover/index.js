@@ -1,14 +1,20 @@
 
 import { useSelector, useDispatch } from "react-redux";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from "react-router-dom";
 import MatchProfile from "../MatchProfile";
 import { getQuestions } from "../../store/question";
 import NoMatches from "../NoMatches";
 import './Discover.css'
+import ChooseDiscoverContent from "./ChooseDiscoverContent";
+import DiscoverHoroscope from "../DiscoverHoroscope/DiscoverHoroscopePage";
+import { useDiscoverContent } from "../../context/DiscoverContentContext";
 
 const Discover = () => {
   const dispatch = useDispatch()
+
+  const {discoverContent} = useDiscoverContent()
+
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
   // console.log("user_id", user_id)
@@ -127,13 +133,19 @@ if(currentUserQuestion) {
   // instead of passing just the keys, pass in each object, you'll have to
   // grab the key instead for profile_id so can get the user.id and match%
 
+  let content2;
+  content2 = (
+    <DiscoverHoroscope />
+  )
+
+
+  console.log("discoverContent", discoverContent)
 
   let content;
 
   if (currentUserQuestion?.length) {
     content = (
       <div className="">
-
         {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
           <div key={idx}>
             <NavLink
@@ -157,12 +169,14 @@ if(currentUserQuestion) {
   return (
     <>
     <div className="ConversationHeaderContainer">
-      <div className="ConversationHeader">Discover</div>
+      <div className="ConversationHeader">Discover
+      </div>
+      <ChooseDiscoverContent />
     </div>
 
     <div className="DiscoverContent">
 
-      {content}
+      {discoverContent === 'QuestionMatch'? content : content2}
     </div>
     </>
   )
