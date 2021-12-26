@@ -576,27 +576,32 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
     // scorpio and scorpio match
     if((+userHoroscopeId === 8 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 8 )) {
-      return 90
+      horoscopeContent="Scorpio and Scorpio have this tendency to bring out the worst in each other. Even though they can share the deepest understanding known to the entire zodiac, they can also get too dark and depressed together, sinking into their pool of unresolved emotions. Their emotional understanding is something worth cherishing, if they are both open for their own feelings and accept their own inner needs."
+      return 66
     }
 
     // scorpio and sagitarrius match
     if((+userHoroscopeId === 8 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 8 )) {
-      return 85
+      horoscopeContent="Scorpio and Sagittarius make a pretty great couple, for as long as they feel the first excitement at the start of their relationship. While they don’t know each other well and everything seems new and incredible, Scorpio will see their Sagittarius partner as a ray of light that suddenly makes their life brighter and better, while Sagittarius will see that there is so much to learn and enjoy the depth of their Scorpio partner, followed by emotional attachment. In time, there is a strong chance they will slowly lose interest in one another, especially the mutable sign of Sagittarius for their fixed Scorpio partner. Even though their relationship might end on bad terms, it would be a shame not to give in to it and let it fascinate and exalt both of them for however long."
+      return 30
     }
 
     // scorpio and capricorn match
     if((+userHoroscopeId === 8 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 8 )) {
-      return 65
+      horoscopeContent="The relationship of Scorpio and Capricorn can be inspiring for both partners to search for the truth, dig up under their family tree and deal with any unresolved karma and debt. They are both deep and don’t take things lightly, and this will help them build a strong foundation for a relationship that can last for a long time. However, this exact thing can easily make their relationship too dark and unemotional, pull them both in a state of sadness and depression, or simply awaken their need to search for the light with someone else."
+      return 64
     }
 
     // scorpio and aquarius match
     if((+userHoroscopeId === 8 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 8 )) {
-      return 60
+      horoscopeContent="Someone might say that this is a karmic relationship, that these partners were enemies in one of their previous lives and that they could fight until one of them falls dead. This would be a bit extreme though. The truth is, Scorpio is the sign of Uranus’ exaltation and as such, it adores Aquarius in a way. In most cases, Scorpio partner will show their affection obsessively, but this might actually feel good for Aquarius. When we look at the sign of Aquarius, we will see that it exalts Neptune, the ruler of a Water sign of Pisces, and all of our assumptions on their lack of emotionality will drown in their ultimate love. The fact is they are both in a way outcasts and rebels. While Scorpio represents all of our emotions we don’t want to deal with, Aquarius represents the way of thinking most of us are not ready for. It is best to look at them as announcers of change, for this is exactly what they will bring into each other’s lives."
+      return 30
     }
 
     // scorpio and pisces match
     if((+userHoroscopeId === 8 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 8 )) {
-      return 95
+      horoscopeContent="When Scorpio and Pisces come together, this relationship will probably give them both new insights on emotional possibilities. They will both easily get carried away into an image of a fairytale love, and this image could keep them together for a very long time, even if they are both not that happy. As two Water signs, they will rely on their emotional judgments and understand this about each other, creating true intimacy. The challenge here is for the nature of Scorpio not to obsess and suffocate their changeable partner, and for Pisces to stop running away from negative emotions."
+      return 81
     }
 
 
