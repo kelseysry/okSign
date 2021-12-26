@@ -5,6 +5,8 @@
   display: flex;
   justify-content: center;
   background: #fff;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .horoscopeContent {

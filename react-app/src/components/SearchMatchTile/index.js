@@ -94,10 +94,10 @@ const SearchMatchTile = ({matchProfile}) => {
           <div className="match_profile_images_container">
             <img className="match_profile_image_discover" src={matchProfile?.image_url1} alt="match_image"/>
             <img className="match_profile_image_discover" src={matchProfile?.image_url2} alt="match_image"/>
-            <img className="match_profile_image_discover" src={matchProfile?.image_url3} alt="match_image"/>
+            <img className="match_profile_image_discover_noP" src={matchProfile?.image_url3} alt="match_image"/>
           </div>
 
-          <div className="spacer-match">&nbsp;&nbsp;</div>
+          {/* <div className="spacer-match">&nbsp;&nbsp;</div> */}
 
           <div className="matchPercentContainer">
             <div className="matchContainerHeader">

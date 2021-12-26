@@ -32,12 +32,15 @@
   display: flex;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   flex-direction: column;
   justify-content: center;
   margin: 0px 0px !important;
   background: #fff;
   /* background: coral; */
   width: 100%;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
 }
 
 .match_profile_image_discover {
@@ -77,8 +80,8 @@ hr {
   background: #1a1a1a;
   color: #fff;
   padding: 10px 15px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  /* border-top-left-radius: 5px;
+  border-top-right-radius: 5px; */
 }
 
 
@@ -144,6 +147,9 @@ hr {
   display: flex;
   justify-content: space-around;
   background: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
 }
 
 .circlesContainer {
@@ -180,8 +186,8 @@ position: relative;
 
 
 .spacer-match {
-  background: #f3f5f9;
-  height: 30px;
+  /* background: #f3f5f9; */
+  /* height: 20px; */
 }
 
 .matchButton, .matchButtonMessage {
