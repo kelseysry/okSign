@@ -328,55 +328,64 @@ const DiscoverHoroscopeProfile = ({profile}) => {
     }
 
 
-
     // gemini and gemini match
     if((+userHoroscopeId === 3 && +matchHoroscopeId === 3 )|| (+userHoroscopeId === 3 && +matchHoroscopeId === 3 )) {
-      return 75
+      horoscopeContent="The relationship between two Gemini will give other signs of the zodiac an almost certain headache. They will go everywhere together, do everything together and talk about everything with one another, again and again, until one of them loses interest in the other. Because of their possibly superficial approach, it is best if they have already had some relationships with depth before they met each other. This could give them the quality to last together for longer than a week or two.In most cases, this is not a relationship they will want to stay in, although their mutual understanding is perfect. It is like they are too similar, and at the same time a relationship of too many personalities. If each of them isn’t gathered into one person, they will need someone who is, to hold their balance and not let them dissipate. In case they have built up personalities and each of them understands their own inner core, they can probably live forever and never consume the energy their connection brings."
+      return 83
     }
 
     // gemini and cancer match
     if((+userHoroscopeId === 3 && +matchHoroscopeId === 4 )|| (+userHoroscopeId === 4 && +matchHoroscopeId === 3 )) {
-      return 60
+      horoscopeContent="Gemini and Cancer are next to each other in the zodiac, and they are likely to be next to each other in friendship. When it comes to emotional or sexual relationships, there seems to be too many things that set them apart. In order for their relationship to last, they both need to make some adjustments. Gemini will hardly ever change their routine for someone, especially when they find someone’s way of life boring, so the best thing to do here is to give them their freedom. If Cancer falls in love deeply enough, they will understand what their Gemini partner needs, and won’t hold them back even if they wished for them to be different. Gemini partner has to open their heart and listen to those few words that Cancer wants to share. Even though they can speak about many things, when it comes to discussions of their relationship, their views on it are different. Gemini needs to keep it interesting and Cancer needs to be heard, as much as felt. If they give each other enough freedom and understanding, they could be like children in love for the first time."
+      return 21
     }
 
     // gemini and leo match
     if((+userHoroscopeId === 3 && +matchHoroscopeId === 5 )|| (+userHoroscopeId === 5 && +matchHoroscopeId === 3 )) {
-      return 80
+      horoscopeContent="Gemini and Leo can have so much fun that it could make the rest of the zodiac envious. They both consider their day best spent in laughter, and if they share friends, they could seem like a perfect couple. Their main challenge is the difference in their approach to change and they both need to make room for small adjustments in their behavior if they want their relationship to last. Leo will need to make room for more movement and understand what seems to be “flakiness” of their changeable Gemini partner, while Gemini will have to understand that Leo is in fact keeping them together for however long they are meant to last. Their mutual respect can usually overcome any boundaries, and they should keep having fun and building their relationship on a solid foundation of childish joy."
+      return 82
     }
 
     // gemini and virgo match
     if((+userHoroscopeId === 3 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 3 )) {
-      return 75
+      horoscopeContent="The relationship of Gemini and Virgo can change as the wind, while both partners get lost and found on a daily basis. Their mutual love for Mercury is what binds them and what tears them apart, because they both tend to overthink things instead of following their hearts. Both of them are mostly in their minds, each one in their own way, and need to respect each other to the point where no one’s intelligence is judged on a superficial level. If they do fall in love, they will become a unification of Air and Earth Mercury – heaven on Earth."
+      return 40
     }
 
     // gemini and libra match
     if((+userHoroscopeId === 3 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 3 )) {
-      return 90
+      horoscopeContent="Gemini and Libra partners are not exactly always a perfect couple, although their signs support each other. If Libra partner has trouble being alone and doing things by themselves, this isn’t something Gemini will easily understand. Due to their lack of personal boundaries, Libra representatives will often let their Gemini partners lead the way until all of their energy is gone, they feel like they should only lie down and turn their brain off. If they want to work on their relationship and be happy, Libra needs to respect their Gemini partner enough to let them be their teacher, lover and a friend. In return, Gemini will have to take care of their Libra partner, respecting their limits and their need for togetherness."
+      return 78
     }
 
     // gemini and scorpio match
     if((+userHoroscopeId === 3 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 3 )) {
-      return 60
+      horoscopeContent="Gemini and Scorpio will usually annoy each other senseless. None of them will lightly understand their partner’s personality. To Gemini, their partner will seem too depressed and dark for no apparent reason, and for Scorpio, this could be an experience with no purpose or depth. If they do fall crazy in love, they could connect through their mutual love of change and give each other the exact things they lack. Gemini would get deep, emotional satisfaction they have never felt before and Scorpio would finally get the chance to rest their troubled soul, and realize that not everything needs to be taken seriously. This is a relationship of great lessons and an enormous capacity for personal growth of both partners."
+      return 15
     }
 
-    // gemini and sagitarrius match
+    // gemini and Sagittarius match
     if((+userHoroscopeId === 3 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 3 )) {
-      return 76
+      horoscopeContent="Gemini and Sagittarius make an incredible couple, probably being the most innocent one of all oppositions in the zodiac. They don’t often find each other right away, but at some point in life it is almost certain that a Gemini will find their Sagittarius and vice versa. Their relationship has a strong intellectual connection, in which they will gradually find deep emotions. There is no real prognosis how this will end though, because the emotions they feel could easily scare them away and their relationship could end only because of fear. If they decide to give in and find out what they could share, with Gemini’s ideas and Sagittarius’ beliefs, the sky is the limit. Or is it beyond?"
+      return 92
     }
 
     // gemini and capricorn match
     if((+userHoroscopeId === 3 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 3 )) {
-      return 50
+      horoscopeContent="Gemini and Capricorn partners are a very strange fit. Although they are both looking for things the other person has, they don’t seem to recognize them in each other. While Gemini needs someone to ground them and give them depth, when they look at Capricorn, they see someone old, unmovable and boring. Capricorn needs joy and relaxation in their life, but Gemini seems like a ball of uncontrollable, superficial opinions heading nowhere. In truth, they could have a valuable experience being together, sharing their different lives day after day. They might even find out that they actually work well together and have the ability to reach any goal that they think of."
+      return 15
     }
 
     // gemini and aquarius match
     if((+userHoroscopeId === 3 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 3 )) {
-      return 90
+      horoscopeContent="Gemini needs a partner who doesn’t bore them or make them feel inhibited. When you look at things this way, you could say that there is no better match for them than the fabulous Aquarius. Aquarius needs someone to understand their grandiose ideas and discuss each one with them, and also someone who doesn’t make them feel inhibited. Who could do this better than Gemini? However, they could find themselves in a relationship that doesn’t have enough emotion and compassion, and this is certain to surface as soon as the first disturbing thing happens in the life of one of these partners. They need to work on their emotional base and their non-verbal understanding if they want their relationship to last."
+      return 85
     }
 
     // gemini and pisces match
     if((+userHoroscopeId === 3 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 3 )) {
-      return 50
+      horoscopeContent="Gemini and Pisces are squaring signs that often don’t have that much in common. They are both usually positive enough to have a superficial enjoyable relationship and go well together at large social gatherings. They could both forget to call each other when they agreed to, and they can both change their opinions in two seconds, but they simply don’t share the same goals. As a strongly mental and a strongly emotional sign, their lack of understanding can be hurtful for Pisces and sometimes for both of them. If they do fall in love and start a romantic relationship, chances are they will not last very long. However, there is a beauty in the creative side of this relationship and if Gemini decides to truly listen to Pisces, they could help them use their talent in a constructive way. In most situations Pisces will just drain the energy out of their Gemini partner, especially if they end up in their fragile, needy mode that some other signs could understand much better than Gemini. If they are to succeed in their persistence to be together, they should work together and socialize a lot. The most important thing for both of them in this relationship is to reach for their emotional cores and give in to true intimacy, or they will never manage to communicate."
+      return 10
     }
 
 
