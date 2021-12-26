@@ -607,22 +607,26 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
     // sagitarrius and sagitarrius match
     if((+userHoroscopeId === 9 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 9 )) {
-      return 85
+      horoscopeContent="One Sagittarius will easily fall in love with the other and their passionate relationship can change very fast. As two representatives of a mutable sign, they will adapt easily, but change their opinions and feelings toward each other with a similar ease. This doesn’t always bring promise of a long-term relationship, for there is no partner to be the glue that holds them together. This doesn’t mean they won’t enjoy each other’s company, find many things to share while they are together, and laugh as children while being on the same path. If they discover the true happiness of two Jupiter affected people combined, they might lose interest in everyone else and find that point of needed balance to keep them together in their travels for as long as they live."
+      return 74
     }
 
     // sagitarrius and capricorn match
     if((+userHoroscopeId === 9 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 9 )) {
-      return 55
+      horoscopeContent="This is not your ideal relationship, and it will rarely be the one they both choose to stay in for the rest of their lives. Still, their understanding and acceptance of their differences is refreshing and fun for both partners, and they might have a good time while together, for however long. We cannot predict too much stability unless a Capricorn decides to make it, but the smile on Sagittarius’ face and the ability they have to make their partner laugh, can be the pillar of their bond for as long as they both need it."
+      return 38
     }
 
     // sagitarrius and aquarius match
     if((+userHoroscopeId === 9 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 9 )) {
-      return 60
+      horoscopeContent="A relationship between a Sagittarius and an Aquarius partner might seem like a same sex friendship to other people and whatever they might think of this, this is the type of relationship both of these partners might need. They will get together when it is time for both of them to go through a change in their lives or leave a partner they feel restricted with. Their relationship is often a shiny beacon to everyone around them because it gives priority to the future and brings hope of a better time. The main challenge of Sagittarius and Aquarius lies in their rational natures. Although their minds will have a wonderful relationship, they could have trouble reaching real intimacy and closeness. They both need to slow down and ask themselves how they feel before they end up in a heartless bond they find solace in as they run away from the world."
+      return 83
     }
 
     // sagitarrius and pisces match
     if((+userHoroscopeId === 9 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 9 )) {
-      return 75
+      horoscopeContent="This is a relationship of two kindred spirits that often doesn’t last very long. At first, it will be challenging for them to leave the platonic zone and start building a physical relationship. Once they get close to each other, their process of learning will begin and both partners will be fascinated by each other, thinking that their relationship could never end. They will easily idealize each other, think of their relationship as the perfect love, but this infatuation won’t last very long because of their changeable natures. The fact is their relationship represents a moment in time when they have both deserved to smile. For as long as it lasts and they are happy, it will be cherished by both of them."
+      return 50
     }
 
 
