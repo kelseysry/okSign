@@ -168,7 +168,7 @@ if(currentUserQuestion) {
 
   return (
     <>
-    <div className="ConversationHeaderContainer">
+    <div className="ConversationHeaderContainer_D">
       <div className="ConversationHeader">Discover
       </div>
       <ChooseDiscoverContent />

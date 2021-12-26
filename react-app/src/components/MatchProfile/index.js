@@ -181,7 +181,7 @@ const MatchProfile = ({userIdPercentObj}) => {
             <img className="match_profile_image_discover_noP" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
           </div>
 
-          <div className="spacer-match">&nbsp;&nbsp;</div>
+          {/* <div className="spacer-match">&nbsp;&nbsp;</div> */}
 
           <div className="matchPercentContainer">
             <div className="matchContainerHeader">
