@@ -632,27 +632,32 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
     // capricorn and capricorn match
     if((+userHoroscopeId === 10 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 10 )) {
-      return 85
+      horoscopeContent="The relationship of two Capricorn partners isn’t really ideal. One minus might give a plus with the other minus, but these two turn to whatever is the opposite of functional as soon as another dominant partner (Capricorn) comes into their life. The game of superiority they will have trouble containing can become the main stream of their relationship, leading them toward an inevitable end. In order to stay together, they need to point their horns into someone or something else, and make room for emotion they both need in order to find balance."
+      return 62
     }
 
     // capricorn and aquarius match
     if((+userHoroscopeId === 10 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 10 )) {
-      return 70
+      horoscopeContent="Capricorn and Aquarius might not find each other that interesting to begin with. Both of these sings are traditionally ruled by Saturn, but their roles in the zodiac are entirely different. Their most challenging point in a relationship is their emotional contact. If they are to stay together, Capricorn partner will have to separate from the ground, just a little, and Aquarius will have to come a bit closer to Earth. They need to meet in the middle for Capricorn will be able to help Aquarius materialize their ideas, and Aquarius to be able to help Capricorn make the needed change in their life and turn to something new."
+      return 37
     }
 
     // capricorn and pisces match
     if((+userHoroscopeId === 10 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 10 )) {
-      return 85
+      horoscopeContent="A relationship between Capricorn and Pisces tells a story about possibilities of inspiration. If someone like Capricorn can be pulled into a crazy love story, exciting and unpredictable, this must be done by Pisces. In return, Capricorn will offer their Pisces partner stability, peace and some rest from their usual emotional tornadoes. There is a fine way in which Capricorn can help Pisces be more realistic and practical, while feeling more cheerful and optimistic themselves. Still, there are challenges in their contact, mainly represented through their love of Jupiter. It might be hard for them to reconcile their different approaches to religion, faith and their different belief systems. To overcome this, it is best if they both ask themselves – does their belief system work? And does the one of their partner also work? If they understand answers to these questions, they might find enough respect to leave each other’s Jupiter intact."
+      return 76
     }
 
     // aquarius and aquarius match
     if((+userHoroscopeId === 11 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 11 )) {
-      return 80
+      horoscopeContent="It can be strange to imagine an Aquarius in love with another Aquarius. When you study Astrology, one of the first things you will learn is that Aquarius is the sign of divorces, breakups and setting free from regimes and relationships. As a sign that carries opposition within, they are often not easy to be with for any sign of the zodiac, but this is exactly something both of them could understand in each other. If they truly respect each other, there is a great chance they will learn to understand other things in each other’s lives too. As crazy as it may sound, these two partners have a great chance of staying together because they will know each other better than anyone else could. However, they are rarely that attracted to each other, and even when they are, it is very difficult for them to form a deep emotional bond. When they do, well… the sky isn’t the limit."
+      return 74
     }
 
     // aquarius and pisces match
     if((+userHoroscopeId === 11 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 11 )) {
-      return 55
+      horoscopeContent="As all neighboring signs, Aquarius and Pisces don’t necessarily have the best understanding of each other’s personalities. However, the sign of Aquarius exalts Neptune, the ruler of Pisces, and this gives them a strong bond through the planet of all magic. It is not easy to create the fairytale version of this contact, but once they find the emotional balance and the one, core truth to each other, they will have no problem keeping their fairytale alive, day after day."
+      return 38
     }
 
 
