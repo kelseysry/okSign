@@ -511,6 +511,34 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
 
 
+
+    // scorpio and scorpio match
+    if((+userHoroscopeId === 8 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 8 )) {
+      return 90
+    }
+
+    // scorpio and sagitarrius match
+    if((+userHoroscopeId === 8 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 8 )) {
+      return 85
+    }
+
+    // scorpio and capricorn match
+    if((+userHoroscopeId === 8 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 8 )) {
+      return 65
+    }
+
+    // scorpio and aquarius match
+    if((+userHoroscopeId === 8 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 8 )) {
+      return 60
+    }
+
+    // scorpio and pisces match
+    if((+userHoroscopeId === 8 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 8 )) {
+      return 95
+    }
+
+
+
   }
 
 
