@@ -19,6 +19,7 @@ import NavBar from './components/Navigation/NavBar';
 import QuestionPage from './components/QuestionPage';
 import MatchProfilePage from './components/MatchProfilePage';
 import { CalculatePercentProvider } from './context/CalculatePercent';
+import DiscoverHoroscope from './components/DiscoverHoroscope/DiscoverHoroscopePage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -94,6 +95,7 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path='/test' exact={true} >
+          <DiscoverHoroscope />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
