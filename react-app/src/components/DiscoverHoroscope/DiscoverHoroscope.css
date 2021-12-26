@@ -1,0 +1,22 @@
+.MatchProfileInnerContainer_Horoscope {
+  position: relative;
+  padding: 50px 20px;
+  padding-bottom: 160px;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+}
+
+.horoscopeContent {
+  width: 550px;
+  padding-bottom: 20px;
+  /* position: relative; */
+
+}
+
+
+.circlesContainer_H {
+  background: cornflowerblue;
+  position: absolute;
+  align-self: flex-end;
+  }

@@ -8,6 +8,7 @@ import { getConversations, clearConversation } from "../../store/conversation";
 import { getProfiles } from "../../store/profile";
 import { getHoroscopeMatchPercent } from "./getHoroScopeMatchPercent";
 import { horoscopeContent } from "./getHoroScopeMatchPercent";
+import './DiscoverHoroscope.css'
 
 const DiscoverHoroscopeProfile = ({profile}) => {
   const dispatch = useDispatch()
@@ -193,13 +194,13 @@ const DiscoverHoroscopeProfile = ({profile}) => {
               {getHoroscope(userProfileObj[0].horoscope_id)} and {getHoroscope(profile.horoscope_id)}
 
             </div>
-            <div className="MatchProfileInnerContainer">
-              <div className="circlesContainer">
+            <div className="MatchProfileInnerContainer_Horoscope">
+              <div className="circlesContainer_H">
                 <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
                 <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${profile?.image_url1}')` }}></div>
                 <div className="matchPercentCircle">{getHoroscopeMatchPercent(profile.horoscope_id,userProfileObj[0]?.horoscope_id)}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
               </div>
-              <div className="agreeTable">
+              <div className="horoscopeContent">
                   {horoscopeContent}
               </div>
             </div>
