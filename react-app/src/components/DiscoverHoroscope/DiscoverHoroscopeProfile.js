@@ -493,37 +493,44 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
     // virgo and virgo match
     if((+userHoroscopeId === 6 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 6 )) {
-      return 70
+      horoscopeContent="When Virgo decides to be with another Virgo, we can assume that their relationship is a product of one of two possible things, the first one being the need for stability and their rational decision to be with one another, and the second one being the unexplainable force of love at first sight. Whatever the case, both partners are quite rational and belong to the sign of mutable quality, so their emotions can change very fast. Because of their shared tendency for sacrifice, the lack of faith they have in themselves, and the tendency to rationalize everything with value, they might easily end up in a relationship where none of the partners is actually in love, or satisfied. It is imperative for them to act according to their hearts if they want their love to last."
+      return 65
     }
 
     // virgo and libra match
     if((+userHoroscopeId === 6 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 6 )) {
-      return 80
+      horoscopeContent="Virgo and Libra can form a very satisfying intellectual bond, for as long as they respect each other’s feelings. In general, this relationship can sometimes work, and these partners can synchronize their pace, choose appropriate activities and build a satisfying sex life with enough patience and care. They could have a deep problem with emotional understanding though, and the thing they will find most difficult to reconcile is their fragile egos. Virgo, willing to please, will easily take over the responsibilities and decisions that Libra needs to take on. This will lead to a feeling of inferiority in Libra and the loss of respect toward their Virgo partner. If this issue is left unresolved, their relationship might end because of disrespect they were both unaware of in the beginning."
+      return 30
     }
 
     // virgo and scorpio match
     if((+userHoroscopeId === 6 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 6 )) {
-      return 85
+      horoscopeContent="That changeable nature of Virgo will be settled down by the fixed quality of their Scorpio partner, who will keep their relationship exciting for a very long time. In general, there is a problem that these partners share when it comes to Venus, and their relationship is often a reflection of these troubles. This can lead to all sorts of emotional blackmail, their tendency to control each other’s lives, and if not this, than constant criticism that makes them both feel guilty or simply sad. The best thing they can do is decide that they will value each other and be thankful for each other in this relationship. If they develop a strong sense of gratitude, their relationship might be extremely deep, exciting and truly appreciated by both partners."
+      return 76
     }
 
     // virgo and sagitarrius match
     if((+userHoroscopeId === 6 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 6 )) {
-      return 70
+      horoscopeContent="The relationship between a Virgo and a Sagittarius is not a usual happy ending emotional story. There are many challenges in their way, the biggest being their emotional lack of understanding and their possible lack of respect. Still, when they find a way to show emotions and share them in the same pace and in an understandable way, they could actually have a lot of fun together. Their communication is often exciting and they both have a lot to say to each other, but their rationality may distract them from an actual search for love. If they discover how well they complement each other, they might be able to stay together for a long time."
+      return 32
     }
 
     // virgo and capricorn match
     if((+userHoroscopeId === 6 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 6 )) {
-      return 95
+      horoscopeContent="Virgo and Capricorn belong to the element of Earth and follow each other’s pace perfectly. Even if everything between them seems too slow for some other zodiac signs, they build respect, trust and love, on the foundation of mutual analysis and detailed examination. The search for perfection can be ended in this relationship, for they give each other enough time, and listen to each other well enough to meet the expectations that need to be met. Both of these partners can be stiff and lose sight of the importance of the emotional, mellow approach to life, and this relationship can make them rough and too strict. Still, in most cases, they will give each other enough time to grow out of this and grow old together."
+      return 77
     }
 
     // virgo and aquarius match
     if((+userHoroscopeId === 6 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 6 )) {
-      return 50
+      horoscopeContent="Virgo can represent everything that Aquarius runs from – practical, worried about health and earthly things, down to Earth, cleaning obsessed maniac. Imagine how incredibly irresponsible, chaotic and unrealistic Aquarius looks to them. Their strongest meeting point is in their rationality and communication, and this can be used to overcome many problems that their differences result in. Unfortunately, in most cases they will not have enough chemistry to start a relationship, let alone stay in a sexually satisfying one for very long. If they take each other seriously, they might create incredible things together, as their great minds merge."
+      return 30
     }
 
     // virgo and pisces match
     if((+userHoroscopeId === 6 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 6 )) {
-      return 70
+      horoscopeContent="Virgo and Pisces represent the axis of the exaltation and fall of both Venus and Mercury. This makes them partners with greatest challenges and the greatest potential for love in the entire zodiac. They need to find a fine balance of rationality and emotions, each one individually and together through their relationship. In many cases this is not a couple that will last very long, as their mutable quality makes them changeable enough to disregard the entire relationship quickly if they aren’t satisfied. They need to realize that perfection they seek might not be presented in the form they expect. If they stay together for long enough to understand the benefits of their contact, they might discover that the love between them is the only true love they could find in this lifetime."
+      return 86
     }
 
 
