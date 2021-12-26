@@ -63,14 +63,7 @@ const DiscoverHoroscope = () => {
 
   return (
     <>
-    <div className="ConversationHeaderContainer">
-      <div className="ConversationHeader">Discover</div>
-    </div>
-
-    <div className="DiscoverContent">
-
       {content}
-    </div>
     </>
   )
 

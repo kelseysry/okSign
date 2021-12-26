@@ -57,9 +57,9 @@ function App() {
         {/* <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
         </ProtectedRoute> */}
-        <ProtectedRoute path='/' exact={true} >
-          <Discover />
-        </ProtectedRoute>
+          <ProtectedRoute path='/' exact={true} >
+            <Discover />
+          </ProtectedRoute>
         <ProtectedRoute path='/profiles/:userId' exact={true} >
           <UserProfile count={count} setCount ={setCount}  />
         </ProtectedRoute>
