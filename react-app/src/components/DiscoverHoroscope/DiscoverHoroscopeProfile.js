@@ -538,6 +538,28 @@ const DiscoverHoroscopeProfile = ({profile}) => {
     }
 
 
+    // sagitarrius and sagitarrius match
+    if((+userHoroscopeId === 9 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 9 )) {
+      return 85
+    }
+
+    // sagitarrius and capricorn match
+    if((+userHoroscopeId === 9 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 9 )) {
+      return 55
+    }
+
+    // sagitarrius and aquarius match
+    if((+userHoroscopeId === 9 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 9 )) {
+      return 60
+    }
+
+    // sagitarrius and pisces match
+    if((+userHoroscopeId === 9 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 9 )) {
+      return 75
+    }
+
+
+
 
   }
 
