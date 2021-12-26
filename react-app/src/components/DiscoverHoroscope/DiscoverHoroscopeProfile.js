@@ -537,32 +537,38 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
     // libra and libra match
     if((+userHoroscopeId === 7 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 7 )) {
-      return 80
+      horoscopeContent="The sign of Libra is a sign of relationships and they often have a mission to teach others about relating to one another. When two Libras start dating, it might be difficult for them to find a purpose of their contact, for they both seem to share a mission and a goal that is connected to other people. If they find a meeting point, combining their activities and sticking to their shared values, they will have a tendency to become a perfectly balanced couple. The only thing missing in both of them, very hard to develop, is the sense of mutual respect with no passive judgment or expectations. Both of them are susceptible to this problem with their surroundings, and when together, these problems will easily multiply. If they let each other be who they are, they might become an inspiration for all of us, teaching us what a productive relationship really is."
+      return 68
     }
 
     // libra and scorpio match
     if((+userHoroscopeId === 7 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 7 )) {
-      return 85
+      horoscopeContent="The relationship of Libra and Scorpio is in no way easy and light. Both of these partners will have to face their dark sides through this bond, and although this can lead to an incredible and intense sex life, and emotions that no one else can understand, it might lead them both to a depressive hole they won’t easily get out of. The only way for this couple to last in a satisfying and gentle relationship, is for both partners to build a strong individual, independent life, or they will get sucked into the whirlpool of karmic emotions and obsessive, negative expectations."
+      return 29
     }
 
     // libra and sagitarrius match
     if((+userHoroscopeId === 7 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 7 )) {
-      return 80
+      horoscopeContent="The relationship of Libra and Sagittarius is in most cases a beneficent bond that allows these partners to develop their emotional, inner worlds and build their lives without negative influences. However, there is an archetypal battle between them, for Saturn exalts in Libra and doesn’t really care for his son, Jupiter, the ruler of Sagittarius. This could easily lead to a struggle for supremacy and a battle to reach the ruling position among them. This comes as a continuation of Libra’s bruised Sun and a Sagittarius will fit in perfectly with the need to give away every sense of pride out of some childish convictions. The only way for them to be happy together, is to respect each other fully and let each other do what they are meant to do. Libra should stick to their relationship and love, ruled by Venus, while Sagittarius should stick to their convictions and width, ruled by Jupiter, multiplying the love Libra provides."
+      return 71
     }
 
     // libra and capricorn match
     if((+userHoroscopeId === 7 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 7 )) {
-      return 85
+      horoscopeContent="If we want to choose the best word to describe the relationship between a Libra and a Capricorn partner, we would have to say – hard. This doesn’t mean they won’t enjoy the trouble of being together, or stay in a relationship for a very long time, but this is most certainly not a bond that many other signs would engage in. Their biggest challenge is the lack of respect for emotional value that is usually initiated by Capricorn, but easily continued by Libra. If they find a way to share, show and understand each other’s emotions, everything else will seem like a piece of cake."
+      return 34
     }
 
     // libra and aquarius match
     if((+userHoroscopeId === 7 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 7 )) {
-      return 95
+      horoscopeContent="There is a strong understanding between a Libra and an Aquarius partner due to their shared element of Air. Still, it can be quite difficult for their troubled Suns to get along and they will often have difficulty adjusting to each other’s character and finding deep respect for one another. The best cure for any problem in their relationship is usually in time, but with Aquarius’ need for spontaneity they often won’t last long enough for time to mend what gets broken. Whatever their story, they will have a lot of exciting things to live through together and if they fall in love, it would be a shame for a couple such as this one, not to give their relationship a try however it might end."
+      return 68
     }
 
     // libra and pisces match
     if((+userHoroscopeId === 7 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 7 )) {
-      return 50
+      horoscopeContent="Libra and Pisces have a meeting point in the beauty of Venus. Still, they perceive it in two different ways and they will often not respect each other enough to find the beauty of Venus in one another. They could have real trouble adjusting to their partner’s speed, and the mutable quality of Pisces often won’t help them open up any faster to build a relationship in the pace that would fit their Libra partner. Both Libra and Pisces can selflessly be interested in the satisfaction of their partner, and this should help them stay on the good side of their relationship whatever happens between them. If they move past the disrespect and the unrealistic expectations from each other’s personalities, they might find that they share real love."
+      return 29
     }
 
 
