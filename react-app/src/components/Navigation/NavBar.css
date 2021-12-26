@@ -41,12 +41,17 @@
 }
 
 .logOutDesktop{
+  color: #f1f1f1;
   display: block;
+  padding-bottom: 4px;
 }
 
 .logOutMobile {
   display: none;
+
 }
+
+
 
 
 @media only screen and (max-width:768px) {
@@ -64,6 +69,8 @@
 
   .logOutMobile {
     display: block;
+    color: #f1f1f1;
+    padding-bottom: 4px;
   }
 
 }
