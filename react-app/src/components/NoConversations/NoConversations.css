@@ -6,6 +6,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 
@@ -13,5 +15,16 @@
   font-size: 20px;
   flex: 1;
   padding-right: 30px;
+
 }
 
+.NoMatchesButtonsContainer {
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.no-matches-header-container {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
