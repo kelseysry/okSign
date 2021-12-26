@@ -23,10 +23,12 @@ export function CalculatePercentProvider (props) {
 
 let questionsRender;
 
-if(questions[0]) {
+if(questions.length) {
    questionsRender = questions[0]
-} else {
+} else if(!questions[0]) {
     questionsRender = questions[1]
+} else {
+  questionsRender = null;
 }
 
 console.log("questionsRender😯😯😯", questionsRender)
