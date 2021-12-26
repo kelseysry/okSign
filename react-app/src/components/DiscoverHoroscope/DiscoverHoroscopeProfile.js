@@ -14,6 +14,7 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
+  const [horoscopes, setHoroscopes] = useState([])
 
   // console.log("profile🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profile)
 
@@ -49,6 +50,17 @@ const DiscoverHoroscopeProfile = ({profile}) => {
     if (!isLoaded) setIsLoaded(true);
 
   }, [dispatch, profiles.length])
+
+
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('/api/horoscopes/');
+      const responseData = await response.json();
+      setHoroscopes(responseData.horoscopes);
+    }
+    fetchData();
+  }, []);
 
 
   useEffect(() => {
@@ -121,6 +133,20 @@ const DiscoverHoroscopeProfile = ({profile}) => {
       return null
     }
   }
+
+  // console.log("horoscopes", horoscopes)
+  const getHoroscope = (horoscopeId) => {
+    const userHoroscope = horoscopes?.filter(function(horoscope){
+      return horoscope.id === +horoscopeId
+    });
+    if(userHoroscope) {
+      return userHoroscope[0]?.sign
+    }
+    else {
+      return null
+    }
+  }
+
 
 
   // console.log("getmatchProfile", getMatchProfile(profile_id))
@@ -620,7 +646,8 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
           <div className="matchPercentContainer">
             <div className="matchContainerHeader">
-              You and {getUserName(profile?.user_id)}
+              {getHoroscope(userProfileObj[0].horoscope_id)} and {getHoroscope(profile.horoscope_id)}
+
             </div>
             <div className="MatchProfileInnerContainer">
               <div className="circlesContainer">
