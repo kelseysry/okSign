@@ -443,32 +443,38 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
     // leo and leo match
     if((+userHoroscopeId === 5 && +matchHoroscopeId === 5 )|| (+userHoroscopeId === 5 && +matchHoroscopeId === 5 )) {
-      return 85
+      horoscopeContent="Two Leo partners can do the impossible and this fact could keep them in a perfectly satisfying relationship for a long time. Their main goal is to find true intimacy and understand each other’s inner emotional beings. Leo has a habit to exaggerate and make drama out of small, irrelevant things, but this could be a good thing for their relationship because of their social status and the ability to support each other’s theatrical needs. If they begin a battle for supremacy, it might be a good idea to set the territory that each of them is in charge for. If one of them is the best at an emotional department, the other one can be the best in the sexual one. If they split their rules this way, it will be much easier for both of them to function and think of each other as worthy of the relationship. What might make a loving relationship between them impossible is the lack of respect. If they catch this disease, it might be best for them to part ways and search for different partners."
+      return 78
     }
 
     // leo and virgo match
     if((+userHoroscopeId === 5 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 5 )) {
-      return 75
+      horoscopeContent="Leo and Virgo form a constructive relationship that rarely serves their emotional natures. They both tend to be too rational and their mental strength will rarely be a good foundation for a fairytale love they secretly wish for. Both of these signs have opposing signs linked to Neptune. Leo’s opposing sign is Aquarius, the sign of Neptune’s exaltation, while Virgo’s opposing sign is the sign of Pisces, ruled by Neptune. Both of them need someone perfect, someone made just for them, and if they just think for a second that they don’t belong together, their search of perfection will prevail. It is rare for these partners to form a strong emotional or sexual bond, however well they might get along when it comes to work and communication."
+      return 35
     }
 
     // leo and libra match
     if((+userHoroscopeId === 5 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 5 )) {
-      return 65
+      horoscopeContent="If you want to sum up the relationship between a Leo and a Libra, you have to understand that their bond involves the beautiful and challenging dignities of Saturn and the Sun. They have a lot to learn from each other, and the main goal of their relationship is to reach the point of shared respect and responsibility in a perfect balance of power. It will sometimes be hard for them to overcome the need for competing, trying to determine who is a better, smarter or a more capable person. Even if they don’t, their relationship will be something to enjoy and show off in public."
+      return 75
     }
 
     // leo and scorpio match
     if((+userHoroscopeId === 5 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 5 )) {
-      return 75
+      horoscopeContent="When Leo and Scorpio start dating, they might not know exactly what they are to expect. This is in no way an easy relationship, and both partners can be stubborn and stiff in their opinions, life choices and ways they handle reality. If they want to remain in a loving relationship, they need to understand each other’s way of expressing emotions and respect each other’s needs however different they might be from those they are used to. When they find a way to love each other without conditioning, they might realize that they are in search for the same thing – Unity."
+      return 29
     }
 
     // leo and sagitarrius match
     if((+userHoroscopeId === 5 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 5 )) {
-      return 95
+      horoscopeContent="Leo and Sagittarius are a very good fiery combination of signs, and when two people with these Sun signs come together, they inevitably fall in love. This love is warm, passionate and inspiring, and they will have a chance to create, perform and have fun together for as long as they feel this way. However, Sagittarius partner might lose interest in Leo because they tend to get pushed away by their static, fixed nature. The only way they might get to keep their passion and emotions going, is if they manage to listen to their softer emotions and remain tender and sensitive for one another."
+      return 75
     }
 
     // leo and capricorn match
     if((+userHoroscopeId === 5 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 5 )) {
-      return 45
+      horoscopeContent="If they meet in the right moment, Leo and Capricorn might get along very well. The main problem in their relationship is the set of priorities they might not share, and the passion or determination that both of them have. It is not an easy job, reconciling Saturn with the Sun, but it brings great benefits when it is done. The structure Leo could get and the creativity they might build on together could lift them to exactly what they desired, however their relationship might end. They differ as much as the Earth and the Fire, but when they share a common goal, they are unstoppable."
+      return 27
     }
 
     // leo and aquarius match
@@ -479,7 +485,8 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
     // leo and pisces match
     if((+userHoroscopeId === 5 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 5 )) {
-      return 75
+      horoscopeContent="Leo and Pisces seem to be put on this Earth to spread entirely different kinds of love. The problem isn’t in their element or their quality, as much as it is in their connection through the fall of Neptune, the ruler of Pisces. If they get attracted to each other, they will be subjected to the risk of great damage to their beliefs, their inner faith and usually succumb to mutual disrespect because of a simple lack of understanding. The beauty of their relationship could be developed through the fairytale approach of Pisces, if they build the heroic image of their Leo partner to the point in which other differences between them fade."
+      return 14
     }
 
 
