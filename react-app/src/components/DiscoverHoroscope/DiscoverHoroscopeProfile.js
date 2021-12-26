@@ -441,6 +441,46 @@ const DiscoverHoroscopeProfile = ({profile}) => {
     }
 
 
+
+    // virgo and virgo match
+    if((+userHoroscopeId === 6 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 6 )) {
+      return 70
+    }
+
+    // virgo and libra match
+    if((+userHoroscopeId === 6 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 6 )) {
+      return 80
+    }
+
+    // virgo and scorpio match
+    if((+userHoroscopeId === 6 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 6 )) {
+      return 85
+    }
+
+    // virgo and sagitarrius match
+    if((+userHoroscopeId === 6 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 6 )) {
+      return 70
+    }
+
+    // virgo and capricorn match
+    if((+userHoroscopeId === 6 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 6 )) {
+      return 95
+    }
+
+    // virgo and aquarius match
+    if((+userHoroscopeId === 6 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 6 )) {
+      return 50
+    }
+
+    // virgo and pisces match
+    if((+userHoroscopeId === 6 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 6 )) {
+      return 70
+    }
+
+
+
+
+
   }
 
 
