@@ -53,10 +53,6 @@ const MatchProfilePage = () => {
                 <MatchDetailSection currentUserProfile={matchProfileObj}/>
               </div>
             </div>
-
-
-
-
           </div>
         </>
       )

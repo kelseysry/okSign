@@ -3,14 +3,15 @@ const EDIT_ONE_PROFILE = "profile/EDIT_ONE_PROFILE"
 const LOAD_PROFILES = "profile/LOAD_PROFILES";
 const ADD_ONE = "profile/ADD_ONE"
 const REMOVE_PROFILE = "profile/REMOVE_PROFILE"
-// const LOAD_MATCH_PROFILE = "profile/LOAD_MATCH_PROFILE"
 const CLEAR = 'profile/CLEAR'
+const UPDATE_LIKE_PROFILE = 'profile/UPDATE_LIKE_COUNT'
 
-// // action creator to load match profile profile
-// const loadMatchProfile = (profile) => ({
-//   type: LOAD_MATCH_PROFILE,
-//   profile
-// })
+// action creator to update count
+export const editProfileLikeCountAction = (profile, id) => ({
+  type: UPDATE_LIKE_PROFILE,
+  profile,
+  id
+});
 
 // action creator to load one profile
 const loadProfile = (profile) => ({
@@ -49,17 +50,27 @@ export const clearProfiles = () => ({
 })
 
 
-// // thunk for getting all match profile
-// export const getMatchProfile = (matchUserIds) => async(dispatch) => {
-//   if (matchUserIds) {
-//     console.log("thunk matchUserIds id", matchUserIds)
-//     const res = await fetch(`/api/profiles/${matchUserIds}`)
-//     const profile = await res.json();
-//     console.log("profile res.json()", profile)
-//     dispatch(loadMatchProfile(profile))
+// thunk to increase/decrease likes
+export const updateProfileLikeCount = (editProfile, id) => async(dispatch) => {
 
-//   }
-// }
+  const response = await fetch(`/api/profiles/${id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type':'application/json'
+  },
+    body: JSON.stringify(editProfile)
+  });
+
+  console.log("editProfile likes in thunk", editProfile)
+
+
+  const editedProfile = await response.json();
+
+  console.log("editedProfile likessssss await in thunk", editedProfile)
+  dispatch(editProfileLikeCountAction(editedProfile, id))
+  return editedProfile
+}
+
 
 // thunk for getting one profile
 export const getProfile = (profile_id) => async(dispatch) => {
@@ -195,6 +206,20 @@ const profileReducer = (state = initialState, action) => {
     case CLEAR:{
       state = {}
       return state
+  };
+  case UPDATE_LIKE_PROFILE: {
+    console.log("action.profile", action.profile)
+    if(!state[action.profile]) {
+      const newState = {
+        ...state,
+        // [action.profile.id]: action.profile
+      };
+      console.log("this is newState", newState)
+
+      return newState
+    }
+    return state
+
   }
     default:
       return state;
