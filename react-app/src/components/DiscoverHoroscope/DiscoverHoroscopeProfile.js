@@ -479,6 +479,36 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
 
 
+    // libra and libra match
+    if((+userHoroscopeId === 7 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 7 )) {
+      return 80
+    }
+
+    // libra and scorpio match
+    if((+userHoroscopeId === 7 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 7 )) {
+      return 85
+    }
+
+    // libra and sagitarrius match
+    if((+userHoroscopeId === 7 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 7 )) {
+      return 80
+    }
+
+    // libra and capricorn match
+    if((+userHoroscopeId === 7 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 7 )) {
+      return 85
+    }
+
+    // libra and aquarius match
+    if((+userHoroscopeId === 7 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 7 )) {
+      return 95
+    }
+
+    // libra and pisces match
+    if((+userHoroscopeId === 7 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 7 )) {
+      return 50
+    }
+
 
 
   }
