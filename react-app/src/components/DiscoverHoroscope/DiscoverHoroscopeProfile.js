@@ -177,14 +177,90 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
   const getHoroscopeMatchPercent = (matchHoroscopeId, userHoroscopeId) => {
 
-    // console.log("get horo", matchHoroscopeId, userHoroscopeId)
+    // aquarius and cancer match
     if((+userHoroscopeId === 11 && +matchHoroscopeId === 4 )|| (+userHoroscopeId === 4 && +matchHoroscopeId === 11 )) {
       return 70
     }
-    
-    else {
-      return null
+
+    // aries and taurus match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 2 )|| (+userHoroscopeId === 2 && +matchHoroscopeId === 1 )) {
+      return 60
     }
+
+    // aries and gemini match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 3 )|| (+userHoroscopeId === 3 && +matchHoroscopeId === 1 )) {
+      return 70
+    }
+
+    // aries and cancer match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 4 )|| (+userHoroscopeId === 4 && +matchHoroscopeId === 1 )) {
+      return 65
+    }
+
+    // aries and leo match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 5 )|| (+userHoroscopeId === 5 && +matchHoroscopeId === 1 )) {
+      return 90
+    }
+
+    // aries and virgo match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 1 )) {
+      return 45
+    }
+
+    // aries and libra match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 1 )) {
+      return 70
+    }
+
+    // aries and scorpio match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 1 )) {
+      return 80
+    }
+
+    // aries and sagitarrius match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 1 )) {
+      return 90
+    }
+
+    // aries and capricorn match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 1 )) {
+      return 50
+    }
+
+    // aries and aquarius match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 1 )) {
+      return 55
+    }
+
+    // aries and pisces match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 1 )) {
+      return 65
+    }
+
+    // aries and virgo match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 1 )) {
+      return 45
+    }
+    // aries and virgo match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 1 )) {
+      return 45
+    }
+
+    // aries and virgo match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 1 )) {
+      return 45
+    }
+
+    // aries and virgo match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 1 )) {
+      return 45
+    }
+
+    // aries and virgo match
+    if((+userHoroscopeId === 1 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 1 )) {
+      return 45
+    }
+
 
   }
 
@@ -227,7 +303,6 @@ const DiscoverHoroscopeProfile = ({profile}) => {
               <div className="circlesContainer">
                 <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
                 <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${profile?.image_url1}')` }}></div>
-                <div>{profile.horoscope_id}</div>
                 <div className="matchPercentCircle">{getHoroscopeMatchPercent(profile.horoscope_id,userProfileObj[0]?.horoscope_id)}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
               </div>
               <div className="agreeTable">
