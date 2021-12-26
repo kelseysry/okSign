@@ -422,22 +422,21 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
     // cancer and sagitarrius match
     if((+userHoroscopeId === 4 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 4 )) {
-      return 55
+      horoscopeContent="Cancer and Sagittarius are usually signs that aren’t attracted to each other at all. If attraction and love are born between them, they will rarely have a damaging relationship for any one of them, because their signs are ruled by the Moon and beneficent Jupiter. It is safe to assume that they will be good for each other, for as long as their relationship lasts, but it is rare for them to succeed in the long run if they don’t have strong support from positions in their personal horoscopes. As much as Cancer can reach the depth of their partner’s faith, Sagittarius can widen their partner’s horizons and make them much happier in their approach to the world. If they have feelings for each other, it would be a shame not to act on them and miss the opportunity to peacefully grow."
+      return 27
     }
 
     // cancer and capricorn match
     if((+userHoroscopeId === 4 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 4 )) {
-      return 45
+      horoscopeContent="Cancer and Capricorn are usually bound to relive the love story of someone who lived before their time. This deeply seeded need to mend what is broken in our family tree is something we all carry within, but these Sun signs are predestined to handle karmic debts and residue emotions from their families. They will have to deal with problems first if they want to be free of the past, and only after they have repaid what needed to be repaid, will they be able to truly choose one another. In most cases this is a once in a lifetime love for both partners, and they will probably choose each other without a doubt."
+      return 84
     }
 
-    // cancer and aquarius match
-    if((+userHoroscopeId === 4 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 4 )) {
-      return 70
-    }
 
     // cancer and pisces match
     if((+userHoroscopeId === 4 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 4 )) {
-      return 90
+      horoscopeContent="As two Water signs, Cancer and Pisces connect through emotions, usually as soon as they lay eyes on each other. This is one of the typical combinations of zodiac signs for love at first sight. Their main challenge is hidden in the changeable nature of the sign of Pisces, not because it is there, but because they might fear to show it. Their biggest problem lies in the fact that they give priority to different types of love in their life. If passion and sensual, sexual love isn’t there, Pisces will rarely be satisfied with the love they get from their family, and Cancer would find a life without a family nest very depressing. A fine balance needs to be made between excitement and stability, and they could be one of the most wonderful couples of the zodiac – Cancer inspired and Pisces with a feel of home."
+      return 72
     }
 
 
