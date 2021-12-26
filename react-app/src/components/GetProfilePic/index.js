@@ -54,7 +54,7 @@ const GetProfilePic = ({userId}) => {
     <>
     { isLoaded && (
 
-     <img className="match_profile_image" src={getMatchProfile(profile_id)[0]?.image_url2} alt="match_image"/>
+     <img className="match_profile_image" src={getMatchProfile(profile_id)[0]?.image_url1} alt="match_image"/>
 
     )}
     </>
