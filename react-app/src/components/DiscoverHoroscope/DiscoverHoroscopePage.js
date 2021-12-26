@@ -15,7 +15,7 @@ const DiscoverHoroscope = () => {
   // console.log("user_id", user_id)
 
 
-  console.log("qprofiless🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profiles)
+  // console.log("qprofiless🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profiles)
 
 
   useEffect(() => {
@@ -40,13 +40,13 @@ const DiscoverHoroscope = () => {
     content = (
       <div className="">
 
-        {profiles?.map((profile, idx) =>
+        {allProfilesExcludeCurrent?.map((profile, idx) =>
           <div key={idx}>
             <NavLink
               to={`/matchProfile/${profile.user_id}`} // userIdPercentObj[0] is the user.id
               >
               {/* <MatchProfile userIdPercentObj={userIdPercentObj}/> */}
-              <DiscoverHoroscopeProfile userIdPercentObj={allProfilesExcludeCurrent}/>
+              <DiscoverHoroscopeProfile profile={profile}/>
             </NavLink>
           </div>
         )}

@@ -8,21 +8,19 @@ import { getConversations, clearConversation } from "../../store/conversation";
 import { getProfiles } from "../../store/profile";
 
 
-const DiscoverHoroscopeProfile = ({userIdPercentObj}) => {
+const DiscoverHoroscopeProfile = ({profile}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
 
-  // console.log("userIdPercentObj🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", userIdPercentObj)
+  // console.log("profile🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profile)
 
 
   // this profile_id value is actually the user.id, bad naming on my part haha
-  let profile_id = userIdPercentObj[0]
-  // let matchPercent = ((Number(userIdPercentObj[1])/10)*100)
+  let profile_id = profile[0]
 
-  // let disagree = 10 - (Number(userIdPercentObj[1]))
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id_one = sessionUser?.id
@@ -157,6 +155,40 @@ const DiscoverHoroscopeProfile = ({userIdPercentObj}) => {
     }
   }
 
+  /*
+  Horoscopes id # in db
+
+  1 Aries
+  2 Taurus
+  3 Gemini
+  4 Cancer
+  5 Leo
+  6 Virgo
+  7 Libra
+  8 Scorpio
+  9 Sagittarius
+  10 Capricorn
+  11 Aquarius
+  12 Pisces
+
+  */
+
+  // console.log("userProfileObj[0].horoscope", userProfileObj[0].horoscope_id)
+
+  const getHoroscopeMatchPercent = (matchHoroscopeId, userHoroscopeId) => {
+
+    // console.log("get horo", matchHoroscopeId, userHoroscopeId)
+    if((+userHoroscopeId === 11 && +matchHoroscopeId === 4 )|| (+userHoroscopeId === 4 && +matchHoroscopeId === 11 )) {
+      return 70
+    }
+    
+    else {
+      return null
+    }
+
+  }
+
+
 
   return (
     <>
@@ -165,11 +197,11 @@ const DiscoverHoroscopeProfile = ({userIdPercentObj}) => {
       <>
       <div className="oneMatchProfileContainer">
           <div className="oneMatchProfileContainerHeader">
-            {getUserName(matchProfileObj[0]?.user_id)}
+            {getUserName(profile?.user_id)}
             <div className="matchButtonsContainer">
               <button
               className="matchButton"
-              onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
+              onClick={() => {handleCreateConversation(profile?.user_id)}}
               >Message  <i className="far fa-comment-dots"></i></button>
 
               <button
@@ -180,27 +212,28 @@ const DiscoverHoroscopeProfile = ({userIdPercentObj}) => {
           </div>
 
           <div className="match_profile_images_container">
-            <img className="match_profile_image_discover" src={userIdPercentObj?.image_url1} alt="match_image"/>
-            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
-            <img className="match_profile_image_discover_noP" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
+            <img className="match_profile_image_discover" src={profile?.image_url1} alt="match_image"/>
+            <img className="match_profile_image_discover" src={profile?.image_url2} alt="match_image"/>
+            <img className="match_profile_image_discover_noP" src={profile?.image_url3} alt="match_image"/>
           </div>
 
           <div className="spacer-match">&nbsp;&nbsp;</div>
 
           <div className="matchPercentContainer">
             <div className="matchContainerHeader">
-              You and {getUserName(matchProfileObj[0]?.user_id)}
+              You and {getUserName(profile?.user_id)}
             </div>
             <div className="MatchProfileInnerContainer">
               <div className="circlesContainer">
                 <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
-                <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
-                {/* <div className="matchPercentCircle">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div> */}
+                <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${profile?.image_url1}')` }}></div>
+                <div>{profile.horoscope_id}</div>
+                <div className="matchPercentCircle">{getHoroscopeMatchPercent(profile.horoscope_id,userProfileObj[0]?.horoscope_id)}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
               </div>
               <div className="agreeTable">
                 <div className="agree">
                   <div>Agree</div>
-                  {/* <div>🥰 {userIdPercentObj[1]}</div> */}
+                  {/* <div>🥰 {profile[1]}</div> */}
                 </div>
                 <div className="disagree">
                   <div>Disagree</div>
