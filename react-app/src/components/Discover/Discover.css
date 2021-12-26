@@ -21,6 +21,9 @@ body {
 .QM, .HM {
   color: whitesmoke;
 }
+.QM {
+  padding-right: 20px;
+}
 
 
 .ConversationHeaderContainer_D {
@@ -32,4 +35,20 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: space-around;
+}
+
+.discoverContent-buttons-container {
+  display: flex;
+}
+
+.option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.heart-choice {
+  padding-bottom: 3px;
+
 }
