@@ -574,6 +574,15 @@ const DiscoverHoroscopeProfile = ({profile}) => {
       return 85
     }
 
+    // aquarius and aquarius match
+    if((+userHoroscopeId === 11 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 11 )) {
+      return 80
+    }
+
+    // aquarius and pisces match
+    if((+userHoroscopeId === 11 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 11 )) {
+      return 55
+    }
 
 
   }
