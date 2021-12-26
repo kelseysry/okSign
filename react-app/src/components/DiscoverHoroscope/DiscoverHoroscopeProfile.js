@@ -353,6 +353,52 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
 
 
+    // cancer and cancer match
+    if((+userHoroscopeId === 4 && +matchHoroscopeId === 4 )|| (+userHoroscopeId === 4 && +matchHoroscopeId === 4 )) {
+      return 75
+    }
+
+    // cancer and leo match
+    if((+userHoroscopeId === 4 && +matchHoroscopeId === 5 )|| (+userHoroscopeId === 5 && +matchHoroscopeId === 4 )) {
+      return 70
+    }
+
+    // cancer and virgo match
+    if((+userHoroscopeId === 4 && +matchHoroscopeId === 6 )|| (+userHoroscopeId === 6 && +matchHoroscopeId === 4 )) {
+      return 75
+    }
+
+    // cancer and libra match
+    if((+userHoroscopeId === 4 && +matchHoroscopeId === 7 )|| (+userHoroscopeId === 7 && +matchHoroscopeId === 4 )) {
+      return 60
+    }
+
+    // cancer and scorpio match
+    if((+userHoroscopeId === 4 && +matchHoroscopeId === 8 )|| (+userHoroscopeId === 8 && +matchHoroscopeId === 4 )) {
+      return 95
+    }
+
+    // cancer and sagitarrius match
+    if((+userHoroscopeId === 4 && +matchHoroscopeId === 9 )|| (+userHoroscopeId === 9 && +matchHoroscopeId === 4 )) {
+      return 55
+    }
+
+    // cancer and capricorn match
+    if((+userHoroscopeId === 4 && +matchHoroscopeId === 10 )|| (+userHoroscopeId === 10 && +matchHoroscopeId === 4 )) {
+      return 45
+    }
+
+    // cancer and aquarius match
+    if((+userHoroscopeId === 4 && +matchHoroscopeId === 11 )|| (+userHoroscopeId === 11 && +matchHoroscopeId === 4 )) {
+      return 70
+    }
+
+    // cancer and pisces match
+    if((+userHoroscopeId === 4 && +matchHoroscopeId === 12 )|| (+userHoroscopeId === 12 && +matchHoroscopeId === 4 )) {
+      return 90
+    }
+
+
 
 
   }
