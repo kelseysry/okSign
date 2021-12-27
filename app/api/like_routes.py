@@ -60,5 +60,27 @@ def profile(user_id, match_profile_id):
     if like:
       return like.to_dict()
     else:
-      print(form.errors)
+      # print(form.errors)
+      return "no likes"
+
+
+# edit one message
+@like_routes.route('/user/<int:user_id>/matchProfile/<int:match_profile_id>', methods=['GET','PUT'])
+def like_detail(user_id, match_profile_id):
+    like = Like.query.filter(Like.user_id == user_id).filter(Like.match_profile_id == match_profile_id).first()
+    form = LikeForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    # print("like api-----------", form.data)
+    # print("like api-??????----------", like.to_dict())
+
+    if form.validate_on_submit():
+      like.liked = form.data['liked']
+      like.user_id = form.data['user_id']
+      like.match_profile_id = form.data['match_profile_id']
+      db.session.commit()
+      # print("like api-!!!!!!!!!----------", like.to_dict())
+      return like.to_dict()
+    else:
+      # print("request.json !!!!!!!!",request.json)
+      # print(form.errors)
       return "bad data"
