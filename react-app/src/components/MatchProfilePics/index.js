@@ -5,7 +5,7 @@ import { createConversation } from "../../store/conversation";
 import { getProfiles, updateProfileLikeCount } from "../../store/profile";
 import { GetMatches } from "../../context/MatchesContext";
 import { useHistory } from 'react-router';
-import { createLike } from "../../store/like";
+import { createLike, EditLike } from "../../store/like";
 
 const MatchProfilePics = ({matchProfileObj}) => {
   const dispatch = useDispatch()
@@ -33,10 +33,14 @@ const MatchProfilePics = ({matchProfileObj}) => {
     const {userIdsPercentsArr} = GetMatches()
   // console.log("match profile ids from context", userIdsPercentsArr)
 
+
+  console.log("profileLiked dfdsfdfdsafdsfa", profileLiked)
+
   useEffect(async () => {
     await dispatch(getProfiles())
     if (!isLoaded) setIsLoaded(true);
   }, [dispatch, profiles.length, isLoaded, conversations?.length, number_likes])
+
 
   useEffect(() => {
     async function fetchData() {
@@ -47,6 +51,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
     fetchData();
   }, [number_likes, count]);
 
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetch(`/api/likes/user/${user_id_one}/matchProfile/${matchProfileObj[0]?.id}`);
@@ -55,7 +60,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
     }
     fetchData();
   }, []);
-
 
 
   useEffect(() => {
@@ -200,25 +204,33 @@ const MatchProfilePics = ({matchProfileObj}) => {
       setCount(count +1)
   }
 
-  // console.log("profileLiked", profileLiked.liked)
 
   const handleLikeToggle = async () => {
     let user_id = user_id_one
-    // let liked = "true"
+
+    console.log("profileLiked🤡🤡🤡🤡🤡🤡🤡🤡🤡", profileLiked)
     let liked;
-    if(profileLiked.liked == "true") {
-      liked = "false"
-    } else {
-      liked = "true"
-    }
-
-    console.log("liked----------", liked)
-
     let match_profile_id = matchProfileObj[0]?.id
     let newUserLikeProfile = {
       liked, user_id, match_profile_id
     }
-    dispatch(createLike(newUserLikeProfile))
+
+    // so we should check first if profile has been liked by the current user before
+    // if has been liked, profileLiked.liked =="true"
+    // then we want to handleDecreaseLike and edit the like to be false
+    if(profileLiked.liked === "true") {
+      liked = "false"
+      console.log("liked🤡🤡  minus", liked)
+      handleDecreaseProfileLikes()
+      dispatch(EditLike(newUserLikeProfile))
+    } else {
+      // otherwise we should handleIncreaseLike
+      liked = "true"
+      handleIncreaseProfileLikes()
+      dispatch(createLike(newUserLikeProfile))
+
+    }
+
   }
 
 
@@ -244,7 +256,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
                 onClick={()=>
                   {
                     // setLikeColor(colorLike ==='empty'? 'red':'empty')
-                      handleIncreaseProfileLikes()
+                      // handleIncreaseProfileLikes()
                       handleLikeToggle()
                   }
                 }
