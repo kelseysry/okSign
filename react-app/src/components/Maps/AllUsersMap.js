@@ -62,7 +62,8 @@ const AllUsersMap= ({matchUsersProfileArr}) => {
 
     return (
       <>
-    <script src="//maps.googleapis.com/maps/api/js?key=REACT_APP_MAPS_KEY"></script>
+    {/* <script src="//maps.googleapis.com/maps/api/js?key=REACT_APP_MAPS_KEY"></script> */}
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=REACT_APP_MAPS_KEY&callback=initMap"></script>
 
       <div className="big-screen-home">
         {(isLoaded && allMarkers.length) && (
