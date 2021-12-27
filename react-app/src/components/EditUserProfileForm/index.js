@@ -87,7 +87,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     if(!looking_for) validationErrors.push("looking for is required")
     if(!user_audio) validationErrors.push("audio is required")
 
-    if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
+    // if(!number_likes) validationErrors.push("number of likes")
 
     if(!image_url1) {validationErrors.push("you have 3 seconds to impress with this photo")}
     else if (!isURL(image_url1)) {

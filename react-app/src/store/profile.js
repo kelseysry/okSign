@@ -132,7 +132,7 @@ export const createProfile = (formData) => async (dispatch) => {
     // console.log("response from thunk". response)
     const newProfile = await response.json();
     dispatch(addOneProfile(newProfile))
-    // console.log("newProfile in thunk", newProfile)
+    console.log("newProfile in thunk", newProfile)
     return newProfile
   } catch(error) {
     // console.log(error)

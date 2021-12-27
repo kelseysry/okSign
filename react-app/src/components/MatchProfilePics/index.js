@@ -107,7 +107,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
 
     let conversationExists =  checkConversationExists(user_id_one, discoverProfileId)
-    // console.log("conversationexists", conversationExists)
+    console.log("conversationexists", conversationExists)
 
     if(conversationExists[0]?.id) {
       history.push(`/conversations/${conversationExists[0]?.id}`)

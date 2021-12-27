@@ -126,6 +126,7 @@ def create_profile():
     print(form.errors)
     return {"profile":profile.to_dict()}
   else:
+    print(form.errors)
     return "bad data"
 
 # delete profile

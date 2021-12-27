@@ -31,7 +31,7 @@ const ProfileForm = () => {
   const [user_audio, setUser_audio] = useState('');
   const [gender_id, setGender_id] = useState('1');
   const [gender_preference_id, setGender_preference_id] = useState('1');
-  const [number_likes, setNumber_likes] = useState('');
+  // const [number_likes, setNumber_likes] = useState("0");
   const [image_url1, setImage_url1] = useState('');
   const [image_url2, setImage_url2] = useState('');
   const [image_url3, setImage_url3] = useState('');
@@ -56,6 +56,7 @@ const ProfileForm = () => {
   const profilesObj = useSelector((state) => state?.profile)
   const profiles = Object?.values(profilesObj)[0]
 
+  const number_likes = '1';
 
 
   const { userId }  = useParams();
@@ -106,7 +107,7 @@ const ProfileForm = () => {
     if(!looking_for) validationErrors.push("looking for is required")
     if(!user_audio) validationErrors.push("audio is required")
 
-    if(!number_likes) validationErrors.push("number of likes") // need to figure out how to do this
+    // if(!number_likes) validationErrors.push("number of likes")
 
     if(!image_url1) {validationErrors.push("you have 3 seconds to impress with this photo")}
     else if (!isURL(image_url1)) {
@@ -161,10 +162,11 @@ const ProfileForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+
     const createNewProfileData = {
       user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id
     }
-    // console.log("createNewProfileData", createNewProfileData)
+    console.log("createNewProfileData", createNewProfileData)
 
 
      let newUserProfile = await dispatch(createProfile(createNewProfileData));
@@ -364,7 +366,7 @@ const ProfileForm = () => {
                     <option value="2">Male</option>
                   </select>
                 </label>
-                <label>
+                {/* <label>
                   number of likes
                     <input
                     className="profile-input"
@@ -374,7 +376,7 @@ const ProfileForm = () => {
                     onChange={(e) => setNumber_likes(e.target.value)}
                     >
                     </input>
-                </label>
+                </label> */}
                 <label>
                   Image Url 1
                     <input
