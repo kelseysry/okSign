@@ -20,6 +20,7 @@ import QuestionPage from './components/QuestionPage';
 import MatchProfilePage from './components/MatchProfilePage';
 import { CalculatePercentProvider } from './context/CalculatePercent';
 import DiscoverHoroscope from './components/DiscoverHoroscope/DiscoverHoroscopePage';
+import SimpleMap from './components/Maps/test';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -95,7 +96,8 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path='/test' exact={true} >
-          <DiscoverHoroscope />
+          {/* <DiscoverHoroscope /> */}
+          <SimpleMap />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
