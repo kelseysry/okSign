@@ -16,15 +16,15 @@ export const editOneLike = (like, id) => ({
 
 
 //thunk for editing a like
-export const EditLike = (editMatchLike,user_id, match_profile_id) => async dispatch => {
-  const response = await fetch(`/api/user/${user_id}/matchProfile/${match_profile_id}`, {
+export const EditLike = (editMatchLike, user_id, match_profile_id) => async dispatch => {
+  const response = await fetch(`/api/likes/user/${user_id}/matchProfile/${match_profile_id}`, {
     method: 'PUT',
     headers: {
       'Content-Type':'application/json'
   },
     body: JSON.stringify(editMatchLike)
   });
-  // console.log("editMatchLike", editMatchLike)
+  console.log("editMatchLike", editMatchLike)
 
   const editedMatchLike = await response.json();
   dispatch(editOneLike(editedMatchLike, match_profile_id))
