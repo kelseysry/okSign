@@ -64,3 +64,8 @@ color: red !important;
   /* background: white; */
   color: whitesmoke !important;
 }
+
+
+.matchButtonsContainer {
+  display: flex;
+}

@@ -194,10 +194,12 @@ const MatchProfilePics = ({matchProfileObj}) => {
           <div className="oneMatchProfileContainerHeaderPage">
             {getUserName(matchProfileObj[0]?.user_id)}
             <div className="matchButtonsContainer">
-              <button
-              className="matchButton"
-              onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
-              >Message  <i className="far fa-comment-dots"></i></button>
+              <div>
+                <button
+                className="matchButton"
+                onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
+                >Message  <i className="far fa-comment-dots"></i></button>
+              </div>
 
               <div className={(colorLike)}>
                 <button
@@ -205,6 +207,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
                {   setLikeColor(colorLike ==='empty'? 'red':'empty')
                   handleIncreaseProfileLikes()}
                 }
+                // onClick={() => dispatch(toggleLike(produce.id))}
                 >
                   <span className={colorLike}>
 
