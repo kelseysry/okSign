@@ -14,6 +14,8 @@ const MatchProfilePercent = ({matchProfileObj}) => {
 
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
+  const [key, setKey] = useState([]);
+
 
   const conversationsObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationsObj)[0]
@@ -25,7 +27,17 @@ const MatchProfilePercent = ({matchProfileObj}) => {
   const user_id_one = sessionUser?.id
 
     const {userIdsPercentsArr} = GetMatches()
-  console.log("match profile ids from context", userIdsPercentsArr)
+  // console.log("match profile ids from context", userIdsPercentsArr)
+
+
+  useEffect(() => {
+    async function fetchData() {
+      const res = await fetch (`/api/maps/key`)
+      const resData = await res.json()
+      setKey(resData);
+    }
+    fetchData();
+  },[]);
 
   useEffect(async () => {
 
@@ -126,7 +138,7 @@ const MatchProfilePercent = ({matchProfileObj}) => {
           <div  className="one-detail-container-map">
           <div className="about-div-header">Meet your date half way?</div>
           <div className="one-detail-content-map">
-          {/* <MapTwoUsers user={userProfileObj} match={matchProfileObj}/> */}
+          {key.k? <MapTwoUsers keyy={key.k} user={userProfileObj} match={matchProfileObj}/> : null }
           </div>
         </div>
 

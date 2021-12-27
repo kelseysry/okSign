@@ -56,8 +56,6 @@ const Conversations = () => {
       fetchData();
     },[]);
 
-
-
   let conversationsArray = conversations
   // console.log("conversationsArray", conversationsArray[0])
 

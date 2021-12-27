@@ -4,11 +4,8 @@ import { Polyline } from '@react-google-maps/api';
 import './Maps.css'
 import { useSelector, useDispatch } from "react-redux";
 
-import { useEffect } from 'react';
-import { getAllMarkers } from '../../store/key';
 
-const MapTwoUsers= ({user, match}) => {
-  const dispatch = useDispatch()
+const MapTwoUsers= ({user, match, keyy}) => {
 
   // console.log("match in page", match)
   // console.log("user in page", user)
@@ -22,7 +19,7 @@ const k = useSelector((state) => state.key)
 
 const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "hi"
+    googleMapsApiKey: keyy
   })
 
   // useEffect(() => {
@@ -69,10 +66,7 @@ const { isLoaded } = useJsApiLoader({
 
 
     return (
-      // Important! Always set the container height explicitly
 <>
-
-
       <div className="map_page__container">
 
         {isLoaded ?<GoogleMap

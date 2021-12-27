@@ -1,13 +1,10 @@
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow} from '@react-google-maps/api';
 import './Maps.css'
-import { useSelector, useDispatch } from "react-redux";
 
 import React, { useEffect, useState } from 'react';
-import { getAllMarkers } from '../../store/key';
 
 const AllUsersMap= ({matchUsersProfileArr, keyy}) => {
 
-  const dispatch = useDispatch()
 
   // const [key, setKey] = useState([]);
 
@@ -21,29 +18,11 @@ const AllUsersMap= ({matchUsersProfileArr, keyy}) => {
   let allMarkers;
   allMarkers = matchUsersProfileArray
 
-  // const k = useSelector((state) => state.key)
-
-
   const { isLoaded } = useJsApiLoader({
       id: 'google-map-script',
       googleMapsApiKey: keyy
     })
 
-    // useEffect(() => {
-    //   async function fetchData() {
-    //     const res = await fetch (`/api/maps/key`)
-    //     const resData = await res.json()
-    //     setKey(resData);
-    //   }
-    //   fetchData();
-    // },[]);
-
-
-
-
-    // useEffect(() => {
-    //   dispatch(getAllMarkers())
-    // },[dispatch])
 
     useEffect(() => {
       const listener = e => {
