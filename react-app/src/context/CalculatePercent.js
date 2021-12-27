@@ -1,8 +1,8 @@
 // get match percent for ALL users in the db
 
-import { getQuestions } from '../store/question';
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from "react-redux";
+// import { getQuestions } from '../store/question';
+import { useSelector } from "react-redux";
+import React, { useEffect, useState } from 'react';
 
 
 import { createContext, useContext } from "react";
@@ -10,33 +10,53 @@ import { createContext, useContext } from "react";
 export const PercentContext = createContext();
 
 export function CalculatePercentProvider (props) {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
-  const questionObject = useSelector((state)=>state.question)
-  // console.log("questionObj", questionObject)
-  const questions = Object.values(questionObject)
 
-  useEffect(async ()=>{
-    await dispatch(getQuestions())
-}, [dispatch, questions.length])
+  const [questions, setQuestions] = useState([]);
 
-let questionsRender;
+  // const questionObject = useSelector((state)=>state.question)
+  // const questions = Object.values(questionObject)
 
-if(questions.length) {
-   questionsRender = questions[0]
-} else if(!questions[0]) {
-    questionsRender = questions[1]
-} else {
-  questionsRender = null;
-}
+//   useEffect(async ()=>{
+//     await dispatch(getQuestions())
+// }, [dispatch, questions.length])
+
+console.log("questions-------", questions)
+
+
+useEffect(() => {
+  async function fetchData() {
+    const response = await fetch('/api/questions/');
+    const responseData = await response.json();
+    setQuestions(responseData.questions);
+  }
+  fetchData();
+}, []);
+
+
+let questionsRender = questions
+
+// if(questions.length) {
+//    questionsRender = questions[0]
+// } else if(!questions[0]) {
+//     questionsRender = questions[1]
+// } else {
+//   questionsRender = null;
+// }
 
 console.log("questionsRender😯😯😯", questionsRender)
 
 
 // for each user's question object, we need to count how many answers
 // they have that are the same as the current user
- let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
+let currentUserQuestion;
+if(questions.length) {
+  currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
+} else {
+  return null
+}
 //  console.log("currentUserQuestion🎃🎃🎃", currentUserQuestion)
 
  let counter = {};

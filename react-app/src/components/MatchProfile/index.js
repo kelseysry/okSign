@@ -154,10 +154,10 @@ const MatchProfile = ({userIdPercentObj}) => {
   }
 
 
-  console.log("matchProfileObj[0]", matchProfileObj[0])
+  // console.log("matchProfileObj[0]", matchProfileObj[0])
 
 
-  // this is displaying on the front discover page 
+  // this is displaying on the front discover page
   return (
     <>
 
