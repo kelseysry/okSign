@@ -54,12 +54,6 @@ body {
 }
 
 
-
-/*
-.red {
-color: red !important;
-} */
-
 .empty {
   /* background: white; */
   color: whitesmoke !important;
@@ -69,12 +63,6 @@ color: red !important;
 .matchButtonsContainer {
   display: flex;
 }
-
-/* button.liked {
-  color: white;
-  background-color: red;
-} */
-
 
 
 button.selected {
