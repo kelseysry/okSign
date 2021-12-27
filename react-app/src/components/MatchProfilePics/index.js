@@ -167,8 +167,8 @@ const MatchProfilePics = ({matchProfileObj}) => {
   let profile_id = matchProfileObj[0]?.id
 
 
-  const handleIncreaseProfileLikes = async(e) => {
-    e.preventDefault();
+  const handleIncreaseProfileLikes = async() => {
+    // e.preventDefault();
 
     let newLikes = await setNumLikes(() => {
       return number_likes = matchProfileObj[0]?.number_likes + 1
@@ -186,8 +186,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
       setCount(count +1)
   }
 
-
-
   return (
     <>
 
@@ -201,17 +199,16 @@ const MatchProfilePics = ({matchProfileObj}) => {
               onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
               >Message  <i className="far fa-comment-dots"></i></button>
 
-              <button
-              className="matchButton"
-              // className="like-button"
-              onClick={handleIncreaseProfileLikes}
-              >Like {profileC?.number_likes} <span className=""><i className="fas fa-heart"></i></span></button>
-
               <div className={(colorLike)}>
-                <button onClick={()=> setLikeColor(colorLike ==='empty'? 'red':'empty')}>
+                <button
+                onClick={()=>
+               {   setLikeColor(colorLike ==='empty'? 'red':'empty')
+                  handleIncreaseProfileLikes()}
+                }
+                >
                   <span className={colorLike}>
 
-                  <i class="fas fa-heart fa-3x"></i>
+                  <i class="fas fa-heart fa-2x"></i>  {profileC?.number_likes}
                   </span>
                   </button>
               </div>
