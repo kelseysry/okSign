@@ -26,7 +26,7 @@ const AllUsersMap= ({matchUsersProfileArr, keyy}) => {
 
   const { isLoaded } = useJsApiLoader({
       id: 'google-map-script',
-      googleMapsApiKey: keyy
+      // googleMapsApiKey: keyy
     })
 
     // useEffect(() => {
@@ -76,7 +76,7 @@ const AllUsersMap= ({matchUsersProfileArr, keyy}) => {
 
 
       <div className="big-screen-home">
-        {(isLoaded && allMarkers.length) && (
+        {(isLoaded && allMarkers.length && keyy) && (
         <GoogleMap
         mapContainerStyle={containerStyle}
         zoom={3}
