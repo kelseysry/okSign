@@ -210,7 +210,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
     // console.log("profileLiked🤡🤡🤡🤡🤡🤡🤡🤡🤡", profileLiked)
     let liked;
     let match_profile_id;
-    let newUserLikeProfile;
 
     // so we should check first if profile has been liked by the current user before
     // if has been liked, profileLiked.liked =="true"
@@ -270,7 +269,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
               <div className={(colorLike)}>
                 <button
-                className={"like-button" + (profileLiked.liked ? " selected" : " blank")}
+                className={(profileLiked.liked === "true"? " selected" : " blank")}
                 onClick={()=>
                   {
                     // setLikeColor(colorLike ==='empty'? 'red':'empty')
