@@ -200,19 +200,26 @@ const MatchProfilePics = ({matchProfileObj}) => {
       setCount(count +1)
   }
 
-  console.log("profileLiked", profileLiked.liked)
+  // console.log("profileLiked", profileLiked.liked)
 
   const handleLikeToggle = async () => {
     let user_id = user_id_one
-    let liked = "true"
+    // let liked = "true"
+    let liked;
+    if(profileLiked.liked == "true") {
+      liked = "false"
+    } else {
+      liked = "true"
+    }
+
+    console.log("liked----------", liked)
+
     let match_profile_id = matchProfileObj[0]?.id
     let newUserLikeProfile = {
       liked, user_id, match_profile_id
     }
     dispatch(createLike(newUserLikeProfile))
   }
-
-
 
 
   return (
@@ -227,7 +234,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
                 <button
                   className="matchButton"
                   onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
-                  >Message  <i className="far fa-comment-dots"></i>
+                  >Message  <i className="far fa-comment-dots fa-2x"></i>
                 </button>
               </div>
 
@@ -241,9 +248,8 @@ const MatchProfilePics = ({matchProfileObj}) => {
                       handleLikeToggle()
                   }
                 }
-                // onClick={() => dispatch(toggleLike(produce.id))}
                 >
-                  <span className="">
+                  <span className="heart-text">
                   <i class="fas fa-heart"></i>  {profileC?.number_likes}
                   </span>
                   </button>
