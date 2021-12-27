@@ -90,12 +90,16 @@ const Conversations = () => {
   })
   }
 
+  // console.log("conversationsArray", conversationsArray)
+
   getMatchUserIds()
 
   let previousCurrentUserConversations =  conversationsArray[0]?.filter(function(el) {
-    return el.id === +user_id
+    // console.log("el.id",el.id)
+    return (el.user_id_one === +user_id) || (el.user_id_two === +user_id)
   })
 
+  console.log("previousCurrentUserConversations", previousCurrentUserConversations)
   // console.log("matchUserIdsArr matchUserIdsArr", matchUserIdsArr)
 
   let mapRender;
