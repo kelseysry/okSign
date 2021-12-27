@@ -25,6 +25,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
   const [profileC, setProfileC] = useState([]);
   const [count, setCount] = useState('')
   const [colorLike, setLikeColor] = useState('empty')
+  const [profileLiked, setProfileLiked] = useState([])
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id_one = sessionUser?.id
@@ -45,6 +46,15 @@ const MatchProfilePics = ({matchProfileObj}) => {
     }
     fetchData();
   }, [number_likes, count]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(`/api/likes/user/${user_id_one}/matchProfile/${matchProfileObj[0]?.id}`);
+      const responseData = await response.json();
+      setProfileLiked(responseData);
+    }
+    fetchData();
+  }, []);
 
 
 
@@ -137,7 +147,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
   let user_audio = matchProfileObj[0]?.user_audio
   let gender_id = matchProfileObj[0]?.gender_id
   let gender_preference_id = matchProfileObj[0]?.gender_preference_id
-  // let number_likes = matchProfileObj[0]?.number_likes
   let image_url1 = matchProfileObj[0]?.image_url1
   let image_url2 = matchProfileObj[0]?.image_url2
   let image_url3 = matchProfileObj[0]?.image_url3
@@ -191,6 +200,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
       setCount(count +1)
   }
 
+  console.log("profileLiked", profileLiked)
 
   const handleLikeToggle = async () => {
     let user_id = user_id_one
