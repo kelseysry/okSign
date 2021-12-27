@@ -5,6 +5,7 @@ import { createConversation } from "../../store/conversation";
 import { getProfiles, updateProfileLikeCount } from "../../store/profile";
 import { GetMatches } from "../../context/MatchesContext";
 import { useHistory } from 'react-router';
+import { createLike } from "../../store/like";
 
 const MatchProfilePics = ({matchProfileObj}) => {
   const dispatch = useDispatch()
@@ -198,6 +199,17 @@ const MatchProfilePics = ({matchProfileObj}) => {
   }
 
 
+  const handleLikeToggle = async () => {
+    let user_id = user_id_one
+    let liked = "true"
+    let match_profile_id = matchProfileObj[0]?.id
+    let newUserLikeProfile = {
+      liked, user_id, match_profile_id
+    }
+    dispatch(createLike(newUserLikeProfile))
+  }
+
+
 
 
   return (
@@ -219,8 +231,10 @@ const MatchProfilePics = ({matchProfileObj}) => {
               <div className={(colorLike)}>
                 <button
                 onClick={()=>
-               {   setLikeColor(colorLike ==='empty'? 'red':'empty')
-                  handleIncreaseProfileLikes()}
+                  {   setLikeColor(colorLike ==='empty'? 'red':'empty')
+                      handleIncreaseProfileLikes()
+                      handleLikeToggle()
+                  }
                 }
                 // onClick={() => dispatch(toggleLike(produce.id))}
                 >
