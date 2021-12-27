@@ -62,6 +62,7 @@ const AllUsersMap= ({matchUsersProfileArr}) => {
 
     return (
       <>
+    <script src="//maps.googleapis.com/maps/api/js?key=REACT_APP_MAPS_KEY"></script>
 
       <div className="big-screen-home">
         {(isLoaded && allMarkers.length) && (
