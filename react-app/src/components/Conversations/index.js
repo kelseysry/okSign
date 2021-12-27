@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import MatchConversationTile from "../MatchConversationTile";
 import { NavLink } from 'react-router-dom';
 import { getConversations } from "../../store/conversation";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import NoMatches from "../NoMatches";
 import NoConversations from "../NoConversations";
 import './Conversations.css'
@@ -17,6 +17,9 @@ const Conversations = () => {
   // const {matchedProfileIds} = GetMatches()
   // console.log("match profile ids from context", matchedProfileIds)
 
+  const [key, setKey] = useState([]);
+
+
   const conversationObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationObj)
 
@@ -26,8 +29,8 @@ const Conversations = () => {
     matchUserIdsArr = Object.values(matchUserIdsObj)
   }
 
-  console.log("matchUserIdsObj--------------", matchUserIdsObj)
-  console.log("matchUserIdsArr--------------", matchUserIdsArr)
+  // console.log("matchUserIdsObj--------------", matchUserIdsObj)
+  // console.log("matchUserIdsArr--------------", matchUserIdsArr)
 
 
   const sessionUser = useSelector((state) => state?.session?.user)
@@ -43,6 +46,15 @@ const Conversations = () => {
     await dispatch(getMatchProfiles(matchUserIds))
 
 }, [dispatch, conversations.length])
+
+    useEffect(() => {
+      async function fetchData() {
+        const res = await fetch (`/api/maps/key`)
+        const resData = await res.json()
+        setKey(resData);
+      }
+      fetchData();
+    },[]);
 
 
 
@@ -109,7 +121,7 @@ const Conversations = () => {
 
         <div className="one-conversation-container">
           <div className="one-map-header-name">Click On a Marker To See Where Your Matches Are! &nbsp; <i class="fas fa-map-marker-alt"></i></div>
-             <AllUsersMap matchUsersProfileArr={matchUserIdsArr}/>
+             <AllUsersMap keyy={key.k} matchUsersProfileArr={matchUserIdsArr}/>
           </div>
 
           : null }

@@ -5,9 +5,11 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import { getAllMarkers } from '../../store/key';
 
-const AllUsersMap= ({matchUsersProfileArr}) => {
+const AllUsersMap= ({matchUsersProfileArr, keyy}) => {
 
   const dispatch = useDispatch()
+
+  // const [key, setKey] = useState([]);
 
   const [selectedCenter, setSelectedCenter] = useState(null);
 
@@ -24,8 +26,17 @@ const AllUsersMap= ({matchUsersProfileArr}) => {
 
   const { isLoaded } = useJsApiLoader({
       id: 'google-map-script',
-      // googleMapsApiKey: "key.k"
+      googleMapsApiKey: keyy
     })
+
+    // useEffect(() => {
+    //   async function fetchData() {
+    //     const res = await fetch (`/api/maps/key`)
+    //     const resData = await res.json()
+    //     setKey(resData);
+    //   }
+    //   fetchData();
+    // },[]);
 
 
 
@@ -62,8 +73,7 @@ const AllUsersMap= ({matchUsersProfileArr}) => {
 
     return (
       <>
-    {/* <script src="//maps.googleapis.com/maps/api/js?key=REACT_APP_MAPS_KEY"></script> */}
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=REACT_APP_MAPS_KEY&callback=initMap"></script>
+
 
       <div className="big-screen-home">
         {(isLoaded && allMarkers.length) && (
