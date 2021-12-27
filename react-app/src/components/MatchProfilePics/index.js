@@ -5,6 +5,7 @@ import { createConversation } from "../../store/conversation";
 import { getProfiles, updateProfileLikeCount } from "../../store/profile";
 import { GetMatches } from "../../context/MatchesContext";
 import { useHistory } from 'react-router';
+import { createLike } from "../../store/like";
 
 const MatchProfilePics = ({matchProfileObj}) => {
   const dispatch = useDispatch()
@@ -24,6 +25,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
   const [profileC, setProfileC] = useState([]);
   const [count, setCount] = useState('')
   const [colorLike, setLikeColor] = useState('empty')
+  const [profileLiked, setProfileLiked] = useState([])
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id_one = sessionUser?.id
@@ -32,15 +34,9 @@ const MatchProfilePics = ({matchProfileObj}) => {
   // console.log("match profile ids from context", userIdsPercentsArr)
 
   useEffect(async () => {
-
     await dispatch(getProfiles())
-    // await dispatch(getConversations())
-
     if (!isLoaded) setIsLoaded(true);
-
   }, [dispatch, profiles.length, isLoaded, conversations?.length, number_likes])
-
-
 
   useEffect(() => {
     async function fetchData() {
@@ -51,7 +47,15 @@ const MatchProfilePics = ({matchProfileObj}) => {
     fetchData();
   }, [number_likes, count]);
 
-  // console.log("profilesC,", number_likes)
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(`/api/likes/user/${user_id_one}/matchProfile/${matchProfileObj[0]?.id}`);
+      const responseData = await response.json();
+      setProfileLiked(responseData);
+    }
+    fetchData();
+  }, []);
+
 
 
   useEffect(() => {
@@ -143,7 +147,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
   let user_audio = matchProfileObj[0]?.user_audio
   let gender_id = matchProfileObj[0]?.gender_id
   let gender_preference_id = matchProfileObj[0]?.gender_preference_id
-  // let number_likes = matchProfileObj[0]?.number_likes
   let image_url1 = matchProfileObj[0]?.image_url1
   let image_url2 = matchProfileObj[0]?.image_url2
   let image_url3 = matchProfileObj[0]?.image_url3
@@ -169,22 +172,48 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   const handleIncreaseProfileLikes = async() => {
     // e.preventDefault();
-
     let newLikes = await setNumLikes(() => {
       return number_likes = matchProfileObj[0]?.number_likes + 1
     })
-
-    // console.log("current number_likes", number_likes)
-    console.log("newLikes", newLikes)
+    // console.log("newLikes", newLikes)
 
       let editProfile  = {
       age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
       }
 
       dispatch(updateProfileLikeCount(editProfile, profile_id))
-
       setCount(count +1)
   }
+
+  const handleDecreaseProfileLikes = async() => {
+    // e.preventDefault();
+    let newLikes = await setNumLikes(() => {
+      return number_likes = matchProfileObj[0]?.number_likes -1
+    })
+    // console.log("newLikes", newLikes)
+
+      let editProfile  = {
+      age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
+      }
+
+      dispatch(updateProfileLikeCount(editProfile, profile_id))
+      setCount(count +1)
+  }
+
+  console.log("profileLiked", profileLiked.liked)
+
+  const handleLikeToggle = async () => {
+    let user_id = user_id_one
+    let liked = "true"
+    let match_profile_id = matchProfileObj[0]?.id
+    let newUserLikeProfile = {
+      liked, user_id, match_profile_id
+    }
+    dispatch(createLike(newUserLikeProfile))
+  }
+
+
+
 
   return (
     <>
@@ -196,21 +225,25 @@ const MatchProfilePics = ({matchProfileObj}) => {
             <div className="matchButtonsContainer">
               <div>
                 <button
-                className="matchButton"
-                onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
-                >Message  <i className="far fa-comment-dots"></i></button>
+                  className="matchButton"
+                  onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
+                  >Message  <i className="far fa-comment-dots"></i>
+                </button>
               </div>
 
               <div className={(colorLike)}>
                 <button
+                className={"like-button" + (profileLiked.liked ? " selected" : " blank")}
                 onClick={()=>
-               {   setLikeColor(colorLike ==='empty'? 'red':'empty')
-                  handleIncreaseProfileLikes()}
+                  {
+                    // setLikeColor(colorLike ==='empty'? 'red':'empty')
+                      handleIncreaseProfileLikes()
+                      handleLikeToggle()
+                  }
                 }
                 // onClick={() => dispatch(toggleLike(produce.id))}
                 >
-                  <span className={colorLike}>
-
+                  <span className="">
                   <i class="fas fa-heart"></i>  {profileC?.number_likes}
                   </span>
                   </button>

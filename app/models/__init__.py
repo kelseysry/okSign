@@ -14,3 +14,4 @@ from .religion import Religion
 from .partner import Partner
 from .smoking import Smoking
 from .drinking import Drinking
+from .like import Like

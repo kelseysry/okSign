@@ -19,6 +19,7 @@ class User(db.Model, UserMixin):
     profile = db.relationship("Profile", back_populates="user")
     questions = db.relationship("Question", back_populates="user")
     from_user_id = db.relationship("Message", back_populates="user")
+    like = db.relationship("Like", back_populates="user")
 
     # conversation1 = db.relationship("Conversation", back_populates="userOne")
     # conversation2 = db.relationship("Conversation", back_populates="userTwo")
