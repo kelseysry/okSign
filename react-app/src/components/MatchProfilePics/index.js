@@ -211,7 +211,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
                 >
                   <span className={colorLike}>
 
-                  <i class="fas fa-heart fa-2x"></i>  {profileC?.number_likes}
+                  <i class="fas fa-heart"></i>  {profileC?.number_likes}
                   </span>
                   </button>
               </div>

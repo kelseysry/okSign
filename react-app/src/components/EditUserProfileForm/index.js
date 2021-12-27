@@ -338,7 +338,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
                     <option value="2">Male</option>
                   </select>
                 </label>
-                <label>
+                {/* <label>
                   number of likes
                     <input
                     className="profile-input"
@@ -348,7 +348,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
                     onChange={(e) => setNumber_likes(e.target.value)}
                     >
                     </input>
-                </label>
+                </label> */}
                 <label>
                   Image Url 1
                     <input
