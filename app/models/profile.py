@@ -62,6 +62,7 @@ class Profile(db.Model):
     genderId = db.relationship("Gender", foreign_keys="[Profile.gender_id]")
     genderPreference = db.relationship("Gender", foreign_keys="[Profile.gender_preference_id]")
 
+    like = db.relationship("Like", back_populates="profile")
 
     def to_dict(self):
         return {

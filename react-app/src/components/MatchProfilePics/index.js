@@ -169,22 +169,36 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   const handleIncreaseProfileLikes = async() => {
     // e.preventDefault();
-
     let newLikes = await setNumLikes(() => {
       return number_likes = matchProfileObj[0]?.number_likes + 1
     })
-
-    // console.log("current number_likes", number_likes)
-    console.log("newLikes", newLikes)
+    // console.log("newLikes", newLikes)
 
       let editProfile  = {
       age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
       }
 
       dispatch(updateProfileLikeCount(editProfile, profile_id))
-
       setCount(count +1)
   }
+
+  const handleDecreaseProfileLikes = async() => {
+    // e.preventDefault();
+    let newLikes = await setNumLikes(() => {
+      return number_likes = matchProfileObj[0]?.number_likes -1
+    })
+    // console.log("newLikes", newLikes)
+
+      let editProfile  = {
+      age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
+      }
+
+      dispatch(updateProfileLikeCount(editProfile, profile_id))
+      setCount(count +1)
+  }
+
+
+
 
   return (
     <>
@@ -196,9 +210,10 @@ const MatchProfilePics = ({matchProfileObj}) => {
             <div className="matchButtonsContainer">
               <div>
                 <button
-                className="matchButton"
-                onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
-                >Message  <i className="far fa-comment-dots"></i></button>
+                  className="matchButton"
+                  onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
+                  >Message  <i className="far fa-comment-dots"></i>
+                </button>
               </div>
 
               <div className={(colorLike)}>
@@ -210,7 +225,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
                 // onClick={() => dispatch(toggleLike(produce.id))}
                 >
                   <span className={colorLike}>
-
                   <i class="fas fa-heart"></i>  {profileC?.number_likes}
                   </span>
                   </button>
