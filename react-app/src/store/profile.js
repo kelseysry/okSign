@@ -54,7 +54,7 @@ export const clearProfiles = () => ({
 // thunk to increase/decrease likes
 export const updateProfileLikeCount = (editProfile, id) => async(dispatch) => {
 
-  console.log("thunk", editProfile)
+  // console.log("thunk", editProfile)
   const response = await fetch(`/api/profiles/${id}`, {
     method: 'PUT',
     headers: {
@@ -63,12 +63,12 @@ export const updateProfileLikeCount = (editProfile, id) => async(dispatch) => {
     body: JSON.stringify(editProfile)
   });
 
-  console.log("editProfile likes in thunk", editProfile)
+  // console.log("editProfile likes in thunk", editProfile)
 
 
   const editedProfile = await response.json();
 
-  console.log("editedProfile likessssss await in thunk", editedProfile)
+  // console.log("editedProfile likessssss await in thunk", editedProfile)
   dispatch(editProfileLikeCountAction(editedProfile, id))
   return editedProfile
 }

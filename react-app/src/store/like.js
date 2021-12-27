@@ -10,7 +10,7 @@ export const toggleLike = (newLike) => ({
 // thunk for creating a like
 export const createLike = (formData) => async (dispatch) => {
 
-  console.log("formdata in thunk",formData)
+  console.log("formdata in thunk createLike",formData)
 
   const response = await fetch(`/api/likes/create`, {
     method: 'POST',

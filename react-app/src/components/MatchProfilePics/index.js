@@ -204,15 +204,25 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   const handleLikeToggle = async () => {
     let user_id = user_id_one
-    // let liked = "true"
-    let liked;
-    if(profileLiked.liked == "true") {
-      liked = "false"
-    } else {
-      liked = "true"
-    }
 
-    console.log("liked----------", liked)
+    // so we should check first if profile has been liked by the current user before
+
+    // if has been liked, profileLiked.liked =="true"
+    // then we want to handleDecreaseLike
+
+    // otherwise we we should handleIncrease Like 
+
+
+    // let liked = "true"
+    let liked = "true";
+
+    // if(profileLiked.liked == "true") {
+    //   liked = "false"
+    // } else {
+    //   liked = "true"
+    // }
+
+    // console.log("liked----------", liked)
 
     let match_profile_id = matchProfileObj[0]?.id
     let newUserLikeProfile = {
