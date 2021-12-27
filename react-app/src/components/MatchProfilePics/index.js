@@ -200,7 +200,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
       setCount(count +1)
   }
 
-  console.log("profileLiked", profileLiked)
+  console.log("profileLiked", profileLiked.liked)
 
   const handleLikeToggle = async () => {
     let user_id = user_id_one
@@ -233,15 +233,17 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
               <div className={(colorLike)}>
                 <button
+                className={"like-button" + (profileLiked.liked ? " selected" : " blank")}
                 onClick={()=>
-                  {   setLikeColor(colorLike ==='empty'? 'red':'empty')
+                  {
+                    // setLikeColor(colorLike ==='empty'? 'red':'empty')
                       handleIncreaseProfileLikes()
                       handleLikeToggle()
                   }
                 }
                 // onClick={() => dispatch(toggleLike(produce.id))}
                 >
-                  <span className={colorLike}>
+                  <span className="">
                   <i class="fas fa-heart"></i>  {profileC?.number_likes}
                   </span>
                   </button>
