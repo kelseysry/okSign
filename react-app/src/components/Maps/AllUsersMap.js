@@ -26,7 +26,7 @@ const AllUsersMap= ({matchUsersProfileArr, keyy}) => {
 
   const { isLoaded } = useJsApiLoader({
       id: 'google-map-script',
-      // googleMapsApiKey: keyy
+      googleMapsApiKey: keyy
     })
 
     // useEffect(() => {

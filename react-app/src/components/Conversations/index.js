@@ -100,6 +100,13 @@ const Conversations = () => {
 
   // console.log("matchUserIdsArr matchUserIdsArr", matchUserIdsArr)
 
+  let mapRender;
+  mapRender = (
+    <div>
+      {key.k? <AllUsersMap keyy={key.k} matchUsersProfileArr={matchUserIdsArr}/> : null }
+    </div>
+  )
+
   let content;
   if(previousCurrentUserConversations?.length) {
     content = (
@@ -121,7 +128,7 @@ const Conversations = () => {
 
         <div className="one-conversation-container">
           <div className="one-map-header-name">Click On a Marker To See Where Your Matches Are! &nbsp; <i class="fas fa-map-marker-alt"></i></div>
-             <AllUsersMap keyy={key.k} matchUsersProfileArr={matchUserIdsArr}/>
+                {mapRender}
           </div>
 
           : null }
