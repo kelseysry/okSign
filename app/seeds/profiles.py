@@ -127,7 +127,7 @@ def seed_profiles():
   location = 'Tokyo, Japan',
   lat = 35.66386037006631,
   lng = 139.71280545767016,
-  about_me ="",
+  about_me ="the best",
   goal = "to be a great vampire knight",
   talent = "I can fight vampires",
   my_traits ="composed, quiet, cold",
