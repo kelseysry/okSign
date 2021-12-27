@@ -52,3 +52,15 @@ body {
   padding-bottom: 3px;
 
 }
+
+
+
+
+.red {
+color: red !important;
+}
+
+.empty {
+  /* background: white; */
+  color: whitesmoke !important;
+}

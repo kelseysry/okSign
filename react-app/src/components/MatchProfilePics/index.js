@@ -4,7 +4,6 @@ import { getConversations, clearConversation } from "../../store/conversation";
 import { createConversation } from "../../store/conversation";
 import { getProfiles, updateProfileLikeCount } from "../../store/profile";
 import { GetMatches } from "../../context/MatchesContext";
-
 import { useHistory } from 'react-router';
 
 const MatchProfilePics = ({matchProfileObj}) => {
@@ -24,12 +23,13 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   const [profileC, setProfileC] = useState([]);
   const [count, setCount] = useState('')
+  const [colorLike, setLikeColor] = useState('empty')
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id_one = sessionUser?.id
 
     const {userIdsPercentsArr} = GetMatches()
-  console.log("match profile ids from context", userIdsPercentsArr)
+  // console.log("match profile ids from context", userIdsPercentsArr)
 
   useEffect(async () => {
 
@@ -51,7 +51,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
     fetchData();
   }, [number_likes, count]);
 
-console.log("profilesC,", number_likes)
+  // console.log("profilesC,", number_likes)
 
 
   useEffect(() => {
@@ -70,17 +70,6 @@ console.log("profilesC,", number_likes)
     if (!isLoaded) setIsLoaded(true);
 
   }, [dispatch])
-
-
-
-
-
-
-  // useEffect(() => {
-  //   setNumLikes('');
-  //    return () => clearInterval(matchProfileObj[0]?.number_likes);
-  // }, [matchProfileObj[0]?.number_likes, number_likes]);
-
 
 
   const getUserName = (user_id) => {
@@ -185,7 +174,7 @@ console.log("profilesC,", number_likes)
       return number_likes = matchProfileObj[0]?.number_likes + 1
     })
 
-    console.log("current number_likes", number_likes)
+    // console.log("current number_likes", number_likes)
     console.log("newLikes", newLikes)
 
       let editProfile  = {
@@ -196,8 +185,6 @@ console.log("profilesC,", number_likes)
 
       setCount(count +1)
   }
-
-
 
 
 
@@ -216,8 +203,20 @@ console.log("profilesC,", number_likes)
 
               <button
               className="matchButton"
+              // className="like-button"
               onClick={handleIncreaseProfileLikes}
-              >Like {profileC?.number_likes} <i className="fas fa-heart"></i></button>
+              >Like {profileC?.number_likes} <span className=""><i className="fas fa-heart"></i></span></button>
+
+              <div className={(colorLike)}>
+                <button onClick={()=> setLikeColor(colorLike ==='empty'? 'red':'empty')}>
+                  <span className={colorLike}>
+
+                  <i class="fas fa-heart fa-3x"></i>
+                  </span>
+                  </button>
+              </div>
+
+
             </div>
 
           </div>

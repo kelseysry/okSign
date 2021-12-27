@@ -6,6 +6,7 @@ const REMOVE_PROFILE = "profile/REMOVE_PROFILE"
 const CLEAR = 'profile/CLEAR'
 const UPDATE_LIKE_PROFILE = 'profile/UPDATE_LIKE_COUNT'
 
+
 // action creator to update count
 export const editProfileLikeCountAction = (profile, id) => ({
   type: UPDATE_LIKE_PROFILE,
@@ -220,8 +221,8 @@ const profileReducer = (state = initialState, action) => {
       return newState
     }
     return state
+  };
 
-  }
     default:
       return state;
   }
