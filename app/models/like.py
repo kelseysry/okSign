@@ -8,12 +8,16 @@ class Like(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     liked = db.Column(db.String(255))
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
-    match_profile_id = db.Column(db.Integer, db.ForeignKey("profiles.id"), nullable=True)
+    match_profile_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=True)
     created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
 
-    user = db.relationship("User", back_populates="like")
-    profile = db.relationship("Profile", back_populates="like")
+    # user = db.relationship("User", back_populates="like")
+
+    userLike = db.relationship("User", foreign_keys="[Like.user_id]")
+    profileUserLike = db.relationship("User", foreign_keys="[Like.match_profile_id]")
+
+    # profile = db.relationship("Profile", back_populates="like")
 
     def to_dict(self):
         return {

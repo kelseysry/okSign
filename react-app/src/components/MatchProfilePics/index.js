@@ -34,7 +34,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
   // console.log("match profile ids from context", userIdsPercentsArr)
 
 
-  console.log("profileLiked dfdsfdfdsafdsfa", profileLiked)
 
   useEffect(async () => {
     await dispatch(getProfiles())
@@ -208,12 +207,9 @@ const MatchProfilePics = ({matchProfileObj}) => {
   const handleLikeToggle = async () => {
     let user_id = user_id_one
 
-    console.log("profileLiked🤡🤡🤡🤡🤡🤡🤡🤡🤡", profileLiked)
+    // console.log("profileLiked🤡🤡🤡🤡🤡🤡🤡🤡🤡", profileLiked)
     let liked;
-    let match_profile_id = matchProfileObj[0]?.id
-    let newUserLikeProfile = {
-      liked, user_id, match_profile_id
-    }
+    let match_profile_id;
 
     // so we should check first if profile has been liked by the current user before
     // if has been liked, profileLiked.liked =="true"
@@ -221,13 +217,34 @@ const MatchProfilePics = ({matchProfileObj}) => {
     if(profileLiked.liked === "true") {
       liked = "false"
       console.log("liked🤡🤡  minus", liked)
+      match_profile_id = matchProfileObj[0]?.id
+      let changeProfileLikeToFalse = {
+        liked, user_id, match_profile_id
+      }
+      console.log("liked🤡🤡  changeProfileLikeToFalse", changeProfileLikeToFalse)
       handleDecreaseProfileLikes()
-      dispatch(EditLike(newUserLikeProfile))
+      dispatch(EditLike(changeProfileLikeToFalse, user_id, match_profile_id))
+
+    } else if(profileLiked.liked === "false") {
+      liked = "true"
+      console.log("liked🤡🤡  plus", liked)
+      match_profile_id = matchProfileObj[0]?.id
+      let changeProfileLikeToTrue = {
+        liked, user_id, match_profile_id
+      }
+      handleIncreaseProfileLikes()
+      dispatch(EditLike(changeProfileLikeToTrue, user_id, match_profile_id))
+
     } else {
       // otherwise we should handleIncreaseLike
       liked = "true"
+      console.log("liked🤡🤡  first", liked)
+      match_profile_id = matchProfileObj[0]?.id
+      let createFirstProfileLike = {
+        liked, user_id, match_profile_id
+      }
       handleIncreaseProfileLikes()
-      dispatch(createLike(newUserLikeProfile))
+      dispatch(createLike(createFirstProfileLike, user_id, match_profile_id))
 
     }
 
@@ -252,7 +269,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
               <div className={(colorLike)}>
                 <button
-                className={"like-button" + (profileLiked.liked ? " selected" : " blank")}
+                className={(profileLiked.liked === "true"? " selected" : " blank")}
                 onClick={()=>
                   {
                     // setLikeColor(colorLike ==='empty'? 'red':'empty')

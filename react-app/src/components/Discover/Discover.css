@@ -55,10 +55,10 @@ body {
 
 
 
-
+/*
 .red {
 color: red !important;
-}
+} */
 
 .empty {
   /* background: white; */
@@ -70,15 +70,15 @@ color: red !important;
   display: flex;
 }
 
-button.liked {
+/* button.liked {
   color: white;
   background-color: red;
-}
+} */
 
 
 
 button.selected {
-  color: red;
+  color: pink;
 }
 
 button.blank {
