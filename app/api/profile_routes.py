@@ -109,7 +109,7 @@ def edit_profile(id):
       return profile.to_dict()
     else:
       # print("request.json !!!!!!!!",request.json)
-      # print(form.errors)
+      print(form.errors)
       return "bad data"
 
 # create profile
@@ -126,6 +126,7 @@ def create_profile():
     print(form.errors)
     return {"profile":profile.to_dict()}
   else:
+    print(form.errors)
     return "bad data"
 
 # delete profile

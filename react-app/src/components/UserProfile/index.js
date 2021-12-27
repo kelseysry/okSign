@@ -94,18 +94,23 @@ function UserProfile({count, setCount}) {
                 <div className="profile-basics">
                   <div className="profile-basics-username">
                     <span className="username-text">{user?.first_name}</span>
+
                   </div>
                 <div className="profile-asl">
                   <div className="profile-asl-row">
                     {currentProfile? <span className="profile-asl-age">{currentProfile[0]?.age}</span> : null}
                     <span className="profile-asl-spacer"></span>
                     {currentProfile? <span className="profile-asl-location">{currentProfile[0]?.location}</span> : null}
+                    &nbsp; | &nbsp; 
+                    {currentProfile? <span className="profile-asl-location">{currentProfile[0]?.number_likes} <i class="fas fa-heart"></i> </span> : null}
                   </div>
                 </div>
+
                 </div>
                 <div className="profile-buttons">
                 <button className="edit-profile-button" onClick={() => setShowEditProfileForm(true)}>Edit Profile <i className="fas fa-edit"></i></button>
                 <button className="delete-profile-button" onClick={() => {handleDeleteProfile(currentProfile[0]?.id)}}>Delete Profile <i className="fas fa-trash"></i></button>
+
                 </div>
             </div>
           </div>
