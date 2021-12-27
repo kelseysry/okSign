@@ -33,15 +33,9 @@ const MatchProfilePics = ({matchProfileObj}) => {
   // console.log("match profile ids from context", userIdsPercentsArr)
 
   useEffect(async () => {
-
     await dispatch(getProfiles())
-    // await dispatch(getConversations())
-
     if (!isLoaded) setIsLoaded(true);
-
   }, [dispatch, profiles.length, isLoaded, conversations?.length, number_likes])
-
-
 
   useEffect(() => {
     async function fetchData() {
@@ -52,7 +46,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
     fetchData();
   }, [number_likes, count]);
 
-  // console.log("profilesC,", number_likes)
 
 
   useEffect(() => {

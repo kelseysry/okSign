@@ -21,3 +21,16 @@ def create_like():
   else:
     print(form.errors)
     return "bad data"
+
+
+# get one profile that matches
+# the user_id (current user that like the profile)
+# match_profile_id (profile that got liked)
+@like_routes.route('/user/<int:user_id>/matchProfile/<int:match_profile_id>')
+def profile(user_id, match_profile_id):
+    like = Like.query.filter(Like.user_id == user_id).filter(Like.match_profile_id == match_profile_id).first()
+    if like:
+      return like.to_dict()
+    else:
+      print(form.errors)
+      return "bad data"
