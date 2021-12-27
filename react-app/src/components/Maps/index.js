@@ -2,8 +2,13 @@ import React, { useState, useCallback } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow} from '@react-google-maps/api';
 import { Polyline } from '@react-google-maps/api';
 import './Maps.css'
+import { useSelector, useDispatch } from "react-redux";
+
+import { useEffect } from 'react';
+import { getAllMarkers } from '../../store/key';
 
 const MapTwoUsers= ({user, match}) => {
+  const dispatch = useDispatch()
 
   // console.log("match in page", match)
   // console.log("user in page", user)
@@ -13,11 +18,16 @@ const center = {
   lng: -180
 };
 
+const k = useSelector((state) => state.key)
 
 const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.REACT_APP_MAPS_KEY
+    googleMapsApiKey: "hi"
   })
+
+  // useEffect(() => {
+  //   dispatch(getAllMarkers())
+  // },[dispatch])
 
   const containerStyle = {
     width: '700px',

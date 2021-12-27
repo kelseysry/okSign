@@ -25,6 +25,7 @@ from .api.partner_routes import partner_routes
 from .api.orientation_routes import orientation_routes
 from .api.match_routes import match_routes
 from .api.like_routes import like_routes
+from .api.map_routes import map_routes
 
 from .seeds import seed_commands
 
@@ -65,6 +66,7 @@ app.register_blueprint(partner_routes, url_prefix='/api/partners')
 app.register_blueprint(orientation_routes, url_prefix='/api/orientations')
 app.register_blueprint(match_routes, url_prefix='/api/matches')
 app.register_blueprint(like_routes, url_prefix='/api/likes')
+app.register_blueprint(map_routes, url_prefix='/api/maps')
 
 db.init_app(app)
 Migrate(app, db)

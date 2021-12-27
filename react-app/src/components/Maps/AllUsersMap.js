@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow} from '@react-google-maps/api';
 import './Maps.css'
+import { useSelector, useDispatch } from "react-redux";
 
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { getAllMarkers } from '../../store/key';
 
 const AllUsersMap= ({matchUsersProfileArr}) => {
 
-
-
+  const dispatch = useDispatch()
 
   const [selectedCenter, setSelectedCenter] = useState(null);
 
@@ -19,10 +19,20 @@ const AllUsersMap= ({matchUsersProfileArr}) => {
   let allMarkers;
   allMarkers = matchUsersProfileArray
 
+  // const k = useSelector((state) => state.key)
+
+
   const { isLoaded } = useJsApiLoader({
       id: 'google-map-script',
-      googleMapsApiKey: process.env.REACT_APP_MAPS_KEY
+      // googleMapsApiKey: "key.k"
     })
+
+
+
+
+    // useEffect(() => {
+    //   dispatch(getAllMarkers())
+    // },[dispatch])
 
     useEffect(() => {
       const listener = e => {
@@ -54,7 +64,7 @@ const AllUsersMap= ({matchUsersProfileArr}) => {
       <>
 
       <div className="big-screen-home">
-        {isLoaded && (
+        {(isLoaded && allMarkers.length) && (
         <GoogleMap
         mapContainerStyle={containerStyle}
         zoom={3}

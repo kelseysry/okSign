@@ -126,7 +126,7 @@ const MatchProfilePercent = ({matchProfileObj}) => {
           <div  className="one-detail-container-map">
           <div className="about-div-header">Meet your date half way?</div>
           <div className="one-detail-content-map">
-          <MapTwoUsers user={userProfileObj} match={matchProfileObj}/>
+          {/* <MapTwoUsers user={userProfileObj} match={matchProfileObj}/> */}
           </div>
         </div>
 

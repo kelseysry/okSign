@@ -97,7 +97,7 @@ function App() {
 
         <ProtectedRoute path='/test' exact={true} >
           {/* <DiscoverHoroscope /> */}
-          <SimpleMap />
+          {/* <SimpleMap /> */}
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

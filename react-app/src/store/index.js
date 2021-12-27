@@ -18,6 +18,7 @@ import partner from './partner'
 import orientation from './orientation'
 import match from './match'
 import like from './like'
+import key from './key'
 
 const rootReducer = combineReducers({
   session,
@@ -37,7 +38,8 @@ const rootReducer = combineReducers({
   partner,
   orientation,
   match,
-  like
+  like,
+  key
 });
 
 
