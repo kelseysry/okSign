@@ -77,7 +77,7 @@ const ProfileForm = () => {
   }
 
   function checkIfPositiveNumber(number) {
-    if(number < 0 ) {
+    if(number <= 0 ) {
       return true
     }
   }
