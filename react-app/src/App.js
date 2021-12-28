@@ -21,10 +21,13 @@ import MatchProfilePage from './components/MatchProfilePage';
 import { CalculatePercentProvider } from './context/CalculatePercent';
 import DiscoverHoroscope from './components/DiscoverHoroscope/DiscoverHoroscopePage';
 import SimpleMap from './components/Maps/test';
+import Navigation from './components/ALoginFormModal/Navigation';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const [count, setCount] = useState(0)
+
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -40,67 +43,73 @@ function App() {
   }
 
   return (
+    <>
     <BrowserRouter>
-      <NavBar />
-      <Switch>
-        <Route path='/login' exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path='/sign-up' exact={true}>
-          <SignUpForm />
-        </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
-        </ProtectedRoute>
-        {/* <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-        </ProtectedRoute> */}
-        {/* <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
-        </ProtectedRoute> */}
-          <ProtectedRoute path='/' exact={true} >
-            <Discover />
-          </ProtectedRoute>
-        <ProtectedRoute path='/profiles/:userId' exact={true} >
-          <UserProfile count={count} setCount ={setCount}  />
-        </ProtectedRoute>
-        {/* <ProtectedRoute path='/editProfile' exact={true} >
-          <EditUserProfileForm />
-        </ProtectedRoute> */}
-        <ProtectedRoute path='/createProfile' exact={true} >
-          <ProfileForm />
-        </ProtectedRoute>
-        <ProtectedRoute path='/conversations' exact={true} >
-          <MatchesProvider>
-            <Conversations />
-          </MatchesProvider>
-        </ProtectedRoute>
-        <ProtectedRoute path='/conversations/:conversationId' exact={true} >
-          <MatchesProvider>
-            <Conversation />
-          </MatchesProvider>
-        </ProtectedRoute>
-        <ProtectedRoute path='/search/:input' exact={true} >
-          <CalculatePercentProvider>
-            <SearchResults />
-          </CalculatePercentProvider>
-        </ProtectedRoute>
-        <ProtectedRoute path='/questions' exact={true} >
-          <QuestionPage />
-        </ProtectedRoute>
+      <Navigation isLoaded={isLoaded} />
+      {isLoaded && (
+        <Switch>
+          <Route path="/signup">
+            <SignUpForm />
+            <div>hello</div>
+          </Route>
+        </Switch>
+      )}
 
-        <ProtectedRoute path='/matchProfile/:profileId' exact={true} >
-          <MatchesProvider>
-            <MatchProfilePage />
-          </MatchesProvider>
-        </ProtectedRoute>
-
-        <ProtectedRoute path='/test' exact={true} >
-          {/* <DiscoverHoroscope /> */}
-          {/* <SimpleMap /> */}
-        </ProtectedRoute>
-      </Switch>
     </BrowserRouter>
+    </>
+    // <BrowserRouter>
+    //   <Navigation />
+    //   <NavBar />
+    //   <Switch>
+    //     <Route path='/login' exact={true}>
+    //       <LoginForm />
+    //     </Route>
+    //     <Route path='/sign-up' exact={true}>
+    //       <SignUpForm />
+    //     </Route>
+    //     <ProtectedRoute path='/users' exact={true} >
+    //       <UsersList/>
+    //     </ProtectedRoute>
+
+    //       <ProtectedRoute path='/' exact={true} >
+    //         <Discover />
+    //       </ProtectedRoute>
+    //     <ProtectedRoute path='/profiles/:userId' exact={true} >
+    //       <UserProfile count={count} setCount ={setCount}  />
+    //     </ProtectedRoute>
+
+    //     <ProtectedRoute path='/createProfile' exact={true} >
+    //       <ProfileForm />
+    //     </ProtectedRoute>
+    //     <ProtectedRoute path='/conversations' exact={true} >
+    //       <MatchesProvider>
+    //         <Conversations />
+    //       </MatchesProvider>
+    //     </ProtectedRoute>
+    //     <ProtectedRoute path='/conversations/:conversationId' exact={true} >
+    //       <MatchesProvider>
+    //         <Conversation />
+    //       </MatchesProvider>
+    //     </ProtectedRoute>
+    //     <ProtectedRoute path='/search/:input' exact={true} >
+    //       <CalculatePercentProvider>
+    //         <SearchResults />
+    //       </CalculatePercentProvider>
+    //     </ProtectedRoute>
+    //     <ProtectedRoute path='/questions' exact={true} >
+    //       <QuestionPage />
+    //     </ProtectedRoute>
+
+    //     <ProtectedRoute path='/matchProfile/:profileId' exact={true} >
+    //       <MatchesProvider>
+    //         <MatchProfilePage />
+    //       </MatchesProvider>
+    //     </ProtectedRoute>
+
+    //     <ProtectedRoute path='/test' exact={true} >
+    //     </ProtectedRoute>
+    //   </Switch>
+    // </BrowserRouter>
   );
 }
 

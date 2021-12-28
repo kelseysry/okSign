@@ -5,15 +5,18 @@ import './index.css';
 import App from './App';
 import configureStore from './store';
 import DiscoverContentProvider from './context/DiscoverContentContext';
+import { ModalProvider } from './context/Modal';
 
 const store = configureStore();
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <DiscoverContentProvider>
-        <App />
-      </DiscoverContentProvider>
+      <ModalProvider>
+          <DiscoverContentProvider>
+            <App />
+          </DiscoverContentProvider>
+      </ModalProvider>
       </Provider>
   </React.StrictMode>,
   document.getElementById('root')
