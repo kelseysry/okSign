@@ -76,11 +76,15 @@ const ProfileForm = () => {
     return number === +number && number === (number|0);
   }
 
+  function checkIfPositiveNumber(number) {
+    return number > 0 === parseFloat(number);
+  }
+
   useEffect(() => {
     const validationErrors = []
     if(!(age)) {
       validationErrors.push("age is required")}
-    else if (!checkIfNumeric(parseInt(age))) {
+    else if (!checkIfNumeric(parseInt(age)) || !checkIfPositiveNumber(age)) {
       validationErrors.push("please use integers for your age")
     }
 
