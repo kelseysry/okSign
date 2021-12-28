@@ -21,10 +21,15 @@ import MatchProfilePage from './components/MatchProfilePage';
 import { CalculatePercentProvider } from './context/CalculatePercent';
 import DiscoverHoroscope from './components/DiscoverHoroscope/DiscoverHoroscopePage';
 import SimpleMap from './components/Maps/test';
+import { Modal } from './context/Modal';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const [count, setCount] = useState(0)
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const [showModal, setShowModal] = useState(false);
+  const [showModal2, setShowModal2] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -40,33 +45,36 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <NavBar />
+    // <BrowserRouter>
+    <>
+      <NavBar/>
       <Switch>
         <Route path='/login' exact={true}>
-          <LoginForm />
+
+        <button onClick={() => setShowModal(true)}>Login</button>
+          {showModal && (
+            <Modal onClose={() => setShowModal(false)}>
+             <LoginForm />
+            </Modal>
+          )}
+
+        <button onClick={() => setShowModal2(true)}>Sign Up</button>
+          {showModal2 && (
+            <Modal onClose={() => setShowModal2(false)}>
+             <SignUpForm />
+            </Modal>
+          )}
+
         </Route>
-        <Route path='/sign-up' exact={true}>
-          <SignUpForm />
-        </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+        <ProtectedRoute path='/' exact={true} >
+          <Discover />
         </ProtectedRoute>
-        {/* <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
+        {/* <ProtectedRoute path='/users' exact={true} >
+          <UsersList/>
         </ProtectedRoute> */}
-        {/* <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
-        </ProtectedRoute> */}
-          <ProtectedRoute path='/' exact={true} >
-            <Discover />
-          </ProtectedRoute>
         <ProtectedRoute path='/profiles/:userId' exact={true} >
           <UserProfile count={count} setCount ={setCount}  />
         </ProtectedRoute>
-        {/* <ProtectedRoute path='/editProfile' exact={true} >
-          <EditUserProfileForm />
-        </ProtectedRoute> */}
         <ProtectedRoute path='/createProfile' exact={true} >
           <ProfileForm />
         </ProtectedRoute>
@@ -94,13 +102,12 @@ function App() {
             <MatchProfilePage />
           </MatchesProvider>
         </ProtectedRoute>
-
         <ProtectedRoute path='/test' exact={true} >
           {/* <DiscoverHoroscope /> */}
-          {/* <SimpleMap /> */}
         </ProtectedRoute>
       </Switch>
-    </BrowserRouter>
+    {/*  </BrowserRouter> */}
+    </>
   );
 }
 
