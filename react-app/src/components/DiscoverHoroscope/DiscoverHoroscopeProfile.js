@@ -174,9 +174,9 @@ const DiscoverHoroscopeProfile = ({profile}) => {
               onClick={() => {handleCreateConversation(profile?.user_id)}}
               >Message  <i className="far fa-comment-dots"></i></button>
 
-              <button
+              {/* <button
               className="matchButton"
-              >Like  <i className="fas fa-heart"></i></button>
+              >Like  <i className="fas fa-heart"></i></button> */}
             </div>
 
           </div>
