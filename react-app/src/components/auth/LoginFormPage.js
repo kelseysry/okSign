@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 import "./LoginFormPage.css"
+import pictures from "../../data/pictures";
 
 const LoginFormPage = () => {
 
@@ -29,6 +30,14 @@ const LoginFormPage = () => {
       )}
     </nav>
 
+    <div className="container-banner">
+
+      <div className="top-banner-pic" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
+        <div className="header-banner">okSign</div>
+        <div className="text-banner">May the stars align in your favor</div>
+      </div>
+
+    </div>
 
     </>
   )
