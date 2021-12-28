@@ -67,13 +67,13 @@ def profile(user_id, match_profile_id):
 # edit like
 @like_routes.route('/user/<int:user_id>/matchProfile/<int:match_profile_id>', methods=['GET','PUT'])
 def like_detail(user_id, match_profile_id):
-    print("user_id-??????🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡----------", user_id)
-    print("match_profile_id-??????🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡----------", match_profile_id)
+    # print("user_id-??????🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡----------", user_id)
+    # print("match_profile_id-??????🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡----------", match_profile_id)
     like = Like.query.filter(Like.user_id == user_id).filter(Like.match_profile_id == match_profile_id).first()
     form = LikeForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     # print("like api-----------", form.data)
-    print("like api-??????🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡----------", like.to_dict())
+    # print("like api-??????🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡🤡----------", like.to_dict())
 
     if form.validate_on_submit():
       like.liked = form.data['liked']

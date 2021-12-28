@@ -60,10 +60,8 @@ def edit_profile(id):
     profile = Profile.query.get(id)
 
     form = ProfileForm()
-    # horoscope_query = Horoscope.query.order_by(Horoscope.id)
-    # form.horoscope_id.choices = [(horoscope.id, f"{horoscope.sign}") for horoscope in horoscope_query.all()]
     form['csrf_token'].data = request.cookies['csrf_token']
-    # print("profile api-----------", form.data)
+    print("profile api---🍎🍎e🍎🍎e🍎🍎e🍎🍎e🍎🍎e--------", form.data)
     # print("profile api-??????----------", profiles.to_dict())
 
     if form.validate_on_submit():
@@ -105,7 +103,7 @@ def edit_profile(id):
       profile.religion_id = form.data['religion_id']
 
       db.session.commit()
-      # print("profile api-!!!!!!!!!----------", profile.to_dict())
+      print("profile api-!!!!!!!!🍎🍎🍎🍎🍎🍎🍎🍎!----------", profile.to_dict())
       return profile.to_dict()
     else:
       # print("request.json !!!!!!!!",request.json)
