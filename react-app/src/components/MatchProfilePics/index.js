@@ -195,43 +195,76 @@ useEffect(() => {
   let user_id = matchProfileObj[0]?.user_id
   let profile_id = matchProfileObj[0]?.id
 
+  const forceIncrease = () => {
+
+    setNumLikes(() => {
+      return number_likes = profileObj[0]?.number_likes + 1
+    })
+    return number_likes
+    // let editProfile;
+    //   return editProfile  = {
+    //  age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
+    //  }
+  }
 
   const handleIncreaseProfileLikes = async() => {
     // e.preventDefault();
-    let newLikes = await setNumLikes(() => {
-      return number_likes + 1
-    })
+    // let newLikes = await setNumLikes(() => {
+    //   return number_likes + 1
+    // })
     // setNumLikes(number_likes+1)
     // setNumLikes((prev) => prev - 1)
 
-    console.log("🍎🍎number_likes increase?", number_likes)
+    // setNumLikes(() => {
+    //   return number_likes = profileObj[0]?.number_likes + 1
+    // })
+
+    // forceIncrease();
+    console.log("🍎🍎number_likes increase?", profileObj[0]?.number_likes)
+
+    console.log("🍎🍎nforceIncrease?", forceIncrease())
+
+    number_likes = forceIncrease()
 
       let editProfile  = {
       age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
       }
 
       dispatch(updateProfileLikeCount(editProfile, profile_id))
-      setNumLikes(() => {
-          return number_likes = profileObj[0]?.number_likes + 1
-        })
+      // setNumLikes(() => {
+      //     return number_likes = profileObj[0]?.number_likes + 1
+      //   })
   }
+
+  const forceDecrease = () => {
+
+    setNumLikes(() => {
+      return number_likes = profileObj[0]?.number_likes - 1
+    })
+
+    return number_likes
+  }
+
 
   const handleDecreaseProfileLikes = async () => {
     // e.preventDefault();
-    let newLikes = await setNumLikes(() => {
-      return number_likes - 1
-    })
+    // let newLikes = await setNumLikes(() => {
+    //   return number_likes - 1
+    // })
     // console.log("newLikes", newLikes)
     // setNumLikes(() => {
     //   return number_likes = profileObj[0]?.number_likes - 1
     // })
     // setNumLikes((prev) => prev - 1)
 
-    console.log("🍎🍎number_likes decrease?", number_likes)
+    console.log("🍎🍎number_likes decrease?", profileObj[0]?.number_likes)
+
+      number_likes = forceDecrease()
 
       let editProfile  = {
       age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
       }
+
 
       dispatch(updateProfileLikeCount(editProfile, profile_id))
       // setCount(count +1)
