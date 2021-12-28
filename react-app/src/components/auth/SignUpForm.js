@@ -82,6 +82,8 @@ const SignUpForm = () => {
   }
 
   return (
+    <div className="login-modal">
+
     <form onSubmit={onSignUp}>
       <div>
         {errors.map((error, ind) => (
@@ -148,6 +150,7 @@ const SignUpForm = () => {
       </ul>
       <button type='submit'>Sign Up</button>
     </form>
+    </div>
   );
 };
 
