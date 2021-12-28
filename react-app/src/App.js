@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginForm';
-import SignUpForm from './components/auth/SignUpForm';
-// import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
+// import UsersList from './components/UsersList';
+// import User from './components/User';
 import { authenticate } from './store/session';
 import Discover from './components/Discover';
 import UserProfile from './components/UserProfile'
@@ -19,8 +16,7 @@ import NavBar from './components/Navigation/NavBar';
 import QuestionPage from './components/QuestionPage';
 import MatchProfilePage from './components/MatchProfilePage';
 import { CalculatePercentProvider } from './context/CalculatePercent';
-import DiscoverHoroscope from './components/DiscoverHoroscope/DiscoverHoroscopePage';
-import SimpleMap from './components/Maps/test';
+import LoginFormPage from './components/auth/LoginFormPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -40,33 +36,19 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-      <NavBar />
+    // <BrowserRouter>
+    <>
+      <NavBar/>
       <Switch>
         <Route path='/login' exact={true}>
-          <LoginForm />
+          <LoginFormPage />
         </Route>
-        <Route path='/sign-up' exact={true}>
-          <SignUpForm />
-        </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+        <ProtectedRoute path='/' exact={true} >
+          <Discover />
         </ProtectedRoute>
-        {/* <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-        </ProtectedRoute> */}
-        {/* <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
-        </ProtectedRoute> */}
-          <ProtectedRoute path='/' exact={true} >
-            <Discover />
-          </ProtectedRoute>
         <ProtectedRoute path='/profiles/:userId' exact={true} >
           <UserProfile count={count} setCount ={setCount}  />
         </ProtectedRoute>
-        {/* <ProtectedRoute path='/editProfile' exact={true} >
-          <EditUserProfileForm />
-        </ProtectedRoute> */}
         <ProtectedRoute path='/createProfile' exact={true} >
           <ProfileForm />
         </ProtectedRoute>
@@ -88,19 +70,17 @@ function App() {
         <ProtectedRoute path='/questions' exact={true} >
           <QuestionPage />
         </ProtectedRoute>
-
         <ProtectedRoute path='/matchProfile/:profileId' exact={true} >
           <MatchesProvider>
             <MatchProfilePage />
           </MatchesProvider>
         </ProtectedRoute>
-
         <ProtectedRoute path='/test' exact={true} >
           {/* <DiscoverHoroscope /> */}
-          {/* <SimpleMap /> */}
         </ProtectedRoute>
       </Switch>
-    </BrowserRouter>
+    {/*  </BrowserRouter> */}
+    </>
   );
 }
 

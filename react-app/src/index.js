@@ -5,16 +5,22 @@ import './index.css';
 import App from './App';
 import configureStore from './store';
 import DiscoverContentProvider from './context/DiscoverContentContext';
+import { BrowserRouter } from 'react-router-dom';
+import { ModalProvider } from './context/Modal';
 
 const store = configureStore();
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <DiscoverContentProvider>
-        <App />
-      </DiscoverContentProvider>
-      </Provider>
+    <ModalProvider>
+      <Provider store={store}>
+          <BrowserRouter>
+            <DiscoverContentProvider>
+              <App />
+            </DiscoverContentProvider>
+          </BrowserRouter>
+        </Provider>
+      </ModalProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
