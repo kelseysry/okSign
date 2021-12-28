@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import { getConversations, clearConversation } from "../../store/conversation";
 import { createConversation } from "../../store/conversation";
-import { getProfiles, updateProfileLikeCount } from "../../store/profile";
+import { getProfiles, updateProfileLikeCount, getProfile } from "../../store/profile";
 import { GetMatches } from "../../context/MatchesContext";
 import { useHistory } from 'react-router';
 import { createLike, EditLike, getProfileUserLiked } from "../../store/like";
@@ -19,23 +19,34 @@ const MatchProfilePics = ({matchProfileObj}) => {
   const conversationsObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationsObj)[0]
 
-  // const profilesObj = useSelector((state) => state.profile)
-  // const profiles = Object.values(profilesObj)
+
 
   const [profileC, setProfileC] = useState([]);
   const [count, setCount] = useState('')
   // const [colorLike, setLikeColor] = useState('empty')
   const [profileLiked, setProfileLiked] = useState([])
 
-  const [page, setPage] = useState(false)
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id_one = sessionUser?.id
 
   const profileSel = useSelector((state) => state.like)
   const profileSelArr = Object.values(profileSel)
+  // console.log("🚩profileSel", profileSel)
 
-  console.log("🤡🤡🤡🤡🤡 profileSel", profileSel)
+
+  const profileObj = useSelector((state) => state.profile.oneProfile)
+
+  // const profile = Object.values(profileObj[0])
+
+  // console.log("🚩profileObj", profileObj[0])
+  let profile;
+  if(profileObj) {
+    profile = (profileObj[0])
+  }
+  console.log("🚩🚩🚩profile", profile)
+
+  // console.log("🤡🤡🤡profileObj[0]?.number_likes", profileObj[0]?.number_likes)
 
     const {userIdsPercentsArr} = GetMatches()
   // console.log("match profile ids from context", userIdsPercentsArr)
@@ -67,6 +78,9 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   let match_profile_id = matchProfileObj[0]?.id
 
+  useEffect(() => {
+    dispatch(getProfile(matchProfileObj[0]?.user_id))
+  }, [dispatch, matchProfileObj[0]?.user_id, count])
 
 useEffect(() => {
   dispatch(getProfileUserLiked(user_id_one, match_profile_id))
@@ -266,7 +280,7 @@ useEffect(() => {
   return (
     <>
 
-    { isLoaded && matchProfileObj[0]?.user_id && profileSel[1]?.liked &&(
+    { isLoaded && matchProfileObj[0]?.user_id && profileSel[1]?.liked && profileObj[0]?.number_likes && (
       <>
           <div className="oneMatchProfileContainerHeaderPage">
             {getUserName(matchProfileObj[0]?.user_id)}
@@ -296,7 +310,7 @@ useEffect(() => {
                             >
                               <span className="heart-text">
                                   <i class="fas fa-heart"></i>
-                                  {profileC?.number_likes}
+                                  {profile?.number_likes}
                                   <div>{profileSel[1]?.liked }</div>
                               </span>
                             </button>
