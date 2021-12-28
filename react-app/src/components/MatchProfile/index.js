@@ -161,7 +161,7 @@ const MatchProfile = ({userIdPercentObj}) => {
   return (
     <>
 
-    { isLoaded && matchProfileObj[0]?.user_id && (
+    { isLoaded && matchProfileObj && (
       <>
       <div className="oneMatchProfileContainer">
           <div className="oneMatchProfileContainerHeader">

@@ -76,12 +76,20 @@ const ProfileForm = () => {
     return number === +number && number === (number|0);
   }
 
+  function checkIfPositiveNumber(number) {
+    if(number <= 0 ) {
+      return true
+    }
+  }
+
   useEffect(() => {
     const validationErrors = []
     if(!(age)) {
       validationErrors.push("age is required")}
     else if (!checkIfNumeric(parseInt(age))) {
       validationErrors.push("please use integers for your age")
+    } else if (checkIfPositiveNumber(age)) {
+      validationErrors.push("please use positive integers for your age")
     }
 
     if(!location) validationErrors.push("location is required")
@@ -105,7 +113,10 @@ const ProfileForm = () => {
     if(!moments) validationErrors.push("moments are required")
     if(!secrets) validationErrors.push("secrets are required")
     if(!looking_for) validationErrors.push("looking for is required")
-    if(!user_audio) validationErrors.push("audio is required")
+    if(!user_audio) {validationErrors.push("audio is required")}
+    else if(!isURL(user_audio)) {
+      validationErrors.push("Please provide a valid link for the audio")
+    }
 
     // if(!number_likes) validationErrors.push("number of likes")
 
@@ -138,10 +149,15 @@ const ProfileForm = () => {
     validationErrors.push("Please provide a valid link for the image 6")
   }
 
-    if(!pronouns) validationErrors.push("pronouns are required")
+    if(!pronouns) {validationErrors.push("pronouns are required")}
+    else if(pronouns.length > 30) {
+      validationErrors.push("pronouns cannot be longer than 30 characters")
+    }
     if(!height) {validationErrors.push("height is required")}
     else if (!checkIfNumeric(parseInt(height))) {
       validationErrors.push("please use integers for your height")
+    } else if (checkIfPositiveNumber(height)) {
+      validationErrors.push("please use positive integers for your height")
     }
 
     if(!education) validationErrors.push("education is required")
@@ -176,17 +192,8 @@ const ProfileForm = () => {
         console.log("count--------", count)
         history.push(`/profiles/${user_id}`)
       }
-      // console.log("newUserProfile🍵🍵", newUserProfile)
 
   }
-
-  // const handleCancelFormEditClick = (e) => {
-  //   e.preventDefault();
-  //    history.push(`/profiles/${user_id}`)
-  //   // hideForm();
-  // };
-
-  console.log("profiles🍵🍵🍵🍵🍵🍵🍵", profiles)
 
 
   return (
@@ -278,7 +285,7 @@ const ProfileForm = () => {
                     <input
                     className="profile-input"
                     type="text"
-                    placeholder="height, gym, hustle, good vibes are not descriptive traits 🚩 "
+                    placeholder="now, don't be a 🚩 "
                     value={my_traits}
                     onChange={(e) => setMy_traits(e.target.value)}
                     >

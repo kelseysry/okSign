@@ -56,12 +56,20 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     return number === +number && number === (number|0);
   }
 
+  function checkIfPositiveNumber(number) {
+    if(number <= 0 ) {
+      return true
+    }
+  }
+
   useEffect(() => {
     const validationErrors = []
     if(!(age)) {
       validationErrors.push("age is required")}
     else if (!checkIfNumeric(parseInt(age))) {
       validationErrors.push("please use integers for your age")
+    } else if (checkIfPositiveNumber(age)) {
+      validationErrors.push("please use positive integers for your age")
     }
 
     if(!location) validationErrors.push("location is required")
@@ -85,7 +93,10 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     if(!moments) validationErrors.push("moments are required")
     if(!secrets) validationErrors.push("secrets are required")
     if(!looking_for) validationErrors.push("looking for is required")
-    if(!user_audio) validationErrors.push("audio is required")
+    if(!user_audio) {validationErrors.push("audio is required")}
+    else if(!isURL(user_audio)) {
+      validationErrors.push("Please provide a valid link for the audio")
+    }
 
     // if(!number_likes) validationErrors.push("number of likes")
 
@@ -118,10 +129,15 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     validationErrors.push("Please provide a valid link for the image 6")
   }
 
-    if(!pronouns) validationErrors.push("pronouns are required")
+    if(!pronouns) {validationErrors.push("pronouns are required")}
+    else if(pronouns.length > 30) {
+      validationErrors.push("pronouns cannot be longer than 30 characters")
+    }
     if(!height) {validationErrors.push("height is required")}
     else if (!checkIfNumeric(parseInt(height))) {
       validationErrors.push("please use integers for your height")
+    } else if (checkIfPositiveNumber(height)) {
+      validationErrors.push("please use positive integers for your height")
     }
 
     if(!education) validationErrors.push("education is required")
@@ -129,7 +145,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 
     setErrors(validationErrors)
 
-  }, [age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id])
+  }, [user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id])
 
 
   const handleSubmit = async(e) => {
