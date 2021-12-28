@@ -9,21 +9,34 @@ const CalculatePercent = () => {
   const dispatch = useDispatch()
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
-  const questionObject = useSelector((state)=>state.question)
+  // const questionObject = useSelector((state)=>state.question)
   // console.log("questionObj", questionObject)
-  const questions = Object.values(questionObject)
+  // const questions = Object.values(questionObject)
 
-  useEffect(async ()=>{
-    await dispatch(getQuestions())
-}, [dispatch, questions.length])
+//   useEffect(async ()=>{
+//     await dispatch(getQuestions())
+// }, [dispatch, questions.length])
 
-let questionsRender;
+const [questions, setQuestions] = useState([]);
 
-if(questions[0]) {
-   questionsRender = questions[0]
-} else {
-    questionsRender = questions[1]
-}
+
+useEffect(() => {
+  async function fetchData() {
+    const response = await fetch('/api/questions/');
+    const responseData = await response.json();
+    setQuestions(responseData.questions);
+  }
+  fetchData();
+}, []);
+
+
+let questionsRender = questions 
+
+// if(questions[0]) {
+//    questionsRender = questions[0]
+// } else {
+//     questionsRender = questions[1]
+// }
 // console.log("questionsRender😯😯😯", questionsRender)
 
 
@@ -100,7 +113,7 @@ if(currentUserQuestion) {
   // console.log("updated counter", counter)
   // {2: 6, 3: 3, 4: 10}
 
-  // all the [user.id, matchScore] 
+  // all the [user.id, matchScore]
   let userIdsPercentsObj = Object.keys(counter).map(function (key) {
       return [Number(key), counter[key]];
   });
