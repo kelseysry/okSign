@@ -172,7 +172,7 @@ const profileReducer = (state = initialState, action) => {
           ...state,
           // [action.profile.id]: action.profile
         };
-        console.log("this is newState", newState)
+        // console.log("this is newState", newState)
 
         return newState
       }
@@ -216,7 +216,7 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         // [action.profile.id]: action.profile
       };
-      console.log("this is newState", newState)
+      // console.log("this is newState", newState)
 
       return newState
     }

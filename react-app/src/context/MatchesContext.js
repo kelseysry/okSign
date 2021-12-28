@@ -1,4 +1,4 @@
-// get match percent for users >60% match in questions 
+// get match percent for users >60% match in questions
 
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from 'react';
@@ -21,7 +21,7 @@ export function MatchesProvider (props) {
   const questions = Object.values(questionObject)
   // console.log("questions", questions[0])
 
-  console.log("match context questions🤡🤡🤡", questions)
+  // console.log("match context questions🤡🤡🤡", questions)
 
   useEffect(async ()=>{
     // await dispatch(clearQuestions())
