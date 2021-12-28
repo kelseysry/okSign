@@ -2,10 +2,10 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import { getConversations, clearConversation } from "../../store/conversation";
 import { createConversation } from "../../store/conversation";
-import { getProfiles, updateProfileLikeCount } from "../../store/profile";
+import { getProfiles, updateProfileLikeCount, getProfile } from "../../store/profile";
 import { GetMatches } from "../../context/MatchesContext";
 import { useHistory } from 'react-router';
-import { createLike, EditLike } from "../../store/like";
+import { createLike, EditLike, getProfileUserLiked } from "../../store/like";
 
 const MatchProfilePics = ({matchProfileObj}) => {
   const dispatch = useDispatch()
@@ -19,27 +19,42 @@ const MatchProfilePics = ({matchProfileObj}) => {
   const conversationsObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationsObj)[0]
 
-  const profilesObj = useSelector((state) => state.profile)
-  const profiles = Object.values(profilesObj)
+
 
   const [profileC, setProfileC] = useState([]);
   const [count, setCount] = useState('')
-  const [colorLike, setLikeColor] = useState('empty')
+  // const [colorLike, setLikeColor] = useState('empty')
   const [profileLiked, setProfileLiked] = useState([])
+
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id_one = sessionUser?.id
 
+  const profileSel = useSelector((state) => state.like)
+  const profileSelArr = Object.values(profileSel)
+  // console.log("🚩profileSel", profileSel)
+
+
+  const profileObj = useSelector((state) => state.profile.oneProfile)
+
+  // const profile = Object.values(profileObj[0])
+
+  // console.log("🚩profileObj", profileObj[0])
+  let profile;
+  if(profileObj) {
+    profile = (profileObj[0])
+  }
+  console.log("🚩🚩🚩profile", profile)
+
+  // console.log("🤡🤡🤡profileObj[0]?.number_likes", profileObj[0]?.number_likes)
+
     const {userIdsPercentsArr} = GetMatches()
   // console.log("match profile ids from context", userIdsPercentsArr)
 
-
-
-  useEffect(async () => {
-    await dispatch(getProfiles())
-    if (!isLoaded) setIsLoaded(true);
-  }, [dispatch, profiles.length, isLoaded, conversations?.length, number_likes])
-
+  // useEffect(async () => {
+  //   await dispatch(getProfiles())
+  //   if (!isLoaded) setIsLoaded(true);
+  // }, [dispatch, profiles.length, isLoaded, conversations?.length, number_likes])
 
   useEffect(() => {
     async function fetchData() {
@@ -48,8 +63,9 @@ const MatchProfilePics = ({matchProfileObj}) => {
       setProfileC(responseData);
     }
     fetchData();
-  }, [number_likes, count]);
+  }, [count]);
 
+  console.log("profileLiked", profileLiked)
 
   useEffect(() => {
     async function fetchData() {
@@ -58,7 +74,17 @@ const MatchProfilePics = ({matchProfileObj}) => {
       setProfileLiked(responseData);
     }
     fetchData();
-  }, []);
+  }, [count]);
+
+  let match_profile_id = matchProfileObj[0]?.id
+
+  useEffect(() => {
+    dispatch(getProfile(matchProfileObj[0]?.user_id))
+  }, [dispatch, matchProfileObj[0]?.user_id, count])
+
+useEffect(() => {
+  dispatch(getProfileUserLiked(user_id_one, match_profile_id))
+},[match_profile_id, user_id_one, profileSelArr.length])
 
 
   useEffect(() => {
@@ -77,7 +103,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
     if (!isLoaded) setIsLoaded(true);
 
   }, [dispatch])
-
 
   const getUserName = (user_id) => {
     const usernameDisplay = users?.filter(function(el){
@@ -107,8 +132,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   }
 
-
-
   const handleCreateConversation = async (discoverProfileId) => {
     // console.log("discoverProfileId", discoverProfileId)
 
@@ -132,7 +155,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
       }
     }
   }
-
 
   let age = matchProfileObj[0]?.age;
   let location = matchProfileObj[0]?.location;
@@ -205,34 +227,37 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
 
   const handleLikeToggle = async () => {
+    console.log("🤡enter handleLikeToggle")
     let user_id = user_id_one
 
-    // console.log("profileLiked🤡🤡🤡🤡🤡🤡🤡🤡🤡", profileLiked)
+    console.log("profileLiked.liked🤡🤡", profileLiked.liked)
     let liked;
     let match_profile_id;
 
     // so we should check first if profile has been liked by the current user before
     // if has been liked, profileLiked.liked =="true"
     // then we want to handleDecreaseLike and edit the like to be false
-    if(profileLiked.liked === "true") {
+    if(profileSel[1]?.liked === "true") {
       liked = "false"
       console.log("liked🤡🤡  minus", liked)
       match_profile_id = matchProfileObj[0]?.id
       let changeProfileLikeToFalse = {
         liked, user_id, match_profile_id
       }
-      console.log("liked🤡🤡  changeProfileLikeToFalse", changeProfileLikeToFalse)
+      console.log("🤡 🤡 🤡  changeProfileLikeToFalse", changeProfileLikeToFalse)
       handleDecreaseProfileLikes()
+
       dispatch(EditLike(changeProfileLikeToFalse, user_id, match_profile_id))
 
-    } else if(profileLiked.liked === "false") {
+    } else if(profileSel[1]?.liked === "false") {
       liked = "true"
-      console.log("liked🤡🤡  plus", liked)
+      console.log("😂  plus", liked)
       match_profile_id = matchProfileObj[0]?.id
       let changeProfileLikeToTrue = {
         liked, user_id, match_profile_id
       }
       handleIncreaseProfileLikes()
+
       dispatch(EditLike(changeProfileLikeToTrue, user_id, match_profile_id))
 
     } else {
@@ -249,45 +274,55 @@ const MatchProfilePics = ({matchProfileObj}) => {
     }
 
   }
+  console.log("profileLiked", profileLiked)
 
 
   return (
     <>
 
-    { isLoaded && matchProfileObj[0]?.user_id && (
+    { isLoaded && matchProfileObj[0]?.user_id && profileSel[1]?.liked && profileObj[0]?.number_likes && (
       <>
           <div className="oneMatchProfileContainerHeaderPage">
             {getUserName(matchProfileObj[0]?.user_id)}
-            <div className="matchButtonsContainer">
-              <div>
-                <button
-                  className="matchButton"
-                  onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
-                  >Message  <i className="far fa-comment-dots fa-2x"></i>
-                </button>
-              </div>
-
-              <div className={(colorLike)}>
-                <button
-                className={(profileLiked.liked === "true"? " selected" : " blank")}
-                onClick={()=>
-                  {
-                    // setLikeColor(colorLike ==='empty'? 'red':'empty')
-                      // handleIncreaseProfileLikes()
-                      handleLikeToggle()
-                  }
-                }
-                >
-                  <span className="heart-text">
-                  <i class="fas fa-heart"></i>  {profileC?.number_likes}
-                  </span>
-                  </button>
-              </div>
+              <div className="matchButtonsContainer">
+                    <div>
+                        <button
+                          className="matchButton"
+                          onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
+                          >Message  <i className="far fa-comment-dots fa-2x"></i>
+                        </button>
+                    </div>
 
 
+
+
+
+                        {/* <div className={()}> */}
+                            <button
+                            className={(profileSel[1].liked === "true"? " selected" : " blank")}
+                            onClick={()=>
+                              {
+                                // setLikeColor(colorLike ==='empty'? 'red':'empty')
+                                  // handleIncreaseProfileLikes()
+                                  handleLikeToggle()
+                              }
+                            }
+                            >
+                              <span className="heart-text">
+                                  <i class="fas fa-heart"></i>
+                                  {profile?.number_likes}
+                                  <div>{profileSel[1]?.liked }</div>
+                              </span>
+                            </button>
+                        {/* </div> */}
+
+
+                </div>
             </div>
 
-          </div>
+
+
+
       <div className="oneMatchProfileContainerPage">
         <div className="pic-container-scroll">
           <div className="match_profile_images_container_user">

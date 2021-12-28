@@ -6,7 +6,6 @@ const REMOVE_PROFILE = "profile/REMOVE_PROFILE"
 const CLEAR = 'profile/CLEAR'
 const UPDATE_LIKE_PROFILE = 'profile/UPDATE_LIKE_COUNT'
 
-
 // action creator to update count
 export const editProfileLikeCountAction = (profile, id) => ({
   type: UPDATE_LIKE_PROFILE,
@@ -63,28 +62,30 @@ export const updateProfileLikeCount = (editProfile, id) => async(dispatch) => {
     body: JSON.stringify(editProfile)
   });
 
-  // console.log("editProfile likes in thunk", editProfile)
+  console.log("🍎🍎editProfile likes in thunk", editProfile)
 
 
   const editedProfile = await response.json();
 
-  // console.log("editedProfile likessssss await in thunk", editedProfile)
+  console.log("😂 😂 😂 😂 😂 😂 😂 😂 😂 editedProfile likessssss await in thunk", editedProfile)
   dispatch(editProfileLikeCountAction(editedProfile, id))
   return editedProfile
 }
 
 
 // thunk for getting one profile
-export const getProfile = (profile_id) => async(dispatch) => {
-  if (profile_id) {
-    // console.log("thunk profile id", profile_id)
-    const res = await fetch(`/api/profiles/${profile_id}`)
+export const getProfile = (user_id) => async(dispatch) => {
+  if (user_id) {
+    // console.log("thunk profile id", user_id)
+    const res = await fetch(`/api/profiles/userProfile/${user_id}`)
     const profile = await res.json();
     console.log("profile res.json()", profile)
     dispatch(loadProfile(profile))
 
   }
 }
+
+
 
 //thunk for editing a profile
 export const editProfile= (editProfile, id) => async dispatch => {
@@ -161,18 +162,24 @@ const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_PROFILE: {
       const newState = {...state};
-      newState[action.profile?.id] = action.profile
-      // console.log("this is newState in Load", newState)
+      // console.log("reducer profiles", action.profiles)
+      for (const[key,value] of Object.entries(action.profile)) {
+        newState[key] = value
+      }
       return newState
+      // const newState = {...state};
+      // newState[action.profile?.id] = action.profile
+      // console.log("this is newState in Load🍎🍎🍎🍎🍎🍎🍎 ", newState)
+      // return newState
     };
     case EDIT_ONE_PROFILE: {
-      console.log("action.profile", action.profile)
+      console.log("🍎🍎action.profile", action.profile)
       if(!state[action.profile]) {
         const newState = {
           ...state,
           // [action.profile.id]: action.profile
         };
-        console.log("this is newState", newState)
+        // console.log("this is newState", newState)
 
         return newState
       }
@@ -216,7 +223,7 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         // [action.profile.id]: action.profile
       };
-      console.log("this is newState", newState)
+      // console.log("this is newState", newState)
 
       return newState
     }
