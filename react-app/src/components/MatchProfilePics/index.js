@@ -292,7 +292,7 @@ useEffect(() => {
   return (
     <>
 
-    { isLoaded && matchProfileObj[0]?.user_id && profileSel[1]?.liked && profileObj[0]?.number_likes && (
+    { isLoaded && matchProfileObj[0]?.user_id && profileSel[1]?.liked  && (
       <>
           <div className="oneMatchProfileContainerHeaderPage">
             {getUserName(matchProfileObj[0]?.user_id)}
@@ -322,8 +322,8 @@ useEffect(() => {
                             >
                               <span className="heart-text">
                                   <i class="fas fa-heart"></i>
-                                  {profile?.number_likes}
-                                  <div>{profileSel[1]?.liked }</div>
+                                  {/* {profile?.number_likes} */}
+                                  {/* <div>{profileSel[1]?.liked }</div> */}
                               </span>
                             </button>
                         {/* </div> */}
