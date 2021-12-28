@@ -14,7 +14,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
 
-  let [number_likes, setNumLikes] = useState('')
 
   const conversationsObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationsObj)[0]
@@ -37,6 +36,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   const profileObj = useSelector((state) => state.profile.oneProfile)
 
+
   // const profile = Object.values(profileObj[0])
 
   // console.log("🚩profileObj", profileObj[0])
@@ -44,6 +44,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
   if(profileObj) {
     profile = (profileObj[0])
   }
+  let [number_likes, setNumLikes] = useState(profile?.number_likes)
   console.log("🚩🚩🚩profile", profile)
 
   // console.log("🤡🤡🤡profileObj[0]?.number_likes", profileObj[0]?.number_likes)
@@ -80,7 +81,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   useEffect(() => {
     dispatch(getProfile(matchProfileObj[0]?.user_id))
-  }, [dispatch, matchProfileObj[0]?.user_id, count])
+  }, [dispatch, matchProfileObj[0]?.user_id, count, number_likes])
 
 useEffect(() => {
   dispatch(getProfileUserLiked(user_id_one, match_profile_id))
@@ -198,39 +199,50 @@ useEffect(() => {
   const handleIncreaseProfileLikes = async() => {
     // e.preventDefault();
     let newLikes = await setNumLikes(() => {
-      return number_likes = matchProfileObj[0]?.number_likes + 1
+      return number_likes + 1
     })
-    // console.log("newLikes", newLikes)
+    // setNumLikes(number_likes+1)
+    // setNumLikes((prev) => prev - 1)
+
+    console.log("🍎🍎number_likes increase?", number_likes)
 
       let editProfile  = {
       age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
       }
 
       dispatch(updateProfileLikeCount(editProfile, profile_id))
-      setCount(count +1)
+      setNumLikes(() => {
+          return number_likes = profileObj[0]?.number_likes + 1
+        })
   }
 
-  const handleDecreaseProfileLikes = async() => {
+  const handleDecreaseProfileLikes = async () => {
     // e.preventDefault();
     let newLikes = await setNumLikes(() => {
-      return number_likes = matchProfileObj[0]?.number_likes -1
+      return number_likes - 1
     })
     // console.log("newLikes", newLikes)
+    // setNumLikes(() => {
+    //   return number_likes = profileObj[0]?.number_likes - 1
+    // })
+    // setNumLikes((prev) => prev - 1)
+
+    console.log("🍎🍎number_likes decrease?", number_likes)
 
       let editProfile  = {
       age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id, user_id
       }
 
       dispatch(updateProfileLikeCount(editProfile, profile_id))
-      setCount(count +1)
+      // setCount(count +1)
   }
 
 
-  const handleLikeToggle = async () => {
-    console.log("🤡enter handleLikeToggle")
+  const handleLikeToggle = () => {
+    // console.log("🤡enter handleLikeToggle")
     let user_id = user_id_one
 
-    console.log("profileLiked.liked🤡🤡", profileLiked.liked)
+    // console.log("profileLiked.liked🤡🤡", profileLiked.liked)
     let liked;
     let match_profile_id;
 
@@ -244,7 +256,7 @@ useEffect(() => {
       let changeProfileLikeToFalse = {
         liked, user_id, match_profile_id
       }
-      console.log("🤡 🤡 🤡  changeProfileLikeToFalse", changeProfileLikeToFalse)
+      // console.log("🤡 🤡 🤡  changeProfileLikeToFalse", changeProfileLikeToFalse)
       handleDecreaseProfileLikes()
 
       dispatch(EditLike(changeProfileLikeToFalse, user_id, match_profile_id))
