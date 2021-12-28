@@ -179,9 +179,9 @@ position: relative;
   width: 200px;
 }
 
- .fa-comment-dots {
+ /* .fa-comment-dots {
   font-size: 15px;
-}
+} */
 
 
 
@@ -198,7 +198,10 @@ position: relative;
 
 .heart-text {
   font-size: 20px;
+  padding: 8px 10px;
 }
+
+
 
 .matchButtonMessage {
   padding-right: 30px;
@@ -239,7 +242,7 @@ a {
 }
 
 .detail-container {
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .match-user-about-container {

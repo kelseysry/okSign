@@ -39,7 +39,7 @@ if(questions.length === 2) {
 } else {
     questionsRender = questions[0]
 }
-// console.log("questionsRender😯😯😯🤡🤡🤡", questionsRender)
+console.log("questionsRender😯😯😯🤡🤡🤡", questionsRender)
 // console.log("questionTry😯😯😯😯😯", questionTry[1])
 
 

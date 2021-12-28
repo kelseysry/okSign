@@ -225,30 +225,34 @@ useEffect(() => {
                         <button
                           className="matchButton"
                           onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
-                          >Message  <i className="far fa-comment-dots fa-2x"></i>
+                          >Message  <i className="far fa-comment-dots"></i>
                         </button>
                     </div>
 
 
                           {/* <div>{profileLiked?.liked}</div> */}
                         {/* <div className={()}> */}
-                            <button
-                            className={(profileLiked?.liked === "true"? " selected" : " blank")}
-                            onClick={()=>
-                              {
-                                // setLikeColor(colorLike ==='empty'? 'red':'empty')
-                                  // handleIncreaseProfileLikes()
-                                  handleLikeToggle()
-                              }
+                      <div className="heart-flex">
+
+                          <button
+                          className={(profileLiked?.liked === "true"? " selected" : " blank")}
+                          onClick={()=>
+                            {
+                              // setLikeColor(colorLike ==='empty'? 'red':'empty')
+                                // handleIncreaseProfileLikes()
+                                handleLikeToggle()
                             }
-                            >
-                              <span className="heart-text">
-                                  <i class="fas fa-heart"></i>
-                                  {/* {profile?.number_likes} */}
-                                  {/* <div>{profileSel[1]?.liked }</div> */}
-                              </span>
-                            </button>
-                        {/* </div> */}
+                          }
+                          >
+                            <div className="heart-text">
+                                <i class="fas fa-heart"></i>
+                                {/* {profile?.number_likes} */}
+                                {/* <div>{profileSel[1]?.liked }</div> */}
+                            </div>
+                          </button>
+                      {/* </div> */}
+
+                      </div>
 
 
                 </div>

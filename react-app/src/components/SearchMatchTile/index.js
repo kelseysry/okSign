@@ -17,8 +17,9 @@ const SearchMatchTile = ({matchProfile}) => {
 
   const {userIdsPercentsObj} = GetMatchPercent()
 
-  console.log("userIdsPercentsObj-----------", userIdsPercentsObj)
+  // console.log("userIdsPercentsObj-----------", userIdsPercentsObj)
 
+  // console.log("currentUserProfile", currentUserProfile.oneProfile[0])
 
   useEffect(() => {
     async function fetchData() {
@@ -84,9 +85,9 @@ const SearchMatchTile = ({matchProfile}) => {
               // onClick={() => {handleCreateConversation(matchProfile?.user_id)}}
               >Message  <i className="far fa-comment-dots"></i></button>
 
-              <button
+              {/* <button
               className="matchButton"
-              >Like  <i className="fas fa-heart"></i></button>
+              >Like  <i className="fas fa-heart"></i></button> */}
             </div>
 
           </div>
@@ -105,7 +106,7 @@ const SearchMatchTile = ({matchProfile}) => {
             </div>
             <div className="MatchProfileInnerContainer">
               <div className="circlesContainer">
-                <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${currentUserProfile?.image_url1}')` }}></div>
+              { currentUserProfile.oneProfile? <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${currentUserProfile.oneProfile[0]?.image_url1}')` }}></div> : null}
                 <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfile?.image_url1}')` }}></div>
                  <div className="matchPercentCircle">
 
