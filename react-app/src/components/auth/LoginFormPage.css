@@ -57,3 +57,7 @@
 .text-banner {
   color: #fff;
 }
+
+.backend-errors {
+  color: red;
+}
