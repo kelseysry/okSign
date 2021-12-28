@@ -172,9 +172,9 @@ const MatchProfile = ({userIdPercentObj}) => {
               onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
               >Message  <i className="far fa-comment-dots"></i></button>
 
-              <button
+              {/* <button
               className="matchButton"
-              >Like  <i className="fas fa-heart"></i></button>
+              >Like  <i className="fas fa-heart"></i></button> */}
             </div>
 
           </div>
