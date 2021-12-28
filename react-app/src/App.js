@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginForm';
-import SignUpForm from './components/auth/SignUpForm';
-// import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
+// import UsersList from './components/UsersList';
+// import User from './components/User';
 import { authenticate } from './store/session';
 import Discover from './components/Discover';
 import UserProfile from './components/UserProfile'
@@ -19,17 +16,11 @@ import NavBar from './components/Navigation/NavBar';
 import QuestionPage from './components/QuestionPage';
 import MatchProfilePage from './components/MatchProfilePage';
 import { CalculatePercentProvider } from './context/CalculatePercent';
-import DiscoverHoroscope from './components/DiscoverHoroscope/DiscoverHoroscopePage';
-import SimpleMap from './components/Maps/test';
-import { Modal } from './context/Modal';
+import LoginFormPage from './components/auth/LoginFormPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const [count, setCount] = useState(0)
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  const [showModal, setShowModal] = useState(false);
-  const [showModal2, setShowModal2] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -50,28 +41,11 @@ function App() {
       <NavBar/>
       <Switch>
         <Route path='/login' exact={true}>
-
-        <button onClick={() => setShowModal(true)}>Login</button>
-          {showModal && (
-            <Modal onClose={() => setShowModal(false)}>
-             <LoginForm />
-            </Modal>
-          )}
-
-        <button onClick={() => setShowModal2(true)}>Sign Up</button>
-          {showModal2 && (
-            <Modal onClose={() => setShowModal2(false)}>
-             <SignUpForm />
-            </Modal>
-          )}
-
+          <LoginFormPage />
         </Route>
         <ProtectedRoute path='/' exact={true} >
           <Discover />
         </ProtectedRoute>
-        {/* <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
-        </ProtectedRoute> */}
         <ProtectedRoute path='/profiles/:userId' exact={true} >
           <UserProfile count={count} setCount ={setCount}  />
         </ProtectedRoute>
@@ -96,7 +70,6 @@ function App() {
         <ProtectedRoute path='/questions' exact={true} >
           <QuestionPage />
         </ProtectedRoute>
-
         <ProtectedRoute path='/matchProfile/:profileId' exact={true} >
           <MatchesProvider>
             <MatchProfilePage />
