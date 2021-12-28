@@ -77,16 +77,18 @@ const ProfileForm = () => {
   }
 
   function checkIfPositiveNumber(number) {
-    return number > 0 === parseFloat(number);
+    if(number < 0 ) {
+      return true
+    }
   }
 
   useEffect(() => {
     const validationErrors = []
     if(!(age)) {
       validationErrors.push("age is required")}
-    else if (!checkIfNumeric(parseInt(age)) || !checkIfPositiveNumber(age)) {
+    else if (!checkIfNumeric(parseInt(age))) {
       validationErrors.push("please use integers for your age")
-    } else if (!checkIfPositiveNumber(height)) {
+    } else if (checkIfPositiveNumber(age)) {
       validationErrors.push("please use positive integers for your age")
     }
 
@@ -154,7 +156,7 @@ const ProfileForm = () => {
     if(!height) {validationErrors.push("height is required")}
     else if (!checkIfNumeric(parseInt(height))) {
       validationErrors.push("please use integers for your height")
-    } else if (!checkIfPositiveNumber(height)) {
+    } else if (checkIfPositiveNumber(height)) {
       validationErrors.push("please use positive integers for your height")
     }
 
@@ -190,17 +192,8 @@ const ProfileForm = () => {
         console.log("count--------", count)
         history.push(`/profiles/${user_id}`)
       }
-      // console.log("newUserProfile🍵🍵", newUserProfile)
 
   }
-
-  // const handleCancelFormEditClick = (e) => {
-  //   e.preventDefault();
-  //    history.push(`/profiles/${user_id}`)
-  //   // hideForm();
-  // };
-
-  console.log("profiles🍵🍵🍵🍵🍵🍵🍵", profiles)
 
 
   return (
@@ -292,7 +285,7 @@ const ProfileForm = () => {
                     <input
                     className="profile-input"
                     type="text"
-                    placeholder="height, gym, hustle, good vibes are not descriptive traits 🚩 "
+                    placeholder="now, don't be a 🚩 "
                     value={my_traits}
                     onChange={(e) => setMy_traits(e.target.value)}
                     >
