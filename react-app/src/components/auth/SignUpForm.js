@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import isEmail from 'validator/es/lib/isEmail';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -11,8 +12,36 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [frontErrors, setFrontErrors] = useState([])
+
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const validationErrors = []
+
+    if(username.length <= 4) {
+      validationErrors.push("username must be at least 4 characters")
+    } else if (username.length >= 20) {
+      validationErrors.push("username must be less than 20 characters")
+    }
+
+    if(password.length < 8 || password.length > 25) {
+      validationErrors.push("password must be 8-25 characters")
+    }
+    if(repeatPassword !== password) {
+      validationErrors.push("passwords must match!")
+    }
+
+    if(!isEmail(email)) {
+      validationErrors.push("please provide a valid email")
+    }
+
+    setFrontErrors(validationErrors)
+
+  }, [username, password, repeatPassword, email])
+
+
 
   const onSignUp = async (e) => {
     e.preventDefault();
@@ -114,6 +143,9 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
+      <ul className="error">
+        {frontErrors.map((error) => <li key={error}>{error}</li>)}
+      </ul>
       <button type='submit'>Sign Up</button>
     </form>
   );

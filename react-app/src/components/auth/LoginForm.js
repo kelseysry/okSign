@@ -10,7 +10,11 @@ const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
+
   const dispatch = useDispatch();
+
+
+
 
   const onLogin = async (e) => {
     e.preventDefault();
@@ -46,11 +50,7 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={onLogin}>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
+
       <div>
         <label htmlFor='email'>Email</label>
         <input
@@ -73,6 +73,11 @@ const LoginForm = () => {
         <button type='submit'>Login</button>
         <button className="submit-button" onClick={handleDemoLogin} type="submit">Demo</button>
 
+      </div>
+      <div className="backend-errors">
+        {errors.map((error, ind) => (
+          <div key={ind}>{error}</div>
+        ))}
       </div>
     </form>
   );
