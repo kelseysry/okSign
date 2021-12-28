@@ -109,7 +109,10 @@ const ProfileForm = () => {
     if(!moments) validationErrors.push("moments are required")
     if(!secrets) validationErrors.push("secrets are required")
     if(!looking_for) validationErrors.push("looking for is required")
-    if(!user_audio) validationErrors.push("audio is required")
+    if(!user_audio) {validationErrors.push("audio is required")}
+    else if(!isURL(user_audio)) {
+      validationErrors.push("Please provide a valid link for the audio")
+    }
 
     // if(!number_likes) validationErrors.push("number of likes")
 
