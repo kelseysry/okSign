@@ -101,8 +101,7 @@ function UserProfile({count, setCount}) {
                     {currentProfile? <span className="profile-asl-age">{currentProfile[0]?.age}</span> : null}
                     <span className="profile-asl-spacer"></span>
                     {currentProfile? <span className="profile-asl-location">{currentProfile[0]?.location}</span> : null}
-                    &nbsp; | &nbsp; 
-                    {currentProfile? <span className="profile-asl-location">{currentProfile[0]?.number_likes} <i class="fas fa-heart"></i> </span> : null}
+                    {/* {currentProfile? <span className="profile-asl-location">{currentProfile[0]?.number_likes} <i class="fas fa-heart"></i> </span> : null} */}
                   </div>
                 </div>
 

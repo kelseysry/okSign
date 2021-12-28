@@ -83,7 +83,7 @@ function MatchAboutSection(currentUserProfile) {
         </div>
 
         <div  className="one-detail-container">
-          <div className="about-div-header">Audio</div>
+          <div className="about-div-header">A Shower thought you recently had</div>
           <div className="one-detail-content">
           <Player sound={currentProfile[0]?.user_audio}/>
           </div>
