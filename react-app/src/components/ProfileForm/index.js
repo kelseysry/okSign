@@ -145,7 +145,10 @@ const ProfileForm = () => {
     validationErrors.push("Please provide a valid link for the image 6")
   }
 
-    if(!pronouns) validationErrors.push("pronouns are required")
+    if(!pronouns) {validationErrors.push("pronouns are required")}
+    else if(pronouns.length > 30) {
+      validationErrors.push("pronouns cannot be longer than 30 characters")
+    }
     if(!height) {validationErrors.push("height is required")}
     else if (!checkIfNumeric(parseInt(height))) {
       validationErrors.push("please use integers for your height")
