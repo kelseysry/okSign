@@ -6,6 +6,7 @@ import { getProfiles, updateProfileLikeCount, getProfile } from "../../store/pro
 import { GetMatches } from "../../context/MatchesContext";
 import { useHistory } from 'react-router';
 import { createLike, EditLike, getProfileUserLiked } from "../../store/like";
+import HeartButton from "./HeartButton";
 
 const MatchProfilePics = ({matchProfileObj}) => {
   const dispatch = useDispatch()
@@ -22,7 +23,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   const [profileC, setProfileC] = useState([]);
   const [count, setCount] = useState('')
-  const [profileLiked, setProfileLiked] = useState([])
 
 
   const sessionUser = useSelector((state) => state?.session?.user)
@@ -71,16 +71,8 @@ console.log("findProfileSel findProfileSel", findProfileSel)
     fetchData();
   }, [count]);
 
-  console.log("profileLiked", profileLiked)
 
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(`/api/likes/user/${user_id_one}/matchProfile/${matchProfileObj[0]?.id}`);
-      const responseData = await response.json();
-      setProfileLiked(responseData);
-    }
-    fetchData();
-  }, [count]);
+
 
   let match_profile_id = matchProfileObj[0]?.id
 
@@ -164,53 +156,6 @@ useEffect(() => {
 
 
 
-  const handleLikeToggle = () => {
-    // console.log("🤡enter handleLikeToggle")
-    let user_id = user_id_one
-
-    // console.log("profileLiked.liked🤡🤡", profileLiked.liked)
-    let liked;
-    let match_profile_id;
-
-    // so we should check first if profile has been liked by the current user before
-    // if has been liked, profileLiked.liked =="true"
-    // then we want to handleDecreaseLike and edit the like to be false
-    if(profileLiked?.liked === "true") {
-      liked = "false"
-      console.log("liked🤡🤡  minus", liked)
-      match_profile_id = matchProfileObj[0]?.id
-      let changeProfileLikeToFalse = {
-        liked, user_id, match_profile_id
-      }
-
-
-      dispatch(EditLike(changeProfileLikeToFalse, user_id, match_profile_id))
-      setCount(count +1)
-
-    } else if(profileLiked?.liked === "false") {
-      liked = "true"
-      console.log("😂  plus", liked)
-      match_profile_id = matchProfileObj[0]?.id
-      let changeProfileLikeToTrue = {
-        liked, user_id, match_profile_id
-      }
-
-      dispatch(EditLike(changeProfileLikeToTrue, user_id, match_profile_id))
-      setCount(count +1)
-    } else {
-      // otherwise we should handleIncreaseLike
-      liked = "true"
-      console.log("first like🤡🤡", liked)
-      match_profile_id = matchProfileObj[0]?.id
-      let createFirstProfileLike = {
-        liked, user_id, match_profile_id
-      }
-      dispatch(createLike(createFirstProfileLike, user_id, match_profile_id))
-      setCount(count +1)
-    }
-
-  }
-  console.log("profileLiked", profileLiked)
 
 
   return (
@@ -229,28 +174,19 @@ useEffect(() => {
                         </button>
                     </div>
 
-
-                          {/* <div>{profileLiked?.liked}</div> */}
-                        {/* <div className={()}> */}
                       <div className="heart-flex">
+                        <HeartButton matchProfileObj={matchProfileObj} user_id_one={user_id_one}/>
 
+
+{/*
                           <button
                           className={(profileLiked?.liked === "true"? " selected" : " blank")}
-                          onClick={()=>
-                            {
-                              // setLikeColor(colorLike ==='empty'? 'red':'empty')
-                                // handleIncreaseProfileLikes()
-                                handleLikeToggle()
-                            }
-                          }
+                          onClick={()=>{handleLikeToggle()}}
                           >
                             <div className="heart-text">
-                                <i class="fas fa-heart"></i>
-                                {/* {profile?.number_likes} */}
-                                {/* <div>{profileSel[1]?.liked }</div> */}
+                              <i class="fas fa-heart"></i>
                             </div>
-                          </button>
-                      {/* </div> */}
+                          </button> */}
 
                       </div>
 
