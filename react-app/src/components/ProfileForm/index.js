@@ -86,6 +86,8 @@ const ProfileForm = () => {
       validationErrors.push("age is required")}
     else if (!checkIfNumeric(parseInt(age)) || !checkIfPositiveNumber(age)) {
       validationErrors.push("please use integers for your age")
+    } else if (!checkIfPositiveNumber(height)) {
+      validationErrors.push("please use positive integers for your age")
     }
 
     if(!location) validationErrors.push("location is required")
@@ -152,6 +154,8 @@ const ProfileForm = () => {
     if(!height) {validationErrors.push("height is required")}
     else if (!checkIfNumeric(parseInt(height))) {
       validationErrors.push("please use integers for your height")
+    } else if (!checkIfPositiveNumber(height)) {
+      validationErrors.push("please use positive integers for your height")
     }
 
     if(!education) validationErrors.push("education is required")
