@@ -45,7 +45,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
     profile = (profileObj[0])
   }
   let [number_likes, setNumLikes] = useState(profile?.number_likes)
-  console.log("🚩🚩🚩profile", profile)
+  console.log("🍎🍎n🍎🍎nprofile?.number_likes", profile?.number_likes)
 
   // console.log("🤡🤡🤡profileObj[0]?.number_likes", profileObj[0]?.number_likes)
 
