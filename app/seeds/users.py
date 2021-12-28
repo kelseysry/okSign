@@ -13,7 +13,7 @@ def seed_users():
     first_name='Grimmjow', last_name='Jaegerjaquez', username='Grimmjow', email='grim@aol.com', password='password')
 
     user4 = User(
-     first_name='Zero', last_name='Kiryu', username='zero', email='zero@aol.com', password='password')
+     first_name='Zero', last_name='Kiryu', username='Zero', email='zero@aol.com', password='password')
 
 
 
