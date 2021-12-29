@@ -21,7 +21,7 @@ const SignUpForm = () => {
   useEffect(() => {
     const validationErrors = []
 
-    if(username.length <= 4) {
+    if(username.length < 4) {
       validationErrors.push("username must be at least 4 characters")
     } else if (username.length >= 20) {
       validationErrors.push("username must be less than 20 characters")
