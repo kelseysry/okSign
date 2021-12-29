@@ -1,0 +1,33 @@
+.error-map-container {
+  display: flex;
+  justify-content: center;
+}
+
+.error-pic-container {
+  box-sizing: border-box;
+  display: flex;
+  padding: 40px 64px;
+  margin: 0 auto;
+  border: 0px;
+  height: 50vh;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  outline: none;
+  box-shadow:inset 0 0 0 2000px rgba(27, 26, 27, 0.3);
+}
+
+.error-font {
+  z-index: 1;
+  color: #fff;
+  font-size: 10vw;
+  font-weight: 700;
+  letter-spacing: -7px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+}
