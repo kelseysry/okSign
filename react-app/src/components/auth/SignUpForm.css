@@ -1,9 +1,53 @@
 
 
 .sign-up-modal {
-  /* width: 400px;
-  height: 400px; */
+  box-sizing: border-box;
+  width: 400px;
+  /* height: 400px; */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+
+
+.error-signup {
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.error-signup li{
+padding: 10px 10px;
+color:whitesmoke;
+list-style: none;
+font-size: 1.0625 rem;
+
+}
+
+
+.errors-hr {
+  border: none;
+  border-top: 3px double rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  overflow: visible;
+  text-align: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.errors-hr:after {
+  background: #1a1a1a;
+  content: 'errors';
+  padding: 0 10px;
+  position: relative;
+  top: -12px;
+}
+
+.center-signup-button {
+  display: flex;
+  justify-content: center;
 }

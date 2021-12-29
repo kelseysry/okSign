@@ -83,14 +83,10 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className="sign-up-modal">
+    <div className="">
 
-    <form onSubmit={onSignUp}>
-      <div className="sign-up-spacer">
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
+    <form className="sign-up-modal" onSubmit={onSignUp}>
+
       <div className="sign-up-spacer">
         {/* <label>First Name</label> */}
         <input
@@ -158,10 +154,30 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
-      <ul className="error">
-        {frontErrors.map((error) => <li key={error}>{error}</li>)}
-      </ul>
-      <button className="login-button" type='submit'>Sign Up</button>
+      {frontErrors.length?
+      <>
+        <div className="errors-hr"></div>
+        <ul className="error-signup">
+          {frontErrors.map((error) => <li key={error}>{error}</li>)}
+        </ul>
+      </>
+      : null
+      }
+      {
+        errors.length?
+        <>
+      <div className="errors-hr"></div>
+
+      <ul className="error-signup">
+          {errors.map((error) => <li key={error}>{error}</li>)}
+        </ul>
+        </>
+        : null
+      }
+
+      <div className="center-signup-button">
+        <button className="login-button" type='submit'>Sign Up</button>
+      </div>
     </form>
     </div>
   );
