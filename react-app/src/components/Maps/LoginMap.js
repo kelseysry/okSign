@@ -1,5 +1,6 @@
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow} from '@react-google-maps/api';
 import './Maps.css'
+import './LoginMap.css'
 
 import React, { useEffect, useState } from 'react';
 
