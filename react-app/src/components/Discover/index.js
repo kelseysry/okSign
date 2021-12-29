@@ -11,10 +11,9 @@ import DiscoverHoroscope from "../DiscoverHoroscope/DiscoverHoroscopePage";
 import { useDiscoverContent } from "../../context/DiscoverContentContext";
 import { useBackgroundContent } from "../../context/BackgroundContext";
 import pictures from "../../data/pictures";
-import ChooseBackgroundContent from "../Background/ChooseBackgroundContent";
 
-const darkImage = pictures.collection[2].imageUrl
-const lightImage = pictures.collection[3].imageUrl
+const darkImage = pictures.collection[4].imageUrl
+const lightImage = pictures.collection[5].imageUrl
 
 const Discover = () => {
   const dispatch = useDispatch()
