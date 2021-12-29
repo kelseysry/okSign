@@ -35,7 +35,7 @@ const ErrorMaps= ({allMarkers, keyy}) => {
     const options = { closeBoxURL: '', enableEventPropagation: true };
 
     const containerStyle = {
-      width: '1150px',
+      width: '900px',
       height: '600px',
     };
 
