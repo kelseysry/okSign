@@ -10,6 +10,7 @@ import { clearConversation } from '../../store/conversation';
 import SearchForm from '../SearchForm';
 import './NavBar.css'
 import { clearQuestions, getQuestions } from '../../store/question';
+import ChooseBackgroundContent from '../Background/ChooseBackgroundContent';
 
 const NavBar = () => {
   const sessionUser = useSelector((state) => state?.session.user);
@@ -98,6 +99,9 @@ const NavBar = () => {
             </button>
           <li>
             <LogoutButton />
+          </li>
+          <li>
+            <ChooseBackgroundContent /> 
           </li>
       </ul>
     </nav>

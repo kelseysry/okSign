@@ -18,6 +18,7 @@ import MatchProfilePage from './components/MatchProfilePage';
 import { CalculatePercentProvider } from './context/CalculatePercent';
 import LoginFormPage from './components/auth/LoginFormPage';
 import HitErrorPage from './components/PageNotFound/HitErrorPage';
+import Background from './components/Background/Background';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -40,6 +41,7 @@ function App() {
     // <BrowserRouter>
     <>
       <NavBar/>
+      {/* <Background />  */}
       <Switch>
         <Route path='/login' exact={true}>
           <LoginFormPage />
@@ -76,13 +78,14 @@ function App() {
             <MatchProfilePage />
           </MatchesProvider>
         </ProtectedRoute>
+
         {/* <ProtectedRoute path='/test' exact={true} >
         </ProtectedRoute> */}
         <Route>
-          <HitErrorPage /> 
+          <HitErrorPage />
         </Route>
       </Switch>
-    {/*  </BrowserRouter> */}
+
     </>
   );
 }
