@@ -20,7 +20,7 @@
 
 #modal-content {
   position: absolute;
-  background-color:white;
+  /* background-color:white; */
   padding: 30px 40px;
   border-radius: 5px 5px;
 
@@ -28,8 +28,8 @@
 
 .or {
   border: none;
-  border-top: 3px double rgb(0, 0, 0);
-  color: rgb(9, 6, 6);
+  border-top: 3px double rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   overflow: visible;
   text-align: center;
   width: 100%;
@@ -37,7 +37,7 @@
 }
 
 .or:after {
-  background: white;
+  background: #1a1a1a;
   content: 'or';
   padding: 0 10px;
   position: relative;

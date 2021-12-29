@@ -51,8 +51,8 @@ const LoginForm = () => {
   return (
     <form className="login-modal" onSubmit={onLogin}>
 
-      <div>
-        <label htmlFor='email'>Email</label>
+      <div className="login-input-spacer">
+        {/* <label htmlFor='email'>Email</label> */}
         <input
           className="login-input"
           name='email'
@@ -62,8 +62,8 @@ const LoginForm = () => {
           onChange={updateEmail}
         />
       </div>
-      <div>
-        <label htmlFor='password'>Password</label>
+      <div className="login-input-spacer">
+        {/* <label htmlFor='password'>Password</label> */}
         <input
           className="login-input"
           name='password'
