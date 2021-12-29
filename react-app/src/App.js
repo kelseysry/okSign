@@ -17,6 +17,7 @@ import QuestionPage from './components/QuestionPage';
 import MatchProfilePage from './components/MatchProfilePage';
 import { CalculatePercentProvider } from './context/CalculatePercent';
 import LoginFormPage from './components/auth/LoginFormPage';
+import HitErrorPage from './components/PageNotFound/HitErrorPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -75,9 +76,11 @@ function App() {
             <MatchProfilePage />
           </MatchesProvider>
         </ProtectedRoute>
-        <ProtectedRoute path='/test' exact={true} >
-          {/* <DiscoverHoroscope /> */}
-        </ProtectedRoute>
+        {/* <ProtectedRoute path='/test' exact={true} >
+        </ProtectedRoute> */}
+        <Route>
+          <HitErrorPage /> 
+        </Route>
       </Switch>
     {/*  </BrowserRouter> */}
     </>
