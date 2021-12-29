@@ -191,7 +191,7 @@ const DiscoverHoroscopeProfile = ({profile}) => {
 
           <div className="matchPercentContainer">
             <div className="matchContainerHeader">
-              {getHoroscope(userProfileObj[0].horoscope_id)} and {getHoroscope(profile.horoscope_id)}
+              {getHoroscope(userProfileObj[0]?.horoscope_id)} and {getHoroscope(profile?.horoscope_id)}
 
             </div>
             <div className="MatchProfileInnerContainer_Horoscope">

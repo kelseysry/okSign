@@ -12,10 +12,8 @@ const DiscoverHoroscope = () => {
 
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
-  // console.log("user_id", user_id)
-
-
-  // console.log("qprofiless🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profiles)
+  console.log("🤠🤠🤠🤠user_id", user_id)
+  console.log("profiless🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profiles)
 
 
   useEffect(() => {
@@ -27,16 +25,25 @@ const DiscoverHoroscope = () => {
     fetchData();
   }, []);
 
+  // will need to do this for brand new users or for users who delete their profile - or else
+  // get an error when render Horoscope Match page b/c no horoscope_id exists
+  let checkUserHasProfile = profiles.filter(function(profile) {
+    return profile.user_id === user_id
+  })
+
+  console.log("checkUserHasProfile checkUserHasProfile", checkUserHasProfile)
+
 
   let allProfilesExcludeCurrent = profiles.filter(function(profile) {
     return profile.user_id !== user_id
   })
 
+
   console.log("allProfilesExcludeCurrent", allProfilesExcludeCurrent)
 
   let content;
 
-  if (profiles?.length) {
+  if (profiles?.length && checkUserHasProfile?.length) {
     content = (
       <div className="">
 
