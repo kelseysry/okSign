@@ -38,23 +38,25 @@ const LoginFormPage = () => {
 
         <div className="text-banner">May the stars align in your favor</div>
         <div className="text-banner">Match by answering questions or horoscope sign</div>
+        <div className="text-banner">Click on a marker to see all of our users!</div>
+
       </div>
     </div>
 
-    <section className="map-description-content">
+    {/* <section className="map-description-content"> */}
       <div className="map-size">
         <LoginMapContainer />
       </div>
-      <div className="map-description-container">
+      {/* <div className="map-description-container">
           <div className="marker-highlight">
           <i class="fas fa-map-marker-alt fa-10x"></i>
           </div>
           <div className="map-description">
             Click on a marker to see all of our users!
           </div>
-      </div>
+      </div> */}
 
-    </section>
+    {/* </section> */}
 
     </section>
   )

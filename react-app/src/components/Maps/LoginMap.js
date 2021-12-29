@@ -41,7 +41,7 @@ const LoginMap= ({profiles, keyy}) => {
     const options = { closeBoxURL: '', enableEventPropagation: true };
 
     const containerStyle = {
-      width: '1000px',
+      width: '2000px',
       height: '600px',
     };
 
