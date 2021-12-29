@@ -79,11 +79,22 @@ const LoginForm = () => {
         </div>
 
       </div>
-      <div className="backend-errors">
+      {/* <div className="backend-errors">
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
-      </div>
+      </div> */}
+            {
+        errors.length?
+        <>
+      <div className="errors-hr"></div>
+
+      <ul className="error-signup">
+          {errors.map((error) => <li key={error}>{error}</li>)}
+        </ul>
+        </>
+        : null
+      }
     </form>
   );
 };
