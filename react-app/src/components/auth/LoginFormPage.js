@@ -36,9 +36,9 @@ const LoginFormPage = () => {
         <div className="header-banner-ok">ok</div>
         <div className="header-banner-sign">SIGN</div>
 
-        <div className="text-banner">May the stars align in your favor</div>
+        <div className="text-banner">May the stars align in your favor </div>
         <div className="text-banner">Match by answering questions or horoscope sign</div>
-        <div className="text-banner">Click on a marker to see all of our users!</div>
+        <div className="text-banner">Click on a marker to see all of our users <i class="fas fa-map-marker-alt"></i></div>
 
       </div>
     </div>
