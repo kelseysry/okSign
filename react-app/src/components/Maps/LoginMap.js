@@ -7,11 +7,7 @@ import React, { useEffect, useState } from 'react';
 const LoginMap= ({profiles, keyy}) => {
 
 
-  // const [key, setKey] = useState([]);
-
   const [selectedCenter, setSelectedCenter] = useState(null);
-
-
 
   let allMarkers;
   allMarkers = profiles
@@ -44,7 +40,7 @@ const LoginMap= ({profiles, keyy}) => {
     const options = { closeBoxURL: '', enableEventPropagation: true };
 
     const containerStyle = {
-      width: '1150px',
+      width: '1000px',
       height: '600px',
     };
 

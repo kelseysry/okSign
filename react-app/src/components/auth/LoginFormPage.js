@@ -11,7 +11,7 @@ const LoginFormPage = () => {
   const [showModal, setShowModal] = useState(false);
   const [showModal2, setShowModal2] = useState(false);
   return (
-    <>
+    <section>
     <nav className="nav-login">
       <button
       className="nav-modal-button"
@@ -41,9 +41,22 @@ const LoginFormPage = () => {
       </div>
     </div>
 
-    <LoginMapContainer />
+    <section className="map-description-content">
+      <div className="map-size">
+        <LoginMapContainer />
+      </div>
+      <div className="map-description-container">
+          <div className="marker-highlight">
+          <i class="fas fa-map-marker-alt fa-10x"></i>
+          </div>
+          <div className="map-description">
+            Click on a marker to see all of our users!
+          </div>
+      </div>
 
-    </>
+    </section>
+
+    </section>
   )
 }
 

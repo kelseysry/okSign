@@ -169,3 +169,52 @@
   box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 19%);
 
 }
+
+
+.map-description-content {
+  display: flex;
+  flex-direction: row;
+  border-style: groove;
+  border-style: inset;
+  border-width:10px ;
+  border-color: #FFC052;
+}
+
+.map-description {
+  font-size: 1.0625rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  width: 100%;
+  padding-top: 10px;
+
+}
+
+.map-description-container {
+  width: 60%;
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-style: none none none inset;
+  border-color: #FFC052;
+  border-width:10px ;
+  flex-shrink: 2;
+  box-sizing: border-box;
+  /* padding: 50px 50px; */
+}
+
+.marker-highlight {
+  color: rgb(255, 255, 255);
+  text-shadow:
+  0 0 7px rgb(255, 255, 255),
+  0 0 10px #f5f1e9,
+  0 0 50px #f5f1e9,
+  0 0 92px #f5f1e9;
+}
+
+.map-size {
+  flex-grow: 2;
+}
