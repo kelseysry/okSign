@@ -3,7 +3,7 @@
 </p>
 
 # Summary 
-[okSign](https://oksign-kelseysry.herokuapp.com/login) is a dating app based off of okCupid. okSign was created by using React, Redux, Flask, Docker, and PostgreSQL. Anyone who uses okSign can do the following:
+[okSign](https://oksign-kelseysry.herokuapp.com/login) is a dating app based off of okCupid. Users can match with other users by answering questions or by horoscope signs. okSign was created by using React, Redux, Flask, Docker, and PostgreSQL. Anyone who uses okSign can do the following:
 
 - Sign up
 - Login and Log out
