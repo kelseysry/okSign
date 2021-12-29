@@ -85,8 +85,47 @@
 }
 
 .login-buttons{
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+}
+
+.login-button {
+  background-color: wheat;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  line-height: 18px;
+  font-weight: bold;
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 20px;
+  width: 50%;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 19%);
+
+}
+.demo-button {
+  background-color: cornflowerblue;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  line-height: 18px;
+  font-weight: bold;
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 20px;
+  width: 50%;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 19%);
+
 }

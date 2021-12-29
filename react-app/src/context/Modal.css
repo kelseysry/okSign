@@ -31,13 +31,14 @@
   color: rgb(9, 6, 6);
   overflow: visible;
   text-align: center;
-  width: 100%
+  width: 100%;
+  margin: 10px 0;
 }
 
 .or:after {
   background: white;
   content: 'or';
-  padding: 0 4px;
+  padding: 0 2px;
   position: relative;
   top: -12px;
 }

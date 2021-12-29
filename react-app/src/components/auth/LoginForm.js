@@ -73,9 +73,9 @@ const LoginForm = () => {
           onChange={updatePassword}
         />
         <div className="login-buttons">
-          <button type='submit'>Login</button>
-          <hr className="or"></hr>
-          <button className="submit-button" onClick={handleDemoLogin} type="submit">Demo</button>
+          <button className="login-button" type='submit'>Login</button>
+          <div className="or"></div>
+          <button className="demo-button" onClick={handleDemoLogin} type="submit">Demo</button>
         </div>
 
       </div>
