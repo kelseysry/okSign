@@ -86,4 +86,52 @@ Users can also match with other uses based on horoscope signs.
   <img src="https://res.cloudinary.com/mabmab/image/upload/v1640758629/okSign/Screen_Shot_2021-12-28_at_10.17.04_PM_rq4fsv.png"/>
   </p>
 
+## Technical Implementation Details 
+Surprisngly, implementing the Google Maps API was the most challenging part of the project even though I had already implemented Google Maps on an Express backend. Google maps was rendering fine on localhost but when deployed to Heroku, I would get an error saying my API key didn't exist. I tried fetching the API key from the backend and the frontend in order to get around this. How I ended up fixing this was to grab the key from the backend via a useEffect and then storing the key in a useState. The important step is to grab the key in a component that is holding the map component. You don't want the map component to grab the key or else you'll get the "loader should not be called with diff options error." So then when you actually render the map component in the component that's holding it, you want to write a ternary statement that checks for the key first and then renders the map.
+  <p align="center" width="50%">
+  <img src="https://res.cloudinary.com/mabmab/image/upload/v1640762015/okSign/Screen_Shot_2021-12-28_at_11.13.29_PM_cwo6yg.png"/>
+  </p>
 
+# To-dos
+- [ ] like count feature 
+
+# Instructions on How to Install okSign app 
+1. run git clone
+2. Install dependencies in pipfile for development. Dockerfile is for production.
+
+      ```bash
+      pipenv install --dev -r dev-requirements.txt && pipenv install -r requirements.txt
+      ```
+3. Create a **.env** file based on the example with proper settings for your
+   development environment
+4. Setup your PostgreSQL user, password and database and make sure it matches your **.env** file
+5. To generate a MAPS_API_KEY you must use your google account. 
+    1. Go to [Google Cloud console](https://console.cloud.google.com/)
+    2. Click `Select a Project` and then click on `New Project`. Pick a name for the project and put the location as `No Organization` then click `create`
+    ![step1](https://res.cloudinary.com/mabmab/image/upload/v1636849102/khmer_food/step1_ggni4z.png)
+    3. Click `APIs & Services` in the side navigation bar and then click `Credentials`. After that, click `Create credentials` and then choose `API KEY`.
+    4. With your new API key, click `Restrict key`. After that rename the API KEY and then click the following APIS (Directions, Distance Matrix, Geocoding, Maps Javascript Places). 
+    ![step4](https://res.cloudinary.com/mabmab/image/upload/v1640762537/okSign/Screen_Shot_2021-12-28_at_11.22.08_PM_hokvpc.png)
+    6.  Don't forget to click `Restrict Key`
+    7.  Add your API key to the .env file.
+6. Get into your pipenv, migrate your database, seed your database, and run your flask app
+- the migrations folder is already created so don't need to run `flask db init`
+- migration already generated too with a user table so don't need to run `flask db migrate`
+
+   ```bash
+   pipenv shell
+   ```
+
+   ```bash
+   flask db upgrade
+   ```
+
+   ```bash
+   flask seed all
+   ```
+
+   ```bash
+   flask run
+   ```
+
+6. cd into react-app and then run npm install. After installing, you can run npm start 
