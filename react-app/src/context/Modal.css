@@ -24,3 +24,20 @@
   padding: 30px 40px;
   border-radius: 5px 5px;
 }
+
+.or {
+  border: none;
+  border-top: 3px double rgb(0, 0, 0);
+  color: rgb(9, 6, 6);
+  overflow: visible;
+  text-align: center;
+  width: 100%
+}
+
+.or:after {
+  background: white;
+  content: 'or';
+  padding: 0 4px;
+  position: relative;
+  top: -12px;
+}
