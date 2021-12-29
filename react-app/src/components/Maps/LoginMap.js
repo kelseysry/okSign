@@ -34,7 +34,7 @@ const LoginMap= ({profiles, keyy}) => {
 
 
     const center = {
-      lat: 35,
+      lat: 50,
       lng: -180
     };
 
