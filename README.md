@@ -1,5 +1,5 @@
 <p align="center" width="80%">
-  <img src="https://res.cloudinary.com/mabmab/image/upload/v1640760248/okSign/Screen_Shot_2021-12-28_at_10.44.01_PM_wfk2h3.png"/>
+  <img src="https://res.cloudinary.com/mabmab/image/upload/v1640812067/okSign/Screen_Shot_2021-12-29_at_1.07.40_PM_gknpnx.png"/>
 </p>
 
 # Summary 
