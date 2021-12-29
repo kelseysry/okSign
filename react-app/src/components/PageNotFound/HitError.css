@@ -1,4 +1,4 @@
-.error-map-container {
+/* .error-map-container {
   display: flex;
   justify-content: center;
 }
@@ -73,4 +73,13 @@
   0 0 151px #FFBD4A;
   position: relative;
   z-index: 1;
+} */
+
+
+.clearfix::after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
