@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Condensed:wght@700&display=swap');
+
+
+
 .nav-login {
   background-color:#1a1a1a;
   display: flex;
@@ -42,16 +46,46 @@
   display: block;
 }
 
-.header-banner {
+.header-banner-ok {
   overflow-wrap: break-word !important;
   color: #fff;
-  font-size: 15vw !important;
+  font-size: 13vw !important;
   line-height: 0.9em;
   font-weight: 700;
   text-align: center;
   height: auto;
   margin: 0 auto;
   position: relative;
+  font-family: 'Dancing Script', cursive;
+  position: absolute;
+  z-index: 2;
+  top:250px;
+  transform: rotate(-18deg);
+}
+
+.header-banner-sign {
+  overflow-wrap: break-word !important;
+  color: #fff;
+  font-size: 20vw !important;
+  line-height: 0.9em;
+  font-weight: 700;
+  text-align: center;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFBD4A;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #FFBD4A,
+  0 0 82px #FFBD4A,
+  0 0 92px #FFBD4A,
+  0 0 102px #FFBD4A,
+  0 0 151px #FFBD4A;
+  position: relative;
+  z-index: 1;
 }
 
 .text-banner {

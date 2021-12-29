@@ -33,12 +33,14 @@ const LoginFormPage = () => {
 
     <div className="container-banner">
       <div className="top-banner-pic" style={{ backgroundImage: `url('${pictures.collection[0].imageUrl}')` }}>
-        <div className="header-banner">okSign</div>
+        <div className="header-banner-ok">ok</div>
+        <div className="header-banner-sign">SIGN</div>
+
         <div className="text-banner">May the stars align in your favor</div>
       </div>
     </div>
 
-    <LoginMapContainer /> 
+    <LoginMapContainer />
 
     </>
   )
