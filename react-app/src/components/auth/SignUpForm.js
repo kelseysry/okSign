@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import isEmail from 'validator/es/lib/isEmail';
+import './SignUpForm.css'
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -82,64 +83,76 @@ const SignUpForm = () => {
   }
 
   return (
-    <div className="login-modal">
+    <div className="sign-up-modal">
 
     <form onSubmit={onSignUp}>
-      <div>
+      <div className="sign-up-spacer">
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
-      <div>
-        <label>First Name</label>
+      <div className="sign-up-spacer">
+        {/* <label>First Name</label> */}
         <input
+          className="login-input"
           type='text'
           name='first_name'
+          placeholder='First Name'
           onChange={updateFirstName}
           value={first_name}
         ></input>
       </div>
-      <div>
-        <label>Last Name</label>
+      <div className="sign-up-spacer">
+        {/* <label>Last Name</label> */}
         <input
+          className="login-input"
           type='text'
           name='last_name'
+          placeholder='Last Name'
           onChange={updateLastName}
           value={last_name}
         ></input>
       </div>
-      <div>
-        <label>User Name</label>
+      <div className="sign-up-spacer">
+        {/* <label>User Name</label> */}
         <input
+          className="login-input"
           type='text'
           name='username'
+          placeholder='Username'
           onChange={updateUsername}
           value={username}
         ></input>
       </div>
-      <div>
-        <label>Email</label>
+      <div className="sign-up-spacer">
+        {/* <label>Email</label> */}
         <input
+         className="login-input"
           type='text'
           name='email'
+          placeholder='Email'
           onChange={updateEmail}
           value={email}
         ></input>
       </div>
-      <div>
-        <label>Password</label>
+      <div className="sign-up-spacer">
+        {/* <label>Password</label> */}
         <input
+        className="login-input"
           type='password'
           name='password'
+          placeholder='Password'
           onChange={updatePassword}
           value={password}
         ></input>
       </div>
-      <div>
-        <label>Repeat Password</label>
+      <div className="sign-up-spacer">
+        {/* <label>Repeat Password</label> */}
         <input
+        className="login-input"
           type='password'
           name='repeat_password'
+          placeholder='Repeated Password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
           required={true}
@@ -148,7 +161,7 @@ const SignUpForm = () => {
       <ul className="error">
         {frontErrors.map((error) => <li key={error}>{error}</li>)}
       </ul>
-      <button type='submit'>Sign Up</button>
+      <button className="login-button" type='submit'>Sign Up</button>
     </form>
     </div>
   );
