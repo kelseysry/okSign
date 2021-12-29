@@ -43,20 +43,9 @@ const LoginFormPage = () => {
       </div>
     </div>
 
-    {/* <section className="map-description-content"> */}
       <div className="map-size">
         <LoginMapContainer />
       </div>
-      {/* <div className="map-description-container">
-          <div className="marker-highlight">
-          <i class="fas fa-map-marker-alt fa-10x"></i>
-          </div>
-          <div className="map-description">
-            Click on a marker to see all of our users!
-          </div>
-      </div> */}
-
-    {/* </section> */}
 
     </section>
   )
