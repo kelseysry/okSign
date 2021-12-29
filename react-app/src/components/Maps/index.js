@@ -7,9 +7,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 const MapTwoUsers= ({user, match, keyy}) => {
 
-  // console.log("match in page", match)
-  // console.log("user in page", user)
-
 const center = {
   lat: 35,
   lng: -180
@@ -22,26 +19,22 @@ const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: keyy
   })
 
-  // useEffect(() => {
-  //   dispatch(getAllMarkers())
-  // },[dispatch])
 
   const containerStyle = {
     width: '700px',
     height: '500px'
   };
 
-
   const onLoad = polyline => {
     console.log('polyline: ', polyline)
   };
-
 
 
   const path = [
     {lat: user[0]?.lat, lng: user[0]?.lng},
     {lat: match[0]?.lat,lng: match[0]?.lng},
   ];
+
 
   const [map, setMap] = useState(null)
 
