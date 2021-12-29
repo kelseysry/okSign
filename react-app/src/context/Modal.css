@@ -23,6 +23,7 @@
   background-color:white;
   padding: 30px 40px;
   border-radius: 5px 5px;
+
 }
 
 .or {
@@ -38,7 +39,7 @@
 .or:after {
   background: white;
   content: 'or';
-  padding: 0 2px;
+  padding: 0 10px;
   position: relative;
   top: -12px;
 }
