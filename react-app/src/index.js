@@ -7,6 +7,8 @@ import configureStore from './store';
 import DiscoverContentProvider from './context/DiscoverContentContext';
 import { BrowserRouter } from 'react-router-dom';
 import { ModalProvider } from './context/Modal';
+import BackgroundContentProvider from './context/BackgroundContext';
+
 
 const store = configureStore();
 
@@ -15,9 +17,11 @@ ReactDOM.render(
     <ModalProvider>
       <Provider store={store}>
           <BrowserRouter>
-            <DiscoverContentProvider>
-              <App />
-            </DiscoverContentProvider>
+            <BackgroundContentProvider>
+                <DiscoverContentProvider>
+                  <App />
+                </DiscoverContentProvider>
+              </BackgroundContentProvider>
           </BrowserRouter>
         </Provider>
       </ModalProvider>

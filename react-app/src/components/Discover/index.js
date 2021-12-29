@@ -9,11 +9,18 @@ import './Discover.css'
 import ChooseDiscoverContent from "./ChooseDiscoverContent";
 import DiscoverHoroscope from "../DiscoverHoroscope/DiscoverHoroscopePage";
 import { useDiscoverContent } from "../../context/DiscoverContentContext";
+import { useBackgroundContent } from "../../context/BackgroundContext";
+import pictures from "../../data/pictures";
+
+const darkImage = pictures.collection[4].imageUrl
+const lightImage = pictures.collection[5].imageUrl
 
 const Discover = () => {
   const dispatch = useDispatch()
 
   const {discoverContent} = useDiscoverContent()
+
+  const {backgroundContent} = useBackgroundContent()
 
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
@@ -167,7 +174,8 @@ if(currentUserQuestion) {
 
 
   return (
-    <>
+    <div style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
+
     <div className="ConversationHeaderContainer_D">
       <div className="ConversationHeader">Discover
       </div>
@@ -175,10 +183,9 @@ if(currentUserQuestion) {
     </div>
 
     <div className="DiscoverContent">
-
       {discoverContent === 'QuestionMatch'? content : content2}
     </div>
-    </>
+    </div>
   )
 
 }
