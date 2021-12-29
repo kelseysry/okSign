@@ -61,3 +61,77 @@
 .backend-errors {
   color: red;
 }
+
+.login-input {
+  width: 90%;
+  display: block;
+  padding: 10px 15px;
+  border: none;
+  font-size: 1.0625rem;
+  line-height: 20px;
+  border-radius: 4px;
+  border: 1px solid #c7c7c7;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 19%);
+  margin-bottom: 45px;
+
+}
+
+.login-input-spacer {
+  padding: 0px 10px;
+}
+
+.login-modal {
+  width: 400px;
+  /* height: 400px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.login-buttons{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+}
+
+.login-button {
+  background-color: #FFC052;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  line-height: 18px;
+  font-weight: bold;
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 20px;
+  width: 50%;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 19%);
+
+}
+.demo-button {
+  background-color: cornflowerblue;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  line-height: 18px;
+  font-weight: bold;
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 20px;
+  width: 50%;
+  box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 19%);
+
+}

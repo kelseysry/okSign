@@ -49,11 +49,12 @@ const LoginForm = () => {
   }
 
   return (
-    <form onSubmit={onLogin}>
+    <form className="login-modal" onSubmit={onLogin}>
 
-      <div>
-        <label htmlFor='email'>Email</label>
+      <div className="login-input-spacer">
+        {/* <label htmlFor='email'>Email</label> */}
         <input
+          className="login-input"
           name='email'
           type='text'
           placeholder='Email'
@@ -61,24 +62,39 @@ const LoginForm = () => {
           onChange={updateEmail}
         />
       </div>
-      <div>
-        <label htmlFor='password'>Password</label>
+      <div className="login-input-spacer">
+        {/* <label htmlFor='password'>Password</label> */}
         <input
+          className="login-input"
           name='password'
           type='password'
           placeholder='Password'
           value={password}
           onChange={updatePassword}
         />
-        <button type='submit'>Login</button>
-        <button className="submit-button" onClick={handleDemoLogin} type="submit">Demo</button>
+        <div className="login-buttons">
+          <button className="login-button" type='submit'>Login</button>
+          <div className="or"></div>
+          <button className="demo-button" onClick={handleDemoLogin} type="submit">Demo</button>
+        </div>
 
       </div>
-      <div className="backend-errors">
+      {/* <div className="backend-errors">
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
-      </div>
+      </div> */}
+            {
+        errors.length?
+        <>
+      <div className="errors-hr"></div>
+
+      <ul className="error-signup">
+          {errors.map((error) => <li key={error}>{error}</li>)}
+        </ul>
+        </>
+        : null
+      }
     </form>
   );
 };

@@ -20,5 +20,26 @@
 
 #modal-content {
   position: absolute;
-  background-color:white;
+  /* background-color:white; */
+  padding: 40px 40px;
+  border-radius: 5px 5px;
+
+}
+
+.or {
+  border: none;
+  border-top: 3px double rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  overflow: visible;
+  text-align: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.or:after {
+  background: #1a1a1a;
+  content: 'or';
+  padding: 0 10px;
+  position: relative;
+  top: -12px;
 }
