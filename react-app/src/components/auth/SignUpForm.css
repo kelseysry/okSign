@@ -31,7 +31,7 @@ font-size: 1.0625 rem;
 
 .errors-hr {
   border: none;
-  border-top: 3px double rgb(255, 255, 255);
+  border-top: 3px double #FFC052;;
   color: rgb(255, 255, 255);
   overflow: visible;
   text-align: center;
