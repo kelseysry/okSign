@@ -111,7 +111,9 @@ Surprisngly, implementing the Google Maps API was the most challenging part of t
     ![step1](https://res.cloudinary.com/mabmab/image/upload/v1636849102/khmer_food/step1_ggni4z.png)
     3. Click `APIs & Services` in the side navigation bar and then click `Credentials`. After that, click `Create credentials` and then choose `API KEY`.
     4. With your new API key, click `Restrict key`. After that rename the API KEY and then click the following APIS (Directions, Distance Matrix, Geocoding, Maps Javascript Places). 
-    ![step4](https://res.cloudinary.com/mabmab/image/upload/v1640762537/okSign/Screen_Shot_2021-12-28_at_11.22.08_PM_hokvpc.png)
+       <p align="center" width="50%">
+      <img src="https://res.cloudinary.com/mabmab/image/upload/v1640762537/okSign/Screen_Shot_2021-12-28_at_11.22.08_PM_hokvpc.png"/>
+      </p>
     6.  Don't forget to click `Restrict Key`
     7.  Add your API key to the .env file.
 6. Get into your pipenv, migrate your database, seed your database, and run your flask app
