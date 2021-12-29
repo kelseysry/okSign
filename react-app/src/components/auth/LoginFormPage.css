@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Condensed:wght@700&display=swap');
+
+
+
 .nav-login {
   background-color:#1a1a1a;
   display: flex;
@@ -42,16 +46,46 @@
   display: block;
 }
 
-.header-banner {
+.header-banner-ok {
   overflow-wrap: break-word !important;
   color: #fff;
-  font-size: 15vw !important;
+  font-size: 13vw !important;
   line-height: 0.9em;
   font-weight: 700;
   text-align: center;
   height: auto;
   margin: 0 auto;
   position: relative;
+  font-family: 'Dancing Script', cursive;
+  position: absolute;
+  z-index: 2;
+  top:250px;
+  transform: rotate(-18deg);
+}
+
+.header-banner-sign {
+  overflow-wrap: break-word !important;
+  color: #fff;
+  font-size: 20vw !important;
+  line-height: 0.9em;
+  font-weight: 700;
+  text-align: center;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFBD4A;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #FFBD4A,
+  0 0 82px #FFBD4A,
+  0 0 92px #FFBD4A,
+  0 0 102px #FFBD4A,
+  0 0 151px #FFBD4A;
+  position: relative;
+  z-index: 1;
 }
 
 .text-banner {
@@ -134,4 +168,53 @@
   width: 50%;
   box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 19%);
 
+}
+
+
+.map-description-content {
+  display: flex;
+  flex-direction: row;
+  border-style: groove;
+  border-style: inset;
+  border-width:10px ;
+  border-color: #FFC052;
+}
+
+.map-description {
+  font-size: 1.0625rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: white;
+  width: 100%;
+  padding-top: 10px;
+
+}
+
+.map-description-container {
+  width: 60%;
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-style: none none none inset;
+  border-color: #FFC052;
+  border-width:10px ;
+  flex-shrink: 2;
+  box-sizing: border-box;
+  /* padding: 50px 50px; */
+}
+
+.marker-highlight {
+  color: rgb(255, 255, 255);
+  text-shadow:
+  0 0 7px rgb(255, 255, 255),
+  0 0 10px #f5f1e9,
+  0 0 50px #f5f1e9,
+  0 0 92px #f5f1e9;
+}
+
+.map-size {
+  flex-grow: 2;
 }
