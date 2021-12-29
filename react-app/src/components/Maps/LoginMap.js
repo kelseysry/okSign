@@ -1,4 +1,4 @@
-import { GoogleMap, useJsApiLoader, Marker, InfoWindow, StyledMapType} from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker, InfoWindow} from '@react-google-maps/api';
 import './Maps.css'
 import './LoginMap.css'
 import mapStyle from '../../data/mapStyle';
@@ -9,8 +9,6 @@ const LoginMap= ({profiles, keyy}) => {
 
   const [selectedCenter, setSelectedCenter] = useState(null);
 
-  // console.log("styles", styles)
-
   let allMarkers;
   allMarkers = profiles
 
@@ -18,7 +16,6 @@ const LoginMap= ({profiles, keyy}) => {
       id: 'google-map-script',
       googleMapsApiKey: keyy
     })
-
 
     useEffect(() => {
       const listener = e => {
@@ -46,27 +43,18 @@ const LoginMap= ({profiles, keyy}) => {
       height: '600px',
     };
 
-
-
     return (
       <>
-
       <div>
         {(isLoaded && allMarkers.length && keyy) && (
         <GoogleMap
         mapContainerStyle={containerStyle}
         zoom={3}
         center={center}
-
         options={{
           styles:mapStyle
-
-
-
         }}
-
         >
-
         {allMarkers?.map((center, idx) => (
               <Marker
                 key={idx}
@@ -75,7 +63,6 @@ const LoginMap= ({profiles, keyy}) => {
                   lat: parseFloat(center.lat),
                   lng: parseFloat(center.lng)
                 }}
-
                 // causes pop up
                 onClick={() => {
                   setSelectedCenter(center);
