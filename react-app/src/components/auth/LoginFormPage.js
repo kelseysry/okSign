@@ -37,6 +37,7 @@ const LoginFormPage = () => {
         <div className="header-banner-sign">SIGN</div>
 
         <div className="text-banner">May the stars align in your favor</div>
+        <div className="text-banner">Match by answering questions or horoscope sign</div>
       </div>
     </div>
 
