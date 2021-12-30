@@ -47,6 +47,7 @@ body {
   align-items: flex-end;
   justify-content: space-around;
 }
+/*   blur/position*/
 
 .discoverContent-buttons-container {
   display: flex;
