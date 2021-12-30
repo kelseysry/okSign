@@ -6,6 +6,7 @@
 
 
 .nav_container_desktop {
+
   background-color:#f3f5f9;
   color: #f1f1f1;
   /* padding-bottom: 30px; */
@@ -27,7 +28,6 @@
   justify-content: center;
   padding: 20px 20px;
   align-items: center;
-
 }
 
 .nav_bar_button {
@@ -73,4 +73,14 @@
     padding-bottom: 4px;
   }
 
+}
+
+.nav-container {
+  background-color: pink;
+  box-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #FFBD4A,
+  0 0 82px #FFBD4A;
 }

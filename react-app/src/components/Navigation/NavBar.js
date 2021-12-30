@@ -183,7 +183,7 @@ const NavBar = () => {
   // }
 
   return (
-    <div>
+    <div className="nav-container">
       {sessionLinks}
     </div>
   );
