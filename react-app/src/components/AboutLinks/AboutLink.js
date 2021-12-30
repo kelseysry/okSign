@@ -26,10 +26,14 @@ const AboutLinks = () => {
               <div>
                 <img className="profile-thumb-modal" src={infoLinks[0].imageUrl} alt="user_image"/>
               </div>
+                <div className="about-first-text">okSign brought to you by</div>
+                <div className="about-modal-name">
+                 {infoLinks[0].name}
+                </div>
+                <div className="about-first-text">let's connect!</div>
 
 
                 <div className="about-link-container">
-                  {/* <div className="gl"> */}
                       <a style={{color: 'white'}} target="_blank" href={infoLinks[0].github} rel="noreferrer">
                           <i className="fab fa-github-square fa-2x"/>
                       </a>
@@ -40,9 +44,7 @@ const AboutLinks = () => {
                       <a style={{color: 'white'}}  target="_blank" href={infoLinks[0].emailM} rel="noreferrer">
                           <i className="fas fa-envelope-square fa-2x"/>
                       </a>
-                  {/* </div> */}
 
-                        {/* {infoLinks[0].email} */}
                  </div>
 
           </section>
