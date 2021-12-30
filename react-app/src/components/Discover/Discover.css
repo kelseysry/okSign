@@ -20,11 +20,22 @@ body {
 
 .QM, .HM {
   color: whitesmoke;
+  font-size: 20px;
+  border-style: solid;
+  padding: 10px 10px;
+  margin-top: 10px;
+  border-radius: 3px;
 }
 .QM {
-  padding-right: 20px;
+  /* padding-right: 20px; */
+  margin-right: 20px;
 }
 
+.active, .QM:hover, .HM:hover {
+  background-color: #d7a041;
+  text-shadow: 1px 1px 2px black;
+  color: white;
+}
 
 .ConversationHeaderContainer_D {
   background-color:#1a1a1a;
@@ -76,4 +87,19 @@ button.blank {
 
 .heart-flex {
   display: flex;
+}
+
+.match-buttons-text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.DiscoverHeader-Container {
+  display: flex;
+  flex-direction: column;
+}
+
+.DiscoverHeaderText {
+  font-size: 50px;
 }
