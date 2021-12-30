@@ -177,9 +177,17 @@ if(currentUserQuestion) {
     <div style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
 
     <div className="ConversationHeaderContainer_D">
-      <div className="ConversationHeader">Discover
+      <div className="DiscoverHeader-Container">
+        <div className="DiscoverHeaderText">Discover</div>
+        <div>find potential matches via questions or horoscopes</div>
       </div>
-      <ChooseDiscoverContent />
+      <div className="match-buttons-text-container">
+        <div>
+        <ChooseDiscoverContent />
+        </div>
+        {/* <div>find your potential matches via questions or horoscopes</div> */}
+      </div>
+
     </div>
 
     <div className="DiscoverContent">

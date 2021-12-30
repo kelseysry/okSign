@@ -38,10 +38,22 @@
   justify-content: center;
   margin: 0px 0px !important;
   background: #fff;
-  /* background: coral; */
   width: 100%;
-  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
+  /* box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%); */
+  border-width: 20px;
+  border-bottom: .5px solid rgb(227, 223, 223);
+  border-left: .5px solid rgb(227, 223, 223);
+  border-right: .5px solid rgb(227, 223, 223);
+  background-color: #fff;
+  box-shadow:
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #FFBD4A,
+  0 0 82px #FFBD4A;
 }
+
+
+
 
 .match_profile_image_discover {
   width: 200px;
@@ -70,7 +82,7 @@ hr {
   text-align: center;
   height: 5px;
   padding: 0px 0px !important;
-  margin: 60px 0px;
+  margin: 120px 0px;
 
 }
 
@@ -80,8 +92,6 @@ hr {
   background: #1a1a1a;
   color: #fff;
   padding: 10px 15px;
-  /* border-top-left-radius: 5px;
-  border-top-right-radius: 5px; */
 }
 
 
