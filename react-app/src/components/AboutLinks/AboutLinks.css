@@ -1,0 +1,43 @@
+
+.about-modal-container{
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.profile-thumb-modal{
+  position: relative;
+  z-index: 2;
+  width: 120px;
+  height: 120px;
+  border-radius: 50% !important;
+  /* top: -60px; */
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+}
+.border-modal {
+  background: #1a1a1a;
+  height: 50px;
+}
+
+.gl {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-link-container {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* flex-direction: row; */
+}

@@ -41,9 +41,15 @@ export function AboutModal({ onClose, children }) {
   if (!modalNode) return null;
 
   return ReactDOM.createPortal(
+
     <div id='modal'>
+
       <div id='modal-background' onClick={onClose} />
-      <div id='modal-content' style={{ backgroundImage: `url('${pictures.collection[5].imageUrl}')` }}>{children}</div>
+      <div id='modal-content' style={{ backgroundImage: `url('${pictures.collection[1].imageUrl}')` }}>
+        {/* <div className="border-modal">hi</div> */}
+        {children}
+
+        </div>
       {/* <div id='modal-content'>{children}</div> */}
     </div>,
     modalNode
