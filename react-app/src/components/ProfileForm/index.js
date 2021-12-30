@@ -351,7 +351,7 @@ const ProfileForm = () => {
                     <input
                     className="profile-input"
                     type="text"
-                    placeholder="record yourself or any audio that represents you!"
+                    placeholder="mp3 format 🎵 https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3"
                     value={user_audio}
                     onChange={(e) => setUser_audio(e.target.value)}
                     >
