@@ -18,9 +18,9 @@ def password_matches(form, field):
     email = form.data['email']
     user = User.query.filter(User.email == email).first()
     if not user:
-        raise ValidationError('No such user exists.')
+        raise ValidationError('email or password was incorrect')
     if not user.check_password(password):
-        raise ValidationError('Password was incorrect.')
+        raise ValidationError('email or password was incorrect')
 
 
 class LoginForm(FlaskForm):
