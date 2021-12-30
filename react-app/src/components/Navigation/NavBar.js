@@ -11,6 +11,7 @@ import SearchForm from '../SearchForm';
 import './NavBar.css'
 import { clearQuestions, getQuestions } from '../../store/question';
 import ChooseBackgroundContent from '../Background/ChooseBackgroundContent';
+import AboutLinks from '../AboutLinks/AboutLink';
 
 const NavBar = () => {
   const sessionUser = useSelector((state) => state?.session.user);
@@ -101,13 +102,22 @@ const NavBar = () => {
             <LogoutButton />
           </li>
           <li>
-            <ChooseBackgroundContent /> 
+            <ChooseBackgroundContent />
           </li>
+          <button
+              className="nav_bar_button"
+
+            >
+              <AboutLinks />
+            </button>
+
       </ul>
     </nav>
 
     <nav className="nav_container_mobile">
       <ul className="nav_container_list">
+
+
 
             <button
               className="nav_bar_button"
@@ -144,6 +154,9 @@ const NavBar = () => {
           <li>
             <LogoutButton />
           </li>
+
+
+
       </ul>
     </nav>
     </>

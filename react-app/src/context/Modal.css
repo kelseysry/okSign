@@ -22,11 +22,9 @@
 
 #modal-content {
   position: absolute;
-  /* background-color:white; */
   padding: 40px 40px;
   border-radius: 5px 5px;
   z-index: 5;
-
 }
 
 .or {

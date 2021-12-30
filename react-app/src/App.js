@@ -19,6 +19,7 @@ import { CalculatePercentProvider } from './context/CalculatePercent';
 import LoginFormPage from './components/auth/LoginFormPage';
 import HitErrorPage from './components/PageNotFound/HitErrorPage';
 import Background from './components/Background/Background';
+import AboutLinks from './components/AboutLinks/AboutLink';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -85,7 +86,7 @@ function App() {
           <HitErrorPage />
         </Route>
       </Switch>
-
+      {/* <AboutLinks />  */}
     </>
   );
 }

@@ -21,7 +21,6 @@ export function ModalProvider({ children }) {
     </>
   );
 }
-
 export function Modal({ onClose, children }) {
   const modalNode = useContext(ModalContext);
   if (!modalNode) return null;
@@ -30,6 +29,27 @@ export function Modal({ onClose, children }) {
     <div id='modal'>
       <div id='modal-background' onClick={onClose} />
       <div id='modal-content' style={{ backgroundImage: `url('${pictures.collection[1].imageUrl}')` }}>{children}</div>
+      {/* <div id='modal-content'>{children}</div> */}
+    </div>,
+    modalNode
+  );
+}
+
+// need to use 5 for light image
+export function AboutModal({ onClose, children }) {
+  const modalNode = useContext(ModalContext);
+  if (!modalNode) return null;
+
+  return ReactDOM.createPortal(
+
+    <div id='modal'>
+
+      <div id='modal-background' onClick={onClose} />
+      <div id='modal-content' style={{ backgroundImage: `url('${pictures.collection[1].imageUrl}')` }}>
+        {/* <div className="border-modal">hi</div> */}
+        {children}
+
+        </div>
       {/* <div id='modal-content'>{children}</div> */}
     </div>,
     modalNode
