@@ -11,14 +11,18 @@ const AboutLinks = () => {
 
   return (
     <>
-
-
-
-
       <button
-      style={{color: 'white'}}
-      className="nav-modal-button-about"
-      onClick={() => setShowModal(true)}>About Kelsey Sry</button>
+          style={{color: 'white'}}
+          className="nav-modal-button-about"
+          onClick={() => setShowModal(true)}>
+            <section className="nav-kelsey-modal">
+              <i class="fas fa-id-card fa-2x"></i>
+              <div className="contact-me">
+                <div>Contact</div>
+                <div>Me</div>
+              </div>
+            </section>
+        </button>
       {showModal && (
         <AboutModal onClose={() => setShowModal(false)}>
           <section className="about-modal-container">
@@ -26,6 +30,7 @@ const AboutLinks = () => {
               <div>
                 <img className="profile-thumb-modal" src={infoLinks[0].imageUrl} alt="user_image"/>
               </div>
+              
                 <div className="about-first-text">okSign brought to you by</div>
                 <div className="about-modal-name">
                  {infoLinks[0].name}
