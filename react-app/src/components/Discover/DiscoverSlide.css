@@ -54,6 +54,7 @@
   width: 100%;
   height: min-content;
   padding-left: 200px;
+  padding-right: 200px;
   /* padding: 0px 50px; */
   display: flex;
  }
