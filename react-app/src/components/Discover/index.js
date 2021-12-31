@@ -14,8 +14,8 @@ import pictures from "../../data/pictures";
 import './DiscoverSlide.css'
 import '../MatchProfile/DiscoverPics.css'
 
-const darkImage = pictures.collection[4].imageUrl
-const lightImage = pictures.collection[5].imageUrl
+const darkImage = pictures.collection[6].imageUrl
+const lightImage = pictures.collection[6].imageUrl
 
 const Discover = () => {
   const dispatch = useDispatch()
