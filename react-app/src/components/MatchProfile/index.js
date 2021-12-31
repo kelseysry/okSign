@@ -174,7 +174,9 @@ const MatchProfile = ({userIdPercentObj}) => {
     { isLoaded && matchProfileObj[0]?.user_id && (
       <>
       <section className="MatchProfileContainer">
-        <div className="oneMatchProfileContainerHeader">{getUserName(matchProfileObj[0]?.user_id)}</div>
+        {/* <div className="oneMatchProfileContainerHeader">{getUserName(matchProfileObj[0]?.user_id)}</div> */}
+        <div className="cursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
+
         <div className="oneMatchProfileContainer">
 
         <section className='ImageContainer'>
