@@ -175,11 +175,11 @@ if(currentUserQuestion) {
             <div className="discover-profiles-container" id="discoverProfile">
                 {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
                     <div  className="one-discover-profile" key={idx}>
-                      <NavLink
+                      {/* <NavLink
                         to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
-                        >
+                        > */}
                         <MatchProfile userIdPercentObj={userIdPercentObj}/>
-                      </NavLink>
+                      {/* </NavLink> */}
                     </div>
                   )}
              </div>

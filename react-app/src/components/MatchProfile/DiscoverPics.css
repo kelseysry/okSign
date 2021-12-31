@@ -1,0 +1,15 @@
+.iconImg {
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+}
+
+.defaultImage {
+  border-radius: 3px;
+  margin-left: 5px;
+  width: 500px
+}
+
+.ImageContainer {
+  display: flex;
+}

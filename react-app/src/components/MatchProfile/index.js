@@ -6,10 +6,16 @@ import './MatchProfile.css'
 import { createConversation } from "../../store/conversation";
 import { useHistory } from 'react-router';
 import { getConversations, clearConversation } from "../../store/conversation";
-import { clearProfiles, getProfiles } from "../../store/profile";
+import { getProfiles } from "../../store/profile";
+import { NavLink } from "react-router-dom";
+
+import './DiscoverPics.css'
 const MatchProfile = ({userIdPercentObj}) => {
   const dispatch = useDispatch()
   const history = useHistory();
+
+  const [defaultImg, setDefaultImage] = useState(0);
+
 
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
@@ -157,6 +163,10 @@ const MatchProfile = ({userIdPercentObj}) => {
   // console.log("matchProfileObj[0]", matchProfileObj[0])
 
 
+
+
+
+
   // this is displaying on the front discover page
   return (
     <>
@@ -167,13 +177,54 @@ const MatchProfile = ({userIdPercentObj}) => {
         <div className="oneMatchProfileContainerHeader">{getUserName(matchProfileObj[0]?.user_id)}</div>
         <div className="oneMatchProfileContainer">
 
-            <div className="match_profile_images_container">
+        <section className='ImageContainer'>
+                    <NavLink
+            to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
+          >
+                <div className='defaultImage'>
+                  {defaultImg === 0 ? <img src={matchProfileObj[0]?.image_url1} alt='default photo' className='defaultImage'></img> :  <img src={defaultImg} alt='default photo' className="defaultImage"></img>}
+                </div>
+            </NavLink>
+                <div className='IconImagesContainer'>
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url1} alt='photo 1' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url1)}></img>
+                    </div>
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url2} alt='photo 2' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url2)}></img>
+                    </div>
+
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url3} alt='photo 3' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url3)}></img>
+                    </div>
+
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url4} alt='photo 4' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url4)}></img>
+                    </div>
+
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url5} alt='photo 5' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url5)}></img>
+                    </div>
+
+
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url6} alt='photo 6' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url6)}></img>
+                    </div>
+                </div>
+
+        </section>
+
+            {/* <div className="match_profile_images_container">
               <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
               <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
               <img className="match_profile_image_discover_noP" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
-            </div>
+            </div> */}
 
-            {/* <div className="spacer-match">&nbsp;&nbsp;</div> */}
 
             <div className="matchPercentContainer">
               <div className="matchContainerHeader">
