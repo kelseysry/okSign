@@ -26,6 +26,8 @@ const Discover = () => {
 
   const [slide, setSlide] = useState(0)
 
+  let [navigateClick, setNavigateClick] = useState(0)
+
 
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
@@ -34,7 +36,7 @@ const Discover = () => {
   const questionObject = useSelector((state)=>state.question)
   // console.log("questionObj", questionObject)
   const questions = Object.values(questionObject)
-  console.log("questions🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", questions)
+  // console.log("questions🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", questions)
 
 
 
@@ -45,14 +47,14 @@ const Discover = () => {
 
 let questionsRender;
 
-console.log("questions--------", questions)
+// console.log("questions--------", questions)
 
 if(questions.length) {
    questionsRender = questions[0]
 } else {
     questionsRender = null;
 }
-console.log("questionsRender😯😯😯", questionsRender)
+// console.log("questionsRender😯😯😯", questionsRender)
 
 
 // for each user's question object, we need to count how many answers
@@ -146,11 +148,18 @@ if(currentUserQuestion) {
   // grab the key instead for profile_id so can get the user.id and match%
 
 
+
+
   const handleLeftClick = (e) => {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
     left.scrollLeft -= 850;
     setSlide(1)
+    if(navigateClick !== 0) {
+      setNavigateClick(navigateClick -= 1)
+    } else {
+      navigateClick = 0
+    }
 
   }
 
@@ -159,8 +168,16 @@ if(currentUserQuestion) {
     const right = document.querySelector('#discoverProfile');
      right.scrollLeft += 850;
      setSlide(1)
+     if(navigateClick < userIdsPercentsObj?.length) {
+      setNavigateClick(navigateClick += 1)
+     } else {
+       return navigateClick
+     }
+
   }
 
+  console.log("navigateClickccc", navigateClick)
+  console.log("userIdsPercentsObj length", userIdsPercentsObj.length)
 
   let content2;
   content2 = (
@@ -186,7 +203,7 @@ if(currentUserQuestion) {
                       {/* <NavLink
                         to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
                         > */}
-                        <MatchProfile setSlide={setSlide} slide={slide} userIdPercentObj={userIdPercentObj}/>
+                        <MatchProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} userIdPercentObj={userIdPercentObj}/>
                       {/* </NavLink> */}
                     </div>
                   )}

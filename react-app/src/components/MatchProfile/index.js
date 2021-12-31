@@ -10,7 +10,7 @@ import { getProfiles } from "../../store/profile";
 import { NavLink } from "react-router-dom";
 
 import './DiscoverPics.css'
-const MatchProfile = ({userIdPercentObj, slide, setSlide}) => {
+const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 
@@ -163,10 +163,6 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide}) => {
   // console.log("matchProfileObj[0]", matchProfileObj[0])
 
 
-
-
-
-
   // this is displaying on the front discover page
   return (
     <>
@@ -174,12 +170,23 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide}) => {
     { isLoaded && matchProfileObj[0]?.user_id && (
       <>
       <section className="MatchProfileContainer">
-        {/* <div className="oneMatchProfileContainerHeader">{getUserName(matchProfileObj[0]?.user_id)}</div> */}
-        <div className="slide"
-        slide={slide}
-        onClick={() => setSlide(1)}
-        onAnimationEnd={() => setSlide(0)}
-        >{getUserName(matchProfileObj[0]?.user_id)} </div>
+
+      {
+        idx === navigateClick?
+
+        (
+        <div
+          className={`slide`+idx}
+          slide={slide}
+          onClick={() => setSlide(idx)}
+          onAnimationEnd={() => setSlide(0)}
+        >
+          {getUserName(matchProfileObj[0]?.user_id)}
+        </div>)
+        : <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
+      }
+
+
 
         <div className="oneMatchProfileContainer">
 
