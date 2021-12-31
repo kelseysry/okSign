@@ -50,6 +50,7 @@
   overflow: hidden;
   white-space: nowrap;
   overflow-x: hidden;
+  padding: 0px 130px;
  }
 
  .DiscoverContentContainer {
@@ -71,8 +72,6 @@
 
  #next-profile {
   cursor: url("https://res.cloudinary.com/mabmab/image/upload/c_scale,h_32,w_32/v1640920753/okSign/yawn_ownsn8.png"), auto;
-
-
   }
 
 
