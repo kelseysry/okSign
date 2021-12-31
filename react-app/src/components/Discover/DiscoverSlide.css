@@ -39,12 +39,14 @@
   overflow-x: hidden;
 /* /  width: 100%; */
   padding: 0px 100px;
-  /* padding-right: 300px; */
-  padding-right: 100px;
+  /* padding-right: 150px; */
+  border-right: 160px solid transparent;
   position: relative;
   flex-shrink: 0;
   height: 100%;
   /* background-color: chartreuse; */
+  z-index: -0;
+  position: relative;
 
  }
 
@@ -91,58 +93,7 @@
   box-sizing: border-box;
 }
 
-.oneMatchProfileContainerHeader {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  /* background: #1a1a1a; */
-  padding: 20px 10px;
-  color: white;
-  font-size: 100px !important;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 70px;
-  top:-10px;
-  left:-70px;
-  position: absolute;
 
-  font-family: 'Roboto Condensed', sans-serif;
-  color: #FFBD4A;
-  text-shadow:
-  0 0 7px #fff,
-  0 0 10px #fff,
-  0 0 21px #fff,
-  0 0 42px #FFBD4A,
-  0 0 82px #FFBD4A,
-  0 0 92px #FFBD4A,
-  0 0 102px #FFBD4A,
-  0 0 151px #FFBD4A;
-}
-
-.header-banner-sign {
-  overflow-wrap: break-word !important;
-  color: #fff;
-  font-size: 20vw !important;
-  line-height: 0.9em;
-  font-weight: 700;
-  text-align: center;
-  height: auto;
-  margin: 0 auto;
-  position: relative;
-  font-family: 'Roboto Condensed', sans-serif;
-  color: #FFBD4A;
-  text-shadow:
-  0 0 7px #fff,
-  0 0 10px #fff,
-  0 0 21px #fff,
-  0 0 42px #FFBD4A,
-  0 0 82px #FFBD4A,
-  0 0 92px #FFBD4A,
-  0 0 102px #FFBD4A,
-  0 0 151px #FFBD4A;
-  position: relative;
-  z-index: 1;
-}
 
 .cursive {
   overflow-wrap: break-word !important;

@@ -23,7 +23,6 @@
 .slide0 {
   color: #fff;
   line-height: 0.9em;
-  /* text-align: center; */
   position: absolute !important;
   z-index: 2;
   left:-50px;
@@ -35,12 +34,12 @@
 }
 
 .userNameCursive {
-  font-size: 8vw !important;
+  /* font-size: 8vw !important; */
+  font-size: 100px;
   font-weight: 700;
   font-family: 'Island Moments', cursive;
-  left:-110px !important;
-  /* text-align: center; */
   padding-bottom: 30px;
+  z-index: 5;
 
 }
 
@@ -50,9 +49,7 @@
   line-height: 0.9em;
   font-weight: 700;
   text-shadow: 1px 1px 15px black;
-  /* text-align: center; */
-  top: 0px !important;
-
+  z-index: 5;
 
 }
 
@@ -66,22 +63,31 @@
 
 
 .slide1 {
-  /* overflow-wrap: break-word !important; */
-  color: #fff;
+  /* color: #fff;
   font-size: 8vw !important;
   line-height: 0.9em;
   font-weight: 700;
   text-align: center;
   height: auto;
   margin: 0 auto;
-  /* position: relative; */
   font-family: 'Dancing Script', cursive;
   position: absolute;
   z-index: 2;
   top:10px;
   left:-70px;
-  /* transform: rotate(-18deg); */
+  text-shadow: 1px 1px 15px black; */
+
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
   text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
 }
 
 
@@ -92,22 +98,16 @@
 
 
 .slide2 {
-  overflow-wrap: break-word !important;
   color: #fff;
-  font-size: 10vw !important;
   line-height: 0.9em;
-  font-weight: 700;
-  text-align: center;
-  height: auto;
-  margin: 0 auto;
-  position: relative;
-  font-family: 'Dancing Script', cursive;
-  position: absolute;
+  position: absolute !important;
   z-index: 2;
-  top:10px;
-  left:-70px;
-  transform: rotate(-18deg);
+  left:-50px;
+  top:90px;
   text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 
@@ -117,7 +117,7 @@
 
 
 
-@keyframes slide {
+/* @keyframes slide {
   to {
     margin-right: 0%;
     width: 35%;
@@ -129,4 +129,10 @@
     width: 100%;
     opacity:0;
   }
+} */
+
+@keyframes slide {
+  0%   {left: 100px;}
+
+  100% {left: -50px;}
 }

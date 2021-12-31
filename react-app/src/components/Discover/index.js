@@ -198,7 +198,11 @@ if(currentUserQuestion) {
               >
               <span className="hide-button">⬅️</span>
           </button>
+
+
+
             <div className="discover-profiles-container" id="discoverProfile">
+          <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
                     <div  className="one-discover-profile" key={idx}>
                       {/* <NavLink
@@ -210,6 +214,7 @@ if(currentUserQuestion) {
                   )}
              </div>
 
+
             <button
             id="next-profile"
             className="right"
@@ -219,6 +224,8 @@ if(currentUserQuestion) {
             >
               <span className="hide-button">➡️</span>
             </button>
+
+
         </>
     )
   }     else {
