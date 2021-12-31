@@ -43,7 +43,20 @@
   height: 900px;
   z-index: -0;
   position: relative;
+ }
 
+ .one-discover-profile-o {
+  height: min-content;
+  display: inline-block;
+  overflow-x: hidden;
+  padding: 0px 100px;
+  border-right: 160px solid transparent;
+  position: relative;
+  flex-shrink: 0;
+  height: 900px;
+  z-index: -0;
+  position: relative;
+  opacity: .5;
  }
 
  .discover-profiles-container{
