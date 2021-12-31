@@ -183,7 +183,8 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) =
         >
           {getUserName(matchProfileObj[0]?.user_id)}
         </div>)
-        : <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
+        : null 
+        // <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
       }
 
 

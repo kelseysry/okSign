@@ -162,6 +162,7 @@ if(currentUserQuestion) {
     }
 
   }
+  // add functionality to only see name when click
 
   const handleRightClick = (e) => {
     e.preventDefault();
