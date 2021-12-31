@@ -135,7 +135,7 @@
     background: #ebedf2;
     border-radius: 50%;
     background-size: contain;
-    border: 1px solid #fff;
+    box-shadow: 0 0 0 5px #fff;
     transform: translateX(-94px);
   }
 
@@ -148,7 +148,7 @@
     background: #ebedf2;
     border-radius: 50%;
     background-size: contain;
-    border: 1px solid #fff;
+    box-shadow: 0 0 0 5px #fff;
     transform: translateX(25px);
     overflow: hidden;
 
