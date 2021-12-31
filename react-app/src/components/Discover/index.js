@@ -201,9 +201,9 @@ if(currentUserQuestion) {
 
 
   return (
-    <div style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
 
-    <div className="ConversationHeaderContainer_D">
+    <>
+    <div className="DiscoverHeaderContainerWQHButtons">
       <div className="DiscoverHeader-Container">
         <div className="DiscoverHeaderText">Discover</div>
         <div>find potential matches via questions or horoscopes</div>
@@ -212,20 +212,18 @@ if(currentUserQuestion) {
         <div>
         <ChooseDiscoverContent />
         </div>
-        {/* <div>find your potential matches via questions or horoscopes</div> */}
       </div>
-
     </div>
 
-    <div className="">
+    <section className="DiscoverContentContainer" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
 
-              {discoverContent === 'QuestionMatch'? content : content2}
+       {discoverContent === 'QuestionMatch'? content : content2}
+
+    </section>
 
 
-    </div>
+    </>
 
-
-    </div>
   )
 
 }

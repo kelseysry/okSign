@@ -1,4 +1,17 @@
 
+.DiscoverHeaderContainerWQHButtons {
+  background-color:#1a1a1a;
+  color: white;
+  padding-bottom: 20px;
+  /* margin-bottom: 30px; */
+  padding-left: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 100%;
+}
+
+
 .left{
   font-size: 50px;
   z-index: 3;
@@ -25,14 +38,16 @@
   overflow-x: hidden;
   width: 100%;
   float: left;
-
   height: min-content;
-
-  /* height: 100%; */
   border: 1px solid black;
   margin: 1px;
   overflow: hidden;
   white-space: nowrap;
   overflow-x: hidden;
-  background-color: chartreuse;
+ }
+
+ .DiscoverContentContainer {
+   display: flex;
+   align-items: center;
+   height: 1045px
  }

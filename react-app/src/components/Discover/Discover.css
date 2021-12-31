@@ -29,16 +29,6 @@ body {
   color: white;
 }
 
-.ConversationHeaderContainer_D {
-  background-color:#1a1a1a;
-  color: white;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
-  padding-left: 50px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-}
 
 .discoverContent-buttons-container {
   display: flex;
