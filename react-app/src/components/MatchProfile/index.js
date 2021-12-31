@@ -249,7 +249,7 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) =
 
 
             <div className="matchPercentContainer">
-              <div className="matchContainerHeader" id="delay">
+              <div className="" id="delay">
                 {/* You and {getUserName(matchProfileObj[0]?.user_id)} */}
               </div>
               <div className="MatchProfileInnerContainer_D">
