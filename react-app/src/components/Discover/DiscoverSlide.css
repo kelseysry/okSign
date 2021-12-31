@@ -1,0 +1,31 @@
+
+.left{
+  font-size: 50px;
+  z-index: 3;
+  position: absolute;
+  left: 0px;
+ }
+
+ .right{
+  font-size: 50px;
+  z-index: 3;
+  position: absolute;
+  right: 0px;
+ }
+
+ .one-discover-profile {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  display: inline-block;
+ }
+
+ .discover-profiles-container{
+   width: min-content;
+  float: left;
+  height: 100%;
+  border: 1px solid black;
+  margin: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+ }

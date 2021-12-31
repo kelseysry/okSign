@@ -6,17 +6,9 @@ body {
   display: flex;
   align-items: center;
   flex-direction: column;
-
 }
 
-.DiscoverContent {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 80px;
-}
+
 
 .QM, .HM {
   color: whitesmoke;
@@ -26,8 +18,8 @@ body {
   margin-top: 10px;
   border-radius: 3px;
 }
+
 .QM {
-  /* padding-right: 20px; */
   margin-right: 20px;
 }
 
@@ -47,7 +39,6 @@ body {
   align-items: flex-end;
   justify-content: space-around;
 }
-/*   blur/position*/
 
 .discoverContent-buttons-container {
   display: flex;
@@ -60,14 +51,10 @@ body {
   justify-content: flex-end;
 }
 
-.heart-choice {
-  /* padding-bottom: 3px; */
 
-}
 
 
 .empty {
-  /* background: white; */
   color: whitesmoke !important;
 }
 

@@ -11,6 +11,7 @@ import DiscoverHoroscope from "../DiscoverHoroscope/DiscoverHoroscopePage";
 import { useDiscoverContent } from "../../context/DiscoverContentContext";
 import { useBackgroundContent } from "../../context/BackgroundContext";
 import pictures from "../../data/pictures";
+import './DiscoverSlide.css'
 
 const darkImage = pictures.collection[4].imageUrl
 const lightImage = pictures.collection[5].imageUrl
@@ -140,29 +141,55 @@ if(currentUserQuestion) {
   // instead of passing just the keys, pass in each object, you'll have to
   // grab the key instead for profile_id so can get the user.id and match%
 
+
+  const handleLeftClick = (e) => {
+    e.preventDefault();
+    const left = document.querySelector('#discoverProfile');
+    left.scrollLeft -= 500;
+  }
+
+  const handleRightClick = (e) => {
+    e.preventDefault();
+    const right = document.querySelector('#discoverProfile');
+     right.scrollLeft += 500;
+  }
+
+
   let content2;
   content2 = (
     <DiscoverHoroscope />
   )
 
-
-  console.log("discoverContent", discoverContent)
-
   let content;
-
   if (currentUserQuestion?.length) {
     content = (
-      <div className="">
-        {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
-          <div key={idx}>
-            <NavLink
-              to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
+        <>
+          <button
+              className="left"
+              onClick={handleLeftClick}
               >
-              <MatchProfile userIdPercentObj={userIdPercentObj}/>
-            </NavLink>
-          </div>
-        )}
-      </div>
+               ⬅️
+          </button>
+
+            <div className="discover-profiles-container" id="discoverProfile">
+                {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
+                    <div  className="one-discover-profile" key={idx}>
+                      <NavLink
+                        to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
+                        >
+                        <MatchProfile userIdPercentObj={userIdPercentObj}/>
+                      </NavLink>
+                    </div>
+                  )}
+             </div>
+
+            <button
+            className="right"
+                onClick={handleRightClick}
+            >
+            ➡️
+            </button>
+        </>
     )
   }     else {
     content = (
@@ -190,9 +217,14 @@ if(currentUserQuestion) {
 
     </div>
 
-    <div className="DiscoverContent">
-      {discoverContent === 'QuestionMatch'? content : content2}
+    <div className="">
+
+              {discoverContent === 'QuestionMatch'? content : content2}
+
+
     </div>
+
+
     </div>
   )
 

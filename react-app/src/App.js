@@ -20,6 +20,7 @@ import LoginFormPage from './components/auth/LoginFormPage';
 import HitErrorPage from './components/PageNotFound/HitErrorPage';
 import Background from './components/Background/Background';
 import AboutLinks from './components/AboutLinks/AboutLink';
+import Test from './components/Test/test';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -50,6 +51,11 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
           <Discover />
         </ProtectedRoute>
+
+        <ProtectedRoute path='/section/:idx' exact={true} >
+          <Discover />
+        </ProtectedRoute>
+
         <ProtectedRoute path='/profiles/:userId' exact={true} >
           <UserProfile count={count} setCount ={setCount}  />
         </ProtectedRoute>
@@ -80,8 +86,9 @@ function App() {
           </MatchesProvider>
         </ProtectedRoute>
 
-        {/* <ProtectedRoute path='/test' exact={true} >
-        </ProtectedRoute> */}
+        <ProtectedRoute path='/test' exact={true} >
+          <Test /> 
+        </ProtectedRoute>
         <Route>
           <HitErrorPage />
         </Route>
