@@ -7,7 +7,10 @@
 .defaultImage {
   border-radius: 3px;
   margin-left: 5px;
-  width: 500px
+  width: 500px;
+  height: 500px;
+  display: inline-block;
+  object-fit: cover;
 }
 
 .ImageContainer {
