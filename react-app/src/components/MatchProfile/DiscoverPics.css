@@ -38,25 +38,24 @@
   text-shadow: 1px 1px 15px black;
 }
 
-/* .slide:focus, .slide:hover {
-  animation: slide 1s 1;
-} */
-
 
 
 .slide[slide='1'] {
   animation: slide 1s 1;
+
 }
+
 
 @keyframes slide {
   to {
     margin-right: 0%;
     width: 50%;
+    opacity:1;
+
   }
   from {
     margin-right: 100%;
     width: 100%;
+    opacity:0;
   }
 }
-
-
