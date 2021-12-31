@@ -212,7 +212,7 @@ const MatchProfile = ({userIdPercentObj}) => {
           </div>
 
       </div>
-      <hr></hr>
+      {/* <hr></hr> */}
       </>
 
       )
