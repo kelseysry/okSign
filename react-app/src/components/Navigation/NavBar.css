@@ -77,10 +77,10 @@
 
 .nav-container {
   background-color: pink;
-  box-shadow:
+  /* box-shadow:
   0 0 7px #fff,
   0 0 10px #fff,
   0 0 21px #fff,
   0 0 42px #FFBD4A,
-  0 0 82px #FFBD4A;
+  0 0 82px #FFBD4A; */
 }

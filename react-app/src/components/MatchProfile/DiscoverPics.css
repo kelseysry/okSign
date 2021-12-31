@@ -1,0 +1,61 @@
+.iconImg {
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+}
+
+.defaultImage {
+  border-radius: 3px;
+  margin-left: 5px;
+  width: 600px;
+  height: 500px;
+  display: inline-block;
+  object-fit: cover;
+}
+
+.ImageContainer {
+  display: flex;
+}
+
+
+
+.slide {
+  overflow-wrap: break-word !important;
+  color: #fff;
+  font-size: 10vw !important;
+  line-height: 0.9em;
+  font-weight: 700;
+  text-align: center;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+  position: absolute;
+  z-index: 2;
+  top:10px;
+  left:-70px;
+  transform: rotate(-18deg);
+  text-shadow: 1px 1px 15px black;
+}
+
+
+
+.slide[slide='1'] {
+  animation: slide 1s 1;
+
+}
+
+
+@keyframes slide {
+  to {
+    margin-right: 0%;
+    width: 50%;
+    opacity:1;
+
+  }
+  from {
+    margin-right: 100%;
+    width: 100%;
+    opacity:0;
+  }
+}

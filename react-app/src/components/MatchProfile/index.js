@@ -6,10 +6,16 @@ import './MatchProfile.css'
 import { createConversation } from "../../store/conversation";
 import { useHistory } from 'react-router';
 import { getConversations, clearConversation } from "../../store/conversation";
-import { clearProfiles, getProfiles } from "../../store/profile";
-const MatchProfile = ({userIdPercentObj}) => {
+import { getProfiles } from "../../store/profile";
+import { NavLink } from "react-router-dom";
+
+import './DiscoverPics.css'
+const MatchProfile = ({userIdPercentObj, slide, setSlide}) => {
   const dispatch = useDispatch()
   const history = useHistory();
+
+  const [defaultImg, setDefaultImage] = useState(0);
+
 
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
@@ -157,62 +163,102 @@ const MatchProfile = ({userIdPercentObj}) => {
   // console.log("matchProfileObj[0]", matchProfileObj[0])
 
 
+
+
+
+
   // this is displaying on the front discover page
   return (
     <>
 
     { isLoaded && matchProfileObj[0]?.user_id && (
       <>
-      <div className="oneMatchProfileContainer">
-          <div className="oneMatchProfileContainerHeader">
-            {getUserName(matchProfileObj[0]?.user_id)}
-            <div className="matchButtonsContainer">
-              <button
-              className="matchButton"
-              onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
-              >Message  <i className="far fa-comment-dots"></i></button>
+      <section className="MatchProfileContainer">
+        {/* <div className="oneMatchProfileContainerHeader">{getUserName(matchProfileObj[0]?.user_id)}</div> */}
+        <div className="slide"
+        slide={slide}
+        onClick={() => setSlide(1)}
+        onAnimationEnd={() => setSlide(0)}
+        >{getUserName(matchProfileObj[0]?.user_id)} </div>
 
-              {/* <button
-              className="matchButton"
-              >Like  <i className="fas fa-heart"></i></button> */}
-            </div>
+        <div className="oneMatchProfileContainer">
 
-          </div>
-
-          <div className="match_profile_images_container">
-            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
-            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
-            <img className="match_profile_image_discover_noP" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
-          </div>
-
-          {/* <div className="spacer-match">&nbsp;&nbsp;</div> */}
-
-          <div className="matchPercentContainer">
-            <div className="matchContainerHeader">
-              You and {getUserName(matchProfileObj[0]?.user_id)}
-            </div>
-            <div className="MatchProfileInnerContainer">
-              <div className="circlesContainer">
-                <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
-                <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
-                <div className="matchPercentCircle">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
-              </div>
-              <div className="agreeTable">
-                <div className="agree">
-                  <div>Agree</div>
-                  <div>🥰 {userIdPercentObj[1]}</div>
+        <section className='ImageContainer'>
+                    <NavLink
+            to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
+          >
+                <div className='defaultImage'>
+                  {defaultImg === 0 ? <img src={matchProfileObj[0]?.image_url1} alt='default photo' className='defaultImage'></img> :  <img src={defaultImg} alt='default photo' className="defaultImage"></img>}
                 </div>
-                <div className="disagree">
-                  <div>Disagree</div>
-                  <div>🙃 {disagree}</div>
+            </NavLink>
+                <div className='IconImagesContainer'>
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url1} alt='photo 1' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url1)}></img>
+                    </div>
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url2} alt='photo 2' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url2)}></img>
+                    </div>
+
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url3} alt='photo 3' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url3)}></img>
+                    </div>
+
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url4} alt='photo 4' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url4)}></img>
+                    </div>
+
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url5} alt='photo 5' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url5)}></img>
+                    </div>
+
+
+                    <div>
+                      <img src={matchProfileObj[0]?.image_url6} alt='photo 6' className="iconImg"
+                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url6)}></img>
+                    </div>
+                </div>
+
+        </section>
+
+            {/* <div className="match_profile_images_container">
+              <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
+              <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
+              <img className="match_profile_image_discover_noP" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
+            </div> */}
+
+
+            <div className="matchPercentContainer">
+              <div className="matchContainerHeader" id="delay">
+                You and {getUserName(matchProfileObj[0]?.user_id)}
+              </div>
+              <div className="MatchProfileInnerContainer">
+                <div className="circlesContainer">
+                  <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
+                  <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
+                  <div className="matchPercentCircle">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
+                </div>
+                <div className="agreeTable">
+                  <div className="agree">
+                    <div>Agree</div>
+                    <div>🥰 {userIdPercentObj[1]}</div>
+                  </div>
+                  <div className="disagree">
+                    <div>Disagree</div>
+                    <div>🙃 {disagree}</div>
+                  </div>
                 </div>
               </div>
+
             </div>
 
-          </div>
-
-      </div>
-      <hr></hr>
+        </div>
+      </section>
+      {/* <hr></hr> */}
       </>
 
       )
