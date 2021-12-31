@@ -30,9 +30,9 @@
 
 .match_details_discover_under_name {
   color: #fff;
-  font-size: 1vw !important;
+  font-size: 1.2vw !important;
   line-height: 0.9em;
-  text-shadow: 5px 5px 50px black;
+  text-shadow: 2px 2px 15px #000000;
   z-index: 5;
   padding-left: 30px;
   font-weight:900;
