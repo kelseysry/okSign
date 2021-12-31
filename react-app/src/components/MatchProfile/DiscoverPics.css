@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Island+Moments&family=Qwitcher+Grypen:wght@700&family=Roboto+Condensed:wght@700&display=swap');
+
 .iconImg {
   height: 50px;
   width: 50px;
@@ -19,23 +21,39 @@
 
 
 .slide0 {
-  overflow-wrap: break-word !important;
   color: #fff;
-  font-size: 10vw !important;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.userNameCursive {
+  /* font-size: 8vw !important; */
+  font-size: 100px;
+  font-weight: 700;
+  font-family: 'Island Moments', cursive;
+  padding-bottom: 30px;
+  z-index: 5;
+
+}
+
+.match_details_discover_under_name {
+  color: #fff;
+  font-size: 3vw !important;
   line-height: 0.9em;
   font-weight: 700;
-  text-align: center;
-  height: auto;
-  margin: 0 auto;
-  position: relative;
-  font-family: 'Dancing Script', cursive;
-  position: absolute;
-  z-index: 2;
-  top:10px;
-  left:-70px;
-  transform: rotate(-18deg);
   text-shadow: 1px 1px 15px black;
+  z-index: 5;
+
 }
+
+
 
 
 .slide0[slide='1'] {
@@ -45,22 +63,31 @@
 
 
 .slide1 {
-  overflow-wrap: break-word !important;
-  color: #fff;
-  font-size: 10vw !important;
+  /* color: #fff;
+  font-size: 8vw !important;
   line-height: 0.9em;
   font-weight: 700;
   text-align: center;
   height: auto;
   margin: 0 auto;
-  position: relative;
   font-family: 'Dancing Script', cursive;
   position: absolute;
   z-index: 2;
   top:10px;
   left:-70px;
-  transform: rotate(-18deg);
+  text-shadow: 1px 1px 15px black; */
+
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
   text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
 }
 
 
@@ -71,22 +98,16 @@
 
 
 .slide2 {
-  overflow-wrap: break-word !important;
   color: #fff;
-  font-size: 10vw !important;
   line-height: 0.9em;
-  font-weight: 700;
-  text-align: center;
-  height: auto;
-  margin: 0 auto;
-  position: relative;
-  font-family: 'Dancing Script', cursive;
-  position: absolute;
+  position: absolute !important;
   z-index: 2;
-  top:10px;
-  left:-70px;
-  transform: rotate(-18deg);
+  left:-50px;
+  top:90px;
   text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 
@@ -96,12 +117,10 @@
 
 
 
-
-
-@keyframes slide {
+/* @keyframes slide {
   to {
     margin-right: 0%;
-    width: 50%;
+    width: 35%;
     opacity:1;
 
   }
@@ -110,4 +129,10 @@
     width: 100%;
     opacity:0;
   }
+} */
+
+@keyframes slide {
+  0%   {left: 100px;}
+
+  100% {left: -50px;}
 }

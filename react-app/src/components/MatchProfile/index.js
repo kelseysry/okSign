@@ -175,17 +175,24 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) =
         idx === navigateClick?
 
         (
+        <>
         <div
           className={`slide`+idx}
           slide={slide}
           onClick={() => setSlide(idx)}
           onAnimationEnd={() => setSlide(0)}
         >
-          {getUserName(matchProfileObj[0]?.user_id)}
-        </div>)
-        : <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
-      }
+          <div className="userNameCursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
+          <div className="match_details_discover_under_name">{matchProfileObj[0]?.age}</div>
+        </div>
 
+        </>
+
+        )
+        : null
+        // <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
+
+      }
 
 
         <div className="oneMatchProfileContainer">

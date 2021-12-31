@@ -162,6 +162,7 @@ if(currentUserQuestion) {
     }
 
   }
+  // add functionality to only see name when click
 
   const handleRightClick = (e) => {
     e.preventDefault();
@@ -176,8 +177,8 @@ if(currentUserQuestion) {
 
   }
 
-  console.log("navigateClickccc", navigateClick)
-  console.log("userIdsPercentsObj length", userIdsPercentsObj.length)
+  // console.log("navigateClickccc", navigateClick)
+  // console.log("userIdsPercentsObj length", userIdsPercentsObj.length)
 
   let content2;
   content2 = (
@@ -197,7 +198,11 @@ if(currentUserQuestion) {
               >
               <span className="hide-button">⬅️</span>
           </button>
+
+
+
             <div className="discover-profiles-container" id="discoverProfile">
+          <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
                     <div  className="one-discover-profile" key={idx}>
                       {/* <NavLink
@@ -209,6 +214,7 @@ if(currentUserQuestion) {
                   )}
              </div>
 
+
             <button
             id="next-profile"
             className="right"
@@ -218,6 +224,8 @@ if(currentUserQuestion) {
             >
               <span className="hide-button">➡️</span>
             </button>
+
+
         </>
     )
   }     else {
