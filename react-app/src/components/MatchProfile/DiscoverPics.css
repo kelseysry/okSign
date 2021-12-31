@@ -96,6 +96,160 @@
 }
 
 
+.slide3 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide3[slide='1'] {
+  animation: slide 1s 1;
+}
+
+
+.slide4 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide4[slide='1'] {
+  animation: slide 1s 1;
+}
+
+
+.slide5 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide5[slide='1'] {
+  animation: slide 1s 1;
+}
+
+
+.slide6 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide6[slide='1'] {
+  animation: slide 1s 1;
+}
+
+.slide7 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide7[slide='1'] {
+  animation: slide 1s 1;
+}
+
+
+.slide8 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide8[slide='1'] {
+  animation: slide 1s 1;
+}
+
+
+
+.slide9 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide9[slide='1'] {
+  animation: slide 1s 1;
+}
+
+
+
+.slide10 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide10[slide='1'] {
+  animation: slide 1s 1;
+}
+
+
+
 @keyframes slide {
   0%   {left: 100px;}
 
