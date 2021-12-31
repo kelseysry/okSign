@@ -177,8 +177,8 @@ if(currentUserQuestion) {
 
   }
 
-  console.log("navigateClickccc", navigateClick)
-  console.log("userIdsPercentsObj length", userIdsPercentsObj.length)
+  // console.log("navigateClickccc", navigateClick)
+  // console.log("userIdsPercentsObj length", userIdsPercentsObj.length)
 
   let content2;
   content2 = (

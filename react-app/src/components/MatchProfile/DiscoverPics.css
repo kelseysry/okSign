@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Island+Moments&family=Qwitcher+Grypen:wght@700&family=Roboto+Condensed:wght@700&display=swap');
+
 .iconImg {
   height: 50px;
   width: 50px;
@@ -18,24 +20,48 @@
 }
 
 
-.slide0 {
-  overflow-wrap: break-word !important;
+.match_details_discover_under_name {
+  /* overflow-wrap: break-word !important; */
   color: #fff;
-  font-size: 10vw !important;
+  font-size: 5vw !important;
   line-height: 0.9em;
   font-weight: 700;
-  text-align: center;
-  height: auto;
-  margin: 0 auto;
-  position: relative;
-  font-family: 'Dancing Script', cursive;
-  position: absolute;
-  z-index: 2;
-  top:10px;
-  left:-70px;
-  transform: rotate(-18deg);
+  /* top:150px; */
+
+  /* transform: rotate(-18deg); */
   text-shadow: 1px 1px 15px black;
 }
+
+
+.slide0 {
+  /* overflow-wrap: break-word !important; */
+  color: #fff;
+  /* font-size: 8vw !important; */
+  line-height: 0.9em;
+  /* font-weight: 700; */
+  text-align: center;
+  /* height: auto;
+  margin: 0 auto; */
+  /* position: relative; */
+  /* font-family: 'Dancing Script', cursive; */
+  position: absolute !important;
+  z-index: 2;
+  left:-100px;
+  top:90px;
+
+  /* transform: rotate(-18deg); */
+  /* text-shadow: 1px 1px 15px black; */
+}
+
+.userNameCursive {
+  font-size: 8vw !important;
+  font-weight: 700;
+  /* font-family: 'Dancing Script', cursive; */
+  font-family: 'Island Moments', cursive;
+  left:-100px !important;
+
+}
+
 
 
 .slide0[slide='1'] {
@@ -45,21 +71,21 @@
 
 
 .slide1 {
-  overflow-wrap: break-word !important;
+  /* overflow-wrap: break-word !important; */
   color: #fff;
-  font-size: 10vw !important;
+  font-size: 8vw !important;
   line-height: 0.9em;
   font-weight: 700;
   text-align: center;
   height: auto;
   margin: 0 auto;
-  position: relative;
+  /* position: relative; */
   font-family: 'Dancing Script', cursive;
   position: absolute;
   z-index: 2;
   top:10px;
   left:-70px;
-  transform: rotate(-18deg);
+  /* transform: rotate(-18deg); */
   text-shadow: 1px 1px 15px black;
 }
 
@@ -96,12 +122,10 @@
 
 
 
-
-
 @keyframes slide {
   to {
     margin-right: 0%;
-    width: 50%;
+    width: 20%;
     opacity:1;
 
   }
