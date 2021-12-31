@@ -163,54 +163,44 @@ const MatchProfile = ({userIdPercentObj}) => {
 
     { isLoaded && matchProfileObj[0]?.user_id && (
       <>
-      <div className="oneMatchProfileContainerHeader">{getUserName(matchProfileObj[0]?.user_id)}</div>
-      <div className="oneMatchProfileContainer">
-          <div className="oneMatchProfileContainerHea">
-            {/* {getUserName(matchProfileObj[0]?.user_id)} */}
+      <section className="MatchProfileContainer">
+        <div className="oneMatchProfileContainerHeader">{getUserName(matchProfileObj[0]?.user_id)}</div>
+        <div className="oneMatchProfileContainer">
 
-
-            {/* <div className="matchButtonsContainer">
-              <button
-              className="matchButton"
-              onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
-              >Message  <i className="far fa-comment-dots"></i></button>
-            </div> */}
-
-          </div>
-
-          <div className="match_profile_images_container">
-            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
-            <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
-            <img className="match_profile_image_discover_noP" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
-          </div>
-
-          {/* <div className="spacer-match">&nbsp;&nbsp;</div> */}
-
-          <div className="matchPercentContainer">
-            <div className="matchContainerHeader">
-              You and {getUserName(matchProfileObj[0]?.user_id)}
-            </div>
-            <div className="MatchProfileInnerContainer">
-              <div className="circlesContainer">
-                <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
-                <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
-                <div className="matchPercentCircle">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
-              </div>
-              <div className="agreeTable">
-                <div className="agree">
-                  <div>Agree</div>
-                  <div>🥰 {userIdPercentObj[1]}</div>
-                </div>
-                <div className="disagree">
-                  <div>Disagree</div>
-                  <div>🙃 {disagree}</div>
-                </div>
-              </div>
+            <div className="match_profile_images_container">
+              <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
+              <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
+              <img className="match_profile_image_discover_noP" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
             </div>
 
-          </div>
+            {/* <div className="spacer-match">&nbsp;&nbsp;</div> */}
 
-      </div>
+            <div className="matchPercentContainer">
+              <div className="matchContainerHeader">
+                You and {getUserName(matchProfileObj[0]?.user_id)}
+              </div>
+              <div className="MatchProfileInnerContainer">
+                <div className="circlesContainer">
+                  <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
+                  <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
+                  <div className="matchPercentCircle">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
+                </div>
+                <div className="agreeTable">
+                  <div className="agree">
+                    <div>Agree</div>
+                    <div>🥰 {userIdPercentObj[1]}</div>
+                  </div>
+                  <div className="disagree">
+                    <div>Disagree</div>
+                    <div>🙃 {disagree}</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+        </div>
+      </section>
       {/* <hr></hr> */}
       </>
 

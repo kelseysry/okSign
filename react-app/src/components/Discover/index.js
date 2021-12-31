@@ -145,13 +145,13 @@ if(currentUserQuestion) {
   const handleLeftClick = (e) => {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
-    left.scrollLeft -= 500;
+    left.scrollLeft -= 850;
   }
 
   const handleRightClick = (e) => {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
-     right.scrollLeft += 500;
+     right.scrollLeft += 850;
   }
 
 

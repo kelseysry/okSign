@@ -37,31 +37,25 @@
   height: min-content;
   display: inline-block;
   overflow-x: hidden;
-
-  width: 62.5%;
-  padding: 100px 6.25%;
+/* /  width: 100%; */
+  padding: 0px 100px;
+  /* padding-right: 300px; */
+  padding-right: 100px;
   position: relative;
   flex-shrink: 0;
   height: 100%;
-  transition-property: transform,-webkit-transform;
-  font-size: 14px;
-  font-family: Montserrat,Helvetica,sans-serif;
-  font-weight: 200;
-  line-height: 1.15;
-
+  background-color: chartreuse;
 
  }
 
  .discover-profiles-container{
+  box-sizing: border-box;
   overflow-x: hidden;
   width: 100%;
-  float: left;
   height: min-content;
-  margin: 1px;
-  overflow: hidden;
-  white-space: nowrap;
-  overflow-x: hidden;
-  padding: 0px 130px;
+  padding-left: 200px;
+  /* padding: 0px 50px; */
+  display: flex;
  }
 
  .DiscoverContentContainer {
@@ -89,3 +83,27 @@
   #go-back {
     cursor: url("https://res.cloudinary.com/mabmab/image/upload/c_scale,h_32,w_32/v1640921103/okSign/glasses_silugr.png"), auto;
   }
+
+
+.MatchProfileContainer {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.oneMatchProfileContainerHeader {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  /* background: #1a1a1a; */
+  padding: 20px 10px;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 70px;
+  top:-10px;
+  left:-70px;
+  position: absolute;
+
+
+}
