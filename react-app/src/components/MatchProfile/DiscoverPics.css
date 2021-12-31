@@ -20,6 +20,26 @@
 }
 
 
+.userNameCursive {
+  font-size: 150px;
+  font-weight: 700;
+  font-family: 'Island Moments', cursive;
+  padding-bottom: 55px;
+  z-index: 5;
+}
+
+.match_details_discover_under_name {
+  color: #fff;
+  font-size: 1vw !important;
+  line-height: 0.9em;
+  text-shadow: 5px 5px 50px black;
+  z-index: 5;
+  padding-left: 30px;
+  font-weight:900;
+}
+
+
+
 .slide0 {
   color: #fff;
   line-height: 0.9em;
@@ -30,29 +50,8 @@
   text-shadow: 1px 1px 15px black;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
-
-.userNameCursive {
-  /* font-size: 8vw !important; */
-  font-size: 100px;
-  font-weight: 700;
-  font-family: 'Island Moments', cursive;
-  padding-bottom: 30px;
-  z-index: 5;
-
-}
-
-.match_details_discover_under_name {
-  color: #fff;
-  font-size: 3vw !important;
-  line-height: 0.9em;
-  font-weight: 700;
-  text-shadow: 1px 1px 15px black;
-  z-index: 5;
-
-}
-
 
 
 
@@ -61,22 +60,7 @@
 }
 
 
-
 .slide1 {
-  /* color: #fff;
-  font-size: 8vw !important;
-  line-height: 0.9em;
-  font-weight: 700;
-  text-align: center;
-  height: auto;
-  margin: 0 auto;
-  font-family: 'Dancing Script', cursive;
-  position: absolute;
-  z-index: 2;
-  top:10px;
-  left:-70px;
-  text-shadow: 1px 1px 15px black; */
-
   color: #fff;
   line-height: 0.9em;
   position: absolute !important;
@@ -86,16 +70,12 @@
   text-shadow: 1px 1px 15px black;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-
+  align-items: flex-start;
 }
-
 
 .slide1[slide='1'] {
   animation: slide 1s 1;
 }
-
-
 
 .slide2 {
   color: #fff;
@@ -107,7 +87,7 @@
   text-shadow: 1px 1px 15px black;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 
@@ -115,21 +95,6 @@
   animation: slide 1s 1;
 }
 
-
-
-/* @keyframes slide {
-  to {
-    margin-right: 0%;
-    width: 35%;
-    opacity:1;
-
-  }
-  from {
-    margin-right: 100%;
-    width: 100%;
-    opacity:0;
-  }
-} */
 
 @keyframes slide {
   0%   {left: 100px;}
