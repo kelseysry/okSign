@@ -183,7 +183,9 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) =
           onAnimationEnd={() => setSlide(0)}
         >
           <div className="userNameCursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
-          <div className="match_details_discover_under_name">{matchProfileObj[0]?.age}</div>
+          <div className="match_details_discover_under_name"> {matchProfileObj[0]?.age} | {matchProfileObj[0]?.about_me}</div>
+
+
         </div>
 
         </>
