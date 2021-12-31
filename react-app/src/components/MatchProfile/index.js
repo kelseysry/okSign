@@ -250,24 +250,43 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) =
 
             <div className="matchPercentContainer">
               <div className="matchContainerHeader" id="delay">
-                You and {getUserName(matchProfileObj[0]?.user_id)}
+                {/* You and {getUserName(matchProfileObj[0]?.user_id)} */}
               </div>
-              <div className="MatchProfileInnerContainer">
-                <div className="circlesContainer">
-                  <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
-                  <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
-                  <div className="matchPercentCircle">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
-                </div>
-                <div className="agreeTable">
-                  <div className="agree">
-                    <div>Agree</div>
-                    <div>🥰 {userIdPercentObj[1]}</div>
-                  </div>
-                  <div className="disagree">
-                    <div>Disagree</div>
-                    <div>🙃 {disagree}</div>
-                  </div>
-                </div>
+              <div className="MatchProfileInnerContainer_D">
+
+              {
+        idx === navigateClick?
+              <div
+          className={`slide`+idx}
+          slide={slide}
+          onClick={() => setSlide(idx)}
+          onAnimationEnd={() => setSlide(0)}
+        >
+
+
+                    <div className="circlesContainer_D">
+                      <div className="userPhotoMatch-first_D" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
+                      <div className="userPhotoMatch-last_D" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
+                      <div className="matchPercentCircle_D">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
+                    </div>
+
+        </div>
+      : null }
+
+
+
+
+
+                    {/* <div className="agreeTable">
+                      <div className="agree">
+                        <div>Agree</div>
+                        <div>🥰 {userIdPercentObj[1]}</div>
+                      </div>
+                      <div className="disagree">
+                        <div>Disagree</div>
+                        <div>🙃 {disagree}</div>
+                      </div>
+                    </div> */}
               </div>
 
             </div>
