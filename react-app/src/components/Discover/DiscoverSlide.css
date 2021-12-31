@@ -14,16 +14,22 @@
 
 .left{
   font-size: 50px;
-  z-index: 3;
   position: absolute;
   left: 0px;
+  height: 100%;
+  top:0;
+  z-index: 5;
+  width: 16%;
  }
 
  .right{
   font-size: 50px;
-  z-index: 3;
   position: absolute;
-  right: 0px;
+  height: 100%;
+  top:0;
+  z-index: 5;
+  width: 16%;
+  right: 0;
  }
 
  .one-discover-profile {
@@ -51,3 +57,25 @@
    align-items: center;
    height: 1045px
  }
+
+ .hide-button {
+   position: absolute;
+   clip: rect(0 0 0 0);
+   width: 1px;
+   height: 1px;
+   margin: -1px;
+   padding: 0;
+   border: 0;
+   background-color: chartreuse;
+ }
+
+ #next-profile {
+  cursor: url("https://res.cloudinary.com/mabmab/image/upload/c_scale,h_32,w_32/v1640920753/okSign/yawn_ownsn8.png"), auto;
+
+
+  }
+
+
+  #go-back {
+    cursor: url("https://res.cloudinary.com/mabmab/image/upload/c_scale,h_32,w_32/v1640921103/okSign/glasses_silugr.png"), auto;
+  }

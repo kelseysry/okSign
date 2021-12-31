@@ -165,10 +165,11 @@ if(currentUserQuestion) {
     content = (
         <>
           <button
+              id="go-back"
               className="left"
               onClick={handleLeftClick}
               >
-               ⬅️
+              <span className="hide-button">⬅️</span>
           </button>
 
             <div className="discover-profiles-container" id="discoverProfile">
@@ -184,10 +185,11 @@ if(currentUserQuestion) {
              </div>
 
             <button
+            id="next-profile"
             className="right"
                 onClick={handleRightClick}
             >
-            ➡️
+              <span className="hide-button">➡️</span>
             </button>
         </>
     )
