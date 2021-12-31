@@ -4,13 +4,14 @@
   height: 50px;
   width: 50px;
   border-radius: 3px;
+  object-fit: cover;
 }
 
 .defaultImage {
   border-radius: 3px;
   margin-left: 5px;
-  width: 600px;
-  height: 500px;
+  width: 700px;
+  height: 700px;
   display: inline-block;
   object-fit: cover;
 }

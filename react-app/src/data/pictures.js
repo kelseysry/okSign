@@ -26,6 +26,10 @@ const pictures = {
       "imageNumber":"5",
       "imageUrl": "https://res.cloudinary.com/mabmab/image/upload/v1640820021/okSign/constellation_3_vjvvwh.png"
     },
+    {
+      "imageNumber":"6",
+      "imageUrl": "https://res.cloudinary.com/mabmab/image/upload/v1640990350/okSign/Screen_Shot_2021-12-31_at_2.39.04_PM_liaypn.png"
+    },
   ]
 
 }

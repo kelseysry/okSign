@@ -33,18 +33,14 @@
  }
 
  .one-discover-profile {
-  /* width: 900px; */
   height: min-content;
   display: inline-block;
   overflow-x: hidden;
-/* /  width: 100%; */
   padding: 0px 100px;
-  /* padding-right: 150px; */
   border-right: 160px solid transparent;
   position: relative;
   flex-shrink: 0;
-  height: 100%;
-  /* background-color: chartreuse; */
+  height: 900px;
   z-index: -0;
   position: relative;
 
@@ -115,5 +111,72 @@
 
 
   text-shadow: 1px 1px 15px black;
+}
 
+
+.circlesContainer_D {
+  position: absolute;
+  left:80px;
+  top:-180px
+  }
+
+
+  .MatchProfileInnerContainer_D {
+    position: relative;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
+  }
+
+  .userPhotoMatch-first_D {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: #ebedf2;
+    border-radius: 50%;
+    background-size: contain;
+    box-shadow: 0 0 0 5px #fff;
+    transform: translateX(-94px);
+  }
+
+  .userPhotoMatch-last_D {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    background: #ebedf2;
+    border-radius: 50%;
+    background-size: contain;
+    box-shadow: 0 0 0 5px #fff;
+    transform: translateX(25px);
+    overflow: hidden;
+
+  }
+
+
+
+.matchPercentCircle_D {
+  position: absolute;
+  left: 50%;
+  transform: translate(-19%, 105px);
+  width: 77px;
+  height: 77px;
+  margin-bottom: -27px;
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.35rem;
+  line-height: 20px;
+  font-weight: bold;
+
+  background: #1a1a1a;
+  color: #fff;
+  box-shadow: 0 0 0 3px #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
