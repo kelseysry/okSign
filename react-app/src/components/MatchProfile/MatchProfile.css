@@ -12,7 +12,7 @@
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
-  /* padding-left: 50px; */
+  font-size: 70px;
 }
 
 
@@ -45,11 +45,7 @@
   border-left: .5px solid rgb(227, 223, 223);
   border-right: .5px solid rgb(227, 223, 223);
   background-color: #fff;
-  /* box-shadow:
-  0 0 10px #fff,
-  0 0 21px #fff,
-  0 0 42px #FFBD4A,
-  0 0 82px #FFBD4A; */
+
 }
 
 

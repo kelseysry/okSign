@@ -163,19 +163,18 @@ const MatchProfile = ({userIdPercentObj}) => {
 
     { isLoaded && matchProfileObj[0]?.user_id && (
       <>
+      <div className="oneMatchProfileContainerHeader">{getUserName(matchProfileObj[0]?.user_id)}</div>
       <div className="oneMatchProfileContainer">
-          <div className="oneMatchProfileContainerHeader">
-            {getUserName(matchProfileObj[0]?.user_id)}
-            <div className="matchButtonsContainer">
+          <div className="oneMatchProfileContainerHea">
+            {/* {getUserName(matchProfileObj[0]?.user_id)} */}
+
+
+            {/* <div className="matchButtonsContainer">
               <button
               className="matchButton"
               onClick={() => {handleCreateConversation(matchProfileObj[0]?.user_id)}}
               >Message  <i className="far fa-comment-dots"></i></button>
-
-              {/* <button
-              className="matchButton"
-              >Like  <i className="fas fa-heart"></i></button> */}
-            </div>
+            </div> */}
 
           </div>
 

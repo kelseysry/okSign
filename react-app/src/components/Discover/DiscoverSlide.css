@@ -33,11 +33,23 @@
  }
 
  .one-discover-profile {
-  width: 900px;
+  /* width: 900px; */
   height: min-content;
-  border: 1px solid black;
   display: inline-block;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-x: hidden;
+
+  width: 62.5%;
+  padding: 100px 6.25%;
+  position: relative;
+  flex-shrink: 0;
+  height: 100%;
+  transition-property: transform,-webkit-transform;
+  font-size: 14px;
+  font-family: Montserrat,Helvetica,sans-serif;
+  font-weight: 200;
+  line-height: 1.15;
+
+
  }
 
  .discover-profiles-container{
@@ -45,7 +57,6 @@
   width: 100%;
   float: left;
   height: min-content;
-  border: 1px solid black;
   margin: 1px;
   overflow: hidden;
   white-space: nowrap;
