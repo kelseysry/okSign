@@ -12,6 +12,7 @@ import { useDiscoverContent } from "../../context/DiscoverContentContext";
 import { useBackgroundContent } from "../../context/BackgroundContext";
 import pictures from "../../data/pictures";
 import './DiscoverSlide.css'
+import '../MatchProfile/DiscoverPics.css'
 
 const darkImage = pictures.collection[4].imageUrl
 const lightImage = pictures.collection[5].imageUrl
@@ -22,6 +23,9 @@ const Discover = () => {
   const {discoverContent} = useDiscoverContent()
 
   const {backgroundContent} = useBackgroundContent()
+
+  const [slide, setSlide] = useState(0)
+
 
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
@@ -146,12 +150,15 @@ if(currentUserQuestion) {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
     left.scrollLeft -= 850;
+    setSlide(1)
+
   }
 
   const handleRightClick = (e) => {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
      right.scrollLeft += 850;
+     setSlide(1)
   }
 
 
@@ -165,20 +172,21 @@ if(currentUserQuestion) {
     content = (
         <>
           <button
-              id="go-back"
+              id="go-back"f
               className="left"
               onClick={handleLeftClick}
+              onAnimationEnd={() => setSlide(0)}
+              slide={slide}
               >
               <span className="hide-button">⬅️</span>
           </button>
-
             <div className="discover-profiles-container" id="discoverProfile">
                 {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
                     <div  className="one-discover-profile" key={idx}>
                       {/* <NavLink
                         to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
                         > */}
-                        <MatchProfile userIdPercentObj={userIdPercentObj}/>
+                        <MatchProfile setSlide={setSlide} slide={slide} userIdPercentObj={userIdPercentObj}/>
                       {/* </NavLink> */}
                     </div>
                   )}
@@ -188,6 +196,8 @@ if(currentUserQuestion) {
             id="next-profile"
             className="right"
                 onClick={handleRightClick}
+                onAnimationEnd={() => setSlide(0)}
+                slide={slide}
             >
               <span className="hide-button">➡️</span>
             </button>
@@ -222,7 +232,6 @@ if(currentUserQuestion) {
        {discoverContent === 'QuestionMatch'? content : content2}
 
     </section>
-
 
     </>
 

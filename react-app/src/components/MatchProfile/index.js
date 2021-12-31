@@ -10,7 +10,7 @@ import { getProfiles } from "../../store/profile";
 import { NavLink } from "react-router-dom";
 
 import './DiscoverPics.css'
-const MatchProfile = ({userIdPercentObj}) => {
+const MatchProfile = ({userIdPercentObj, slide, setSlide}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 
@@ -175,7 +175,11 @@ const MatchProfile = ({userIdPercentObj}) => {
       <>
       <section className="MatchProfileContainer">
         {/* <div className="oneMatchProfileContainerHeader">{getUserName(matchProfileObj[0]?.user_id)}</div> */}
-        <div className="cursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
+        <div className="slide"
+        slide={slide}
+        onClick={() => setSlide(1)}
+        onAnimationEnd={() => setSlide(0)}
+        >{getUserName(matchProfileObj[0]?.user_id)} </div>
 
         <div className="oneMatchProfileContainer">
 
@@ -229,7 +233,7 @@ const MatchProfile = ({userIdPercentObj}) => {
 
 
             <div className="matchPercentContainer">
-              <div className="matchContainerHeader">
+              <div className="matchContainerHeader" id="delay">
                 You and {getUserName(matchProfileObj[0]?.user_id)}
               </div>
               <div className="MatchProfileInnerContainer">
