@@ -1,7 +1,6 @@
-*{
-  /* border: 0px; */
-  padding: 0px;
-  margin: 0px;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .fa-bars, .fa-times-circle {
@@ -16,11 +15,11 @@ text-align: right;
 
 
 .sidebar {
+  height: 1250px;
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
-  bottom: 0;
   width: 300px;
   right: -300px;
   transition: all 0.2s linear;

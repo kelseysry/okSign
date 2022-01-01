@@ -1,4 +1,9 @@
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .DiscoverHeaderContainerWQHButtons {
   background-color:#1a1a1a;
   color: white;
@@ -16,7 +21,6 @@
   font-size: 50px;
   position: absolute;
   left: 0px;
-  bottom: 0px;
   height: 80%;
   z-index: 5;
   width: 16%;
@@ -25,7 +29,6 @@
  .right{
   font-size: 50px;
   position: absolute;
-  bottom: 0px;
   height: 80%;
   z-index: 5;
   width: 16%;
@@ -73,7 +76,7 @@
  .DiscoverContentContainer {
    display: flex;
    align-items: center;
-   height: 1045px
+   height: 1150px
  }
 
  .hide-button {
