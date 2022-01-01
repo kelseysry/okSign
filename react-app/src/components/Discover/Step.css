@@ -1,9 +1,10 @@
 .step-container {
   position: relative;
-  background: violet;
+  /* background: violet; */
   width: 1000px;
   height: 900px;
   padding-left: 100px;
+  padding-right: 100px;
 }
 
 
@@ -80,6 +81,7 @@
   font-size: 90px;
   transform: skew(0deg, -31deg) scaleY(1.33333);
   color: white;
+  transition: all 0.5s ease-out;
 
 }
 
@@ -118,5 +120,11 @@
   font-size: 90px;
   transform: skew(0deg, -31deg) scaleY(1.33333);
   color: white;
+  transition: all 0.5s ease-out;
 
+}
+
+.active, .Step4:hover, .Step6:hover {
+  text-shadow: 1px 1px 2px black;
+  color: #d7a041;
 }

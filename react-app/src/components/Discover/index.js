@@ -21,7 +21,7 @@ const lightImage = pictures.collection[6].imageUrl
 const Discover = () => {
   const dispatch = useDispatch()
 
-  const {discoverContent} = useDiscoverContent()
+  const {discoverContent, setDiscoverContent} = useDiscoverContent()
 
   const {backgroundContent} = useBackgroundContent()
 
@@ -195,15 +195,17 @@ if(currentUserQuestion) {
           <div className="Step1">Discover</div>
           <div className="Step2">Users</div>
           <div className="Step3">By</div>
-          <div className="Step4">Questions</div>
+          {/* <div className="Step4">Questions</div> */}
+          <button className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Question</button>
+
           <div className="Step5">Or</div>
-          <div className="Step6">Horoscope</div>
+          {/* <div className="Step6">Horoscope</div> */}
+          <button className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
 
 
           {/* <div className="Step3">Users</div> */}
 
 
-          {/* <ChooseDiscoverContent /> */}
         </section>
 
 
@@ -258,6 +260,7 @@ if(currentUserQuestion) {
   return (
 
     <>
+          {/* <ChooseDiscoverContent /> */}
 
 
     <section className="DiscoverContentContainer" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
