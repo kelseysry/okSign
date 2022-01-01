@@ -53,14 +53,11 @@ const SearchCarouselContainer = ({input, searchUserResults}) => {
       <div className="discover-profiles-container" id="discoverProfile">
 
       <section className="step-container">
-    <div className="Step1">search</div>
-    <div className="Step2">results</div>
-    <div className="Step3">for</div>
-    {/* <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
-    <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div> */}
+    <div className="Step1s">search</div>
+    <div className="Step2s">results</div>
+    <div className="Step3s">for</div>
 
-
-    <div className="Step5">{input}</div>
+    <div className="Step5s">{input}</div>
     {/* <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button> */}
     {/* <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div> */}
   </section>

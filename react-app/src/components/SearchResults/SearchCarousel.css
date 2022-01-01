@@ -1,3 +1,76 @@
 .SearchCarouselContainer {
   background: #1a1a1a;
 }
+
+.Step1s{
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 50px;
+  font-size: 90px;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: white;
+
+}
+
+.Step2s {
+
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+
+  position: absolute;
+  top: 118px;
+  left: 150px;
+  font-size: 90px;
+  transform: skew(0deg, -31deg) scaleY(1.33333);
+  color: white;
+
+}
+
+.Step3s{
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 270px;
+  left: 190px;
+  font-size: 90px;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: white;
+
+}
+
+.Step5s{
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+
+  position: absolute;
+  top: 310px;
+  left: 230px;
+  font-size: 90px;
+  transform: skew(0deg, -31deg) scaleY(1.33333);
+  color: #d7a041;
+}

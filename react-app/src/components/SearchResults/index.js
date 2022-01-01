@@ -52,9 +52,6 @@ const SearchResults = () => {
           <>
             { isLoaded && (
               <div>
-                {/* <div className="ConversationHeaderContainer">
-                  <div className="ConversationHeader">Search Results For "{input}"</div>
-                </div> */}
 
               <section className="SearchCarouselContainer">
                 {
