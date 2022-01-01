@@ -40,14 +40,9 @@ const NoMatches = ({user_id}) => {
   return (
     <>
 
-
-
-
-<section className="step-container">
+      <section className="step-container-new-user">
           <div className="Step1N">No Matches</div>
           <div className="Step2N">yet...</div>
-
-
 
           <div className="Step3N"
             onClick={handleQuestionRedirect}>
@@ -66,8 +61,6 @@ const NoMatches = ({user_id}) => {
             fill out profile
           </div>
 
-
-          {/* <div className="Step5NQ">fill out profile</div> */}
           <div className="Step6N">to get</div>
           <div className="Step7N">Matches</div>
 

@@ -260,3 +260,16 @@
 .hideClickMe {
   display: none;
 }
+
+.step-container-new-user {
+  position: relative;
+  width: 800px;
+  padding-left: 100px;
+  display: inline-block;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0px 100px;
+  border-right: 160px solid transparent;
+  flex-shrink: 0;
+  height: 1200px;
+}
