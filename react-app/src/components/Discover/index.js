@@ -13,6 +13,7 @@ import { useBackgroundContent } from "../../context/BackgroundContext";
 import pictures from "../../data/pictures";
 import './DiscoverSlide.css'
 import '../MatchProfile/DiscoverPics.css'
+import './Step.css'
 
 const darkImage = pictures.collection[6].imageUrl
 const lightImage = pictures.collection[6].imageUrl
@@ -20,13 +21,13 @@ const lightImage = pictures.collection[6].imageUrl
 const Discover = () => {
   const dispatch = useDispatch()
 
-  const {discoverContent} = useDiscoverContent()
+  const {discoverContent, setDiscoverContent} = useDiscoverContent()
 
   const {backgroundContent} = useBackgroundContent()
 
-  const [slide, setSlide] = useState(0)
+  const [slide, setSlide] = useState(1)
 
-  let [navigateClick, setNavigateClick] = useState(0)
+  let [navigateClick, setNavigateClick] = useState(-1)
 
 
   const sessionUser = useSelector((state) => state?.session);
@@ -155,10 +156,10 @@ if(currentUserQuestion) {
     const left = document.querySelector('#discoverProfile');
     left.scrollLeft -= 1050;
     setSlide(1)
-    if(navigateClick !== 0) {
+    if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
     } else {
-      navigateClick = 0
+      navigateClick = -1 
     }
 
   }
@@ -189,6 +190,10 @@ if(currentUserQuestion) {
   if (currentUserQuestion?.length) {
     content = (
         <>
+
+
+        <section className="DiscoverContentContainer">
+
           <button
               id="go-back"f
               className="left"
@@ -200,8 +205,21 @@ if(currentUserQuestion) {
           </button>
 
 
-
             <div className="discover-profiles-container" id="discoverProfile">
+
+             <section className="step-container">
+                <div className="Step1">Discover</div>
+                <div className="Step2">Users</div>
+                <div className="Step3">By</div>
+                {/* <div className="Step4">Questions</div> */}
+                <button className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
+
+                <div className="Step5">Or</div>
+                {/* <div className="Step6">Horoscope</div> */}
+                <button className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
+              </section>
+
+
           <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
                     <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
@@ -220,6 +238,7 @@ if(currentUserQuestion) {
             >
               <span className="hide-button">➡️</span>
             </button>
+        </section>
 
 
         </>
@@ -236,22 +255,10 @@ if(currentUserQuestion) {
   return (
 
     <>
-    <div className="DiscoverHeaderContainerWQHButtons">
-      <div className="DiscoverHeader-Container">
-        <div className="DiscoverHeaderText">Discover</div>
-        <div>find potential matches via questions or horoscopes</div>
-      </div>
-      <div className="match-buttons-text-container">
-        <div>
-        <ChooseDiscoverContent />
-        </div>
-      </div>
-    </div>
+          {/* <ChooseDiscoverContent /> */}
 
-    <section className="DiscoverContentContainer" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
-
+    <section className="DiscoverContentContaine" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
        {discoverContent === 'QuestionMatch'? content : content2}
-
     </section>
 
     </>

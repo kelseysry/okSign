@@ -75,31 +75,29 @@ button.blank {
   align-items: center;
 }
 
-.DiscoverHeader-Container {
-  display: flex;
-  flex-direction: column;
-}
 
 .DiscoverHeaderText {
-  font-size: 100px;
+  /* font-size: 100px;
   overflow-wrap: break-word !important;
   color: #fff;
-  color: #FFBD4A;
   line-height: 0.55em;
   font-weight: 700;
   text-align: center;
   height: auto;
   margin: 0 auto;
   position: relative;
-  /* font-family: 'Island Moments', cursive; */
-  /* text-shadow:
-  0 0 7px #fff,
-  0 0 10px #fff,
-  0 0 21px #fff,
-  0 0 42px #FFBD4A,
-  0 0 62px #FFBD4A; */
-  z-index: 1;
+  z-index: 1; */
+
+  overflow: hidden;
+  position: relative;
+  font-size: 50px;
+
+    transform: skew(60deg, -30deg) scaleY(.66667);
+
+
+
 }
+
 
 
 .DiscoverHeaderText-sub {
@@ -117,5 +115,13 @@ button.blank {
   z-index: 2;
   top:120px;
   left: 400px;
+
+}
+
+
+.all-discover-content-container {
+  /* padding: 0px 100px; */
+  /* position: relative;
+  width: max-content; */
 
 }
