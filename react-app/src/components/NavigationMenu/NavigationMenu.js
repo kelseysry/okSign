@@ -143,9 +143,9 @@ function NavigationMenu() {
                 </button>
               </li>
 
-              <li>
+              {/* <li>
                 <ChooseBackgroundContent />
-              </li>
+              </li> */}
 
           </ul>
         </nav>
