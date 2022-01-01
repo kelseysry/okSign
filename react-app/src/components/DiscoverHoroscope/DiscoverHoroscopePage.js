@@ -81,70 +81,55 @@ const DiscoverHoroscope = () => {
   if (profiles?.length && checkUserHasProfile?.length) {
     content = (
 <>
+  <section className="DiscoverContentContainer">
+
+    <button
+        id="go-back"f
+        className="left"
+        onClick={handleLeftClick}
+        onAnimationEnd={() => setSlide(0)}
+        slide={slide}
+        >
+        <span className="hide-button">⬅️</span>
+    </button>
 
 
-<section className="DiscoverContentContainer">
+      <div className="discover-profiles-container" id="discoverProfile">
 
-<button
-    id="go-back"f
-    className="left"
-    onClick={handleLeftClick}
-    onAnimationEnd={() => setSlide(0)}
-    slide={slide}
-    >
-    <span className="hide-button">⬅️</span>
-</button>
+      <section className="step-container">
+          <div className="Step1">Discover</div>
+          <div className="Step2">Users</div>
+          <div className="Step3">By</div>
+          {/* <div className="Step4">Questions</div> */}
+          <button className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
 
-
-  <div className="discover-profiles-container" id="discoverProfile">
-
-   <section className="step-container">
-      <div className="Step1">Discover</div>
-      <div className="Step2">Users</div>
-      <div className="Step3">By</div>
-      {/* <div className="Step4">Questions</div> */}
-      <button className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
-
-      <div className="Step5">Or</div>
-      {/* <div className="Step6">Horoscope</div> */}
-      <button className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-    </section>
+          <div className="Step5">Or</div>
+          {/* <div className="Step6">Horoscope</div> */}
+          <button className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
+        </section>
 
 
-<div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-      {allProfilesExcludeCurrent?.map((profile, idx) =>
-          <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
-              <DiscoverHoroscopeProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile}/>
-          </div>
-        )}
-   </div>
+    <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+          {allProfilesExcludeCurrent?.map((profile, idx) =>
+              <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
+                  <DiscoverHoroscopeProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile}/>
+              </div>
+            )}
+      </div>
 
 
-  <button
-  id="next-profile"
-  className="right"
-      onClick={handleRightClick}
-      onAnimationEnd={() => setSlide(0)}
-      slide={slide}
-  >
-    <span className="hide-button">➡️</span>
-  </button>
-</section>
+      <button
+      id="next-profile"
+      className="right"
+          onClick={handleRightClick}
+          onAnimationEnd={() => setSlide(0)}
+          slide={slide}
+      >
+        <span className="hide-button">➡️</span>
+      </button>
+  </section>
 
 
-
-
-
-
-        {/* {allProfilesExcludeCurrent?.map((profile, idx) =>
-          <div key={idx}>
-            <NavLink
-              to={`/matchProfile/${profile.user_id}`} // userIdPercentObj[0] is the user.id
-              >
-              <DiscoverHoroscopeProfile profile={profile}/>
-            </NavLink>
-          </div>
-        )} */}
 
 </>
 

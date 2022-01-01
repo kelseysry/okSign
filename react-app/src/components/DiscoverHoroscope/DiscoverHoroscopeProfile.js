@@ -10,7 +10,7 @@ import { getHoroscopeMatchPercent } from "./getHoroScopeMatchPercent";
 import { horoscopeContent } from "./getHoroScopeMatchPercent";
 import './DiscoverHoroscope.css'
 
-const DiscoverHoroscopeProfile = ({profile}) => {
+const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 

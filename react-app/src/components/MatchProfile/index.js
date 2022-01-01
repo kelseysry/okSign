@@ -170,130 +170,86 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) =
     { isLoaded && matchProfileObj[0]?.user_id && (
       <>
       <section className="MatchProfileContainer">
-
       {
         idx === navigateClick?
-
         (
         <>
-        <div
-          className={`slide`+idx}
-          slide={slide}
-          onClick={() => setSlide(idx)}
-          onAnimationEnd={() => setSlide(0)}
-        >
-          <div className="userNameCursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
-          <div className="match_details_discover_under_name"> {matchProfileObj[0]?.age} | {matchProfileObj[0]?.about_me}</div>
-
-
-        </div>
-
+          <div
+            className={`slide`+idx}
+            slide={slide}
+            onClick={() => setSlide(idx)}
+            onAnimationEnd={() => setSlide(0)}>
+            <div className="userNameCursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
+            <div className="match_details_discover_under_name"> {matchProfileObj[0]?.age} | {matchProfileObj[0]?.about_me}</div>
+          </div>
         </>
-
-        )
-        : null
-        // <div>{getUserName(matchProfileObj[0]?.user_id)}</div>
-
+        ): null
       }
-
 
         <div className="oneMatchProfileContainer">
 
-        <section className='ImageContainer'>
-                    <NavLink
-            to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
-          >
-                <div className='defaultImage'>
-                  {defaultImg === 0 ? <img src={matchProfileObj[0]?.image_url1} alt='default photo' className='defaultImage'></img> :  <img src={defaultImg} alt='default photo' className="defaultImage"></img>}
-                </div>
-            </NavLink>
-                <div className='IconImagesContainer'>
-                    <div>
-                      <img src={matchProfileObj[0]?.image_url1} alt='photo 1' className="iconImg"
-                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url1)}></img>
+            <section className='ImageContainer'>
+                        <NavLink
+                to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
+              >
+                    <div className='defaultImage'>
+                      {defaultImg === 0 ? <img src={matchProfileObj[0]?.image_url1} alt='default photo' className='defaultImage'></img> :  <img src={defaultImg} alt='default photo' className="defaultImage"></img>}
                     </div>
-                    <div>
-                      <img src={matchProfileObj[0]?.image_url2} alt='photo 2' className="iconImg"
-                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url2)}></img>
+                </NavLink>
+                    <div className='IconImagesContainer'>
+                        <div>
+                          <img src={matchProfileObj[0]?.image_url1} alt='photo 1' className="iconImg"
+                            onClick={() => setDefaultImage(matchProfileObj[0]?.image_url1)}></img>
+                        </div>
+                        <div>
+                          <img src={matchProfileObj[0]?.image_url2} alt='photo 2' className="iconImg"
+                            onClick={() => setDefaultImage(matchProfileObj[0]?.image_url2)}></img>
+                        </div>
+
+                        <div>
+                          <img src={matchProfileObj[0]?.image_url3} alt='photo 3' className="iconImg"
+                            onClick={() => setDefaultImage(matchProfileObj[0]?.image_url3)}></img>
+                        </div>
+
+                        <div>
+                          <img src={matchProfileObj[0]?.image_url4} alt='photo 4' className="iconImg"
+                            onClick={() => setDefaultImage(matchProfileObj[0]?.image_url4)}></img>
+                        </div>
+
+                        <div>
+                          <img src={matchProfileObj[0]?.image_url5} alt='photo 5' className="iconImg"
+                            onClick={() => setDefaultImage(matchProfileObj[0]?.image_url5)}></img>
+                        </div>
+
+
+                        <div>
+                          <img src={matchProfileObj[0]?.image_url6} alt='photo 6' className="iconImg"
+                            onClick={() => setDefaultImage(matchProfileObj[0]?.image_url6)}></img>
+                        </div>
                     </div>
-
-                    <div>
-                      <img src={matchProfileObj[0]?.image_url3} alt='photo 3' className="iconImg"
-                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url3)}></img>
-                    </div>
-
-                    <div>
-                      <img src={matchProfileObj[0]?.image_url4} alt='photo 4' className="iconImg"
-                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url4)}></img>
-                    </div>
-
-                    <div>
-                      <img src={matchProfileObj[0]?.image_url5} alt='photo 5' className="iconImg"
-                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url5)}></img>
-                    </div>
+            </section>
 
 
-                    <div>
-                      <img src={matchProfileObj[0]?.image_url6} alt='photo 6' className="iconImg"
-                        onClick={() => setDefaultImage(matchProfileObj[0]?.image_url6)}></img>
-                    </div>
-                </div>
-
-        </section>
-
-            {/* <div className="match_profile_images_container">
-              <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url1} alt="match_image"/>
-              <img className="match_profile_image_discover" src={matchProfileObj[0]?.image_url2} alt="match_image"/>
-              <img className="match_profile_image_discover_noP" src={matchProfileObj[0]?.image_url3} alt="match_image"/>
-            </div> */}
-
-
-            <div className="matchPercentContainer">
-              <div className="" id="delay">
-                {/* You and {getUserName(matchProfileObj[0]?.user_id)} */}
-              </div>
               <div className="MatchProfileInnerContainer_D">
+                  {
+                    idx === navigateClick?
+                    <div
+                      className={`slide`+idx}
+                      slide={slide}
+                      onClick={() => setSlide(idx)}
+                      onAnimationEnd={() => setSlide(0)}>
 
-              {
-        idx === navigateClick?
-              <div
-          className={`slide`+idx}
-          slide={slide}
-          onClick={() => setSlide(idx)}
-          onAnimationEnd={() => setSlide(0)}
-        >
+                        <div className="circlesContainer_D">
+                          <div className="userPhotoMatch-first_D" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
+                          <div className="userPhotoMatch-last_D" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
+                          <div className="matchPercentCircle_D">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
+                        </div>
 
-
-                    <div className="circlesContainer_D">
-                      <div className="userPhotoMatch-first_D" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
-                      <div className="userPhotoMatch-last_D" style={{ backgroundImage: `url('${matchProfileObj[0]?.image_url1}')` }}></div>
-                      <div className="matchPercentCircle_D">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
                     </div>
-
-        </div>
-      : null }
-
-
-
-
-
-                    {/* <div className="agreeTable">
-                      <div className="agree">
-                        <div>Agree</div>
-                        <div>🥰 {userIdPercentObj[1]}</div>
-                      </div>
-                      <div className="disagree">
-                        <div>Disagree</div>
-                        <div>🙃 {disagree}</div>
-                      </div>
-                    </div> */}
+                  : null }
               </div>
-
-            </div>
-
-        </div>
+         </div>
       </section>
-      {/* <hr></hr> */}
       </>
 
       )
