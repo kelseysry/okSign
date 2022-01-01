@@ -39,3 +39,14 @@ text-align: right;
   justify-content: flex-end;
   padding: 30px 30px;
 }
+
+.nav_bar_button {
+  color: #f1f1f1;
+  text-decoration: none;
+  padding: 30px 30px;
+}
+
+.menu_container {
+  display: flex;
+  flex-direction: column;
+}

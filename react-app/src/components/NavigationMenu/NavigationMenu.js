@@ -69,63 +69,74 @@ function NavigationMenu() {
     // const userId = sessionUser.id
     sessionLinks = (
     <>
-    <nav className="">
+    <nav className="menu_container">
       <ul className="">
 
-            <div className="exit-menu">
+            <li className="exit-menu">
               <button
                 onClick={() => dispatch(closeNav())}>
                 <i class="fas fa-times-circle fa-2x"></i>
               </button>
-            </div>
+            </li>
 
-            <button
-              className="nav_bar_button"
-              onClick={handleClearDiscoverProfiles}
-            >
-              Discover
-            </button>
+            <li>
+              <button
+                className="nav_bar_button"
+                onClick={handleClearDiscoverProfiles}
+              >
+                Discover
+              </button>
+            </li>
 
+            <li>
+              <button
+                className="nav_bar_button"
+                onClick={handleQuestions}
+              >
+                Questions
+              </button>
+            </li>
 
-            <button
-              className="nav_bar_button"
-              onClick={handleQuestions}
-            >
-              Questions
-            </button>
+            <li>
+              <button
+                  className="nav_bar_button"
+                  onClick={handleClearConversations}
+                >
+                  Conversations
+                </button>
+            </li>
 
-           <button
-              className="nav_bar_button"
-              onClick={handleClearConversations}
-            >
-              Conversations
-            </button>
+              <li>
+                <SearchForm />
+              </li>
 
-        <li>
-          <SearchForm />
-        </li>
+              <li>
+                <button
+                    className="nav_bar_button"
+                    onClick={handleClearProfile}
+                  >
+                    Profile
+                  </button>
+              </li>
 
-          <button
-              className="nav_bar_button"
-              onClick={handleClearProfile}
-            >
-              Profile
-            </button>
-          <li>
-            <LogoutButton />
-          </li>
-          <li>
-            <ChooseBackgroundContent />
-          </li>
-          <button
-              className="nav_bar_button"
+              <li>
+                <LogoutButton />
+              </li>
 
-            >
-              <AboutLinks />
-            </button>
+              <li>
+                <ChooseBackgroundContent />
+              </li>
 
-      </ul>
-    </nav>
+              <li>
+                <button
+                  className="nav_bar_button"
+
+                >
+                  <AboutLinks />
+                </button>
+              </li>
+          </ul>
+        </nav>
 
     </>
 
