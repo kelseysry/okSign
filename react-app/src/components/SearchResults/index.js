@@ -4,6 +4,8 @@ import { search } from "../../store/search"
 import {useParams} from 'react-router-dom';
 import SearchMatchTile from "../SearchMatchTile";
 import { NavLink } from "react-router-dom";
+import SearchCarouselContainer from "./SearchCarouselContainer";
+import './SearchCarousel.css'
 
 const SearchResults = () => {
    //searchResults will give the profile.id of the user
@@ -34,7 +36,7 @@ const SearchResults = () => {
       return null
     }
 
-    console.log("searchUserresults array", searchUserResults)
+    // console.log("searchUserresults array", searchUserResults)
 
 
     if (!searchUserResults.length){
@@ -50,21 +52,20 @@ const SearchResults = () => {
           <>
             { isLoaded && (
               <div>
-                <div className="ConversationHeaderContainer">
-                  <div className="ConversationHeader">Search Results For "{input}"</div>
-                </div>
 
-              <section className="DiscoverContent">
+              <section className="SearchCarouselContainer">
                 {
-                  searchUserResults?.map((matchProfile,idx) =>
-                  <div key={idx}>
-                    <NavLink
-                      to={`/matchProfile/${matchProfile.user_id}`}
-                      >
-                      <SearchMatchTile matchProfile={matchProfile}/>
-                    </NavLink>
-                  </div>
-                  )
+
+                  <SearchCarouselContainer input={input} searchUserResults={searchUserResults}/>
+                  // searchUserResults?.map((matchProfile,idx) =>
+                  // <div key={idx}>
+                  //   <NavLink
+                  //     to={`/matchProfile/${matchProfile.user_id}`}
+                  //     >
+                  //     <SearchMatchTile matchProfile={matchProfile}/>
+                  //   </NavLink>
+                  // </div>
+                  // )
                   }
                </section>
               </div>
