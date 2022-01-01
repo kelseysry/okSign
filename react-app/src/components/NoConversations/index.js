@@ -19,34 +19,32 @@ const NoConversations = ({}) => {
 
 
   return (
+    <section className="step-container-no-convo">
+    <div className="Step1N">No Matches</div>
+    <div className="Step2N">yet...</div>
 
-      <section className="step-container-no-convo">
+    <div className="Step3N"
+      onClick={handleQuestionRedirect}>
+      Answer
+    </div>
 
-          <div className="Step1N">No Matches</div>
-          <div className="Step2N">yet...</div>
+    <div className="Step3NQ"
+      onClick={handleQuestionRedirect}>
+      Questions
+    </div>
+    <div className="click-me-new-user">Click Me</div>
 
-          <div className="Step3N"
-            onClick={handleQuestionRedirect}>
-            Answer
-          </div>
+    <div className="Step4NQ">and</div>
 
-          <div className="Step3NQ"
-            onClick={handleQuestionRedirect}>
-            Questions
-          </div>
-          <div className="click-me-new-user">Click Me</div>
+    <div className="Step5NQ"
+      onClick={handleCreateProfileRedirect}>
+      fill out profile
+    </div>
 
-          <div className="Step4NQ">and</div>
+    <div className="Step6N">to get</div>
+    <div className="Step7N">Matches</div>
 
-          <div className="Step5NQC"
-            onClick={handleCreateProfileRedirect}>
-            fill out profile
-          </div>
-
-          <div className="Step6NC">to get</div>
-          <div className="Step7NC">Matches</div>
-
-        </section>
+  </section>
 
   )
 }
