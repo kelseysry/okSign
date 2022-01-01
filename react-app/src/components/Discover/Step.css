@@ -139,3 +139,41 @@
 #whiteFont {
   color: white;
 }
+
+.StepClick1 {
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -.5px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 150px;
+  left: 710px;
+  transform: skew(0deg, 250deg) scaleY(1.33333);
+  transform: rotate(90deg);
+  transition: all 0.5s ease-out;
+  color: orange;
+}
+
+.StepClick2 {
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -.5px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 255px;
+  left: 860px;
+  transform: skew(0deg, 250deg) scaleY(1.33333);
+  transform: rotate(90deg);
+  transition: all 0.5s ease-out;
+  color: orange;
+}
+
+.hideClickMe {
+  display: none;
+}
