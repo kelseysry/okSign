@@ -112,9 +112,6 @@ function NavigationMenu() {
                 </button>
             </li>
 
-              <li>
-                <SearchForm />
-              </li>
 
               <li>
                 <button
@@ -130,9 +127,17 @@ function NavigationMenu() {
                   className="nav_bar_button"
                 >
                   <AboutLinks />
-                  <SearchModal /> 
                 </button>
               </li>
+
+              <li>
+                <button
+                  className="nav_bar_button"
+                >
+                  <SearchModal />
+                </button>
+              </li>
+
 
               <li className="nav_bar_button">
                 <LogoutButton />

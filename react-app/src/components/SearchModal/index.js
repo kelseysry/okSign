@@ -16,7 +16,7 @@ const SearchModal = () => {
           onClick={() => setShowModal(true)}
           >
             <section className="nav-kelsey-modal">
-              <i class="fas fa-id-card fa-2x"></i>
+              {/* <i class="fas fa-id-card fa-2x"></i> */}
               <div className="contact-me">
                 <div>Search Users</div>
               </div>
@@ -38,20 +38,6 @@ const SearchModal = () => {
                 </div>
                 <div className="about-first-text">let's connect!</div>
 
-
-                <div className="about-link-container">
-                      <a style={{color: 'white'}} target="_blank" href={infoLinks[0].github} rel="noreferrer">
-                          <i className="fab fa-github-square fa-2x"/>
-                      </a>
-
-                      <a style={{color: 'white'}}  target="_blank" href={infoLinks[0].linkedin} rel="noreferrer">
-                          <i className="fab fa-linkedin fa-2x"/>
-                      </a>
-                      <a style={{color: 'white'}}  target="_blank" href={infoLinks[0].emailM} rel="noreferrer">
-                          <i className="fas fa-envelope-square fa-2x"/>
-                      </a>
-
-                 </div>
 
           </section>
 
