@@ -53,6 +53,7 @@ const NoMatches = ({user_id}) => {
             onClick={handleQuestionRedirect}>
             Questions
           </div>
+          <div className="click-me-new-user">Click Me</div>
 
           <div className="Step4NQ">and</div>
 
@@ -64,14 +65,6 @@ const NoMatches = ({user_id}) => {
           <div className="Step6N">to get</div>
           <div className="Step7N">Matches</div>
 
-
-          {/* <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
-          <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div>
-
-
-          <div className="Step5">Or</div>
-          <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-          <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div> */}
         </section>
 
 
