@@ -21,6 +21,7 @@ import HitErrorPage from './components/PageNotFound/HitErrorPage';
 import Background from './components/Background/Background';
 import AboutLinks from './components/AboutLinks/AboutLink';
 import Test from './components/Test/test';
+import Menu from './components/NavigationMenu/Menu';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -42,7 +43,7 @@ function App() {
   return (
     // <BrowserRouter>
     <>
-    <Test /> 
+    <Menu /> 
       {/* <NavBar/> */}
       {/* <Background />  */}
       <Switch>

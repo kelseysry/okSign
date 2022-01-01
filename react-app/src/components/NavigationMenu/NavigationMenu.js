@@ -11,7 +11,8 @@ import SearchForm from '../SearchForm';
 import { clearQuestions, getQuestions } from '../../store/question';
 import ChooseBackgroundContent from '../Background/ChooseBackgroundContent';
 import AboutLinks from '../AboutLinks/AboutLink';
-
+import './NavigationMenu.css'
+import { closeNav } from '../../store/navigation'
 
 function NavigationMenu() {
 
@@ -64,11 +65,17 @@ function NavigationMenu() {
     // const userId = sessionUser.id
     sessionLinks = (
     <>
-    <nav className="nav_container_desktop">
-      <ul className="nav_container_list">
+    <nav className="nav_container_deskto">
+      <ul className="nav_container_page">
+
+      <button className="arrow-button" onClick={() => dispatch(closeNav())}>
+  <i className="fas fa-arrow-right"></i>
+  </button>
+
+
 
             <button
-              className="nav_bar_button"
+              className="nav_bar_butto"
               onClick={handleClearDiscoverProfiles}
             >
               Discover
@@ -115,51 +122,6 @@ function NavigationMenu() {
       </ul>
     </nav>
 
-    <nav className="nav_container_mobile">
-      <ul className="nav_container_list">
-
-
-
-            <button
-              className="nav_bar_button"
-              onClick={handleClearDiscoverProfiles}
-            >
-              <i className="fas fa-hand-holding-heart"></i>
-            </button>
-
-
-            <button
-              className="nav_bar_button"
-              onClick={handleQuestions}
-            >
-              <i className="fas fa-question-circle"></i>
-            </button>
-
-           <button
-              className="nav_bar_button"
-              onClick={handleClearConversations}
-            >
-              <i className="fas fa-comments"></i>
-            </button>
-
-        <li>
-          <SearchForm />
-        </li>
-
-          <button
-              className="nav_bar_button"
-              onClick={handleClearProfile}
-            >
-              <i className="fas fa-user-circle"></i>
-            </button>
-          <li>
-            <LogoutButton />
-          </li>
-
-
-
-      </ul>
-    </nav>
     </>
 
 
@@ -168,7 +130,7 @@ function NavigationMenu() {
 
 
   return (
-    <div className="nav-container">
+    <div className="nav_container_page">
       {sessionLinks}
     </div>
   )
