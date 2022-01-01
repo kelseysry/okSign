@@ -69,17 +69,18 @@ function NavigationMenu() {
     // const userId = sessionUser.id
     sessionLinks = (
     <>
-    <nav className="nav_container_deskto">
-      <ul className="nav_container_page">
+    <nav className="">
+      <ul className="">
 
-      <button className="arrow-button" onClick={() => dispatch(closeNav())}>
-  <i className="fas fa-arrow-right"></i>
-  </button>
-
-
+            <div className="exit-menu">
+              <button
+                onClick={() => dispatch(closeNav())}>
+                <i class="fas fa-times-circle fa-2x"></i>
+              </button>
+            </div>
 
             <button
-              className="nav_bar_butto"
+              className="nav_bar_button"
               onClick={handleClearDiscoverProfiles}
             >
               Discover

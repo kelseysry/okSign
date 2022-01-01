@@ -4,19 +4,16 @@
   margin: 0px;
 }
 
-.fa-bars  {
+.fa-bars, .fa-times-circle {
   color: white;
 }
 
 .menu {
 background-color:#1a1a1a;
 padding: 30px 30px;
+text-align: right;
 }
 
-.nav_container_pag {
-
-
-}
 
 .sidebar {
   display: flex;
@@ -34,4 +31,11 @@ padding: 30px 30px;
   color: white;
   box-shadow: 0px 0 15px 1px rgb(0, 0, 0);
 
+}
+
+.exit-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 30px 30px;
 }
