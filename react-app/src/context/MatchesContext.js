@@ -1,7 +1,7 @@
 // get match percent for users >60% match in questions
 
 import { useSelector, useDispatch } from "react-redux";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 // import MatchProfile from "../MatchProfile";
 
 // import { getQuestions } from "../../store/question";
@@ -16,12 +16,28 @@ export function MatchesProvider (props) {
   const user_id = sessionUser?.user.id
   // console.log("user_id", user_id)
 
-  const questionObject = useSelector((state)=>state.question)
-  // console.log("questionObj", questionObject)
-  const questions = Object.values(questionObject)
-  // console.log("questions", questions[0])
+  const [questions, setQuestions] = useState([]);
 
-  // console.log("match context questions🤡🤡🤡", questions)
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('/api/questions/');
+      const responseData = await response.json();
+      setQuestions(responseData.questions);
+    }
+    fetchData();
+  }, []);
+
+  let questionsRender = questions
+
+
+  /******************
+
+   const questionObject = useSelector((state)=>state.question)
+   // console.log("questionObj", questionObject)
+   const questions = Object.values(questionObject)
+   // console.log("questions", questions[0])
+
+   // console.log("match context questions🤡🤡🤡", questions)
 
   useEffect(async ()=>{
     // await dispatch(clearQuestions())
@@ -42,6 +58,7 @@ if(questions.length === 2) {
 console.log("questionsRender😯😯😯🤡🤡🤡", questionsRender)
 // console.log("questionTry😯😯😯😯😯", questionTry[1])
 
+*****************/
 
 let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
 
