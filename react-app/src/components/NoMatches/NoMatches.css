@@ -113,12 +113,7 @@
 
 }
 
-.Step3NButto{
 
-  font-size: 90px;
-  color: white;
-
-}
 
 .Step3NQ{
   margin: 0 auto;
@@ -173,6 +168,7 @@
   transform: skew(60deg, -30deg) scaleY(.66667);
   color: white;
   line-height: 75px;
+  z-index: 3;
 
 }
 

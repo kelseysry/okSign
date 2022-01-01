@@ -48,22 +48,26 @@ const NoMatches = ({user_id}) => {
           <div className="Step2N">yet...</div>
 
 
-          {/* <button
-            className="Step3N"
-            onClick={() => {handleQuestionRedirect()}}
-            >
-              Answer
-            </button> */}
 
           <div className="Step3N"
-            onClick={handleQuestionRedirect}
-          >
+            onClick={handleQuestionRedirect}>
             Answer
           </div>
 
-          <div className="Step3NQ">questions</div>
+          <div className="Step3NQ"
+            onClick={handleQuestionRedirect}>
+            Questions
+          </div>
+
           <div className="Step4NQ">and</div>
-          <div className="Step5NQ">fill out profile</div>
+
+          <div className="Step5NQ"
+            onClick={handleCreateProfileRedirect}>
+            fill out profile
+          </div>
+
+
+          {/* <div className="Step5NQ">fill out profile</div> */}
           <div className="Step6N">to get</div>
           <div className="Step7N">Matches</div>
 
@@ -78,22 +82,6 @@ const NoMatches = ({user_id}) => {
         </section>
 
 
-      {/* <section className="NoMatchesContainer">
-        <div className="no-matches-header-container">
-
-        </div>
-      </section>
-      <section className="NoMatchesButtonsContainer">
-
-        <div className="newUserButtons">
-          <button className="newUserButton"
-          onClick={() => {handleQuestionRedirect()}}
-          >Fill Out Questions &nbsp; <i class="fas fa-newspaper"></i></button>
-          <button className="newUserButton"
-          onClick={() => {handleCreateProfileRedirect()}}
-          >Create Profile &nbsp; <i class="fas fa-address-card"></i></button>
-        </div>
-      </section> */}
     </>
   )
 }
