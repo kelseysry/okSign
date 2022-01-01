@@ -42,7 +42,8 @@ function App() {
   return (
     // <BrowserRouter>
     <>
-      <NavBar/>
+    <Test /> 
+      {/* <NavBar/> */}
       {/* <Background />  */}
       <Switch>
         <Route path='/login' exact={true}>
@@ -87,7 +88,7 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path='/test' exact={true} >
-          <Test /> 
+          <Test />
         </ProtectedRoute>
         <Route>
           <HitErrorPage />
