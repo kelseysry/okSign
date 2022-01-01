@@ -29,11 +29,24 @@ const Discover = () => {
 
   let [navigateClick, setNavigateClick] = useState(-1)
 
+  const [questions, setQuestions] = useState([]);
+
 
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
   // console.log("user_id", user_id)
 
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('/api/questions/');
+      const responseData = await response.json();
+      setQuestions(responseData.questions);
+    }
+    fetchData();
+  }, []);
+
+
+  /******************
   const questionObject = useSelector((state)=>state.question)
   // console.log("questionObj", questionObject)
   const questions = Object.values(questionObject)
@@ -56,6 +69,9 @@ if(questions.length) {
     questionsRender = null;
 }
 // console.log("questionsRender😯😯😯", questionsRender)
+*****************/
+
+let questionsRender = questions
 
 
 // for each user's question object, we need to count how many answers
