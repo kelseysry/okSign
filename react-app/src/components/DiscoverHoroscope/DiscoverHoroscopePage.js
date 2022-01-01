@@ -13,7 +13,7 @@ const DiscoverHoroscope = () => {
   let [navigateClick, setNavigateClick] = useState(-1)
   const [slide, setSlide] = useState(1)
   const {discoverContent, setDiscoverContent} = useDiscoverContent()
-
+  const [colorOrange, setColorOrange] = useState('QuestionMatch')
 
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
@@ -100,10 +100,24 @@ const DiscoverHoroscope = () => {
           <div className="Step1">Discover</div>
           <div className="Step2">Users</div>
           <div className="Step3">By</div>
-          <button className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
+          <div  >
+          <button
+          className={`${colorOrange === 'QuestionMatch' ? ' Step4' : 'Step4'}`}
+          onClick={() => {
+            setDiscoverContent('QuestionMatch')
+            setColorOrange('QuestionMatch')
+            }}>Questions</button>
+          </div>
 
           <div className="Step5">Or</div>
-          <button className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
+
+          <button
+          className={`${colorOrange === 'HoroscopeMatch' ? ' Step5' : 'Step5'}`}
+          onClick={()=> {
+            setDiscoverContent('HoroscopeMatch')
+            // setColorOrange('HoroscopeMatch')
+
+            }}>Horoscope</button>
         </section>
 
 
