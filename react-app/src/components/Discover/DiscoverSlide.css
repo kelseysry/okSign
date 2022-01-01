@@ -41,7 +41,7 @@
   position: relative;
   flex-shrink: 0;
   height: 900px;
-  /* z-index: -0; */
+  /* z-index: 3; */
   position: relative;
  }
 
@@ -54,7 +54,7 @@
   position: relative;
   flex-shrink: 0;
   height: 900px;
-  /* z-index: -0; */
+  /* z-index: 3; */
   position: relative;
   opacity: .5;
  }

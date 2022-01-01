@@ -191,26 +191,8 @@ if(currentUserQuestion) {
     content = (
         <>
 
-        <section className="step-container">
-          <div className="Step1">Discover</div>
-          <div className="Step2">Users</div>
-          <div className="Step3">By</div>
-          {/* <div className="Step4">Questions</div> */}
-          <button className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Question</button>
 
-          <div className="Step5">Or</div>
-          {/* <div className="Step6">Horoscope</div> */}
-          <button className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-
-
-          {/* <div className="Step3">Users</div> */}
-
-
-        </section>
-
-
-
-
+        <section className="DiscoverContentContainer">
 
           <button
               id="go-back"f
@@ -223,8 +205,21 @@ if(currentUserQuestion) {
           </button>
 
 
-
             <div className="discover-profiles-container" id="discoverProfile">
+
+             <section className="step-container">
+                <div className="Step1">Discover</div>
+                <div className="Step2">Users</div>
+                <div className="Step3">By</div>
+                {/* <div className="Step4">Questions</div> */}
+                <button className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
+
+                <div className="Step5">Or</div>
+                {/* <div className="Step6">Horoscope</div> */}
+                <button className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
+              </section>
+
+
           <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
                     <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
@@ -243,6 +238,7 @@ if(currentUserQuestion) {
             >
               <span className="hide-button">➡️</span>
             </button>
+        </section>
 
 
         </>
@@ -255,18 +251,14 @@ if(currentUserQuestion) {
     )
   }
 
-        {/* <div>find potential matches via questions or horoscopes</div> */}
 
   return (
 
     <>
           {/* <ChooseDiscoverContent /> */}
 
-
-    <section className="DiscoverContentContainer" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
-
+    <section className="DiscoverContentContaine" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
        {discoverContent === 'QuestionMatch'? content : content2}
-
     </section>
 
     </>
