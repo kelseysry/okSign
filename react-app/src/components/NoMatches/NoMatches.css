@@ -105,10 +105,18 @@
   position: absolute;
   top: 290px;
   left: 190px;
-  font-size: 90px;
+  font-size: 90px !important;
   transform: skew(60deg, -30deg) scaleY(.66667);
   color: white;
   line-height: 75px;
+  z-index: 3;
+
+}
+
+.Step3NButto{
+
+  font-size: 90px;
+  color: white;
 
 }
 
