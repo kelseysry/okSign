@@ -25,7 +25,12 @@ let navBar;
 
 navBar = (
     <>
+
       <div className="menu">
+        <section className="menu-logo">
+          <div className="ok-discover">ok</div>
+          <div className="sign-discover">Sign</div>
+        </section>
         <button className="" onClick={() => handleOpenNav(open)}>
           <i class="fas fa-bars fa-2x"></i>
         </button>

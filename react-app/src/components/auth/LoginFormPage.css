@@ -65,6 +65,7 @@
   z-index: 2;
   top:250px;
   transform: rotate(-18deg);
+  text-shadow: 1px 1px 2px black;
 }
 
 .header-banner-sign {
