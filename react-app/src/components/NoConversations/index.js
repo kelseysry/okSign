@@ -19,28 +19,35 @@ const NoConversations = ({}) => {
 
 
   return (
-    <>
-      <section className="NoMatchesContainer">
-        <div className="no-conversations-header-container">
-             <div className="no-matches-header">
-                  No Conversations Yet!
-              </div>
-        </div>
-      </section>
-      <section className="NoMatchesButtonsContainer">
-        <div className="NoMatchesButtonsInnerText">
-          Make sure that the answer to each question represents how you think! Don't also forget to add as much info as possible for your profile to get matches!
-        </div>
-        <div className="newUserButtons">
-          <button className="newUserButton"
-          onClick={() => {handleQuestionRedirect()}}
-          >Questions &nbsp; <i class="fas fa-newspaper"></i></button>
-          <button className="newUserButton"
-          onClick={() => {handleCreateProfileRedirect()}}
-          >Profile &nbsp; <i class="fas fa-address-card"></i></button>
-        </div>
-      </section>
-    </>
+
+      <section className="step-container-no-convo">
+
+          <div className="Step1N">No Matches</div>
+          <div className="Step2N">yet...</div>
+
+          <div className="Step3N"
+            onClick={handleQuestionRedirect}>
+            Answer
+          </div>
+
+          <div className="Step3NQ"
+            onClick={handleQuestionRedirect}>
+            Questions
+          </div>
+          <div className="click-me-new-user">Click Me</div>
+
+          <div className="Step4NQ">and</div>
+
+          <div className="Step5NQC"
+            onClick={handleCreateProfileRedirect}>
+            fill out profile
+          </div>
+
+          <div className="Step6NC">to get</div>
+          <div className="Step7NC">Matches</div>
+
+        </section>
+
   )
 }
 

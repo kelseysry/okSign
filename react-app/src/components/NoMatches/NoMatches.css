@@ -152,7 +152,7 @@
 }
 
 
-.Step5NQ{
+.Step5NQC{
   margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -162,8 +162,8 @@
   text-transform: uppercase;
 
   position: absolute;
-  top: 430px;
-  left: 370px;
+  top: 395px;
+  left: 330px;
   font-size: 90px;
   transform: skew(60deg, -30deg) scaleY(.66667);
   color: #d7a041;
@@ -173,7 +173,7 @@
 }
 
 
-.Step6N {
+.Step6NC {
   margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -183,14 +183,14 @@
   text-transform: uppercase;
 
   position: absolute;
-  top: 640px;
-  left: 450px;
+  top: 590px;
+  left: 380px;
   font-size: 90px;
   transform: skew(0deg, -31deg) scaleY(1.33333);
   color: white;
 }
 
-.Step7N{
+.Step7NC{
   margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -200,8 +200,8 @@
   text-transform: uppercase;
 
   position: absolute;
-  top: 680px;
-  left: 500px;
+  top: 650px;
+  left: 420px;
   font-size: 90px;
   transform: skew(60deg, -30deg) scaleY(.66667);
   color: white;
@@ -261,17 +261,18 @@
   display: none;
 }
 
-.step-container-new-user {
+.step-container-no-convo {
+  background: #1a1a1a;
   position: relative;
-  width: 800px;
-  padding-left: 100px;
-  display: inline-block;
+  display: flex;
+  padding-left: 200px;
+  /* display: inline-block; */
   overflow-x: hidden;
   overflow-y: hidden;
   padding: 0px 100px;
   border-right: 160px solid transparent;
-  flex-shrink: 0;
-  height: 1200px;
+  height: 1100px;
+
 }
 
 .click-me-new-user {
@@ -291,3 +292,5 @@
   color: white;
 
 }
+
+
