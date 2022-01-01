@@ -2,6 +2,20 @@
   background: #1a1a1a;
 }
 
+.step-container-search {
+  position: relative;
+  width: 800px;
+  display: inline-block;
+  overflow-x: hidden;
+  padding: 0px 10px;
+  padding-left: 100px;
+  border-right: 10px solid transparent;
+  flex-shrink: 0;
+  height: 900px;
+}
+
+
+
 .Step1s{
   margin: 0 auto;
   padding: 80px 0;
@@ -68,7 +82,7 @@
 
 
   position: absolute;
-  top: 310px;
+  top: 345px;
   left: 230px;
   font-size: 90px;
   transform: skew(0deg, -31deg) scaleY(1.33333);

@@ -52,7 +52,7 @@ const SearchCarouselContainer = ({input, searchUserResults}) => {
 
       <div className="discover-profiles-container" id="discoverProfile">
 
-      <section className="step-container">
+      <section className="step-container-search">
     <div className="Step1s">search</div>
     <div className="Step2s">results</div>
     <div className="Step3s">for</div>
