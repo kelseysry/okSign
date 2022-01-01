@@ -2,11 +2,13 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useState, useEffect } from 'react';
 import { getProfiles } from '../../store/profile';
 import { useHistory } from 'react-router';
+import { useDiscoverContent } from "../../context/DiscoverContentContext";
 
 import './NoMatches.css'
 
 const NoMatches = ({user_id}) => {
   const dispatch = useDispatch()
+  const {discoverContent, setDiscoverContent} = useDiscoverContent()
 
   const profilesObj = useSelector((state) => state?.profile)
   const profiles = Object?.values(profilesObj)[0]
@@ -24,9 +26,12 @@ const NoMatches = ({user_id}) => {
 
   // console.log("currentProfile in nomatches", currentProfile)
 
-  const handleQuestionRedirect = () => {
+  const handleQuestionRedirect = async (e) => {
+    e.preventDefault();
+    console.log("able to click handle questions")
     history.push('/questions')
   }
+
 
   const handleCreateProfileRedirect = () => {
     history.push(`/profiles/${user_id}`)
@@ -34,26 +39,35 @@ const NoMatches = ({user_id}) => {
 
   return (
     <>
-      <section className="NoMatchesContainer">
-        <div className="no-matches-header-container">
-             <div className="no-matches-header">
-                  No Matches Yet!
-              </div>
-        </div>
-      </section>
-      <section className="NoMatchesButtonsContainer">
-        <div className="NoMatchesButtonsInner">
-          Answer questions and fill out your profile to get matches!
-        </div>
-        <div className="newUserButtons">
-          <button className="newUserButton"
-          onClick={() => {handleQuestionRedirect()}}
-          >Fill Out Questions &nbsp; <i class="fas fa-newspaper"></i></button>
-          <button className="newUserButton"
-          onClick={() => {handleCreateProfileRedirect()}}
-          >Create Profile &nbsp; <i class="fas fa-address-card"></i></button>
-        </div>
-      </section>
+
+      <section className="step-container-new-user">
+          <div className="Step1N">No Matches</div>
+          <div className="Step2N">yet...</div>
+
+          <div className="Step3N"
+            onClick={handleQuestionRedirect}>
+            Answer
+          </div>
+
+          <div className="Step3NQ"
+            onClick={handleQuestionRedirect}>
+            Questions
+          </div>
+          <div className="click-me-new-user">Click Me</div>
+
+          <div className="Step4NQ">and</div>
+
+          <div className="Step5NQ"
+            onClick={handleCreateProfileRedirect}>
+            fill out profile
+          </div>
+
+          <div className="Step6N">to get</div>
+          <div className="Step7N">Matches</div>
+
+        </section>
+
+
     </>
   )
 }
