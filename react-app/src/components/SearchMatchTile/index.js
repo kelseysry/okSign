@@ -150,9 +150,9 @@ const SearchMatchTile = ({profile, slide, setSlide, idx, navigateClick}) => {
                       onAnimationEnd={() => setSlide(0)}>
 
                         <div className="circlesContainer_D">
-                          {/* <div className="userPhotoMatch-first_D" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div> */}
+                          { currentUserProfile.oneProfile?  <div className="userPhotoMatch-first_D" style={{ backgroundImage: `url('${currentUserProfile.oneProfile[0]?.image_url1}')` }}></div> : null}
                           <div className="userPhotoMatch-last_D" style={{ backgroundImage: `url('${profile?.image_url1}')` }}></div>
-                          {/* <div className="matchPercentCircle_D">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div> */}
+                          <div className="matchPercentCircle_D">{percent? percent[1] : null}0%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
                         </div>
 
                     </div>
