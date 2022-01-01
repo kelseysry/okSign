@@ -182,7 +182,8 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
             onClick={() => setSlide(idx)}
             onAnimationEnd={() => setSlide(0)}>
             <div className="userNameCursive">{getUserName(profile?.user_id)}</div>
-            <div className="match_details_discover_under_name"> {profile?.age} | {profile?.about_me}</div>
+            <div className="match_details_discover_under_name"> {profile?.age} | {getHoroscope(profile?.horoscope_id)}</div>
+            <div className="horoscope-content-slide">{horoscopeContent}</div>
           </div>
         </>
         ): null
