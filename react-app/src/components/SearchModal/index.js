@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import infoLinks from '../../data/infoLinks';
+import React, { useState } from 'react';
 
 import { AboutModal } from "../../context/Modal";
 import SearchForm from '../SearchForm';
+import './SearchModal.css'
 
 const SearchModal = () => {
   const [showModal, setShowModal] = useState(false);
@@ -24,19 +24,24 @@ const SearchModal = () => {
         </button>
       {showModal && (
         <AboutModal onClose={() => setShowModal(false)}>
-          <section className="about-modal-container">
+          <section className="search-modal-container">
+              <div className="modal-flex">
+                  <div>
+                      <div className="search-modal-title">
+                        Search for Users
+                      </div>
+                      <div className="search-first-text">by location,</div>
+                      <div className="search-first-text">horoscope sign,</div>
+                      <div className="search-first-text">gender</div>
+                  </div>
+                  <div>
+                      <SearchForm hideModal={() => setShowModal(false)}/>
+                  </div>
 
-            <SearchForm hideModal={() => setShowModal(false)}/>
-
-              <div>
-                <img className="profile-thumb-modal" src={infoLinks[0].imageUrl} alt="user_image"/>
               </div>
 
-                <div className="about-first-text">okSign brought to you by</div>
-                <div className="about-modal-name">
-                 {infoLinks[0].name}
-                </div>
-                <div className="about-first-text">let's connect!</div>
+
+
 
 
           </section>

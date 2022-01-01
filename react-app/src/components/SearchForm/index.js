@@ -34,7 +34,7 @@ return (
     <form >
         <input className="searchForm"
             type="text"
-            placeholder="Search for users by location, sign, gender  🔍"
+            placeholder="men                                   🔍"
             value={searchKeyWord}
             onChange={(e)=>setSearchKeyWord(e.target.value)}
             onKeyPress={(e)=> handleKeyPress(e)}

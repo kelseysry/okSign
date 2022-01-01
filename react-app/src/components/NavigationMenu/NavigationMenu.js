@@ -126,14 +126,6 @@ function NavigationMenu() {
                 <button
                   className="nav_bar_button"
                 >
-                  <AboutLinks />
-                </button>
-              </li>
-
-              <li>
-                <button
-                  className="nav_bar_button"
-                >
                   <SearchModal />
                 </button>
               </li>
@@ -144,9 +136,16 @@ function NavigationMenu() {
               </li>
 
               <li>
-                <ChooseBackgroundContent />
+                <button
+                  className="nav_bar_button"
+                >
+                  <AboutLinks />
+                </button>
               </li>
 
+              <li>
+                <ChooseBackgroundContent />
+              </li>
 
           </ul>
         </nav>
