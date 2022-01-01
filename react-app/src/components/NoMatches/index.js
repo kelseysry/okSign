@@ -45,9 +45,10 @@ const NoMatches = ({user_id}) => {
           <div className="Step2N">yet...</div>
           <div className="Step3N">answer</div>
           <div className="Step3NQ">questions</div>
-          <div className="Step4N">and</div>
+          <div className="Step4NQ">and</div>
           <div className="Step5NQ">fill out profile</div>
-          <div className="Step4N">and</div>
+          <div className="Step6N">to get</div>
+          <div className="Step7N">Matches</div>
 
 
           {/* <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>

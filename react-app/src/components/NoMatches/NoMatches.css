@@ -131,7 +131,7 @@
 
 }
 
-.Step4N {
+.Step4NQ {
   margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -167,6 +167,44 @@
   line-height: 75px;
 
 }
+
+
+.Step6N {
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 640px;
+  left: 450px;
+  font-size: 90px;
+  transform: skew(0deg, -31deg) scaleY(1.33333);
+  color: white;
+}
+
+.Step7N{
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 680px;
+  left: 500px;
+  font-size: 90px;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: white;
+
+}
+
+
 
 .active, .Step4:hover, .Step6:hover {
   text-shadow: 1px 1px 2px black;
