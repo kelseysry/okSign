@@ -21,7 +21,7 @@
   font-size: 50px;
   position: absolute;
   left: 0px;
-  height: 80%;
+  height: 50%;
   z-index: 5;
   width: 16%;
  }
@@ -29,7 +29,7 @@
  .right{
   font-size: 50px;
   position: absolute;
-  height: 80%;
+  height: 50%;
   z-index: 5;
   width: 16%;
   right: 0;
