@@ -4,22 +4,34 @@
   margin: 0px;
 }
 
-
-.nav_container_page {
-  background-color:#1a1a1a;
+.fa-bars  {
   color: white;
+}
+
+.menu {
+background-color:#1a1a1a;
+padding: 30px 30px;
+}
+
+.nav_container_pag {
+
+
+}
+
+.sidebar {
   display: flex;
   flex-direction: column;
   position: fixed;
   top: 0;
   bottom: 0;
-  right: 0;
-  /* width: 300px;
-  right: -300px; */
+  width: 300px;
+  right: -300px;
   transition: all 0.2s linear;
   /* background-color: #e8d5a8; */
-  box-shadow: 0px 0 15px 1px rgb(0, 0, 0);
+  background-color:#1a1a1a;
   z-index: 3;
   overflow-y:auto;
-  color: black;
+  color: white;
+  box-shadow: 0px 0 15px 1px rgb(0, 0, 0);
+
 }
