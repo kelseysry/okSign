@@ -100,11 +100,9 @@ const DiscoverHoroscope = () => {
           <div className="Step1">Discover</div>
           <div className="Step2">Users</div>
           <div className="Step3">By</div>
-          {/* <div className="Step4">Questions</div> */}
           <button className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
 
           <div className="Step5">Or</div>
-          {/* <div className="Step6">Horoscope</div> */}
           <button className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
         </section>
 
