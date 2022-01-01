@@ -131,8 +131,7 @@
 
 }
 
-.Step4 {
-
+.Step4N {
   margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -141,18 +140,16 @@
   letter-spacing: -2px;
   text-transform: uppercase;
 
-
   position: absolute;
-  top: 260px;
-  left: 230px;
+  top: 470px;
+  left: 300px;
   font-size: 90px;
   transform: skew(0deg, -31deg) scaleY(1.33333);
-  transition: all 0.5s ease-out;
-  color: #d7a041;
+  color: white;
 }
 
 
-.Step5{
+.Step5NQ{
   margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
@@ -162,32 +159,12 @@
   text-transform: uppercase;
 
   position: absolute;
-  top: 450px;
-  left: 280px;
+  top: 430px;
+  left: 370px;
   font-size: 90px;
   transform: skew(60deg, -30deg) scaleY(.66667);
   color: white;
-
-}
-
-.Step6 {
-
-  margin: 0 auto;
-  padding: 80px 0;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 68px;
-  font-weight: 900;
-  letter-spacing: -2px;
-  text-transform: uppercase;
-
-
-  position: absolute;
-  top: 390px;
-  left: 330px;
-  font-size: 90px;
-  transform: skew(0deg, -31deg) scaleY(1.33333);
-  color: white;
-  transition: all 0.5s ease-out;
+  line-height: 75px;
 
 }
 
