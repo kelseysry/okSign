@@ -21,6 +21,7 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
   const [isLoaded, setIsLoaded] = useState(false)
   const [horoscopes, setHoroscopes] = useState([])
   const [defaultImg, setDefaultImage] = useState(0);
+  const [picNum, setPicNum] = useState('')
 
 
   // console.log("profile🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profile)
@@ -195,40 +196,68 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
               >
 
                 <section>
-                    {defaultImg === 0 ?  <div className='defaultImageHoroscope'><img src={profile?.image_url1} alt='default photo' className='defaultImage'></img>  </div> :
-                    <div className="defaultImage"><img src={defaultImg} alt='default photo'></img></div>}
+                    {defaultImg === 0 || picNum === 0 ?
+                    <div className='defaultImageHoroscope'><img src={profile?.image_url1} alt='default photo' className='defaultImage'></img></div> :
+                    <div className="defaultImage"><img src={defaultImg} alt='default photo after ternary' className='defaultImage'></img></div>
+                    }
                 </section>
 
                 </NavLink>
                     <div className='IconImagesContainer'>
                         <div key={0}>
                           <img src={profile?.image_url1} alt='photo 1' className="iconImg"
-                            onClick={() => setDefaultImage(profile?.image_url1)}></img>
+                            onClick={() =>
+                              {setDefaultImage(profile?.image_url1);
+                              setPicNum(0)
+                              }
+                            }
+                            ></img>
+
                         </div>
                         <div key={1}>
                           <img src={profile?.image_url2} alt='photo 2' className="iconImg"
-                            onClick={() => setDefaultImage(profile?.image_url2)}></img>
+                            onClick={() => {
+                              setDefaultImage(profile?.image_url2)
+                              setPicNum(1)
+                            }
+
+
+                            }
+
+                            ></img>
                         </div>
 
                         <div key={2}>
                           <img src={profile?.image_url3} alt='photo 3' className="iconImg"
-                            onClick={() => setDefaultImage(profile?.image_url3)}></img>
+                            onClick={() => {
+                              setDefaultImage(profile?.image_url3)
+                              setPicNum(2)
+                              }}></img>
                         </div>
 
                         <div key={3}>
                           <img src={profile?.image_url4} alt='photo 4' className="iconImg"
-                            onClick={() => setDefaultImage(profile?.image_url4)}></img>
+                            onClick={() => {
+                              setDefaultImage(profile?.image_url4)
+                              setPicNum(3)
+                              }}></img>
                         </div>
 
                         <div key={4}>
                           <img src={profile?.image_url5} alt='photo 5' className="iconImg"
-                            onClick={() => setDefaultImage(profile?.image_url5)}></img>
+                            onClick={() => {
+                              setDefaultImage(profile?.image_url5)
+                              setPicNum(4)
+                              }}></img>
                         </div>
 
 
                         <div key={5}>
                           <img src={profile?.image_url6} alt='photo 6' className="iconImg"
-                            onClick={() => setDefaultImage(profile?.image_url6)}></img>
+                            onClick={() => {
+                              setDefaultImage(profile?.image_url6)
+                              setPicNum(5)
+                              }}></img>
                         </div>
                     </div>
             </section>
