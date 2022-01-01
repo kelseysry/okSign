@@ -4,7 +4,10 @@ import {search} from '../../store/search';
 import {useHistory} from "react-router";
 import './SearchForm.css'
 
-const SearchForm = () => {
+
+
+
+const SearchForm = ({hideModal}) => {
 
 const dispatch = useDispatch();
 const history = useHistory();
@@ -16,11 +19,16 @@ const handleKeyPress = async (e) =>{
         e.preventDefault();
         let resultFromSearch = await dispatch(search(searchKeyWord));
         if (resultFromSearch) {
-            history.push(`/search/${searchKeyWord}`)
-            setSearchKeyWord('')
+
+            history.push(`/search/${searchKeyWord}`);
+            setSearchKeyWord('');
+            hideModal()
         }
+
     }
 }
+
+
 
 return (
     <form >
@@ -29,7 +37,10 @@ return (
             placeholder="Search for users by location, sign, gender  🔍"
             value={searchKeyWord}
             onChange={(e)=>setSearchKeyWord(e.target.value)}
-            onKeyPress={(e)=> handleKeyPress(e)}/>
+            onKeyPress={(e)=> handleKeyPress(e)}
+
+
+            />
     </form>
 )
 }

@@ -13,6 +13,7 @@ import ChooseBackgroundContent from '../Background/ChooseBackgroundContent';
 import AboutLinks from '../AboutLinks/AboutLink';
 import './NavigationMenu.css'
 import { closeNav } from '../../store/navigation'
+import SearchModal from '../SearchModal';
 
 function NavigationMenu() {
 
@@ -72,6 +73,11 @@ function NavigationMenu() {
     <nav className="menu_container">
       <ul className="">
 
+              {/* <li>
+                <ChooseBackgroundContent />
+              </li> */}
+
+
             <li className="exit-menu">
               <button
                 onClick={() => dispatch(closeNav())}>
@@ -120,6 +126,15 @@ function NavigationMenu() {
               </li>
 
               <li>
+                <button
+                  className="nav_bar_button"
+                >
+                  <AboutLinks />
+                  <SearchModal /> 
+                </button>
+              </li>
+
+              <li className="nav_bar_button">
                 <LogoutButton />
               </li>
 
@@ -127,14 +142,7 @@ function NavigationMenu() {
                 <ChooseBackgroundContent />
               </li>
 
-              <li>
-                <button
-                  className="nav_bar_button"
 
-                >
-                  <AboutLinks />
-                </button>
-              </li>
           </ul>
         </nav>
 

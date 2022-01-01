@@ -37,7 +37,7 @@ export function Modal({ onClose, children }) {
 
 // need to use 5 for light image
 export function AboutModal({ onClose, children }) {
-  const modalNode = useContext(ModalContext);
+   const modalNode = useContext(ModalContext);
   if (!modalNode) return null;
 
   return ReactDOM.createPortal(
