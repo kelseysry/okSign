@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux';
 import {search} from '../../store/search';
 import {useHistory} from "react-router";
 import './SearchForm.css'
-
+import { closeNav } from '../../store/navigation';
 
 
 
@@ -19,10 +19,10 @@ const handleKeyPress = async (e) =>{
         e.preventDefault();
         let resultFromSearch = await dispatch(search(searchKeyWord));
         if (resultFromSearch) {
-
+            hideModal()
+            dispatch(closeNav())
             history.push(`/search/${searchKeyWord}`);
             setSearchKeyWord('');
-            hideModal()
         }
 
     }
