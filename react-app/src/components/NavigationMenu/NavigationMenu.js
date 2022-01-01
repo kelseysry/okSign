@@ -30,6 +30,7 @@ function NavigationMenu() {
     await dispatch(clearQuestions())
     await dispatch(getProfiles())
     // await dispatch(getQuestions())
+    dispatch(closeNav())
     history.push(`/`)
 
 }
@@ -39,6 +40,7 @@ function NavigationMenu() {
     dispatch(clearProfiles())
     history.push(`/profiles/${sessionUser.id}`)
     dispatch(getProfiles())
+    dispatch(closeNav())
   }
 
   const handleClearConversations = async(e) => {
@@ -50,12 +52,14 @@ function NavigationMenu() {
     await dispatch(getQuestions())
 
     history.push(`/conversations`)
+    dispatch(closeNav())
   }
 
   const handleQuestions = async(e) => {
     e.preventDefault()
 
     history.push('/questions')
+    dispatch(closeNav())
   }
 
 
