@@ -13,6 +13,7 @@ import { useBackgroundContent } from "../../context/BackgroundContext";
 import pictures from "../../data/pictures";
 import './DiscoverSlide.css'
 import '../MatchProfile/DiscoverPics.css'
+import './Step.css'
 
 const darkImage = pictures.collection[6].imageUrl
 const lightImage = pictures.collection[6].imageUrl
@@ -189,6 +190,26 @@ if(currentUserQuestion) {
   if (currentUserQuestion?.length) {
     content = (
         <>
+
+        <section className="step-container">
+          <div className="Step1">Discover</div>
+          <div className="Step2">Users</div>
+          <div className="Step3">By</div>
+          <div className="Step4">Questions</div>
+          <div className="Step5">Or</div>
+          <div className="Step6">Horoscope</div>
+
+
+          {/* <div className="Step3">Users</div> */}
+
+
+          {/* <ChooseDiscoverContent /> */}
+        </section>
+
+
+
+
+
           <button
               id="go-back"f
               className="left"
@@ -232,21 +253,12 @@ if(currentUserQuestion) {
     )
   }
 
+        {/* <div>find potential matches via questions or horoscopes</div> */}
 
   return (
 
     <>
-    <div className="DiscoverHeaderContainerWQHButtons">
-      <div className="DiscoverHeader-Container">
-        <div className="DiscoverHeaderText">Discover</div>
-        <div>find potential matches via questions or horoscopes</div>
-      </div>
-      <div className="match-buttons-text-container">
-        <div>
-        <ChooseDiscoverContent />
-        </div>
-      </div>
-    </div>
+
 
     <section className="DiscoverContentContainer" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
 
