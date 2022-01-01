@@ -10,6 +10,8 @@ import { getHoroscopeMatchPercent } from "./getHoroScopeMatchPercent";
 import { horoscopeContent } from "./getHoroScopeMatchPercent";
 import './DiscoverHoroscope.css'
 import { NavLink } from "react-router-dom";
+import './DiscoverHoroscopeSlide.css'
+
 
 const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}) => {
   const dispatch = useDispatch()
@@ -191,37 +193,40 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
                         <NavLink
                 to={`/matchProfile/${profile?.user_id}`} // userIdPercentObj[0] is the user.id
               >
-                    <div className='defaultImage'>
-                      {defaultImg === 0 ? <img src={profile?.image_url1} alt='default photo' className='defaultImage'></img> :  <img src={defaultImg} alt='default photo' className="defaultImage"></img>}
-                    </div>
+
+                <section>
+                    {defaultImg === 0 ?  <div className='defaultImageHoroscope'><img src={profile?.image_url1} alt='default photo' className='defaultImage'></img>  </div> :
+                    <div className="defaultImage"><img src={defaultImg} alt='default photo'></img></div>}
+                </section>
+
                 </NavLink>
                     <div className='IconImagesContainer'>
-                        <div>
+                        <div key={0}>
                           <img src={profile?.image_url1} alt='photo 1' className="iconImg"
                             onClick={() => setDefaultImage(profile?.image_url1)}></img>
                         </div>
-                        <div>
+                        <div key={1}>
                           <img src={profile?.image_url2} alt='photo 2' className="iconImg"
                             onClick={() => setDefaultImage(profile?.image_url2)}></img>
                         </div>
 
-                        <div>
+                        <div key={2}>
                           <img src={profile?.image_url3} alt='photo 3' className="iconImg"
                             onClick={() => setDefaultImage(profile?.image_url3)}></img>
                         </div>
 
-                        <div>
+                        <div key={3}>
                           <img src={profile?.image_url4} alt='photo 4' className="iconImg"
                             onClick={() => setDefaultImage(profile?.image_url4)}></img>
                         </div>
 
-                        <div>
+                        <div key={4}>
                           <img src={profile?.image_url5} alt='photo 5' className="iconImg"
                             onClick={() => setDefaultImage(profile?.image_url5)}></img>
                         </div>
 
 
-                        <div>
+                        <div key={5}>
                           <img src={profile?.image_url6} alt='photo 6' className="iconImg"
                             onClick={() => setDefaultImage(profile?.image_url6)}></img>
                         </div>

@@ -1,0 +1,27 @@
+
+.defaultImage {
+  border-radius: 3px;
+  margin-left: 5px;
+  width: 700px;
+  height: 700px;
+  display: inline-block;
+  object-fit: cover;
+}
+
+
+.defaultImageHoroscope {
+  border-radius: 3px;
+  margin-left: 5px;
+  width: 700px;
+  height: 700px;
+  display: inline-block;
+  object-fit: cover;
+  filter: blur(4px);
+}
+
+.iconImg {
+  height: 50px;
+  width: 50px;
+  border-radius: 3px;
+  object-fit: cover;
+}
