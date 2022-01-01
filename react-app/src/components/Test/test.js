@@ -24,14 +24,27 @@ function Test() {
     <i class="fas fa-bars fa-5x"></i>
   </button>
 
-  <button className="arrow-button" onClick={() => dispatch(closeNav())}>
+        <button className="arrow-button" onClick={() => dispatch(closeNav())}>
         <i className="fas fa-arrow-right"></i>
         </button>
 
 
     </div>
 
-  {open?  <NavigationMenu /> : null}
+  {/* {open?  <NavigationMenu /> : null} */}
+
+  <div
+        className="sidebar"
+
+        >
+        <div className="sidebar-header">
+        <button className="arrow-button" onClick={() => dispatch(closeNav())}>
+        <i className="fas fa-arrow-right"></i>
+        </button>
+        </div>
+        {open ? <NavigationMenu /> : null}
+
+      </div>
     </>
 
   )
