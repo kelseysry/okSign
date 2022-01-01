@@ -25,9 +25,9 @@ const Discover = () => {
 
   const {backgroundContent} = useBackgroundContent()
 
-  const [slide, setSlide] = useState(0)
+  const [slide, setSlide] = useState(1)
 
-  let [navigateClick, setNavigateClick] = useState(0)
+  let [navigateClick, setNavigateClick] = useState(-1)
 
 
   const sessionUser = useSelector((state) => state?.session);
@@ -156,10 +156,10 @@ if(currentUserQuestion) {
     const left = document.querySelector('#discoverProfile');
     left.scrollLeft -= 1050;
     setSlide(1)
-    if(navigateClick !== 0) {
+    if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
     } else {
-      navigateClick = 0
+      navigateClick = -1 
     }
 
   }
