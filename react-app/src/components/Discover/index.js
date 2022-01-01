@@ -159,7 +159,7 @@ if(currentUserQuestion) {
     if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
     } else {
-      navigateClick = -1 
+      navigateClick = -1
     }
 
   }
@@ -207,17 +207,18 @@ if(currentUserQuestion) {
 
             <div className="discover-profiles-container" id="discoverProfile">
 
-             <section className="step-container">
-                <div className="Step1">Discover</div>
-                <div className="Step2">Users</div>
-                <div className="Step3">By</div>
-                {/* <div className="Step4">Questions</div> */}
-                <button className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
+            <section className="step-container">
+          <div className="Step1">Discover</div>
+          <div className="Step2">Users</div>
+          <div className="Step3">By</div>
+          <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
+          <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div>
 
-                <div className="Step5">Or</div>
-                {/* <div className="Step6">Horoscope</div> */}
-                <button className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-              </section>
+
+          <div className="Step5">Or</div>
+          <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
+          <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
+        </section>
 
 
           <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
