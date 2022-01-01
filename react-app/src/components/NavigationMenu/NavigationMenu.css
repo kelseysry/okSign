@@ -1,0 +1,52 @@
+*{
+  /* border: 0px; */
+  padding: 0px;
+  margin: 0px;
+}
+
+.fa-bars, .fa-times-circle {
+  color: white;
+}
+
+.menu {
+background-color:#1a1a1a;
+padding: 30px 30px;
+text-align: right;
+}
+
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  right: -300px;
+  transition: all 0.2s linear;
+  /* background-color: #e8d5a8; */
+  background-color:#1a1a1a;
+  z-index: 8;
+  overflow-y:auto;
+  color: white;
+  box-shadow: 0px 0 15px 1px rgb(0, 0, 0);
+
+}
+
+.exit-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 30px 30px;
+}
+
+.nav_bar_button {
+  color: #f1f1f1;
+  text-decoration: none;
+  padding: 30px 30px;
+}
+
+.menu_container {
+  display: flex;
+  flex-direction: column;
+}

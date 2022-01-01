@@ -1,0 +1,35 @@
+.about-link-container {
+  display: flex;
+  border-radius: 5px 5px;
+  background: #FFBD4A;
+  padding: 5px 5px;
+  width: 100%;
+  justify-content: space-evenly;
+  text-shadow: 1px 1px 5px black;
+}
+
+.search-modal-title {
+  color: white;
+  font-size: 55px;
+  text-shadow: 15px 15px 30px black;
+  line-height: 55px;
+}
+
+.search-first-text {
+  color: white;
+  font-size: 20px;
+  text-shadow: 15px 15px 15px black;
+
+  padding-left: 10px;
+}
+
+
+
+.modal-flex {
+  width: 300px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+}

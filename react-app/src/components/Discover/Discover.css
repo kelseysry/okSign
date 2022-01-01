@@ -79,5 +79,41 @@ button.blank {
 }
 
 .DiscoverHeaderText {
-  font-size: 50px;
+  font-size: 100px;
+  overflow-wrap: break-word !important;
+  color: #fff;
+  color: #FFBD4A;
+  line-height: 0.55em;
+  font-weight: 700;
+  text-align: center;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  /* font-family: 'Island Moments', cursive; */
+  /* text-shadow:
+  0 0 7px #fff,
+  0 0 10px #fff,
+  0 0 21px #fff,
+  0 0 42px #FFBD4A,
+  0 0 62px #FFBD4A; */
+  z-index: 1;
+}
+
+
+.DiscoverHeaderText-sub {
+  overflow-wrap: break-word !important;
+  color: #fff;
+  font-size: 3vw !important;
+  line-height: 0.9em;
+  font-weight: 700;
+  text-align: center;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  font-family: 'Dancing Script', cursive;
+  position: absolute;
+  z-index: 2;
+  top:120px;
+  left: 400px;
+
 }

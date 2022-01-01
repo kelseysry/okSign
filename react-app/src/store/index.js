@@ -19,6 +19,7 @@ import orientation from './orientation'
 import match from './match'
 import like from './like'
 import key from './key'
+import navigation from './navigation'
 
 const rootReducer = combineReducers({
   session,
@@ -39,7 +40,8 @@ const rootReducer = combineReducers({
   orientation,
   match,
   like,
-  key
+  key,
+  navigation
 });
 
 

@@ -21,6 +21,7 @@ import HitErrorPage from './components/PageNotFound/HitErrorPage';
 import Background from './components/Background/Background';
 import AboutLinks from './components/AboutLinks/AboutLink';
 import Test from './components/Test/test';
+import Menu from './components/NavigationMenu/Menu';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -42,7 +43,8 @@ function App() {
   return (
     // <BrowserRouter>
     <>
-      <NavBar/>
+    <Menu /> 
+      {/* <NavBar/> */}
       {/* <Background />  */}
       <Switch>
         <Route path='/login' exact={true}>
@@ -87,7 +89,7 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path='/test' exact={true} >
-          <Test /> 
+          <Test />
         </ProtectedRoute>
         <Route>
           <HitErrorPage />

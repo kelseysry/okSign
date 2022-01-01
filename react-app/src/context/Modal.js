@@ -37,7 +37,7 @@ export function Modal({ onClose, children }) {
 
 // need to use 5 for light image
 export function AboutModal({ onClose, children }) {
-  const modalNode = useContext(ModalContext);
+   const modalNode = useContext(ModalContext);
   if (!modalNode) return null;
 
   return ReactDOM.createPortal(
@@ -45,7 +45,7 @@ export function AboutModal({ onClose, children }) {
     <div id='modal'>
 
       <div id='modal-background' onClick={onClose} />
-      <div id='modal-content' style={{ backgroundImage: `url('${pictures.collection[1].imageUrl}')` }}>
+      <div id='modal-content' style={{ backgroundImage: `url('${pictures.collection[6].imageUrl}')` }}>
         {/* <div className="border-modal">hi</div> */}
         {children}
 
