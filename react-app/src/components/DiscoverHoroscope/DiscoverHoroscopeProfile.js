@@ -9,14 +9,20 @@ import { getProfiles } from "../../store/profile";
 import { getHoroscopeMatchPercent } from "./getHoroScopeMatchPercent";
 import { horoscopeContent } from "./getHoroScopeMatchPercent";
 import './DiscoverHoroscope.css'
+import { NavLink } from "react-router-dom";
+import './DiscoverHoroscopeSlide.css'
 
-const DiscoverHoroscopeProfile = ({profile}) => {
+
+const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
   const [horoscopes, setHoroscopes] = useState([])
+  const [defaultImg, setDefaultImage] = useState(0);
+  const [picNum, setPicNum] = useState('')
+
 
   // console.log("profile🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profile)
 
@@ -163,7 +169,127 @@ const DiscoverHoroscopeProfile = ({profile}) => {
   return (
     <>
 
-    { isLoaded && (
+{ isLoaded && profile?.user_id && (
+      <>
+      <section className="MatchProfileContainer">
+      {
+        idx === navigateClick?
+        (
+        <>
+          <div
+            className={`slide`+idx}
+            slide={slide}
+            onClick={() => setSlide(idx)}
+            onAnimationEnd={() => setSlide(0)}>
+            <div className="userNameCursive">{getUserName(profile?.user_id)}</div>
+            <div className="match_details_discover_under_name"> {profile?.age} | {profile?.about_me}</div>
+          </div>
+        </>
+        ): null
+      }
+
+        <div className="oneMatchProfileContainer">
+
+            <section className='ImageContainer'>
+                        <NavLink
+                to={`/matchProfile/${profile?.user_id}`} // userIdPercentObj[0] is the user.id
+              >
+
+                <section>
+                    {defaultImg === 0 || picNum === 0 ?
+                    <div className='defaultImageHoroscope'><img src={profile?.image_url1} alt='default photo' className='defaultImage'></img></div> :
+                    <div className="defaultImage"><img src={defaultImg} alt='default photo after ternary' className='defaultImage'></img></div>
+                    }
+                </section>
+
+                </NavLink>
+                    <div className='IconImagesContainer'>
+                        <div key={0}>
+                          <img src={profile?.image_url1} alt='photo 1' className="iconImg"
+                            onClick={() =>
+                              {setDefaultImage(profile?.image_url1);
+                              setPicNum(0)
+                              }
+                            }
+                            ></img>
+
+                        </div>
+                        <div key={1}>
+                          <img src={profile?.image_url2} alt='photo 2' className="iconImg"
+                            onClick={() => {
+                              setDefaultImage(profile?.image_url2)
+                              setPicNum(1)
+                            }
+
+
+                            }
+
+                            ></img>
+                        </div>
+
+                        <div key={2}>
+                          <img src={profile?.image_url3} alt='photo 3' className="iconImg"
+                            onClick={() => {
+                              setDefaultImage(profile?.image_url3)
+                              setPicNum(2)
+                              }}></img>
+                        </div>
+
+                        <div key={3}>
+                          <img src={profile?.image_url4} alt='photo 4' className="iconImg"
+                            onClick={() => {
+                              setDefaultImage(profile?.image_url4)
+                              setPicNum(3)
+                              }}></img>
+                        </div>
+
+                        <div key={4}>
+                          <img src={profile?.image_url5} alt='photo 5' className="iconImg"
+                            onClick={() => {
+                              setDefaultImage(profile?.image_url5)
+                              setPicNum(4)
+                              }}></img>
+                        </div>
+
+
+                        <div key={5}>
+                          <img src={profile?.image_url6} alt='photo 6' className="iconImg"
+                            onClick={() => {
+                              setDefaultImage(profile?.image_url6)
+                              setPicNum(5)
+                              }}></img>
+                        </div>
+                    </div>
+            </section>
+
+
+              <div className="MatchProfileInnerContainer_D">
+                  {
+                    idx === navigateClick?
+                    <div
+                      className={`slide`+idx}
+                      slide={slide}
+                      onClick={() => setSlide(idx)}
+                      onAnimationEnd={() => setSlide(0)}>
+
+                        <div className="circlesContainer_D">
+                          <div className="userPhotoMatch-first_D" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
+                          <div className="userPhotoMatch-last_D" style={{ backgroundImage: `url('${profile?.image_url1}')` }}></div>
+                          <div className="matchPercentCircle_D">{getHoroscopeMatchPercent(profile.horoscope_id,userProfileObj[0]?.horoscope_id)}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
+                        </div>
+
+                    </div>
+                  : null }
+              </div>
+         </div>
+      </section>
+      </>
+
+      )
+    }
+
+
+    {/* { isLoaded && (
       <>
       <div className="oneMatchProfileContainer">
           <div className="oneMatchProfileContainerHeader">
@@ -174,9 +300,7 @@ const DiscoverHoroscopeProfile = ({profile}) => {
               onClick={() => {handleCreateConversation(profile?.user_id)}}
               >Message  <i className="far fa-comment-dots"></i></button>
 
-              {/* <button
-              className="matchButton"
-              >Like  <i className="fas fa-heart"></i></button> */}
+
             </div>
 
           </div>
@@ -187,7 +311,6 @@ const DiscoverHoroscopeProfile = ({profile}) => {
             <img className="match_profile_image_discover_noP" src={profile?.image_url3} alt="match_image"/>
           </div>
 
-          {/* <div className="spacer-match">&nbsp;&nbsp;</div> */}
 
           <div className="matchPercentContainer">
             <div className="matchContainerHeader">
@@ -214,7 +337,7 @@ const DiscoverHoroscopeProfile = ({profile}) => {
       </>
 
       )
-    }
+    } */}
 
     </>
 
