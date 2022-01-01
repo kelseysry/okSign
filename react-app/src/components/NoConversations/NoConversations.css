@@ -28,3 +28,244 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+
+
+
+
+
+
+
+.Step1N{
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 50px;
+  font-size: 90px;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: white;
+
+}
+
+.Step2N {
+
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 240px;
+  left: 150px;
+  font-size: 90px;
+  transform: skew(0deg, -31deg) scaleY(1.33333);
+  color: white;
+
+}
+
+.Step3N{
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 290px;
+  left: 190px;
+  font-size: 90px !important;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: orange;
+  line-height: 75px;
+  z-index: 3;
+
+}
+
+
+
+.Step3NQ{
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 310px;
+  left: 260px;
+  font-size: 90px;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: orange;
+  line-height: 75px;
+
+}
+
+.Step4NQ {
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 470px;
+  left: 300px;
+  font-size: 90px;
+  transform: skew(0deg, -31deg) scaleY(1.33333);
+  color: white;
+}
+
+
+.Step5NQ{
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 430px;
+  left: 370px;
+  font-size: 90px;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: #d7a041;
+  line-height: 75px;
+  z-index: 3;
+
+}
+
+
+.Step6N {
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 640px;
+  left: 450px;
+  font-size: 90px;
+  transform: skew(0deg, -31deg) scaleY(1.33333);
+  color: white;
+}
+
+.Step7N{
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 680px;
+  left: 500px;
+  font-size: 90px;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: white;
+
+}
+
+
+
+.active, .Step4:hover, .Step6:hover {
+  text-shadow: 1px 1px 2px black;
+  color: #d7a041;
+}
+
+#orangeFont {
+  color: #d7a041;
+}
+
+#whiteFont {
+  color: white;
+}
+
+.StepClick1 {
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -.5px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 150px;
+  left: 710px;
+  transform: skew(0deg, 250deg) scaleY(1.33333);
+  transform: rotate(90deg);
+  transition: all 0.5s ease-out;
+  color: orange;
+}
+
+.StepClick2 {
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -.5px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 255px;
+  left: 860px;
+  transform: skew(0deg, 250deg) scaleY(1.33333);
+  transform: rotate(90deg);
+  transition: all 0.5s ease-out;
+  color: orange;
+}
+
+.hideClickMe {
+  display: none;
+}
+
+.step-container-new-user {
+  position: relative;
+  width: 800px;
+  padding-left: 100px;
+  display: inline-block;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 0px 100px;
+  border-right: 160px solid transparent;
+  flex-shrink: 0;
+  height: 1200px;
+}
+
+.click-me-new-user {
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -.5px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 176px;
+  left: 730px;
+  transform: skew(0deg, 240deg) scaleY(1.33333);
+  transform: rotate(34deg);
+  transition: all 0.5s ease-out;
+  color: white;
+
+}

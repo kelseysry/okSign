@@ -141,7 +141,7 @@ const Conversations = () => {
     )
   }  else {
     content = (
-      <div className="center-no-matches-component">
+      <div className="">
         <NoConversations />
       </div>
     )
