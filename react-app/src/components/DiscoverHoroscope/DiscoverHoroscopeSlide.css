@@ -29,3 +29,17 @@
 .ImageContainer {
   display: flex;
 }
+
+
+.horoscope-content-slide {
+  width: 500px;
+  text-shadow: 1px 1px 3px black;
+  line-height: 30px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 5px 5px;
+  border-radius: 5px 5px;
+  margin-top: 30px;
+
+
+}
