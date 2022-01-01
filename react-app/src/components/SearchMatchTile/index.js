@@ -5,19 +5,21 @@ import { useSelector, useDispatch } from "react-redux";
 import { GetMatchPercent } from "../../context/CalculatePercent";
 
 // matchProfile is the entire profile obj for one match
-const SearchMatchTile = ({matchProfile}) => {
+const SearchMatchTile = ({profile, slide, setSlide, idx, navigateClick}) => {
 
   // const [isLoaded, setIsLoaded] = useState(false)
   const [users, setUsers] = useState([]);
   const [currentUserProfile, setCurrentUserProfile] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
+  const [defaultImg, setDefaultImage] = useState(0);
+
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
 
   const {userIdsPercentsObj} = GetMatchPercent()
 
-  // console.log("userIdsPercentsObj-----------", userIdsPercentsObj)
+  console.log("profile-----------", profile.age)
 
   // console.log("currentUserProfile", currentUserProfile.oneProfile[0])
 
@@ -68,26 +70,108 @@ const SearchMatchTile = ({matchProfile}) => {
       return null
     }
   }
-  let percent = getPercent(matchProfile?.user_id)
+  let percent = getPercent(profile?.user_id)
   console.log("percent--------------", percent)
 
 
   return (
     <>
-      { matchProfile?.user_id && (
+
+    {profile?.user_id && (
       <>
-      <div className="oneMatchProfileContainer">
+      <section className="MatchProfileContainer">
+      {
+        idx === navigateClick?
+        (
+        <>
+          <div
+            className={`slide`+idx}
+            slide={slide}
+            onClick={() => setSlide(idx)}
+            onAnimationEnd={() => setSlide(0)}>
+            <div className="userNameCursive">{getUserName(profile?.user_id)}</div>
+            <div className="match_details_discover_under_name"> {profile?.age} | {profile?.about_me}</div>
+          </div>
+        </>
+        ): null
+      }
+
+        <div className="oneMatchProfileContainer">
+
+            <section className='ImageContainer'>
+                        <NavLink
+                to={`/matchProfile/${profile?.user_id}`} // userIdPercentObj[0] is the user.id
+              >
+                    <div className='defaultImage'>
+                      {defaultImg === 0 ? <img src={profile?.image_url1} alt='default photo' className='defaultImage'></img> :  <img src={defaultImg} alt='default photo' className="defaultImage"></img>}
+                    </div>
+                </NavLink>
+                    <div className='IconImagesContainer'>
+                        <div>
+                          <img src={profile?.image_url1} alt='photo 1' className="iconImg"
+                            onClick={() => setDefaultImage(profile?.image_url1)}></img>
+                        </div>
+                        <div>
+                          <img src={profile?.image_url2} alt='photo 2' className="iconImg"
+                            onClick={() => setDefaultImage(profile?.image_url2)}></img>
+                        </div>
+
+                        <div>
+                          <img src={profile?.image_url3} alt='photo 3' className="iconImg"
+                            onClick={() => setDefaultImage(profile?.image_url3)}></img>
+                        </div>
+
+                        <div>
+                          <img src={profile?.image_url4} alt='photo 4' className="iconImg"
+                            onClick={() => setDefaultImage(profile?.image_url4)}></img>
+                        </div>
+
+                        <div>
+                          <img src={profile?.image_url5} alt='photo 5' className="iconImg"
+                            onClick={() => setDefaultImage(profile?.image_url5)}></img>
+                        </div>
+
+
+                        <div>
+                          <img src={profile?.image_url6} alt='photo 6' className="iconImg"
+                            onClick={() => setDefaultImage(profile?.image_url6)}></img>
+                        </div>
+                    </div>
+            </section>
+
+
+              <div className="MatchProfileInnerContainer_D">
+                  {
+                    idx === navigateClick?
+                    <div
+                      className={`slide`+idx}
+                      slide={slide}
+                      onClick={() => setSlide(idx)}
+                      onAnimationEnd={() => setSlide(0)}>
+
+                        <div className="circlesContainer_D">
+                          {/* <div className="userPhotoMatch-first_D" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div> */}
+                          <div className="userPhotoMatch-last_D" style={{ backgroundImage: `url('${profile?.image_url1}')` }}></div>
+                          {/* <div className="matchPercentCircle_D">{matchPercent}%<div><i className="fas fa-heart"></i>&nbsp;</div></div> */}
+                        </div>
+
+                    </div>
+                  : null }
+              </div>
+         </div>
+      </section>
+
+
+
+      {/* <div className="oneMatchProfileContainer">
           <div className="oneMatchProfileContainerHeader">
             {getUserName(matchProfile.user_id)}
             <div className="matchButtonsContainer">
               <button
               className="matchButton"
-              // onClick={() => {handleCreateConversation(matchProfile?.user_id)}}
               >Message  <i className="far fa-comment-dots"></i></button>
 
-              {/* <button
-              className="matchButton"
-              >Like  <i className="fas fa-heart"></i></button> */}
+
             </div>
 
           </div>
@@ -98,7 +182,6 @@ const SearchMatchTile = ({matchProfile}) => {
             <img className="match_profile_image_discover_noP" src={matchProfile?.image_url3} alt="match_image"/>
           </div>
 
-          {/* <div className="spacer-match">&nbsp;&nbsp;</div> */}
 
           <div className="matchPercentContainer">
             <div className="matchContainerHeader">
@@ -129,7 +212,7 @@ const SearchMatchTile = ({matchProfile}) => {
           </div>
 
       </div>
-      <hr></hr>
+      <hr></hr> */}
       </>
 
       )
