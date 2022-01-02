@@ -235,7 +235,7 @@ const ProfileForm = () => {
                         <input
                         className="profile-input"
                         type="text"
-                        placeholder=""
+                        placeholder="24"
                         value={age}
                         onChange={(e) => setAge(e.target.value)}
                         >
@@ -259,7 +259,7 @@ const ProfileForm = () => {
                     <input
                     className="profile-input"
                     type="text"
-                    placeholder="pronouns"
+                    placeholder="she/her"
                     value={pronouns}
                     onChange={(e) => setPronouns(e.target.value)}
                     >
@@ -278,18 +278,19 @@ const ProfileForm = () => {
                 </label>
 
 
-
-                <label className="selectField">
-                  <span className="labelName">Orientation</span>
-                  <select value={orientation_id} onChange={(e) => setOrientation_id(+e.target.value)}>
-                    <option value="1">Straight</option>
-                    <option value="2">Lesbian</option>
-                    <option value="3">Gay</option>
-                    <option value="4">Bisexual</option>
-                    <option value="5">Queer</option>
-                    <option value="6">Pansexual</option>
-                  </select>
-                </label>
+                <div className="profile-select">
+                  <label className="selectField">
+                  </label>
+                    <span className="labelName">Orientation</span>
+                    <select value={orientation_id} onChange={(e) => setOrientation_id(+e.target.value)}>
+                      <option value="1">Straight</option>
+                      <option value="2">Lesbian</option>
+                      <option value="3">Gay</option>
+                      <option value="4">Bisexual</option>
+                      <option value="5">Queer</option>
+                      <option value="6">Pansexual</option>
+                    </select>
+                </div>
 
 
                   </div>
