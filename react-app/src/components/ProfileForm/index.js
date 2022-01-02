@@ -547,6 +547,104 @@ const ProfileForm = () => {
             </div>
           </div>
 
+          <div class="scroll-question-section" id="question-8">
+                <div className="question-flex">
+
+                <label className="labelName">
+                  Image Url 1
+                    <input
+                    className="picture-input"
+                    type="text"
+                    placeholder="pic format 🖼  ➡️ https://res.cloudinary.com/mabmab/image/upload/v1639292458/okSign/kelsey1_yut7zy.png"
+                    value={image_url1}
+                    onChange={(e) => setImage_url1(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label className="labelName">
+                  Image Url 2
+                    <input
+                    className="picture-input"
+                    type="text"
+                    placeholder="don't use a photo that clearly has another person cropped out"
+                    value={image_url2}
+                    onChange={(e) => setImage_url2(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label className="labelName">
+                  Image Url 3
+                    <input
+                    className="picture-input"
+                    type="text"
+                    placeholder="a picture can make up for a bad bio"
+                    value={image_url3}
+                    onChange={(e) => setImage_url3(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label className="labelName">
+                  Image Url 4
+                    <input
+                    className="picture-input"
+                    type="text"
+                    placeholder="don't use mirror selfies"
+                    value={image_url4}
+                    onChange={(e) => setImage_url4(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label className="labelName">
+                  Image Url 5
+                    <input
+                    className="picture-input"
+                    type="text"
+                    placeholder="have your friends pick out your best photos"
+                    value={image_url5}
+                    onChange={(e) => setImage_url5(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label className="labelName">
+                  Image Url 6
+                    <input
+                    className="picture-input"
+                    type="text"
+                    placeholder="try not to use group pictures...we're not playing find waldo"
+                    value={image_url6}
+                    onChange={(e) => setImage_url6(e.target.value)}
+                    >
+                    </input>
+                </label>
+
+
+
+          </div>
+          </div>
+
+                <label className="selectField">
+                  <span className="labelName">Smoking</span>
+                  <select value={smoking_id} onChange={(e) => setSmoking(+e.target.value)}>
+                    <option value="1">Smokes cigarettes regularly</option>
+                    <option value="2">Smokes cigarettes sometimes</option>
+                    <option value="3">Vapes</option>
+                    <option value="4">Doesn't smoke</option>
+                  </select>
+                </label>
+
+          <div class="scroll-question-section" id="question-4">
+                <div className="question-flex">
+
+          </div>
+          </div>
+
+          <div class="scroll-question-section" id="question-4">
+                <div className="question-flex">
+
+          </div>
+          </div>
+
+
           <div class="scroll-question-section" id="question-4">
                 <div className="question-flex">
 
@@ -559,83 +657,7 @@ const ProfileForm = () => {
 
 
 
-                <label>
-                  Image Url 1
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="don't use a photo that clearly has another person cropped out"
-                    value={image_url1}
-                    onChange={(e) => setImage_url1(e.target.value)}
-                    >
-                    </input>
-                </label>
-                <label>
-                  Image Url 2
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="a picture is worth a 1000 words"
-                    value={image_url2}
-                    onChange={(e) => setImage_url2(e.target.value)}
-                    >
-                    </input>
-                </label>
-                <label>
-                  Image Url 3
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="a picture can make up for a bad bio"
-                    value={image_url3}
-                    onChange={(e) => setImage_url3(e.target.value)}
-                    >
-                    </input>
-                </label>
-                <label>
-                  Image Url 4
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="don't use mirror selfies"
-                    value={image_url4}
-                    onChange={(e) => setImage_url4(e.target.value)}
-                    >
-                    </input>
-                </label>
-                <label>
-                  Image Url 5
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="have your friends pick out your best photos"
-                    value={image_url5}
-                    onChange={(e) => setImage_url5(e.target.value)}
-                    >
-                    </input>
-                </label>
-                <label>
-                  Image Url 6
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="try not to use group pictures..., we're not playing find waldo"
-                    value={image_url6}
-                    onChange={(e) => setImage_url6(e.target.value)}
-                    >
-                    </input>
-                </label>
 
-
-                <label className="selectField">
-                  <span className="labelName">Smoking</span>
-                  <select value={smoking_id} onChange={(e) => setSmoking(+e.target.value)}>
-                    <option value="1">Smokes cigarettes regularly</option>
-                    <option value="2">Smokes cigarettes sometimes</option>
-                    <option value="3">Vapes</option>
-                    <option value="4">Doesn't smoke</option>
-                  </select>
-                </label>
 
                 <label className="selectField">
                   <span className="labelName">Drinking</span>

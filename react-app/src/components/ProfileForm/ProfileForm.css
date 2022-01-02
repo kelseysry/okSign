@@ -38,6 +38,20 @@
   font-size: 20px;
 }
 
+.picture-input {
+  color: white;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  box-sizing: border-box;
+  display: block;
+  outline: 0;
+  padding: 0.25em 0.5em;
+  width: 1000px;
+  background: transparent;
+  padding-top: 30px;
+  font-size: 20px;
+}
+
 select {
   padding: 0.25em 0.5em;
 }
