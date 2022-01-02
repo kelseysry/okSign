@@ -118,3 +118,53 @@
   /* color: white;
   background: black; */
 }
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  padding-left: 200px;
+}
+
+.location-box1-map {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background: wheat;
+}
+
+.location-box2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background: violet;
+}
+
+.location-box3-grid {
+  grid-column-start: 2;
+  grid-column-end:3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background: turquoise;
+  display: grid;
+  grid-auto-rows: 100px;
+  grid-template-columns: repeat(1, 1fr);
+  /* grid-template-rows: repeat(2, 1fr); */
+}
+
+.location-box4-lat {
+  grid-column-start: 1;
+  grid-column-end:1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background: yellow;
+}
+.location-box4-lat {
+  grid-column-start: 1;
+  grid-column-end:1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background: rgb(79, 79, 53);
+}

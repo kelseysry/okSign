@@ -158,38 +158,17 @@ return (
 
 
         <div class="scroll-question2-section" id="question-2">
-          <div className="question-big">2. Choose the better romantic activity</div>
-          <div className="vertical-line"></div>
-            <section className="question1ContainerE">
-                    <div className="questionTextE">Your Answer?</div>
-                    <div className ="question-choice">
-                    <RadioButton
-                        label="Kissing in Paris"
-                        value={question2 === 'Kissing in Paris'}
-                        onChange={(e) => setQuestion2("Kissing in Paris")}
-                      />
-                    <RadioButton
-                        label="Kissing in a tent, in the woods"
-                        value={question2 === 'Kissing in a tent, in the woods'}
-                        onChange={(e) => setQuestion2("Kissing in a tent, in the woods")}
-                      />
-                    </div>
+          <section className="location-grid">
+            <div className="location-box1-map">map</div>
+            <div className="location-box2">location</div>
+            <div className="location-box3-grid">
+              <div className="location-box4-lat">lat</div>
+              <div className="location-box5-lat">lng</div>
+            </div>
 
-                    <div className="questionTextE">Answer you'll accept?</div>
-                    <div className ="question-choice">
-                      <RadioButton
-                          label="Carefree"
-                          value={must_answer1 === 'Carefree'}
-                          onChange={(e) => setMust_answer1("Carefree")}
-                        />
-                      <RadioButton
-                        label="Kissing in a tent, in the woods"
-                        value={must_answer2 === "Kissing in a tent, in the woods"}
-                        onChange={(e) => setMust_answer2("Kissing in a tent, in the woods")}
-                      />
-                    </div>
-              </section>
-            <div className="horizontal-line"></div>
+          </section>
+
+
         </div>
 
 
