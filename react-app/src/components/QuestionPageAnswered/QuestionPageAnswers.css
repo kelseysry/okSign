@@ -14,7 +14,7 @@
   /* padding-right: 50px; */
   font-family: 'Roboto Condensed', sans-serif;
   text-align: left;
-  padding-bottom: 50px;
+  padding-bottom: 1px;
 }
 
 .your-answer {
@@ -33,19 +33,18 @@
 
 .fancy {
   border: none;
-  border-top: 3px double rgb(255, 255, 255);
+  border-top: 3px double #5c5344;;
   color: rgb(255, 255, 255);
   overflow: visible;
   text-align: center;
-  width: 1000px;
+  width: 100%;
+  margin: 40px 0;
 }
 
-.fancy:after {
+/* .fancy:after {
   background: #1a1a1a;
   content: '⭐️';
-  padding: 0 10px;
+  padding: 0 20px;
   position: relative;
-  top: -13px;
-}
-
-
+  top: -12px;
+} */

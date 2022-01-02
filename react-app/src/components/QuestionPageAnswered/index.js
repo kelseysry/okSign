@@ -59,7 +59,7 @@ function QuestionPageAnswered() {
       </div>
     </section>
 
-    <hr className="fancy"></hr>
+    <div className="fancy"></div>
 
     <section className="question2Container">
           <div className="questionTextBig">2. Choose the better romantic activity</div>
