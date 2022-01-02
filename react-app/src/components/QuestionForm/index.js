@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import RadioButton from '../RadioButton';
 import { createQuestion } from "../../store/question"
 import { useHistory } from 'react-router';
+import './QuestionForm.css'
 
 const QuestionForm = () => {
   const dispatch = useDispatch();
@@ -67,65 +68,124 @@ const QuestionForm = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
-
-
     const userInputQuestions = {
       question1, must_answer1, question2, must_answer2, question3, must_answer3, question4, must_answer4, question5, must_answer5,question6, must_answer6, question7, must_answer7,question8, must_answer8, question9, must_answer9, question10,must_answer10, user_id
     }
-    console.log("userInputQUestion in QUestionFOrm", userInputQuestions)
-
+    // console.log("userInputQUestion in QUestionFOrm", userInputQuestions)
     let newUserQuestions = await dispatch(createQuestion(userInputQuestions))
-
-    console.log("newUserQuestions", newUserQuestions)
+    // console.log("newUserQuestions", newUserQuestions)
 
       if (newUserQuestions) {
         // hideForm();
          history.push(`/profiles/${user_id}`)
-
       }
   }
 
 
-  const handelCancelEditQuestionForm = (e) => {
-    e.preventDefault();
-
-
-    // hideForm();
-  };
 
   return (
     <>
-      <form className="questionForm" onSubmit={handleSubmit}>
+    <section className="all-questions-container">
+
+    <nav className="question-nav-bar">
+      <a href="#question-1">1</a>
+      <a href="#question-2">2</a>
+      <a href="#question-3">3</a>
+      <a href="#question-4">4</a>
+      <a href="#question-5">5</a>
+      <a href="#question-6">6</a>
+      <a href="#question-7">7</a>
+      <a href="#question-8">8</a>
+      <a href="#question-9">9</a>
+      <a href="#question-10">10</a>
+    </nav>
+
+    <section class="scroll-container">
+      <form className="" onSubmit={handleSubmit}>
+
+      <div class="scroll-question1-section" id="question-1">
+            <div className="questionText">1. Which word describes you better?</div>
+            <div className="vertical-line"></div>
 
         <section className="question1Container">
-          <div className="questionText">1. Which word describes you better?</div>
-          <div className ="question">
-            <RadioButton
-                label="Carefree"
-                value={question1 === 'Carefree'}
-                onChange={(e) => setQuestion1("Carefree")}
+           <div className="questionTextE">Your Answer?</div>
+            <div className ="question-choice">
+              <RadioButton
+                  label="Carefree"
+                  value={question1 === 'Carefree'}
+                  onChange={(e) => setQuestion1("Carefree")}
+                />
+              <RadioButton
+                label="Intense"
+                value={question1 === 'Intense'}
+                onChange={(e) => setQuestion1("Intense")}
               />
-            <RadioButton
-              label="Intense"
-              value={question1 === 'Intense'}
-              onChange={(e) => setQuestion1("Intense")}
-            />
-          </div>
+            </div>
 
-          <div className="answer">Answer you'll accept?</div>
-          <div className ="question">
-            <RadioButton
-                label="Carefree"
-                value={must_answer1 === 'Carefree'}
-                onChange={(e) => setMust_answer1("Carefree")}
+            <div className="questionTextE">Answer you'll accept?</div>
+            <div className ="question-choice">
+              <RadioButton
+                  label="Carefree"
+                  value={must_answer1 === 'Carefree'}
+                  onChange={(e) => setMust_answer1("Carefree")}
+                />
+              <RadioButton
+                label="Intense"
+                value={must_answer1 === 'Intense'}
+                onChange={(e) => setMust_answer1("Intense")}
               />
-            <RadioButton
-              label="Intense"
-              value={must_answer1 === 'Intense'}
-              onChange={(e) => setMust_answer1("Intense")}
-            />
-          </div>
-        </section>
+              </div>
+          </section>
+          <div className="horizontal-line"></div>
+        </div>
+
+
+
+        <div class="scroll-question2-section" id="question-2">
+          <div className="question-big">2. Choose the better romantic activity</div>
+          <div className="vertical-line"></div>
+            <section className="question1ContainerE">
+                    <div className="questionTextE">Your Answer?</div>
+                    <div className ="question-choice">
+                    <RadioButton
+                        label="Kissing in Paris"
+                        value={question2 === 'Kissing in Paris'}
+                        onChange={(e) => setQuestion2("Kissing in Paris")}
+                      />
+                    <RadioButton
+                        label="Kissing in a tent, in the woods"
+                        value={question2 === 'Kissing in a tent, in the woods'}
+                        onChange={(e) => setQuestion2("Kissing in a tent, in the woods")}
+                      />
+                    </div>
+
+                    <div className="questionTextE">Answer you'll accept?</div>
+                    <div className ="question-choice">
+                      <RadioButton
+                          label="Carefree"
+                          value={must_answer1 === 'Carefree'}
+                          onChange={(e) => setMust_answer1("Carefree")}
+                        />
+                      <RadioButton
+                        label="Kissing in a tent, in the woods"
+                        value={must_answer2 === "Kissing in a tent, in the woods"}
+                        onChange={(e) => setMust_answer2("Kissing in a tent, in the woods")}
+                      />
+                    </div>
+              </section>
+            <div className="horizontal-line"></div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
 
         <section className="question2Container">
           <div className="questionText">2. Choose the better romantic activity</div>
@@ -410,7 +470,10 @@ const QuestionForm = () => {
         {/* <button type="button" onClick={handelCancelEditQuestionForm}>Cancel</button> */}
       </form>
 
+      </section>
 
+
+    </section>
 
     </>
 

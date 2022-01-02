@@ -91,8 +91,8 @@ function App() {
         </ProtectedRoute>
 
         <ProtectedRoute path='/test' exact={true} >
-          {/* <Test /> */}
-          <TestProfile />
+          <Test />
+          {/* <TestProfile /> */}
         </ProtectedRoute>
         <Route>
           <HitErrorPage />
