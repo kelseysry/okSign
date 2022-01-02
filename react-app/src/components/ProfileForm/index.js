@@ -227,7 +227,9 @@ const ProfileForm = () => {
 
               <div class="scroll-question1-section" id="question-1">
 
-                <label>
+                <label
+                  className="labelName"
+                >
                   Age
                     <input
                     className="profile-input"
@@ -237,6 +239,15 @@ const ProfileForm = () => {
                     onChange={(e) => setAge(e.target.value)}
                     >
                     </input>
+                </label>
+
+                <label className="selectField">
+                  <span className="labelName">Gender</span>
+                  <select value={gender_id} onChange={(e) => setGender_id(+e.target.value)}>
+                    {/* <option value='1' disabled>Select a gender</option> */}
+                    <option value="1">Women</option>
+                    <option value="2">Male</option>
+                  </select>
                 </label>
 
               </div>
@@ -389,14 +400,7 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
-                <label className="selectField">
-                  <span className="labelName">Gender</span>
-                  <select value={gender_id} onChange={(e) => setGender_id(+e.target.value)}>
-                    {/* <option value='1' disabled>Select a gender</option> */}
-                    <option value="1">Women</option>
-                    <option value="2">Male</option>
-                  </select>
-                </label>
+
                 <label className="selectField">
                   <span className="labelName">Gender Preference</span>
                   <select value={gender_preference_id} onChange={(e) => setGender_preference_id(+e.target.value)}>
