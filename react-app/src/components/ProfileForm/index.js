@@ -209,9 +209,10 @@ const ProfileForm = () => {
       <a href="#question-6"><i class="fas fa-grin-squint"></i></a>
       <a href="#question-7"><i class="fas fa-play-circle"></i></a>
       <a href="#question-8"><i class="fas fa-images"></i></a>
-      <a href="#question-9"><i class="fas fa-address-card"></i></a>
-      <a href="#question-10">10</a>
-      <a href="#question-11"><i class="fas fa-check-circle"></i></a>
+      <a href="#question-9"><i class="fas fa-cocktail"></i></a>
+      <a href="#question-10"><i class="fas fa-baby-carriage"></i></a>
+      <a href="#question-11"><i class="fas fa-dove"></i></a>
+      <a href="#question-12"><i class="fas fa-check-circle"></i></a>
     </nav>
 
     <section class="scroll-container">
@@ -616,59 +617,47 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
+          </div>
+          </div>
 
+          <div class="scroll-question-section" id="question-9">
+                <div className="question-flex">
 
+                <div className="profile2-select">
+                  <label className="selectField">
+                  </label>
+                    <span className="labelName">Smoking</span>
+                    <select value={smoking_id} onChange={(e) => setSmoking(+e.target.value)}>
+                      <option value="1">Smokes cigarettes regularly</option>
+                      <option value="2">Smokes cigarettes sometimes</option>
+                      <option value="3">Vapes</option>
+                      <option value="4">Doesn't smoke</option>
+                    </select>
+                </div>
+
+                <div className="profile2-select">
+                  <label className="selectField">
+                  </label>
+                    <span className="labelName">Drinking</span>
+                    <select value={drinking_id} onChange={(e) => setDrinking(+e.target.value)}>
+                      <option value="1">Drinks often</option>
+                      <option value="2">Drinks sometimes</option>
+                      <option value="3">Doesn't drink</option>
+                    </select>
+                </div>
 
           </div>
           </div>
+
+
+
+          <div class="scroll-question-section" id="question-10">
+                <div className="question-flex">
+
+                <div className="profile-select">
 
                 <label className="selectField">
-                  <span className="labelName">Smoking</span>
-                  <select value={smoking_id} onChange={(e) => setSmoking(+e.target.value)}>
-                    <option value="1">Smokes cigarettes regularly</option>
-                    <option value="2">Smokes cigarettes sometimes</option>
-                    <option value="3">Vapes</option>
-                    <option value="4">Doesn't smoke</option>
-                  </select>
                 </label>
-
-          <div class="scroll-question-section" id="question-4">
-                <div className="question-flex">
-
-          </div>
-          </div>
-
-          <div class="scroll-question-section" id="question-4">
-                <div className="question-flex">
-
-          </div>
-          </div>
-
-
-          <div class="scroll-question-section" id="question-4">
-                <div className="question-flex">
-
-          </div>
-          </div>
-
-
-
-
-
-
-
-
-
-                <label className="selectField">
-                  <span className="labelName">Drinking</span>
-                  <select value={drinking_id} onChange={(e) => setDrinking(+e.target.value)}>
-                    <option value="1">Drinks often</option>
-                    <option value="2">Drinks sometimes</option>
-                    <option value="3">Doesn't drink</option>
-                  </select>
-                </label>
-
-                <label className="selectField">
                   <span className="labelName">Children</span>
                   <select value={children_id} onChange={(e) => setChildren_id(+e.target.value)}>
                     <option value="1">Doesn't have kids but might want them</option>
@@ -678,9 +667,11 @@ const ProfileForm = () => {
                     <option value="5">Has kids and might want more</option>
                     <option value="6">Has kids and want more</option>
                   </select>
-                </label>
+                </div>
 
+              <div className="profile-select">
               <label className="selectField">
+                </label>
                   <span className="labelName">Pets</span>
                   <select value={pet_id} onChange={(e) => setPet_id(+e.target.value)}>
                     <option value="1">Doesn't have pets</option>
@@ -688,33 +679,58 @@ const ProfileForm = () => {
                     <option value="3">Dog</option>
                     <option value="4">Has other pets</option>
                   </select>
-                </label>
+                </div>
 
-                <label className="selectField">
-                  <span className="labelName">Politics</span>
-                  <select value={politic_id} onChange={(e) => setPolitic_id(+e.target.value)}>
-                    <option value="1">Politically liberal</option>
-                    <option value="2">Politically moderate</option>
-                    <option value="3">Politically conservative</option>
-                    <option value="4">Other political beliefs</option>
-                  </select>
-                </label>
+          </div>
+          </div>
 
-                <label className="selectField">
-                  <span className="labelName">Religion</span>
-                  <select value={religion_id} onChange={(e) => setReligion_id(+e.target.value)}>
-                    <option value="1">Agnosticism</option>
-                    <option value="2">Atheism</option>
-                    <option value="3">Christianity</option>
-                    <option value="4">Judaism</option>
-                    <option value="5">Catholicism</option>
-                    <option value="6">Islam</option>
-                    <option value="7">Hinduism</option>
-                    <option value="8">Buddhism</option>
-                    <option value="9">Sikh</option>
-                    <option value="10">Other religion</option>
-                  </select>
-                </label>
+
+          <div class="scroll-question-section" id="question-11">
+                <div className="question-flex">
+                <div className="profile2-select">
+                  <label className="selectField">
+                  </label>
+                    <span className="labelName">Politics</span>
+                    <select value={politic_id} onChange={(e) => setPolitic_id(+e.target.value)}>
+                      <option value="1">Politically liberal</option>
+                      <option value="2">Politically moderate</option>
+                      <option value="3">Politically conservative</option>
+                      <option value="4">Other political beliefs</option>
+                    </select>
+                  </div>
+
+                  <div className="profile2-select">
+                  <label className="selectField">
+                  </label>
+                    <span className="labelName">Religion</span>
+                    <select value={religion_id} onChange={(e) => setReligion_id(+e.target.value)}>
+                      <option value="1">Agnosticism</option>
+                      <option value="2">Atheism</option>
+                      <option value="3">Christianity</option>
+                      <option value="4">Judaism</option>
+                      <option value="5">Catholicism</option>
+                      <option value="6">Islam</option>
+                      <option value="7">Hinduism</option>
+                      <option value="8">Buddhism</option>
+                      <option value="9">Sikh</option>
+                      <option value="10">Other religion</option>
+                    </select>
+                  </div>
+
+          </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
                 <ul className="error">
                   {errors.map((error) => <li key={error}>{error}</li>)}
                 </ul>
