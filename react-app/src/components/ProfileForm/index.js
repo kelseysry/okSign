@@ -414,10 +414,10 @@ const ProfileForm = () => {
                 </div>
             </div>
 
+            <div class="scroll-question-section" id="question-5">
+                <div className="question-flex">
 
-
-
-                  <label>
+                <label className="labelName">
                   Needs
                     <input
                     className="profile-input"
@@ -428,6 +428,74 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
+
+
+                <div className="profile-select">
+                <label className="selectField">
+                </label>
+                <span className="labelName">What is your relationship status?</span>
+                  <select value={partner_id} onChange={(e) => setPartner_id(+e.target.value)}>
+                    <option value="1">Monogamous</option>
+                    <option value="2">Non-monogamous</option>
+                    <option value="3">Open to either</option>
+                  </select>
+                </div>
+
+
+                <div className="profile-select">
+                <label className="selectField">
+                </label>
+                  <span className="labelName">Horoscope</span>
+                  <select value={horoscope_id} onChange={(e) => setHoroscope_id(+e.target.value)}>
+                    <option value="1">Aries</option>
+                    <option value="2">Taurus</option>
+                    <option value="3">Gemini</option>
+                    <option value="4">Cancer</option>
+                    <option value="5">Leo</option>
+                    <option value="6">Virgo</option>
+                    <option value="7">Libra</option>
+                    <option value="8">Scorpio</option>
+                    <option value="9">Sagittarius</option>
+                    <option value="10">Capricorn</option>
+                    <option value="11">Aquarius</option>
+                    <option value="12">Pisces</option>
+                  </select>
+                </div>
+
+
+                <div className="profile-select">
+                <label className="selectField">
+                </label>
+                  <span className="labelName">Gender Preference</span>
+                  <select value={gender_preference_id} onChange={(e) => setGender_preference_id(+e.target.value)}>
+                    {/* <option value='1' disabled>Select a gender preference </option> */}
+                    <option value="1">Women</option>
+                    <option value="2">Male</option>
+                  </select>
+                </div>
+
+
+              </div>
+          </div>
+
+          <div class="scroll-question-section" id="question-4">
+                <div className="question-flex">
+
+          </div>
+          </div>
+
+          <div class="scroll-question-section" id="question-4">
+                <div className="question-flex">
+
+          </div>
+          </div>
+
+          <div class="scroll-question-section" id="question-4">
+                <div className="question-flex">
+
+          </div>
+          </div>
+
 
 
                 <label>
@@ -485,15 +553,6 @@ const ProfileForm = () => {
                     onChange={(e) => setUser_audio(e.target.value)}
                     >
                     </input>
-                </label>
-
-                <label className="selectField">
-                  <span className="labelName">Gender Preference</span>
-                  <select value={gender_preference_id} onChange={(e) => setGender_preference_id(+e.target.value)}>
-                    {/* <option value='1' disabled>Select a gender preference </option> */}
-                    <option value="1">Women</option>
-                    <option value="2">Male</option>
-                  </select>
                 </label>
 
                 <label>
@@ -563,35 +622,6 @@ const ProfileForm = () => {
                     </input>
                 </label>
 
-                <label className="selectField">
-                <span className="labelName">What is your relationship status?</span>
-                  <select value={partner_id} onChange={(e) => setPartner_id(+e.target.value)}>
-                    <option value="1">Monogamous</option>
-                    <option value="2">Non-monogamous</option>
-                    <option value="3">Open to either</option>
-                  </select>
-                </label>
-
-
-
-
-                <label className="selectField">
-                  <span className="labelName">Horoscope</span>
-                  <select value={horoscope_id} onChange={(e) => setHoroscope_id(+e.target.value)}>
-                    <option value="1">Aries</option>
-                    <option value="2">Taurus</option>
-                    <option value="3">Gemini</option>
-                    <option value="4">Cancer</option>
-                    <option value="5">Leo</option>
-                    <option value="6">Virgo</option>
-                    <option value="7">Libra</option>
-                    <option value="8">Scorpio</option>
-                    <option value="9">Sagittarius</option>
-                    <option value="10">Capricorn</option>
-                    <option value="11">Aquarius</option>
-                    <option value="12">Pisces</option>
-                  </select>
-                </label>
 
                 <label className="selectField">
                   <span className="labelName">Smoking</span>
