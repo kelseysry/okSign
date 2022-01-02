@@ -168,3 +168,42 @@
   grid-row-end: 1;
   background: rgb(79, 79, 53);
 }
+
+.about-me-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 100px;
+  padding-left: 200px;
+}
+
+.about-box1{
+  grid-column-start: 1;
+  grid-column-end:2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background: yellow;
+}
+
+.about-box2{
+  grid-column-start: 2;
+  grid-column-end:3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background: rgb(88, 88, 61);
+}
+
+.about-box3{
+  grid-column-start: 1;
+  grid-column-end:2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background: rgb(84, 84, 67);
+}
+
+.about-box4{
+  grid-column-start: 2;
+  grid-column-end:3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background: rgb(52, 52, 12);
+}

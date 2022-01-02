@@ -87,7 +87,7 @@ return (
 <nav className="profile-nav-bar">
   <a href="#question-1"><i className="fas fa-ice-cream"></i></a>
   <a href="#question-2"><i class="fas fa-map-marker-alt"></i></a>
-  <a href="#question-3">3</a>
+  <a href="#question-3">about me</a>
   <a href="#question-4">4</a>
   <a href="#question-5">5</a>
   <a href="#question-6">6</a>
@@ -154,21 +154,29 @@ return (
 
         </div>
 
+        {/* - about me
+  - hobbies
+  - education
+  - occupation */}
 
 
 
         <div class="scroll-question2-section" id="question-2">
-          <section className="location-grid">
-            <div className="location-box1-map">map</div>
-            <div className="location-box2">location</div>
-            <div className="location-box3-grid">
-              <div className="location-box4-lat">lat</div>
-              <div className="location-box5-lat">lng</div>
-            </div>
+          <section className="about-me-grid">
+            <div className="about-box1">about me</div>
+            <div className="about-box2">hobbies</div>
+            <div className="about-box3">education</div>
+            <div className="about-box4">occupation</div>
+
 
           </section>
+        </div>
 
 
+        <div class="scroll-question3-section" id="question-3">
+          <section className="a">
+
+          </section>
         </div>
 
 
