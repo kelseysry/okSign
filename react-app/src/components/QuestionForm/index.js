@@ -429,36 +429,38 @@ const QuestionForm = () => {
         </div>
 
       <div class="scroll-question-section" id="question-10">
-
-        <section className="question10Container">
           <div className="questionText">10. Do you think it’s important to have an emotional connection before a physical one?</div>
-          <div className ="question-choice">
-            <RadioButton
-                label="Yes"
-                value={question10 === 'Yes'}
-                onChange={(e) => setQuestion10("Yes")}
-              />
-            <RadioButton
-              label="No"
-              value={question10 === 'No'}
-              onChange={(e) => setQuestion10("No")}
-            />
-          </div>
+            <div className="vertical-line"></div>
+            <section className="question10Container">
+            <div className="questionTextE">Your Answer?</div>
+              <div className ="question-choice">
+                <RadioButton
+                    label="Yes"
+                    value={question10 === 'Yes'}
+                    onChange={(e) => setQuestion10("Yes")}
+                  />
+                <RadioButton
+                  label="No"
+                  value={question10 === 'No'}
+                  onChange={(e) => setQuestion10("No")}
+                />
+              </div>
 
-          <div className="questionTextE">Answer you'll accept?</div>
-          <div className ="question-choice">
-            <RadioButton
-                label="Yes"
-                value={must_answer10 === 'Yes'}
-                onChange={(e) => setMust_answer10("Yes")}
-              />
-            <RadioButton
-              label="No"
-              value={must_answer10 === 'No'}
-              onChange={(e) => setMust_answer10("No")}
-            />
-          </div>
-        </section>
+              <div className="questionTextE">Answer you'll accept?</div>
+              <div className ="question-choice">
+                <RadioButton
+                    label="Yes"
+                    value={must_answer10 === 'Yes'}
+                    onChange={(e) => setMust_answer10("Yes")}
+                  />
+                <RadioButton
+                  label="No"
+                  value={must_answer10 === 'No'}
+                  onChange={(e) => setMust_answer10("No")}
+                />
+              </div>
+            </section>
+            <div className="horizontal-line"></div>
       </div>
 
         <ul className="error">
