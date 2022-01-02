@@ -72,7 +72,7 @@ return (
 
 <div>
 <div className="answerQuestionContainer">
-<div className="answerQuestionHeader">Answer Questions</div>
+{/* <div className="answerQuestionHeader">Answer Questions</div> */}
 </div>
      <QuestionForm />
 </div>

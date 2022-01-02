@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { EditQuestion } from '../../store/question';
 import RadioButton from '../RadioButton';
 import './EditQuestionForm.css'
+import { useHistory } from 'react-router';
 
 
 const EditQuestionForm = ({questions, hideForm}) => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id = sessionUser?.id
@@ -82,12 +84,29 @@ const EditQuestionForm = ({questions, hideForm}) => {
       }
   }
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto"
+    });
+  };
+
 
 const handleCancelFormEditClick = (e) => {
   e.preventDefault();
-
   hideForm();
+  history.push('/questions')
+  scrollToTop()
 };
+
+
+const handleFormEditSubmit = (e) => {
+  e.preventDefault();
+  hideForm();
+  history.push('/questions')
+  scrollToTop()
+};
+
 
   return (
     <>
@@ -490,10 +509,14 @@ const handleCancelFormEditClick = (e) => {
               <button
                 className="profile-submit-button"
                 type="submit"
+                onClick={handleFormEditSubmit}
                 disabled={errors.length>0}>
                 Submit
               </button>
-              <button type="button" className="profile-submit-button" onClick={handleCancelFormEditClick}>Cancel</button>
+              <button type="button"
+              className="profile-submit-button"
+              onClick={handleCancelFormEditClick}
+              >Cancel</button>
 
 
         </div>
