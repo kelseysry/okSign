@@ -71,7 +71,6 @@ function TestProfile() {
   - 6. urls
 
   9. Small Details
-  - horoscope
   - smoking
   - drinking
   - children

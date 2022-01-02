@@ -429,6 +429,18 @@ const ProfileForm = () => {
                     </input>
                 </label>
 
+                <label className="labelName">
+                  Looking for
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="no judgement: what do you want?"
+                    value={looking_for}
+                    onChange={(e) => setLooking_for(e.target.value)}
+                    >
+                    </input>
+                </label>
+
 
                 <div className="profile-select">
                 <label className="selectField">
@@ -478,27 +490,9 @@ const ProfileForm = () => {
               </div>
           </div>
 
-          <div class="scroll-question-section" id="question-4">
+          <div class="scroll-question-section" id="question-6">
                 <div className="question-flex">
-
-          </div>
-          </div>
-
-          <div class="scroll-question-section" id="question-4">
-                <div className="question-flex">
-
-          </div>
-          </div>
-
-          <div class="scroll-question-section" id="question-4">
-                <div className="question-flex">
-
-          </div>
-          </div>
-
-
-
-                <label>
+                <label className="labelName">
                   Hobbies
                     <input
                     className="profile-input"
@@ -510,7 +504,7 @@ const ProfileForm = () => {
                     </input>
                 </label>
 
-                <label>
+                <label className="labelName">
                   Moments
                     <input
                     className="profile-input"
@@ -521,7 +515,7 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
-                <label>
+                <label className="labelName">
                   Secrets
                     <input
                     className="profile-input"
@@ -532,28 +526,38 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
-                <label>
-                  Looking for
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="no judgement: what do you want from this whole dating app thing?"
-                    value={looking_for}
-                    onChange={(e) => setLooking_for(e.target.value)}
-                    >
-                    </input>
-                </label>
-                <label>
+               </div>
+          </div>
+
+          <div class="scroll-question-section" id="question-7">
+                <div className="question-flex">
+
+                <label className="labelName">
                   A Shower thought you recently had
                     <input
-                    className="profile-input"
+                    className="audio-input"
                     type="text"
-                    placeholder="mp3 format 🎵 https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3"
+                    placeholder="mp3 format 🎵 ➡️ https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3"
                     value={user_audio}
                     onChange={(e) => setUser_audio(e.target.value)}
                     >
                     </input>
                 </label>
+
+            </div>
+          </div>
+
+          <div class="scroll-question-section" id="question-4">
+                <div className="question-flex">
+
+          </div>
+          </div>
+
+
+
+
+
+
 
                 <label>
                   Image Url 1
