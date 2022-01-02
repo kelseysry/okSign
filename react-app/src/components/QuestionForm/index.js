@@ -98,6 +98,8 @@ const QuestionForm = () => {
       <a href="#question-8">8</a>
       <a href="#question-9">9</a>
       <a href="#question-10">10</a>
+      <a href="#question-11"><i class="fas fa-check-circle"></i></a>
+
     </nav>
 
     <section class="scroll-container">
@@ -463,22 +465,33 @@ const QuestionForm = () => {
             <div className="horizontal-line"></div>
       </div>
 
-        <ul className="error">
-          {errors.map((error) => <li key={error}>{error}</li>)}
-        </ul>
-        <button
-          className="EditQuestionFormSubmitButton"
-          type="submit"
-          disabled={errors.length>0}
-        >
-          Submit
-        </button>
-        {/* <button type="button" onClick={handelCancelEditQuestionForm}>Cancel</button> */}
-      </form>
 
+          <div class="scroll-question-section" id="question-11">
+            <div className="profile-errors-container">
+                {
+                  errors.length?
+                  <>
+                <div className="profile-errors-hr"></div>
+
+                <ul className="error-profile">
+                    {errors.map((error) => <li key={error}>{error}</li>)}
+                  </ul>
+                  </>
+                  : null
+                  }
+                  <button
+                    className="profile-submit-button"
+                    type="submit"
+                    disabled={errors.length>0}>
+                    Submit
+                  </button>
+         
+            </div>
+          </div>
+
+
+        </form>
       </section>
-
-
     </section>
 
     </>
