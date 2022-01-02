@@ -81,6 +81,8 @@ const EditQuestionForm = ({questions, hideForm}) => {
 
       if (updatedUserAnswers) {
         hideForm();
+        history.push('/questions')
+        scrollToTop()
       }
   }
 
@@ -509,7 +511,7 @@ const handleFormEditSubmit = (e) => {
               <button
                 className="profile-submit-button"
                 type="submit"
-                onClick={handleFormEditSubmit}
+                // onClick={handleFormEditSubmit}
                 disabled={errors.length>0}>
                 Submit
               </button>
