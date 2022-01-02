@@ -302,39 +302,41 @@ const ProfileForm = () => {
 
               <div class="scroll-question2-section" id="question-2">
 
-                <label>
-                  location
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="don't worry, you can still see matches from abroad"
-                    value={location}
-                    onChange={(e) => setLocation(e.target.value)}
-                    >
-                    </input>
-                </label>
-                <label>
-                  lat
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="use lat from google maps"
-                    value={lat}
-                    onChange={(e) => setLat(e.target.value)}
-                    >
-                    </input>
-                </label>
-                <label>
-                  lng
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="use lat from google maps"
-                    value={lng}
-                    onChange={(e) => setLng(e.target.value)}
-                    >
-                    </input>
-                </label>
+              <div className="question-flex">
+                  <label className="labelName">
+                    location
+                      <input
+                      className="profile-input"
+                      type="text"
+                      placeholder="Long Beach, California"
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      >
+                      </input>
+                  </label>
+                  <label className="labelName">
+                    lat
+                      <input
+                      className="profile-input"
+                      type="text"
+                      placeholder="use lat from google maps 📍 33.85897723024835"
+                      value={lat}
+                      onChange={(e) => setLat(e.target.value)}
+                      >
+                      </input>
+                  </label>
+                  <label className="labelName">
+                    lng
+                      <input
+                      className="profile-input"
+                      type="text"
+                      placeholder="use lat from google maps 📍 -118.08115190136616 "
+                      value={lng}
+                      onChange={(e) => setLng(e.target.value)}
+                      >
+                      </input>
+                  </label>
+              </div>
 
               </div>
 
