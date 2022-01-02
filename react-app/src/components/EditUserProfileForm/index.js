@@ -190,6 +190,12 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     <>
  <section className="all-questions-container">
 
+ <div className="questionAnswered">
+        <div className="questionsHeader">Edit Profile</div>
+        {/* <button className="edit-question-form" onClick={() => setShowEditQuestionForm(true)}>Edit Answers <i className="fas fa-edit"></i></button> */}
+
+      </div>
+
 <nav className="profile-nav-bar">
   <a href="#question-1"><i class="fas fa-user-circle"></i></a>
   <a href="#question-2"><i class="fas fa-map-marker-alt"></i></a>

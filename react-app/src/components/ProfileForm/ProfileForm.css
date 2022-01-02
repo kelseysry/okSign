@@ -92,11 +92,11 @@ select {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 1000px;
+  height: 790px;
   width: 100px;
   position: fixed;
   left: 50px;
-  top: 140px;
+  top: 270px;
   z-index: 2;
   padding: 30px 0px;
 
@@ -105,7 +105,7 @@ select {
 .profile-nav-bar a {
   color: white;
   text-decoration: none;
-  padding: 30px 10px;
+  padding: 20px 10px;
   font-size: 25px;
 
 }
