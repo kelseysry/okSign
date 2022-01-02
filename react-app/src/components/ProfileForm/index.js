@@ -296,7 +296,6 @@ const ProfileForm = () => {
 
 
               <div class="scroll-question2-section" id="question-2">
-
               <div className="question-flex">
                   <label className="labelName">
                     location
@@ -348,45 +347,72 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
+
                 <label className="labelName">
-                  Goal
+                  Education
                     <input
                     className="profile-input"
                     type="text"
-                    placeholder="don't write to find love 🤨"
-                    value={goal}
-                    onChange={(e) => setGoal(e.target.value)}
+                    placeholder="what is your latest degree from?"
+                    value={education}
+                    onChange={(e) => setEducation(e.target.value)}
                     >
                     </input>
                 </label>
                 <label className="labelName">
-                  Talent
+                  Occupation
                     <input
                     className="profile-input"
                     type="text"
-                    placeholder="not getting ghosted... maybe?"
-                    value={talent}
-                    onChange={(e) => setTalent(e.target.value)}
+                    placeholder="where do you work?"
+                    value={occupation}
+                    onChange={(e) => setOccupation(e.target.value)}
                     >
                     </input>
                 </label>
-                <label className="labelName">
-                  Traits
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="now, don't be a 🚩 "
-                    value={my_traits}
-                    onChange={(e) => setMy_traits(e.target.value)}
-                    >
-                    </input>
-                </label>
+
+
                 </div>
             </div>
 
 
-
-
+            <div class="scroll-question-section" id="question-4">
+              <div className="question-flex">
+                  <label className="labelName">
+                    Goal
+                      <input
+                      className="profile-input"
+                      type="text"
+                      placeholder="don't write to find love 🤨"
+                      value={goal}
+                      onChange={(e) => setGoal(e.target.value)}
+                      >
+                      </input>
+                  </label>
+                  <label className="labelName">
+                    Talent
+                      <input
+                      className="profile-input"
+                      type="text"
+                      placeholder="not getting ghosted... maybe?"
+                      value={talent}
+                      onChange={(e) => setTalent(e.target.value)}
+                      >
+                      </input>
+                  </label>
+                  <label className="labelName">
+                    Traits
+                      <input
+                      className="profile-input"
+                      type="text"
+                      placeholder="now, don't be a 🚩 "
+                      value={my_traits}
+                      onChange={(e) => setMy_traits(e.target.value)}
+                      >
+                      </input>
+                  </label>
+                </div>
+            </div>
 
 
 
@@ -469,17 +495,7 @@ const ProfileForm = () => {
                     <option value="2">Male</option>
                   </select>
                 </label>
-                {/* <label>
-                  number of likes
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="number likes"
-                    value={number_likes}
-                    onChange={(e) => setNumber_likes(e.target.value)}
-                    >
-                    </input>
-                </label> */}
+
                 <label>
                   Image Url 1
                     <input
@@ -557,28 +573,7 @@ const ProfileForm = () => {
                 </label>
 
 
-                <label>
-                  Education
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="what is your latest degree from?"
-                    value={education}
-                    onChange={(e) => setEducation(e.target.value)}
-                    >
-                    </input>
-                </label>
-                <label>
-                  Occupation
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="where do you work?"
-                    value={occupation}
-                    onChange={(e) => setOccupation(e.target.value)}
-                    >
-                    </input>
-                </label>
+
 
                 <label className="selectField">
                   <span className="labelName">Horoscope</span>
