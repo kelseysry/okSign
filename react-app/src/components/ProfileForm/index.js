@@ -377,7 +377,7 @@ const ProfileForm = () => {
             </div>
 
 
-            <div class="scroll-question-section" id="question-4">
+            <div class="scroll-question4-section" id="question-4">
               <div className="question-flex">
                   <label className="labelName">
                     Goal
@@ -412,12 +412,12 @@ const ProfileForm = () => {
                       >
                       </input>
                   </label>
+
                 </div>
             </div>
 
             <div class="scroll-question-section" id="question-5">
                 <div className="question-flex">
-
                 <label className="labelName">
                   Needs
                     <input
@@ -429,6 +429,7 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
+
 
                 <label className="labelName">
                   Looking for
@@ -530,7 +531,7 @@ const ProfileForm = () => {
                </div>
           </div>
 
-          <div class="scroll-question-section" id="question-7">
+          <div class="scroll-question7-section" id="question-7">
                 <div className="question-flex">
 
                 <label className="labelName">
@@ -721,16 +722,31 @@ const ProfileForm = () => {
           </div>
 
 
+          <div class="scroll-question-section" id="question-12">
+            <div className="profile-errors-container">
+                {
+                  errors.length?
+                  <>
+                <div className="profile-errors-hr"></div>
+
+                <ul className="error-profile">
+                    {errors.map((error) => <li key={error}>{error}</li>)}
+                  </ul>
+                  </>
+                  : null
+                  }
+                  <button
+                    className="profile-submit-button"
+                    type="submit"
+                    disabled={errors.length>0}>
+                    Submit
+                  </button>
 
 
+            </div>
+          </div>
 
-
-
-
-
-
-
-
+{/*
                 <ul className="error">
                   {errors.map((error) => <li key={error}>{error}</li>)}
                 </ul>
@@ -742,9 +758,7 @@ const ProfileForm = () => {
                 >
                   Submit
                 </button>
-                {/* <button type="button"
-                className="ProfileFormSubmitButton"
-                onClick={handleCancelFormEditClick}>Cancel</button> */}
+      */}
                 </form>
               </section>
 

@@ -24,6 +24,8 @@
   font-size: 20px;
 }
 
+
+
 .audio-input {
   color: white;
   border: 0;
@@ -56,9 +58,6 @@ select {
   padding: 0.25em 0.5em;
 }
 
-.selectField{
-
-}
 
 .labelName{
   padding-right: 10px;
@@ -97,7 +96,7 @@ select {
   width: 100px;
   position: fixed;
   left: 50px;
-  top: 200px;
+  top: 140px;
   z-index: 2;
   padding: 30px 0px;
 
@@ -153,4 +152,37 @@ select {
   /* margin-bottom: 10px; */
   margin-top: 5px;
   width: 500px;
+}
+
+
+.scroll-question1-section, .scroll-question2-section, .scroll-question-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1100px;
+  font-size: 3em;
+  text-align: left;
+  position: relative;
+}
+
+.scroll-question4-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1100px;
+  font-size: 3em;
+  text-align: left;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.scroll-question7-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1100px;
+  font-size: 3em;
+  text-align: left;
+  position: relative;
+  padding-bottom: 65px;
 }
