@@ -125,15 +125,3 @@ input:checked {
   border: 6px solid white;
 }
 
-
-
-button:hover,
-button:focus {
-  color: #999;
-}
-
-button:active {
-  background-color: white;
-  color: white;
-  outline: 1px solid white;
-}

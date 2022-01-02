@@ -26,7 +26,7 @@ function TestProfile() {
   const [must_answer3, setMust_answer3] = useState('');
 
   const [age, setAge] = useState('');
-
+  const [gender_id, setGender_id] = useState('1');
 
   /*
 
@@ -119,19 +119,34 @@ return (
                     >
                     </input>
                 </label>
-
               </div>
+
+
               <div className="box1b">height</div>
             </div>
             <div className="box2">pronouns</div>
-            <div className="box4">gender</div>
+
+
+            <div className="box4">
+
+            <div className="profile-select">
+            <label className="selectField">
+                  <span className="labelName">Gender</span>
+                  <select value={gender_id} onChange={(e) => setGender_id(+e.target.value)}>
+                    {/* <option value='1' disabled>Select a gender</option> */}
+                    <option value="1">Women</option>
+                    <option value="2">Male</option>
+                  </select>
+                </label>
+            </div>
+
+            </div>
+
+
             <div className="box5">orientation</div>
 
           </div>
 
-          {/* <div className="vertical-line-profile"></div>
-
-          <div className="horizontal-line-profile"></div> */}
 
 
 
