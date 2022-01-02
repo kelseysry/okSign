@@ -51,6 +51,7 @@ html {
   padding: 0px 5px;
   position: absolute;
   right: 400px;
+  padding-right: 20px;
 }
 
 .horizontal-line {
@@ -66,7 +67,7 @@ html {
 .questionText {
   color: white;
   text-align: right;
-  font-size: 80px;
+  font-size: 70px;
   padding-right: 50px;
   font-family: 'Roboto Condensed', sans-serif;
 }
@@ -84,7 +85,7 @@ html {
 .questionTextE {
   font-size: 40px;
   white-space: nowrap;
-  padding-top: 30px;
+  padding-top: 40px;
 }
 
 .question-choice {
@@ -113,17 +114,17 @@ label {
   height: 16px;
   border: 2px solid #999;
   transition: 0.2s all linear;
-  margin-right: 5px;
+  margin-right: 7px;
   top: 1px;
-
   position: relative;
+  margin-left: 5px;
 }
 
 input:checked {
   border: 6px solid white;
 }
 
-.scroll-question1-section, .scroll-question2-section {
+.scroll-question1-section, .scroll-question2-section, .scroll-question-section{
   display: flex;
   align-items: center;
   justify-content: center;

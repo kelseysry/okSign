@@ -144,7 +144,7 @@ const QuestionForm = () => {
               <div className="questionText">2. Choose the better romantic activity</div>
               <div className="vertical-line"></div>
               <section className="question2Container">
-                
+
                   <div className="questionTextE">Your Answer?</div>
                     <div className ="question-choice">
                       <RadioButton
@@ -177,104 +177,112 @@ const QuestionForm = () => {
         </div>
 
 
+        <div class="scroll-question-section" id="question-3">
+            <div className="questionText">3. If you don't do anything at all for an entire day, how does that make you feel?</div>
+            <div className="vertical-line"></div>
+            <section className="question3Container">
+
+                <div className="questionTextE">Your Answer?</div>
+                  <div className ="question-choice">
+                    <RadioButton
+                        label="Good"
+                        value={question3 === 'Good'}
+                        onChange={(e) => setQuestion3("Good")}
+                      />
+                    <RadioButton
+                      label="Bad"
+                      value={question3 === 'Bad'}
+                      onChange={(e) => setQuestion3("Bad")}
+                    />
+                  </div>
+
+                  <div className="questionTextE">Answer you'll accept?</div>
+                  <div className ="question-choice">
+                    <RadioButton
+                        label="Good"
+                        value={must_answer3 === 'Good'}
+                        onChange={(e) => setMust_answer3("Good")}
+                      />
+                    <RadioButton
+                      label="Bad"
+                      value={must_answer3 === 'Bad'}
+                      onChange={(e) => setMust_answer3("Bad")}
+                    />
+                  </div>
+            </section>
+            <div className="horizontal-line"></div>
+        </div>
+
+        <div class="scroll-question-section" id="question-4">
+            <div className="questionText">4. Do you often find yourself worrying about things that you have no control over?</div>
+            <div className="vertical-line"></div>
+            <section className="question4Container">
+            <div className="questionTextE">Your Answer?</div>
+              <div className ="question-choice">
+                <RadioButton
+                    label="Yes"
+                    value={question4 === 'Yes'}
+                    onChange={(e) => setQuestion4("Yes")}
+                  />
+                <RadioButton
+                  label="No"
+                  value={question4 === 'No'}
+                  onChange={(e) => setQuestion4("No")}
+                />
+              </div>
+
+              <div className="questionTextE">Answer you'll accept?</div>
+              <div className ="question-choice">
+                <RadioButton
+                    label="Yes"
+                    value={must_answer4 === 'Yes'}
+                    onChange={(e) => setMust_answer4("Yes")}
+                  />
+                <RadioButton
+                  label="No"
+                  value={must_answer4 === 'No'}
+                  onChange={(e) => setMust_answer4("No")}
+                />
+              </div>
+            </section>
+            <div className="horizontal-line"></div>
+        </div>
 
 
+        <div class="scroll-question-section" id="question-5">
+              <div className="questionText">5. Is jealously healthy in a relationship</div>
+              <div className="vertical-line"></div>
+              <section className="question5Container">
+              <div className="questionTextE">Your Answer?</div>
+                <div className ="question-choice">
+                  <RadioButton
+                      label="Yes"
+                      value={question5 === 'Yes'}
+                      onChange={(e) => setQuestion5("Yes")}
+                    />
+                  <RadioButton
+                    label="No"
+                    value={question5 === 'No'}
+                    onChange={(e) => setQuestion5("No")}
+                  />
+                </div>
 
-
-
-
-
-
-
-        <section className="question3Container">
-          <div className="questionText">3. If you don't do anything at all for an entire day, how does that make you feel?</div>
-          <div className ="question">
-            <RadioButton
-                label="Good"
-                value={question3 === 'Good'}
-                onChange={(e) => setQuestion3("Good")}
-              />
-            <RadioButton
-              label="Bad"
-              value={question3 === 'Bad'}
-              onChange={(e) => setQuestion3("Bad")}
-            />
+                <div className="questionTextE">Answer you'll accept?</div>
+                <div className ="question-choice">
+                  <RadioButton
+                      label="Yes"
+                      value={must_answer5 === 'Yes'}
+                      onChange={(e) => setMust_answer5("Yes")}
+                    />
+                  <RadioButton
+                    label="No"
+                    value={must_answer5 === 'No'}
+                    onChange={(e) => setMust_answer5("No")}
+                  />
+                </div>
+              </section>
+              <div className="horizontal-line"></div>
           </div>
-
-          <div className="answer">Answer you'll accept?</div>
-          <div className ="question">
-            <RadioButton
-                label="Good"
-                value={must_answer3 === 'Good'}
-                onChange={(e) => setMust_answer3("Good")}
-              />
-            <RadioButton
-              label="Bad"
-              value={must_answer3 === 'Bad'}
-              onChange={(e) => setMust_answer3("Bad")}
-            />
-          </div>
-        </section>
-
-        <section className="question4Container">
-          <div className="questionText">4. Do you often find yourself worrying about things that you have no control over?</div>
-          <div className ="question">
-            <RadioButton
-                label="Yes"
-                value={question4 === 'Yes'}
-                onChange={(e) => setQuestion4("Yes")}
-              />
-            <RadioButton
-              label="No"
-              value={question4 === 'No'}
-              onChange={(e) => setQuestion4("No")}
-            />
-          </div>
-
-          <div className="answer">Answer you'll accept?</div>
-          <div className ="question">
-            <RadioButton
-                label="Yes"
-                value={must_answer4 === 'Yes'}
-                onChange={(e) => setMust_answer4("Yes")}
-              />
-            <RadioButton
-              label="No"
-              value={must_answer4 === 'No'}
-              onChange={(e) => setMust_answer4("No")}
-            />
-          </div>
-        </section>
-
-        <section className="question5Container">
-          <div className="questionText">5. Is jealously healthy in a relationship</div>
-          <div className ="question">
-            <RadioButton
-                label="Yes"
-                value={question5 === 'Yes'}
-                onChange={(e) => setQuestion5("Yes")}
-              />
-            <RadioButton
-              label="No"
-              value={question5 === 'No'}
-              onChange={(e) => setQuestion5("No")}
-            />
-          </div>
-
-          <div className="answer">Answer you'll accept?</div>
-          <div className ="question">
-            <RadioButton
-                label="Yes"
-                value={must_answer5 === 'Yes'}
-                onChange={(e) => setMust_answer5("Yes")}
-              />
-            <RadioButton
-              label="No"
-              value={must_answer5 === 'No'}
-              onChange={(e) => setMust_answer5("No")}
-            />
-          </div>
-        </section>
 
         <section className="question6Container">
           <div className="questionText">6. Would you date someone that vaped/used e-cigs?</div>
