@@ -186,7 +186,7 @@ if(currentUserQuestion) {
     const right = document.querySelector('#discoverProfile');
      right.scrollLeft += 1050;
      setSlide(1)
-     if(navigateClick < userIdsPercentsObj?.length -2) {
+     if(navigateClick < userIdsPercentsObj?.length -1) {
       setNavigateClick(navigateClick += 1)
      } else {
        return navigateClick
