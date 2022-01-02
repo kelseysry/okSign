@@ -1,0 +1,16 @@
+.profile-nav-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: fixed;
+}
+
+
+
+.profile-nav-bar a {
+
+  color: white;
+  text-decoration: none;
+  padding: 20px 20px;
+}

@@ -6,17 +6,22 @@ nav, .scroll-container {
 }
 
 
-.question-nav-bar {
-  width: 800px;
-  padding: 5px;
+.profile-nav-bar {
   border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  height: 800px;
+  width: 50px;
+  position: fixed;
+  left: 0px;
+  z-index: 2;
 }
 
-.question-nav-bar a {
+.profile-nav-bar a {
   color: white;
-  display: inline-block;
-  width: 50px;
   text-decoration: none;
+  padding: 30px 10px;
+
 }
 
 .scroll-container {
