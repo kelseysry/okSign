@@ -59,6 +59,8 @@ function QuestionPageAnswered() {
       </div>
     </section>
 
+    <hr className="fancy"></hr>
+
     <section className="question2Container">
           <div className="questionTextBig">2. Choose the better romantic activity</div>
           <div className="your-answer">Your answer</div>
@@ -90,6 +92,7 @@ function QuestionPageAnswered() {
           </div>
         </section>
 
+        <hr className="fancy"></hr>
 
         <section className="question2Container">
           <div className="questionTextBig">3. If you an entire day, how does that make you feel?</div>
@@ -122,6 +125,10 @@ function QuestionPageAnswered() {
           </div>
         </section>
 
+
+        <hr className="fancy"></hr>
+
+
         <section className="question4Container">
           <div className="questionTextBig">4. Do you often find yourself worrying about things that you have no control over?</div>
           <div className="your-answer">Your answer</div>
@@ -152,6 +159,8 @@ function QuestionPageAnswered() {
             />
           </div>
         </section>
+
+        <hr className="fancy"></hr>
 
 
         <section className="question5Container">
@@ -185,6 +194,10 @@ function QuestionPageAnswered() {
           </div>
         </section>
 
+
+        <hr className="fancy"></hr>
+
+
         <section className="question6Container">
           <div className="questionTextBig">6. Would you date someone that vaped/used e-cigs?</div>
           <div className="your-answer">Your answer</div>
@@ -215,6 +228,9 @@ function QuestionPageAnswered() {
             />
           </div>
         </section>
+
+        <hr className="fancy"></hr>
+
 
         <section className="question7Container">
           <div className="questionTextBig">7. Which would you rather be?</div>
@@ -247,6 +263,9 @@ function QuestionPageAnswered() {
           </div>
         </section>
 
+        <hr className="fancy"></hr>
+
+
         <section className="question8Container">
           <div className="questionTextBig">8. Is astrological sign at all important in a match?</div>
           <div className="your-answer">Your answer</div>
@@ -278,6 +297,9 @@ function QuestionPageAnswered() {
           </div>
         </section>
 
+        <hr className="fancy"></hr>
+
+
         <section className="question9Container">
           <div className="questionTextBig">9. Do you enjoy discussing politics?</div>
           <div className="your-answer">Your answer</div>
@@ -308,6 +330,9 @@ function QuestionPageAnswered() {
             />
           </div>
         </section>
+
+        <hr className="fancy"></hr>
+
 
         <section className="question10Container">
           <div className="questionTextBig">10. Do you think it’s important to have an emotional connection before a physical one?</div>

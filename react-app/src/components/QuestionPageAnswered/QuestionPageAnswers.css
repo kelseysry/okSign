@@ -14,12 +14,13 @@
   /* padding-right: 50px; */
   font-family: 'Roboto Condensed', sans-serif;
   text-align: left;
+  padding-bottom: 50px;
 }
 
 .your-answer {
   padding-left: 20px;
   font-weight: 900;
-  padding-top: 30px;
+  padding-top: 50px;
   font-size: 20px;
 }
 
@@ -29,3 +30,22 @@
   padding-top: 20px;
   font-size: 20px;
 }
+
+.fancy {
+  border: none;
+  border-top: 3px double rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  overflow: visible;
+  text-align: center;
+  width: 1000px;
+}
+
+.fancy:after {
+  background: #1a1a1a;
+  content: '⭐️';
+  padding: 0 10px;
+  position: relative;
+  top: -13px;
+}
+
+
