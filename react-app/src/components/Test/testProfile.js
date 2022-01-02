@@ -158,10 +158,21 @@ return (
   - hobbies
   - education
   - occupation */}
-
-
-
         <div class="scroll-question2-section" id="question-2">
+
+<section className="location-grid">
+            <div className="location-box1-map">map</div>
+            <div className="location-box2">location</div>
+            <div className="location-box3-grid">
+              <div className="location-box4-lat">lat</div>
+              <div className="location-box5-lat">lng</div>
+            </div>
+
+          </section>
+</div>
+
+
+        <div class="scroll-question3-section" id="question-3">
           <section className="about-me-grid">
             <div className="about-box1">about me</div>
             <div className="about-box2">hobbies</div>
@@ -178,6 +189,8 @@ return (
 
           </section>
         </div>
+
+
 
 
 
