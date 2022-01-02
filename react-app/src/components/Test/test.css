@@ -11,7 +11,7 @@ nav, .scroll-container {
   display: flex;
   flex-direction: column;
   height: 800px;
-  width: 50px;
+  width: 100px;
   position: fixed;
   left: 0px;
   z-index: 2;
@@ -137,3 +137,4 @@ button:active {
   color: white;
   outline: 1px solid white;
 }
+
