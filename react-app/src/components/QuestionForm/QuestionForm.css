@@ -50,7 +50,7 @@ html {
   height: 900px;
   padding: 0px 5px;
   position: absolute;
-  right: 300px;
+  right: 400px;
 }
 
 .horizontal-line {
@@ -82,7 +82,9 @@ html {
 
 
 .questionTextE {
-  font-size: 50px;
+  font-size: 40px;
+  white-space: nowrap;
+  padding-top: 30px;
 }
 
 .question-choice {
@@ -107,17 +109,14 @@ label {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
-  border-radius: 50%;
   width: 16px;
   height: 16px;
-
   border: 2px solid #999;
   transition: 0.2s all linear;
   margin-right: 5px;
+  top: 1px;
 
   position: relative;
-  top: 4px;
 }
 
 input:checked {
