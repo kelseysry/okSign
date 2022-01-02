@@ -30,6 +30,7 @@ function QuestionPageAnswered() {
     <div className="questionPageAnswersContainer">
       <section className="question1Container">
       <div className="questionTextBig">1. Which word describes you better?</div>
+      <div className="your-answer">Your answer</div>
       <div className ="question">
         <RadioButton
             label="Carefree"
@@ -43,7 +44,7 @@ function QuestionPageAnswered() {
         />
       </div>
 
-      <div className="answer">Answer you'll accept?</div>
+      <div className="answer-page">Answer you'll accept?</div>
       <div className ="question">
         <RadioButton
             label="Carefree"
@@ -60,6 +61,7 @@ function QuestionPageAnswered() {
 
     <section className="question2Container">
           <div className="questionTextBig">2. Choose the better romantic activity</div>
+          <div className="your-answer">Your answer</div>
           <div className ="question">
             <RadioButton
                 label="Kissing in Paris"
@@ -73,7 +75,7 @@ function QuestionPageAnswered() {
             />
           </div>
 
-          <div className="answer">Answer you'll accept?</div>
+          <div className="answer-page">Answer you'll accept?</div>
           <div className ="question">
             <RadioButton
                 label="Kissing in Paris"
@@ -91,6 +93,7 @@ function QuestionPageAnswered() {
 
         <section className="question2Container">
           <div className="questionTextBig">3. If you an entire day, how does that make you feel?</div>
+          <div className="your-answer">Your answer</div>
           <div className ="question">
             <RadioButton
                 label="Good"
@@ -104,7 +107,7 @@ function QuestionPageAnswered() {
             />
           </div>
 
-          <div className="answer">Answer you'll accept?</div>
+          <div className="answer-page">Answer you'll accept?</div>
           <div className ="question">
             <RadioButton
                 label="Good"
@@ -121,6 +124,7 @@ function QuestionPageAnswered() {
 
         <section className="question4Container">
           <div className="questionTextBig">4. Do you often find yourself worrying about things that you have no control over?</div>
+          <div className="your-answer">Your answer</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
@@ -134,7 +138,7 @@ function QuestionPageAnswered() {
             />
           </div>
 
-          <div className="answer">Answer you'll accept?</div>
+          <div className="answer-page">Answer you'll accept?</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
@@ -152,6 +156,7 @@ function QuestionPageAnswered() {
 
         <section className="question5Container">
           <div className="questionTextBig">5. Is jealously healthy in a relationship</div>
+          <div className="your-answer">Your answer</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
@@ -165,7 +170,7 @@ function QuestionPageAnswered() {
             />
           </div>
 
-          <div className="answer">Answer you'll accept?</div>
+          <div className="answer-page">Answer you'll accept?</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
@@ -182,6 +187,7 @@ function QuestionPageAnswered() {
 
         <section className="question6Container">
           <div className="questionTextBig">6. Would you date someone that vaped/used e-cigs?</div>
+          <div className="your-answer">Your answer</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
@@ -195,7 +201,7 @@ function QuestionPageAnswered() {
             />
           </div>
 
-          <div className="answer">Answer you'll accept?</div>
+          <div className="answer-page">Answer you'll accept?</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
@@ -212,6 +218,7 @@ function QuestionPageAnswered() {
 
         <section className="question7Container">
           <div className="questionTextBig">7. Which would you rather be?</div>
+          <div className="your-answer">Your answer</div>
           <div className ="question">
             <RadioButton
                 label="Weird"
@@ -225,7 +232,7 @@ function QuestionPageAnswered() {
             />
           </div>
 
-          <div className="answer">Answer you'll accept?</div>
+          <div className="answer-page">Answer you'll accept?</div>
           <div className ="question">
             <RadioButton
                 label="Weird"
@@ -242,6 +249,7 @@ function QuestionPageAnswered() {
 
         <section className="question8Container">
           <div className="questionTextBig">8. Is astrological sign at all important in a match?</div>
+          <div className="your-answer">Your answer</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
@@ -255,7 +263,7 @@ function QuestionPageAnswered() {
             />
           </div>
 
-          <div className="answer">Answer you'll accept?</div>
+          <div className="answer-page">Answer you'll accept?</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
@@ -272,6 +280,7 @@ function QuestionPageAnswered() {
 
         <section className="question9Container">
           <div className="questionTextBig">9. Do you enjoy discussing politics?</div>
+          <div className="your-answer">Your answer</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
@@ -285,7 +294,7 @@ function QuestionPageAnswered() {
             />
           </div>
 
-          <div className="answer">Answer you'll accept?</div>
+          <div className="answer-page">Answer you'll accept?</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
@@ -302,6 +311,7 @@ function QuestionPageAnswered() {
 
         <section className="question10Container">
           <div className="questionTextBig">10. Do you think it’s important to have an emotional connection before a physical one?</div>
+          <div className="your-answer">Your answer</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
@@ -315,7 +325,7 @@ function QuestionPageAnswered() {
             />
           </div>
 
-          <div className="answer">Answer you'll accept?</div>
+          <div className="answer-page">Answer you'll accept?</div>
           <div className ="question">
             <RadioButton
                 label="Yes"
