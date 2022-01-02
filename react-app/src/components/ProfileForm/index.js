@@ -203,13 +203,13 @@ const ProfileForm = () => {
     <nav className="question-nav-bar">
       <a href="#question-1"><i class="fas fa-user-circle"></i></a>
       <a href="#question-2"><i class="fas fa-map-marker-alt"></i></a>
-      <a href="#question-3">3</a>
-      <a href="#question-4">4</a>
-      <a href="#question-5">5</a>
-      <a href="#question-6">6</a>
-      <a href="#question-7">7</a>
-      <a href="#question-8">8</a>
-      <a href="#question-9">9</a>
+      <a href="#question-3"><i class="fas fa-briefcase"></i></a>
+      <a href="#question-4"><i class="fas fa-trophy"></i></a>
+      <a href="#question-5"><i class="fas fa-heart"></i></a>
+      <a href="#question-6"><i class="fas fa-grin-squint"></i></a>
+      <a href="#question-7"><i class="fas fa-play-circle"></i></a>
+      <a href="#question-8"><i class="fas fa-images"></i></a>
+      <a href="#question-9"><i class="fas fa-address-card"></i></a>
       <a href="#question-10">10</a>
       <a href="#question-11"><i class="fas fa-check-circle"></i></a>
     </nav>
