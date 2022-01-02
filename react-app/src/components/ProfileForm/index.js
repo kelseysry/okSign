@@ -175,6 +175,14 @@ const ProfileForm = () => {
   console.log("currentProfile🍵🍵🍵🍵🍵🍵🍵", currentProfile)
 
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "auto"
+    });
+  };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -191,6 +199,7 @@ const ProfileForm = () => {
         setCount(count + 1)
         console.log("count--------", count)
         history.push(`/profiles/${user_id}`)
+        scrollToTop()
       }
 
   }
