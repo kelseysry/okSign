@@ -45,7 +45,6 @@ function TestProfile() {
 
   3. book
   - about me
-  - hobbies
   - education
   - occupation
 
@@ -64,6 +63,7 @@ function TestProfile() {
   5. Funny
   - moments
   - secrets
+  - hobbies
 
   6. Shower thought
 
@@ -71,7 +71,6 @@ function TestProfile() {
   - 6. urls
 
   9. Small Details
-  - horoscope
   - smoking
   - drinking
   - children

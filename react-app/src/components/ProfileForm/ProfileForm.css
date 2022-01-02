@@ -11,29 +11,57 @@
 
 
 .profile-input {
+  color: white;
   border: 0;
   border-bottom: 2px solid #ccc;
   box-sizing: border-box;
   display: block;
-  margin-bottom: 2em;
   outline: 0;
   padding: 0.25em 0.5em;
   width: 500px;
   background: transparent;
+  padding-top: 30px;
+  font-size: 20px;
+}
+
+
+
+.audio-input {
+  color: white;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  box-sizing: border-box;
+  display: block;
+  outline: 0;
+  padding: 0.25em 0.5em;
+  width: 1100px;
+  background: transparent;
+  padding-top: 30px;
+  font-size: 20px;
+}
+
+.picture-input {
+  color: white;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  box-sizing: border-box;
+  display: block;
+  outline: 0;
+  padding: 0.25em 0.5em;
+  width: 1000px;
+  background: transparent;
+  padding-top: 30px;
+  font-size: 20px;
 }
 
 select {
   padding: 0.25em 0.5em;
 }
 
-.selectField{
-  /* padding-bottom: 10px;
-  margin-bottom: 2em; */
-  padding-bottom: 2em;
-}
 
 .labelName{
   padding-right: 10px;
+  color: white;
 }
 
 .ProfileFormSubmitButton {
@@ -55,4 +83,106 @@ select {
   margin-bottom: 30px;
   padding-left: 50px;
 
+}
+
+
+.profile-nav-bar {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 1000px;
+  width: 100px;
+  position: fixed;
+  left: 50px;
+  top: 140px;
+  z-index: 2;
+  padding: 30px 0px;
+
+}
+
+.profile-nav-bar a {
+  color: white;
+  text-decoration: none;
+  padding: 30px 10px;
+  font-size: 25px;
+
+}
+
+
+.question-flex {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+}
+
+.profile-select {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-select select {
+  border-radius: 5px 5px;
+  padding: 10px 10px;
+  padding-right: 50px;
+  color: white;
+  background: #1a1a1a;
+  font-size: 20px;
+  border: 3px solid white;
+  /* margin-bottom: 10px; */
+  margin-top: 5px;
+}
+
+
+.profile2-select {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile2-select select {
+  border-radius: 5px 5px;
+  padding: 10px 10px;
+  padding-right: 50px;
+  color: white;
+  background: #1a1a1a;
+  font-size: 20px;
+  border: 3px solid white;
+  /* margin-bottom: 10px; */
+  margin-top: 5px;
+  width: 500px;
+}
+
+
+.scroll-question1-section, .scroll-question2-section, .scroll-question-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1100px;
+  font-size: 3em;
+  text-align: left;
+  position: relative;
+}
+
+.scroll-question4-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1100px;
+  font-size: 3em;
+  text-align: left;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.scroll-question7-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1100px;
+  font-size: 3em;
+  text-align: left;
+  position: relative;
+  padding-bottom: 65px;
 }
