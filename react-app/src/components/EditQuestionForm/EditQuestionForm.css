@@ -2,7 +2,7 @@ body {
   background-color:#f3f5f9;
 }
 
-.question1Container, .question2Container, .question3Container, .question4Container, .question5Container, .question6Container, .question7Container, .question8Container, .question9Container, .question10Container {
+/* .question1Container, .question2Container, .question3Container, .question4Container, .question5Container, .question6Container, .question7Container, .question8Container, .question9Container, .question10Container {
   background-color: #fff !important;
   box-shadow: 0 1px 4px rgb(42 47 53 / 10%);
   margin-bottom: 20px;
@@ -10,12 +10,11 @@ body {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
-}
+} */
 
-.questionText {
+/* .questionText {
   border-radius: 0;
   display: block;
-  /* width: 100%; */
   min-height: 40px;
   padding: 10px 15px;
   background: #1a1a1a;
@@ -28,7 +27,7 @@ body {
   margin: 0;
   display: flex;
   align-items: center;
-}
+} */
 
 .question {
   padding: 20px 20px;
@@ -75,3 +74,4 @@ font-size: small;
 color:crimson
 
 }
+

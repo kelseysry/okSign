@@ -85,10 +85,10 @@
     text-align: center;
   }
 
-  .fancy:after {
+  /* .fancy:after {
     background: #fff;
     content: '💖';
     padding: 0 4px;
     position: relative;
     top: -13px;
-}
+} */

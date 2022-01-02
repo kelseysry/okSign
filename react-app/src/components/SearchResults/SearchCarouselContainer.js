@@ -65,7 +65,7 @@ const SearchCarouselContainer = ({input, searchUserResults}) => {
 
     <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
           {searchUserResults?.map((profile, idx) =>
-              <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
+              <div  id={profile?.user_id? `user-profile-exist` : `user-profile-not-exist` } className={navigateClick === idx ? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
                   <SearchMatchTile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile} />
                   {/* <MatchProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} userIdPercentObj={userIdPercentObj}/> */}
               </div>

@@ -200,3 +200,12 @@
   justify-content: center;
   align-items: center;
 }
+
+#user-profile-exist {
+display: block;
+}
+
+#user-profile-not-exist {
+  display: none;
+
+  }

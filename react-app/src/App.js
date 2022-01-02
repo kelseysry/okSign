@@ -22,6 +22,8 @@ import Background from './components/Background/Background';
 import AboutLinks from './components/AboutLinks/AboutLink';
 import Test from './components/Test/test';
 import Menu from './components/NavigationMenu/Menu';
+import TestProfile from './components/Test/testProfile';
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -43,7 +45,7 @@ function App() {
   return (
     // <BrowserRouter>
     <>
-    <Menu /> 
+    <Menu />
       {/* <NavBar/> */}
       {/* <Background />  */}
       <Switch>
@@ -90,6 +92,7 @@ function App() {
 
         <ProtectedRoute path='/test' exact={true} >
           <Test />
+          {/* <TestProfile /> */}
         </ProtectedRoute>
         <Route>
           <HitErrorPage />
