@@ -198,11 +198,35 @@ const ProfileForm = () => {
 
   return (
     <>
+    <section className="all-questions-container">
+
+    <nav className="question-nav-bar">
+      <a href="#question-1"><i class="fas fa-user-circle"></i></a>
+      <a href="#question-2"><i class="fas fa-map-marker-alt"></i></a>
+      <a href="#question-3">3</a>
+      <a href="#question-4">4</a>
+      <a href="#question-5">5</a>
+      <a href="#question-6">6</a>
+      <a href="#question-7">7</a>
+      <a href="#question-8">8</a>
+      <a href="#question-9">9</a>
+      <a href="#question-10">10</a>
+      <a href="#question-11"><i class="fas fa-check-circle"></i></a>
+    </nav>
+
+    <section class="scroll-container">
+
+
         <div className="ProfileNavExtension">
           <div className="profileFormHeader">Profile Questions</div>
         </div>
-        <section className="edit-profile-form-container">
+
+
+        <section className="edit-profile-form-contaer">
               <form className="profile-form" onSubmit={handleSubmit}>
+
+              <div class="scroll-question1-section" id="question-1">
+
                 <label>
                   Age
                     <input
@@ -214,6 +238,11 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
+
+              </div>
+
+              <div class="scroll-question2-section" id="question-2">
+
                 <label>
                   location
                     <input
@@ -247,6 +276,9 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
+
+              </div>
+
                 <label>
                   About Me
                     <input
@@ -617,6 +649,10 @@ const ProfileForm = () => {
                 onClick={handleCancelFormEditClick}>Cancel</button> */}
                 </form>
               </section>
+
+
+            </section>
+        </section>
       </>
     )
 
