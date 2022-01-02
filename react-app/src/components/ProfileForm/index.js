@@ -226,7 +226,6 @@ const ProfileForm = () => {
               <form className="profile-fom" onSubmit={handleSubmit}>
 
               <div class="scroll-question1-section" id="question-1">
-
                 <div className="question-flex">
                     <label
                       className="labelName"
@@ -292,12 +291,8 @@ const ProfileForm = () => {
                     </select>
                 </div>
 
-
-                  </div>
-
-
-
-                </div>
+              </div>
+            </div>
 
 
               <div class="scroll-question2-section" id="question-2">
@@ -337,21 +332,23 @@ const ProfileForm = () => {
                       </input>
                   </label>
               </div>
+            </div>
 
-              </div>
+            <div class="scroll-question-section" id="question-3">
+                <div className="question-flex">
 
-                <label>
+                <label className="labelName">
                   About Me
                     <input
                     className="profile-input"
                     type="text"
-                    placeholder="if you can't write a good description, just UrbanDictionary your name"
+                    placeholder="Stuck? Use UrbanDictionary for inspiration"
                     value={about_me}
                     onChange={(e) => setAbout_me(e.target.value)}
                     >
                     </input>
                 </label>
-                <label>
+                <label className="labelName">
                   Goal
                     <input
                     className="profile-input"
@@ -362,7 +359,7 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
-                <label>
+                <label className="labelName">
                   Talent
                     <input
                     className="profile-input"
@@ -373,7 +370,7 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
-                <label>
+                <label className="labelName">
                   Traits
                     <input
                     className="profile-input"
@@ -384,7 +381,17 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
-                        <label>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+                  <label>
                   Needs
                     <input
                     className="profile-input"
@@ -395,6 +402,8 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
+
+
                 <label>
                   Hobbies
                     <input
@@ -406,6 +415,7 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
+
                 <label>
                   Moments
                     <input
