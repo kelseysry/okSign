@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Condensed:wght@700&display=swap');
+
+
 .questionAnswered {
   background-color:#1a1a1a;
   color: white;
@@ -5,10 +8,13 @@
   display: flex;
   justify-content: space-between;
   font-size: 50px;
-  padding:0px 50px ;
+  padding-left: 80px;
+  padding-right: 50px;
   padding-bottom: 25px;
   border-bottom: solid 1px white;
   margin-bottom: 50px;
+  font-family: 'Roboto Condensed', sans-serif;
+
 }
 
 .edit-question-form {
@@ -17,7 +23,9 @@
 }
 
 .questionsHeader {
-  font-size: 50px;
+  font-size: 55px;
+  font-family: 'Roboto Condensed', sans-serif;
+
 }
 
 .answerQuestionHeader {
