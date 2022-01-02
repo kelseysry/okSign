@@ -200,7 +200,7 @@ const ProfileForm = () => {
     <>
     <section className="all-questions-container">
 
-    <nav className="question-nav-bar">
+    <nav className="profile-nav-bar">
       <a href="#question-1"><i class="fas fa-user-circle"></i></a>
       <a href="#question-2"><i class="fas fa-map-marker-alt"></i></a>
       <a href="#question-3"><i class="fas fa-briefcase"></i></a>

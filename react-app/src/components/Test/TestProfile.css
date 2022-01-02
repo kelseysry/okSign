@@ -1,19 +1,4 @@
-.profile-nav-bar {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  position: fixed;
-}
 
-
-
-.profile-nav-bar a {
-
-  color: white;
-  text-decoration: none;
-  padding: 20px 20px;
-}
 
 
 .fa-face-zipper {
@@ -224,5 +209,3 @@
   .relationship4 { grid-area: 3 / 1 / 5 / 2; }
   .relationship5 { grid-area: 3 / 2 / 4 / 3; }
   .relationship6 { grid-area: 3 / 2 / 5 / 3; }
-
-
