@@ -217,40 +217,87 @@ const ProfileForm = () => {
     <section class="scroll-container">
 
 
-        <div className="ProfileNavExtension">
+        {/* <div className="ProfileNavExtension">
           <div className="profileFormHeader">Profile Questions</div>
-        </div>
+        </div> */}
 
 
-        <section className="edit-profile-form-contaer">
-              <form className="profile-form" onSubmit={handleSubmit}>
+        <section className="edit-profile-form-contaier">
+              <form className="profile-fom" onSubmit={handleSubmit}>
 
               <div class="scroll-question1-section" id="question-1">
 
-                <label
-                  className="labelName"
-                >
-                  Age
+                <div className="question-flex">
+                    <label
+                      className="labelName"
+                    >
+                      Age
+                        <input
+                        className="profile-input"
+                        type="text"
+                        placeholder=""
+                        value={age}
+                        onChange={(e) => setAge(e.target.value)}
+                        >
+                        </input>
+                    </label>
+
+                    <div className="profile-select">
+                      <label className="selectField">
+                      </label>
+                        <span className="labelName">Gender</span>
+                        <select value={gender_id} onChange={(e) => setGender_id(+e.target.value)}>
+                          {/* <option value='1' disabled>Select a gender</option> */}
+                          <option value="1">Women</option>
+                          <option value="2">Male</option>
+                        </select>
+                    </div>
+
+
+                    <label className="labelName">
+                  Pronouns
                     <input
                     className="profile-input"
                     type="text"
-                    placeholder=""
-                    value={age}
-                    onChange={(e) => setAge(e.target.value)}
+                    placeholder="pronouns"
+                    value={pronouns}
+                    onChange={(e) => setPronouns(e.target.value)}
+                    >
+                    </input>
+                </label>
+                <label className="labelName">
+                  height
+                    <input
+                    className="profile-input"
+                    type="text"
+                    placeholder="use cm please for our international users"
+                    value={height}
+                    onChange={(e) => setHeight(e.target.value)}
                     >
                     </input>
                 </label>
 
+
+
                 <label className="selectField">
-                  <span className="labelName">Gender</span>
-                  <select value={gender_id} onChange={(e) => setGender_id(+e.target.value)}>
-                    {/* <option value='1' disabled>Select a gender</option> */}
-                    <option value="1">Women</option>
-                    <option value="2">Male</option>
+                  <span className="labelName">Orientation</span>
+                  <select value={orientation_id} onChange={(e) => setOrientation_id(+e.target.value)}>
+                    <option value="1">Straight</option>
+                    <option value="2">Lesbian</option>
+                    <option value="3">Gay</option>
+                    <option value="4">Bisexual</option>
+                    <option value="5">Queer</option>
+                    <option value="6">Pansexual</option>
                   </select>
                 </label>
 
-              </div>
+
+                  </div>
+
+
+
+                </div>
+
 
               <div class="scroll-question2-section" id="question-2">
 
@@ -488,18 +535,6 @@ const ProfileForm = () => {
                 </label>
 
                 <label className="selectField">
-                  <span className="labelName">Orientation</span>
-                  <select value={orientation_id} onChange={(e) => setOrientation_id(+e.target.value)}>
-                    <option value="1">Straight</option>
-                    <option value="2">Lesbian</option>
-                    <option value="3">Gay</option>
-                    <option value="4">Bisexual</option>
-                    <option value="5">Queer</option>
-                    <option value="6">Pansexual</option>
-                  </select>
-                </label>
-
-                <label className="selectField">
                 <span className="labelName">What is your relationship status?</span>
                   <select value={partner_id} onChange={(e) => setPartner_id(+e.target.value)}>
                     <option value="1">Monogamous</option>
@@ -508,29 +543,8 @@ const ProfileForm = () => {
                   </select>
                 </label>
 
+
                 <label>
-                  Pronouns
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="pronouns"
-                    value={pronouns}
-                    onChange={(e) => setPronouns(e.target.value)}
-                    >
-                    </input>
-                </label>
-                <label>
-                  height
-                    <input
-                    className="profile-input"
-                    type="text"
-                    placeholder="use cm please for our international users"
-                    value={height}
-                    onChange={(e) => setHeight(e.target.value)}
-                    >
-                    </input>
-                </label>
-                        <label>
                   Education
                     <input
                     className="profile-input"

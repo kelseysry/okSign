@@ -96,13 +96,12 @@
 
 
 
-.profile-select select {
+/* .profile-select select {
   border-radius: 5px 5px;
   padding: 10px 10px;
   padding-right: 50px;
-  /* color: white;
-  background: black; */
-}
+
+} */
 
 .location-grid {
   display: grid;
