@@ -104,7 +104,7 @@ label {
   line-height: 32px;
 }
 
-input {
+.radio {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -137,4 +137,3 @@ button:active {
   color: white;
   outline: 1px solid white;
 }
-

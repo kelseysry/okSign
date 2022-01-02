@@ -25,6 +25,8 @@ function TestProfile() {
   const [question3, setQuestion3] = useState('');
   const [must_answer3, setMust_answer3] = useState('');
 
+  const [age, setAge] = useState('');
+
 
   /*
 
@@ -105,7 +107,20 @@ return (
           <div className="basic-detail-grid">
 
             <div className="box1">
-              <div className="box1a">age</div>
+              <div className="box1a">
+              <label>
+                  Age
+                    <input
+                    className="profile-inpu"
+                    type="text"
+                    placeholder=""
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                    >
+                    </input>
+                </label>
+
+              </div>
               <div className="box1b">height</div>
             </div>
             <div className="box2">pronouns</div>
