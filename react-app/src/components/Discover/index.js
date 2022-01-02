@@ -186,7 +186,7 @@ if(currentUserQuestion) {
     const right = document.querySelector('#discoverProfile');
      right.scrollLeft += 1050;
      setSlide(1)
-     if(navigateClick < userIdsPercentsObj?.length -1) {
+     if(navigateClick < userIdsPercentsObj?.length -2) {
       setNavigateClick(navigateClick += 1)
      } else {
        return navigateClick
@@ -195,7 +195,7 @@ if(currentUserQuestion) {
   }
 
   console.log("navigateClickccc", navigateClick)
-  console.log("userIdsPercentsObj length", userIdsPercentsObj.length)
+  console.log("userIdsPercentsObj ", userIdsPercentsObj)
 
   let content2;
   content2 = (
@@ -239,7 +239,7 @@ if(currentUserQuestion) {
 
           <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
-                    <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
+                    <div  key={idx}>
                         <MatchProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} userIdPercentObj={userIdPercentObj}/>
                     </div>
                   )}

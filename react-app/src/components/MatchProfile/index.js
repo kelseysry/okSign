@@ -168,6 +168,12 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) =
     <>
 
     { isLoaded && matchProfileObj[0]?.user_id && (
+
+      <section  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` }>
+
+
+
+
       <>
       <section className="MatchProfileContainer">
       {
@@ -188,7 +194,7 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) =
 
         <div className="oneMatchProfileContainer">
 
-            <section className='ImageContainer'>
+            <section  className='ImageContainer'>
                         <NavLink
                 to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
               >
@@ -251,6 +257,10 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) =
          </div>
       </section>
       </>
+
+
+
+      </section>
 
       )
     }
