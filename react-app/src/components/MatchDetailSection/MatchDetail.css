@@ -1,0 +1,12 @@
+
+.step {
+  z-index: 1;
+}
+
+.detail-container {
+  z-index: 2;
+}
+
+body {
+  background: whitesmoke;
+}
