@@ -4,7 +4,6 @@
 .questionAnswered {
   background-color:#1a1a1a;
   color: white;
-  margin-bottom: 30px;
   display: flex;
   justify-content: space-between;
   font-size: 50px;
@@ -12,7 +11,7 @@
   padding-right: 50px;
   padding-bottom: 25px;
   border-bottom: solid 1px white;
-  margin-bottom: 50px;
+  background: #1a1a1a;
   font-family: 'Roboto Condensed', sans-serif;
 
 }
