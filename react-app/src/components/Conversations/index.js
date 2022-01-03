@@ -19,6 +19,8 @@ const Conversations = () => {
 
   const [key, setKey] = useState([]);
 
+  const [currentUserProfile, setCurrentUserProfile] = useState();
+
 
   const conversationObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationObj)
@@ -38,6 +40,19 @@ const Conversations = () => {
 
 
   // const [users, setUsers] = useState([]);
+
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(`/api/profiles/userProfile/${user_id}`);
+      const responseData = await response.json();
+      console.log("responseData",responseData )
+      setCurrentUserProfile(responseData);
+    }
+    fetchData();
+  }, []);
+
+
 
   useEffect(async ()=>{
     // await dispatch(clearProfiles)
@@ -110,7 +125,7 @@ const Conversations = () => {
   )
 
   let content;
-  if(previousCurrentUserConversations?.length) {
+  if(previousCurrentUserConversations?.length && currentUserProfile?.oneProfile) {
     content = (
       <>
         <div className="ConversationHeaderContainer">

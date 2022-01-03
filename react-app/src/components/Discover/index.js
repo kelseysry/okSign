@@ -31,6 +31,10 @@ const Discover = () => {
 
   const [questions, setQuestions] = useState([]);
 
+  const [currentUserProfile, setCurrentUserProfile] = useState();
+
+
+  console.log("currentUserProfile??????", currentUserProfile?.oneProfile)
 
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
@@ -41,6 +45,16 @@ const Discover = () => {
       const response = await fetch('/api/questions/');
       const responseData = await response.json();
       setQuestions(responseData.questions);
+    }
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(`/api/profiles/userProfile/${user_id}`);
+      const responseData = await response.json();
+      console.log("responseData",responseData )
+      setCurrentUserProfile(responseData);
     }
     fetchData();
   }, []);
@@ -203,7 +217,7 @@ if(currentUserQuestion) {
   )
 
   let content;
-  if (currentUserQuestion?.length) {
+  if (currentUserQuestion?.length && currentUserProfile?.oneProfile) {
     content = (
         <>
 
