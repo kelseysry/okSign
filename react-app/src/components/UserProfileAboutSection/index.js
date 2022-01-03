@@ -197,8 +197,25 @@ function UserProfileAboutSection(currentUserProfile) {
   return (
     <>
 
-    <div className="match-profile-all-content">
 
+      <div className="step-background">
+
+      <section className="step-containe">
+          <div className="Step11">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+          <div className="Step22">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+          <div className="Step33">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+          <div className="Step44">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+          <div className="Step55">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+          <div className="Step66">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+          <div className="Step77">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+
+
+        </section>
+
+      </div>
+
+
+    <div className="match-profile-all-content">
       <section className="about-section">
 
         <div  className="one-detail-container">
