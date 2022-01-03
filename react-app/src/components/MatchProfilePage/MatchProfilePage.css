@@ -5,6 +5,8 @@
   margin: 0px 0px !important;
   display: flex;
   justify-content: center;
+  padding-top: 50px;
+  background: whitesmoke;
 }
 
 .pic-container-scroll {
