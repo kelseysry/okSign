@@ -195,6 +195,7 @@ a {
 .about-detail-container {
   display: flex;
   justify-content: center;
+  background: whitesmoke !important;
 }
 
 .detail-container {
@@ -212,4 +213,3 @@ a {
   margin-bottom: auto;
   padding-bottom: 50px;
 }
-

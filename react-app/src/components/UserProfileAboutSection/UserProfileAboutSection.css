@@ -1,24 +1,27 @@
-body {
-  background-color:#f3f5f9;
-}
+/* body {
+  background: whitesmoke;
+} */
 
 .one-detail-container {
   box-sizing: border-box;
   margin-bottom: 20px;
-  background: #fff;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
 }
 
 
-
 .about-div-header {
-  background: #1a1a1a;
   padding: 10px 15px;
-  color: #fff;
+  color: rgb(255, 255, 255);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  background: #000000;
+  border: 1px solid rgb(255, 255, 255);
+
 }
 
 
@@ -29,15 +32,20 @@ body {
 
 .Details {
   width: 380px;
+  z-index: 2;
 }
 
 .one-detail-content {
   padding: 15px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 10%);
+
 }
 
 .details-container {
   padding: 15px;
   background: #fff;
+  z-index: 2;
+
 }
 
 .one-detail {
@@ -48,11 +56,174 @@ body {
   padding: 10px;
 }
 
-.match-profile-all-content {
+.match-profile-all-content-all {
   display: flex;
   justify-content: center;
+  background: whitesmoke;
+  z-index: 3;
+  padding-top: 60px;
 }
 
 .about-section {
   margin-right: 20px;
+  z-index: 2;
 }
+
+
+.step-background {
+  top: 200px;
+  z-index: 1;
+  position: relative;
+  color: pink;
+  left: 850px;
+}
+
+
+
+.Step11{
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 45px;
+
+  font-size: 90px;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: rgb(112, 111, 111);
+  background: -webkit-linear-gradient(rgb(34, 34, 34), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Step22 {
+
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+
+  position: absolute;
+  top: 128px;
+  left: 30px;
+  font-size: 90px;
+  transform: skew(0deg, -31deg) scaleY(1.33333);
+  color: rgb(112, 111, 111);
+  background: -webkit-linear-gradient(rgb(34, 34, 34), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}
+
+.Step33{
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 215px;
+  left: 50px;
+  font-size: 90px;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: rgb(112, 111, 111);
+  background: -webkit-linear-gradient(rgb(34, 34, 34), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.Step44 {
+
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+
+  position: absolute;
+  top: 305px;
+  left: 50px;
+  font-size: 90px;
+  transform: skew(0deg, -31deg) scaleY(1.33333);
+  color: rgb(112, 111, 111);
+  background: -webkit-linear-gradient(rgb(34, 34, 34), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Step55 {
+
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+
+  position: absolute;
+  top: 405px;
+  left: 50px;
+  font-size: 90px;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: rgb(112, 111, 111);
+  background: -webkit-linear-gradient(rgb(34, 34, 34), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Step66 {
+
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+
+  position: absolute;
+  top: 505px;
+  left: 50px;
+  font-size: 90px;
+  transform: skew(0deg, -31deg) scaleY(1.33333);
+  color: rgb(112, 111, 111);
+  background: -webkit-linear-gradient(rgb(34, 34, 34), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}
+
+.Step77 {
+
+  margin: 0 auto;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+
+
+  position: absolute;
+  top: 605px;
+  left: 50px;
+  font-size: 90px;
+  transform: skew(60deg, -30deg) scaleY(.66667);
+  color: rgb(112, 111, 111);
+  background: -webkit-linear-gradient(rgb(34, 34, 34), rgb(255, 255, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;}

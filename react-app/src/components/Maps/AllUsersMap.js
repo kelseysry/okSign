@@ -1,5 +1,6 @@
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow} from '@react-google-maps/api';
 import './Maps.css'
+import mapStyle from '../../data/mapStyle';
 
 import React, { useEffect, useState } from 'react';
 
@@ -60,6 +61,9 @@ const AllUsersMap= ({matchUsersProfileArr, keyy}) => {
         mapContainerStyle={containerStyle}
         zoom={3}
         center={center}
+        options={{
+          styles:mapStyle
+        }}
         >
 
         {allMarkers?.map((center, idx) => (

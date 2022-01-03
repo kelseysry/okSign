@@ -1,0 +1,25 @@
+
+.step {
+  z-index: 0;
+}
+
+.detail-container {
+  z-index: 2;
+  padding-top: 20px;
+  position: relative;
+
+}
+/*
+body {
+  background: whitesmoke;
+} */
+
+.match-profile-all-content {
+  z-index: 3;
+
+}
+
+.step-backgrund {
+  z-index: 0;
+  position: relative;
+}

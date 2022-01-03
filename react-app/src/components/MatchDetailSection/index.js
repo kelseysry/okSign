@@ -10,6 +10,7 @@ import { getPolitics } from '../../store/politic';
 import { getReligions } from '../../store/religion';
 import { getPartners } from '../../store/partner';
 import { getOrientations } from '../../store/orientation';
+import './MatchDetail.css'
 
 function MatchDetailSection(currentUserProfile) {
   const dispatch = useDispatch()
@@ -195,6 +196,23 @@ function MatchDetailSection(currentUserProfile) {
   return (
     <>
 
+
+
+<div className="step-backgrund">
+
+<section className="step">
+    <div className="Step11">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+    <div className="Step22">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+    <div className="Step33">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+    <div className="Step44">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+    <div className="Step55">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+    <div className="Step66">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+    <div className="Step77">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
+
+
+  </section>
+
+</div>
     <div className="match-profile-all-content">
 
         <section className="detail-container">

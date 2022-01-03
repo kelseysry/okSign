@@ -1,11 +1,9 @@
 .all-questions-container {
   background: #1a1a1a;
+  height: 1200px
 
 }
 
-body {
-  background: #1a1a1a;
-}
 
 html {
   scroll-behavior: smooth;
@@ -134,6 +132,7 @@ input:checked {
   font-size: 3em;
   text-align: left;
   position: relative;
+  background: #1a1a1a;
 }
 
 
