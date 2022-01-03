@@ -3,6 +3,7 @@ import { GoogleMap, useJsApiLoader, Marker, InfoWindow} from '@react-google-maps
 import { Polyline } from '@react-google-maps/api';
 import './Maps.css'
 import { useSelector, useDispatch } from "react-redux";
+import mapStyle from '../../data/mapStyle';
 
 
 const MapTwoUsers= ({user, match, keyy}) => {
@@ -74,6 +75,9 @@ const { isLoaded } = useJsApiLoader({
           zoom={2}
           center={center}
           onUnmount={onUnmount}
+          options={{
+            styles:mapStyle
+          }}
           >
               <Marker
                 key={user[0]?.id}
