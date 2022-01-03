@@ -198,7 +198,6 @@ function MatchDetailSection(currentUserProfile) {
 
 
 
-    <div className="match-profile-all-content">
 <div className="step-backgrund">
 
 <section className="step">
@@ -214,6 +213,7 @@ function MatchDetailSection(currentUserProfile) {
   </section>
 
 </div>
+    <div className="match-profile-all-content">
 
         <section className="detail-container">
             <div className="about-div-header">Details</div>

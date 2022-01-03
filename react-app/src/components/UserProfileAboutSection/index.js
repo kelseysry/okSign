@@ -215,7 +215,7 @@ function UserProfileAboutSection(currentUserProfile) {
       </div>
 
 
-    <div className="match-profile-all-content">
+    <div className="match-profile-all-content-all">
       <section className="about-section">
 
         <div  className="one-detail-container">

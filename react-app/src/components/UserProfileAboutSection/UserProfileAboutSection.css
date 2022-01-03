@@ -56,11 +56,12 @@
   padding: 10px;
 }
 
-.match-profile-all-content {
+.match-profile-all-content-all {
   display: flex;
   justify-content: center;
   background: whitesmoke;
-  z-index: 2;
+  z-index: 3;
+  padding-top: 60px;
 }
 
 .about-section {
