@@ -72,6 +72,11 @@ const horoscopePics = {
       "horoscopeId":"12",
       "horoscope":"Pisces",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642699606/okSign/pisces_oq14xp.png"
+    },
+    {
+      "imageNumber":"12",
+      "name":"bench",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642714112/okSign/bench_h9kzxj.png"
     }
 
   ]

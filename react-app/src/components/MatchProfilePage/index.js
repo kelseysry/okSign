@@ -7,6 +7,7 @@ import MatchProfilePics from '../MatchProfilePics';
 import MatchAboutSection from '../MatchAboutSection';
 import MatchDetailSection from '../MatchDetailSection';
 import './MatchProfilePage.css'
+import MatchProfileHoroscope from '../MatchProfileHoroscope';
 
 const MatchProfilePage = () => {
   const dispatch = useDispatch()
@@ -45,6 +46,7 @@ const MatchProfilePage = () => {
             <div className="about-detail-container">
               <div className="match-user-about-container">
                 <MatchAboutSection currentUserProfile={matchProfileObj}/>
+                <MatchProfileHoroscope />
                 <MatchProfilePercent matchProfileObj={matchProfileObj}/>
               </div>
               <div className="match-user-detail-container">
