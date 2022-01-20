@@ -48,6 +48,8 @@ hr {
   background: #1a1a1a;
   color: #fff;
   padding: 10px 15px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 

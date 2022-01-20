@@ -23,6 +23,8 @@ const MatchProfileHoroscope = ({matchProfile}) => {
 
   let currentUserHoroscopeId = currentUserProfile?.oneProfile[0]?.horoscope_id
 
+console.log("horoscopeContent?.length",horoscopeContent?.length < 500 )
+
   return (
     <>
       <div className="matchContainerHeader">Horoscope Compatibility</div>
@@ -38,6 +40,11 @@ const MatchProfileHoroscope = ({matchProfile}) => {
 
         <p>
         <img className="bench" src={horoscopePics.collection[12].imageUrl} />
+        <section className={horoscopeContent?.length < 500 ? 'contentHoroscopeFiller' : 'noContentHoroscopeFiller'}>
+        <div>&nbsp;&nbsp;</div>
+        <div>&nbsp;&nbsp;</div>
+        <div>&nbsp;&nbsp;</div>
+        </section>
         {horoscopeContent}
         </p>
 
