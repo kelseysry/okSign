@@ -37,6 +37,14 @@ const pictures = {
     {
       "imageNumber":"8",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642659670/okSign/staircase_discover_utvadm.png"
+    },
+    {
+      "imageNumber":"9",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642661007/okSign/aquarius_a0neya.png"
+    },
+    {
+      "imageNumber":"10",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642664033/okSign/stick_man_paper_oqywfz.png"
     }
   ]
 

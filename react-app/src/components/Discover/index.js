@@ -238,7 +238,7 @@ if(currentUserQuestion) {
               <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
               <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
               <div className="img-stairs">
-              <img src={pictures.collection[8].imageUrl} />
+              <img src={pictures.collection[10].imageUrl} />
               </div>
             </section>
 

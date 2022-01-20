@@ -1,0 +1,81 @@
+const horoscopePics = {
+
+  "collection" : [
+    {
+      "imageNumber":"0",
+      "horoscopeId":"1",
+      "horoscope":"Aries",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642663252/okSign/aries_y2hfcf.png"
+    },
+    {
+      "imageNumber":"1",
+      "horoscopeId":"2",
+      "horoscope":"Taurus",
+      "imageUrl":""
+    },
+    {
+      "imageNumber":"2",
+      "horoscopeId":"3",
+      "horoscope":"Gemini",
+      "imageUrl":""
+    },
+    {
+      "imageNumber":"3",
+      "horoscopeId":"4",
+      "horoscope":"Cancer",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642663567/okSign/cancer_n8u03f.png"
+    },
+    {
+      "imageNumber":"4",
+      "horoscopeId":"5",
+      "horoscope":"Leo",
+      "imageUrl":""
+    },
+    {
+      "imageNumber":"5",
+      "horoscopeId":"6",
+      "horoscope":"Virgo",
+      "imageUrl":""
+    },
+    {
+      "imageNumber":"6",
+      "horoscopeId":"7",
+      "horoscope":"Libra",
+      "imageUrl":""
+    },
+    {
+      "imageNumber":"7",
+      "horoscopeId":"8",
+      "horoscope":"Scorpio",
+      "imageUrl":""
+    },
+    {
+      "imageNumber":"8",
+      "horoscopeId":"9",
+      "horoscope":"Sagittarius",
+      "imageUrl":""
+    },
+    {
+      "imageNumber":"9",
+      "horoscopeId":"10",
+      "horoscope":"Capricorn",
+      "imageUrl":""
+    },
+    {
+      "imageNumber":"10",
+      "horoscopeId":"11",
+      "horoscope":"Aquarius",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642661007/okSign/aquarius_a0neya.png"
+    },
+    {
+      "imageNumber":"11",
+      "horoscopeId":"12",
+      "horoscope":"Pisces",
+      "imageUrl":""
+    }
+
+  ]
+
+}
+
+export default horoscopePics
