@@ -288,6 +288,62 @@
   animation: slide 1s 1;
 }
 
+.slide13 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide13[slide='1'] {
+  animation: slide 1s 1;
+}
+
+
+.slide14 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide14[slide='1'] {
+  animation: slide 1s 1;
+}
+
+
+.slide15 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide15[slide='1'] {
+  animation: slide 1s 1;
+}
+
 
 
 

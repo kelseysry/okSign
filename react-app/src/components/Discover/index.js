@@ -3,10 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import { NavLink } from "react-router-dom";
 import MatchProfile from "../MatchProfile";
-import { getQuestions } from "../../store/question";
 import NoMatches from "../NoMatches";
 import './Discover.css'
-import ChooseDiscoverContent from "./ChooseDiscoverContent";
 import DiscoverHoroscope from "../DiscoverHoroscope/DiscoverHoroscopePage";
 import { useDiscoverContent } from "../../context/DiscoverContentContext";
 import { useBackgroundContent } from "../../context/BackgroundContext";
@@ -191,14 +189,8 @@ if(currentUserQuestion) {
 
   }
 
-  console.log("getmatchMatch", getMatchProfilesCount(userIdsPercentsObj))
 
   let correctNumberMatches = getMatchProfilesCount(userIdsPercentsObj)
-
-  // let matchProfileObj = (getMatchProfile(profile_id))
-
-  console.log("correctNumberArray", correctNumberMatches)
-
 
   const handleLeftClick = (e) => {
     e.preventDefault();
@@ -212,7 +204,6 @@ if(currentUserQuestion) {
     }
 
   }
-  // add functionality to only see name when click
 
   const handleRightClick = (e) => {
     e.preventDefault();
@@ -228,8 +219,7 @@ if(currentUserQuestion) {
 
   }
 
-  console.log("navigateClickccc", navigateClick)
-  console.log("userIdsPercentsObj ", userIdsPercentsObj)
+
 
   let content2;
   content2 = (
@@ -240,8 +230,6 @@ if(currentUserQuestion) {
   if (currentUserQuestion?.length && currentUserProfile?.oneProfile) {
     content = (
         <>
-
-
         <section className="DiscoverContentContainer">
 
           <button
@@ -273,12 +261,9 @@ if(currentUserQuestion) {
 
           <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 {correctNumberMatches?.map((correctNumberMatches, idx) =>
-                    // <div  key={idx}>
-
                     correctNumberMatches?.length ?
                         <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
                         : null
-                    // </div>
                   )}
              </div>
 
