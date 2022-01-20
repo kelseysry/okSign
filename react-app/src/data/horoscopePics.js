@@ -29,6 +29,7 @@ const horoscopePics = {
       "imageNumber":"4",
       "horoscopeId":"5",
       "horoscope":"Leo",
+      "sign":"https://res.cloudinary.com/mabmab/image/upload/v1642714978/okSign/leo_sign_pflgus.png",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642698733/okSign/leo_mxofec.png"
     },
     {
@@ -65,6 +66,7 @@ const horoscopePics = {
       "imageNumber":"10",
       "horoscopeId":"11",
       "horoscope":"Aquarius",
+      "sign":"https://res.cloudinary.com/mabmab/image/upload/v1642714865/okSign/aquarius_sign_ua2zde.png",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642661007/okSign/aquarius_a0neya.png"
     },
     {

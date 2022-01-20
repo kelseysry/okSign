@@ -46,7 +46,7 @@ const MatchProfilePage = () => {
             <div className="about-detail-container">
               <div className="match-user-about-container">
                 <MatchAboutSection currentUserProfile={matchProfileObj}/>
-                <MatchProfileHoroscope />
+                <MatchProfileHoroscope matchProfile={matchProfileObj[0]}/>
                 <MatchProfilePercent matchProfileObj={matchProfileObj}/>
               </div>
               <div className="match-user-detail-container">

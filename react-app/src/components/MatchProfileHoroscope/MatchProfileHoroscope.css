@@ -14,3 +14,12 @@
   z-index: 2;
   margin-bottom: 20px;
 }
+
+.matchHoroscopeSign img {
+  width: 45px;
+  position: absolute;
+  top: 45px;
+  left: 160px;
+  filter: saturate(500%) contrast(800%) brightness(500%)
+  invert(100%) sepia(0%) hue-rotate(120deg);
+}
