@@ -1,7 +1,5 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import React, { useEffect, useState } from 'react';
-import { NavLink } from "react-router-dom";
-import { getQuestions } from "../../store/question";
 import NoMatches from "../NoMatches";
 import DiscoverHoroscopeProfile from "./DiscoverHoroscopeProfile";
 import { useDiscoverContent } from "../../context/DiscoverContentContext";
