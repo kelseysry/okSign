@@ -101,7 +101,8 @@ const MatchProfilePercent = ({matchProfileObj}) => {
       <>
           <div className="matchPercentContainer">
             <div className="matchContainerHeader">
-              You and {getUserName(matchProfileObj[0]?.user_id)}
+              Personality Compatibility
+              {/* You and {getUserName(matchProfileObj[0]?.user_id)} */}
             </div>
             <div className="MatchProfileInnerContainer">
               <div className="circlesContainer">
