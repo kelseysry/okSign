@@ -11,13 +11,13 @@ const horoscopePics = {
       "imageNumber":"1",
       "horoscopeId":"2",
       "horoscope":"Taurus",
-      "imageUrl":""
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642698442/okSign/taurus_ccn1lh.png"
     },
     {
       "imageNumber":"2",
       "horoscopeId":"3",
       "horoscope":"Gemini",
-      "imageUrl":""
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642698615/okSign/gemini_jeyj2k.png"
     },
     {
       "imageNumber":"3",
@@ -29,37 +29,37 @@ const horoscopePics = {
       "imageNumber":"4",
       "horoscopeId":"5",
       "horoscope":"Leo",
-      "imageUrl":""
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642698733/okSign/leo_mxofec.png"
     },
     {
       "imageNumber":"5",
       "horoscopeId":"6",
       "horoscope":"Virgo",
-      "imageUrl":""
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642698829/okSign/virgo_nd0svf.png"
     },
     {
       "imageNumber":"6",
       "horoscopeId":"7",
       "horoscope":"Libra",
-      "imageUrl":""
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642699218/okSign/libra_ocnrei.png"
     },
     {
       "imageNumber":"7",
       "horoscopeId":"8",
       "horoscope":"Scorpio",
-      "imageUrl":""
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642699306/okSign/scorpio_sv9otg.png"
     },
     {
       "imageNumber":"8",
       "horoscopeId":"9",
       "horoscope":"Sagittarius",
-      "imageUrl":""
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642699404/okSign/sagittarius_fbacrx.png"
     },
     {
       "imageNumber":"9",
       "horoscopeId":"10",
       "horoscope":"Capricorn",
-      "imageUrl":""
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642699504/okSign/capricorn_llo3og.png"
     },
     {
       "imageNumber":"10",
@@ -71,7 +71,7 @@ const horoscopePics = {
       "imageNumber":"11",
       "horoscopeId":"12",
       "horoscope":"Pisces",
-      "imageUrl":""
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642699606/okSign/pisces_oq14xp.png"
     }
 
   ]
