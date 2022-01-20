@@ -106,6 +106,9 @@ const MatchProfilePercent = ({matchProfileObj}) => {
   // let matchPercent = ((Number(matchPercentIndexed[1])/10)*100)
     // console.log("getMatchPercentage",getMatchPercentage);
 
+    console.log("matchProfileObj[0]?.user_id", matchProfileObj[0]?.user_id)
+    console.log("userIdsPercentsArr", userIdsPercentsArr)
+
   return (
     <>
 

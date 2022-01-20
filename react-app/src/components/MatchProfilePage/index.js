@@ -12,8 +12,6 @@ const MatchProfilePage = () => {
   const dispatch = useDispatch()
   const { profileId }  = useParams();
 
-  // const {userIdsPercentsObj} = GetMatches()
-  // console.log("match profile ids from context", userIdsPercentsObj)
 
   const [isLoaded, setIsLoaded] = useState(false)
 
