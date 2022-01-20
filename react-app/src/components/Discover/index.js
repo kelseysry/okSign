@@ -33,9 +33,6 @@ const Discover = () => {
   const profilesObj = useSelector((state) => state.profile)
   const profiles = Object.values(profilesObj)
 
-
-  console.log("currentUserProfile??????", currentUserProfile?.oneProfile)
-
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
   // console.log("user_id", user_id)
@@ -172,7 +169,20 @@ if(currentUserQuestion) {
     return array
   }
 
+  console.log("navigateClick", navigateClick)
+
   let correctNumberMatches = getMatchProfilesCount(userIdsPercentsObj)
+
+  // console.log("correctNumberMatches", correctNumberMatches)
+
+
+  let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
+  // console.log("currentUserGenderPreference??????", currentUserGenderPreference)
+
+
+  let correctNumberMatchesAndGender = correctNumberMatches.filter((matchProfile) => matchProfile[0]?.gender_id  === currentUserGenderPreference)
+
+  // console.log("correctNumberMatchesAndGender", correctNumberMatchesAndGender)
 
   const handleLeftClick = (e) => {
     e.preventDefault();
@@ -191,7 +201,7 @@ if(currentUserQuestion) {
     const right = document.querySelector('#discoverProfile');
      right.scrollLeft += 1100;
      setSlide(1)
-     if(navigateClick < correctNumberMatches?.length -1) {
+     if(navigateClick < correctNumberMatchesAndGender?.length -1) {
       setNavigateClick(navigateClick += 1)
      }
      else {
@@ -235,8 +245,8 @@ if(currentUserQuestion) {
             </section>
 
             <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                  {correctNumberMatches?.map((correctNumberMatches, idx) =>
-                      correctNumberMatches?.length ?
+                  {correctNumberMatchesAndGender?.map((correctNumberMatches, idx) =>
+                      correctNumberMatchesAndGender?.length ?
                           <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
                           : null
                     )}
