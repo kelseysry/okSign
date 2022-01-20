@@ -10,7 +10,7 @@ import { getProfiles } from "../../store/profile";
 import { NavLink } from "react-router-dom";
 
 import './DiscoverPics.css'
-const MatchProfile = ({get, userIdPercentObj, slide, setSlide, idx, navigateClick}) => {
+const MatchProfile = ({get, correctNumberMatches, userIdPercentObj, slide, setSlide, idx, navigateClick}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 
@@ -35,10 +35,8 @@ const MatchProfile = ({get, userIdPercentObj, slide, setSlide, idx, navigateClic
   const conversationsObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationsObj)[0]
 
-  // console.log("conversations-------", conversations)
-  // console.log("get", get)
-  // console.log("userIdPercentObj", userIdPercentObj)
 
+  console.log("ppnavigateClick", navigateClick)
 
   useEffect(async () => {
 
@@ -83,23 +81,6 @@ const MatchProfile = ({get, userIdPercentObj, slide, setSlide, idx, navigateClic
   }
 
 
-  const checkConversationExists = (user_id_one, discoverUserId) => {
-
-
-    const existingConvo = conversations?.filter(function(convo){
-
-      if(((convo?.user_id_one === discoverUserId) && (convo?.user_id_two === user_id_one)) || ((convo?.user_id_two === discoverUserId) && (convo?.user_id_one === user_id_one))) {
-        // console.log("convo in if", convo)
-        return convo
-      } else {
-        return null
-      }
-    })
-    // console.log("existingconvo", existingConvo)
-    return existingConvo
-
-  }
-
   const getMatchProfile = (profile_id) => {
     const matchProfile = profiles[0]?.filter(function(profile){
 
@@ -135,37 +116,6 @@ const MatchProfile = ({get, userIdPercentObj, slide, setSlide, idx, navigateClic
 
   let userProfileObj = (getUserProfile(user_id_one))
 
-  // console.log("userProfileObh", userProfileObj)
-
-
-  const handleCreateConversation = async (discoverProfileId) => {
-    // console.log("discoverProfileId", discoverProfileId)
-
-
-    let conversationExists =  checkConversationExists(user_id_one, discoverProfileId)
-    // console.log("conversationexists", conversationExists)
-
-    if(conversationExists[0]?.id) {
-      history.push(`/conversations/${conversationExists[0]?.id}`)
-    } else {
-
-      let user_id_two = discoverProfileId
-      let formData = {user_id_one , user_id_two}
-
-      let newConversation = await dispatch(createConversation(formData))
-
-      let convo = Object.values(newConversation)
-
-      if(newConversation){
-        history.push(`/conversations/${convo[0]?.id}`)
-      }
-    }
-  }
-
-
-  // console.log("matchProfileObj[0]", matchProfileObj[0])
-
-
   // this is displaying on the front discover page
   return (
     <>
@@ -174,13 +124,11 @@ const MatchProfile = ({get, userIdPercentObj, slide, setSlide, idx, navigateClic
 
       <section  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` }>
 
-
-
-
       <>
       <section className="MatchProfileContainer">
       {
-        idx === navigateClick?
+        // true ?
+        idx === navigateClick || correctNumberMatches === idx?
         (
         <>
           <div
@@ -188,7 +136,7 @@ const MatchProfile = ({get, userIdPercentObj, slide, setSlide, idx, navigateClic
             slide={slide}
             onClick={() => setSlide(idx)}
             onAnimationEnd={() => setSlide(0)}>
-            <div className="userNameCursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
+            <div className="userNameCursive">{idx}{getUserName(matchProfileObj[0]?.user_id)}</div>
             <div className="match_details_discover_under_name"> {matchProfileObj[0]?.age} | {matchProfileObj[0]?.about_me}</div>
           </div>
         </>

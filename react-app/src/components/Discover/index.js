@@ -218,7 +218,7 @@ if(currentUserQuestion) {
     const right = document.querySelector('#discoverProfile');
      right.scrollLeft += 1100;
      setSlide(1)
-     if(navigateClick < correctNumberMatches?.length -1) {
+     if(navigateClick < correctNumberMatches?.length ) {
       setNavigateClick(navigateClick += 1)
      }
      else {
@@ -274,8 +274,8 @@ if(currentUserQuestion) {
                 {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
                     // <div  key={idx}>
 
-                    getMatchProfile(userIdPercentObj[0])?.length ?
-                        <MatchProfile get={getMatchProfile(userIdPercentObj)} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} userIdPercentObj={userIdPercentObj}/>
+                    correctNumberMatches?.length ?
+                        <MatchProfile get={getMatchProfile(userIdPercentObj)} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} userIdPercentObj={userIdPercentObj}/>
                         : null
                     // </div>
                   )}

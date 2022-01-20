@@ -134,7 +134,6 @@
   animation: slide 1s 1;
 }
 
-
 .slide5 {
   color: #fff;
   line-height: 0.9em;
@@ -152,6 +151,7 @@
 .slide5[slide='1'] {
   animation: slide 1s 1;
 }
+
 
 
 .slide6 {
