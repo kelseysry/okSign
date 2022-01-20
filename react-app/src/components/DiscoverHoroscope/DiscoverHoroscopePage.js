@@ -5,20 +5,14 @@ import DiscoverHoroscopeProfile from "./DiscoverHoroscopeProfile";
 import { useDiscoverContent } from "../../context/DiscoverContentContext";
 
 const DiscoverHoroscope = () => {
-  // const dispatch = useDispatch()
 
   const [profiles, setProfiles] = useState([]);
   let [navigateClick, setNavigateClick] = useState(-1)
   const [slide, setSlide] = useState(1)
   const {discoverContent, setDiscoverContent} = useDiscoverContent()
-
-  console.log("discoverContent", discoverContent)
-
-
+  const [currentUserProfile, setCurrentUserProfile] = useState();
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
-  console.log("🤠🤠🤠🤠user_id", user_id)
-  console.log("profiless🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profiles)
 
 
   useEffect(() => {
@@ -30,22 +24,28 @@ const DiscoverHoroscope = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(`/api/profiles/userProfile/${user_id}`);
+      const responseData = await response.json();
+      setCurrentUserProfile(responseData);
+    }
+    fetchData();
+  }, []);
+
   // will need to do this for brand new users or for users who delete their profile - or else
   // get an error when render Horoscope Match page b/c no horoscope_id exists
   let checkUserHasProfile = profiles.filter(function(profile) {
     return profile.user_id === user_id
   })
 
-  console.log("checkUserHasProfile checkUserHasProfile", checkUserHasProfile)
-
-
   let allProfilesExcludeCurrent = profiles.filter(function(profile) {
     return profile.user_id !== user_id
   })
 
+  let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
 
-  // console.log("allProfilesExcludeCurrent", allProfilesExcludeCurrent)
-
+  let horoscopeMatchesGenderPrefer = allProfilesExcludeCurrent.filter((matchProfile) => matchProfile?.gender_id  === currentUserGenderPreference)
 
   const handleLeftClick = (e) => {
     e.preventDefault();
@@ -59,7 +59,6 @@ const DiscoverHoroscope = () => {
     }
 
   }
-  // add functionality to only see name when click
 
   const handleRightClick = (e) => {
     e.preventDefault();
@@ -71,80 +70,68 @@ const DiscoverHoroscope = () => {
      } else {
        return navigateClick
      }
-
   }
-
-
 
   let content;
 
   if (profiles?.length && checkUserHasProfile?.length) {
     content = (
-<>
-  <section className="DiscoverContentContainer">
-
-    <button
-        id="go-back"f
-        className="left"
-        onClick={handleLeftClick}
-        onAnimationEnd={() => setSlide(0)}
-        slide={slide}
-        >
-        <span className="hide-button">⬅️</span>
-    </button>
-
-
-      <div className="discover-profiles-container" id="discoverProfile">
-
-
-      <section className="step-container">
-          <div className="Step1">Discover</div>
-          <div className="Step2">Users</div>
-          <div className="Step3">By</div>
-          <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
-          <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div>
-
-
-          <div className="Step5">Or</div>
-          <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-          <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
-        </section>
-
-
-    <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-          {allProfilesExcludeCurrent?.map((profile, idx) =>
-              <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
-                  <DiscoverHoroscopeProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile}/>
-              </div>
-            )}
-      </div>
-
+  <>
+    <section className="DiscoverContentContainer">
 
       <button
-      id="next-profile"
-      className="right"
-          onClick={handleRightClick}
+          id="go-back"f
+          className="left"
+          onClick={handleLeftClick}
           onAnimationEnd={() => setSlide(0)}
           slide={slide}
-      >
-        <span className="hide-button">➡️</span>
+          >
+          <span className="hide-button">⬅️</span>
       </button>
-  </section>
+
+        <div className="discover-profiles-container" id="discoverProfile">
+
+        <section className="step-container">
+            <div className="Step1">Discover</div>
+            <div className="Step2">Users</div>
+            <div className="Step3">By</div>
+            <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
+            <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div>
 
 
+            <div className="Step5">Or</div>
+            <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
+            <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
+          </section>
 
-</>
 
+      <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            {horoscopeMatchesGenderPrefer?.map((profile, idx) =>
+                <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
+                    <DiscoverHoroscopeProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile}/>
+                </div>
+              )}
+        </div>
+
+        <button
+        id="next-profile"
+        className="right"
+            onClick={handleRightClick}
+            onAnimationEnd={() => setSlide(0)}
+            slide={slide}
+        >
+          <span className="hide-button">➡️</span>
+        </button>
+    </section>
+  </>
     )
-  }     else {
+  } else {
     content = (
       <div className="center-no-matches-component">
         <NoMatches user_id={user_id} />
       </div>
     )
   }
-
-
   return (
     <>
       {content}
@@ -152,6 +139,5 @@ const DiscoverHoroscope = () => {
   )
 
 }
-
 
 export default DiscoverHoroscope

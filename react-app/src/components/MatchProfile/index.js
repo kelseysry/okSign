@@ -142,7 +142,6 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
       <>
       <section className="MatchProfileContainer">
       {
-        // true ?
         idx === navigateClick?
         (
         <>
@@ -162,7 +161,7 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
 
             <section  className='ImageContainer'>
                         <NavLink
-                to={`/matchProfile/${matchProfileObj[0]}`} // userIdPercentObj[0] is the user.id
+                to={`/matchProfile/${matchProfileObj[0]?.user_id}`} // userIdPercentObj[0] is the user.id
               >
                     <div className='defaultImage'>
                       {defaultImg === 0 ? <img src={matchProfileObj[0]?.image_url1} alt='default photo' className='defaultImage'></img> :  <img src={defaultImg} alt='default photo' className="defaultImage"></img>}

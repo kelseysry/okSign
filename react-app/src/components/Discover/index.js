@@ -1,12 +1,9 @@
 
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
-import { NavLink } from "react-router-dom";
 import MatchProfile from "../MatchProfile";
-import { getQuestions } from "../../store/question";
 import NoMatches from "../NoMatches";
 import './Discover.css'
-import ChooseDiscoverContent from "./ChooseDiscoverContent";
 import DiscoverHoroscope from "../DiscoverHoroscope/DiscoverHoroscopePage";
 import { useDiscoverContent } from "../../context/DiscoverContentContext";
 import { useBackgroundContent } from "../../context/BackgroundContext";
@@ -19,7 +16,6 @@ const darkImage = pictures.collection[6].imageUrl
 const lightImage = pictures.collection[6].imageUrl
 
 const Discover = () => {
-  const dispatch = useDispatch()
 
   const {discoverContent, setDiscoverContent} = useDiscoverContent()
 
@@ -37,12 +33,8 @@ const Discover = () => {
   const profilesObj = useSelector((state) => state.profile)
   const profiles = Object.values(profilesObj)
 
-
-  console.log("currentUserProfile??????", currentUserProfile?.oneProfile)
-
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
-  // console.log("user_id", user_id)
 
   useEffect(() => {
     async function fetchData() {
@@ -63,25 +55,18 @@ const Discover = () => {
     fetchData();
   }, []);
 
-
-
-
 let questionsRender = questions
 
 
-// for each user's question object, we need to count how many answers
-// they have that are the same as the current user
+// for each user's question object, we need to count how many answers// they have that are the same as the current user
  let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
-//  console.log("currentUserQuestion🎃🎃🎃", currentUserQuestion)
 
  let counter = {};
 
 if(currentUserQuestion) {
 
  questionsRender?.map((question, ele) => {
-    // console.log(ele, question)
-    // console.log("question.question1", question.question1)
-    // console.log("currentUserQuestion.question1", currentUserQuestion[0].question1)
+
     if(!counter[question.user_id]) {
       counter[question.user_id] = 1
     }
@@ -132,7 +117,6 @@ if(currentUserQuestion) {
 }
   // console.log("count", counter)
   // counter = {1: 10, 2: 6, 3: 3, 4: 10}
-
   // take out current user from potential match in counter
   Object.keys(counter).forEach(key => {
     if (+key === +user_id) delete counter[key];
@@ -159,16 +143,12 @@ if(currentUserQuestion) {
   // instead of passing just the keys, pass in each object, you'll have to
   // grab the key instead for profile_id so can get the user.id and match%
 
-
-
-
   const getMatchProfile = (profile_id) => {
     const matchProfile = profiles[0]?.filter(function(profile){
 
       return profile?.user_id === +profile_id
     })
     if(matchProfile) {
-      // console.log("match match", matchProfile)
       return matchProfile
     }
     else {
@@ -176,29 +156,26 @@ if(currentUserQuestion) {
     }
   }
 
-
-
   const getMatchProfilesCount = (userIdsPercentsObj) => {
-
     let array = [];
     for(let i =0; i < userIdsPercentsObj.length; i++) {
-
       let match = getMatchProfile(userIdsPercentsObj[i][0])
-      // console.log("match m", match)
       if(match?.length) array.push(match)
     }
     return array
-
   }
 
-  console.log("getmatchMatch", getMatchProfilesCount(userIdsPercentsObj))
 
   let correctNumberMatches = getMatchProfilesCount(userIdsPercentsObj)
 
-  // let matchProfileObj = (getMatchProfile(profile_id))
 
-  console.log("correctNumberArray", correctNumberMatches)
+  let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
+  // console.log("currentUserGenderPreference??????", currentUserGenderPreference)
 
+
+  let correctNumberMatchesAndGender = correctNumberMatches.filter((matchProfile) => matchProfile[0]?.gender_id  === currentUserGenderPreference)
+
+  // console.log("correctNumberMatchesAndGender", correctNumberMatchesAndGender)
 
   const handleLeftClick = (e) => {
     e.preventDefault();
@@ -210,26 +187,20 @@ if(currentUserQuestion) {
     } else {
       navigateClick = -1
     }
-
   }
-  // add functionality to only see name when click
 
   const handleRightClick = (e) => {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
      right.scrollLeft += 1100;
      setSlide(1)
-     if(navigateClick < correctNumberMatches?.length -1) {
+     if(navigateClick < correctNumberMatchesAndGender?.length -1) {
       setNavigateClick(navigateClick += 1)
      }
      else {
        return navigateClick
      }
-
   }
-
-  console.log("navigateClickccc", navigateClick)
-  console.log("userIdsPercentsObj ", userIdsPercentsObj)
 
   let content2;
   content2 = (
@@ -240,47 +211,39 @@ if(currentUserQuestion) {
   if (currentUserQuestion?.length && currentUserProfile?.oneProfile) {
     content = (
         <>
+          <section className="DiscoverContentContainer">
 
+            <button
+                id="go-back"f
+                className="left"
+                onClick={handleLeftClick}
+                onAnimationEnd={() => setSlide(0)}
+                slide={slide}
+                >
+                <span className="hide-button">⬅️</span>
+            </button>
 
-        <section className="DiscoverContentContainer">
-
-          <button
-              id="go-back"f
-              className="left"
-              onClick={handleLeftClick}
-              onAnimationEnd={() => setSlide(0)}
-              slide={slide}
-              >
-              <span className="hide-button">⬅️</span>
-          </button>
-
-
-            <div className="discover-profiles-container" id="discoverProfile">
+          <div className="discover-profiles-container" id="discoverProfile">
 
             <section className="step-container">
-          <div className="Step1">Discover</div>
-          <div className="Step2">Users</div>
-          <div className="Step3">By</div>
-          <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
-          <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div>
+              <div className="Step1">Discover</div>
+              <div className="Step2">Users</div>
+              <div className="Step3">By</div>
+              <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
+              <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div>
 
+              <div className="Step5">Or</div>
+              <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
+              <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
+            </section>
 
-          <div className="Step5">Or</div>
-          <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-          <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
-        </section>
-
-
-          <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                {correctNumberMatches?.map((correctNumberMatches, idx) =>
-                    // <div  key={idx}>
-
-                    correctNumberMatches?.length ?
-                        <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
-                        : null
-                    // </div>
-                  )}
-             </div>
+            <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                  {correctNumberMatchesAndGender?.map((correctNumberMatches, idx) =>
+                      correctNumberMatchesAndGender?.length ?
+                          <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
+                          : null
+                    )}
+            </div>
 
 
             <button
@@ -292,9 +255,7 @@ if(currentUserQuestion) {
             >
               <span className="hide-button">➡️</span>
             </button>
-        </section>
-
-
+          </section>
         </>
     )
   }     else {
@@ -305,20 +266,15 @@ if(currentUserQuestion) {
     )
   }
 
-
   return (
-
     <>
-          {/* <ChooseDiscoverContent /> */}
-
+    {/* <ChooseDiscoverContent /> */}
     <section className="DiscoverContentContaine" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
        {discoverContent === 'QuestionMatch'? content : content2}
     </section>
-
     </>
 
   )
-
 }
 
 
