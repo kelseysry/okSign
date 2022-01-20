@@ -1,5 +1,5 @@
 // get match percent for all users -> purpose is so we can get question match percentages for matches based on horoscope.
-// So a user who isn't supposed to match b/c < 60% question match, can still match with horoscope and see their question match percentage
+// So a user who isn't supposed to match b/c < 60% question match, can still match with horoscope and see their question match percentage on match profile
 
 import { useSelector } from "react-redux";
 import React, { useEffect, useState } from 'react';
@@ -30,14 +30,11 @@ let currentUserQuestion = questionsRender?.filter((question) => {return question
 
 // for each user's question object, we need to count how many answers
 // they have that are the same as the current user
-//  console.log("currentUserQuestion", currentUserQuestion)
 
  let counter = {};
 
  questionsRender?.map((question, ele) => {
-    // console.log(ele, question)
-    // console.log("question.question1", question.question1)
-    // console.log("currentUserQuestion.question1", currentUserQuestion[0]?.question1)
+
     if(!counter[question.user_id]) {
       counter[question.user_id] = 1
     }
@@ -94,21 +91,12 @@ let currentUserQuestion = questionsRender?.filter((question) => {return question
   // console.log("updated counter", counter)
   // {2: 6, 3: 3, 4: 10}
 
-  // update counter to only include match if greater than 6/10
-  // Object.keys(counter).forEach(key => {
-  //   if (counter[key] < 6) delete counter[key];
-  // });
-  // console.log("updated counter", counter)
-  // {2: 6, 4: 10}
-
   // profiles are being selected via id user_id directly correlates to profile.id
   let matchedProfileIds = Object.keys(counter)
 
   let userIdsPercentsArr = Object.keys(counter).map(function (key) {
     return [Number(key), counter[key]];
 });
-
-console.log("matchprofileid in match🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃🙃", matchedProfileIds)
 
   return (
     <MatchesContext.Provider value={{userIdsPercentsArr}}>
