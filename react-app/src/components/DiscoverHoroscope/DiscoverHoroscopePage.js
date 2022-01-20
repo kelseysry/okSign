@@ -12,13 +12,11 @@ const DiscoverHoroscope = () => {
   const [slide, setSlide] = useState(1)
   const {discoverContent, setDiscoverContent} = useDiscoverContent()
 
-  console.log("discoverContent", discoverContent)
+  const [currentUserProfile, setCurrentUserProfile] = useState();
 
 
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
-  console.log("🤠🤠🤠🤠user_id", user_id)
-  console.log("profiless🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profiles)
 
 
   useEffect(() => {
@@ -30,21 +28,31 @@ const DiscoverHoroscope = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(`/api/profiles/userProfile/${user_id}`);
+      const responseData = await response.json();
+      setCurrentUserProfile(responseData);
+    }
+    fetchData();
+  }, []);
+
   // will need to do this for brand new users or for users who delete their profile - or else
   // get an error when render Horoscope Match page b/c no horoscope_id exists
   let checkUserHasProfile = profiles.filter(function(profile) {
     return profile.user_id === user_id
   })
 
-  console.log("checkUserHasProfile checkUserHasProfile", checkUserHasProfile)
-
-
   let allProfilesExcludeCurrent = profiles.filter(function(profile) {
     return profile.user_id !== user_id
   })
 
 
-  // console.log("allProfilesExcludeCurrent", allProfilesExcludeCurrent)
+  console.log("allProfilesExcludeCurrent", allProfilesExcludeCurrent)
+
+  let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
+
+  let horoscopeMatchesGenderPrefer = allProfilesExcludeCurrent.filter((matchProfile) => matchProfile?.gender_id  === currentUserGenderPreference)
 
 
   const handleLeftClick = (e) => {
@@ -59,7 +67,6 @@ const DiscoverHoroscope = () => {
     }
 
   }
-  // add functionality to only see name when click
 
   const handleRightClick = (e) => {
     e.preventDefault();
@@ -71,10 +78,7 @@ const DiscoverHoroscope = () => {
      } else {
        return navigateClick
      }
-
   }
-
-
 
   let content;
 
@@ -112,7 +116,7 @@ const DiscoverHoroscope = () => {
 
 
     <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-          {allProfilesExcludeCurrent?.map((profile, idx) =>
+          {horoscopeMatchesGenderPrefer?.map((profile, idx) =>
               <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
                   <DiscoverHoroscopeProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile}/>
               </div>

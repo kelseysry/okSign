@@ -169,7 +169,7 @@ if(currentUserQuestion) {
     return array
   }
 
-  console.log("navigateClick", navigateClick)
+  // console.log("navigateClick", navigateClick)
 
   let correctNumberMatches = getMatchProfilesCount(userIdsPercentsObj)
 
