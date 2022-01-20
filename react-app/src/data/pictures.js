@@ -34,6 +34,18 @@ const pictures = {
       "imageNumber":"7",
       "imageUrl": "https://res.cloudinary.com/mabmab/image/upload/v1641017330/okSign/Screen_Shot_2021-12-31_at_10.08.44_PM_oodudn.png"
     },
+    {
+      "imageNumber":"8",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642659670/okSign/staircase_discover_utvadm.png"
+    },
+    {
+      "imageNumber":"9",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642661007/okSign/aquarius_a0neya.png"
+    },
+    {
+      "imageNumber":"10",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642664033/okSign/stick_man_paper_oqywfz.png"
+    }
   ]
 
 }

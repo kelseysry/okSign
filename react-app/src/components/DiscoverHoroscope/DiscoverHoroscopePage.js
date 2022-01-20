@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import NoMatches from "../NoMatches";
 import DiscoverHoroscopeProfile from "./DiscoverHoroscopeProfile";
 import { useDiscoverContent } from "../../context/DiscoverContentContext";
+import pictures from "../../data/pictures";
+import horoscopePics from "../../data/horoscopePics";
 
 const DiscoverHoroscope = () => {
 
@@ -102,6 +104,9 @@ const DiscoverHoroscope = () => {
             <div className="Step5">Or</div>
             <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
             <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
+            <div className="img-stairs-horoscope">
+              <img src={horoscopePics.collection[(currentUserProfile?.oneProfile[0]?.horoscope_id)-1]?.imageUrl} />
+              </div>
           </section>
 
 

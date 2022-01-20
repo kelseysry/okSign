@@ -125,3 +125,12 @@ button.blank {
   width: max-content; */
 
 }
+
+
+.img-stairs img {
+  position: absolute;
+  left: 915px;
+  top: 100px;
+  width: 250px;
+
+}
