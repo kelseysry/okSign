@@ -92,3 +92,12 @@
     position: relative;
     top: -13px;
 } */
+
+
+.img-stairs-horoscope img {
+  position: absolute;
+  left: 895px;
+  top: 100px;
+  width: 250px;
+
+}

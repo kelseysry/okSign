@@ -104,8 +104,7 @@ const DiscoverHoroscope = () => {
             <div className="Step5">Or</div>
             <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
             <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
-            <div className="img-stairs">
-              {/* <img src={pictures.collection[9].imageUrl} /> */}
+            <div className="img-stairs-horoscope">
               <img src={horoscopePics.collection[(currentUserProfile?.oneProfile[0]?.horoscope_id)-1]?.imageUrl} />
               </div>
           </section>
