@@ -250,6 +250,48 @@
 }
 
 
+.slide11 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide11[slide='1'] {
+  animation: slide 1s 1;
+}
+
+
+
+.slide12 {
+  color: #fff;
+  line-height: 0.9em;
+  position: absolute !important;
+  z-index: 2;
+  left:-50px;
+  top:90px;
+  text-shadow: 1px 1px 15px black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.slide12[slide='1'] {
+  animation: slide 1s 1;
+}
+
+
+
+
+
 
 @keyframes slide {
   0%   {left: 100px;}
