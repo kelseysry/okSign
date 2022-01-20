@@ -1,8 +1,3 @@
-.bench img {
-  width: 425px;
-}
-
-
 .MatchHoroscopeInnerContainer {
   position: relative;
   padding: 20px 20px;
@@ -13,6 +8,7 @@
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
   z-index: 2;
   margin-bottom: 20px;
+  width: 660px;
 }
 
 .matchHoroscopeSign img {
@@ -29,4 +25,14 @@
   position: absolute;
   top: 77px;
   left: 250px;
+}
+
+.matchHoroscopeContent {
+  width: 100px;
+}
+
+.bench {
+  width: 425px;
+  margin-right:15px;
+  float:left
 }
