@@ -202,7 +202,7 @@ if(currentUserQuestion) {
   const handleLeftClick = (e) => {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
-    left.scrollLeft -= 1050;
+    left.scrollLeft -= 1100;
     setSlide(1)
     if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
@@ -216,11 +216,11 @@ if(currentUserQuestion) {
   const handleRightClick = (e) => {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
-     right.scrollLeft += 1050;
+     right.scrollLeft += 1100;
      setSlide(1)
      if(navigateClick < correctNumberMatches?.length -1) {
       setNavigateClick(navigateClick += 1)
-     } 
+     }
      else {
        return navigateClick
      }
