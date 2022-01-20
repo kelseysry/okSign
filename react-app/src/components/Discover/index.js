@@ -15,6 +15,8 @@ import './Step.css'
 const darkImage = pictures.collection[6].imageUrl
 const lightImage = pictures.collection[6].imageUrl
 
+
+
 const Discover = () => {
 
   const {discoverContent, setDiscoverContent} = useDiscoverContent()
@@ -235,6 +237,9 @@ if(currentUserQuestion) {
               <div className="Step5">Or</div>
               <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
               <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
+              <div className="img-stairs">
+              <img src={pictures.collection[8].imageUrl} />
+              </div>
             </section>
 
             <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
