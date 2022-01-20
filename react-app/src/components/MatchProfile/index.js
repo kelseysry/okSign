@@ -10,7 +10,7 @@ import { getProfiles } from "../../store/profile";
 import { NavLink } from "react-router-dom";
 
 import './DiscoverPics.css'
-const MatchProfile = ({get, correctNumberMatches, userIdPercentObj, slide, setSlide, idx, navigateClick}) => {
+const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide, idx, navigateClick}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 
@@ -20,11 +20,25 @@ const MatchProfile = ({get, correctNumberMatches, userIdPercentObj, slide, setSl
   const [users, setUsers] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false)
 
-  // this profile_id value is actually the user.id, bad naming on my part haha
-  let profile_id = userIdPercentObj[0]
-  let matchPercent = ((Number(userIdPercentObj[1])/10)*100)
+  let matchProfileObj = correctNumberMatches
+  let matchProfileId = matchProfileObj[0]?.user_id
 
-  let disagree = 10 - (Number(userIdPercentObj[1]))
+  console.log("userIdsPercentsObj", userIdsPercentsObj)
+
+  const getNumberAnswerAccept = (userIdsPercentsObj, matchProfileId) => {
+    let profileNumQuestion =  userIdsPercentsObj.filter(profile => profile[0] === matchProfileId);
+    return profileNumQuestion[0][1]
+  }
+
+  let numberAnswerAccept =  getNumberAnswerAccept(userIdsPercentsObj, matchProfileId)
+
+  console.log("numberAnswerAccept", numberAnswerAccept)
+
+  // this profile_id value is actually the user.id, bad naming on my part haha
+  // let profile_id = userIdPercentObj[0]
+  let matchPercent = ((Number(numberAnswerAccept)/10)*100)
+
+  // let disagree = 10 - (Number(userIdPercentObj[1]))
 
   const sessionUser = useSelector((state) => state?.session?.user)
   const user_id_one = sessionUser?.id
@@ -34,6 +48,10 @@ const MatchProfile = ({get, correctNumberMatches, userIdPercentObj, slide, setSl
 
   const conversationsObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationsObj)[0]
+
+
+
+  console.log("matchProfileobj", matchProfileObj)
 
 
   console.log("ppnavigateClick", navigateClick)
@@ -111,9 +129,6 @@ const MatchProfile = ({get, correctNumberMatches, userIdPercentObj, slide, setSl
   }
 
 
-  // console.log("getmatchProfile", getMatchProfile(profile_id))
-  let matchProfileObj = (getMatchProfile(profile_id))
-
   let userProfileObj = (getUserProfile(user_id_one))
 
   // this is displaying on the front discover page
@@ -128,7 +143,7 @@ const MatchProfile = ({get, correctNumberMatches, userIdPercentObj, slide, setSl
       <section className="MatchProfileContainer">
       {
         // true ?
-        idx === navigateClick || correctNumberMatches === idx?
+        idx === navigateClick?
         (
         <>
           <div
@@ -136,7 +151,7 @@ const MatchProfile = ({get, correctNumberMatches, userIdPercentObj, slide, setSl
             slide={slide}
             onClick={() => setSlide(idx)}
             onAnimationEnd={() => setSlide(0)}>
-            <div className="userNameCursive">{idx}{getUserName(matchProfileObj[0]?.user_id)}</div>
+            <div className="userNameCursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
             <div className="match_details_discover_under_name"> {matchProfileObj[0]?.age} | {matchProfileObj[0]?.about_me}</div>
           </div>
         </>
@@ -147,7 +162,7 @@ const MatchProfile = ({get, correctNumberMatches, userIdPercentObj, slide, setSl
 
             <section  className='ImageContainer'>
                         <NavLink
-                to={`/matchProfile/${userIdPercentObj[0]}`} // userIdPercentObj[0] is the user.id
+                to={`/matchProfile/${matchProfileObj[0]}`} // userIdPercentObj[0] is the user.id
               >
                     <div className='defaultImage'>
                       {defaultImg === 0 ? <img src={matchProfileObj[0]?.image_url1} alt='default photo' className='defaultImage'></img> :  <img src={defaultImg} alt='default photo' className="defaultImage"></img>}
