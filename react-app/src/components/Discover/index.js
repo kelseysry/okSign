@@ -35,7 +35,6 @@ const Discover = () => {
 
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
-  // console.log("user_id", user_id)
 
   useEffect(() => {
     async function fetchData() {
@@ -55,9 +54,6 @@ const Discover = () => {
     }
     fetchData();
   }, []);
-
-
-
 
 let questionsRender = questions
 
@@ -169,11 +165,8 @@ if(currentUserQuestion) {
     return array
   }
 
-  // console.log("navigateClick", navigateClick)
 
   let correctNumberMatches = getMatchProfilesCount(userIdsPercentsObj)
-
-  // console.log("correctNumberMatches", correctNumberMatches)
 
 
   let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
