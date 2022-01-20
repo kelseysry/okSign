@@ -47,3 +47,29 @@
 .noContentHoroscopeFiller {
   display: none;
 }
+
+
+.horoscopePercentBubble {
+  position: absolute;
+  top:180px;
+  left: 220px;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFBD4A;
+  text-shadow: 1px 1px 2px black;
+
+  z-index: 2;
+  font-size: 40px;
+}
+
+.circle {
+  /* background-color: rgba(140, 137, 137, 0.064); */
+  background-color: black;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top:190px;
+  left: 230px;
+  z-index: 1;
+  /* opacity: .5; */
+}
