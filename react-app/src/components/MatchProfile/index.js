@@ -10,7 +10,7 @@ import { getProfiles } from "../../store/profile";
 import { NavLink } from "react-router-dom";
 
 import './DiscoverPics.css'
-const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) => {
+const MatchProfile = ({get, userIdPercentObj, slide, setSlide, idx, navigateClick}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 
@@ -36,6 +36,9 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) =
   const conversations = Object.values(conversationsObj)[0]
 
   // console.log("conversations-------", conversations)
+  // console.log("get", get)
+  // console.log("userIdPercentObj", userIdPercentObj)
+
 
   useEffect(async () => {
 
@@ -167,7 +170,7 @@ const MatchProfile = ({userIdPercentObj, slide, setSlide, idx, navigateClick}) =
   return (
     <>
 
-    { isLoaded && matchProfileObj[0]?.user_id && (
+    { isLoaded && matchProfileObj[0]?.user_id  && (
 
       <section  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` }>
 

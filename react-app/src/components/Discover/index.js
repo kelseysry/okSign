@@ -34,6 +34,10 @@ const Discover = () => {
   const [currentUserProfile, setCurrentUserProfile] = useState();
 
 
+  const profilesObj = useSelector((state) => state.profile)
+  const profiles = Object.values(profilesObj)
+
+
   console.log("currentUserProfile??????", currentUserProfile?.oneProfile)
 
   const sessionUser = useSelector((state) => state?.session);
@@ -60,30 +64,7 @@ const Discover = () => {
   }, []);
 
 
-  /******************
-  const questionObject = useSelector((state)=>state.question)
-  // console.log("questionObj", questionObject)
-  const questions = Object.values(questionObject)
-  // console.log("questions🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", questions)
 
-
-
-  useEffect(async ()=>{
-    await dispatch(getQuestions())
-}, [dispatch, questions.length])
-
-
-let questionsRender;
-
-// console.log("questions--------", questions)
-
-if(questions.length) {
-   questionsRender = questions[0]
-} else {
-    questionsRender = null;
-}
-// console.log("questionsRender😯😯😯", questionsRender)
-*****************/
 
 let questionsRender = questions
 
@@ -181,6 +162,43 @@ if(currentUserQuestion) {
 
 
 
+  const getMatchProfile = (profile_id) => {
+    const matchProfile = profiles[0]?.filter(function(profile){
+
+      return profile?.user_id === +profile_id
+    })
+    if(matchProfile) {
+      // console.log("match match", matchProfile)
+      return matchProfile
+    }
+    else {
+      return null
+    }
+  }
+
+
+
+  const getMatchProfilesCount = (userIdsPercentsObj) => {
+
+    let array = [];
+    for(let i =0; i < userIdsPercentsObj.length; i++) {
+
+      let match = getMatchProfile(userIdsPercentsObj[i][0])
+      // console.log("match m", match)
+      if(match?.length) array.push(match)
+    }
+    return array
+
+  }
+
+  console.log("getmatchMatch", getMatchProfilesCount(userIdsPercentsObj))
+
+  let correctNumberMatches = getMatchProfilesCount(userIdsPercentsObj)
+
+  // let matchProfileObj = (getMatchProfile(profile_id))
+
+
+
   const handleLeftClick = (e) => {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
@@ -200,9 +218,10 @@ if(currentUserQuestion) {
     const right = document.querySelector('#discoverProfile');
      right.scrollLeft += 1050;
      setSlide(1)
-     if(navigateClick < userIdsPercentsObj?.length -1) {
+     if(navigateClick < correctNumberMatches?.length -1) {
       setNavigateClick(navigateClick += 1)
-     } else {
+     } 
+     else {
        return navigateClick
      }
 
@@ -253,9 +272,12 @@ if(currentUserQuestion) {
 
           <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                 {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
-                    <div  key={idx}>
-                        <MatchProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} userIdPercentObj={userIdPercentObj}/>
-                    </div>
+                    // <div  key={idx}>
+
+                    getMatchProfile(userIdPercentObj[0])?.length ?
+                        <MatchProfile get={getMatchProfile(userIdPercentObj)} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} userIdPercentObj={userIdPercentObj}/>
+                        : null
+                    // </div>
                   )}
              </div>
 
