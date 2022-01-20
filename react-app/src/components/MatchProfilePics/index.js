@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react';
 import { getConversations, clearConversation } from "../../store/conversation";
 import { createConversation } from "../../store/conversation";
 import { getProfiles, updateProfileLikeCount, getProfile } from "../../store/profile";
-import { GetMatches } from "../../context/MatchesContext";
 import { useHistory } from 'react-router';
 import { createLike, EditLike, getProfileUserLiked } from "../../store/like";
 
@@ -30,37 +29,17 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   const profileSel = useSelector((state) => state.like)
   const profileSelArr = Object.values(profileSel)
-  // console.log("🚩profileSel", profileSelArr)
-
-
 
  let findProfileSel = profileSelArr?.filter((profile) => {return ((profile?.user_id === user_id_one ) && (profile?.match_profile_id === matchProfileObj[0]?.user_id))})
 
-// let findProfileSel = profileSelArr?.filter((profile) => {return profile?.match_profile_id === matchProfileObj[0]?.user_id})
-console.log("findProfileSel findProfileSel", findProfileSel)
 
   const profileObj = useSelector((state) => state.profile.oneProfile)
 
-
-  // const profile = Object.values(profileObj[0])
-
-  // console.log("🚩profileObj", profileObj[0])
   let profile;
   if(profileObj) {
     profile = (profileObj[0])
   }
   let [number_likes, setNumLikes] = useState(profile?.number_likes)
-  // console.log("🍎🍎n🍎🍎nprofile?.number_likes", profile?.number_likes)
-
-  // console.log("🤡🤡🤡profileObj[0]?.number_likes", profileObj[0]?.number_likes)
-
-    const {userIdsPercentsArr} = GetMatches()
-  // console.log("match profile ids from context", userIdsPercentsArr)
-
-  // useEffect(async () => {
-  //   await dispatch(getProfiles())
-  //   if (!isLoaded) setIsLoaded(true);
-  // }, [dispatch, profiles.length, isLoaded, conversations?.length, number_likes])
 
   useEffect(() => {
     async function fetchData() {
