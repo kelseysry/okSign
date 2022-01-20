@@ -197,6 +197,7 @@ if(currentUserQuestion) {
 
   // let matchProfileObj = (getMatchProfile(profile_id))
 
+  console.log("correctNumberArray", correctNumberMatches)
 
 
   const handleLeftClick = (e) => {
@@ -218,7 +219,7 @@ if(currentUserQuestion) {
     const right = document.querySelector('#discoverProfile');
      right.scrollLeft += 1100;
      setSlide(1)
-     if(navigateClick < correctNumberMatches?.length ) {
+     if(navigateClick < correctNumberMatches?.length -1) {
       setNavigateClick(navigateClick += 1)
      }
      else {
@@ -271,11 +272,11 @@ if(currentUserQuestion) {
 
 
           <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-                {userIdsPercentsObj?.map((userIdPercentObj, idx) =>
+                {correctNumberMatches?.map((correctNumberMatches, idx) =>
                     // <div  key={idx}>
 
                     correctNumberMatches?.length ?
-                        <MatchProfile get={getMatchProfile(userIdPercentObj)} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} userIdPercentObj={userIdPercentObj}/>
+                        <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
                         : null
                     // </div>
                   )}
