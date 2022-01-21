@@ -54,7 +54,6 @@
   overflow-wrap: break-word !important;
   color: #fff;
   font-size: 13vw !important;
-  line-height: 0.9em;
   font-weight: 700;
   text-align: center;
   height: auto;
@@ -63,8 +62,8 @@
   font-family: 'Dancing Script', cursive;
   position: absolute;
   z-index: 2;
-  top:250px;
-  transform: rotate(-18deg);
+  top:103px;
+  transform: rotate(-25deg);
   text-shadow: 1px 1px 2px black;
 }
 
