@@ -2,11 +2,21 @@
 import React, { useEffect, useState } from 'react';
 import SearchMatchTile from '../SearchMatchTile';
 
-const SearchCarouselContainer = ({input, searchUserResults}) => {
-
+const SearchCarouselContainer = ({input, searchUserResults, inputExists}) => {
 
   let [navigateClick, setNavigateClick] = useState(-1)
   const [slide, setSlide] = useState(1)
+
+  useEffect( () => {
+
+    // if user search again, will force page to restart at position left 0
+      if(inputExists !== input) {
+        const left = document.querySelector('#discoverProfile');
+        left.scrollLeft = 0;
+        setNavigateClick(-1)
+      }
+
+  },[input])
 
 
   const handleLeftClick = (e) => {
@@ -21,7 +31,6 @@ const SearchCarouselContainer = ({input, searchUserResults}) => {
     }
 
   }
-  // add functionality to only see name when click
 
   const handleRightClick = (e) => {
     e.preventDefault();
