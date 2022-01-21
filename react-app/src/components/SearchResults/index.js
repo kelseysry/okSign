@@ -2,8 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import { search } from "../../store/search"
 import {useParams} from 'react-router-dom';
-import SearchMatchTile from "../SearchMatchTile";
-import { NavLink } from "react-router-dom";
+
 import SearchCarouselContainer from "./SearchCarouselContainer";
 import './SearchCarousel.css'
 
@@ -14,15 +13,23 @@ const SearchResults = () => {
     const {input} = useParams()
     const [isLoaded, setIsLoaded] = useState(false)
 
-    // console.log("searchUserResults---------", searchResultsObj.user)
+    const [inputExists, setInputExists] = useState('')
 
     useEffect( ()=>{
          dispatch(search(input))
-        if (!isLoaded) setIsLoaded(true);
+        if (!isLoaded) {
+          setIsLoaded(true)
+        }
+        if(input) {
+          setInputExists(input)
+        }
+
     },[dispatch,input, isLoaded])
+
 
     let searchUserResultsObj;
     let searchUserResults
+
 
     if(searchResultsObj) {
       searchUserResultsObj = searchResultsObj?.user
@@ -56,7 +63,7 @@ const SearchResults = () => {
               <section className="SearchCarouselContainer">
                 {
 
-                  <SearchCarouselContainer input={input} searchUserResults={searchUserResults}/>
+                  <SearchCarouselContainer inputExists={inputExists} input={input} searchUserResults={searchUserResults}/>
                   // searchUserResults?.map((matchProfile,idx) =>
                   // <div key={idx}>
                   //   <NavLink
