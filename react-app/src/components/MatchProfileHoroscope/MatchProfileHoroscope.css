@@ -1,0 +1,75 @@
+.MatchHoroscopeInnerContainer {
+  position: relative;
+  padding: 20px 20px;
+  padding-bottom: 30px;
+  background: #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0px 0 1px rgb(10 10 10 / 2%);
+  z-index: 2;
+  margin-bottom: 20px;
+  width: 660px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.matchHoroscopeSign img {
+  width: 45px;
+  position: absolute;
+  top: 45px;
+  left: 160px;
+  filter: saturate(500%) contrast(800%) brightness(500%)
+  invert(100%) sepia(0%) hue-rotate(120deg);
+}
+
+.currentUserHoroscopeSign img {
+  width: 45px;
+  position: absolute;
+  top: 77px;
+  left: 250px;
+}
+
+.matchHoroscopeContent {
+  width: 100px;
+}
+
+.bench {
+  width: 425px;
+  margin-right:15px;
+  float:left
+}
+
+.contentHoroscopeFiller {
+  display: block
+}
+
+.noContentHoroscopeFiller {
+  display: none;
+}
+
+
+.horoscopePercentBubble {
+  position: absolute;
+  top:180px;
+  left: 220px;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #FFBD4A;
+  text-shadow: 1px 1px 2px black;
+
+  z-index: 2;
+  font-size: 40px;
+}
+
+.circle {
+  /* background-color: rgba(140, 137, 137, 0.064); */
+  background-color: black;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top:190px;
+  left: 230px;
+  z-index: 1;
+  /* opacity: .5; */
+}

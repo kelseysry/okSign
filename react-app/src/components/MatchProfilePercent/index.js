@@ -40,14 +40,9 @@ const MatchProfilePercent = ({matchProfileObj}) => {
   },[]);
 
   useEffect(async () => {
-
     await dispatch(getProfiles())
-    // await dispatch(getConversations())
-
     if (!isLoaded) setIsLoaded(true);
-
   }, [dispatch, profiles.length, isLoaded, conversations?.length])
-
 
   useEffect(() => {
     async function fetchData() {
@@ -72,8 +67,6 @@ const MatchProfilePercent = ({matchProfileObj}) => {
     const usernameDisplay = users?.filter(function(el){
       return el.id === user_id
      });
-    //  console.log("try", user_id)
-    //  console.log("tryThis", usernameDisplay[0].username)
     if (usernameDisplay) {
      return usernameDisplay[0]?.username
     }
@@ -82,15 +75,12 @@ const MatchProfilePercent = ({matchProfileObj}) => {
     }
   }
 
-
-
   const getUserProfile = (user_id_one) => {
     const userProfile = profiles[0]?.filter(function(profile){
 
       return profile?.user_id === +user_id_one
     })
     if(userProfile) {
-      // console.log("match match", userProfile)
       return userProfile
     }
     else {
@@ -103,11 +93,6 @@ const MatchProfilePercent = ({matchProfileObj}) => {
 
   const getMatchPercentage = userIdsPercentsArr.filter(function(userIdsPercentArr) { return userIdsPercentArr[0]=== matchProfileObj[0]?.user_id });
   let matchPercentIndexed = getMatchPercentage[0]
-  // let matchPercent = ((Number(matchPercentIndexed[1])/10)*100)
-    // console.log("getMatchPercentage",getMatchPercentage);
-
-    console.log("matchProfileObj[0]?.user_id", matchProfileObj[0]?.user_id)
-    console.log("userIdsPercentsArr", userIdsPercentsArr)
 
   return (
     <>
@@ -116,7 +101,8 @@ const MatchProfilePercent = ({matchProfileObj}) => {
       <>
           <div className="matchPercentContainer">
             <div className="matchContainerHeader">
-              You and {getUserName(matchProfileObj[0]?.user_id)}
+              Personality Compatibility
+              {/* You and {getUserName(matchProfileObj[0]?.user_id)} */}
             </div>
             <div className="MatchProfileInnerContainer">
               <div className="circlesContainer">

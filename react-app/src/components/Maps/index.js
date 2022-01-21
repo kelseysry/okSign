@@ -28,7 +28,7 @@ const { isLoaded } = useJsApiLoader({
   // },[dispatch])
 
   const containerStyle = {
-    width: '700px',
+    width: '699px',
     height: '500px'
   };
 

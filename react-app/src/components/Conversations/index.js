@@ -4,7 +4,6 @@ import MatchConversationTile from "../MatchConversationTile";
 import { NavLink } from 'react-router-dom';
 import { getConversations } from "../../store/conversation";
 import React, { useEffect, useState } from 'react';
-import NoMatches from "../NoMatches";
 import NoConversations from "../NoConversations";
 import './Conversations.css'
 import AllUsersMap from "../Maps/AllUsersMap";
