@@ -2,9 +2,10 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect, useState } from 'react';
 import { getConversations, clearConversation } from "../../store/conversation";
 import { createConversation } from "../../store/conversation";
-import { getProfiles, updateProfileLikeCount, getProfile } from "../../store/profile";
+import { getProfiles, updateProfileLikeCount, getProfile, editProfile } from "../../store/profile";
 import { useHistory } from 'react-router';
 import { createLike, EditLike, getProfileUserLiked } from "../../store/like";
+import EditUserProfileForm from "../EditUserProfileForm";
 
 const MatchProfilePics = ({matchProfileObj}) => {
   const dispatch = useDispatch()
@@ -112,14 +113,11 @@ useEffect(() => {
         return null
       }
     })
-    // console.log("existingconvo", existingConvo)
     return existingConvo
 
   }
 
   const handleCreateConversation = async (discoverProfileId) => {
-    // console.log("discoverProfileId", discoverProfileId)
-
 
     let conversationExists =  checkConversationExists(user_id_one, discoverProfileId)
     console.log("conversationexists", conversationExists)
@@ -139,6 +137,19 @@ useEffect(() => {
         history.push(`/conversations/${convo[0]?.id}`)
       }
     }
+  }
+
+
+  const handleIncreaseProfileLikes = () => {
+    // e.preventDefault();
+    console.log("hit edit handle");
+
+      let matchProfile = profileC.oneProfile[0]
+      matchProfile.number_likes += 1;
+      // console.log("matchProfile increase?", matchProfile)
+
+      let updated = dispatch(editProfile(matchProfile, matchProfile.id))
+
   }
 
 
@@ -198,6 +209,14 @@ useEffect(() => {
     { isLoaded && matchProfileObj[0]?.user_id && (
       <>
           <div className="oneMatchProfileContainerHeaderPage">
+
+          <button
+            // onClick={() => {handleIncreaseProfileLikes()}}
+          >
+            <i class="fas fa-heart"></i>
+          </button>
+
+
             {getUserName(matchProfileObj[0]?.user_id)}
               <div className="matchButtonsContainer">
                     <div>
@@ -218,14 +237,14 @@ useEffect(() => {
                           onClick={()=>
                             {
                               // setLikeColor(colorLike ==='empty'? 'red':'empty')
-                                // handleIncreaseProfileLikes()
-                                handleLikeToggle()
+                                handleIncreaseProfileLikes()
+                                // handleLikeToggle()
                             }
                           }
                           >
                             <div className="heart-text">
                                 <i class="fas fa-heart"></i>
-                                {/* {profile?.number_likes} */}
+                                {profile?.number_likes}
                                 {/* <div>{profileSel[1]?.liked }</div> */}
                             </div>
                           </button>
