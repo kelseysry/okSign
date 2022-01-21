@@ -14,6 +14,7 @@ const LoginForm = () => {
   const dispatch = useDispatch();
 
 
+  console.log("errors", errors)
 
 
   const onLogin = async (e) => {
@@ -85,7 +86,9 @@ const LoginForm = () => {
             <div className="errors-hr"></div>
 
             <ul className="error-signup">
-                {errors.map((error) => <li key={error}>{error}</li>)}
+                {errors.map((error, idx) =>
+                <li key={idx}>{(error.split(':'))[1]}</li>
+                )}
               </ul>
               </>
               : null
