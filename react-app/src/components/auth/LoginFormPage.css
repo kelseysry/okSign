@@ -30,13 +30,11 @@
 
 .top-banner-pic {
   box-sizing: border-box;
-  justify-content: center;
   display: flex !important;
+  justify-content: center;
   flex-direction: column;
   padding: 40px 64px;
-  margin: 0 auto;
-  border: 0px;
-  height: 50vh;
+  /* height: 50vh; */
   align-items: center;
 
   background-size: cover !important;
@@ -48,21 +46,18 @@
   background-position-y: 90%;
   width: 100% !important;
   display: block;
+  position: relative;
 }
 
 .header-banner-ok {
-  overflow-wrap: break-word !important;
   color: #fff;
-  font-size: 13vw !important;
+  font-size: 12vw !important;
   font-weight: 700;
-  text-align: center;
-  height: auto;
-  margin: 0 auto;
-  position: relative;
+
   font-family: 'Dancing Script', cursive;
   position: absolute;
   z-index: 2;
-  top:103px;
+  top:45px;
   transform: rotate(-25deg);
   text-shadow: 1px 1px 2px black;
 }
