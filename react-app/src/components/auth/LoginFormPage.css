@@ -30,13 +30,11 @@
 
 .top-banner-pic {
   box-sizing: border-box;
-  justify-content: center;
   display: flex !important;
+  justify-content: center;
   flex-direction: column;
   padding: 40px 64px;
-  margin: 0 auto;
-  border: 0px;
-  height: 50vh;
+  /* height: 50vh; */
   align-items: center;
 
   background-size: cover !important;
@@ -48,23 +46,19 @@
   background-position-y: 90%;
   width: 100% !important;
   display: block;
+  position: relative;
 }
 
 .header-banner-ok {
-  overflow-wrap: break-word !important;
   color: #fff;
-  font-size: 13vw !important;
-  line-height: 0.9em;
+  font-size: 12vw !important;
   font-weight: 700;
-  text-align: center;
-  height: auto;
-  margin: 0 auto;
-  position: relative;
+
   font-family: 'Dancing Script', cursive;
   position: absolute;
   z-index: 2;
-  top:250px;
-  transform: rotate(-18deg);
+  top:45px;
+  transform: rotate(-25deg);
   text-shadow: 1px 1px 2px black;
 }
 
@@ -107,12 +101,10 @@
   display: block;
   padding: 10px 15px;
   border: none;
-  font-size: 1.0625rem;
-  line-height: 20px;
-  border-radius: 4px;
+  font-size: 15px;
   border: 1px solid #c7c7c7;
   box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 19%);
-  margin-bottom: 45px;
+  margin-bottom: 25px;
 
 }
 
@@ -151,7 +143,7 @@
   text-align: center;
   border-radius: 3px;
   position: relative;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   width: 50%;
   box-shadow: 1px 1px 2px 0 rgb(0 0 0 / 19%);
 
