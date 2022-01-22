@@ -21,7 +21,7 @@
 
 
 .error-signup li{
-padding: 10px 10px;
+padding: 6px 10px;
 color:whitesmoke;
 list-style: none;
 font-size: 1.0625 rem;
@@ -36,7 +36,7 @@ font-size: 1.0625 rem;
   overflow: visible;
   text-align: center;
   width: 100%;
-  margin: 10px 0;
+  margin: 6px 0;
 }
 
 .errors-hr:after {
