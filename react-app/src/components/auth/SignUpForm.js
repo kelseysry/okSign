@@ -67,13 +67,20 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
-    if (password === repeatPassword) {
+
+    const frontErrors = validate();
+
+    // If we have validation frontErrors...
+    if (frontErrors.length > 0) setValidationErrors(frontErrors);
+
+
+
+    if ((password === repeatPassword) && frontErrors.length === 0) {
       const data = await dispatch(signUp(first_name, last_name,username, email, password));
       if (data) {
         setErrors(data)
-        const frontErrors = validate();
-        if (frontErrors.length > 0) setValidationErrors(frontErrors);
-
+        // const frontErrors = validate();
+        // if (frontErrors.length > 0) setErrors(frontErrors);
       }
     }
   };
@@ -110,7 +117,9 @@ const SignUpForm = () => {
   console.log("validationErrors",validationErrors)
 
   return (
+
     <div className="">
+
     <form className="sign-up-modal" onSubmit={onSignUp}>
       <div className="sign-up-spacer">
         <input
@@ -174,7 +183,7 @@ const SignUpForm = () => {
         ></input>
       </div>
 
-      {validationErrors.length || errors.length?
+    {validationErrors.length?
       <>
         <div className="errors-hr"></div>
         <ul className="error-signup">
@@ -191,6 +200,8 @@ const SignUpForm = () => {
         <button className="login-button" type='submit'>Sign Up</button>
       </div>
     </form>
+
+
 
     </div>
   );
