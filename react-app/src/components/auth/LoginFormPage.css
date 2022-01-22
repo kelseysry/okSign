@@ -214,5 +214,7 @@
 }
 
 .map-size {
-  flex-grow: 2;
+  /* flex-grow: 2; */
+  object-fit: cover !important;
+  overflow-x: hidden;
 }
