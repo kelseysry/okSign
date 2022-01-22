@@ -73,18 +73,13 @@ const SignUpForm = () => {
     // If we have validation frontErrors...
     if (frontErrors.length > 0) setValidationErrors(frontErrors);
 
-
-
     if ((password === repeatPassword) && frontErrors.length === 0) {
       const data = await dispatch(signUp(first_name, last_name,username, email, password));
       if (data) {
         setErrors(data)
-        // const frontErrors = validate();
-        // if (frontErrors.length > 0) setErrors(frontErrors);
       }
     }
   };
-
 
   const updateFirstName = (e) => {
     setFirstName(e.target.value);
