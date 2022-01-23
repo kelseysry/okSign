@@ -315,62 +315,6 @@ if(currentUserQuestion) {
               )
   }
 
-  // const correctDisplay = () => {
-  //         setTimeout(() => {
-
-  //           if( !isLoaded) {
-
-  //             loading = (
-
-  //             <div className="center-no-matches-component">
-  //             <NoMatches user_id={user_id} />
-  //             </div>
-  //             )
-  //            }
-
-  //     }, 1000);
-
-  //     console.log("hit correctdisplay")
-
-  //   }
-
-
-  // correctDisplay();
-
-  // if( isLoaded && currentUserProfile?.oneProfile?.length > 1 ) {
-
-  //   loading = (
-
-  //     <div className="loading">
-  //       <img src="https://res.cloudinary.com/mabmab/image/upload/v1642903779/okSign/loading_riw8om.png" />
-  //     </div>
-  //     )
-
-  //   } else {
-  //   loading = (
-
-  //   <div className="center-no-matches-component">
-  //   <NoMatches user_id={user_id} />
-  //   </div>
-  //   )
-  //  }
-
-    // if( isLoaded && !currentUserProfile?.oneProfile?.length ) {
-
-    //   setTimeout(() => {
-
-    //     loading = (
-
-    //     <div className="center-no-matches-component">
-    //     <NoMatches user_id={user_id} />
-    //     </div>
-    //     )
-
-
-    //   }, 1000);
-
-    // }
-
   return (
     <>
     {/* <ChooseDiscoverContent /> */}
