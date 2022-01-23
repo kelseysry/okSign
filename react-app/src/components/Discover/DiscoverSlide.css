@@ -67,20 +67,22 @@
  }
 
  .discover-profiles-container{
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   overflow-x: hidden;
   width: 100%;
-  height: min-content;
-  padding-left: 200px;
+  height: 80vh;
+  /* padding-left: 200px; */
   padding-right: 200px;
   /* padding: 0px 50px; */
   display: flex;
+  align-items: center;
+  overflow-y: hidden !important;
  }
 
  .DiscoverContentContainer {
    display: flex;
    align-items: center;
-   height: 1150px
+   /* height: 1150px */
  }
 
  .hide-button {

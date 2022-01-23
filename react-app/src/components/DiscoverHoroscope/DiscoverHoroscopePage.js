@@ -98,12 +98,16 @@ const DiscoverHoroscope = () => {
             <div className="Step2">Users</div>
             <div className="Step3">By</div>
             <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
-            <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div>
+            <div className={discoverContent === 'HoroscopeMatch' ? 'DiscoverStepClick1' : 'hideClickMe' }
+            onClick={() => setDiscoverContent('QuestionMatch')}
+            >Click Me</div>
 
 
             <div className="Step5">Or</div>
             <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-            <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
+            <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }
+            onClick={()=> setDiscoverContent('HoroscopeMatch')}
+            >Click Me</div>
             <div className="img-stairs-horoscope">
               <img src={horoscopePics.collection[(currentUserProfile?.oneProfile[0]?.horoscope_id)-1]?.imageUrl} />
               </div>

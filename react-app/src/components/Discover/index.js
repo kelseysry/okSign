@@ -15,8 +15,6 @@ import './Step.css'
 const darkImage = pictures.collection[6].imageUrl
 const lightImage = pictures.collection[6].imageUrl
 
-
-
 const Discover = () => {
 
   const {discoverContent, setDiscoverContent} = useDiscoverContent()
@@ -172,12 +170,9 @@ if(currentUserQuestion) {
 
 
   let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
-  // console.log("currentUserGenderPreference??????", currentUserGenderPreference)
 
 
   let correctNumberMatchesAndGender = correctNumberMatches.filter((matchProfile) => matchProfile[0]?.gender_id  === currentUserGenderPreference)
-
-  // console.log("correctNumberMatchesAndGender", correctNumberMatchesAndGender)
 
   const handleLeftClick = (e) => {
     e.preventDefault();
@@ -215,15 +210,6 @@ if(currentUserQuestion) {
         <>
           <section className="DiscoverContentContainer">
 
-            <button
-                id="go-back"f
-                className="left"
-                onClick={handleLeftClick}
-                onAnimationEnd={() => setSlide(0)}
-                slide={slide}
-                >
-                <span className="hide-button">⬅️</span>
-            </button>
 
           <div className="discover-profiles-container" id="discoverProfile">
 
@@ -232,15 +218,35 @@ if(currentUserQuestion) {
               <div className="Step2">Users</div>
               <div className="Step3">By</div>
               <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
-              <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div>
+              <div className={discoverContent === 'HoroscopeMatch' ? 'DiscoverStepClick1' : 'hideClickMe' }
+              onClick={() => setDiscoverContent('QuestionMatch')}
+              >Click Me</div>
 
               <div className="Step5">Or</div>
               <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-              <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
-              <div className="img-stairs">
+              <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'DiscoverStepClick2' }
+              onClick={()=> setDiscoverContent('HoroscopeMatch')}
+              >Click Me</div>
+              <button className="img-stairs"
+                onClick={handleRightClick}
+                // onAnimationEnd={() => setSlide(0)}
+                // slide={slide}
+              >
               <img src={pictures.collection[10].imageUrl} />
-              </div>
+              </button>
             </section>
+
+            <button
+                id="go-back"
+                className="left"
+                onClick={handleLeftClick}
+                onAnimationEnd={() => setSlide(0)}
+                slide={slide}
+                >
+                <span className="hide-button">⬅️</span>
+            </button>
+
+
 
             <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                   {correctNumberMatchesAndGender?.map((correctNumberMatches, idx) =>
