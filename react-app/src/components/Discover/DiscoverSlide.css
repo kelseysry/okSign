@@ -16,23 +16,31 @@
   height: 100%;
 }
 
+.profile-and-buttons {
+  /* background-color: coral; */
+  /* display: flex; */
+  width: 100%;
+  z-index: 4;
+  position: relative;
+}
+
 
 .left{
-  font-size: 50px;
   position: absolute;
   left: 0px;
   height: 50%;
   z-index: 5;
   width: 16%;
+  background-color: blue;
  }
 
  .right{
-  font-size: 50px;
   position: absolute;
   height: 50%;
   z-index: 5;
   width: 16%;
   right: 0;
+  background-color: pink;
  }
 
  .one-discover-profile {
@@ -40,10 +48,11 @@
   display: inline-block;
   overflow-x: hidden;
   padding: 0px 100px;
-  border-right: 160px solid transparent;
+  /* border-right: 160px solid transparent; */
   position: relative;
   flex-shrink: 0;
   height: 900px;
+  /* width: 700px; */
   /* z-index: 3; */
   position: relative;
   transition: all 0.5s linear;
@@ -68,19 +77,19 @@
 
  .discover-profiles-container{
   /* box-sizing: border-box; */
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   width: 100%;
   height: 80vh;
-  padding-left: 200px;
-  padding-right: 200px;
+  /* padding-left: 100px; */
+  padding-right: 0px;
   /* padding: 0px 50px; */
   display: flex;
   overflow-y: hidden !important;
  }
 
  .DiscoverContentContainer {
-   display: flex;
-   align-items: center;
+   /* display: flex;
+   align-items: center; */
    /* height: 1150px */
  }
 

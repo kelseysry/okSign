@@ -4,7 +4,7 @@ export const DiscoverContentContext = createContext();
 export const useDiscoverContent = () => useContext(DiscoverContentContext);
 
 export default function DiscoverContentProvider({ children }) {
-  const [discoverContent, setDiscoverContent] = useState('QuestionMatch')
+  const [discoverContent, setDiscoverContent] = useState('HoroscopeMatch')
 
 
   return (

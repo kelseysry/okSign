@@ -39,6 +39,8 @@ const Discover = () => {
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
 
+
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetch('/api/questions/');
@@ -63,7 +65,7 @@ const Discover = () => {
 let questionsRender = questions
 
 
-
+  console.log("questions.",questions)
 
 // for each user's question object, we need to count how many answers// they have that are the same as the current user
  let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
@@ -172,9 +174,11 @@ if(currentUserQuestion) {
     return array
   }
 
+  console.log("userIdsPercentsObj",userIdsPercentsObj)
 
   let correctNumberMatches = getMatchProfilesCount(userIdsPercentsObj)
 
+  console.log("AAAAAAAAcorrectNumberMatches",correctNumberMatches)
 
   let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
   // console.log("currentUserGenderPreference??????", currentUserGenderPreference)
@@ -187,7 +191,8 @@ if(currentUserQuestion) {
   const handleLeftClick = (e) => {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
-    left.scrollLeft -= 1100;
+    // left.scrollLeft -= 1100;
+    left.scrollLeft -= 500;
     setSlide(1)
     if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
@@ -199,7 +204,8 @@ if(currentUserQuestion) {
   const handleRightClick = (e) => {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
-     right.scrollLeft += 1100;
+    //  right.scrollLeft += 1100;
+    right.scrollLeft += 500;
      setSlide(1)
      if(navigateClick < correctNumberMatchesAndGender?.length -1) {
       setNavigateClick(navigateClick += 1)
@@ -214,13 +220,16 @@ if(currentUserQuestion) {
     <DiscoverHoroscope />
   )
 
+console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
+
+
   let content;
-  if (currentUserQuestion?.length && currentUserProfile?.oneProfile) {
+  if (currentUserQuestion?.length && currentUserProfile?.oneProfile)  {
     content = (
         <>
-          <section className="DiscoverContentContainer">
+          <section className="DiscorContentContainer">
 
-            <button
+            {/* <button
                 id="go-back"f
                 className="left"
                 onClick={handleLeftClick}
@@ -228,7 +237,7 @@ if(currentUserQuestion) {
                 slide={slide}
                 >
                 <span className="hide-button">⬅️</span>
-            </button>
+            </button> */}
 
           <div className="discover-profiles-container" id="discoverProfile">
 
@@ -253,16 +262,49 @@ if(currentUserQuestion) {
               </button>
             </section>
 
-            <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            {/* <div className="diser-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div> */}
                   {correctNumberMatchesAndGender?.map((correctNumberMatches, idx) =>
                       correctNumberMatchesAndGender?.length ?
-                          <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
+
+                    <>
+
+                    <section className="profile-and-buttons">
+
+                      <button
+                      id="go-back"f
+                      className="left"
+                      onClick={handleLeftClick}
+                      onAnimationEnd={() => setSlide(0)}
+                      slide={slide}
+                      >
+                      <span className="hide-button">⬅️</span>
+                      </button>
+
+                      <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
+
+                      <button
+                      id="next-profile"
+                      className="right"
+                          onClick={handleRightClick}
+                          onAnimationEnd={() => setSlide(0)}
+                          slide={slide}
+                      >
+                        <span className="hide-button">➡️</span>
+                      </button>
+
+
+                    </section>
+
+
+                    </>
+
+
                           : null
                     )}
             </div>
 
 
-            <button
+            {/* <button
             id="next-profile"
             className="right"
                 onClick={handleRightClick}
@@ -270,7 +312,7 @@ if(currentUserQuestion) {
                 slide={slide}
             >
               <span className="hide-button">➡️</span>
-            </button>
+            </button> */}
           </section>
 
         </>
