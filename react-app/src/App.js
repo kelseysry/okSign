@@ -23,6 +23,7 @@ import AboutLinks from './components/AboutLinks/AboutLink';
 import Test from './components/Test/test';
 import Menu from './components/NavigationMenu/Menu';
 import TestProfile from './components/Test/testProfile';
+import DiscoverPage from './components/Discover/DiscoverPage';
 
 
 function App() {
@@ -53,7 +54,8 @@ function App() {
           <LoginFormPage />
         </Route>
         <ProtectedRoute path='/' exact={true} >
-          <Discover />
+          {/* <Discover /> */}
+          <DiscoverPage /> 
         </ProtectedRoute>
 
         <ProtectedRoute path='/section/:idx' exact={true} >

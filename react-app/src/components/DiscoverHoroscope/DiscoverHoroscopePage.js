@@ -11,7 +11,7 @@ const DiscoverHoroscope = () => {
   const [profiles, setProfiles] = useState([]);
   let [navigateClick, setNavigateClick] = useState(-1)
   const [slide, setSlide] = useState(1)
-  const {discoverContent, setDiscoverContent} = useDiscoverContent()
+  // const {discoverContent, setDiscoverContent} = useDiscoverContent()
   const [currentUserProfile, setCurrentUserProfile] = useState();
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
@@ -93,7 +93,7 @@ const DiscoverHoroscope = () => {
 
         <div className="discover-profiles-container" id="discoverProfile">
 
-        <section className="step-container">
+        {/* <section className="step-container">
             <div className="Step1">Discover</div>
             <div className="Step2">Users</div>
             <div className="Step3">By</div>
@@ -111,7 +111,7 @@ const DiscoverHoroscope = () => {
             <div className="img-stairs-horoscope">
               <img src={horoscopePics.collection[(currentUserProfile?.oneProfile[0]?.horoscope_id)-1]?.imageUrl} />
               </div>
-          </section>
+          </section> */}
 
 
       <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>

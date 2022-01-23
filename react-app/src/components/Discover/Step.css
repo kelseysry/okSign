@@ -103,14 +103,13 @@
 
 .Step6 {
   margin: 0 auto;
-  padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
 
   position: absolute;
-  top: 320px;
+  top: 400px;
   left: 210px;
   font-size: 60px;
   transform: skew(0deg, -31deg) scaleY(1.33333);

@@ -17,7 +17,7 @@ const lightImage = pictures.collection[6].imageUrl
 
 const Discover = () => {
 
-  const {discoverContent, setDiscoverContent} = useDiscoverContent()
+  // const {discoverContent, setDiscoverContent} = useDiscoverContent()
 
   const {backgroundContent} = useBackgroundContent()
 
@@ -212,7 +212,7 @@ if(currentUserQuestion) {
 
 
           <div className="discover-profiles-container" id="discoverProfile">
-
+{/*
             <section className="step-container">
               <div className="Step1">Discover</div>
               <div className="Step2">Users</div>
@@ -234,7 +234,7 @@ if(currentUserQuestion) {
               >
               <img src={pictures.collection[10].imageUrl} />
               </button>
-            </section>
+            </section> */}
 
             <button
                 id="go-back"
@@ -280,9 +280,10 @@ if(currentUserQuestion) {
   return (
     <>
     {/* <ChooseDiscoverContent /> */}
-    <section className="DiscoverContentContaine" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
-       {discoverContent === 'QuestionMatch'? content : content2}
-    </section>
+    {/* <section className="DiscoverContentContaine" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}> */}
+       {/* {discoverContent === 'QuestionMatch'? content : content2} */}
+    {/* </section> */}
+      {content}
     </>
 
   )
