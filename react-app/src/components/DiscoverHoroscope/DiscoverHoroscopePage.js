@@ -55,7 +55,7 @@ const DiscoverHoroscope = () => {
   const handleLeftClick = (e) => {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
-    left.scrollLeft -= 1100;
+    left.scrollLeft -= 850;
     setSlide(1)
     if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
@@ -68,7 +68,7 @@ const DiscoverHoroscope = () => {
   const handleRightClick = (e) => {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
-     right.scrollLeft += 1100;
+     right.scrollLeft += 850;
      setSlide(1)
      if(navigateClick < horoscopeMatchesGenderPrefer?.length -1) {
       setNavigateClick(navigateClick += 1)

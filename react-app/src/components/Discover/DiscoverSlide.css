@@ -36,7 +36,8 @@
 
  .right{
   position: absolute;
-  height: 50%;
+  top: 40px;
+  height: 50% !important;
   z-index: 5;
   width: 16%;
   right: 0;
@@ -64,7 +65,7 @@
   display: inline-block;
   overflow-x: hidden;
   padding: 0px 100px;
-  border-right: 160px solid transparent;
+  /* border-right: 160px solid transparent; */
   position: relative;
   flex-shrink: 0;
   height: 900px;
