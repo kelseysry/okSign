@@ -10,7 +10,10 @@ profile_routes = Blueprint('profiles', __name__)
 def user_profile(user_id):
     oneProfile = Profile.query.filter(Profile.user_id == user_id).first()
     print("profile----------", oneProfile)
-    return {'oneProfile' : [oneProfile.to_dict()]}
+    if oneProfile:
+      return {'oneProfile' : [oneProfile.to_dict()]}
+    else:
+      return  {'oneProfile' : []}
 
 
 # get all profiles in db

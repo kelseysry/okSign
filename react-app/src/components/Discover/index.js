@@ -31,6 +31,7 @@ const Discover = () => {
 
   const [currentUserProfile, setCurrentUserProfile] = useState();
 
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const profilesObj = useSelector((state) => state.profile)
   const profiles = Object.values(profilesObj)
@@ -48,16 +49,20 @@ const Discover = () => {
   }, []);
 
   useEffect(() => {
+    setIsLoaded(true)
     async function fetchData() {
       const response = await fetch(`/api/profiles/userProfile/${user_id}`);
       const responseData = await response.json();
       console.log("responseData",responseData )
+
       setCurrentUserProfile(responseData);
     }
     fetchData();
-  }, []);
+  }, [isLoaded]);
 
 let questionsRender = questions
+
+
 
 
 // for each user's question object, we need to count how many answers// they have that are the same as the current user
@@ -270,33 +275,114 @@ if(currentUserQuestion) {
 
         </>
     )
-  } else if (currentUserProfile?.oneProfile?.length) {
-    content = (
-      <div>
-        "ho"
-        {/* <img src="https://res.cloudinary.com/mabmab/video/upload/v1642902641/okSign/horoscopes_ce7zyb.mp4" /> */}
-      </div>
-    )
-  }
-  else {
-    content = (
-      <div className="center-no-matches-component">
-        {/* <NoMatches user_id={user_id} /> */}
-        <div className="loading">
-        <img src="https://res.cloudinary.com/mabmab/image/upload/v1642903779/okSign/loading_riw8om.png" />
+  // } else if (currentUserProfile?.oneProfile?.length) {
+  //   content = (
+  //     <div>
+  //       "ho"
+  //     </div>
+  //   )
+  // }
+  // else {
+  //   content = (
+  //     <div className="center-no-matches-component">
+  //       <NoMatches user_id={user_id} />
+  //       <div className="loading">
+  //       <img src="https://res.cloudinary.com/mabmab/image/upload/v1642903779/okSign/loading_riw8om.png" />
+  //       </div>
 
-        </div>
-
-      </div>
-    )
+  //     </div>
+  //   )
   }
+
+  let loading;
+
+  console.log("isLoaded", isLoaded)
+  console.log("currentUserProfile.oneProfile.length ",currentUserProfile?.oneProfile?.length )
+
+  loading = (
+
+    <div className="loading">
+      <img src="https://res.cloudinary.com/mabmab/image/upload/v1642903779/okSign/loading_riw8om.png" />
+    </div>
+  )
+
+  if(isLoaded === true && currentUserProfile?.oneProfile?.length === 0) {
+              loading = (
+
+              <div className="center-no-matches-component">
+              <NoMatches user_id={user_id} />
+              </div>
+              )
+  }
+
+  // const correctDisplay = () => {
+  //         setTimeout(() => {
+
+  //           if( !isLoaded) {
+
+  //             loading = (
+
+  //             <div className="center-no-matches-component">
+  //             <NoMatches user_id={user_id} />
+  //             </div>
+  //             )
+  //            }
+
+  //     }, 1000);
+
+  //     console.log("hit correctdisplay")
+
+  //   }
+
+
+  // correctDisplay();
+
+  // if( isLoaded && currentUserProfile?.oneProfile?.length > 1 ) {
+
+  //   loading = (
+
+  //     <div className="loading">
+  //       <img src="https://res.cloudinary.com/mabmab/image/upload/v1642903779/okSign/loading_riw8om.png" />
+  //     </div>
+  //     )
+
+  //   } else {
+  //   loading = (
+
+  //   <div className="center-no-matches-component">
+  //   <NoMatches user_id={user_id} />
+  //   </div>
+  //   )
+  //  }
+
+    // if( isLoaded && !currentUserProfile?.oneProfile?.length ) {
+
+    //   setTimeout(() => {
+
+    //     loading = (
+
+    //     <div className="center-no-matches-component">
+    //     <NoMatches user_id={user_id} />
+    //     </div>
+    //     )
+
+
+    //   }, 1000);
+
+    // }
 
   return (
     <>
     {/* <ChooseDiscoverContent /> */}
-    <section className="DiscoverContentContaine" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
+
+    { currentUserProfile?.oneProfile?.length ?
+
+      <section className="DiscoverContentContaine" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
        {discoverContent === 'QuestionMatch'? content : content2}
-    </section>
+      </section>
+    :
+    loading
+      }
     </>
 
   )
