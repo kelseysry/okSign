@@ -45,6 +45,11 @@ const pictures = {
     {
       "imageNumber":"10",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642664033/okSign/stick_man_paper_oqywfz.png"
+    },
+    {
+      "imageNumber":"11",
+      "name":"loading",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642903779/okSign/loading_riw8om.png"
     }
   ]
 

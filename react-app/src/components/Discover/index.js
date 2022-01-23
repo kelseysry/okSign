@@ -275,23 +275,6 @@ if(currentUserQuestion) {
 
         </>
     )
-  // } else if (currentUserProfile?.oneProfile?.length) {
-  //   content = (
-  //     <div>
-  //       "ho"
-  //     </div>
-  //   )
-  // }
-  // else {
-  //   content = (
-  //     <div className="center-no-matches-component">
-  //       <NoMatches user_id={user_id} />
-  //       <div className="loading">
-  //       <img src="https://res.cloudinary.com/mabmab/image/upload/v1642903779/okSign/loading_riw8om.png" />
-  //       </div>
-
-  //     </div>
-  //   )
   }
 
   let loading;
@@ -302,7 +285,7 @@ if(currentUserQuestion) {
   loading = (
 
     <div className="loading">
-      <img src="https://res.cloudinary.com/mabmab/image/upload/v1642903779/okSign/loading_riw8om.png" />
+      <img src={pictures.collection[11].imageUrl} />
     </div>
   )
 
