@@ -192,7 +192,7 @@ if(currentUserQuestion) {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
     // left.scrollLeft -= 1100;
-    left.scrollLeft -= 500;
+    left.scrollLeft -= 850;
     setSlide(1)
     if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
@@ -205,7 +205,7 @@ if(currentUserQuestion) {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
     //  right.scrollLeft += 1100;
-    right.scrollLeft += 500;
+    right.scrollLeft += 850;
      setSlide(1)
      if(navigateClick < correctNumberMatchesAndGender?.length -1) {
       setNavigateClick(navigateClick += 1)
@@ -229,7 +229,7 @@ console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
         <>
           <section className="DiscorContentContainer">
 
-            {/* <button
+            <button
                 id="go-back"f
                 className="left"
                 onClick={handleLeftClick}
@@ -237,7 +237,7 @@ console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
                 slide={slide}
                 >
                 <span className="hide-button">⬅️</span>
-            </button> */}
+            </button>
 
           <div className="discover-profiles-container" id="discoverProfile">
 
@@ -262,13 +262,13 @@ console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
               </button>
             </section>
 
-            {/* <div className="diser-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div> */}
+            <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                   {correctNumberMatchesAndGender?.map((correctNumberMatches, idx) =>
                       correctNumberMatchesAndGender?.length ?
 
                     <>
 
-                    <section className="profile-and-buttons">
+                    {/* <section className="profile-and-buttons">
 
                       <button
                       id="go-back"f
@@ -278,11 +278,11 @@ console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
                       slide={slide}
                       >
                       <span className="hide-button">⬅️</span>
-                      </button>
+                      </button> */}
 
                       <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
 
-                      <button
+                      {/* <button
                       id="next-profile"
                       className="right"
                           onClick={handleRightClick}
@@ -293,7 +293,7 @@ console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
                       </button>
 
 
-                    </section>
+                    </section> */}
 
 
                     </>
@@ -304,7 +304,7 @@ console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
             </div>
 
 
-            {/* <button
+            <button
             id="next-profile"
             className="right"
                 onClick={handleRightClick}
@@ -312,7 +312,7 @@ console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
                 slide={slide}
             >
               <span className="hide-button">➡️</span>
-            </button> */}
+            </button>
           </section>
 
         </>
