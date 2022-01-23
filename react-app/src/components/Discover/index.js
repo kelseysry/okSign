@@ -232,14 +232,20 @@ if(currentUserQuestion) {
               <div className="Step2">Users</div>
               <div className="Step3">By</div>
               <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
-              <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div>
+              <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }
+              onClick={() => setDiscoverContent}
+              >Click Me</div>
 
               <div className="Step5">Or</div>
               <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-              <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
-              <div className="img-stairs">
+              <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'DiscoverStepClick2' }
+              onClick={()=> setDiscoverContent('HoroscopeMatch')}
+              >Click Me</div>
+              <button className="img-stairs"
+              onClick={handleRightClick}
+              >
               <img src={pictures.collection[10].imageUrl} />
-              </div>
+              </button>
             </section>
 
             <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
@@ -261,12 +267,26 @@ if(currentUserQuestion) {
               <span className="hide-button">➡️</span>
             </button>
           </section>
+
         </>
     )
-  }     else {
+  } else if (currentUserProfile?.oneProfile?.length) {
+    content = (
+      <div>
+        "ho"
+        {/* <img src="https://res.cloudinary.com/mabmab/video/upload/v1642902641/okSign/horoscopes_ce7zyb.mp4" /> */}
+      </div>
+    )
+  }
+  else {
     content = (
       <div className="center-no-matches-component">
-        <NoMatches user_id={user_id} />
+        {/* <NoMatches user_id={user_id} /> */}
+        <div className="loading">
+        <img src="https://res.cloudinary.com/mabmab/image/upload/v1642903779/okSign/loading_riw8om.png" />
+
+        </div>
+
       </div>
     )
   }

@@ -45,6 +45,9 @@ const DiscoverHoroscope = () => {
     return profile.user_id !== user_id
   })
 
+
+  console.log("currentUserProfile?.oneProfile?",currentUserProfile?.oneProfile.length)
+
   let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
 
   let horoscopeMatchesGenderPrefer = allProfilesExcludeCurrent.filter((matchProfile) => matchProfile?.gender_id  === currentUserGenderPreference)
@@ -105,11 +108,14 @@ const DiscoverHoroscope = () => {
 
             <div className="Step5">Or</div>
             <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-            <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }
+            <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'DiscoverStepClick2' }
             >Click Me</div>
-            <div className="img-stairs-horoscope">
+            <button className="img-stairs-horoscope"
+              onClick={handleRightClick}
+
+            >
               <img src={horoscopePics.collection[(currentUserProfile?.oneProfile[0]?.horoscope_id)-1]?.imageUrl} />
-              </div>
+              </button>
           </section>
 
 
@@ -133,10 +139,21 @@ const DiscoverHoroscope = () => {
     </section>
   </>
     )
+  } else if (currentUserProfile?.oneProfile?.length) {
+    content = (
+      <div>
+        "ho"
+      </div>
+    )
   } else {
     content = (
       <div className="center-no-matches-component">
-        <NoMatches user_id={user_id} />
+        {/* <NoMatches user_id={user_id} /> */}
+
+        <div className="loading">
+        <img src="https://res.cloudinary.com/mabmab/image/upload/v1642903779/okSign/loading_riw8om.png" />
+         </div>
+
       </div>
     )
   }
