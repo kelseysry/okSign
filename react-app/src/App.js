@@ -54,8 +54,8 @@ function App() {
           <LoginFormPage />
         </Route>
         <ProtectedRoute path='/' exact={true} >
-          {/* <Discover /> */}
-          <DiscoverPage /> 
+          <Discover />
+          {/* <DiscoverPage />  */}
         </ProtectedRoute>
 
         <ProtectedRoute path='/section/:idx' exact={true} >
