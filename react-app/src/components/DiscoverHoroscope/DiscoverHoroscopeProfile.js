@@ -288,7 +288,9 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
          </div>
       </section>
       <div className={idx === horoscopeMatchesGenderPrefer?.length -1? `displayFinalItem` : `displayNothing`}>
-
+          <div className="lastImage">
+            You reached final 
+          </div>
       </div>
 
       </>

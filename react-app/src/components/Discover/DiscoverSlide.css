@@ -33,6 +33,16 @@
   background-color: burlywood;
   width: 800px;
   height: 300px;
+  /* position: relative; */
+}
+
+.lastImage{
+  background-color: coral;
+  width: 200px;
+  height: 200px;
+  top: 30px;
+  right: 50px;
+  position: absolute;
 }
 
 .left{
