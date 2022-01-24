@@ -16,23 +16,62 @@
   height: 100%;
 }
 
+.profile-and-buttons {
+  /* background-color: coral; */
+  /* display: flex; */
+  width: 100%;
+  z-index: 4;
+  position: relative;
+}
+
+.displayNothing {
+  display: none;
+}
+
+.displayFinalItem {
+  display: block;
+  /* background-color: burlywood; */
+  width: 800px;
+  height: 300px;
+  /* position: relative; */
+}
+
+.lastImage{
+  width: 200px;
+  height: 200px;
+  top: 30px;
+  right: 270px;
+  position: absolute;
+}
+
+.lastImageChat {
+  color: #FFBD4A;
+  top: -30px;
+  right: 280px;
+  position: absolute;
+  width: 120px;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
 
 .left{
-  font-size: 50px;
   position: absolute;
-  left: 0px;
+  left: 200px;
   height: 50%;
   z-index: 5;
   width: 16%;
+  /* background-color: blue; */
  }
 
  .right{
-  font-size: 50px;
   position: absolute;
-  height: 50%;
+  top: 150px;
+  height: 50% !important;
   z-index: 5;
   width: 16%;
-  right: 0;
+  right: 250px;
+  /* background-color: pink; */
  }
 
  .one-discover-profile {
@@ -40,10 +79,11 @@
   display: inline-block;
   overflow-x: hidden;
   padding: 0px 100px;
-  border-right: 160px solid transparent;
+  /* border-right: 160px solid transparent; */
   position: relative;
   flex-shrink: 0;
   height: 900px;
+  /* width: 700px; */
   /* z-index: 3; */
   position: relative;
   transition: all 0.5s linear;
@@ -55,7 +95,7 @@
   display: inline-block;
   overflow-x: hidden;
   padding: 0px 100px;
-  border-right: 160px solid transparent;
+  /* border-right: 160px solid transparent; */
   position: relative;
   flex-shrink: 0;
   height: 900px;
@@ -67,20 +107,21 @@
  }
 
  .discover-profiles-container{
-  box-sizing: border-box;
-  overflow-x: hidden;
+  /* box-sizing: border-box; */
+  overflow-x: hidden !important;
   width: 100%;
-  height: min-content;
-  padding-left: 200px;
-  padding-right: 200px;
+  height: 80vh;
+  /* padding-left: 100px; */
+  padding-right: 0px;
   /* padding: 0px 50px; */
   display: flex;
+  overflow-y: hidden !important;
  }
 
  .DiscoverContentContainer {
-   display: flex;
-   align-items: center;
-   height: 1150px
+   /* display: flex;
+   align-items: center; */
+   /* height: 1150px */
  }
 
  .hide-button {
@@ -148,10 +189,10 @@
 
   .userPhotoMatch-first_D {
     position: absolute;
-    top: 0;
+    top: 40px;
     left: 50%;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background: #ebedf2;
     border-radius: 50%;
     background-size: contain;
@@ -161,10 +202,10 @@
 
   .userPhotoMatch-last_D {
     position: absolute;
-    top: 0;
-    left: 50%;
-    width: 150px;
-    height: 150px;
+    top: 40px;
+    left:-30px;
+    width: 100px;
+    height: 100px;
     background: #ebedf2;
     border-radius: 50%;
     background-size: contain;
@@ -174,11 +215,9 @@
 
   }
 
-
-
 .matchPercentCircle_D {
   position: absolute;
-  left: 50%;
+  left: -35px;
   transform: translate(-19%, 105px);
   width: 77px;
   height: 77px;
@@ -208,4 +247,9 @@ display: block;
 #user-profile-not-exist {
   display: none;
 
+  }
+
+
+  .IconImagesContainer {
+    z-index: 5;
   }

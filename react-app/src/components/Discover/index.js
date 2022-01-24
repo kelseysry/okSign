@@ -31,12 +31,15 @@ const Discover = () => {
 
   const [currentUserProfile, setCurrentUserProfile] = useState();
 
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const profilesObj = useSelector((state) => state.profile)
   const profiles = Object.values(profilesObj)
 
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
+
+
 
   useEffect(() => {
     async function fetchData() {
@@ -48,17 +51,21 @@ const Discover = () => {
   }, []);
 
   useEffect(() => {
+    setIsLoaded(true)
     async function fetchData() {
       const response = await fetch(`/api/profiles/userProfile/${user_id}`);
       const responseData = await response.json();
       console.log("responseData",responseData )
+
       setCurrentUserProfile(responseData);
     }
     fetchData();
-  }, []);
+  }, [isLoaded]);
 
 let questionsRender = questions
 
+
+  console.log("questions.",questions)
 
 // for each user's question object, we need to count how many answers// they have that are the same as the current user
  let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
@@ -172,17 +179,18 @@ if(currentUserQuestion) {
 
 
   let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
-  // console.log("currentUserGenderPreference??????", currentUserGenderPreference)
 
 
   let correctNumberMatchesAndGender = correctNumberMatches.filter((matchProfile) => matchProfile[0]?.gender_id  === currentUserGenderPreference)
 
-  // console.log("correctNumberMatchesAndGender", correctNumberMatchesAndGender)
+
+
 
   const handleLeftClick = (e) => {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
-    left.scrollLeft -= 1100;
+    // left.scrollLeft -= 1100;
+    left.scrollLeft -= 850;
     setSlide(1)
     if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
@@ -194,7 +202,8 @@ if(currentUserQuestion) {
   const handleRightClick = (e) => {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
-     right.scrollLeft += 1100;
+    //  right.scrollLeft += 1100;
+    right.scrollLeft += 850;
      setSlide(1)
      if(navigateClick < correctNumberMatchesAndGender?.length -1) {
       setNavigateClick(navigateClick += 1)
@@ -204,16 +213,21 @@ if(currentUserQuestion) {
      }
   }
 
+
+
   let content2;
   content2 = (
     <DiscoverHoroscope />
   )
 
+console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
+
+
   let content;
-  if (currentUserQuestion?.length && currentUserProfile?.oneProfile) {
+  if (currentUserQuestion?.length && currentUserProfile?.oneProfile)  {
     content = (
         <>
-          <section className="DiscoverContentContainer">
+          <section className="DiscorContentContainer">
 
             <button
                 id="go-back"f
@@ -232,20 +246,59 @@ if(currentUserQuestion) {
               <div className="Step2">Users</div>
               <div className="Step3">By</div>
               <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
-              <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div>
+              <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }
+              onClick={() => setDiscoverContent}
+              >Click Me</div>
 
               <div className="Step5">Or</div>
               <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-              <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
-              <div className="img-stairs">
+              <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'DiscoverStepClick2' }
+              onClick={()=> setDiscoverContent('HoroscopeMatch')}
+              >Click Me</div>
+              <button className="img-stairs"
+              onClick={handleRightClick}
+              >
               <img src={pictures.collection[10].imageUrl} />
-              </div>
+              </button>
             </section>
 
             <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                   {correctNumberMatchesAndGender?.map((correctNumberMatches, idx) =>
                       correctNumberMatchesAndGender?.length ?
-                          <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
+
+                    <>
+
+                    {/* <section className="profile-and-buttons">
+
+                      <button
+                      id="go-back"f
+                      className="left"
+                      onClick={handleLeftClick}
+                      onAnimationEnd={() => setSlide(0)}
+                      slide={slide}
+                      >
+                      <span className="hide-button">⬅️</span>
+                      </button> */}
+
+                      <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
+
+                      {/* <button
+                      id="next-profile"
+                      className="right"
+                          onClick={handleRightClick}
+                          onAnimationEnd={() => setSlide(0)}
+                          slide={slide}
+                      >
+                        <span className="hide-button">➡️</span>
+                      </button>
+
+
+                    </section> */}
+
+
+                    </>
+
+
                           : null
                     )}
             </div>
@@ -261,22 +314,42 @@ if(currentUserQuestion) {
               <span className="hide-button">➡️</span>
             </button>
           </section>
+
         </>
     )
-  }     else {
-    content = (
-      <div className="center-no-matches-component">
-        <NoMatches user_id={user_id} />
-      </div>
-    )
+  }
+
+  let loading;
+
+
+  loading = (
+
+    <div className="loading">
+      <img src={pictures.collection[11].imageUrl} />
+    </div>
+  )
+
+  if(isLoaded === true && currentUserProfile?.oneProfile?.length === 0) {
+              loading = (
+
+              <div className="center-no-matches-component">
+              <NoMatches user_id={user_id} />
+              </div>
+              )
   }
 
   return (
     <>
     {/* <ChooseDiscoverContent /> */}
-    <section className="DiscoverContentContaine" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
+
+    { currentUserProfile?.oneProfile?.length ?
+
+      <section className="DiscoverContentContaine" style={{ backgroundImage: `url('${backgroundContent === 'light' ? lightImage : darkImage}')` }}>
        {discoverContent === 'QuestionMatch'? content : content2}
-    </section>
+      </section>
+    :
+    loading
+      }
     </>
 
   )

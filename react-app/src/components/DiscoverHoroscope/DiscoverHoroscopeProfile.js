@@ -11,9 +11,9 @@ import { horoscopeContent } from "./getHoroScopeMatchPercent";
 import './DiscoverHoroscope.css'
 import { NavLink } from "react-router-dom";
 import './DiscoverHoroscopeSlide.css'
+import pictures from "../../data/pictures";
 
-
-const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}) => {
+const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick, horoscopeMatchesGenderPrefer}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 
@@ -24,7 +24,6 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
   const [picNum, setPicNum] = useState('')
 
 
-  // console.log("profile🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profile)
 
 
   // this profile_id value is actually the user.id, bad naming on my part haha
@@ -40,7 +39,6 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
   const conversationsObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationsObj)[0]
 
-  // console.log("conversations-------", conversations)
 
   useEffect(async () => {
 
@@ -181,9 +179,16 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
             slide={slide}
             onClick={() => setSlide(idx)}
             onAnimationEnd={() => setSlide(0)}>
-            <div className="userNameCursive">{getUserName(profile?.user_id)}</div>
-            <div className="match_details_discover_under_name"> {profile?.age} | {getHoroscope(profile?.horoscope_id)}</div>
-            <div className="horoscope-content-slide">{horoscopeContent}</div>
+
+            <NavLink
+                to={`/matchProfile/${profile?.user_id}`} // userIdPercentObj[0] is the user.id
+            >
+              <div className="userNameCursive">{getUserName(profile?.user_id)}</div>
+              <div className="match_details_discover_under_name"> {profile?.age} | {getHoroscope(profile?.horoscope_id)}</div>
+              <div className="horoscope-content-slide">
+                {horoscopeContent?.length  > 50 ? `${horoscopeContent.slice(0, 200)}...click to find out more about ${getUserName(profile?.user_id)}!` : horoscopeContent}
+              </div>
+            </NavLink>
           </div>
         </>
         ): null
@@ -192,7 +197,7 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
         <div className="oneMatchProfileContainer">
 
             <section className='ImageContainer'>
-                        <NavLink
+            <NavLink
                 to={`/matchProfile/${profile?.user_id}`} // userIdPercentObj[0] is the user.id
               >
 
@@ -203,7 +208,7 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
                     }
                 </section>
 
-                </NavLink>
+            </NavLink>
                     <div className='IconImagesContainer'>
                         <div key={0}>
                           <img src={profile?.image_url1} alt='photo 1' className="iconImg"
@@ -264,9 +269,12 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
             </section>
 
 
+
               <div className="MatchProfileInnerContainer_D">
                   {
                     idx === navigateClick?
+
+
                     <div
                       className={`slide`+idx}
                       slide={slide}
@@ -280,66 +288,24 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
                         </div>
 
                     </div>
+
                   : null }
               </div>
          </div>
       </section>
+      <div className={idx === horoscopeMatchesGenderPrefer?.length -1? `displayFinalItem` : `displayNothing`}>
+          <div className="lastImage">
+            <img src={pictures.collection[12].imageUrl} />
+          </div>
+          <div className="lastImageChat">
+            No more matches! Please swipe back! ⬅️
+          </div>
+      </div>
+
       </>
 
       )
     }
-
-
-    {/* { isLoaded && (
-      <>
-      <div className="oneMatchProfileContainer">
-          <div className="oneMatchProfileContainerHeader">
-            {getUserName(profile?.user_id)}
-            <div className="matchButtonsContainer">
-              <button
-              className="matchButton"
-              onClick={() => {handleCreateConversation(profile?.user_id)}}
-              >Message  <i className="far fa-comment-dots"></i></button>
-
-
-            </div>
-
-          </div>
-
-          <div className="match_profile_images_container">
-            <img className="match_profile_image_discover" src={profile?.image_url1} alt="match_image"/>
-            <img className="match_profile_image_discover" src={profile?.image_url2} alt="match_image"/>
-            <img className="match_profile_image_discover_noP" src={profile?.image_url3} alt="match_image"/>
-          </div>
-
-
-          <div className="matchPercentContainer">
-            <div className="matchContainerHeader">
-              {getHoroscope(userProfileObj[0]?.horoscope_id)} and {getHoroscope(profile?.horoscope_id)}
-
-            </div>
-            <div className="MatchProfileInnerContainer_Horoscope">
-              <div className="circlesContainer_H">
-                <div className="userPhotoMatch-first_H" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
-                <div className="userPhotoMatch-last_H" style={{ backgroundImage: `url('${profile?.image_url1}')` }}></div>
-                <div className="matchPercentCircle_H">{getHoroscopeMatchPercent(profile.horoscope_id,userProfileObj[0]?.horoscope_id)}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
-              </div>
-              <div className="horoscopeContent">
-                  {horoscopeContent}
-
-                  <hr className="fancy"></hr>
-              </div>
-            </div>
-
-          </div>
-
-      </div>
-      <hr></hr>
-      </>
-
-      )
-    } */}
-
     </>
 
   )

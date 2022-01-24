@@ -5,6 +5,7 @@ import DiscoverHoroscopeProfile from "./DiscoverHoroscopeProfile";
 import { useDiscoverContent } from "../../context/DiscoverContentContext";
 import pictures from "../../data/pictures";
 import horoscopePics from "../../data/horoscopePics";
+import { Modal, SwipeInstructionModal } from "../../context/Modal";
 
 const DiscoverHoroscope = () => {
 
@@ -15,6 +16,8 @@ const DiscoverHoroscope = () => {
   const [currentUserProfile, setCurrentUserProfile] = useState();
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
+
+  const [showModal, setShowModal] = useState(false);
 
 
   useEffect(() => {
@@ -45,6 +48,9 @@ const DiscoverHoroscope = () => {
     return profile.user_id !== user_id
   })
 
+
+  console.log("currentUserProfile?.oneProfile?",currentUserProfile?.oneProfile.length)
+
   let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
 
   let horoscopeMatchesGenderPrefer = allProfilesExcludeCurrent.filter((matchProfile) => matchProfile?.gender_id  === currentUserGenderPreference)
@@ -52,7 +58,7 @@ const DiscoverHoroscope = () => {
   const handleLeftClick = (e) => {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
-    left.scrollLeft -= 1100;
+    left.scrollLeft -= 650;
     setSlide(1)
     if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
@@ -65,7 +71,20 @@ const DiscoverHoroscope = () => {
   const handleRightClick = (e) => {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
-     right.scrollLeft += 1100;
+     right.scrollLeft += 650;
+     setSlide(1)
+     if(navigateClick < horoscopeMatchesGenderPrefer?.length -1) {
+      setNavigateClick(navigateClick += 1)
+     } else {
+       return navigateClick
+     }
+  }
+
+
+  const handleRightClickAfterModal = () => {
+    // e.preventDefault();
+    const right = document.querySelector('#discoverProfile');
+     right.scrollLeft += 650;
      setSlide(1)
      if(navigateClick < horoscopeMatchesGenderPrefer?.length -1) {
       setNavigateClick(navigateClick += 1)
@@ -98,25 +117,58 @@ const DiscoverHoroscope = () => {
             <div className="Step2">Users</div>
             <div className="Step3">By</div>
             <button id={discoverContent === 'HoroscopeMatch' ? 'whiteFont' : 'orangeFont'} className="Step4" onClick={() => setDiscoverContent('QuestionMatch')}>Questions</button>
-            <div className={discoverContent === 'HoroscopeMatch' ? 'StepClick1' : 'hideClickMe' }>Click Me</div>
+            <div className={discoverContent === 'HoroscopeMatch' ? 'DiscoverStepClick1' : 'hideClickMe' }
+            onClick={() => setDiscoverContent('QuestionMatch')}
+            >Click Me</div>
 
 
             <div className="Step5">Or</div>
             <button id={discoverContent === 'HoroscopeMatch' ? 'orangeFont' : 'whiteFont'} className="Step6" onClick={()=> setDiscoverContent('HoroscopeMatch')}>Horoscope</button>
-            <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'StepClick2' }>Click Me</div>
-            <div className="img-stairs-horoscope">
+            <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'DiscoverStepClick2' }
+            >Click Me</div>
+            <button className="img-stairs-horoscope"
+              // onClick={handleRightClick}
+              onClick={() => {
+                setShowModal(true)}
+
+              }
+            >
               <img src={horoscopePics.collection[(currentUserProfile?.oneProfile[0]?.horoscope_id)-1]?.imageUrl} />
-              </div>
+              </button>
+            {showModal && (
+              <SwipeInstructionModal onClose={() => {
+                setShowModal(false)
+                handleRightClickAfterModal()
+              }}>
+
+                <section className="InstructionsContainer">
+                  <div className="instructionsHeader">Instructions</div>
+                  <div className="instructionsContent">Click on the center picture to see a user's profile</div>
+                  <div className="instructionsImgContainer">
+                  <div className="leftSwipe"><span className="instructionsEmoji">🧐</span> Click to the left of the center picture to see the previous user</div>
+                  <div className="rightSwipe"><span className="instructionsEmoji">🥱</span> Click to the right of the center picture to see the next user</div>
+
+                    <img class="instructionsImg" src={pictures.collection[13].imageUrl} />
+                  </div>
+
+                </section>
+              </SwipeInstructionModal>
+            )}
           </section>
 
 
       <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            {horoscopeMatchesGenderPrefer?.map((profile, idx) =>
-                <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
-                    <DiscoverHoroscopeProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile}/>
-                </div>
-              )}
+        {horoscopeMatchesGenderPrefer?.map((profile, idx) =>
+            <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
+                <DiscoverHoroscopeProfile horoscopeMatchesGenderPrefer={horoscopeMatchesGenderPrefer} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile}/>
+            </div>
+          )}
+
+
         </div>
+
+
+
 
         <button
         id="next-profile"
@@ -129,11 +181,14 @@ const DiscoverHoroscope = () => {
         </button>
     </section>
   </>
-    )
-  } else {
+    )} else {
     content = (
       <div className="center-no-matches-component">
-        <NoMatches user_id={user_id} />
+        {/* <NoMatches user_id={user_id} /> */}
+        <div className="loading">
+        <img src={pictures.collection[11].imageUrl} />
+         </div>
+
       </div>
     )
   }

@@ -129,8 +129,17 @@ button.blank {
 
 .img-stairs img {
   position: absolute;
-  left: 915px;
-  top: 100px;
+  left: 605px;
+  top: 130px;
   width: 250px;
 
+}
+
+
+.loading img {
+  width: 600px;
+  z-index: 4;
+  position: absolute;
+  left: 300px;
+  top: 100px;
 }

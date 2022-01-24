@@ -45,6 +45,21 @@ const pictures = {
     {
       "imageNumber":"10",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642664033/okSign/stick_man_paper_oqywfz.png"
+    },
+    {
+      "imageNumber":"11",
+      "name":"loading",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1642903779/okSign/loading_riw8om.png"
+    },
+    {
+      "imageNumber":"12",
+      "name":"no_more_matches",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643003581/okSign/no_more_matches_opndgx.png"
+    },
+    {
+      "imageNumber":"13",
+      "name":"instructions",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643007785/okSign/instructions_hdtcme.png"
     }
   ]
 

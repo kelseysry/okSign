@@ -1,29 +1,27 @@
 .step-container {
   position: relative;
-  width: 1000px;
+  width: 700px;
   padding-left: 20px;
   display: inline-block;
   overflow-x: hidden;
   padding: 0px 100px;
-  border-right: 160px solid transparent;
+  /* border-right: 160px solid transparent; */
   flex-shrink: 0;
-  height: 900px;
+  height: 700px !important;
 }
 
 
 
 .Step1{
   margin: 0 auto;
-  padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 68px;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
 
   position: absolute;
-  top: 50px;
-  font-size: 90px;
+  top: 135px;
+  font-size: 60px;
   transform: skew(60deg, -30deg) scaleY(.66667);
   color: white;
 
@@ -34,16 +32,15 @@
   margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 68px;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
 
 
   position: absolute;
-  top: 168px;
-  left: 150px;
-  font-size: 90px;
+  top: 140px;
+  left: 120px;
+  font-size: 60px;
   transform: skew(0deg, -31deg) scaleY(1.33333);
   color: white;
 
@@ -53,15 +50,14 @@
   margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 68px;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
 
   position: absolute;
-  top: 300px;
-  left: 190px;
-  font-size: 90px;
+  top: 230px;
+  left: 150px;
+  font-size: 60px;
   transform: skew(60deg, -30deg) scaleY(.66667);
   color: white;
 
@@ -79,9 +75,9 @@
 
 
   position: absolute;
-  top: 260px;
-  left: 230px;
-  font-size: 90px;
+  top: 220px;
+  left: 160px;
+  font-size: 60px;
   transform: skew(0deg, -31deg) scaleY(1.33333);
   transition: all 0.5s ease-out;
   color: #d7a041;
@@ -92,35 +88,30 @@
   margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 68px;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
 
   position: absolute;
-  top: 450px;
-  left: 280px;
-  font-size: 90px;
+  top: 350px;
+  left: 190px;
+  font-size: 60px;
   transform: skew(60deg, -30deg) scaleY(.66667);
   color: white;
 
 }
 
 .Step6 {
-
   margin: 0 auto;
-  padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 68px;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
 
-
   position: absolute;
-  top: 390px;
-  left: 330px;
-  font-size: 90px;
+  top: 400px;
+  left: 210px;
+  font-size: 60px;
   transform: skew(0deg, -31deg) scaleY(1.33333);
   color: white;
   transition: all 0.5s ease-out;
@@ -140,34 +131,34 @@
   color: white;
 }
 
-.StepClick1 {
+.DiscoverStepClick1 {
   margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 900;
   letter-spacing: -.5px;
   text-transform: uppercase;
   position: absolute;
-  top: 150px;
-  left: 710px;
+  top: 140px;
+  left: 470px;
   transform: skew(0deg, 250deg) scaleY(1.33333);
   transform: rotate(90deg);
   transition: all 0.5s ease-out;
   color: orange;
 }
 
-.StepClick2 {
+.DiscoverStepClick2 {
   margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 900;
   letter-spacing: -.5px;
   text-transform: uppercase;
   position: absolute;
-  top: 255px;
-  left: 860px;
+  top: 225px;
+  right: 276px;
   transform: skew(0deg, 250deg) scaleY(1.33333);
   transform: rotate(90deg);
   transition: all 0.5s ease-out;
