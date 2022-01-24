@@ -87,6 +87,9 @@
   /* z-index: 3; */
   position: relative;
   transition: all 0.5s linear;
+  /* display: flex;
+  justify-items: center;
+  align-items: center; */
 
  }
 
@@ -103,6 +106,9 @@
   position: relative;
   opacity: .5;
   transition: all 0.5s linear;
+  /* display: flex;
+  justify-items: center;
+  align-items: center; */
 
  }
 
