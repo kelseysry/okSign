@@ -32,12 +32,19 @@
 
 .match_details_discover_under_name {
   color: #fff;
-  font-size: 1.2vw !important;
-  line-height: 0.9em;
   text-shadow: 2px 2px 15px #000000;
   z-index: 5;
   padding-left: 30px;
   font-weight:900;
+  width: 430px;
+  text-shadow: 1px 1px 3px black;
+  line-height: 30px;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 5px 5px;
+  border-radius: 5px 5px;
+  margin-top: 30px;
+  color: white;
 }
 
 

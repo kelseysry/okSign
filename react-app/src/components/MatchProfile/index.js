@@ -25,6 +25,7 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
   let matchProfileId = matchProfileObj[0]?.user_id
 
   console.log("userIdsPercentsObj", userIdsPercentsObj)
+  console.log("idx in match profile", idx)
 
   const getNumberAnswerAccept = (userIdsPercentsObj, matchProfileId) => {
     let profileNumQuestion =  userIdsPercentsObj.filter(profile => profile[0] === matchProfileId);
@@ -33,7 +34,7 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
 
   let numberAnswerAccept =  getNumberAnswerAccept(userIdsPercentsObj, matchProfileId)
 
-  console.log("numberAnswerAccept", numberAnswerAccept)
+  // console.log("numberAnswerAccept", numberAnswerAccept)
 
   // this profile_id value is actually the user.id, bad naming on my part haha
   // let profile_id = userIdPercentObj[0]
@@ -50,12 +51,12 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
   const conversationsObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationsObj)[0]
 
+  // console.log("correctNumberMatches match profile", correctNumberMatches)
+
+  // console.log("matchProfileobj", matchProfileObj)
 
 
-  console.log("matchProfileobj", matchProfileObj)
-
-
-  console.log("ppnavigateClick", navigateClick)
+  // console.log("ppnavigateClick", navigateClick)
 
   useEffect(async () => {
 
@@ -228,14 +229,14 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
       </section>
 
 
-      {/* <div className={idx === correctNumberMatches?.length ? `displayFinalItem` : `displayNothing`}>
+      <div className={idx === userIdsPercentsObj?.length -1 ? `displayFinalItem` : `displayNothing`}>
           <div className="lastImage">
             <img src={pictures.collection[12].imageUrl} />
           </div>
           <div className="lastImageChat">
             No more matches! Please swipe back! ⬅️
           </div>
-      </div> */}
+      </div>
 
 
       </>

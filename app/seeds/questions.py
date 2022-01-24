@@ -153,6 +153,7 @@ def seed_questions():
     db.session.add(query2)
     db.session.add(query3)
     db.session.add(query4)
+    db.session.add(query5)
     db.session.add(query6)
 
 
