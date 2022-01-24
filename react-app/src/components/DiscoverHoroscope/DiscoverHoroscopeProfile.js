@@ -13,7 +13,7 @@ import { NavLink } from "react-router-dom";
 import './DiscoverHoroscopeSlide.css'
 
 
-const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}) => {
+const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick, horoscopeMatchesGenderPrefer}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 
@@ -23,8 +23,8 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
   const [defaultImg, setDefaultImage] = useState(0);
   const [picNum, setPicNum] = useState('')
 
+  console.log("navigateClick", navigateClick)
 
-  // console.log("profile🤠🤠🤠🤠🤠🤠🤠🤠🤠🤠-------------", profile)
 
 
   // this profile_id value is actually the user.id, bad naming on my part haha
@@ -40,7 +40,6 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
   const conversationsObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationsObj)[0]
 
-  // console.log("conversations-------", conversations)
 
   useEffect(async () => {
 
@@ -183,7 +182,11 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
             onAnimationEnd={() => setSlide(0)}>
             <div className="userNameCursive">{getUserName(profile?.user_id)}</div>
             <div className="match_details_discover_under_name"> {profile?.age} | {getHoroscope(profile?.horoscope_id)}</div>
-            <div className="horoscope-content-slide">{horoscopeContent}</div>
+            <div className="horoscope-content-slide">
+
+              {horoscopeContent?.length  > 50 ? `${horoscopeContent.slice(0, 200)}...click to find out more about ${getUserName(profile?.user_id)}!` : horoscopeContent}
+
+            </div>
           </div>
         </>
         ): null
@@ -284,6 +287,10 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick}
               </div>
          </div>
       </section>
+      <div className={idx === horoscopeMatchesGenderPrefer?.length -1? `displayFinalItem` : `displayNothing`}>
+
+      </div>
+
       </>
 
       )

@@ -12,8 +12,9 @@
 .defaultImageHoroscope {
   border-radius: 3px;
   margin-left: 5px;
-  width: 600px;
-  height: 600px;
+  /* width: 300px;
+  height: 300px; */
+  width: 100%;
   display: inline-block;
   object-fit: cover;
   filter: blur(4px);
@@ -32,7 +33,7 @@
 
 
 .horoscope-content-slide {
-  width: 700px;
+  width: 450px;
   text-shadow: 1px 1px 3px black;
   line-height: 30px;
   font-size: 16px;

@@ -24,10 +24,20 @@
   position: relative;
 }
 
+.displayNothing {
+  display: none;
+}
+
+.displayFinalItem {
+  display: block;
+  background-color: burlywood;
+  width: 800px;
+  height: 300px;
+}
 
 .left{
   position: absolute;
-  left: 0px;
+  left: 200px;
   height: 50%;
   z-index: 5;
   width: 16%;
@@ -36,11 +46,11 @@
 
  .right{
   position: absolute;
-  top: 40px;
+  top: 150px;
   height: 50% !important;
   z-index: 5;
   width: 16%;
-  right: 0;
+  right: 250px;
   background-color: pink;
  }
 
@@ -159,10 +169,10 @@
 
   .userPhotoMatch-first_D {
     position: absolute;
-    top: 0;
+    top: 40px;
     left: 50%;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     background: #ebedf2;
     border-radius: 50%;
     background-size: contain;
@@ -172,10 +182,10 @@
 
   .userPhotoMatch-last_D {
     position: absolute;
-    top: 0;
-    left: 50%;
-    width: 150px;
-    height: 150px;
+    top: 40px;
+    left:-30px;
+    width: 100px;
+    height: 100px;
     background: #ebedf2;
     border-radius: 50%;
     background-size: contain;
@@ -185,11 +195,9 @@
 
   }
 
-
-
 .matchPercentCircle_D {
   position: absolute;
-  left: 50%;
+  left: -35px;
   transform: translate(-19%, 105px);
   width: 77px;
   height: 77px;
@@ -219,4 +227,9 @@ display: block;
 #user-profile-not-exist {
   display: none;
 
+  }
+
+
+  .IconImagesContainer {
+    z-index: 5;
   }

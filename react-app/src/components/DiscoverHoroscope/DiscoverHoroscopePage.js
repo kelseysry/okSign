@@ -55,7 +55,7 @@ const DiscoverHoroscope = () => {
   const handleLeftClick = (e) => {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
-    left.scrollLeft -= 850;
+    left.scrollLeft -= 650;
     setSlide(1)
     if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
@@ -68,7 +68,7 @@ const DiscoverHoroscope = () => {
   const handleRightClick = (e) => {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
-     right.scrollLeft += 850;
+     right.scrollLeft += 650;
      setSlide(1)
      if(navigateClick < horoscopeMatchesGenderPrefer?.length -1) {
       setNavigateClick(navigateClick += 1)
@@ -120,12 +120,17 @@ const DiscoverHoroscope = () => {
 
 
       <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
-            {horoscopeMatchesGenderPrefer?.map((profile, idx) =>
-                <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
-                    <DiscoverHoroscopeProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile}/>
-                </div>
-              )}
+        {horoscopeMatchesGenderPrefer?.map((profile, idx) =>
+            <div  className={navigateClick === idx? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
+                <DiscoverHoroscopeProfile horoscopeMatchesGenderPrefer={horoscopeMatchesGenderPrefer} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile}/>
+            </div>
+          )}
+
+
         </div>
+
+
+
 
         <button
         id="next-profile"

@@ -174,19 +174,17 @@ if(currentUserQuestion) {
     return array
   }
 
-  console.log("userIdsPercentsObj",userIdsPercentsObj)
 
   let correctNumberMatches = getMatchProfilesCount(userIdsPercentsObj)
 
-  console.log("AAAAAAAAcorrectNumberMatches",correctNumberMatches)
 
   let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
-  // console.log("currentUserGenderPreference??????", currentUserGenderPreference)
 
 
   let correctNumberMatchesAndGender = correctNumberMatches.filter((matchProfile) => matchProfile[0]?.gender_id  === currentUserGenderPreference)
 
-  // console.log("correctNumberMatchesAndGender", correctNumberMatchesAndGender)
+
+
 
   const handleLeftClick = (e) => {
     e.preventDefault();
@@ -214,6 +212,8 @@ if(currentUserQuestion) {
        return navigateClick
      }
   }
+
+
 
   let content2;
   content2 = (
@@ -321,8 +321,6 @@ console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
 
   let loading;
 
-  console.log("isLoaded", isLoaded)
-  console.log("currentUserProfile.oneProfile.length ",currentUserProfile?.oneProfile?.length )
 
   loading = (
 
