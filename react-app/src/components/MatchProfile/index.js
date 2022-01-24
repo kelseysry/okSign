@@ -151,8 +151,12 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
             slide={slide}
             onClick={() => setSlide(idx)}
             onAnimationEnd={() => setSlide(0)}>
-            <div className="userNameCursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
-            <div className="match_details_discover_under_name"> {matchProfileObj[0]?.age} | {matchProfileObj[0]?.about_me}</div>
+              <NavLink
+                to={`/matchProfile/${matchProfileObj[0]?.user_id}`} // userIdPercentObj[0] is the user.id
+              >
+                <div className="userNameCursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
+                <div className="match_details_discover_under_name"> {matchProfileObj[0]?.age} | {matchProfileObj[0]?.about_me}</div>
+              </NavLink>
           </div>
         </>
         ): null
@@ -161,13 +165,13 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
         <div className="oneMatchProfileContainer">
 
             <section  className='ImageContainer'>
-                        <NavLink
+              <NavLink
                 to={`/matchProfile/${matchProfileObj[0]?.user_id}`} // userIdPercentObj[0] is the user.id
               >
                     <div className='defaultImage'>
                       {defaultImg === 0 ? <img src={matchProfileObj[0]?.image_url1} alt='default photo' className='defaultImage'></img> :  <img src={defaultImg} alt='default photo' className="defaultImage"></img>}
                     </div>
-                </NavLink>
+              </NavLink>
                     <div className='IconImagesContainer'>
                         <div>
                           <img src={matchProfileObj[0]?.image_url1} alt='photo 1' className="iconImg"

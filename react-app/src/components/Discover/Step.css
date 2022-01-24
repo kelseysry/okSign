@@ -8,6 +8,7 @@
   /* border-right: 160px solid transparent; */
   flex-shrink: 0;
   height: 700px !important;
+  align-self:center;
 }
 
 
