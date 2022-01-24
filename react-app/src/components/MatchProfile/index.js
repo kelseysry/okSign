@@ -227,14 +227,15 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
          </div>
       </section>
 
-      <div className={idx === correctNumberMatches?.length +1 ? `displayFinalItem` : `displayNothing`}>
+
+      {/* <div className={idx === correctNumberMatches?.length ? `displayFinalItem` : `displayNothing`}>
           <div className="lastImage">
             <img src={pictures.collection[12].imageUrl} />
           </div>
           <div className="lastImageChat">
             No more matches! Please swipe back! ⬅️
           </div>
-      </div>
+      </div> */}
 
 
       </>

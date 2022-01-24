@@ -15,12 +15,27 @@ def seed_users():
     user4 = User(
      first_name='Zero', last_name='Kiryu', username='Zero', email='zero@aol.com', password='password')
 
+    user5 = User(
+     first_name='L',
+     last_name='Lawliet',
+     username='LLawliet',
+     email='lawliet@aol.com',
+     password='password')
+
+    user6 = User(
+     first_name='Kakashi',
+     last_name='Hatake',
+     username='Kakashi',
+     email='kakashi@aol.com',
+     password='password')
 
 
     db.session.add(demo)
     db.session.add(user2)
     db.session.add(user3)
     db.session.add(user4)
+    db.session.add(user5)
+    db.session.add(user6)
 
     db.session.commit()
 

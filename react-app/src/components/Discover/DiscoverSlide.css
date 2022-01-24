@@ -204,6 +204,10 @@
     background-size: contain;
     box-shadow: 0 0 0 5px #fff;
     transform: translateX(-94px);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
   }
 
   .userPhotoMatch-last_D {
@@ -218,6 +222,9 @@
     box-shadow: 0 0 0 5px #fff;
     transform: translateX(25px);
     overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
   }
 
