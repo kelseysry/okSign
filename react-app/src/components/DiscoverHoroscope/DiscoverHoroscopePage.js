@@ -102,7 +102,7 @@ const DiscoverHoroscope = () => {
 
       <button
           id="go-back"f
-          className="left"
+          className={slide === 1? `noLeft` : `left` }
           onClick={handleLeftClick}
           onAnimationEnd={() => setSlide(0)}
           slide={slide}
