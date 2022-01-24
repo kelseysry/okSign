@@ -301,7 +301,7 @@ if(currentUserQuestion) {
                   {correctNumberMatchesAndGender?.map((correctNumberMatches, idx) =>
                       correctNumberMatchesAndGender?.length ?
                     <>
-                      <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
+                      <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatchesAndGender={correctNumberMatchesAndGender} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
                     </>
                       : null
                     )}

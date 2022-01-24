@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
 import pictures from "../../data/pictures";
 
 import './DiscoverPics.css'
-const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide, idx, navigateClick}) => {
+const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide, idx, navigateClick, correctNumberMatchesAndGender}) => {
   const dispatch = useDispatch()
   const history = useHistory();
 
@@ -231,7 +231,7 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
       </section>
 
 
-      <div className={idx === userIdsPercentsObj?.length -1 ? `displayFinalItem` : `displayNothing`}>
+      <div className={idx === correctNumberMatchesAndGender?.length -1 ? `displayFinalItem` : `displayNothing`}>
           <div className="lastImage">
             <img src={pictures.collection[12].imageUrl} />
           </div>
