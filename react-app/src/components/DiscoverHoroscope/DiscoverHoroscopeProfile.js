@@ -179,13 +179,16 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
             slide={slide}
             onClick={() => setSlide(idx)}
             onAnimationEnd={() => setSlide(0)}>
-            <div className="userNameCursive">{getUserName(profile?.user_id)}</div>
-            <div className="match_details_discover_under_name"> {profile?.age} | {getHoroscope(profile?.horoscope_id)}</div>
-            <div className="horoscope-content-slide">
 
-              {horoscopeContent?.length  > 50 ? `${horoscopeContent.slice(0, 200)}...click to find out more about ${getUserName(profile?.user_id)}!` : horoscopeContent}
-
-            </div>
+            <NavLink
+                to={`/matchProfile/${profile?.user_id}`} // userIdPercentObj[0] is the user.id
+            >
+              <div className="userNameCursive">{getUserName(profile?.user_id)}</div>
+              <div className="match_details_discover_under_name"> {profile?.age} | {getHoroscope(profile?.horoscope_id)}</div>
+              <div className="horoscope-content-slide">
+                {horoscopeContent?.length  > 50 ? `${horoscopeContent.slice(0, 200)}...click to find out more about ${getUserName(profile?.user_id)}!` : horoscopeContent}
+              </div>
+            </NavLink>
           </div>
         </>
         ): null
@@ -194,7 +197,7 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
         <div className="oneMatchProfileContainer">
 
             <section className='ImageContainer'>
-                        <NavLink
+            <NavLink
                 to={`/matchProfile/${profile?.user_id}`} // userIdPercentObj[0] is the user.id
               >
 
@@ -205,7 +208,7 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
                     }
                 </section>
 
-                </NavLink>
+            </NavLink>
                     <div className='IconImagesContainer'>
                         <div key={0}>
                           <img src={profile?.image_url1} alt='photo 1' className="iconImg"
@@ -266,9 +269,12 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
             </section>
 
 
+
               <div className="MatchProfileInnerContainer_D">
                   {
                     idx === navigateClick?
+
+
                     <div
                       className={`slide`+idx}
                       slide={slide}
@@ -282,6 +288,7 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
                         </div>
 
                     </div>
+
                   : null }
               </div>
          </div>
