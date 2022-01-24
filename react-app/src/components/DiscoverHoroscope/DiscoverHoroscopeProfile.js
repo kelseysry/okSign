@@ -23,7 +23,6 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
   const [defaultImg, setDefaultImage] = useState(0);
   const [picNum, setPicNum] = useState('')
 
-  console.log("navigateClick", navigateClick)
 
 
 

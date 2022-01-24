@@ -55,3 +55,22 @@ export function AboutModal({ onClose, children }) {
     modalNode
   );
 }
+
+
+export function SwipeInstructionModal({ onClose, children }) {
+  const modalNode = useContext(ModalContext);
+ if (!modalNode) return null;
+
+ return ReactDOM.createPortal(
+
+   <div id='modal'>
+
+     <div id='modal-background' onClick={onClose} />
+     <div id='modal-content' style={{ backgroundImage: `url('${pictures.collection[6].imageUrl}')` }}>
+       {children}
+
+       </div>
+   </div>,
+   modalNode
+ );
+}

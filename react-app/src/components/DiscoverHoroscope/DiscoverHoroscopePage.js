@@ -5,6 +5,7 @@ import DiscoverHoroscopeProfile from "./DiscoverHoroscopeProfile";
 import { useDiscoverContent } from "../../context/DiscoverContentContext";
 import pictures from "../../data/pictures";
 import horoscopePics from "../../data/horoscopePics";
+import { Modal, SwipeInstructionModal } from "../../context/Modal";
 
 const DiscoverHoroscope = () => {
 
@@ -15,6 +16,8 @@ const DiscoverHoroscope = () => {
   const [currentUserProfile, setCurrentUserProfile] = useState();
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
+
+  const [showModal, setShowModal] = useState(false);
 
 
   useEffect(() => {
@@ -77,6 +80,19 @@ const DiscoverHoroscope = () => {
      }
   }
 
+
+  const handleRightClickAfterModal = () => {
+    // e.preventDefault();
+    const right = document.querySelector('#discoverProfile');
+     right.scrollLeft += 650;
+     setSlide(1)
+     if(navigateClick < horoscopeMatchesGenderPrefer?.length -1) {
+      setNavigateClick(navigateClick += 1)
+     } else {
+       return navigateClick
+     }
+  }
+
   let content;
 
   if (profiles?.length && checkUserHasProfile?.length) {
@@ -111,11 +127,33 @@ const DiscoverHoroscope = () => {
             <div className={discoverContent === 'HoroscopeMatch' ? 'hideClickMe' : 'DiscoverStepClick2' }
             >Click Me</div>
             <button className="img-stairs-horoscope"
-              onClick={handleRightClick}
+              // onClick={handleRightClick}
+              onClick={() => {
+                setShowModal(true)}
 
+              }
             >
               <img src={horoscopePics.collection[(currentUserProfile?.oneProfile[0]?.horoscope_id)-1]?.imageUrl} />
               </button>
+            {showModal && (
+              <SwipeInstructionModal onClose={() => {
+                setShowModal(false)
+                handleRightClickAfterModal()
+              }}>
+
+                <section className="InstructionsContainer">
+                  <div className="instructionsHeader">Instructions</div>
+                  <div className="instructionsContent">Click on the center picture to see a user's profile</div>
+                  <div className="instructionsImgContainer">
+                  <div className="leftSwipe"><span className="instructionsEmoji">🧐</span> Click to the left of the center picture to see the previous user</div>
+                  <div className="rightSwipe"><span className="instructionsEmoji">🥱</span> Click to the right of the center picture to see the next user</div>
+
+                    <img class="instructionsImg" src={pictures.collection[13].imageUrl} />
+                  </div>
+
+                </section>
+              </SwipeInstructionModal>
+            )}
           </section>
 
 

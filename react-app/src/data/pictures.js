@@ -55,6 +55,11 @@ const pictures = {
       "imageNumber":"12",
       "name":"no_more_matches",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643003581/okSign/no_more_matches_opndgx.png"
+    },
+    {
+      "imageNumber":"13",
+      "name":"instructions",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643007785/okSign/instructions_hdtcme.png"
     }
   ]
 
