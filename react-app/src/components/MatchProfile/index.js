@@ -25,6 +25,7 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
   let matchProfileId = matchProfileObj[0]?.user_id
 
   console.log("userIdsPercentsObj", userIdsPercentsObj)
+  console.log("idx in match profile", idx)
 
   const getNumberAnswerAccept = (userIdsPercentsObj, matchProfileId) => {
     let profileNumQuestion =  userIdsPercentsObj.filter(profile => profile[0] === matchProfileId);
@@ -33,7 +34,7 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
 
   let numberAnswerAccept =  getNumberAnswerAccept(userIdsPercentsObj, matchProfileId)
 
-  console.log("numberAnswerAccept", numberAnswerAccept)
+  // console.log("numberAnswerAccept", numberAnswerAccept)
 
   // this profile_id value is actually the user.id, bad naming on my part haha
   // let profile_id = userIdPercentObj[0]
@@ -50,12 +51,12 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
   const conversationsObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationsObj)[0]
 
+  // console.log("correctNumberMatches match profile", correctNumberMatches)
+
+  // console.log("matchProfileobj", matchProfileObj)
 
 
-  console.log("matchProfileobj", matchProfileObj)
-
-
-  console.log("ppnavigateClick", navigateClick)
+  // console.log("ppnavigateClick", navigateClick)
 
   useEffect(async () => {
 
@@ -155,7 +156,9 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
                 to={`/matchProfile/${matchProfileObj[0]?.user_id}`} // userIdPercentObj[0] is the user.id
               >
                 <div className="userNameCursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
-                <div className="match_details_discover_under_name"> {matchProfileObj[0]?.age} | {matchProfileObj[0]?.about_me}</div>
+                <div className="match_details_discover_under_name_Age"> {matchProfileObj[0]?.age} | {matchProfileObj[0]?.occupation}</div>
+                <div className="match_details_discover_under_name"> {matchProfileObj[0]?.about_me}</div>
+
               </NavLink>
           </div>
         </>
@@ -227,7 +230,8 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
          </div>
       </section>
 
-      <div className={idx === correctNumberMatches?.length +1 ? `displayFinalItem` : `displayNothing`}>
+
+      <div className={idx === userIdsPercentsObj?.length -1 ? `displayFinalItem` : `displayNothing`}>
           <div className="lastImage">
             <img src={pictures.collection[12].imageUrl} />
           </div>

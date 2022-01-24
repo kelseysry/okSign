@@ -186,7 +186,9 @@ if(currentUserQuestion) {
   let correctNumberMatchesAndGender = correctNumberMatches.filter((matchProfile) => matchProfile[0]?.gender_id  === currentUserGenderPreference)
 
 
+  // console.log("correctNumberMatches",correctNumberMatches)
 
+  // console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
 
   const handleLeftClick = (e) => {
     e.preventDefault();
@@ -227,6 +229,7 @@ if(currentUserQuestion) {
        return navigateClick
      }
   }
+
 
 
   let content2;
