@@ -11,7 +11,7 @@ import { horoscopeContent } from "./getHoroScopeMatchPercent";
 import './DiscoverHoroscope.css'
 import { NavLink } from "react-router-dom";
 import './DiscoverHoroscopeSlide.css'
-
+import pictures from "../../data/pictures";
 
 const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick, horoscopeMatchesGenderPrefer}) => {
   const dispatch = useDispatch()
@@ -289,7 +289,7 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
       </section>
       <div className={idx === horoscopeMatchesGenderPrefer?.length -1? `displayFinalItem` : `displayNothing`}>
           <div className="lastImage">
-            You reached final 
+            <img src={pictures.collection[12].imageUrl} />
           </div>
       </div>
 

@@ -30,18 +30,17 @@
 
 .displayFinalItem {
   display: block;
-  background-color: burlywood;
+  /* background-color: burlywood; */
   width: 800px;
   height: 300px;
   /* position: relative; */
 }
 
 .lastImage{
-  background-color: coral;
   width: 200px;
   height: 200px;
   top: 30px;
-  right: 50px;
+  right: 270px;
   position: absolute;
 }
 
@@ -51,7 +50,7 @@
   height: 50%;
   z-index: 5;
   width: 16%;
-  background-color: blue;
+  /* background-color: blue; */
  }
 
  .right{
@@ -61,7 +60,7 @@
   z-index: 5;
   width: 16%;
   right: 250px;
-  background-color: pink;
+  /* background-color: pink; */
  }
 
  .one-discover-profile {
