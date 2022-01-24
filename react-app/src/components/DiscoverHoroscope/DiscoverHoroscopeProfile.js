@@ -184,7 +184,7 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
                 to={`/matchProfile/${profile?.user_id}`} // userIdPercentObj[0] is the user.id
             >
               <div className="userNameCursive">{getUserName(profile?.user_id)}</div>
-              <div className="match_details_discover_under_name"> {profile?.age} | {getHoroscope(profile?.horoscope_id)}</div>
+              <div className="match_details_discover_under_name_Age"> {profile?.age} | {getHoroscope(profile?.horoscope_id)}</div>
               <div className="horoscope-content-slide">
                 {horoscopeContent?.length  > 50 ? `${horoscopeContent.slice(0, 200)}...click to find out more about ${getUserName(profile?.user_id)}!` : horoscopeContent}
               </div>
@@ -290,7 +290,7 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
               </div>
          </div>
       </section>
-      
+
       <div className={idx === horoscopeMatchesGenderPrefer?.length -1? `displayFinalItem` : `displayNothing`}>
           <div className="lastImage">
             <img src={pictures.collection[12].imageUrl} />

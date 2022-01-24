@@ -156,7 +156,9 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
                 to={`/matchProfile/${matchProfileObj[0]?.user_id}`} // userIdPercentObj[0] is the user.id
               >
                 <div className="userNameCursive">{getUserName(matchProfileObj[0]?.user_id)}</div>
-                <div className="match_details_discover_under_name"> {matchProfileObj[0]?.age} | {matchProfileObj[0]?.about_me}</div>
+                <div className="match_details_discover_under_name_Age"> {matchProfileObj[0]?.age} | {matchProfileObj[0]?.occupation}</div>
+                <div className="match_details_discover_under_name"> {matchProfileObj[0]?.about_me}</div>
+
               </NavLink>
           </div>
         </>
