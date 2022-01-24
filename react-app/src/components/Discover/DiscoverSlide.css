@@ -44,6 +44,17 @@
   position: absolute;
 }
 
+.lastImageChat {
+  color: #FFBD4A;
+  top: -30px;
+  right: 280px;
+  position: absolute;
+  width: 120px;
+  padding: 80px 0;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+
 .left{
   position: absolute;
   left: 200px;

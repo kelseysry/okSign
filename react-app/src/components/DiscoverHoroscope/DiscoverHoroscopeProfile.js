@@ -291,64 +291,15 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
           <div className="lastImage">
             <img src={pictures.collection[12].imageUrl} />
           </div>
+          <div className="lastImageChat">
+            No more matches! Please swipe back! ⬅️
+          </div>
       </div>
 
       </>
 
       )
     }
-
-
-    {/* { isLoaded && (
-      <>
-      <div className="oneMatchProfileContainer">
-          <div className="oneMatchProfileContainerHeader">
-            {getUserName(profile?.user_id)}
-            <div className="matchButtonsContainer">
-              <button
-              className="matchButton"
-              onClick={() => {handleCreateConversation(profile?.user_id)}}
-              >Message  <i className="far fa-comment-dots"></i></button>
-
-
-            </div>
-
-          </div>
-
-          <div className="match_profile_images_container">
-            <img className="match_profile_image_discover" src={profile?.image_url1} alt="match_image"/>
-            <img className="match_profile_image_discover" src={profile?.image_url2} alt="match_image"/>
-            <img className="match_profile_image_discover_noP" src={profile?.image_url3} alt="match_image"/>
-          </div>
-
-
-          <div className="matchPercentContainer">
-            <div className="matchContainerHeader">
-              {getHoroscope(userProfileObj[0]?.horoscope_id)} and {getHoroscope(profile?.horoscope_id)}
-
-            </div>
-            <div className="MatchProfileInnerContainer_Horoscope">
-              <div className="circlesContainer_H">
-                <div className="userPhotoMatch-first_H" style={{ backgroundImage: `url('${userProfileObj[0]?.image_url1}')` }}></div>
-                <div className="userPhotoMatch-last_H" style={{ backgroundImage: `url('${profile?.image_url1}')` }}></div>
-                <div className="matchPercentCircle_H">{getHoroscopeMatchPercent(profile.horoscope_id,userProfileObj[0]?.horoscope_id)}%<div><i className="fas fa-heart"></i>&nbsp;</div></div>
-              </div>
-              <div className="horoscopeContent">
-                  {horoscopeContent}
-
-                  <hr className="fancy"></hr>
-              </div>
-            </div>
-
-          </div>
-
-      </div>
-      <hr></hr>
-      </>
-
-      )
-    } */}
-
     </>
 
   )
