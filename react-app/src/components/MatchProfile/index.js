@@ -8,6 +8,7 @@ import { useHistory } from 'react-router';
 import { getConversations, clearConversation } from "../../store/conversation";
 import { getProfiles } from "../../store/profile";
 import { NavLink } from "react-router-dom";
+import pictures from "../../data/pictures";
 
 import './DiscoverPics.css'
 const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide, idx, navigateClick}) => {
@@ -221,6 +222,17 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
               </div>
          </div>
       </section>
+
+      <div className={idx === correctNumberMatches?.length ? `displayFinalItem` : `displayNothing`}>
+          <div className="lastImage">
+            <img src={pictures.collection[12].imageUrl} />
+          </div>
+          <div className="lastImageChat">
+            No more matches! Please swipe back! ⬅️
+          </div>
+      </div>
+
+
       </>
 
 

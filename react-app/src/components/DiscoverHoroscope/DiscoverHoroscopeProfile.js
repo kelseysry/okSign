@@ -226,10 +226,7 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
                               setDefaultImage(profile?.image_url2)
                               setPicNum(1)
                             }
-
-
-                            }
-
+                          }
                             ></img>
                         </div>
 
@@ -293,6 +290,7 @@ const DiscoverHoroscopeProfile = ({profile, slide, setSlide, idx, navigateClick,
               </div>
          </div>
       </section>
+      
       <div className={idx === horoscopeMatchesGenderPrefer?.length -1? `displayFinalItem` : `displayNothing`}>
           <div className="lastImage">
             <img src={pictures.collection[12].imageUrl} />

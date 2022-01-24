@@ -11,6 +11,7 @@ import pictures from "../../data/pictures";
 import './DiscoverSlide.css'
 import '../MatchProfile/DiscoverPics.css'
 import './Step.css'
+import {SwipeInstructionModal } from "../../context/Modal";
 
 const darkImage = pictures.collection[6].imageUrl
 const lightImage = pictures.collection[6].imageUrl
@@ -39,6 +40,7 @@ const Discover = () => {
   const sessionUser = useSelector((state) => state?.session);
   const user_id = sessionUser?.user.id
 
+  const [showModal, setShowModal] = useState(false);
 
 
   useEffect(() => {
@@ -190,7 +192,7 @@ if(currentUserQuestion) {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
     // left.scrollLeft -= 1100;
-    left.scrollLeft -= 850;
+    left.scrollLeft -= 650;
     setSlide(1)
     if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
@@ -203,7 +205,7 @@ if(currentUserQuestion) {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
     //  right.scrollLeft += 1100;
-    right.scrollLeft += 850;
+    right.scrollLeft += 650;
      setSlide(1)
      if(navigateClick < correctNumberMatchesAndGender?.length -1) {
       setNavigateClick(navigateClick += 1)
@@ -214,23 +216,32 @@ if(currentUserQuestion) {
   }
 
 
+  const handleRightClickAfterModal = () => {
+    // e.preventDefault();
+    const right = document.querySelector('#discoverProfile');
+     right.scrollLeft += 650;
+     setSlide(1)
+     if(navigateClick < correctNumberMatchesAndGender?.length -1) {
+      setNavigateClick(navigateClick += 1)
+     } else {
+       return navigateClick
+     }
+  }
+
 
   let content2;
   content2 = (
     <DiscoverHoroscope />
   )
 
-console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
-
-
   let content;
   if (currentUserQuestion?.length && currentUserProfile?.oneProfile)  {
     content = (
         <>
-          <section className="DiscorContentContainer">
+          <section className="DiscoverContentContainer">
 
             <button
-                id="go-back"f
+                id="go-back"
                 className={slide === 1? `noLeft` : `left` }
                 onClick={handleLeftClick}
                 onAnimationEnd={() => setSlide(0)}
@@ -256,50 +267,40 @@ console.log("correctNumberMatchesAndGender",correctNumberMatchesAndGender)
               onClick={()=> setDiscoverContent('HoroscopeMatch')}
               >Click Me</div>
               <button className="img-stairs"
-              onClick={handleRightClick}
+              onClick={() => {
+                setShowModal(true)}
+                }
               >
               <img src={pictures.collection[10].imageUrl} />
               </button>
+              {showModal && (
+              <SwipeInstructionModal onClose={() => {
+                setShowModal(false)
+                handleRightClickAfterModal()
+              }}>
+
+                <section className="InstructionsContainer">
+                  <div className="instructionsHeader">Instructions</div>
+                  <div className="instructionsContent">Click on the center picture to see a user's profile</div>
+                  <div className="instructionsImgContainer">
+                  <div className="leftSwipe"><span className="instructionsEmoji">🧐</span> Click to the left of the center picture to see the previous user</div>
+                  <div className="rightSwipe"><span className="instructionsEmoji">🥱</span> Click to the right of the center picture to see the next user</div>
+
+                    <img class="instructionsImg" src={pictures.collection[13].imageUrl} />
+                  </div>
+
+                </section>
+              </SwipeInstructionModal>
+            )}
             </section>
 
             <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                   {correctNumberMatchesAndGender?.map((correctNumberMatches, idx) =>
                       correctNumberMatchesAndGender?.length ?
-
                     <>
-
-                    {/* <section className="profile-and-buttons">
-
-                      <button
-                      id="go-back"f
-                      className="left"
-                      onClick={handleLeftClick}
-                      onAnimationEnd={() => setSlide(0)}
-                      slide={slide}
-                      >
-                      <span className="hide-button">⬅️</span>
-                      </button> */}
-
                       <MatchProfile userIdsPercentsObj={userIdsPercentsObj} correctNumberMatches={correctNumberMatches?.length} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} correctNumberMatches={correctNumberMatches}/>
-
-                      {/* <button
-                      id="next-profile"
-                      className="right"
-                          onClick={handleRightClick}
-                          onAnimationEnd={() => setSlide(0)}
-                          slide={slide}
-                      >
-                        <span className="hide-button">➡️</span>
-                      </button>
-
-
-                    </section> */}
-
-
                     </>
-
-
-                          : null
+                      : null
                     )}
             </div>
 

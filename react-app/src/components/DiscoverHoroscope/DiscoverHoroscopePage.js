@@ -5,7 +5,7 @@ import DiscoverHoroscopeProfile from "./DiscoverHoroscopeProfile";
 import { useDiscoverContent } from "../../context/DiscoverContentContext";
 import pictures from "../../data/pictures";
 import horoscopePics from "../../data/horoscopePics";
-import { Modal, SwipeInstructionModal } from "../../context/Modal";
+import {SwipeInstructionModal } from "../../context/Modal";
 
 const DiscoverHoroscope = () => {
 
@@ -48,8 +48,6 @@ const DiscoverHoroscope = () => {
     return profile.user_id !== user_id
   })
 
-
-  console.log("currentUserProfile?.oneProfile?",currentUserProfile?.oneProfile.length)
 
   let currentUserGenderPreference = currentUserProfile?.oneProfile[0]?.gender_preference_id
 
@@ -101,7 +99,7 @@ const DiscoverHoroscope = () => {
     <section className="DiscoverContentContainer">
 
       <button
-          id="go-back"f
+          id="go-back"
           className={slide === 1? `noLeft` : `left` }
           onClick={handleLeftClick}
           onAnimationEnd={() => setSlide(0)}
