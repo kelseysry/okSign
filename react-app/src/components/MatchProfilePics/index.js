@@ -232,7 +232,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
                             <div className="heart-text">
                                 <i class="fas fa-heart"></i>
                                 {/* {profile?.number_likes} */}
-                                {profileC? profileC?.oneProfile[0]?.number_likes : null}
+                                {profileC?.oneProfile? profileC?.oneProfile[0]?.number_likes : null}
                                 {/* <div>{profileSel[1]?.liked }</div> */}
                             </div>
                           </button>

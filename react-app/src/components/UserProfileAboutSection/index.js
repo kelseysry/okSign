@@ -12,12 +12,15 @@ import { getPartners } from '../../store/partner';
 import { getOrientations } from '../../store/orientation';
 import './UserProfileAboutSection.css'
 import Player from '../Player';
+import pictures from '../../data/pictures';
+import { useHistory } from 'react-router';
 
 function UserProfileAboutSection(currentUserProfile) {
   const dispatch = useDispatch()
 
   // console.log("currentProfile", currentUserProfile)
 
+  const history = useHistory();
 
   let currentProfile = currentUserProfile.currentUserProfile
 
@@ -193,14 +196,17 @@ function UserProfileAboutSection(currentUserProfile) {
     }
   }
 
+  const handleGoToDiscover = async(e) => {
+    e.preventDefault();
+    history.push(`/`)
+
+  }
+
 
   return (
     <>
-
-
-      <div className="step-background">
-
-      <section className="step-containe">
+      {/* <div className="step-background">
+        <section className="step-containe">
           <div className="Step11">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
           <div className="Step22">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
           <div className="Step33">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
@@ -208,11 +214,8 @@ function UserProfileAboutSection(currentUserProfile) {
           <div className="Step55">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
           <div className="Step66">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
           <div className="Step77">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
-
-
         </section>
-
-      </div>
+      </div> */}
 
 
     <div className="match-profile-all-content-all">
@@ -333,6 +336,21 @@ function UserProfileAboutSection(currentUserProfile) {
                 <i class="fas fa-pray"></i> {getReligion(currentProfile[0]?.religion_id)}
               </div>
           </div>
+
+          <div className="slip-container">
+            <img className="slip" src={pictures.collection[17].imageUrl} />
+            <button
+            onClick={handleGoToDiscover}
+            >
+            <img src={pictures.collection[18].imageUrl} />
+              <div className="slip-bubble">Great job on your profile 😊 </div>
+              <div className="slip-bubble2">Let's go discover some</div>
+              <div className="slip-bubble2-5">✨matches✨</div>
+              <div className="slip-bubble3">Click here</div>
+            </button>
+
+          </div>
+
         </section>
         </div>
       </>

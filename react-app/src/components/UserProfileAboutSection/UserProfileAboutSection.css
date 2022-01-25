@@ -227,3 +227,51 @@
   background: -webkit-linear-gradient(rgb(34, 34, 34), rgb(255, 255, 255));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;}
+
+.slip-container {
+  position: relative;
+}
+
+  .slip {
+    width: 320px;
+  }
+
+  .slip-bubble {
+    position: absolute;
+    bottom: 380px;
+    width: 220px;
+    left: 220px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .slip-bubble2 {
+    position: absolute;
+    bottom: 358px;
+    width: 185px;
+    left: 235px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .slip-bubble2-5 {
+    position: absolute;
+    bottom: 335px;
+    width: 185px;
+    left: 235px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .slip-bubble3 {
+    position: absolute;
+    bottom: 315px;
+    width: 185px;
+    left: 235px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+  }
