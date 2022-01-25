@@ -93,6 +93,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
   margin-right: 4px;
+  display: flex;
+  justify-content: space-between;
+  width: 710px;
+}
+
+.conversation-profile-button {
+  color: #ebedf2;
+  font-size: 1.075rem;
+  line-height: 26px;
 }
 
 .profile-asl-age {
