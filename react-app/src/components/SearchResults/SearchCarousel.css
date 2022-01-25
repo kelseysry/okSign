@@ -76,6 +76,14 @@
   color: #d7a041;
   width:800px;
   height:80px;
-  /* background-color: wheat; */
+}
+
+
+
+.img-stairs-search img {
+  position: absolute;
+  left: 500px;
+  top: 130px;
+  width: 250px;
 
 }

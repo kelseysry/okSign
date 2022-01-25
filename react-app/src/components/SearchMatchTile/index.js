@@ -3,9 +3,10 @@ import MatchProfile from "../MatchProfile";
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { GetMatchPercent } from "../../context/CalculatePercent";
+import pictures from "../../data/pictures";
 
 // matchProfile is the entire profile obj for one match
-const SearchMatchTile = ({profile, slide, setSlide, idx, navigateClick}) => {
+const SearchMatchTile = ({searchUserResults, profile, slide, setSlide, idx, navigateClick}) => {
 
   // const [isLoaded, setIsLoaded] = useState(false)
   const [users, setUsers] = useState([]);
@@ -71,7 +72,7 @@ const SearchMatchTile = ({profile, slide, setSlide, idx, navigateClick}) => {
     }
   }
   let percent = getPercent(profile?.user_id)
-  console.log("percent--------------", percent)
+  // console.log("percent--------------", percent)
 
 
   return (
@@ -161,58 +162,17 @@ const SearchMatchTile = ({profile, slide, setSlide, idx, navigateClick}) => {
          </div>
       </section>
 
-
-
-      {/* <div className="oneMatchProfileContainer">
-          <div className="oneMatchProfileContainerHeader">
-            {getUserName(matchProfile.user_id)}
-            <div className="matchButtonsContainer">
-              <button
-              className="matchButton"
-              >Message  <i className="far fa-comment-dots"></i></button>
-
-
-            </div>
-
+      <div className={idx === searchUserResults?.length -1 ? `displayFinalItem` : `displayNothing`}>
+          <div className="lastImage">
+            <img src={pictures.collection[12].imageUrl} />
           </div>
-
-          <div className="match_profile_images_container">
-            <img className="match_profile_image_discover" src={matchProfile?.image_url1} alt="match_image"/>
-            <img className="match_profile_image_discover" src={matchProfile?.image_url2} alt="match_image"/>
-            <img className="match_profile_image_discover_noP" src={matchProfile?.image_url3} alt="match_image"/>
+          <div className="lastImageChat">
+            No more matches! Please swipe back! ⬅️
           </div>
-
-
-          <div className="matchPercentContainer">
-            <div className="matchContainerHeader">
-              You and {getUserName(matchProfile?.user_id)}
-            </div>
-            <div className="MatchProfileInnerContainer">
-              <div className="circlesContainer">
-              { currentUserProfile.oneProfile? <div className="userPhotoMatch-first" style={{ backgroundImage: `url('${currentUserProfile.oneProfile[0]?.image_url1}')` }}></div> : null}
-                <div className="userPhotoMatch-last" style={{ backgroundImage: `url('${matchProfile?.image_url1}')` }}></div>
-                 <div className="matchPercentCircle">
-
-                   {percent? percent[1] : null}0%<div><i className="fas fa-heart"></i>&nbsp;</div>
-
-                  </div>
-              </div>
-              <div className="agreeTable">
-                <div className="agree">
-                  <div>Agree</div>
-                 <div>🥰 {percent? percent[1] : null}</div>
-                </div>
-                <div className="disagree">
-                  <div>Disagree</div>
-                  <div>🙃 {percent? 10 - percent[1] : null}</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
       </div>
-      <hr></hr> */}
+
+
+
       </>
 
       )

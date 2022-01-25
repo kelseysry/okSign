@@ -26,7 +26,7 @@ const SearchCarouselContainer = ({input, searchUserResults, inputExists}) => {
   const handleLeftClick = (e) => {
     e.preventDefault();
     const left = document.querySelector('#discoverProfile');
-    left.scrollLeft -= 1050;
+    left.scrollLeft -= 650;
     setSlide(1)
     if(navigateClick !== -1) {
       setNavigateClick(navigateClick -= 1)
@@ -39,7 +39,7 @@ const SearchCarouselContainer = ({input, searchUserResults, inputExists}) => {
   const handleRightClick = (e) => {
     e.preventDefault();
     const right = document.querySelector('#discoverProfile');
-     right.scrollLeft += 1050;
+     right.scrollLeft += 650;
      setSlide(1)
      if(navigateClick < searchUserResults?.length -1) {
       setNavigateClick(navigateClick += 1)
@@ -83,7 +83,7 @@ const SearchCarouselContainer = ({input, searchUserResults, inputExists}) => {
     <div className="Step3s">for</div>
     <div className="Step5ss">{input}</div>
 
-  <button className="img-stairs"
+  <button className="img-stairs-search"
   onClick={() => {
     setShowModal(true)}
     }
@@ -117,7 +117,7 @@ const SearchCarouselContainer = ({input, searchUserResults, inputExists}) => {
     <div className="discover-profiles-spacer">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
           {searchUserResults?.map((profile, idx) =>
               <div  id={profile?.user_id? `user-profile-exist` : `user-profile-not-exist` } className={navigateClick === idx ? `one-discover-profile` : `one-discover-profile-o` } key={idx}>
-                  <SearchMatchTile setNavigateClick={setNavigateClick} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile} />
+                  <SearchMatchTile searchUserResults={searchUserResults} setNavigateClick={setNavigateClick} navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} profile={profile} />
                   {/* <MatchProfile navigateClick={navigateClick} idx={idx} setSlide={setSlide} slide={slide} userIdPercentObj={userIdPercentObj}/> */}
               </div>
             )}
