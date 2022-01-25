@@ -2,6 +2,7 @@ import { EditMessage } from "../../store/message";
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
+import './EditMessageForm.css'
 
 const EditMessageForm = ({message, hideForm}) => {
   const dispatch = useDispatch();
@@ -61,9 +62,9 @@ const EditMessageForm = ({message, hideForm}) => {
                 >
                 </textarea>
             </label>
-            <ul className="error">
-          {errors.map((error) => <li key={error}>{error}</li>)}
-        </ul>
+            <ul className="errorMessage">
+              {errors.map((error) => <li key={error}>{error}</li>)}
+            </ul>
         <button
           className="edit-message-button-send"
           type="submit"
