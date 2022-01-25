@@ -31,7 +31,7 @@ def seed_profiles():
   pronouns = "she/her",
   height = 165,
   education = "Stanford University",
-  occupation = "Student",
+  occupation = "Software Engineer",
   horoscope_id =11,
   smoking_id = 4,
   drinking_id = 2,
@@ -242,6 +242,89 @@ def seed_profiles():
   politic_id =4
   )
 
+
+  profile7 = Profile(
+  user_id =7,
+  age = 33,
+  location = 'Tokyo, Japan',
+  lat = 32.564373837318826,
+  lng = 130.99184706259172,
+  about_me ="Just like how I work on my physique everyday, I will work to make sure our relationship is STRONG",
+  goal = "To inspire everyone to go to the gym and achieve their dream physique",
+  talent = "I can rip my shirt off by flexing",
+  my_traits ="muscular, CARING, sweet, and not intimidating...",
+  needs = "A sweet gal",
+  hobbies = "Going to gym, making rich protein meals, and helping others!",
+  moments = "When I hit a new PR at the gym :)",
+  secrets = "I don't really like eating vegetables so I make a fruit spinach smoothie every morning to get my daily fiber.",
+  looking_for = "I want someone who will go to the gym with me at 4AM 💪! It's okay if you don't have any experience at the gym, I'm happy to train you!",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =2,
+  gender_preference_id=1,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1643066833/okSign/Screen_Shot_2022-01-24_at_3.27.08_PM_dlecpy.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1643067357/okSign/Screen_Shot_2022-01-24_at_3.35.54_PM_sixr1f.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1643067303/okSign/Screen_Shot_2022-01-24_at_3.35.00_PM_ddd4pp.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1643066867/okSign/Screen_Shot_2022-01-24_at_3.27.44_PM_j5lrsp.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1643067438/okSign/Screen_Shot_2022-01-24_at_3.37.14_PM_kdtyys.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643066819/okSign/Screen_Shot_2022-01-24_at_3.26.53_PM_p1kcy0.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='He/Him',
+  height = 212,
+  education = "Fullmetal Alchemist",
+  occupation ="State Alchemist",
+  religion_id = 10,
+  horoscope_id =2,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
+  profile8 = Profile(
+  user_id =8,
+  age = 30,
+  location = 'Tokyo, Japan',
+  lat = 35.613992589522795,
+  lng = 133.09878124657945,
+  about_me ="Not 6ft but I'm humanity's strongest solidier, and your strongest partner.",
+  goal = "I want to put an end to this recurring nightmare, right now. There are those who would get in my way. But I'm fine playing the role of the lunatic who kills people like that. I have to be ready to rearrange some faces.",
+  talent = "I can take down titans that are 5x my height.",
+  my_traits ="a bit of a clean freak",
+  needs = "I need someone who is also a clean freak. Dust drives me insane",
+  hobbies = "Working on my combat skills and cleaning the house.",
+  moments = "When someone underestimates me because of my height but I prove them wrong",
+  secrets = "Life is short and so am I",
+  looking_for = "Ideal partner should be someone who is well put together.",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =2,
+  gender_preference_id=1,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1643068347/okSign/Screen_Shot_2022-01-24_at_3.52.22_PM_vzu7dx.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1643068525/okSign/Screen_Shot_2022-01-24_at_3.55.20_PM_mtglry.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1643068405/okSign/Screen_Shot_2022-01-24_at_3.53.21_PM_s3ikuv.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1643068472/okSign/Screen_Shot_2022-01-24_at_3.54.29_PM_jjss0u.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1643068456/okSign/Screen_Shot_2022-01-24_at_3.54.12_PM_p9a6yp.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643068536/okSign/Screen_Shot_2022-01-24_at_3.55.30_PM_jxqgel.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='He/Him',
+  height = 160,
+  education = "Attack on Titan",
+  occupation ="Solider",
+  religion_id = 10,
+  horoscope_id =10,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
+
+
   # profile4 = Profile(
   # user_id =4,
   # age = 85,
@@ -283,12 +366,15 @@ def seed_profiles():
   # )
 
 
+
   db.session.add(profile1)
   db.session.add(profile2)
   db.session.add(profile3)
   db.session.add(profile4)
   db.session.add(profile5)
   db.session.add(profile6)
+  db.session.add(profile7)
+  db.session.add(profile8)
 
   db.session.commit()
 

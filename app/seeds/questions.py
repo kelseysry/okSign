@@ -147,6 +147,53 @@ def seed_questions():
       user_id=6
     )
 
+    query7 = Question(
+      question1 ='Intense',
+      must_answer1='Intense',
+      question2 = 'Kissing in Paris',
+      must_answer2 = 'Kissing in Paris',
+      question3 = 'Bad',
+      must_answer3 = 'Bad',
+      question4 = 'Yes',
+      must_answer4 = 'No',
+      question5 = 'No',
+      must_answer5 = 'No',
+      question6 = 'No',
+      must_answer6 = 'No',
+      question7 = 'Weird',
+      must_answer7 = 'Weird',
+      question8 = 'No',
+      must_answer8 = 'No',
+      question9 = 'Yes',
+      must_answer9 ='Yes',
+      question10 = 'Yes',
+      must_answer10 = 'Yes',
+      user_id=7
+    )
+
+    query8 = Question(
+      question1 ='Intense',
+      must_answer1='Intense',
+      question2 = 'Kissing in a tent, in the woods',
+      must_answer2 = 'Kissing in a tent, in the woods',
+      question3 = 'Bad',
+      must_answer3 = 'Bad',
+      question4 = 'Yes',
+      must_answer4 = 'Yes',
+      question5 = 'Yes',
+      must_answer5 = 'Yes',
+      question6 = 'No',
+      must_answer6 = 'No',
+      question7 = 'Normal',
+      must_answer7 = 'Normal',
+      question8 = 'No',
+      must_answer8 = 'No',
+      question9 = 'Yes',
+      must_answer9 ='Yes',
+      question10 = 'Yes',
+      must_answer10 = 'Yes',
+      user_id=8
+    )
 
 
     db.session.add(query1)
@@ -155,6 +202,8 @@ def seed_questions():
     db.session.add(query4)
     db.session.add(query5)
     db.session.add(query6)
+    db.session.add(query7)
+    db.session.add(query8)
 
 
     db.session.commit()
