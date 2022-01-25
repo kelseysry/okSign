@@ -312,7 +312,7 @@ def seed_profiles():
   partner_id =3,
   pronouns ='He/Him',
   height = 160,
-  education = "Attack on Titan",
+  education = "Military Police Brigade",
   occupation ="Solider",
   religion_id = 10,
   horoscope_id =10,
@@ -445,6 +445,88 @@ def seed_profiles():
   politic_id =4
   )
 
+  profile12 = Profile(
+  user_id =12,
+  age = 28,
+  location = 'Tokyo, Japan',
+  lat = 41.74321360665745,
+  lng = 140.32341346633345,
+  about_me ="I wear a blindfold because you're the only person I want to see",
+  goal = "To train my students to become great jujutsu sorcerers",
+  talent = "I can beat anyone just by using a 1/3 of my actual strength",
+  my_traits ="nonchalant, playful, the strongest, handsome",
+  needs = "I don't have much to be honest.",
+  hobbies = "I like to play jokes ;)",
+  moments = "Realizing the potentials of others before they do. I think it's truly rewarding to train students to be their best.",
+  secrets = "I'm scared of getting attached",
+  looking_for = "Not sure what I'm looking for, maybe someone intersting? Let's just see where this goes.",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =2,
+  gender_preference_id=1,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1643076414/okSign/Screen_Shot_2022-01-24_at_6.06.48_PM_nhg4hu.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1643076442/okSign/Screen_Shot_2022-01-24_at_6.07.18_PM_bok49u.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1643076522/okSign/Screen_Shot_2022-01-24_at_6.08.38_PM_d9sznb.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1643076468/okSign/Screen_Shot_2022-01-24_at_6.07.44_PM_znypqv.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1643076592/okSign/Screen_Shot_2022-01-24_at_6.09.47_PM_jq0auy.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643076451/okSign/Screen_Shot_2022-01-24_at_6.07.26_PM_amyq71.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='He/Him',
+  height = 190,
+  education = "Tokyo Jujutsu High",
+  occupation ="Teacher",
+  religion_id = 10,
+  horoscope_id =9,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
+
+  profile13 = Profile(
+  user_id =13,
+  age = 35,
+  location = 'Wall Rose',
+  lat = 45.66694699259788,
+  lng = 149.63322789988047,
+  about_me ="I would not hesitate to sacrifice my life for the good and prosperity of mankind",
+  goal = "To discover the hidden secrets of mankind",
+  talent = "No matter the obstacle, I can find a solution",
+  my_traits ="curious, calm, collected, strict, serious, and calculating",
+  needs = "Someone who is patient",
+  hobbies = "Reading. I love reading history books",
+  moments = "Sharing theories with my dad about the secrets of mankind",
+  secrets = "I believe the king atered humanity's memories so he could control them better",
+  looking_for = "It would be nice if my partner was also a solider so she could travel with me...",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =2,
+  gender_preference_id=1,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1643077141/okSign/Screen_Shot_2022-01-24_at_6.18.58_PM_sn1jn4.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1643076975/okSign/Screen_Shot_2022-01-24_at_6.16.09_PM_z3gyqn.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1643077032/okSign/Screen_Shot_2022-01-24_at_6.17.05_PM_jhswqz.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1643076998/okSign/Screen_Shot_2022-01-24_at_6.16.34_PM_fawteh.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1643077155/okSign/Screen_Shot_2022-01-24_at_6.19.11_PM_zolwuz.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643077058/okSign/Screen_Shot_2022-01-24_at_6.17.35_PM_fwm4jh.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='He/Him',
+  height = 188,
+  education = "Military Police Brigade",
+  occupation ="Commander",
+  religion_id = 10,
+  horoscope_id =7,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
+
 
 
   # profile4 = Profile(
@@ -542,6 +624,8 @@ def seed_profiles():
   db.session.add(profile9)
   db.session.add(profile10)
   db.session.add(profile11)
+  db.session.add(profile12)
+  db.session.add(profile13)
 
   db.session.commit()
 
