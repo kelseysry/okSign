@@ -196,11 +196,8 @@ function UserProfileAboutSection(currentUserProfile) {
 
   return (
     <>
-
-
-      <div className="step-background">
-
-      <section className="step-containe">
+      {/* <div className="step-background">
+        <section className="step-containe">
           <div className="Step11">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
           <div className="Step22">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
           <div className="Step33">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
@@ -208,11 +205,8 @@ function UserProfileAboutSection(currentUserProfile) {
           <div className="Step55">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
           <div className="Step66">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
           <div className="Step77">{getHoroscope(currentProfile[0]?.horoscope_id)}</div>
-
-
         </section>
-
-      </div>
+      </div> */}
 
 
     <div className="match-profile-all-content-all">

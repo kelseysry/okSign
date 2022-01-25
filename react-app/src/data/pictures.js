@@ -70,6 +70,11 @@ const pictures = {
       "imageNumber":"15",
       "name":"noSearchResults",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643097809/okSign/no_search_results_tgxozv.png"
+    },
+    {
+      "imageNumber":"16",
+      "name":"rope",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643147500/okSign/ropeMan_tj9dfx.png"
     }
   ]
 

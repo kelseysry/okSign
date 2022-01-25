@@ -200,6 +200,7 @@ a {
   display: flex;
   justify-content: center;
   background: whitesmoke !important;
+  /* overflow-x: hidden; */
 }
 
 .detail-container {
@@ -216,4 +217,15 @@ a {
   right:0;
   margin-bottom: auto;
   padding-bottom: 50px;
+}
+
+.match-profile-chat-bubble {
+  position: absolute;
+  top: 44px;
+  left:60px;
+  width: 180px;
+}
+
+.rope-man{
+  position: relative;
 }

@@ -8,6 +8,7 @@ import MatchAboutSection from '../MatchAboutSection';
 import MatchDetailSection from '../MatchDetailSection';
 import './MatchProfilePage.css'
 import MatchProfileHoroscope from '../MatchProfileHoroscope';
+import pictures from '../../data/pictures';
 
 const MatchProfilePage = () => {
   const dispatch = useDispatch()
@@ -51,6 +52,10 @@ const MatchProfilePage = () => {
               </div>
               <div className="match-user-detail-container">
                 <MatchDetailSection currentUserProfile={matchProfileObj}/>
+                <div className="rope-man">
+                <img src={pictures.collection[16].imageUrl} />
+                <div className="match-profile-chat-bubble">I can't see profile likes 🧡... message me! ⬆️ </div>
+                </div>
               </div>
             </div>
           </div>
