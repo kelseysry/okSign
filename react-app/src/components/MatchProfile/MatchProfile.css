@@ -187,6 +187,8 @@ a {
 .match-user-about-container {
   margin-top: 20px;
   align-items: center;
+  width: 700px;
+  z-index: 3;
 }
 
 .match-percent-container {
