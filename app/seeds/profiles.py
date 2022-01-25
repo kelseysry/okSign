@@ -312,7 +312,7 @@ def seed_profiles():
   partner_id =3,
   pronouns ='He/Him',
   height = 160,
-  education = "Attack on Titan",
+  education = "Military Police Brigade",
   occupation ="Solider",
   religion_id = 10,
   horoscope_id =10,
@@ -322,6 +322,210 @@ def seed_profiles():
   pet_id =1,
   politic_id =4
   )
+
+  profile9 = Profile(
+  user_id =9,
+  age = 21,
+  location = 'Rosemary Village',
+  lat = 32.44241729984779,
+  lng = 131.13743725709782,
+  about_me ="I only have one eye but maybe you can be my other?",
+  goal = "To get stronger so I can protect my loved ones",
+  talent = "I can change outfits in a split second",
+  my_traits ="loyal, strong, and smart",
+  needs = "I don't like weak guys.",
+  hobbies = "Collecting the trendiest clothes and jewelry. I'm not the type to order a salad when eating out...so be prepared to spend or cook.",
+  moments = "Taking a bite out of strawberry cake",
+  secrets = "All I have ever wanted is the strength to protect those I hold close to my heart. I would give up all my strength if I could still guarantee their safety.",
+  looking_for = "You either have to be stronger than or you have to be a world renowned chef.",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =1,
+  gender_preference_id=2,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1643070014/okSign/Screen_Shot_2022-01-24_at_4.20.06_PM_wiyihn.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1643069988/okSign/Screen_Shot_2022-01-24_at_4.19.43_PM_vrziyu.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1643069973/okSign/Screen_Shot_2022-01-24_at_4.19.26_PM_hioxbp.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1643070070/okSign/Screen_Shot_2022-01-24_at_4.21.07_PM_yicyza.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1643070048/okSign/Screen_Shot_2022-01-24_at_4.20.45_PM_mindbj.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643070029/okSign/Screen_Shot_2022-01-24_at_4.20.25_PM_kmzijy.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='She/Her',
+  height = 185,
+  education = "Fairy Tail",
+  occupation ="S-Class Mage",
+  religion_id = 10,
+  horoscope_id =8,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
+  profile10 = Profile(
+  user_id =10,
+  age = 21,
+  location = 'Seoul, South Korea',
+  lat = 36.95549537754878,
+  lng = 127.99181027454641,
+  about_me ="I'm literally a man living inside of a girl's body. Long story short...the original owner of this body passed away and my soul was forced into her body. I'm now adjusting to life as a female.",
+  goal = "Training to be the strongest woman in the world!",
+  talent = "I used to be a pro wrestler :)! I have many titles under my name! I am also well acquainted with every fighting style.",
+  my_traits ="strong, caring, and compassionate",
+  needs = "Someone to spar with!",
+  hobbies = "Running at 5am, sparing, and eating",
+  moments = "When I win a battle",
+  secrets = "I'm actually really good at cooking because my mom was too lazy to cook.",
+  looking_for = "Someone who loves me for me.",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =1,
+  gender_preference_id=2,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1641193661/okSign/Screen_Shot_2022-01-02_at_11.07.36_PM_tvobcf.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1643072108/okSign/Screen_Shot_2022-01-24_at_4.55.03_PM_ohne1z.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1643072437/okSign/Screen_Shot_2022-01-24_at_5.00.33_PM_ogu9iz.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1643071627/okSign/Screen_Shot_2022-01-24_at_4.47.02_PM_lggwg6.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1643072375/okSign/Screen_Shot_2022-01-24_at_4.59.30_PM_snd8gr.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643071476/okSign/Screen_Shot_2022-01-24_at_4.44.30_PM_hq83lw.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='She/Her',
+  height = 185,
+  education = "Fight High",
+  occupation ="Student",
+  religion_id = 10,
+  horoscope_id =8,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
+
+
+  profile11 = Profile(
+  user_id =11,
+  age = 25,
+  location = 'Seoul, South Korea',
+  lat = 37.68936945186397,
+  lng = 127.24473998893706,
+  about_me ="A pro wrestler but I don't participate in matches that often. I work mostly to support my dojo",
+  goal = "Just to provide great financial support to my dojo",
+  talent = "I'm well versed in MMA",
+  my_traits ="patient, calm, and strong",
+  needs = "I'm a picky eater so I need someone who can REALLY cook",
+  hobbies = "I love to spar!",
+  moments = "When I find an opponent who is as strong as me",
+  secrets = "I'm not very good at cooking",
+  looking_for = "If I could find a partner that could fight and cook...I'm willing to propose asap",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =2,
+  gender_preference_id=1,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1643071830/okSign/Screen_Shot_2022-01-24_at_4.50.27_PM_itohka.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1643072294/okSign/Screen_Shot_2022-01-24_at_4.58.09_PM_pdwmy4.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1643072190/okSign/Screen_Shot_2022-01-24_at_4.56.26_PM_pcdqtf.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1641191110/okSign/Screen_Shot_2022-01-02_at_10.25.05_PM_poa7tb.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1643075225/okSign/Screen_Shot_2022-01-24_at_5.46.59_PM_dp43oq.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643075256/okSign/Screen_Shot_2022-01-24_at_5.47.32_PM_hamezr.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='',
+  height = 185,
+  education = "Fight High",
+  occupation ="Teacher",
+  religion_id = 10,
+  horoscope_id =12,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
+  profile12 = Profile(
+  user_id =12,
+  age = 28,
+  location = 'Tokyo, Japan',
+  lat = 41.74321360665745,
+  lng = 140.32341346633345,
+  about_me ="I wear a blindfold because you're the only person I want to see",
+  goal = "To train my students to become great jujutsu sorcerers",
+  talent = "I can beat anyone just by using a 1/3 of my actual strength",
+  my_traits ="nonchalant, playful, the strongest, handsome",
+  needs = "I don't have much to be honest.",
+  hobbies = "I like to play jokes ;)",
+  moments = "Realizing the potentials of others before they do. I think it's truly rewarding to train students to be their best.",
+  secrets = "I'm scared of getting attached",
+  looking_for = "Not sure what I'm looking for, maybe someone intersting? Let's just see where this goes.",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =2,
+  gender_preference_id=1,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1643076414/okSign/Screen_Shot_2022-01-24_at_6.06.48_PM_nhg4hu.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1643076442/okSign/Screen_Shot_2022-01-24_at_6.07.18_PM_bok49u.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1643076522/okSign/Screen_Shot_2022-01-24_at_6.08.38_PM_d9sznb.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1643076468/okSign/Screen_Shot_2022-01-24_at_6.07.44_PM_znypqv.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1643076592/okSign/Screen_Shot_2022-01-24_at_6.09.47_PM_jq0auy.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643076451/okSign/Screen_Shot_2022-01-24_at_6.07.26_PM_amyq71.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='He/Him',
+  height = 190,
+  education = "Tokyo Jujutsu High",
+  occupation ="Teacher",
+  religion_id = 10,
+  horoscope_id =9,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
+
+  profile13 = Profile(
+  user_id =13,
+  age = 35,
+  location = 'Wall Rose',
+  lat = 45.66694699259788,
+  lng = 149.63322789988047,
+  about_me ="I would not hesitate to sacrifice my life for the good and prosperity of mankind",
+  goal = "To discover the hidden secrets of mankind",
+  talent = "No matter the obstacle, I can find a solution",
+  my_traits ="curious, calm, collected, strict, serious, and calculating",
+  needs = "Someone who is patient",
+  hobbies = "Reading. I love reading history books",
+  moments = "Sharing theories with my dad about the secrets of mankind",
+  secrets = "I believe the king atered humanity's memories so he could control them better",
+  looking_for = "It would be nice if my partner was also a solider so she could travel with me...",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =2,
+  gender_preference_id=1,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1643077141/okSign/Screen_Shot_2022-01-24_at_6.18.58_PM_sn1jn4.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1643076975/okSign/Screen_Shot_2022-01-24_at_6.16.09_PM_z3gyqn.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1643077032/okSign/Screen_Shot_2022-01-24_at_6.17.05_PM_jhswqz.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1643076998/okSign/Screen_Shot_2022-01-24_at_6.16.34_PM_fawteh.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1643077155/okSign/Screen_Shot_2022-01-24_at_6.19.11_PM_zolwuz.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643077058/okSign/Screen_Shot_2022-01-24_at_6.17.35_PM_fwm4jh.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='He/Him',
+  height = 188,
+  education = "Military Police Brigade",
+  occupation ="Commander",
+  religion_id = 10,
+  horoscope_id =7,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
 
 
 
@@ -367,6 +571,48 @@ def seed_profiles():
 
 
 
+  # profile9 = Profile(
+  # user_id =9,
+  # age = 85,
+  # location = '',
+  # lat = ,
+  # lng = ,
+  # about_me ="",
+  # goal = "",
+  # talent = "",
+  # my_traits ="",
+  # needs = "",
+  # hobbies = "",
+  # moments = "",
+  # secrets = "",
+  # looking_for = "",
+  # user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  # gender_id =1,
+  # gender_preference_id=2,
+  # number_likes = 2,
+  # image_url1 = "",
+  # image_url2 = "",
+  # image_url3 = "",
+  # image_url4 = "",
+  # image_url5 = "",
+  # image_url6 = "",
+  # orientation_id =1,
+  # partner_id =3,
+  # pronouns ='',
+  # height = 185,
+  # education = "",
+  # occupation ="",
+  # religion_id = 10,
+  # horoscope_id =8,
+  # smoking_id = 4,
+  # drinking_id = 2,
+  # children_id =3,
+  # pet_id =1,
+  # politic_id =4
+  # )
+
+
+
   db.session.add(profile1)
   db.session.add(profile2)
   db.session.add(profile3)
@@ -375,6 +621,11 @@ def seed_profiles():
   db.session.add(profile6)
   db.session.add(profile7)
   db.session.add(profile8)
+  db.session.add(profile9)
+  db.session.add(profile10)
+  db.session.add(profile11)
+  db.session.add(profile12)
+  db.session.add(profile13)
 
   db.session.commit()
 
