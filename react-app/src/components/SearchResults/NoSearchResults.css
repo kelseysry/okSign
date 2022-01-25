@@ -75,3 +75,25 @@
   width:800px;
   height:80px;
 }
+
+.noUsersImg {
+  position: absolute;
+  left: 486px;
+}
+
+.noImgChat {
+  position: absolute;
+  left: 700px;
+  top: 40px;
+}
+
+.noImgChatFirstLine {
+  width: 180px;
+  color: #d7a041;
+
+}
+
+.noImgChatSecondLine{
+  padding-left: 20px;
+  color: #d7a041;
+}
