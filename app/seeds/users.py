@@ -57,6 +57,13 @@ def seed_users():
      email='tori@aol.com',
      password='password')
 
+    user11 = User(
+     first_name='Zedd',
+     last_name='Li',
+     username='Zedd',
+     email='zedd@aol.com',
+     password='password')
+
     db.session.add(demo)
     db.session.add(user2)
     db.session.add(user3)
@@ -67,6 +74,7 @@ def seed_users():
     db.session.add(user8)
     db.session.add(user9)
     db.session.add(user10)
+    db.session.add(user11)
 
     db.session.commit()
 
