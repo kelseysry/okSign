@@ -202,7 +202,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
   return (
     <>
 
-    { isLoaded && matchProfileObj[0]?.user_id && profileC?.oneProfile[0]?.number_likes && (
+    { isLoaded && matchProfileObj && profileC && (
       <>
           <div className="oneMatchProfileContainerHeaderPage">
 
@@ -232,7 +232,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
                             <div className="heart-text">
                                 <i class="fas fa-heart"></i>
                                 {/* {profile?.number_likes} */}
-                                {profileC?.oneProfile[0]?.number_likes}
+                                {profileC? profileC?.oneProfile[0]?.number_likes : null}
                                 {/* <div>{profileSel[1]?.liked }</div> */}
                             </div>
                           </button>

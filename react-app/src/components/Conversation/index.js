@@ -10,6 +10,7 @@ import Message from "../Message";
 import MessageForm from "../MessageForm";
 import { clearProfiles } from "../../store/profile";
 import { getConversations } from "../../store/conversation";
+import { NavLink } from "react-router-dom";
 
 const Conversation = () => {
   const dispatch = useDispatch()
@@ -119,6 +120,7 @@ const Conversation = () => {
     }
   }
 
+console.log("etMatchImage[0]",getMatchImage)
 
   return (
 
@@ -137,9 +139,24 @@ const Conversation = () => {
                   </div>
                 <div className="profile-asl">
                   <div className="profile-asl-row">
-                    {getMatchImage? <span className="profile-asl-age">{getMatchImage[0]?.age}</span> : null}
-                    <span className="profile-asl-spacer"></span>
-                    {getMatchImage? <span className="profile-asl-location">{getMatchImage[0]?.location}</span> : null}
+                    <div>
+                      {getMatchImage? <span className="profile-asl-age">{getMatchImage[0]?.age}</span> : null}
+                      <span className="profile-asl-spacer"></span>
+                      {getMatchImage? <span className="profile-asl-location">{getMatchImage[0]?.location}</span> : null}
+                    </div>
+                    <div>
+                      {getMatchImage?
+
+                       <NavLink
+                      to={`/matchProfile/${getMatchImage[0]?.user_id}`}
+                      >
+                        <button className="conversation-profile-button">Go to Profile</button>
+                       </NavLink>
+                       : null
+
+                      }
+
+                    </div>
                   </div>
                 </div>
                 </div>
