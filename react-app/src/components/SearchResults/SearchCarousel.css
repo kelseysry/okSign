@@ -17,17 +17,14 @@
 
 
 .Step1s{
-  margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 68px;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
-
   position: absolute;
   top: 50px;
-  font-size: 90px;
+  font-size: 60px;
   transform: skew(60deg, -30deg) scaleY(.66667);
   color: white;
 
@@ -35,56 +32,50 @@
 
 .Step2s {
 
-  margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 68px;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
 
-
   position: absolute;
-  top: 118px;
-  left: 150px;
-  font-size: 90px;
+  top: 90px;
+  left: 140px;
+  font-size: 60px;
   transform: skew(0deg, -31deg) scaleY(1.33333);
   color: white;
 
 }
 
 .Step3s{
-  margin: 0 auto;
   padding: 80px 0;
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 68px;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
 
   position: absolute;
-  top: 270px;
-  left: 190px;
-  font-size: 90px;
+  top: 190px;
+  left: 170px;
+  font-size: 60px;
   transform: skew(60deg, -30deg) scaleY(.66667);
   color: white;
 
 }
 
-.Step5s{
-  margin: 0 auto;
-  padding: 80px 0;
+.Step5ss{
   font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-  font-size: 68px;
   font-weight: 900;
   letter-spacing: -2px;
   text-transform: uppercase;
-
-
   position: absolute;
-  top: 345px;
-  left: 230px;
-  font-size: 90px;
+  top: 125px;
+  left: 190px;
+  font-size: 60px;
   transform: skew(0deg, -31deg) scaleY(1.33333);
   color: #d7a041;
+  width:800px;
+  height:80px;
+  /* background-color: wheat; */
+
 }
