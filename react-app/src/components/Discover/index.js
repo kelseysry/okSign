@@ -288,7 +288,6 @@ if(currentUserQuestion) {
                   <div className="instructionsImgContainer">
                   <div className="leftSwipe"><span className="instructionsEmoji">🧐</span> Click to the left of the center picture to see the previous user</div>
                   <div className="rightSwipe"><span className="instructionsEmoji">🥱</span> Click to the right of the center picture to see the next user</div>
-
                     <img class="instructionsImg" src={pictures.collection[13].imageUrl} />
                   </div>
 

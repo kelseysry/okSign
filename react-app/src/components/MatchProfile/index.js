@@ -239,8 +239,6 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
             No more matches! Please swipe back! ⬅️
           </div>
       </div>
-
-
       </>
 
 
