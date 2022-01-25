@@ -323,10 +323,49 @@ def seed_profiles():
   politic_id =4
   )
 
+  profile9 = Profile(
+  user_id =9,
+  age = 21,
+  location = 'Rosemary Village',
+  lat = 32.44241729984779,
+  lng = 131.13743725709782,
+  about_me ="I only have one eye but maybe you can be my other?",
+  goal = "To get stronger so I can protect my loved ones",
+  talent = "I can change outfits in a split second",
+  my_traits ="loyal, strong, and smart",
+  needs = "I don't like weak guys.",
+  hobbies = "Collecting the trendiest clothes and jewelry. I'm not the type to order a salad when eating out...so be prepared to spend or cook.",
+  moments = "Taking a bite out of strawberry cake",
+  secrets = "All I have ever wanted is the strength to protect those I hold close to my heart. I would give up all my strength if I could still guarantee their safety.",
+  looking_for = "You either have to be stronger than or you have to be a world renowned chef.",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =1,
+  gender_preference_id=2,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1643070014/okSign/Screen_Shot_2022-01-24_at_4.20.06_PM_wiyihn.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1643069988/okSign/Screen_Shot_2022-01-24_at_4.19.43_PM_vrziyu.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1643069973/okSign/Screen_Shot_2022-01-24_at_4.19.26_PM_hioxbp.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1643070070/okSign/Screen_Shot_2022-01-24_at_4.21.07_PM_yicyza.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1643070048/okSign/Screen_Shot_2022-01-24_at_4.20.45_PM_mindbj.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643070029/okSign/Screen_Shot_2022-01-24_at_4.20.25_PM_kmzijy.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='',
+  height = 185,
+  education = "Fairy Tail",
+  occupation ="S-Class Mage",
+  religion_id = 10,
+  horoscope_id =8,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
 
 
-  # profile4 = Profile(
-  # user_id =4,
+  # profile9 = Profile(
+  # user_id =9,
   # age = 85,
   # location = '',
   # lat = ,
@@ -341,8 +380,8 @@ def seed_profiles():
   # secrets = "",
   # looking_for = "",
   # user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
-  # gender_id =2,
-  # gender_preference_id=1,
+  # gender_id =1,
+  # gender_preference_id=2,
   # number_likes = 2,
   # image_url1 = "",
   # image_url2 = "",
@@ -375,6 +414,7 @@ def seed_profiles():
   db.session.add(profile6)
   db.session.add(profile7)
   db.session.add(profile8)
+  db.session.add(profile9)
 
   db.session.commit()
 
