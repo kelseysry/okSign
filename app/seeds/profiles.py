@@ -403,6 +403,92 @@ def seed_profiles():
   politic_id =4
   )
 
+
+
+  profile11 = Profile(
+  user_id =11,
+  age = 25,
+  location = 'Seoul, South Korean',
+  lat = ,
+  lng = ,
+  about_me ="",
+  goal = "",
+  talent = "",
+  my_traits ="",
+  needs = "I'm a picky eater so I need someone who can REALLY cook",
+  hobbies = "",
+  moments = "",
+  secrets = "",
+  looking_for = "",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =2,
+  gender_preference_id=1,
+  number_likes = 2,
+  image_url1 = "",
+  image_url2 = "",
+  image_url3 = "",
+  image_url4 = "",
+  image_url5 = "",
+  image_url6 = "",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='',
+  height = 185,
+  education = "",
+  occupation ="",
+  religion_id = 10,
+  horoscope_id =8,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
+
+
+
+  # profile4 = Profile(
+  # user_id =4,
+  # age = 85,
+  # location = '',
+  # lat = ,
+  # lng = ,
+  # about_me ="",
+  # goal = "",
+  # talent = "",
+  # my_traits ="",
+  # needs = "",
+  # hobbies = "",
+  # moments = "",
+  # secrets = "",
+  # looking_for = "",
+  # user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  # gender_id =2,
+  # gender_preference_id=1,
+  # number_likes = 2,
+  # image_url1 = "",
+  # image_url2 = "",
+  # image_url3 = "",
+  # image_url4 = "",
+  # image_url5 = "",
+  # image_url6 = "",
+  # orientation_id =1,
+  # partner_id =3,
+  # pronouns ='',
+  # height = 185,
+  # education = "",
+  # occupation ="",
+  # religion_id = 10,
+  # horoscope_id =8,
+  # smoking_id = 4,
+  # drinking_id = 2,
+  # children_id =3,
+  # pet_id =1,
+  # politic_id =4
+  # )
+
+
+
   # profile9 = Profile(
   # user_id =9,
   # age = 85,
