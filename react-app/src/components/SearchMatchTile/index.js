@@ -90,8 +90,14 @@ const SearchMatchTile = ({searchUserResults, profile, slide, setSlide, idx, navi
             slide={slide}
             onClick={() => setSlide(idx)}
             onAnimationEnd={() => setSlide(0)}>
+            <NavLink
+                to={`/matchProfile/${profile?.user_id}`} // userIdPercentObj[0] is the user.id
+              >
             <div className="userNameCursive">{getUserName(profile?.user_id)}</div>
-            <div className="match_details_discover_under_name"> {profile?.age} | {profile?.about_me}</div>
+            <div className="match_details_discover_under_name_Age"> {profile?.age} | {profile?.occupation}</div>
+            <div className="match_details_discover_under_name"> {profile?.about_me}</div>
+            </NavLink>
+
           </div>
         </>
         ): null
@@ -100,8 +106,8 @@ const SearchMatchTile = ({searchUserResults, profile, slide, setSlide, idx, navi
         <div className="oneMatchProfileContainer">
 
             <section className='ImageContainer'>
-                        <NavLink
-                to={`/matchProfile/${profile?.user_id}`} // userIdPercentObj[0] is the user.id
+              <NavLink
+                to={`/matchProfile/${profile?.user_id}`}
               >
                     <div className='defaultImage'>
                       {defaultImg === 0 ? <img src={profile?.image_url1} alt='default photo' className='defaultImage'></img> :  <img src={defaultImg} alt='default photo' className="defaultImage"></img>}
