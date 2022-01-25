@@ -98,6 +98,16 @@
   width: 710px;
 }
 
+.user-profile-asl-row {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: 4px;
+  display: flex;
+  justify-content: flex-start;
+  width: 710px;
+}
+
 .conversation-profile-button {
   color: #ebedf2;
   font-size: 1.075rem;

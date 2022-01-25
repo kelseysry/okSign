@@ -97,7 +97,7 @@ function UserProfile({count, setCount}) {
 
                   </div>
                 <div className="profile-asl">
-                  <div className="profile-asl-row">
+                  <div className="user-profile-asl-row">
                     {currentProfile? <span className="profile-asl-age">{currentProfile[0]?.age}</span> : null}
                     <span className="profile-asl-spacer"></span>
                     {currentProfile? <span className="profile-asl-location">{currentProfile[0]?.location}</span> : null}
