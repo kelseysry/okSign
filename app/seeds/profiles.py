@@ -350,7 +350,7 @@ def seed_profiles():
   image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643070029/okSign/Screen_Shot_2022-01-24_at_4.20.25_PM_kmzijy.png",
   orientation_id =1,
   partner_id =3,
-  pronouns ='',
+  pronouns ='She/Her',
   height = 185,
   education = "Fairy Tail",
   occupation ="S-Class Mage",
@@ -363,6 +363,45 @@ def seed_profiles():
   politic_id =4
   )
 
+  profile10 = Profile(
+  user_id =10,
+  age = 21,
+  location = 'Seoul, South Korean',
+  lat = 36.95549537754878,
+  lng = 127.99181027454641,
+  about_me ="I'm literally a man living inside of a girl's body. Long story short...the original owner of this body passed away and my soul was forced into her body. I'm now adjusting to life as a female.",
+  goal = "Training to be the strongest woman in the world!",
+  talent = "I used to be a pro wrestler :)! I have many titles under my name! I am also well acquainted with every fighting style.",
+  my_traits ="strong, caring, and compassionate",
+  needs = "Someone to spar with!",
+  hobbies = "Running at 5am, sparing, and eating",
+  moments = "When I win a battle",
+  secrets = "I'm actually really good at cooking because my mom was too lazy to cook.",
+  looking_for = "Someone who loves me for me.",
+  user_audio = "https://res.cloudinary.com/mabmab/video/upload/v1640820480/okSign/example_audio_link_ubjhn1.mp3",
+  gender_id =1,
+  gender_preference_id=2,
+  number_likes = 2,
+  image_url1 = "https://res.cloudinary.com/mabmab/image/upload/v1641193661/okSign/Screen_Shot_2022-01-02_at_11.07.36_PM_tvobcf.png",
+  image_url2 = "https://res.cloudinary.com/mabmab/image/upload/v1643072108/okSign/Screen_Shot_2022-01-24_at_4.55.03_PM_ohne1z.png",
+  image_url3 = "https://res.cloudinary.com/mabmab/image/upload/v1643072437/okSign/Screen_Shot_2022-01-24_at_5.00.33_PM_ogu9iz.png",
+  image_url4 = "https://res.cloudinary.com/mabmab/image/upload/v1643071627/okSign/Screen_Shot_2022-01-24_at_4.47.02_PM_lggwg6.png",
+  image_url5 = "https://res.cloudinary.com/mabmab/image/upload/v1643072375/okSign/Screen_Shot_2022-01-24_at_4.59.30_PM_snd8gr.png",
+  image_url6 = "https://res.cloudinary.com/mabmab/image/upload/v1643071476/okSign/Screen_Shot_2022-01-24_at_4.44.30_PM_hq83lw.png",
+  orientation_id =1,
+  partner_id =3,
+  pronouns ='She/Her',
+  height = 185,
+  education = "Fight High",
+  occupation ="Student",
+  religion_id = 10,
+  horoscope_id =8,
+  smoking_id = 4,
+  drinking_id = 2,
+  children_id =3,
+  pet_id =1,
+  politic_id =4
+  )
 
   # profile9 = Profile(
   # user_id =9,
@@ -415,6 +454,7 @@ def seed_profiles():
   db.session.add(profile7)
   db.session.add(profile8)
   db.session.add(profile9)
+  db.session.add(profile10)
 
   db.session.commit()
 
