@@ -74,7 +74,17 @@ const pictures = {
     {
       "imageNumber":"16",
       "name":"rope",
-      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643147500/okSign/ropeMan_tj9dfx.png"
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643149503/okSign/ropeMan_hfwehp.png"
+    },
+    {
+      "imageNumber":"17",
+      "name":"slip",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643150693/okSign/slip_novehw.png"
+    },
+    {
+      "imageNumber":"18",
+      "name":"hole",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643150905/okSign/hole_idhnai.png"
     }
   ]
 
