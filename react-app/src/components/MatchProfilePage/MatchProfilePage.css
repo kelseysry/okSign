@@ -22,8 +22,8 @@
 
 .match_profile_image_discover_page {
   display: inline-block;
-  width: 350px;
-  height: 350px;
+  width: 290px;
+  height: 290px;
   object-fit: cover;
   /* object-fit:scale-down; */
 }
