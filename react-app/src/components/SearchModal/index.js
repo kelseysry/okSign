@@ -27,7 +27,7 @@ const SearchModal = () => {
 
   return (
     <>
-  { currentUserProfile?.oneProfile?
+  { currentUserProfile?.oneProfile?.length ? 
 
   <button
           style={{color: 'white'}}

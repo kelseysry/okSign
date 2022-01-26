@@ -555,7 +555,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
       <div class="scroll-question7-section" id="question-7">
             <div className="question-flex">
 
-            <label className="labelName">
+            <label className="labelNameAudio">
               A Shower thought you recently had
                 <input
                 className="audio-input"
@@ -573,7 +573,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
       <div class="scroll-question-section" id="question-8">
             <div className="question-flex">
 
-            <label className="labelName">
+            <label className="labelNamePic">
               Image Url 1
                 <input
                 className="picture-input"
@@ -584,7 +584,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
                 >
                 </input>
             </label>
-            <label className="labelName">
+            <label className="labelNamePic">
               Image Url 2
                 <input
                 className="picture-input"
@@ -595,7 +595,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
                 >
                 </input>
             </label>
-            <label className="labelName">
+            <label className="labelNamePic">
               Image Url 3
                 <input
                 className="picture-input"
@@ -606,7 +606,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
                 >
                 </input>
             </label>
-            <label className="labelName">
+            <label className="labelNamePic">
               Image Url 4
                 <input
                 className="picture-input"
@@ -617,7 +617,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
                 >
                 </input>
             </label>
-            <label className="labelName">
+            <label className="labelNamePic">
               Image Url 5
                 <input
                 className="picture-input"
@@ -628,7 +628,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
                 >
                 </input>
             </label>
-            <label className="labelName">
+            <label className="labelNamePic">
               Image Url 6
                 <input
                 className="picture-input"

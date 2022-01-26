@@ -8,6 +8,7 @@ import NoConversations from "../NoConversations";
 import './Conversations.css'
 import AllUsersMap from "../Maps/AllUsersMap";
 import { getMatchProfiles } from "../../store/match";
+import pictures from "../../data/pictures";
 
 const Conversations = () => {
   const dispatch = useDispatch()
@@ -16,6 +17,7 @@ const Conversations = () => {
 
   const [currentUserProfile, setCurrentUserProfile] = useState();
 
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const conversationObj = useSelector((state) => state.conversation)
   const conversations = Object.values(conversationObj)
@@ -38,6 +40,7 @@ const Conversations = () => {
 
 
   useEffect(() => {
+    setIsLoaded(true)
     async function fetchData() {
       const response = await fetch(`/api/profiles/userProfile/${user_id}`);
       const responseData = await response.json();
@@ -45,7 +48,7 @@ const Conversations = () => {
       setCurrentUserProfile(responseData);
     }
     fetchData();
-  }, []);
+  }, [isLoaded]);
 
 
 
@@ -119,8 +122,30 @@ const Conversations = () => {
     </div>
   )
 
+console.log("currentUserProfile?.oneProfile",currentUserProfile?.oneProfile?.length)
+
+
+
+let loading;
+
+
+loading = (
+
+  <div className="loading">
+    <img src={pictures.collection[11].imageUrl} />
+  </div>
+)
+
+if(isLoaded === true && currentUserProfile?.oneProfile?.length === 0) {
+            loading = (
+            <NoConversations />
+            )
+}
+
+
+
   let content;
-  if(previousCurrentUserConversations?.length && currentUserProfile?.oneProfile) {
+  if(previousCurrentUserConversations?.length && currentUserProfile?.oneProfile?.length) {
     content = (
       <>
         <div className="ConversationHeaderContainer">
@@ -151,9 +176,10 @@ const Conversations = () => {
     )
   }  else {
     content = (
-      <div className="">
-        <NoConversations />
-      </div>
+      // <div className="">
+      //   <NoConversations />
+      // </div>
+      loading
     )
   }
 
