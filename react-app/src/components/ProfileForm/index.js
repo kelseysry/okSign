@@ -174,8 +174,6 @@ const ProfileForm = () => {
     return profile?.user_id === +userId
   })
 
-  console.log("currentProfile🍵🍵🍵🍵🍵🍵🍵", currentProfile)
-
 
   const scrollToTop = () => {
     window.scrollTo({

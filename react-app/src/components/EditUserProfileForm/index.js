@@ -207,13 +207,6 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 </nav>
 
 <section class="scroll-container">
-
-
-    {/* <div className="ProfileNavExtension">
-      <div className="profileFormHeader">Profile Questions</div>
-    </div> */}
-
-
     <section className="edit-profile-form-continer">
           <form className="profile-fom" onSubmit={handleSubmit}>
 
