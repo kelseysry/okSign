@@ -67,8 +67,6 @@ const Discover = () => {
 let questionsRender = questions
 
 
-  console.log("questions.",questions)
-
 // for each user's question object, we need to count how many answers// they have that are the same as the current user
  let currentUserQuestion = questionsRender?.filter((question) => {return question?.user_id === user_id})
 
