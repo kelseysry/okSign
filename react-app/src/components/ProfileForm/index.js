@@ -793,19 +793,6 @@ const ProfileForm = () => {
             </div>
           </div>
 
-{/*
-                <ul className="error">
-                  {errors.map((error) => <li key={error}>{error}</li>)}
-                </ul>
-                <button
-                  className="ProfileFormSubmitButton"
-                  type="submit"
-                  disabled={errors.length>0}
-
-                >
-                  Submit
-                </button>
-      */}
                 </form>
               </section>
 

@@ -214,7 +214,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
     </div> */}
 
 
-    <section className="edit-profile-form-contaier">
+    <section className="edit-profile-form-continer">
           <form className="profile-fom" onSubmit={handleSubmit}>
 
           <div class="scroll-question1-section" id="question-1">
