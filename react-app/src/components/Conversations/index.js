@@ -119,8 +119,11 @@ const Conversations = () => {
     </div>
   )
 
+console.log("currentUserProfile?.oneProfile",currentUserProfile?.oneProfile?.length)
+
+
   let content;
-  if(previousCurrentUserConversations?.length && currentUserProfile?.oneProfile) {
+  if(previousCurrentUserConversations?.length && currentUserProfile?.oneProfile?.length) {
     content = (
       <>
         <div className="ConversationHeaderContainer">
