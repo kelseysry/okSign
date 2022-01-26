@@ -34,6 +34,7 @@ const EditQuestionForm = ({questions, hideForm}) => {
   const [question10, setQuestion10] = useState(questions[0]?.question10);
   const [must_answer10, setMust_answer10] = useState(questions[0]?.must_answer10);
 
+  const [color, setColor] = useState(1)
 
   const [errors, setErrors] = useState([]);
 
@@ -113,23 +114,58 @@ const handleFormEditSubmit = (e) => {
   return (
     <>
 
+    <div className="editQuestionFormHeader">Edit Questions</div>
 
 <section className="all-questions-container">
 
-<nav className="question-nav-bar">
-  <a href="#question-1">1</a>
-  <a href="#question-2">2</a>
-  <a href="#question-3">3</a>
-  <a href="#question-4">4</a>
-  <a href="#question-5">5</a>
-  <a href="#question-6">6</a>
-  <a href="#question-7">7</a>
-  <a href="#question-8">8</a>
-  <a href="#question-9">9</a>
-  <a href="#question-10">10</a>
-  <a href="#question-11"><i class="fas fa-check-circle"></i></a>
+  <nav className="question-nav-bar">
+        <a href="#question-1"
+          onClick={() => setColor(1)}
+          className={color === 1? `colorOrangeNav` : ""}
+        >1</a>
+        <a href="#question-2"
+          onClick={() => setColor(2)}
+          className={color === 2? `colorOrangeNav` : ""}
+        >2</a>
+        <a href="#question-3"
+          onClick={() => setColor(3)}
+          className={color === 3? `colorOrangeNav` : ""}
+        >3</a>
+        <a href="#question-4"
+          onClick={() => setColor(4)}
+          className={color === 4? `colorOrangeNav` : ""}
+        >4</a>
+        <a href="#question-5"
+          onClick={() => setColor(5)}
+          className={color === 5? `colorOrangeNav` : ""}
+        >5</a>
+        <a href="#question-6"
+          onClick={() => setColor(6)}
+          className={color === 6? `colorOrangeNav` : ""}
+        >6</a>
+        <a href="#question-7"
+          onClick={() => setColor(7)}
+          className={color === 7? `colorOrangeNav` : ""}
+        >7</a>
+        <a href="#question-8"
+          onClick={() => setColor(8)}
+          className={color === 8? `colorOrangeNav` : ""}
+        >8</a>
+        <a href="#question-9"
+          onClick={() => setColor(9)}
+          className={color === 9? `colorOrangeNav` : ""}
+        >9</a>
+        <a href="#question-10"
+          onClick={() => setColor(10)}
+          className={color === 10? `colorOrangeNav` : ""}
+        >10</a>
+        <a href="#question-11"
+          onClick={() => setColor(11)}
+          className={color === 11? `colorOrangeNav` : ""}
+        ><i class="fas fa-check-circle"></i></a>
+      </nav>
 
-</nav>
+
 
 <section class="scroll-container">
   <form className="" onSubmit={handleSubmit}>

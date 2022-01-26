@@ -50,8 +50,7 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
   const [politic_id, setPolitic_id] = useState(currentProfile[0]?.politic_id);
   const [religion_id, setReligion_id] = useState(currentProfile[0]?.religion_id);
   const [errors, setErrors] = useState([]);
-
-
+  const [color, setColor] = useState(1)
 
   function checkIfNumeric(number) {
     return number === +number && number === (number|0);
@@ -189,32 +188,63 @@ const EditUserProfileForm = ({count, setCount, currentProfile, hideForm}) => {
 
   return (
     <>
- <section className="all-questions-container">
+    <div className="editQuestionFormHeader">Edit Profile Form</div>
 
-<nav className="profile-nav-bar">
-  <a href="#question-1"><i class="fas fa-user-circle"></i></a>
-  <a href="#question-2"><i class="fas fa-map-marker-alt"></i></a>
-  <a href="#question-3"><i class="fas fa-briefcase"></i></a>
-  <a href="#question-4"><i class="fas fa-trophy"></i></a>
-  <a href="#question-5"><i class="fas fa-heart"></i></a>
-  <a href="#question-6"><i class="fas fa-grin-squint"></i></a>
-  <a href="#question-7"><i class="fas fa-play-circle"></i></a>
-  <a href="#question-8"><i class="fas fa-images"></i></a>
-  <a href="#question-9"><i class="fas fa-cocktail"></i></a>
-  <a href="#question-10"><i class="fas fa-baby-carriage"></i></a>
-  <a href="#question-11"><i class="fas fa-dove"></i></a>
-  <a href="#question-12"><i class="fas fa-check-circle"></i></a>
-</nav>
+    <section className="all-profile-form-container">
+
+    <nav className="profile-nav-bar">
+      <a href="#question-1"
+        onClick={() => setColor(1)}
+        className={color === 1? `colorOrangeNav` : ""}
+        ><i class="fas fa-user-circle"></i></a>
+      <a href="#question-2"
+        onClick={() => setColor(2)}
+        className={color === 2? `colorOrangeNav` : ""}
+      ><i class="fas fa-map-marker-alt"></i></a>
+      <a href="#question-3"
+        onClick={() => setColor(3)}
+        className={color === 3? `colorOrangeNav` : ""}
+      ><i class="fas fa-briefcase"></i></a>
+      <a href="#question-4"
+        onClick={() => setColor(4)}
+        className={color === 4? `colorOrangeNav` : ""}
+      ><i class="fas fa-trophy"></i></a>
+      <a href="#question-5"
+        onClick={() => setColor(5)}
+        className={color === 5? `colorOrangeNav` : ""}
+      ><i class="fas fa-heart"></i></a>
+      <a href="#question-6"
+        onClick={() => setColor(6)}
+        className={color === 6? `colorOrangeNav` : ""}
+      ><i class="fas fa-grin-squint"></i></a>
+      <a href="#question-7"
+        onClick={() => setColor(7)}
+        className={color === 7? `colorOrangeNav` : ""}
+      ><i class="fas fa-play-circle"></i></a>
+      <a href="#question-8"
+        onClick={() => setColor(8)}
+        className={color === 8? `colorOrangeNav` : ""}
+      ><i class="fas fa-images"></i></a>
+      <a href="#question-9"
+        onClick={() => setColor(9)}
+        className={color === 9? `colorOrangeNav` : ""}
+      ><i class="fas fa-cocktail"></i></a>
+      <a href="#question-10"
+      onClick={() => setColor(10)}
+      className={color === 10? `colorOrangeNav` : ""}
+      ><i class="fas fa-baby-carriage"></i></a>
+      <a href="#question-11"
+      onClick={() => setColor(11)}
+      className={color === 11? `colorOrangeNav` : ""}
+      ><i class="fas fa-dove"></i></a>
+      <a href="#question-12"
+      onClick={() => setColor(12)}
+      className={color === 12? `colorOrangeNav` : ""}
+              ><i class="fas fa-check-circle"></i></a>
+    </nav>
 
 <section class="scroll-container">
-
-
-    {/* <div className="ProfileNavExtension">
-      <div className="profileFormHeader">Profile Questions</div>
-    </div> */}
-
-
-    <section className="edit-profile-form-contaier">
+    <section className="edit-profile-form-continer">
           <form className="profile-fom" onSubmit={handleSubmit}>
 
           <div class="scroll-question1-section" id="question-1">

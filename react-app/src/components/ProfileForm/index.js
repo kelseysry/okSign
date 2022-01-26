@@ -64,6 +64,8 @@ const ProfileForm = () => {
   const [showCreateProfileForm, setShowCreateProfileForm] = useState(false)
   const [count, setCount] = useState('')
 
+  const [color, setColor] = useState(1)
+
   useEffect(async () => {
     // dispatch(clearProfiles())
     await dispatch(getProfiles());
@@ -172,8 +174,6 @@ const ProfileForm = () => {
     return profile?.user_id === +userId
   })
 
-  console.log("currentProfile🍵🍵🍵🍵🍵🍵🍵", currentProfile)
-
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -190,8 +190,6 @@ const ProfileForm = () => {
     const createNewProfileData = {
       user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id
     }
-    console.log("createNewProfileData", createNewProfileData)
-
 
      let newUserProfile = await dispatch(createProfile(createNewProfileData));
 
@@ -207,21 +205,59 @@ const ProfileForm = () => {
 
   return (
     <>
-    <section className="all-questions-container">
+    <div className="editQuestionFormHeader">Profile Form</div>
+
+    <section className="all-profile-form-container">
 
     <nav className="profile-nav-bar">
-      <a href="#question-1"><i class="fas fa-user-circle"></i></a>
-      <a href="#question-2"><i class="fas fa-map-marker-alt"></i></a>
-      <a href="#question-3"><i class="fas fa-briefcase"></i></a>
-      <a href="#question-4"><i class="fas fa-trophy"></i></a>
-      <a href="#question-5"><i class="fas fa-heart"></i></a>
-      <a href="#question-6"><i class="fas fa-grin-squint"></i></a>
-      <a href="#question-7"><i class="fas fa-play-circle"></i></a>
-      <a href="#question-8"><i class="fas fa-images"></i></a>
-      <a href="#question-9"><i class="fas fa-cocktail"></i></a>
-      <a href="#question-10"><i class="fas fa-baby-carriage"></i></a>
-      <a href="#question-11"><i class="fas fa-dove"></i></a>
-      <a href="#question-12"><i class="fas fa-check-circle"></i></a>
+      <a href="#question-1"
+        onClick={() => setColor(1)}
+        className={color === 1? `colorOrangeNav` : ""}
+        ><i class="fas fa-user-circle"></i></a>
+      <a href="#question-2"
+        onClick={() => setColor(2)}
+        className={color === 2? `colorOrangeNav` : ""}
+      ><i class="fas fa-map-marker-alt"></i></a>
+      <a href="#question-3"
+        onClick={() => setColor(3)}
+        className={color === 3? `colorOrangeNav` : ""}
+      ><i class="fas fa-briefcase"></i></a>
+      <a href="#question-4"
+        onClick={() => setColor(4)}
+        className={color === 4? `colorOrangeNav` : ""}
+      ><i class="fas fa-trophy"></i></a>
+      <a href="#question-5"
+        onClick={() => setColor(5)}
+        className={color === 5? `colorOrangeNav` : ""}
+      ><i class="fas fa-heart"></i></a>
+      <a href="#question-6"
+        onClick={() => setColor(6)}
+        className={color === 6? `colorOrangeNav` : ""}
+      ><i class="fas fa-grin-squint"></i></a>
+      <a href="#question-7"
+        onClick={() => setColor(7)}
+        className={color === 7? `colorOrangeNav` : ""}
+      ><i class="fas fa-play-circle"></i></a>
+      <a href="#question-8"
+        onClick={() => setColor(8)}
+        className={color === 8? `colorOrangeNav` : ""}
+      ><i class="fas fa-images"></i></a>
+      <a href="#question-9"
+        onClick={() => setColor(9)}
+        className={color === 9? `colorOrangeNav` : ""}
+      ><i class="fas fa-cocktail"></i></a>
+      <a href="#question-10"
+      onClick={() => setColor(10)}
+      className={color === 10? `colorOrangeNav` : ""}
+      ><i class="fas fa-baby-carriage"></i></a>
+      <a href="#question-11"
+      onClick={() => setColor(11)}
+      className={color === 11? `colorOrangeNav` : ""}
+      ><i class="fas fa-dove"></i></a>
+      <a href="#question-12"
+      onClick={() => setColor(12)}
+      className={color === 12? `colorOrangeNav` : ""}
+              ><i class="fas fa-check-circle"></i></a>
     </nav>
 
     <section class="scroll-container">
@@ -543,7 +579,7 @@ const ProfileForm = () => {
           <div class="scroll-question7-section" id="question-7">
                 <div className="question-flex">
 
-                <label className="labelName">
+                <label className="labelNameAudio">
                   A Shower thought you recently had
                     <input
                     className="audio-input"
@@ -561,7 +597,7 @@ const ProfileForm = () => {
           <div class="scroll-question-section" id="question-8">
                 <div className="question-flex">
 
-                <label className="labelName">
+                <label className="labelNamePic">
                   Image Url 1
                     <input
                     className="picture-input"
@@ -572,7 +608,7 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
-                <label className="labelName">
+                <label className="labelNamePic">
                   Image Url 2
                     <input
                     className="picture-input"
@@ -583,7 +619,7 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
-                <label className="labelName">
+                <label className="labelNamePic">
                   Image Url 3
                     <input
                     className="picture-input"
@@ -594,7 +630,7 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
-                <label className="labelName">
+                <label className="labelNamePic">
                   Image Url 4
                     <input
                     className="picture-input"
@@ -605,7 +641,7 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
-                <label className="labelName">
+                <label className="labelNamePic">
                   Image Url 5
                     <input
                     className="picture-input"
@@ -616,7 +652,7 @@ const ProfileForm = () => {
                     >
                     </input>
                 </label>
-                <label className="labelName">
+                <label className="labelNamePic">
                   Image Url 6
                     <input
                     className="picture-input"
@@ -755,19 +791,6 @@ const ProfileForm = () => {
             </div>
           </div>
 
-{/*
-                <ul className="error">
-                  {errors.map((error) => <li key={error}>{error}</li>)}
-                </ul>
-                <button
-                  className="ProfileFormSubmitButton"
-                  type="submit"
-                  disabled={errors.length>0}
-
-                >
-                  Submit
-                </button>
-      */}
                 </form>
               </section>
 

@@ -32,9 +32,9 @@ const QuestionForm = () => {
   const [must_answer9, setMust_answer9] = useState('');
   const [question10, setQuestion10] = useState('');
   const [must_answer10, setMust_answer10] = useState('');
-
-
   const [errors, setErrors] = useState([]);
+
+  const [color, setColor] = useState(1)
 
   useEffect(() => {
     const validationErrors = []
@@ -71,12 +71,9 @@ const QuestionForm = () => {
     const userInputQuestions = {
       question1, must_answer1, question2, must_answer2, question3, must_answer3, question4, must_answer4, question5, must_answer5,question6, must_answer6, question7, must_answer7,question8, must_answer8, question9, must_answer9, question10,must_answer10, user_id
     }
-    // console.log("userInputQUestion in QUestionFOrm", userInputQuestions)
     let newUserQuestions = await dispatch(createQuestion(userInputQuestions))
-    // console.log("newUserQuestions", newUserQuestions)
 
       if (newUserQuestions) {
-        // hideForm();
          history.push(`/profiles/${user_id}`)
       }
   }
@@ -85,21 +82,55 @@ const QuestionForm = () => {
 
   return (
     <>
+    <div className="editQuestionFormHeader">Answer Questions</div>
+
     <section className="all-questions-container">
 
     <nav className="question-nav-bar">
-      <a href="#question-1">1</a>
-      <a href="#question-2">2</a>
-      <a href="#question-3">3</a>
-      <a href="#question-4">4</a>
-      <a href="#question-5">5</a>
-      <a href="#question-6">6</a>
-      <a href="#question-7">7</a>
-      <a href="#question-8">8</a>
-      <a href="#question-9">9</a>
-      <a href="#question-10">10</a>
-      <a href="#question-11"><i class="fas fa-check-circle"></i></a>
-
+      <a href="#question-1"
+        onClick={() => setColor(1)}
+        className={color === 1? `colorOrangeNav` : ""}
+      >1</a>
+      <a href="#question-2"
+        onClick={() => setColor(2)}
+        className={color === 2? `colorOrangeNav` : ""}
+      >2</a>
+      <a href="#question-3"
+        onClick={() => setColor(3)}
+        className={color === 3? `colorOrangeNav` : ""}
+      >3</a>
+      <a href="#question-4"
+        onClick={() => setColor(4)}
+        className={color === 4? `colorOrangeNav` : ""}
+      >4</a>
+      <a href="#question-5"
+        onClick={() => setColor(5)}
+        className={color === 5? `colorOrangeNav` : ""}
+      >5</a>
+      <a href="#question-6"
+        onClick={() => setColor(6)}
+        className={color === 6? `colorOrangeNav` : ""}
+      >6</a>
+      <a href="#question-7"
+        onClick={() => setColor(7)}
+        className={color === 7? `colorOrangeNav` : ""}
+      >7</a>
+      <a href="#question-8"
+        onClick={() => setColor(8)}
+        className={color === 8? `colorOrangeNav` : ""}
+      >8</a>
+      <a href="#question-9"
+        onClick={() => setColor(9)}
+        className={color === 9? `colorOrangeNav` : ""}
+      >9</a>
+      <a href="#question-10"
+        onClick={() => setColor(10)}
+        className={color === 10? `colorOrangeNav` : ""}
+      >10</a>
+      <a href="#question-11"
+        onClick={() => setColor(11)}
+        className={color === 11? `colorOrangeNav` : ""}
+      ><i class="fas fa-check-circle"></i></a>
     </nav>
 
     <section class="scroll-container">
@@ -485,7 +516,7 @@ const QuestionForm = () => {
                     disabled={errors.length>0}>
                     Submit
                   </button>
-                  
+
 
             </div>
           </div>
