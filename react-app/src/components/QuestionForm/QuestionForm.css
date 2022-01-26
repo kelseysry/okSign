@@ -1,14 +1,12 @@
-.all-questions-container {
-  background: #1a1a1a;
-  height: 5000px
-
-}
-
-
 html {
   scroll-behavior: smooth;
 }
 
+.all-questions-container {
+  background: #1a1a1a;
+  height: 7500px
+
+}
 
 .scroll-container {
   display: block;

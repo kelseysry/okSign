@@ -190,8 +190,6 @@ const ProfileForm = () => {
     const createNewProfileData = {
       user_id, age, location, lat, lng, about_me, goal, talent, my_traits, needs, hobbies, moments, secrets,looking_for, user_audio, gender_id, gender_preference_id, number_likes, image_url1, image_url2, image_url3, image_url4, image_url5, image_url6, orientation_id, partner_id, pronouns, height, education, occupation, horoscope_id, smoking_id, drinking_id, children_id, pet_id, politic_id, religion_id
     }
-    console.log("createNewProfileData", createNewProfileData)
-
 
      let newUserProfile = await dispatch(createProfile(createNewProfileData));
 
@@ -207,7 +205,9 @@ const ProfileForm = () => {
 
   return (
     <>
-    <section className="all-questions-container">
+    <div className="editQuestionFormHeader">Profile Form</div>
+
+    <section className="all-profile-form-container">
 
     <nav className="profile-nav-bar">
       <a href="#question-1"

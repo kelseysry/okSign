@@ -82,6 +82,8 @@ const QuestionForm = () => {
 
   return (
     <>
+    <div className="editQuestionFormHeader">Answer Questions</div>
+
     <section className="all-questions-container">
 
     <nav className="question-nav-bar">
