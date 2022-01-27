@@ -29,19 +29,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
   const profileSel = useSelector((state) => state.like)
   const profileSelArr = Object.values(profileSel)
 
-//  let findProfileSel = profileSelArr?.filter((profile) => {return ((profile?.user_id === user_id_one ) && (profile?.match_profile_id === matchProfileObj[0]?.user_id))})
-
-//  let matchProfile = profileC?.oneProfile
-// console.log("profileC",profileC?.oneProfile[0].number_likes)
-
-  // const profileObj = useSelector((state) => state.profile.oneProfile)
-
-  // let profile;
-  // if(profileObj) {
-  //   profile = (profileObj[0])
-  // }
-
-  // let [number_likes, setNumLikes] = useState(profile?.number_likes)
   const [number_likes, setNumLikes] = useState(0)
 
   console.log("number_likes", number_likes)
@@ -55,6 +42,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
     fetchData();
   }, []);
 
+  console.log("profileSelArr",profileSelArr)
 
   useEffect(() => {
     async function fetchData() {
@@ -142,12 +130,48 @@ const MatchProfilePics = ({matchProfileObj}) => {
   }
 
 
+
+  const matchProfileLikes = profileSelArr.filter((profile) => {return profile.match_profile_id === match_profile_id})
+
+  console.log("matchProfileLikes", matchProfileLikes)
+
+
   const handleIncreaseProfileLikes = () => {
     let matchProfile = profileC?.oneProfile[0]
+    let user_id = user_id_one
+    let liked;
+    let match_profile_id = matchProfile.id
 
+    console.log("profileLiked?.liked ",profileLiked?.liked)
+
+    if(matchProfileLikes[0]?.liked === "false") {
       matchProfile.number_likes += 1;
-      // setNumLikes(number_likes + 1)
       dispatch(editProfile(matchProfile, matchProfile.id))
+      liked = "true"
+
+
+      let changeProfileLikeToTrue = {
+        liked, user_id, match_profile_id
+      }
+
+      console.log("changeProfileLikeToTrue",changeProfileLikeToTrue)
+
+      dispatch(EditLike(changeProfileLikeToTrue, user_id, match_profile_id))
+    } else {
+
+      matchProfile.number_likes -= 1;
+      dispatch(editProfile(matchProfile, matchProfile.id))
+
+      liked = "false"
+      let changeProfileLikeToFalse = {
+        liked, user_id, match_profile_id
+      }
+
+      console.log("changeProfileLikeToFalse",changeProfileLikeToFalse)
+
+      dispatch(EditLike(changeProfileLikeToFalse, user_id, match_profile_id))
+    }
+
   }
 
 
@@ -156,7 +180,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
     // console.log("🤡enter handleLikeToggle")
     let user_id = user_id_one
 
-    // console.log("profileLiked.liked🤡🤡", profileLiked.liked)
+    console.log("profileLiked.liked🤡🤡", profileLiked.liked)
     let liked;
     let match_profile_id;
 
@@ -173,7 +197,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
 
       dispatch(EditLike(changeProfileLikeToFalse, user_id, match_profile_id))
-      setCount(count +1)
+      // setCount(count +1)
 
     } else if(profileLiked?.liked === "false") {
       liked = "true"
@@ -184,7 +208,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
       }
 
       dispatch(EditLike(changeProfileLikeToTrue, user_id, match_profile_id))
-      setCount(count +1)
+      // setCount(count +1)
     } else {
       // otherwise we should handleIncreaseLike
       liked = "true"
@@ -194,7 +218,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
         liked, user_id, match_profile_id
       }
       dispatch(createLike(createFirstProfileLike, user_id, match_profile_id))
-      setCount(count +1)
+      // setCount(count +1)
     }
 
   }
