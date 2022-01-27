@@ -70,9 +70,7 @@ export const createLike = (formData) => async (dispatch) => {
     )
   });
   try {
-    // console.log("response from thunk". response)
     const newLike = await response.json();
-    // dispatch(toggleLike(newLike))
     console.log("newLike in thunk", newLike)
     return newLike
   } catch(error) {

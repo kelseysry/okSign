@@ -31,7 +31,13 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   const [number_likes, setNumLikes] = useState(0)
 
-  console.log("number_likes", number_likes)
+  const profileLikedArr = Object.values(profileLiked)
+  console.log("profileSelArr", profileSelArr)
+
+  let match_profile_id = matchProfileObj[0]?.id
+
+
+  const matchProfileLikes = profileSelArr.filter((profile) => {return profile.match_profile_id === match_profile_id})
 
   useEffect(() => {
     async function fetchData() {
@@ -40,9 +46,8 @@ const MatchProfilePics = ({matchProfileObj}) => {
       setProfileC(responseData);
     }
     fetchData();
-  }, []);
+  }, [profileSelArr.length, profileLiked.liked, profileLikedArr.length, matchProfileLikes.length]);
 
-  console.log("profileSelArr",profileSelArr)
 
   useEffect(() => {
     async function fetchData() {
@@ -51,9 +56,9 @@ const MatchProfilePics = ({matchProfileObj}) => {
       setProfileLiked(responseData);
     }
     fetchData();
-  }, [count]);
+  }, [count, profileSelArr.length, profileLiked.liked, profileLikedArr.length, matchProfileLikes.length]);
 
-  let match_profile_id = matchProfileObj[0]?.id
+  // let match_profile_id = matchProfileObj[0]?.id
 
   useEffect(() => {
     dispatch(getProfile(matchProfileObj[0]?.user_id))
@@ -61,7 +66,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
 
   useEffect(() => {
     dispatch(getProfileUserLiked(user_id_one, match_profile_id))
-  },[match_profile_id, user_id_one, profileSelArr.length])
+  },[match_profile_id, user_id_one, profileSelArr.length, profileLikedArr.length, matchProfileLikes.length])
 
 
   useEffect(() => {
@@ -110,7 +115,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
   const handleCreateConversation = async (discoverProfileId) => {
 
     let conversationExists =  checkConversationExists(user_id_one, discoverProfileId)
-    console.log("conversationexists", conversationExists)
 
     if(conversationExists[0]?.id) {
       history.push(`/conversations/${conversationExists[0]?.id}`)
@@ -129,12 +133,10 @@ const MatchProfilePics = ({matchProfileObj}) => {
     }
   }
 
-
-
-  const matchProfileLikes = profileSelArr.filter((profile) => {return profile.match_profile_id === match_profile_id})
+  // const matchProfileLikes = profileSelArr.filter((profile) => {return profile.match_profile_id === match_profile_id})
+  console.log("profileSelArr", profileSelArr)
 
   console.log("matchProfileLikes", matchProfileLikes)
-
 
   const handleIncreaseProfileLikes = () => {
     let matchProfile = profileC?.oneProfile[0]
@@ -142,9 +144,19 @@ const MatchProfilePics = ({matchProfileObj}) => {
     let liked;
     let match_profile_id = matchProfile.id
 
-    console.log("profileLiked?.liked ",profileLiked?.liked)
+    if(!matchProfileLikes.length) {
 
-    if(matchProfileLikes[0]?.liked === "false") {
+      matchProfile.number_likes += 1;
+      dispatch(editProfile(matchProfile, matchProfile.id))
+      liked = "true"
+
+      let changeProfileLikeToTrue = {
+        liked, user_id, match_profile_id
+      }
+      dispatch(createLike(changeProfileLikeToTrue, user_id, match_profile_id))
+    }
+
+    else if(matchProfileLikes[0]?.liked === "false" ) {
       matchProfile.number_likes += 1;
       dispatch(editProfile(matchProfile, matchProfile.id))
       liked = "true"
@@ -153,8 +165,6 @@ const MatchProfilePics = ({matchProfileObj}) => {
       let changeProfileLikeToTrue = {
         liked, user_id, match_profile_id
       }
-
-      console.log("changeProfileLikeToTrue",changeProfileLikeToTrue)
 
       dispatch(EditLike(changeProfileLikeToTrue, user_id, match_profile_id))
     } else {
@@ -167,58 +177,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
         liked, user_id, match_profile_id
       }
 
-      console.log("changeProfileLikeToFalse",changeProfileLikeToFalse)
-
       dispatch(EditLike(changeProfileLikeToFalse, user_id, match_profile_id))
-    }
-
-  }
-
-
-
-  const handleLikeToggle = () => {
-    // console.log("🤡enter handleLikeToggle")
-    let user_id = user_id_one
-
-    console.log("profileLiked.liked🤡🤡", profileLiked.liked)
-    let liked;
-    let match_profile_id;
-
-    // so we should check first if profile has been liked by the current user before
-    // if has been liked, profileLiked.liked =="true"
-    // then we want to handleDecreaseLike and edit the like to be false
-    if(profileLiked?.liked === "true") {
-      liked = "false"
-      console.log("liked🤡🤡  minus", liked)
-      match_profile_id = matchProfileObj[0]?.id
-      let changeProfileLikeToFalse = {
-        liked, user_id, match_profile_id
-      }
-
-
-      dispatch(EditLike(changeProfileLikeToFalse, user_id, match_profile_id))
-      // setCount(count +1)
-
-    } else if(profileLiked?.liked === "false") {
-      liked = "true"
-      console.log("😂  plus", liked)
-      match_profile_id = matchProfileObj[0]?.id
-      let changeProfileLikeToTrue = {
-        liked, user_id, match_profile_id
-      }
-
-      dispatch(EditLike(changeProfileLikeToTrue, user_id, match_profile_id))
-      // setCount(count +1)
-    } else {
-      // otherwise we should handleIncreaseLike
-      liked = "true"
-      console.log("first like🤡🤡", liked)
-      match_profile_id = matchProfileObj[0]?.id
-      let createFirstProfileLike = {
-        liked, user_id, match_profile_id
-      }
-      dispatch(createLike(createFirstProfileLike, user_id, match_profile_id))
-      // setCount(count +1)
     }
 
   }
@@ -244,7 +203,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
                       <div className="heart-flex">
 
                           <button
-                          className={(profileLiked?.liked === "true"? " selected" : " blank")}
+                          className={(matchProfileLikes[0]?.liked === "true"? " selected" : " blank")}
                           onClick={()=>
                             {
                               // setLikeColor(colorLike ==='empty'? 'red':'empty')
