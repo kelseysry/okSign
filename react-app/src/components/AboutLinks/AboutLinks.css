@@ -6,6 +6,7 @@
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
+  z-index: 2;
 }
 
 
@@ -42,6 +43,7 @@
   width: 100%;
   justify-content: space-evenly;
   text-shadow: 1px 1px 5px black;
+  z-index: 3;
 }
 
 .about-modal-name {

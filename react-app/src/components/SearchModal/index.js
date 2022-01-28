@@ -61,7 +61,7 @@ const SearchModal = () => {
               </div>
 
           </section>
-          <img className="allHoroscopes" src={pictures.collection[19].imageUrl} />
+          {/* <img className="allHoroscopes" src={pictures.collection[19].imageUrl} /> */}
         </AboutModal>
       )}
 

@@ -111,6 +111,6 @@ padding: 40px 50px;
   position: absolute;
   top: -120px;
   left: -150px;
-  z-index: 1;
+  z-index: 0;
   width: 680px;
 }
