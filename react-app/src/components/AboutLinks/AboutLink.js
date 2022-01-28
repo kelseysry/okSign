@@ -18,7 +18,7 @@ const AboutLinks = () => {
             <section className="nav-kelsey-modal">
               <i class="fas fa-id-card fa-2x"></i>
               <div className="contact-me">
-                <div>About</div>
+                <div>Contact</div>
                 <div>Me</div>
               </div>
             </section>

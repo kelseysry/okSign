@@ -71,7 +71,7 @@ function NavigationMenu() {
     sessionLinks = (
     <>
     <nav className="menu_container">
-      <ul className="">
+      <ul className="nav-menu-list">
 
               {/* <li>
                 <ChooseBackgroundContent />
