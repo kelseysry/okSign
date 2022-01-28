@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { AboutModal } from "../../context/Modal";
 import SearchForm from '../SearchForm';
 import './SearchModal.css'
+import pictures from '../../data/pictures';
 
 const SearchModal = () => {
   const [showModal, setShowModal] = useState(false);
@@ -27,7 +28,7 @@ const SearchModal = () => {
 
   return (
     <>
-  { currentUserProfile?.oneProfile?.length ? 
+  { currentUserProfile?.oneProfile?.length ?
 
   <button
           style={{color: 'white'}}
@@ -60,7 +61,7 @@ const SearchModal = () => {
               </div>
 
           </section>
-
+          {/* <img className="allHoroscopes" src={pictures.collection[19].imageUrl} /> */}
         </AboutModal>
       )}
 

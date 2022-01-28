@@ -85,6 +85,11 @@ const pictures = {
       "imageNumber":"18",
       "name":"hole",
       "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643150905/okSign/hole_idhnai.png"
+    },
+    {
+      "imageNumber":"19",
+      "name":"allHoroscopes",
+      "imageUrl":"https://res.cloudinary.com/mabmab/image/upload/v1643406636/okSign/allHoroscopes_rnnd91.png"
     }
   ]
 

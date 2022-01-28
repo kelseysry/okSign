@@ -54,7 +54,7 @@ const MatchProfilePage = () => {
                 <MatchDetailSection currentUserProfile={matchProfileObj}/>
                 <div className="rope-man">
                 <img src={pictures.collection[16].imageUrl} />
-                <div className="match-profile-chat-bubble">I can't see profile likes 🧡... message me! ⬆️ </div>
+                <div className="match-profile-chat-bubble">Message me! ⬆️ </div>
                 </div>
               </div>
             </div>

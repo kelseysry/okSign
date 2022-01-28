@@ -50,6 +50,11 @@ padding: 40px 50px;
 .menu_container {
   display: flex;
   flex-direction: column;
+  padding-left: 30px;
+}
+
+.nav-menu-list {
+  list-style: none;
 }
 
 .menu-logo {
@@ -100,4 +105,12 @@ padding: 40px 50px;
   0 0 151px #FFBD4A;
   position: relative;
   z-index: 1;
+}
+
+.allHoroscopes {
+  position: absolute;
+  top: -120px;
+  left: -150px;
+  z-index: 0;
+  width: 680px;
 }
