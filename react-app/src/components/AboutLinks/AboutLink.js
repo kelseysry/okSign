@@ -54,6 +54,7 @@ const AboutLinks = () => {
 
           </section>
 
+          <img className="allHoroscopes" src={pictures.collection[19].imageUrl} />
         </AboutModal>
       )}
 
