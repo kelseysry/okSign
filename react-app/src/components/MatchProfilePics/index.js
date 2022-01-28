@@ -216,8 +216,7 @@ const MatchProfilePics = ({matchProfileObj}) => {
                         </button>
                     </div>
 
-                      {/* <div>{profileLiked?.liked}</div> */}
-                      <div className="heart-flex">
+                      {/* <div className="heart-flex">
 
                           <button
                           className={(profileLiked?.liked === "true"? " selected" : " blank")}
@@ -231,14 +230,11 @@ const MatchProfilePics = ({matchProfileObj}) => {
                           >
                             <div className="heart-text">
                                 <i class="fas fa-heart"></i>
-                                {/* {profile?.number_likes} */}
                                 {profileC?.oneProfile? profileC?.oneProfile[0]?.number_likes : null}
-                                {/* <div>{profileSel[1]?.liked }</div> */}
                             </div>
                           </button>
-                      {/* </div> */}
 
-                      </div>
+                      </div> */}
 
 
                 </div>

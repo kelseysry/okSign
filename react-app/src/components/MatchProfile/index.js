@@ -24,8 +24,8 @@ const MatchProfile = ({correctNumberMatches, userIdsPercentsObj, slide, setSlide
   let matchProfileObj = correctNumberMatches
   let matchProfileId = matchProfileObj[0]?.user_id
 
-  console.log("userIdsPercentsObj", userIdsPercentsObj)
-  console.log("idx in match profile", idx)
+  // console.log("userIdsPercentsObj", userIdsPercentsObj)
+  // console.log("idx in match profile", idx)
 
   const getNumberAnswerAccept = (userIdsPercentsObj, matchProfileId) => {
     let profileNumQuestion =  userIdsPercentsObj.filter(profile => profile[0] === matchProfileId);

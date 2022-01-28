@@ -221,9 +221,10 @@ a {
 
 .match-profile-chat-bubble {
   position: absolute;
-  top: 50px;
+  top: 55px;
   left:25px;
   width: 180px;
+  font-size: 20px
 }
 
 .rope-man{
