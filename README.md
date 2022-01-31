@@ -47,43 +47,46 @@
 When a user logs in, the API login route will be sent with a request that has the user's email and password. The password that the user utilized to log in is then hashed and compared to the hashed password that is stored in the databse. If these passwords are the same, the user is redirected to the home page. 
 
   <p align="center" width="50%">
-  <img src="https://res.cloudinary.com/mabmab/image/upload/v1640760060/okSign/Screen_Shot_2021-12-28_at_10.40.54_PM_pqkikw.png"/>
+  <img src="https://res.cloudinary.com/mabmab/image/upload/v1643597151/okSign/Screen_Shot_2022-01-30_at_6.45.23_PM_f9ssub.png"/>
   </p>
   
 ## Questions Page 
  Users can answers a set of 10 personality questions and be matched with other users based on their answers on the Discover page. Users can also edit their answers. 
  
 <p align="center" width="80%">
-  <img src="https://res.cloudinary.com/mabmab/image/upload/v1640760970/okSign/Screen_Shot_2021-12-28_at_10.56.05_PM_o5a95t.png"/>
+  <img src="https://res.cloudinary.com/mabmab/image/upload/v1643597213/okSign/Screen_Shot_2022-01-30_at_6.46.43_PM_j1rncs.png"/>
 </p>
 
 ## Discover Page 
-<p align="center" width="80%">
-  <img src="https://res.cloudinary.com/mabmab/image/upload/v1640758417/okSign/Screen_Shot_2021-12-28_at_10.13.18_PM_uykgy2.png"/>
-</p>
+
+<!-- <img src="https://res.cloudinary.com/mabmab/image/upload/v1643599306/okSign/okSignGif3_z7kkds.gif" width="250" height="250"/>
+ -->
+<!-- <p align="center" width="80%">
+  <img src="https://res.cloudinary.com/mabmab/image/upload/v1643598393/okSign/okSignGif_bnjgjk.gif"/>
+</p> -->
 
 ## Horoscope Page 
 Users can also match with other uses based on horoscope signs.
 <p align="center" width="80%">
-  <img src="https://res.cloudinary.com/mabmab/image/upload/v1640758361/okSign/Screen_Shot_2021-12-28_at_10.12.34_PM_n6av3g.png"/>
+  <img src="https://res.cloudinary.com/mabmab/image/upload/v1643597461/okSign/Screen_Shot_2022-01-30_at_6.48.24_PM_suxobo.png"/>
 </p>
 
 ## Search Feature 
  A user can also search for others users based on location, gender, and horoscope sign.
  <p align="center" width="80%">
-  <img src="https://res.cloudinary.com/mabmab/image/upload/v1640758509/okSign/Screen_Shot_2021-12-28_at_10.15.04_PM_jb6lqd.png"/>
+  <img src="https://res.cloudinary.com/mabmab/image/upload/v1643597573/okSign/Screen_Shot_2022-01-30_at_6.48.54_PM_v51gt9.png"/>
 </p>
 
  ## Messages 
  Users can send each other messages 
   <p align="center" width="50%">
-  <img src="https://res.cloudinary.com/mabmab/image/upload/v1640758587/okSign/Screen_Shot_2021-12-28_at_10.16.22_PM_ntkhbw.png"/>
+  <img src="https://res.cloudinary.com/mabmab/image/upload/v1643597578/okSign/Screen_Shot_2022-01-30_at_6.49.47_PM_rwxwdn.png"/>
   </p>
  
  ## Match Profile
  Each potential match has their own profile which displays a map of where the potential match and the current user are. The profile also has a feature that allows a potential match to post a recording to answer the question "A shower thought you recently had." 
   <p align="center" width="50%">
-  <img src="https://res.cloudinary.com/mabmab/image/upload/v1640758629/okSign/Screen_Shot_2021-12-28_at_10.17.04_PM_rq4fsv.png"/>
+  <img src="https://res.cloudinary.com/mabmab/image/upload/v1643597581/okSign/Screen_Shot_2022-01-30_at_6.50.18_PM_mgrsro.png"/>
   </p>
 
 ## Technical Implementation Details 
