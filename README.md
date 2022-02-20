@@ -15,6 +15,8 @@
 - View the location of all the users or between two users on Google maps
 - Listen to an audio player on each potential matches' profile.
 
+[Live Demo](https://vimeo.com/manage/videos/679754489) of the main features of okSign. In this demo, I create a new user and walkthrough how a user navigates through okSign. 
+
 # Index
 - [Database Schema](https://github.com/kelseysry/okSign/wiki/Database-Schema)
 - [Feature list](https://github.com/kelseysry/okSign/wiki/Feature-List)
