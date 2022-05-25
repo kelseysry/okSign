@@ -12,8 +12,8 @@ jobs:
         REACT_APP_MAPS_KEY: ${{ secrets.REACT_APP_MAPS_KEY }}
     steps:
     - uses: actions/checkout@v2
-    - name: Login to Docker
-      run: docker login
+    - name: Login to Heroku
+      run: heroku login
     - name: Login to Heroku Container registry
       run: heroku container:login
     - name: Build and push
