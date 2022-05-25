@@ -39,7 +39,7 @@ const LoginFormPage = () => {
         <div className="text-banner">May the stars align in your favor </div>
         <div className="text-banner">Match by answering questions or horoscope sign</div>
         <div className="text-banner">Click on a marker to see all of our users <i class="fas fa-map-marker-alt"></i></div>
-        <div className="text-banner"> ⚠️  My Google Maps API trial expired so you will see an error msg on all maps ⚠️ </div>
+        <div className="text-banner"> ⚠️My Google Maps API trial expired so you will see an error msg on all maps ⚠️ </div>
 
       </div>
     </div>
